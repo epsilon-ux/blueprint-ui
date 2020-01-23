@@ -1,0 +1,22 @@
+<ng-container *ngFor="let actionItem of actionItems">
+  <button
+    *ngIf="actionItem.element === 'button'; else link"
+    class="action-item {{ classList }}"
+    [ngClass]="actionItem.class"
+    [attr.aria-label]="actionItem.ariaLabel"
+    (click)="triggerAction(actionItem.action)"
+  >
+    {{ actionItem.text }}
+  </button>
+  <ng-template #link>
+    <a
+      [routerLink]="[actionItem.path, rowData[rowId]]"
+      class="action-item {{ classList }}"
+      [target]="actionItem.target"
+      [ngClass]="actionItem.class"
+      [attr.aria-label]="actionItem.ariaLabel"
+    >
+      {{ actionItem.text }}
+    </a>
+  </ng-template>
+</ng-container>

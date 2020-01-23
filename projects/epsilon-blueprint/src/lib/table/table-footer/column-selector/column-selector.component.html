@@ -1,0 +1,49 @@
+<div
+  [hidden]="!showColumnSelector"
+  class="table-footer-dropdown column-selector"
+>
+  <label for="columnSelector" class="table-footer-dropdown-label">
+    Column Selector:
+  </label>
+  <ng-select
+    #columnSelectorDropdown
+    labelForId="columnSelector"
+    [items]="columnInfo"
+    bindLabel="headerText"
+    bindValue="key"
+    [multiple]="true"
+    [searchable]="false"
+    [clearable]="false"
+    [closeOnSelect]="false"
+    [(ngModel)]="selectedColumns"
+    (change)="updateSelected($event)"
+  >
+    <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+      <div class="ng-value multiselect-value">
+        <span class="ng-value-label">
+          Showing {{ selectedColumns.length }} out of {{ columnInfo.length }}
+        </span>
+      </div>
+    </ng-template>
+    <ng-template
+      ng-option-tmp
+      let-column="item"
+      let-item$="item$"
+      let-index="index"
+    >
+      <input
+        type="checkbox"
+        [id]="column.key"
+        [disabled]="column.key === defaultSortColumnName"
+        [name]="column.headerText"
+        [ngModel]="item$.selected"
+      />
+      <label [for]="column.key" class="multiselect-label">
+        {{ column.headerText }}
+        <ng-container *ngIf="column.key === defaultSortColumnName">
+          (Default)
+        </ng-container>
+      </label>
+    </ng-template>
+  </ng-select>
+</div>

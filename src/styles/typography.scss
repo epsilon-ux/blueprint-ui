@@ -1,0 +1,70 @@
+html,
+body
+{
+	font-family: $font-family-default;
+	font-size: $font-size-body;
+	font-weight: $font-weight-regular;
+	color: $font-color-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+	margin: 0;
+}
+
+h1,
+.h1
+{
+	font-size: 22px;
+	font-weight: $font-weight-regular;
+}
+
+h2,
+.h2
+{
+	font-size: 15px;
+	font-weight: $font-weight-semi-bold;
+}
+
+h3,
+.h3
+{
+	font-size: 12px;
+	font-weight: $font-weight-bold;
+}
+
+p
+{
+	margin: 0 0 1rem;
+}
+
+a
+{
+	color: $link-color-primary;
+	font-family: $font-weight-semi-bold;
+	text-decoration: none;
+
+	&:hover
+	{
+		text-decoration: underline;
+	}
+}
+
+.font-weight-bold
+{
+	font-weight: $font-weight-bold;
+}
+
+.font-weight-semi-bold
+{
+	font-weight: $font-weight-semi-bold;
+}
+
+.text-secondary
+{
+	color: $font-color-secondary !important;
+}

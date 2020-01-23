@@ -1,0 +1,30 @@
+@import '../../global-variables';
+
+.table-footer-dropdown
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-footer-dropdown-label
+{
+    width: auto;
+    margin-right: 5px;
+}
+
+.column-selector
+{
+    ng-select .multiselect-value
+    {
+        font-size: $font-size-body;
+        color: $font-color-primary;
+        background: transparent;
+    }
+
+    ng-select .multiselect-label
+    {
+        pointer-events: none;
+        display: inline;
+    }
+}

@@ -1,0 +1,38 @@
+@import '_global-variables';
+
+.dropdown-toggle::after
+{
+    font-size: $font-size-display2;
+    transform: translateY(2px);
+}
+
+.dropdown-menu
+{
+    font-size: $font-size-body;
+    margin: 1px 0 0;
+    border-radius: 0;
+    border: 1px solid $border-color-primary;
+    padding: 4px 0 2px;
+    background: $coconut;
+}
+
+.dropdown-item
+{
+    margin-bottom: 2px;
+    padding: 5px 10px;
+}
+
+.dropdown-item:first-child,
+.dropdown-item:last-child
+{
+    border-radius: 0;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+a:not([href]).dropdown-item:hover,
+a:not([href]).dropdown-item:focus
+{
+    background: $accent-color-primary;
+    color: $coconut;
+}

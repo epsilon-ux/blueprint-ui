@@ -1,0 +1,88 @@
+//
+// color palette
+//
+
+// primary colors
+$apricot: #fda94e;
+$ultramarine: #0f5ef0;
+$midnight: #221f4d;
+$coconut: #ffffff;
+
+// secondary blues
+$cobalt: #0b42a8;
+$blueberry: #0c4bc0;
+$cornflower: #b7cffa;
+$ice: #e7effd;
+
+// secondary greys
+$storm: #516f90;
+$haze: #cbd6e2;
+$mist: #eaf0f6;
+$cloud: #f5f8fa;
+
+// tertiary colors
+$shamrock: #05ae77;
+$clementine: #ff7b00;
+$tomato: #e62325;
+$brick: #a11214;
+
+//
+// abstracted utility variables
+//
+
+// font families
+$font-family-default: 'Open Sans', sans-serif;
+$font-family-icon: 'FontAwesome'; // only used for CSS pseudo elements
+
+// font sizes
+$font-size-body: 12px;
+$font-size-small: 10px;
+$font-size-h1: 22px;
+$font-size-h2: 15px;
+$font-size-h3: 12px;
+$font-size-display1: 22px;
+$font-size-display2: 15px;
+$font-size-display3: 12px;
+
+// font weights
+$font-weight-regular: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+// font colors
+$font-color-primary: $midnight;
+$font-color-secondary: $storm;
+
+// accent colors
+$accent-color-primary: $ultramarine;
+$accent-color-primary-hover: $blueberry;
+$accent-color-secondary: $apricot;
+
+// link colors
+$link-color-primary: $ultramarine;
+
+// border colors
+$border-color-primary: $storm;
+$border-color-secondary: $haze;
+
+// feedback colors
+$feedback-color-success: $shamrock;
+$feedback-color-alert: $clementine;
+$feedback-color-warning: $tomato;
+$feedback-color-warning-hover: $brick;
+
+// font awesome icons
+$icon-caret-up: '\f0d8';
+$icon-caret-down: '\f0d7';
+
+// shadows
+$box-shadow-primary: 0 1px 10px 0 rgba($midnight, 0.3); // used for modals, overlay messaging, and login screen form containers
+$box-shadow-secondary: 0 2px 8px 0 $haze; // used for tiles, and tooltips
+$box-shadow-tertiary: 1px 1px 3px 0 rgba($midnight, 0.2); // used for expanded dropdown menus and expanded date/time pickers
+$box-shadow-nav-primary: 0 0 7px 0 rgba($cobalt, 0.2); // used for the primary navigation
+$box-shadow-focus-default: 0 0 0 0.2rem rgba($cornflower, 1);
+$box-shadow-focus-warning: 0 0 0 0.2rem rgba($feedback-color-warning, 0.25);
+$box-shadow-focus-readonly: 0 0 0 0.2rem rgba($storm, 0.3);
+
+// transition
+$transition-primary: 0.05s ease-out;

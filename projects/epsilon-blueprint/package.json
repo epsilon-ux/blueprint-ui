@@ -1,0 +1,17 @@
+{
+  "name": "epsilon-blueprint",
+  "version": "0.1.0",
+  "description": "Blueprint Component Library",
+  "author": "Epsilon UX Team",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epsilon-ux/blueprint-ui.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/router": "~8.2.3",
+    "@angular/forms": "~8.2.3",
+    "@ng-select/ng-select": "^3.7.1"
+  }
+}
