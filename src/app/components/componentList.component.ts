@@ -10,8 +10,24 @@ export class ComponentListComponent {
     {
       route: 'table',
       text: 'Table'
-    }
+    },
+    {
+      route: 'search',
+      text: 'Search'
+    },
   ];
+  filteredComponents = [...this.components];
 
   constructor() {}
+
+  searchComponents(e) {
+    this.filteredComponents = this.components.filter(component => (
+        component.text.toLowerCase().includes(e.toLowerCase())
+      )
+    );
+  }
+
+  clearSearch(e) {
+    this.filteredComponents = [...this.components];
+  }
 }
