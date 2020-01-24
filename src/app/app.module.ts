@@ -2,13 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { TableModule } from 'epsilon-blueprint';
+import { TableModule, SearchModule } from 'epsilon-blueprint';
+
 
 import { AppComponent } from './app.component';
 import { ComponentListComponent } from './components/componentList.component';
 import { TabledataService } from './components/table/service/table-data.service';
 import { TableComponent } from './components/table/table.component';
 import { DummyObjectComponent } from './components/table/dummy-object/dummy-object.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -16,13 +18,15 @@ import { DummyObjectComponent } from './components/table/dummy-object/dummy-obje
     AppComponent,
     ComponentListComponent,
     TableComponent,
-    DummyObjectComponent
+    DummyObjectComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    SearchModule
   ],
   providers: [HttpClientModule, TabledataService],
   bootstrap: [AppComponent]
