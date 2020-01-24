@@ -1,0 +1,8 @@
+<h1>Epsilon Blueprint</h1>
+
+<h2>Components</h2>
+<ul>
+  <li *ngFor="let component of filteredComponents">
+    <a routerLink="{{ component.route }}">{{ component.text }}</a>
+  </li>
+</ul>
