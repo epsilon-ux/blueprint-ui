@@ -1,7 +1,13 @@
-<bp-table
-  [isDataLoading]="isDataLoading"
-  [data]="data"
-  [properties]="properties"
-  (action)="handleAction($event)"
-  (selectedRowsAction)="handleSelectedRowsAction($event)"
-></bp-table>
+<app-content-template pageTitle="Table Component" tagLine="Last updated on January 24, 2020">
+  <div class="row">
+    <div class="col">
+      <bp-table
+        [isDataLoading]="isDataLoading"
+        [data]="data"
+        [properties]="properties"
+        (action)="handleAction($event)"
+        (selectedRowsAction)="handleSelectedRowsAction($event)"
+      ></bp-table>
+    </div>
+  </div>
+</app-content-template>

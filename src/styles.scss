@@ -9,6 +9,11 @@
 @import "./styles/status-indicators";
 @import "./styles/ng-select";
 
+// Blueprint UI Styles
+@import './styles/blueprint-ui-styles/nav-primary';
+@import './styles/blueprint-ui-styles/nav-secondary';
+@import './styles/blueprint-ui-styles/typography';
+
 body
 {
     color: $font-color-primary;
@@ -22,4 +27,53 @@ button:focus
 {
     outline: none;
     box-shadow: $box-shadow-focus-default;
+}
+
+/* grid overrides */
+.container,
+.container-fluid
+{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.row
+{
+  margin-right: -20px;
+  margin-left: -20px;
+}
+
+.col,
+[class^="col-"]
+{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* page-level styling */
+.app-body
+{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  overflow: visible;
+  margin-top: 54px;
+}
+
+.app-main
+{
+  flex: 1;
+}
+
+.main
+{
+  margin: 1rem 0;
+}
+
+.page-header
+{
+  margin-bottom: 40px;
+  border-bottom: 1px solid $border-color-primary;
+  padding: 25px 0;
+  background: $cloud;
 }

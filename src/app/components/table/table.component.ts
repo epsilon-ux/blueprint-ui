@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { TabledataService } from './service/table-data.service';
 import { ColumnType } from './models/column';
 

@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+<a href="#mainContent" class="skip-link">Skip to main content</a>
+
+<!-- Primary Nav -->
+<header>
+  <nav class="navbar navbar-expand fixed-top">
+    <a routerLink="" class="logo-link">
+      <img src="assets/logo-epsilon.svg" class="navbar-brand" alt="Epsilon">
+      <div class="h2 page-title">Blueprint UI</div>
+    </a>
+  </nav>
+</header>
+
+<div class="app-body">
+
+  <!-- Secondary Nav -->
+  <nav id="navSecondary" class="nav-secondary{{ isNavCollapsed ? ' collapsed' : '' }}">
+    <div class="nav-secondary-toggle-wrapper">
+      <button type="button" id="navSecondaryToggle" class="nav-secondary-toggle" aria-controls="navSecondary" aria-label="Toggle secondary navigation" (click)="toggleNav()">
+      </button>
+    </div>
+    <p class="nav-secondary-title">Components</p>
+    <ul id="navSecondaryList" class="nav-secondary-nav-list">
+      <li *ngFor="let component of filteredComponents" class="nav-secondary-nav-item">
+        <a routerLink="{{ component.route }}" class="nav-secondary-nav-link link-primary level-1">{{ component.text }}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="mainContent" class="app-main">
+      <router-outlet></router-outlet>
+  </main>
+</div>

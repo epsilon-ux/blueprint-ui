@@ -1,8 +1,13 @@
-<bp-search
-  label="Search"
-  placeholder="Search"
-  [isSearching]="isSearching"
-  (search)="handleSearch($event)"
-  (clearSearch)="handleClearSearch($event)"
->
-</bp-search>
+<app-content-template pageTitle="Search Component" tagLine="Last updated on January 24, 2020">
+  <div class="row">
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <bp-search
+        label="Search"
+        placeholder="Search"
+        [isSearching]="isSearching"
+        (search)="handleSearch($event)"
+        (clearSearch)="handleClearSearch($event)"
+      ></bp-search>
+    </div>
+  </div>
+</app-content-template>

@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ComponentListComponent } from './components/componentList.component';
+import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { DummyObjectComponent } from './components/table/dummy-object/dummy-object.component';
 import { SearchComponent } from './components/search/search.component';
+import { LibraryDocsComponent } from './library-docs/library-docs.component';
 
 const routes: Routes = [
-  { path: '', component: ComponentListComponent },
+  { path: '', component: LibraryDocsComponent },
 
-  { path: 'table', component: TableComponent },
-  { path: 'table/object/:id', component: DummyObjectComponent },
-  { path: 'table/object/edit/:id', component: DummyObjectComponent },
+  { path: 'component/table', component: TableComponent },
+  { path: 'component/table/object/:id', component: DummyObjectComponent },
+  { path: 'component/table/object/edit/:id', component: DummyObjectComponent },
 
-  { path: 'search', component: SearchComponent },
+  { path: 'component/search', component: SearchComponent },
 ];
 
 @NgModule({
