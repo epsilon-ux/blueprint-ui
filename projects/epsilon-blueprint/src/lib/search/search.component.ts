@@ -1,21 +1,21 @@
-import { Component, Input, Output, OnInit, EventEmitter } from "@angular/core";
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: "bp-search",
-  templateUrl: "./search.component.html"
+  selector: 'bp-search',
+  templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit {
-  // Is the search is in progress?
-  @Input()
-  isSearching = false;
-
   // Label for search field
   @Input()
-  label = "Search";
+  label = 'Search';
 
   // Placeholder Text
   @Input()
-  placeholder = "Search";
+  placeholder = 'Search';
+
+  // Is the search is in progress?
+  @Input()
+  isSearching = false;
 
   // Emit the search query string
   @Output()
@@ -25,15 +25,15 @@ export class SearchComponent implements OnInit {
   @Output()
   clearSearch = new EventEmitter();
 
-  public searchFilter = "";
+  public searchFilter = '';
   public showClearIcon = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   onClearSearch() {
-    this.searchFilter = "";
+    this.searchFilter = '';
     this.showClearIcon = false;
     this.clearSearch.emit();
   }
@@ -45,11 +45,11 @@ export class SearchComponent implements OnInit {
   }
 
   inputController(event) {
-    if (event.key === "Enter" && this.searchFilter.length > 0) {
+    if (event.key === 'Enter' && this.searchFilter.length > 0) {
       this.showClearIcon = true;
       this.search.emit(this.searchFilter);
     } else if (
-      (event.key === "Backspace" || event.key === "Delete") &&
+      (event.key === 'Backspace' || event.key === 'Delete') &&
       this.searchFilter.length === 0
     ) {
       this.showClearIcon = false;
