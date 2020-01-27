@@ -3,10 +3,10 @@
 .nav-secondary
 {
   position: sticky;
-  top: 62px;
+  top: 54px;
   min-width: 200px;
-  max-height: calc(100vh - 62px);
-  min-height: calc(100vh - 62px);
+  max-height: calc(100vh - 54px);
+  min-height: calc(100vh - 54px);
   border-right: 1px solid $border-color-secondary;
   background: $coconut;
   transition: min-width .25s ease-out;
