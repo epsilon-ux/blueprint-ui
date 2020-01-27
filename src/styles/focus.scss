@@ -72,6 +72,11 @@ tr[role="button"]
     background-color: $accent-color-primary;
     z-index: 1;
 
+    &:hover
+    {
+        box-shadow: none;
+    }
+
     &.ng-option-disabled
     {
         color: $font-color-secondary;
