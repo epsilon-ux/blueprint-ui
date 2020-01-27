@@ -139,7 +139,7 @@ You can find more resources in the [UX Space](https://epsilonjira.atlassian.net/
 
 ## Angular & Development
 
-Run `ng serve` and `ng build --epsilon-blueprint` concurrently to develop on the epsilon-blueprint package.
+Run `ng build --watch epsilon-blueprint`, and once that has begun run `ng serve` concurrently to develop on the epsilon-blueprint package.
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
