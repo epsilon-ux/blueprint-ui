@@ -1,0 +1,11 @@
+<app-primary-nav></app-primary-nav>
+<div class="app-body">
+  <app-secondary-nav
+    class="nav-secondary"
+    [title]="secondaryNav.title"
+    [items]="secondaryNav.items"
+  ></app-secondary-nav>
+  <main id="mainContent" class="app-main">
+    <ng-content></ng-content>
+  </main>
+</div>
