@@ -55,6 +55,7 @@ export class TableComponent implements OnInit, OnDestroy {
       defaultSortedColumn: 'phone'
     },
     hasSelectableRows: true,
+    hasExpandableRows: true,
     statusIndicatorMapping: {
       'incomplete-primary': 'Not Deployed',
       'incomplete-secondary': 'New Updates Not Deployed',

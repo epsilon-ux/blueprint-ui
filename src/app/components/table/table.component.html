@@ -3,5 +3,15 @@
   [data]="data"
   [properties]="properties"
   (action)="handleAction($event)"
+  [expandableRowTemplate]="expandableRowTemplate"
   (selectedRowsAction)="handleSelectedRowsAction($event)"
 ></bp-table>
+
+<ng-template let-row="id" #expandableRowTemplate>
+  <ol>
+    <li>{{data[row].phone}}</li>
+    <li>{{data[row].date}}</li>
+    <li>{{data[row].amount}}</li>
+    <li>{{data[row].description}}</li>
+  </ol>
+</ng-template>

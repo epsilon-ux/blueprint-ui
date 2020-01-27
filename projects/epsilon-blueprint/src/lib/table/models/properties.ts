@@ -19,6 +19,7 @@ export default interface Properties {
     // TBD: Server Side / Client Side / Restricted
   };
   hasSelectableRows: boolean;
+  hasExpandableRows: boolean;
   statusIndicatorMapping?: {
     'incomplete-primary': string;
     'incomplete-secondary': string;

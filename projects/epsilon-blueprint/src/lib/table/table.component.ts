@@ -6,7 +6,8 @@ import {
   Output,
   EventEmitter,
   ViewChild,
-  ElementRef
+  ElementRef,
+  TemplateRef
 } from '@angular/core';
 import { Column, ColumnType } from './models/column';
 import Properties from './models/properties';
@@ -22,6 +23,7 @@ export class TableComponent implements OnInit, OnChanges {
   }[];
   @Input() isDataLoading: boolean;
   @Input() properties: Properties;
+  @Input() expandableRowTemplate: TemplateRef<any>;
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();

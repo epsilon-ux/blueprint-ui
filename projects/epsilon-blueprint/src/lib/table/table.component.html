@@ -14,11 +14,13 @@
       class="table"
       [ngClass]="densityClass"
       [class.table-selectable-rows]="properties.hasSelectableRows"
+      [class.table-expandable-rows]="properties.hasExpandableRows"
     >
       <!-- Table Headings -->
       <thead>
         <tr>
           <ng-container *ngIf="properties.data.thead">
+            <th *ngIf="properties.hasExpandableRows"></th>
             <th *ngIf="properties.hasSelectableRows" class="th-selectable">
               <input
                 type="checkbox"
@@ -76,6 +78,7 @@
           [tableData]="tableData"
           [properties]="properties"
           [pageData]="pageData"
+          [expandableRowTemplate]="expandableRowTemplate"
           (action)="emitAction($event)"
           (selectedRowsAction)="onSelectRow($event)"
         ></tbody>

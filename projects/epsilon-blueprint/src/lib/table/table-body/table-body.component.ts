@@ -6,7 +6,8 @@ import {
   Output,
   EventEmitter,
   ViewChild,
-  ElementRef
+  ElementRef,
+  TemplateRef
 } from '@angular/core';
 import { Column, ColumnType } from '../models/column';
 import { parseLookupString } from '../helpers';
@@ -22,6 +23,7 @@ export class TableBodyComponent implements OnInit {
   }[];
   @Input() properties: Properties;
   @Input() pageData;
+  @Input() expandableRowTemplate: TemplateRef<any>;
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
@@ -31,7 +33,7 @@ export class TableBodyComponent implements OnInit {
 
   // displayDensity
   densityClass: string;
-
+  isRowExpanded: Array<boolean>;
   showSelectedRowsAction = false;
   @ViewChild('selectAllRowsRef', { static: false })
   selectAllRowsRef: ElementRef;
@@ -43,7 +45,9 @@ export class TableBodyComponent implements OnInit {
     return ColumnType;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isRowExpanded = new Array<boolean>(this.tableData.length);
+  }
 
   // Statuses
   getStatusClass(value) {
@@ -61,5 +65,10 @@ export class TableBodyComponent implements OnInit {
       action,
       rowId
     });
+  }
+
+  // Toggle the expanded row
+  toggleExpandRow(row) {
+    this.isRowExpanded[row[this.properties.data.rowId]] = !this.isRowExpanded[row[this.properties.data.rowId]];
   }
 }
