@@ -12,12 +12,12 @@ export class AppComponent {
   components = [
     {
       pageTitle: 'Table Component',
-      route: 'component/table',
+      route: 'components/table',
       text: 'Table',
     },
     {
       pageTitle: 'Search Component',
-      route: 'component/search',
+      route: 'components/search',
       text: 'Search',
     },
   ];
