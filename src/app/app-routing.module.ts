@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'component/table/object/edit/:id', component: DummyObjectComponent },
 
   { path: 'component/search', component: SearchComponent },
+
+  { path: '**', component: LibraryDocsComponent } // TODO: create a componentNotFound page for this instance?
 ];
 
 @NgModule({

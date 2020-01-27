@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TabledataService {
-  url = 'https://raw.githubusercontent.com/epsilon-ux/blueprint-table/master/tableData.json';
+  url = 'https://raw.githubusercontent.com/epsilon-ux/blueprint-ui/mvp-blueprint-ui/src/app/components/table/tableData.json';
   constructor(private https: HttpClient) { }
 
   get_cuData(): Observable<HttpResponse<any>> {

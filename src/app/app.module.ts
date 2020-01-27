@@ -6,7 +6,7 @@ import { TableModule, SearchModule } from 'epsilon-blueprint';
 
 
 import { AppComponent } from './app.component';
-import { ContentTemplateComponent } from './content-template/content-template.component';
+import { ContentTemplateComponent } from './shared/content-template/content-template.component';
 import { LibraryDocsComponent } from './library-docs/library-docs.component';
 import { TabledataService } from './components/table/service/table-data.service';
 import { TableComponent } from './components/table/table.component';
