@@ -1,14 +1,14 @@
 # Epsilon Blueprint
 
-You can see in progress and upcoming work on our [blueprint trello board](https://trello.com/b/AoJ0Tpd2/blueprint).
+You can see in progress and upcoming work on our [Blueprint Trello board](https://trello.com/b/AoJ0Tpd2/blueprint).
 
 ## Setup & Installation
 
-This package has a few dependencies not included in the pacakge itself. They are as follows.
+This package has a few dependencies that are not included in the package itself. They are as follows:
 
 - Bootstrap v4
 - FontAwesome 5
-- Up to date stylesheets from the UX Team
+- Up-to-date stylesheets from the UX Team
 
 Once you have all these, you can run `npm install epsilon-blueprint` to install the package to your node_modules.
 

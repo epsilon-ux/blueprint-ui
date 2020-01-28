@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BaseTemplateComponent implements OnInit {
 
-  @Input() secondaryNav: {
+  @Input() navSecondary: {
     title: string;
     items: {
       route: string;
