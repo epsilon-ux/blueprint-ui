@@ -10,7 +10,11 @@ tr[role="button"]
     {
         outline: 0;
         box-shadow: $box-shadow-focus-default;
-        z-index: 1;
+
+        &:not(.skip-link)
+        {
+            z-index: 1;
+        }
     }
 }
 
