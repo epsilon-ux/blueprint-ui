@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { ComponentsModule } from './modules/components/components.module';
+import { ComponentLibraryModule } from './modules/component-library/component-library.module';
 import { AppComponent } from './app.component';
 
 
@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ComponentsModule
+    ComponentLibraryModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-secondary-nav',
-  templateUrl: './secondary-nav.component.html',
-  styleUrls: ['./secondary-nav.component.scss']
+  selector: 'app-nav-secondary',
+  templateUrl: './nav-secondary.component.html',
+  styleUrls: ['./nav-secondary.component.scss']
 })
-export class SecondaryNavComponent implements OnInit {
+export class NavSecondaryComponent implements OnInit {
   isNavCollapsed = false;
 
   @Input() title = '';

@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BaseTemplateComponent } from './base-template.component';
-import { PrimaryNavComponent } from './primary-nav/primary-nav.component';
-import { SecondaryNavComponent } from './secondary-nav/secondary-nav.component';
+import { NavPrimaryComponent } from './nav-primary/nav-primary.component';
+import { NavSecondaryComponent } from './nav-secondary/nav-secondary.component';
 
 
 @NgModule({
   declarations: [
     BaseTemplateComponent,
-    PrimaryNavComponent,
-    SecondaryNavComponent
+    NavPrimaryComponent,
+    NavSecondaryComponent
   ],
   imports: [
     CommonModule,

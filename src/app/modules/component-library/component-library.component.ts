@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-components',
-  templateUrl: './components.component.html',
-  styleUrls: ['./components.component.scss']
+  selector: 'app-component-library',
+  templateUrl: './component-library.component.html',
+  styleUrls: ['./component-library.component.scss']
 })
-export class ComponentsComponent {
+export class ComponentLibraryComponent {
 
   components = {
     title: 'Components',
     items: [
       {
-        route: './/table',
+        route: './table',
         text: 'Table',
       },
       {

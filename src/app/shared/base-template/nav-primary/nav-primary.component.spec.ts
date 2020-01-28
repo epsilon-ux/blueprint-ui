@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SecondaryNavComponent } from './secondary-nav.component';
+import { NavPrimaryComponent } from './nav-primary.component';
 
-describe('SecondaryNavComponent', () => {
-  let component: SecondaryNavComponent;
-  let fixture: ComponentFixture<SecondaryNavComponent>;
+describe('NavPrimaryComponent', () => {
+  let component: NavPrimaryComponent;
+  let fixture: ComponentFixture<NavPrimaryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SecondaryNavComponent ]
+      declarations: [ NavPrimaryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SecondaryNavComponent);
+    fixture = TestBed.createComponent(NavPrimaryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,9 +5,9 @@
     </button>
   </div>
   <p class="nav-secondary-title">{{ title }}</p>
-    <ul id="navSecondaryList" class="nav-secondary-nav-list">
-      <li *ngFor="let item of items" class="nav-secondary-nav-item">
-        <a routerLink="{{ item.route }}" class="nav-secondary-nav-link link-primary level-1">{{ item.text }}</a>
-      </li>
-    </ul>
+  <ul id="navSecondaryList" class="nav-secondary-nav-list">
+    <li *ngFor="let item of items" class="nav-secondary-nav-item">
+      <a routerLink="{{ item.route }}" class="nav-secondary-nav-link link-primary level-1">{{ item.text }}</a>
+    </li>
+  </ul>
 </nav>

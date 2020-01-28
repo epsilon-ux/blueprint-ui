@@ -1,10 +1,9 @@
-<app-primary-nav></app-primary-nav>
+<app-nav-primary></app-nav-primary>
 <div class="app-body">
-  <app-secondary-nav
-    class="nav-secondary"
+  <app-nav-secondary
     [title]="secondaryNav.title"
     [items]="secondaryNav.items"
-  ></app-secondary-nav>
+  ></app-nav-secondary>
   <main id="mainContent" class="app-main">
     <ng-content></ng-content>
   </main>
