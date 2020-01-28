@@ -11,11 +11,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {}
 
-  handleSearch(e) {
-    console.log(e);
-  }
+  handleSearch(e) {}
 
-  handleClearSearch(e) {
-    console.log(e);
-  }
+  handleClearSearch(e) {}
 }

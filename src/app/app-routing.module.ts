@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TableComponent } from './components/table/table.component';
-import { DummyObjectComponent } from './components/table/dummy-object/dummy-object.component';
-import { SearchComponent } from './components/search/search.component';
+import { ComponentLibraryComponent } from './modules/component-library/component-library.component';
 
 const routes: Routes = [
-  { path: 'table', component: TableComponent },
-  { path: 'table/object/:id', component: DummyObjectComponent },
-  { path: 'table/object/edit/:id', component: DummyObjectComponent },
-  
-  { path: 'search', component: SearchComponent },
-  
-  { path: '', redirectTo: 'table', pathMatch: 'full' }
+  { path: 'components', loadChildren: () => import('./modules/component-library/component-library.module')
+  .then(m => m.ComponentLibraryModule) },
+  { path: '', pathMatch: 'full', redirectTo: 'components' },
+  { path: '**', component: ComponentLibraryComponent } // TODO: create a componentNotFound page for this instance
 ];
 
 @NgModule({

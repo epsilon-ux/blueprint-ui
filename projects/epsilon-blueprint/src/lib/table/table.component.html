@@ -1,112 +1,110 @@
-<div class="container-fluid">
-  <div class="row mb-3">
-    <div class="col-auto">
-      <!-- Table Filters -->
-      <bp-search
-        (search)="search($event)"
-        (clearSearch)="clearSearch()"
-      ></bp-search>
-    </div>
-    <ng-content select="[table-filters]"></ng-content>
+<div class="row mb-3">
+  <div class="col-auto">
+    <!-- Table Filters -->
+    <bp-search
+      (search)="search($event)"
+      (clearSearch)="clearSearch()"
+    ></bp-search>
   </div>
-  <div class="table-responsive">
-    <table
-      class="table"
-      [ngClass]="densityClass"
-      [class.table-selectable-rows]="properties.hasSelectableRows"
-    >
-      <!-- Table Headings -->
-      <thead>
-        <tr>
-          <ng-container *ngIf="properties.data.thead">
-            <th *ngIf="properties.hasSelectableRows" class="th-selectable">
-              <input
-                type="checkbox"
-                id="selectAllRows"
-                #selectAllRowsRef
-                (change)="onSelectAllRows($event)"
-              />
-              <label for="selectAllRows" class="sr-only">Select all rows</label>
+  <ng-content select="[table-filters]"></ng-content>
+</div>
+<div class="table-responsive">
+  <table
+    class="table"
+    [ngClass]="densityClass"
+    [class.table-selectable-rows]="properties.hasSelectableRows"
+  >
+    <!-- Table Headings -->
+    <thead>
+      <tr>
+        <ng-container *ngIf="properties.data.thead">
+          <th *ngIf="properties.hasSelectableRows" class="th-selectable">
+            <input
+              type="checkbox"
+              id="selectAllRows"
+              #selectAllRowsRef
+              (change)="onSelectAllRows($event)"
+            />
+            <label for="selectAllRows" class="sr-only">Select all rows</label>
+          </th>
+          <th
+            scope="col"
+            [hidden]="!column.isColumnDisplayed"
+            *ngFor="let column of properties.data.thead; let i = index"
+            [attr.aria-sort]="isSortActive ? getAriaSortOrder(i) : 'null'"
+          >
+            <button class="th-sortable" (click)="applySort(column.key, i)">
+              {{ column.headerText }}
+            </button>
+          </th>
+          <ng-container *ngIf="properties.actions">
+            <th
+              *ngIf="properties.actions.length < 3"
+              scope="col"
+              class="th-not-sortable"
+            >
+              Actions
             </th>
             <th
+              *ngIf="properties.actions.length >= 3"
               scope="col"
-              [hidden]="!column.isColumnDisplayed"
-              *ngFor="let column of properties.data.thead; let i = index"
-              [attr.aria-sort]="isSortActive ? getAriaSortOrder(i) : 'null'"
+              class="th-not-sortable more-actions"
             >
-              <button class="th-sortable" (click)="applySort(column.key, i)">
-                {{ column.headerText }}
-              </button>
+              <span class="sr-only">Actions</span>
             </th>
-            <ng-container *ngIf="properties.actions">
-              <th
-                *ngIf="properties.actions.length < 3"
-                scope="col"
-                class="th-not-sortable"
-              >
-                Actions
-              </th>
-              <th
-                *ngIf="properties.actions.length >= 3"
-                scope="col"
-                class="th-not-sortable more-actions"
-              >
-                <span class="sr-only">Actions</span>
-              </th>
-            </ng-container>
           </ng-container>
-        </tr>
-      </thead>
+        </ng-container>
+      </tr>
+    </thead>
 
-      <!-- Table Loading -->
-      <tbody *ngIf="isDataLoading; else loaded">
+    <!-- Table Loading -->
+    <tbody *ngIf="isDataLoading; else loaded">
+      <tr class="table-empty">
+        <td colspan="100%">
+          <i class="fa fa-spinner fa-spin icon-left" aria-hidden="true"></i>
+          Loading data
+        </td>
+      </tr>
+    </tbody>
+
+    <!-- Table Loaded -->
+    <ng-template #loaded>
+      <tbody
+        table-body
+        *ngIf="tableData.length > 0; else noColumnData"
+        [tableData]="tableData"
+        [properties]="properties"
+        [pageData]="pageData"
+        (action)="emitAction($event)"
+        (selectedRowsAction)="onSelectRow($event)"
+      ></tbody>
+    </ng-template>
+
+    <!-- Table Empty -->
+    <ng-template #noColumnData>
+      <tbody>
         <tr class="table-empty">
           <td colspan="100%">
-            <i class="fa fa-spinner fa-spin icon-left" aria-hidden="true"></i>
-            Loading data
+            No data available
           </td>
         </tr>
       </tbody>
-
-      <!-- Table Loaded -->
-      <ng-template #loaded>
-        <tbody
-          table-body
-          *ngIf="tableData.length > 0; else noColumnData"
-          [tableData]="tableData"
-          [properties]="properties"
-          [pageData]="pageData"
-          (action)="emitAction($event)"
-          (selectedRowsAction)="onSelectRow($event)"
-        ></tbody>
-      </ng-template>
-
-      <!-- Table Empty -->
-      <ng-template #noColumnData>
-        <tbody>
-          <tr class="table-empty">
-            <td colspan="100%">
-              No data available
-            </td>
-          </tr>
-        </tbody>
-      </ng-template>
-    </table>
-  </div>
-
-  <!-- Table Footer -->
-  <app-table-footer
-    *ngIf="totalRecords"
-    class="row justify-content-center justify-content-lg-start align-items-center mb-3"
-    [totalRecords]="totalRecords"
-    [defaultNumberOfRows]="defaultNumberOfRows"
-    [pageBuffer]="pageBuffer"
-    [pageNumber]="currentPage"
-    [showColumnSelector]="properties.hasColumnSelector"
-    [columnInfo]="properties.data.thead"
-    [defaultSortColumnName]="properties.sort.defaultSortedColumn"
-    (pageData)="paginate($event)"
-    (displayDensityEmitter)="setDisplayDensity($event)"
-    [showDisplayDensity]="properties.hasDisplayDensity"
-  ></app-table-footer>
+    </ng-template>
+  </table>
 </div>
+
+<!-- Table Footer -->
+<app-table-footer
+  *ngIf="totalRecords"
+  class="row justify-content-center justify-content-lg-start align-items-center mb-3"
+  [totalRecords]="totalRecords"
+  [defaultNumberOfRows]="defaultNumberOfRows"
+  [pageBuffer]="pageBuffer"
+  [pageNumber]="currentPage"
+  [showColumnSelector]="properties.hasColumnSelector"
+  [columnInfo]="properties.data.thead"
+  [defaultSortColumnName]="properties.sort.defaultSortedColumn"
+  (pageData)="paginate($event)"
+  (displayDensityEmitter)="setDisplayDensity($event)"
+  [showDisplayDensity]="properties.hasDisplayDensity"
+></app-table-footer>

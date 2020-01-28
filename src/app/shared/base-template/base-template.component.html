@@ -1,0 +1,11 @@
+<a href="#mainContent" class="skip-link">Skip to main content</a>
+<app-nav-primary></app-nav-primary>
+<div class="app-body">
+  <app-nav-secondary
+    [title]="navSecondary.title"
+    [items]="navSecondary.items"
+  ></app-nav-secondary>
+  <main id="mainContent" class="app-main">
+    <ng-content></ng-content>
+  </main>
+</div>

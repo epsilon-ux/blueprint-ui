@@ -10,7 +10,11 @@ tr[role="button"]
     {
         outline: 0;
         box-shadow: $box-shadow-focus-default;
-        z-index: 1;
+
+        &:not(.skip-link)
+        {
+            z-index: 1;
+        }
     }
 }
 
@@ -71,6 +75,11 @@ tr[role="button"]
     color: $coconut;
     background-color: $accent-color-primary;
     z-index: 1;
+
+    &:hover
+    {
+        box-shadow: none;
+    }
 
     &.ng-option-disabled
     {
