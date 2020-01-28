@@ -21,19 +21,6 @@ export class ComponentLibraryComponent {
     ]
   };
 
-  // TODO: Uncommment when adding search
-  /* filteredComponents = [...this.components];
-  searchComponents(e) {
-    this.filteredComponents = this.components.filter(component => (
-        component.text.toLowerCase().includes(e.toLowerCase())
-      )
-    );
-  }
-
-  clearSearch(e) {
-    this.filteredComponents = [...this.components];
-  } */
-
   constructor() {}
 
 }
