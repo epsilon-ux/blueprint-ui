@@ -11,16 +11,16 @@ export class ComponentLibraryComponent {
     title: 'Components',
     items: [
       {
-        route: './table',
-        text: 'Table',
+        route: './landing-page-header',
+        text: 'Landing Page Header',
       },
       {
         route: './search',
         text: 'Search',
       },
       {
-        route: './landing-page-header',
-        text: 'Landing Page Header',
+        route: './table',
+        text: 'Table',
       },
     ]
   };
