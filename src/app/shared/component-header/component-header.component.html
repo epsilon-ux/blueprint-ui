@@ -1,0 +1,28 @@
+<bp-landing-page-header [headerText]="headerText" [showButton]="false">
+  <div tab-items *ngIf="hasComponent || hasDocs">
+    <div class="row">
+      <div class="col">
+        <button
+          *ngIf="hasComponent"
+          class="tab"
+          routerLink="/components/{{ route }}"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Component
+        </button>
+        <button
+          *ngIf="hasDocs"
+          class="tab"
+          routerLink="/components/{{ route }}/docs"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Docs
+        </button>
+        <!-- TODO: Add Accessibility Tab -->
+        <!-- TODO: Add Inputs Tab -->
+      </div>
+    </div>
+  </div>
+</bp-landing-page-header>

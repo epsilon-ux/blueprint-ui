@@ -5,6 +5,7 @@ import { TableModule, SearchModule, LandingPageHeaderModule } from 'epsilon-blue
 
 import { ComponentsRoutingModule } from './component-library-routing.module';
 import { BaseTemplateModule } from 'src/app/shared/base-template/base-template.module';
+import { ComponentHeadereModule } from 'src/app/shared/component-header/component-header.module';
 
 import { ComponentLibraryComponent } from './component-library.component';
 import { OverviewComponent } from './overview/overview.component';
@@ -27,7 +28,7 @@ import { LandingPageHeaderComponent } from './library/landing-page-header/landin
   imports: [
     CommonModule,
     BaseTemplateModule,
-    LandingPageHeaderModule,
+    ComponentHeadereModule,
     ComponentsRoutingModule,
     TableModule,
     SearchModule,
