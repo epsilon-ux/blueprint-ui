@@ -2,7 +2,7 @@
   <div tab-items *ngIf="hasComponent || hasDocs">
     <div class="row">
       <div class="col">
-        <button
+        <a
           *ngIf="hasComponent"
           class="tab"
           routerLink="/components/{{ route }}"
@@ -10,8 +10,8 @@
           [routerLinkActiveOptions]="{ exact: true }"
         >
           Component
-        </button>
-        <button
+        </a>
+        <a
           *ngIf="hasDocs"
           class="tab"
           routerLink="/components/{{ route }}/docs"
@@ -19,7 +19,7 @@
           [routerLinkActiveOptions]="{ exact: true }"
         >
           Docs
-        </button>
+        </a>
         <!-- TODO: Add Accessibility Tab -->
         <!-- TODO: Add Inputs Tab -->
       </div>
