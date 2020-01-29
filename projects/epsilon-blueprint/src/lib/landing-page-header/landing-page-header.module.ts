@@ -1,0 +1,14 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { LandingPageHeaderComponent } from './landing-page-header.component';
+
+@NgModule({
+  declarations: [
+    LandingPageHeaderComponent
+  ],
+  imports: [CommonModule],
+  exports: [LandingPageHeaderComponent],
+  providers: [],
+  bootstrap: [LandingPageHeaderComponent]
+})
+export class LandingPageHeaderModule {}

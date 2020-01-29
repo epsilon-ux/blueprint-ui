@@ -6,6 +6,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { TableComponent } from './library/table/table.component';
 import { DummyObjectComponent } from './library/table/dummy-object/dummy-object.component';
 import { SearchComponent } from './library/search/search.component';
+import { LandingPageHeaderComponent } from './library/landing-page-header/landing-page-header.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,8 @@ const routes: Routes = [
     { path: 'table/object/edit/:id', component: DummyObjectComponent },
   
     { path: 'search', component: SearchComponent },
+
+    { path: 'landing-page-header', component: LandingPageHeaderComponent },
   ]},
   { path: '**', redirectTo: 'components', pathMatch: 'full' }
 ];

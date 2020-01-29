@@ -1,0 +1,9 @@
+@import '../global-variables';
+
+.landing-page-header
+{
+    margin-bottom: 20px;
+    border-bottom: 1px solid $border-color-primary;
+    padding: 25px 20px 0;
+    background: $cloud;
+}

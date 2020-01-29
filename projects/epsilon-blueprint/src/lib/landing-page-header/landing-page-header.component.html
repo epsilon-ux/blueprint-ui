@@ -1,0 +1,44 @@
+<div class="landing-page-header container-fluid">
+  <div class="row mb-4">
+    <div class="col">
+      <h1>{{ headerText }}</h1>
+    </div>
+    <div *ngIf="showButton" class="col text-right">
+      <div *ngIf="buttonElement === 'dropdown'" dropdown class="dropdown">
+        <button
+          dropdownToggle
+          type="button"
+          id="createProcessDropdown"
+          class="btn btn-primary btn-wide dropdown-toggle"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{ buttonText }}
+        </button>
+        <div
+          class="dropdown-menu dropdown-menu-right btn-wide"
+          aria-labelledby="createProcessDropdown"
+        >
+          <ng-content select="[dropdown-items]"></ng-content>
+        </div>
+      </div>
+      <button
+        *ngIf="buttonElement === 'button'"
+        type="button"
+        class="btn btn-primary btn-wide"
+        (click)="onButtonClick()"
+      >
+        {{ buttonText }}
+      </button>
+      <a
+        *ngIf="buttonElement === 'a'"
+        class="btn btn-primary btn-wide"
+        [attr.href]="href"
+      >
+        {{ buttonText }}
+      </a>
+    </div>
+  </div>
+  <ng-content select="[tab-items]"></ng-content>
+</div>

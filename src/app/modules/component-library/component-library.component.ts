@@ -18,6 +18,10 @@ export class ComponentLibraryComponent {
         route: './search',
         text: 'Search',
       },
+      {
+        route: './landing-page-header',
+        text: 'Landing Page Header',
+      },
     ]
   };
 
