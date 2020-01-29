@@ -1,18 +1,18 @@
 <app-column-selector
-  class="col-12 col-sm-auto col-lg-auto d-flex justify-content-center mb-3 mb-lg-0"
+  class="col-12 col-sm-auto d-flex justify-content-center mb-3 mb-xl-0"
   [showColumnSelector]="showColumnSelector"
   [columnInfo]="columnInfo"
   [defaultSortColumnName]="defaultSortColumnName"
 ></app-column-selector>
 
 <app-display-density
-  class="col-12 col-sm-auto col-lg-auto d-flex justify-content-center mb-3 mb-lg-0"
+  class="col-12 col-sm-auto d-flex justify-content-center mb-3 mb-xl-0"
   (displayDensityEmitter)="setDisplayDensity($event)"
   [showDisplayDensity]="showDisplayDensity"
 ></app-display-density>
 
 <app-pagination
-  class="col-12 col-lg-auto ml-lg-auto"
+  class="col-12 col-xl-auto ml-xl-auto"
   [totalRecords]="totalRecords"
   [defaultNumberOfRows]="defaultNumberOfRows"
   [pageBuffer]="pageBuffer"
