@@ -1,19 +1,21 @@
-<div class="pagination-wrapper">
-  <span class="pagination-records">
-    <span class="font-weight-semi-bold">{{ totalRecords }}</span> results
-  </span>
-  <label for="numberOfRows" class="sr-only">Number of Rows per Page</label>
-  <ng-select
-    labelForId="numberOfRows"
-    name="numberOfRows"
-    [items]="numberOfRowsOptions"
-    bindLabel="optionText"
-    bindValue="optionValue"
-    [(ngModel)]="numberOfRows"
-    [searchable]="false"
-    [clearable]="false"
-    (change)="paginate(currentPage)"
-  ></ng-select>
+<div class="pagination-wrapper flex-column flex-sm-row">
+  <div class="d-flex align-items-center mb-3 mb-sm-0">
+    <span class="pagination-records">
+      <span class="font-weight-semi-bold">{{ totalRecords }}</span> results
+    </span>
+    <label for="numberOfRows" class="sr-only">Number of Rows per Page</label>
+    <ng-select
+      labelForId="numberOfRows"
+      name="numberOfRows"
+      [items]="numberOfRowsOptions"
+      bindLabel="optionText"
+      bindValue="optionValue"
+      [(ngModel)]="numberOfRows"
+      [searchable]="false"
+      [clearable]="false"
+      (change)="paginate(currentPage)"
+    ></ng-select>
+  </div>
   <div class="pagination-buttons">
     <button
       class="btn-pager btn-pager-icon"
