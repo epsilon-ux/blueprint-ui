@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/epsilon-ux/blueprint-ui.git"
   },
+  "homepage": "https://epsilon-blueprint.netlify.com",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
