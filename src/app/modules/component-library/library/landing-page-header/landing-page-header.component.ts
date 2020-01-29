@@ -15,8 +15,4 @@ export class LandingPageHeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  handleSearch(e) {}
-
-  handleClearSearch(e) {}
 }
