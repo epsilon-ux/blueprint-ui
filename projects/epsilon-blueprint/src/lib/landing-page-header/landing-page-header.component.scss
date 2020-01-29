@@ -2,8 +2,13 @@
 
 .landing-page-header
 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-bottom: 1px solid $border-color-primary;
-    padding: 25px 20px 0;
+    padding-top: 25px;
     background: $cloud;
+}
+
+.object-dropdown
+{
+    min-width: 150px;
 }

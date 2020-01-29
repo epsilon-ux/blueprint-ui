@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class LandingPageHeaderComponent implements OnInit {
 
   @Input()
-  headerText = '';
+  headingText = '';
 
   @Input()
   buttonText = '';
@@ -20,7 +20,7 @@ export class LandingPageHeaderComponent implements OnInit {
   buttonElement = 'button'; // Expects either 'button', 'dropdown', or 'a'
 
   @Input()
-  href = '';
+  href = ''; // Only required when buttonElement = 'a'
 
   @Output()
   buttonClick = new EventEmitter();

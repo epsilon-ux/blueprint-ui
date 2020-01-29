@@ -7,18 +7,18 @@
     padding: 10px;
     background: transparent;
     color: $font-color-secondary;
-    font-size: 15px;
+    font-size: $font-size-display2;
     font-weight: $font-weight-regular;
-}
-
-.tab:hover
-{
-    font-weight: $font-weight-semi-bold;
-}
-
-.tab.active
-{
-    border-bottom: 5px solid $accent-color-secondary;
-    color: $font-color-primary;
-    font-weight: $font-weight-semi-bold;
+    
+    &:hover
+    {
+        font-weight: $font-weight-semi-bold;
+    }
+    
+    &.active
+    {
+        border-bottom: 5px solid $accent-color-secondary;
+        color: $font-color-primary;
+        font-weight: $font-weight-semi-bold;
+    }
 }

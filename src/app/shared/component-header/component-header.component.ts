@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ComponentHeaderComponent implements OnInit {
 
-  @Input() headerText: string;
+  @Input() headingText: string;
   @Input() route: string; // Only needed if tabs present, does not include /components/
   @Input() hasComponent = true;
   @Input() hasDocs = true;

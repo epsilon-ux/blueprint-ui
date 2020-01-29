@@ -15,4 +15,4 @@ import { LandingPageHeaderModule } from 'epsilon-blueprint';
   ],
   exports: [ComponentHeaderComponent]
 })
-export class ComponentHeadereModule { }
+export class ComponentHeaderModule { }
