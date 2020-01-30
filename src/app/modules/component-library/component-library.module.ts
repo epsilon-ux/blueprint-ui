@@ -12,8 +12,6 @@ import { OverviewComponent } from './overview/overview.component';
 import { TabledataService } from './library/table/service/table-data.service';
 import { TableComponent } from './library/table/table.component';
 import { DummyObjectComponent } from './library/table/dummy-object/dummy-object.component';
-import { SearchComponent } from './library/search/search.component';
-
 
 @NgModule({
   declarations: [
@@ -21,7 +19,6 @@ import { SearchComponent } from './library/search/search.component';
     OverviewComponent,
     TableComponent,
     DummyObjectComponent,
-    SearchComponent
   ],
   imports: [
     CommonModule,

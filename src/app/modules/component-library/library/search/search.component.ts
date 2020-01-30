@@ -5,13 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit {
-  isSearching = false;
 
   constructor() {}
 
   ngOnInit() {}
-
-  handleSearch(e) {}
-
-  handleClearSearch(e) {}
 }
