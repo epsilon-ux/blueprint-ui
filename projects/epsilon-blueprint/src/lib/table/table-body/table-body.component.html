@@ -48,29 +48,59 @@
         </ng-template>
       </ng-container>
       <ng-container *ngIf="formData" [formGroup]="formData.controls.controlsList">
-        <ng-container [formArrayName]="i" *ngSwitchCase="columnType.FIELD">
+        <ng-container [formArrayName]="rowData[properties.data.rowId] - 1" *ngSwitchCase="columnType.FIELD">
            <ng-container *ngFor="let formControl of properties.data.formControl">
-            <ng-select
-              *ngIf="formControl.key === column.key && (formControl.formControlType === 'single-select' || formControl.formControlType === 'multi-select')"
-              [items]="formControl.dropdownOptions"
-              [multiple]="formControl.formControlType === 'multi-select'"
-              placeholder="{{formControl.placeholder}}"
-              bindLabel="optionText"
-              bindValue="optionValue"
-              [formControlName]="column.key"
-              >
-            </ng-select>
-            <ng-container *ngIf="formControl.key === column.key && formControl.formControlType === 'text'">
-              <label [for]="column.key" class="form-check-label">
-                <span class="sr-only">
-                  {{formControl.label}}
-                </span>
+            <ng-container *ngIf="formControl.key === column.key && (formControl.formControlType === 'single-select' || formControl.formControlType === 'multi-select')">
+              <label 
+                [for]="column.key + (rowData[properties.data.rowId] - 1)"
+                [ngClass]="!formControl.isLabelVisible ? 'sr-only' : ''">
+                {{formControl.label}}
               </label>
-              <input [type]="formControl.formControlType" class="form-control" [formControlName]="column.key">
+              <ng-select
+                [id]="column.key + (rowData[properties.data.rowId] - 1)"
+                [items]="formControl.dropdownOptions"
+                [multiple]="formControl.formControlType === 'multi-select'"
+                [readonly]="formControl.readOnly"
+                [placeholder]="formControl.placeholder"
+                [formControlName]="column.key"
+                bindLabel="optionText"
+                bindValue="optionValue">
+              </ng-select>
+              <div
+                *ngIf="getControl((rowData[properties.data.rowId] - 1), column.key).errors && 
+                getControl((rowData[properties.data.rowId] - 1), column.key).touched && 
+                getControl((rowData[properties.data.rowId] - 1), column.key).errors.required">
+                {{formControl.errorMessage}}
+              </div>
+            </ng-container>
+            <ng-container *ngIf="formControl.key === column.key && formControl.formControlType === 'text'">
+              <label
+                [for]="column.key + (rowData[properties.data.rowId] - 1)" 
+                [ngClass]="!formControl.isLabelVisible ? 'sr-only' : ''">
+                {{formControl.label}}
+              </label>
+              <input
+                [id]="column.key + (rowData[properties.data.rowId] - 1)"
+                [type]="formControl.formControlType"
+                [readonly]="formControl.readOnly"
+                [placeholder]="formControl.placeholder"
+                [formControlName]="column.key">
+              <div
+                *ngIf="getControl((rowData[properties.data.rowId] - 1), column.key).errors && 
+                getControl((rowData[properties.data.rowId] - 1), column.key).touched && 
+                getControl((rowData[properties.data.rowId] - 1), column.key).errors.required">
+                {{formControl.errorMessage}}
+              </div>
             </ng-container>
             <ng-container *ngIf="formControl.key === column.key && formControl.formControlType === 'checkbox'">
-              <input type="checkbox" class="form-check-input" [formControlName]="column.key" [id]="column.key">
-              <label [for]="column.key" class="form-check-label" [ngClass]="!formControl.isLabelVisible ? 'sr-only' : ''">
+              <input
+                [id]="column.key + (rowData[properties.data.rowId] - 1)"
+                [formControlName]="column.key"
+                type="checkbox"
+                class="form-check-input">
+              <label
+                [for]="column.key + (rowData[properties.data.rowId] - 1)"
+                [ngClass]="!formControl.isLabelVisible ? 'sr-only' : ''">
                 {{formControl.label}}
               </label>
             </ng-container>

@@ -52,7 +52,8 @@ export class TableComponent implements OnInit, OnDestroy {
         {
           key: 'status',
           formControlType: 'single-select',   // can be 'multi-select'
-          isLabelVisible: false,
+          isLabelVisible: true,
+          label: 'Status',
           placeholder: 'Select a status',   // string
           readOnly: false,   // true or false
           errorMessage: 'Please select a status',   // string
@@ -67,6 +68,7 @@ export class TableComponent implements OnInit, OnDestroy {
           key: 'amount',
           formControlType: 'single-select',   // can be 'multi-select'
           isLabelVisible: false,
+          label: 'Amount',
           placeholder: 'Select an amount',   // string
           readOnly: false,   // true or false
           errorMessage: 'Please select an amount',   // string

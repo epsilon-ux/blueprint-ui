@@ -9,7 +9,7 @@ import {
   ElementRef,
   TemplateRef
 } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormArray } from '@angular/forms';
 import { Column, ColumnType } from '../models/column';
 import { parseLookupString } from '../helpers';
 import Properties from '../models/properties';
@@ -72,5 +72,10 @@ export class TableBodyComponent implements OnInit {
   // Toggle the expanded row
   toggleExpandRow(row) {
     this.isRowExpanded[row[this.properties.data.rowId]] = !this.isRowExpanded[row[this.properties.data.rowId]];
+  }
+
+  getControl(index: number, key: string) {
+    const controlsList = <FormArray>this.formData.controls['controlsList'];
+    return controlsList.controls[index].get(key);
   }
 }
