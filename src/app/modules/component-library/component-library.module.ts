@@ -13,7 +13,6 @@ import { TabledataService } from './library/table/service/table-data.service';
 import { TableComponent } from './library/table/table.component';
 import { DummyObjectComponent } from './library/table/dummy-object/dummy-object.component';
 import { SearchComponent } from './library/search/search.component';
-import { LandingPageHeaderComponent } from './library/landing-page-header/landing-page-header.component';
 
 
 @NgModule({
@@ -22,8 +21,7 @@ import { LandingPageHeaderComponent } from './library/landing-page-header/landin
     OverviewComponent,
     TableComponent,
     DummyObjectComponent,
-    SearchComponent,
-    LandingPageHeaderComponent
+    SearchComponent
   ],
   imports: [
     CommonModule,
