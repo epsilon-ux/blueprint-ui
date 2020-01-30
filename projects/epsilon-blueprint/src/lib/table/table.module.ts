@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SearchModule } from '../search/search.module';
 import { TableComponent } from './table.component';
@@ -22,7 +22,7 @@ import { ActionsComponent } from './table-body/table-columns/actions/actions.com
     ColumnSelectorComponent,
     ActionsComponent
   ],
-  imports: [CommonModule, FormsModule, NgSelectModule, SearchModule, RouterModule.forChild([])],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, NgSelectModule, SearchModule, RouterModule.forChild([])],
   exports: [TableComponent],
   providers: [],
   bootstrap: [TableComponent]

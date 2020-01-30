@@ -9,7 +9,13 @@
     </div>
     <ng-content select="[table-filters]"></ng-content>
   </div>
-  <div class="table-responsive">
+  <ng-container *ngIf="formData; else tableTemplate">
+    <form [formGroup]="formData" class="table-responsive">
+      <ng-container *ngTemplateOutlet="tableTemplate"></ng-container>
+    </form>
+  </ng-container>
+
+  <ng-template #tableTemplate>
     <table
       class="table"
       [ngClass]="densityClass"
@@ -79,6 +85,7 @@
           [properties]="properties"
           [pageData]="pageData"
           [expandableRowTemplate]="expandableRowTemplate"
+          [formData]="formData"
           (action)="emitAction($event)"
           (selectedRowsAction)="onSelectRow($event)"
         ></tbody>
@@ -95,7 +102,7 @@
         </tbody>
       </ng-template>
     </table>
-  </div>
+  </ng-template>
 
   <!-- Table Footer -->
   <app-table-footer

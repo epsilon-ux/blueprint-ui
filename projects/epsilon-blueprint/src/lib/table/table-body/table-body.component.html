@@ -1,4 +1,4 @@
-<ng-container *ngFor="let rowData of tableData">
+<ng-container *ngFor="let rowData of tableData; let i = index;">
   <tr>
     <!-- Expandable Row icons -->
     <td *ngIf="properties.hasExpandableRows">
@@ -46,6 +46,38 @@
             {{ rowData[column.key] }}
           </button>
         </ng-template>
+      </ng-container>
+      <ng-container *ngIf="formData" [formGroup]="formData.controls.controlsList">
+        <ng-container [formArrayName]="i" *ngSwitchCase="columnType.FIELD">
+           <ng-container *ngFor="let formControl of properties.data.formControl">
+            <ng-select
+              *ngIf="formControl.key === column.key && (formControl.formControlType === 'single-select' || formControl.formControlType === 'multi-select')"
+              [items]="formControl.dropdownOptions"
+              [multiple]="formControl.formControlType === 'multi-select'"
+              placeholder="{{formControl.placeholder}}"
+              bindLabel="optionText"
+              bindValue="optionValue"
+              [formControlName]="column.key"
+              >
+            </ng-select>
+            <ng-container *ngIf="formControl.key === column.key && formControl.formControlType === 'text'">
+              <label [for]="column.key" class="form-check-label">
+                <span class="sr-only">
+                  {{column.label}}
+                </span>
+              </label>
+              <input [type]="formControl.formControlType" class="form-control" [formControlName]="column.key">
+            </ng-container>
+            <ng-container *ngIf="formControl.key === column.key && formControl.formControlType === 'checkbox'">
+              <input type="checkbox" class="form-check-input" [formControlName]="column.key">
+              <label [for]="column.key" class="form-check-label">
+                <span class="sr-only">
+                  {{column.label}}
+                </span>
+              </label>
+            </ng-container>
+          </ng-container>
+        </ng-container>
       </ng-container>
       <!-- Status Indicator Column -->
       <span *ngSwitchCase="columnType.STATUS" class="status-indicator">

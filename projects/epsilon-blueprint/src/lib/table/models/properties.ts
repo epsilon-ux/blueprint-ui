@@ -9,6 +9,16 @@ export default interface Properties {
       type: ColumnType
     }[];
     rowId: string;
+    formControl: {
+      key: string,
+      formControlType: string,
+      label?: string,
+      isLabelVisible?: boolean,
+      placeholder?: string,
+      readOnly?: boolean,
+      errorMessage?: string,
+      dropdownOptions?: Array<{ optionText: string, optionValue: string | number }> // for types: single-select and multi-select
+    }[];
   };
   search:  {
     hasSearch: boolean;

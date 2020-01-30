@@ -9,6 +9,7 @@ import {
   ElementRef,
   TemplateRef
 } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Column, ColumnType } from '../models/column';
 import { parseLookupString } from '../helpers';
 import Properties from '../models/properties';
@@ -24,6 +25,7 @@ export class TableBodyComponent implements OnInit {
   @Input() properties: Properties;
   @Input() pageData;
   @Input() expandableRowTemplate: TemplateRef<any>;
+  @Input() formData: FormGroup;
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();

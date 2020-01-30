@@ -5,12 +5,9 @@ export class Column {
     type?: ColumnType;
   }
   export enum ColumnType {
-    ID,
     TEXT,
     LINK,
     DATE,
-    BOOLEAN,
-    INPUT,
     STATUS,
-    DROPDOWN
+    FIELD
   }
