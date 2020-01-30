@@ -9,8 +9,4 @@ export class SearchComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  handleSearch(e) {}
-
-  handleClearSearch(e) {}
 }
