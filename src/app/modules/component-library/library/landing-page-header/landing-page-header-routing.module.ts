@@ -7,7 +7,6 @@ import { UsageComponent } from './usage/usage.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
-
 const routes: Routes = [
   { path: '', component: LandingPageHeaderComponent, children: [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
