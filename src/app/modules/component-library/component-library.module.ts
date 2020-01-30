@@ -10,15 +10,11 @@ import { ComponentHeaderModule } from 'src/app/shared/component-header/component
 import { ComponentLibraryComponent } from './component-library.component';
 import { OverviewComponent } from './overview/overview.component';
 import { TabledataService } from './library/table/service/table-data.service';
-import { TableComponent } from './library/table/table.component';
-import { DummyObjectComponent } from './library/table/dummy-object/dummy-object.component';
 
 @NgModule({
   declarations: [
     ComponentLibraryComponent,
-    OverviewComponent,
-    TableComponent,
-    DummyObjectComponent,
+    OverviewComponent
   ],
   imports: [
     CommonModule,
