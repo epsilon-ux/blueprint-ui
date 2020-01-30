@@ -13,7 +13,6 @@ import { TabledataService } from './library/table/service/table-data.service';
 import { TableComponent } from './library/table/table.component';
 import { DummyObjectComponent } from './library/table/dummy-object/dummy-object.component';
 
-
 @NgModule({
   declarations: [
     ComponentLibraryComponent,

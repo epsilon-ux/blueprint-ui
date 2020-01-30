@@ -6,7 +6,6 @@ import { OverviewComponent } from './overview/overview.component';
 import { TableComponent } from './library/table/table.component';
 import { DummyObjectComponent } from './library/table/dummy-object/dummy-object.component';
 
-
 const routes: Routes = [
   { path: '', component: ComponentLibraryComponent, children: [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
