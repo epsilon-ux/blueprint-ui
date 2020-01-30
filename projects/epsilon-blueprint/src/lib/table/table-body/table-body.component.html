@@ -63,17 +63,15 @@
             <ng-container *ngIf="formControl.key === column.key && formControl.formControlType === 'text'">
               <label [for]="column.key" class="form-check-label">
                 <span class="sr-only">
-                  {{column.label}}
+                  {{formControl.label}}
                 </span>
               </label>
               <input [type]="formControl.formControlType" class="form-control" [formControlName]="column.key">
             </ng-container>
             <ng-container *ngIf="formControl.key === column.key && formControl.formControlType === 'checkbox'">
-              <input type="checkbox" class="form-check-input" [formControlName]="column.key">
-              <label [for]="column.key" class="form-check-label">
-                <span class="sr-only">
-                  {{column.label}}
-                </span>
+              <input type="checkbox" class="form-check-input" [formControlName]="column.key" [id]="column.key">
+              <label [for]="column.key" class="form-check-label" [ngClass]="!formControl.isLabelVisible ? 'sr-only' : ''">
+                {{formControl.label}}
               </label>
             </ng-container>
           </ng-container>

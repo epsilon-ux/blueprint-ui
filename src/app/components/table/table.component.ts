@@ -89,7 +89,7 @@ export class TableComponent implements OnInit, OnDestroy {
           key: 'description',
           formControlType: 'checkbox',
           label: 'Is Required',
-          isLabelVisible: false
+          isLabelVisible: true
         }
       ]
     },
@@ -213,7 +213,7 @@ export class TableComponent implements OnInit, OnDestroy {
       description: [
         {
           value: null,
-          disabled: false
+          disabled: true
         },
         {
           validators: [
