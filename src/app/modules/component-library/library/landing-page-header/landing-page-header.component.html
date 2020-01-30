@@ -1,0 +1,33 @@
+<app-component-header
+  headingText="Landing Page Header Component"
+  route="landing-page-header"
+  [hasComponent]="false"
+  [hasDocs]="false"
+></app-component-header>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <bp-landing-page-header
+        [headingText]="headingText"
+        [buttonText]="buttonText"
+        [showButton]="showButton"
+        [buttonElement]="buttonElement"
+        [href]="href"
+      >
+      <div dropdown-items>
+        <a class="dropdown-item" href="">Dropdown Item</a>
+        <a class="dropdown-item" href="">Dropdown Item</a>
+      </div>
+      <div tab-items>
+        <div class="row">
+          <div class="col">
+            <button class="tab active" href="">Active Tab</button>
+            <button class="tab" href="">Tab</button>
+            <button class="tab" href="">Tab</button>
+          </div>
+        </div>
+      </div>
+      </bp-landing-page-header>
+    </div>
+  </div>
+</section>

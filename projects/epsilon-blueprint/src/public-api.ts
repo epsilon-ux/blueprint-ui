@@ -7,3 +7,6 @@ export * from './lib/table/table.module';
 
 export * from './lib/search/search.component';
 export * from './lib/search/search.module';
+
+export * from './lib/landing-page-header/landing-page-header.component';
+export * from './lib/landing-page-header/landing-page-header.module';
