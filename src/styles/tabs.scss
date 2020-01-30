@@ -7,13 +7,13 @@
     border: 0;
     padding: 10px;
     background: transparent;
-    color: $font-color-secondary;
+    color: $font-color-primary;
     font-size: $font-size-display2;
     font-weight: $font-weight-regular;
     
     &:hover
     {
-        color: $font-color-secondary;
+        color: $font-color-primary;
         font-weight: $font-weight-semi-bold;
         text-decoration: none;
     }
