@@ -1,19 +1,4 @@
 <app-component-header
   headingText="Table Component"
-  route="table"
-  [hasComponent]="false"
-  [hasDocs]="false"
 ></app-component-header>
-<section class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <bp-table
-        [isDataLoading]="isDataLoading"
-        [data]="data"
-        [properties]="properties"
-        (action)="handleAction($event)"
-        (selectedRowsAction)="handleSelectedRowsAction($event)"
-      ></bp-table>
-    </div>
-  </div>
-</section>
+<router-outlet></router-outlet>
