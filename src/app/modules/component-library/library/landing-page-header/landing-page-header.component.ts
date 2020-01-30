@@ -6,12 +6,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageHeaderComponent implements OnInit {
 
-  headingText = 'Header Text';
-  buttonText = 'Button Text';
-  showButton = true;
-  buttonElement = 'button';
-  href = '#';
-
   constructor() {}
 
   ngOnInit() {}

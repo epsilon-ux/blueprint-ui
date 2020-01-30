@@ -9,7 +9,7 @@ import { ColumnType } from './models/column';
 export class TableComponent implements OnInit, OnDestroy {
   loadService: any;
 
-  data = {};
+  data = [];
   isDataLoading = true;
 
   properties = {

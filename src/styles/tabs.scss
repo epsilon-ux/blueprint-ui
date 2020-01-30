@@ -2,6 +2,7 @@
 
 .tab
 {
+    display: inline-block;
     margin-right: 20px;
     border: 0;
     padding: 10px;
@@ -12,7 +13,9 @@
     
     &:hover
     {
+        color: $font-color-secondary;
         font-weight: $font-weight-semi-bold;
+        text-decoration: none;
     }
     
     &.active

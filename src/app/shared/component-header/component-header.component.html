@@ -1,27 +1,39 @@
 <bp-landing-page-header [headingText]="headingText" [showButton]="false">
-  <div tab-items *ngIf="hasComponent || hasDocs">
+  <div tab-items *ngIf="hasComponent || hasDocs"> <!-- TODO: Remove ngIf when all existing components have tabs enabled -->
     <div class="row">
       <div class="col">
         <a
-          *ngIf="hasComponent"
           class="tab"
-          routerLink="/components/{{ route }}"
+          routerLink="./overview"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          Component
+          Overview
         </a>
         <a
-          *ngIf="hasDocs"
           class="tab"
-          routerLink="/components/{{ route }}/docs"
+          routerLink="./usage"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          Docs
+          Usage
         </a>
-        <!-- TODO: Add Accessibility Tab -->
-        <!-- TODO: Add Inputs Tab -->
+        <a
+          class="tab"
+          routerLink="./playground"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Playground
+        </a>
+        <a
+          class="tab"
+          routerLink="./api"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          API
+        </a>
       </div>
     </div>
   </div>
