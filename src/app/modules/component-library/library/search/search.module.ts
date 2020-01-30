@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { LandingPageHeaderModule } from 'epsilon-blueprint';
+import { SearchModule } from 'epsilon-blueprint';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
-import { LandingPageHeaderRoutingModule } from './landing-page-header-routing.module';
+import { SearchRoutingModule } from './search-routing.module';
 
 import { OverviewComponent } from './overview/overview.component';
-import { LandingPageHeaderComponent } from './landing-page-header.component';
+import { SearchComponent } from './search.component';
 import { UsageComponent } from './usage/usage.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
   declarations: [
-    LandingPageHeaderComponent,
+    SearchComponent,
     OverviewComponent,
     UsageComponent,
     PlaygroundComponent,
@@ -24,10 +24,10 @@ import { ApiComponent } from './api/api.component';
     CommonModule,
     RouterModule,
     ComponentHeaderModule,
-    LandingPageHeaderRoutingModule,
-    LandingPageHeaderModule
+    SearchRoutingModule,
+    SearchModule
   ],
   providers: [],
-  exports: [LandingPageHeaderComponent]
+  exports: [SearchComponent]
 })
-export class LandingPageHeaderLibraryModule { }
+export class SearchLibraryModule { }

@@ -1,19 +1,4 @@
 <app-component-header
   headingText="Search Component"
-  route="search"
-  [hasComponent]="false"
-  [hasDocs]="false"
 ></app-component-header>
-<section class="container-fluid">
-  <div class="row">
-    <div class="col-md-6 col-lg-4 col-xl-3">
-      <bp-search
-        label="Search"
-        placeholder="Search"
-        [isSearching]="isSearching"
-        (search)="handleSearch($event)"
-        (clearSearch)="handleClearSearch($event)"
-      ></bp-search>
-    </div>
-  </div>
-</section>
+<router-outlet></router-outlet>
