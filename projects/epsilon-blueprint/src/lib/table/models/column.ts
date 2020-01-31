@@ -9,5 +9,5 @@ export class Column {
     LINK,
     DATE,
     STATUS,
-    FIELD
+    FORMCONTROL
   }

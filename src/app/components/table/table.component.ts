@@ -26,37 +26,37 @@ export class TableComponent implements OnInit, OnDestroy {
           key: 'amount',
           headerText: 'Amount',
           isColumnDisplayed: true,
-          type: ColumnType.FIELD
+          type: ColumnType.FORMCONTROL
         },
         {
           key: 'phone',
           headerText: 'Phone',
           isColumnDisplayed: true,
-          type: ColumnType.FIELD
+          type: ColumnType.FORMCONTROL
         },
         {
           key: 'description',
           headerText: 'Description',
           isColumnDisplayed: true,
-          type: ColumnType.FIELD
+          type: ColumnType.FORMCONTROL
         },
         {
           key: 'status',
           headerText: 'Status',
           isColumnDisplayed: true,
-          type: ColumnType.FIELD
+          type: ColumnType.FORMCONTROL
         }
       ],
       rowId: 'id',
       formControl: [
         {
           key: 'status',
-          formControlType: 'single-select',   // can be 'multi-select'
-          isLabelVisible: true,
+          formControlType: 'single-select',
           label: 'Status',
-          placeholder: 'Select a status',   // string
-          readOnly: false,   // true or false
-          errorMessage: 'Please select a status',   // string
+          isLabelVisible: true,
+          placeholder: 'Select a status',
+          readOnly: false,
+          errorMessage: 'Please select a status',
           dropdownOptions: [
             { optionText: 'Deploying', optionValue: 'Deploying' },
             { optionText: 'Deployed', optionValue: 'Deployed' },
@@ -66,12 +66,12 @@ export class TableComponent implements OnInit, OnDestroy {
         },
         {
           key: 'amount',
-          formControlType: 'single-select',   // can be 'multi-select'
-          isLabelVisible: false,
+          formControlType: 'single-select',
           label: 'Amount',
-          placeholder: 'Select an amount',   // string
-          readOnly: false,   // true or false
-          errorMessage: 'Please select an amount',   // string
+          isLabelVisible: false,
+          placeholder: 'Select an amount',
+          readOnly: false,
+          errorMessage: 'Please select an amount',
           dropdownOptions: [
             { optionText: '1000', optionValue: 1000 },
             { optionText: '2000', optionValue: 2000 },
@@ -81,11 +81,12 @@ export class TableComponent implements OnInit, OnDestroy {
         },
         {
           key: 'phone',
-          formControlType: 'text',  // can be 'number', 'email, 'date', etc
+          formControlType: 'text',
+          label: 'Phone',
           isLabelVisible: false,
           placeholder: 'Please enter a value',
           readOnly: false,
-          errorMessage: 'This field is required',   // string
+          errorMessage: 'This field is required',
         },
         {
           key: 'description',

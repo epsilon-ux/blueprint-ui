@@ -11,13 +11,13 @@ export default interface Properties {
     rowId: string;
     formControl: {
       key: string,
-      formControlType: string,
-      label?: string,
-      isLabelVisible?: boolean,
-      placeholder?: string,
-      readOnly?: boolean,
-      errorMessage?: string,
-      dropdownOptions?: Array<{ optionText: string, optionValue: string | number }> // for types: single-select and multi-select
+      formControlType: string, // Expect 'text', 'number', 'email, 'date', 'checkbox', 'single-select', 'multi-select'
+      label: string, // form control specific label
+      isLabelVisible?: boolean, // to apply sr-only class for accessibility
+      placeholder?: string, // to add a placeholder to the form control
+      readOnly?: boolean, // to make a form control readonly
+      errorMessage?: string, // The validation message to be displayed below the form control
+      dropdownOptions?: Array<{ optionText: string, optionValue: string | number }> // for formControlType: single-select and multi-select
     }[];
   };
   search:  {

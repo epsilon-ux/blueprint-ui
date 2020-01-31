@@ -9,13 +9,13 @@
     </div>
     <ng-content select="[table-filters]"></ng-content>
   </div>
-  <ng-container *ngIf="formData; else tableTemplate">
+  <ng-container *ngIf="formData; else tableStatic">
     <form [formGroup]="formData" class="table-responsive">
-      <ng-container *ngTemplateOutlet="tableTemplate"></ng-container>
+      <ng-container *ngTemplateOutlet="tableStatic"></ng-container>
     </form>
   </ng-container>
 
-  <ng-template #tableTemplate>
+  <ng-template #tableStatic>
     <table
       class="table"
       [ngClass]="densityClass"
