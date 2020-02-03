@@ -42,13 +42,13 @@
     <!-- Status Indicator Column -->
     <span *ngSwitchCase="columnType.STATUS" class="status-indicator">
       <div
-        *ngIf="properties.statusIndicatorMapping['in-progress'] !== rowData.status"
+        *ngIf="properties.statusIndicatorMapping['in-progress'] !== rowData[column.key]"
         class="status-icon"
-        [ngClass]="getStatusClass(rowData.status)"
+        [ngClass]="getStatusClass(rowData[column.key])"
         aria-hidden="true"
       ></div>
       <i
-        *ngIf="properties.statusIndicatorMapping['in-progress'] === rowData.status"
+        *ngIf="properties.statusIndicatorMapping['in-progress'] === rowData[column.key]"
         class="fa fa-spinner fa-spin in-progress"
         aria-hidden="true"
       ></i>

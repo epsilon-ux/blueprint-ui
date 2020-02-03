@@ -12,32 +12,6 @@ a
 	}
 }
 
-.skip-link
-{
-  position: absolute;
-  top: -50px;
-  left: 0;
-  border: 0;
-  padding: 5px 10px;
-  background: $accent-color-primary;
-  color: $coconut;
-  transition: top 1s ease-out;
-  z-index: 100;
-
-  &:hover
-  {
-    color: $coconut;
-  }
-
-  &:focus
-  {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: top 0.5s ease-in;
-  }
-}
-
 .btn-text
 {
   outline: unset;
