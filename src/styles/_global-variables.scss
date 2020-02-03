@@ -40,9 +40,11 @@ $font-size-small: 10px;
 $font-size-h1: 22px;
 $font-size-h2: 15px;
 $font-size-h3: 12px;
+$font-size-h4: 12px;
 $font-size-display1: 22px;
 $font-size-display2: 15px;
 $font-size-display3: 12px;
+$font-size-display4: 12px;
 
 // font weights
 $font-weight-regular: 400;
@@ -72,12 +74,26 @@ $feedback-color-warning: $tomato;
 $feedback-color-warning-hover: $brick;
 
 // font awesome icons
+$icon-menu: '\f0c9';
+$icon-close: '\f00d';
 $icon-caret-up: '\f0d8';
+$icon-caret-right: '\f0da';
 $icon-caret-down: '\f0d7';
-$icon-menu: "\f0c9";
-$icon-close: "\f00d";
-$icon-chevron-right: "\f054";
-$icon-chevron-down: "\f078";
+$icon-caret-left: '\f0d9';
+$icon-chevron-right: '\f054';
+$icon-chevron-down: '\f078';
+$icon-sort-up: '\f0de';
+$icon-sort-down: '\f0dd';
+$icon-angle-double-left: '\f100';
+$icon-angle-left: '\f104';
+$icon-angle-right: '\f105';
+$icon-angle-double-right: '\f101';
+$icon-calendar: '\f073';
+$icon-clock: '\f017';
+$icon-check-circle: '\f058';
+$icon-checkmark: '\f00c';
+$icon-dash: '\f068';
+$icon-warning: '\f06a';
 
 // shadows
 $box-shadow-primary: 0 1px 10px 0 rgba($midnight, 0.3); // used for modals, overlay messaging, and login screen form containers
@@ -85,8 +101,12 @@ $box-shadow-secondary: 0 2px 8px 0 $haze; // used for tiles, and tooltips
 $box-shadow-tertiary: 1px 1px 3px 0 rgba($midnight, 0.2); // used for expanded dropdown menus and expanded date/time pickers
 $box-shadow-nav-primary: 0 0 7px 0 rgba($cobalt, 0.2); // used for the primary navigation
 $box-shadow-focus-default: 0 0 0 0.2rem rgba($cornflower, 1);
+$box-shadow-focus-default-inset: inset 0 0 0 0.2rem rgba($cornflower, 1); // used for tabs
 $box-shadow-focus-warning: 0 0 0 0.2rem rgba($feedback-color-warning, 0.25);
 $box-shadow-focus-readonly: 0 0 0 0.2rem rgba($storm, 0.3);
+
+// gradients
+$gradient-progress-bar: linear-gradient(to right, #0095F6 -39%, #0312DD 100%);
 
 // transition
 $transition-primary: 0.05s ease-out;

@@ -1,0 +1,16 @@
+@import '../_global-variables';
+
+.card
+{
+	margin-bottom: 20px;
+	border-radius: 0;
+	border-color: $border-color-secondary;
+}
+
+.card-body
+{
+	&.component-preview
+	{
+		padding: 40px;
+	}
+}

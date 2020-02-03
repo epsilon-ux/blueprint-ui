@@ -1,5 +1,3 @@
-@import "./_global-variables";
-
 .table
 {
   width: 100%;
@@ -88,6 +86,11 @@
   {
     tr
     {
+      &:nth-child(odd)
+      {
+        background: $coconut;
+      }
+
       &:nth-child(even)
       {
         background: $cloud;

@@ -1,40 +1,59 @@
-html,
-body
+html
 {
+	color: $font-color-primary;
 	font-family: $font-family-default;
 	font-size: $font-size-body;
 	font-weight: $font-weight-regular;
-	color: $font-color-primary;
 }
 
-h1,
-h2,
-h3,
+body, 
+h1, 
+h2, 
+h3, 
 h4,
-h5
+.h1, 
+.h2, 
+.h3, 
+.h4
 {
-	margin: 0;
+    line-height: 1.5; // Do not modify. This is a requirement of WCAG 1.4.8.
 }
 
 h1,
-.h1
+.h1,
+.display-1
 {
-	font-size: 22px;
+	margin-bottom: 20px;
+	font-size: $font-size-h1;
 	font-weight: $font-weight-regular;
 }
 
 h2,
-.h2
+.h2,
+.display-2
 {
-	font-size: 15px;
+	margin-bottom: 20px;
+	font-size: $font-size-h2;
 	font-weight: $font-weight-semi-bold;
 }
 
 h3,
-.h3
+.h3,
+.display-3
 {
-	font-size: 12px;
+	margin-bottom: 10px;
+	font-size: $font-size-h3;
 	font-weight: $font-weight-bold;
+}
+
+h4,
+.h4,
+.display-4
+{
+	margin-bottom: 10px;
+	color: $font-color-secondary;
+	font-size: $font-size-h4;
+	font-weight: $font-weight-semi-bold;
 }
 
 p
@@ -42,21 +61,22 @@ p
 	margin: 0 0 1rem;
 }
 
-a
+.text-secondary
 {
-	color: $link-color-primary;
-	font-family: $font-weight-semi-bold;
-	text-decoration: none;
-
-	&:hover
-	{
-		text-decoration: underline;
-	}
+    color: $font-color-secondary;
+    font-size: $font-size-body;
+    font-weight: $font-weight-semi-bold;
 }
 
-.font-weight-bold
+.text-color-secondary
 {
-	font-weight: $font-weight-bold;
+	// Bootstrap is using !important, so we need to use it here in order to override Bootstrap
+	color: $font-color-secondary !important;
+}
+
+.text-small
+{
+	font-size: $font-size-small;
 }
 
 .font-weight-semi-bold
@@ -64,7 +84,7 @@ a
 	font-weight: $font-weight-semi-bold;
 }
 
-.text-secondary
+.font-weight-bold
 {
-	color: $font-color-secondary !important;
+	font-weight: $font-weight-bold;
 }
