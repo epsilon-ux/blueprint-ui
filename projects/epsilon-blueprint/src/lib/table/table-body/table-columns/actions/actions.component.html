@@ -1,9 +1,9 @@
-<ng-container *ngFor="let actionItem of actionItems">
+<ng-container *ngFor="let actionItem of renderedActions">
   <button
     *ngIf="actionItem.element === 'button'; else link"
     class="action-item {{ classList }}"
     [ngClass]="actionItem.class"
-    [attr.aria-label]="actionItem.ariaLabel"
+    [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"
     (click)="triggerAction(actionItem.action)"
   >
     {{ actionItem.text }}
@@ -14,7 +14,7 @@
       class="action-item {{ classList }}"
       [target]="actionItem.target"
       [ngClass]="actionItem.class"
-      [attr.aria-label]="actionItem.ariaLabel"
+      [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"
     >
       {{ actionItem.text }}
     </a>
