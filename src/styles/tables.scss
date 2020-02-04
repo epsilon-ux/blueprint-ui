@@ -210,3 +210,63 @@
     }
   }
 }
+
+.table.table-bordered-rows
+{
+  margin-bottom: 20px;
+  border: 0;
+  color: $font-color-primary;
+
+  thead tr th
+  {
+    padding: 0 12px 5px;
+  }
+
+  thead tr th,
+  tbody tr th,
+  th,
+  td
+  {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid $border-color-primary;
+    padding: 12px;
+    vertical-align: middle;
+    background: transparent;
+    font-weight: $font-weight-semi-bold;
+
+    &:first-child
+    {
+      padding-left: 0;
+    }
+
+    &:last-child
+    {
+      padding-right: 0;
+    }
+  }
+
+  tbody tr
+  {
+    &:nth-child(odd),
+    &:nth-child(even)
+    {        
+      background: transparent;
+    }
+    &:hover
+    {
+      outline: 0;
+      background: transparent;
+    }
+  }
+
+  th
+  {
+    color: $font-color-secondary;
+  }
+
+  td
+  {
+    color: $font-color-primary;
+  }
+}
