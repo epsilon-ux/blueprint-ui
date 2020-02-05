@@ -268,5 +268,10 @@
   td
   {
     color: $font-color-primary;
+
+    p
+    {
+      margin-bottom: 0;
+    }
   }
 }
