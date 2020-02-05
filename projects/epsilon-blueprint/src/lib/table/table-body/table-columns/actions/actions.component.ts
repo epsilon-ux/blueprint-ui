@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { parseLookupString } from "../../../helpers";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { parseLookupString } from '../../../helpers';
 
 @Component({
-  selector: "app-actions",
-  templateUrl: "./actions.component.html",
-  styleUrls: ["./actions.component.scss"]
+  selector: 'app-actions',
+  templateUrl: './actions.component.html',
+  styleUrls: ['./actions.component.scss']
 })
 export class ActionsComponent implements OnInit {
   @Input()
@@ -38,9 +38,9 @@ export class ActionsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    if (this.classList.includes("dropdown-item")) {
+    if (this.classList.includes('dropdown-item')) {
       this.actionItems.forEach(action => {
-        action.class = "";
+        action.class = '';
       });
     }
 
@@ -82,13 +82,13 @@ export class ActionsComponent implements OnInit {
       return booleans.reduce((acc, curr, i) => {
         if (i > 0) {
           switch (logicalOperators[i - 1]) {
-            case "&&":
+            case '&&':
               return acc && curr;
-            case "||":
+            case '||':
               return acc || curr;
             default:
               throw new Error(
-                "Invalid logical operator provided in action conditions."
+                'Invalid logical operator provided in action conditions.'
               );
           }
         }
@@ -101,24 +101,24 @@ export class ActionsComponent implements OnInit {
   // Returns a function that cmapres two arguments dependent on the operator
   compare(operator: string): Function {
     switch (operator) {
-      case ">":
+      case '>':
         return (a, b) => a > b;
-      case "<":
+      case '<':
         return (a, b) => a < b;
-      case ">=":
+      case '>=':
         return (a, b) => a >= b;
-      case "<=":
+      case '<=':
         return (a, b) => a <= b;
-      case "===":
+      case '===':
         return (a, b) => a === b;
-      case "==":
+      case '==':
         return (a, b) => a == b;
-      case "!==":
+      case '!==':
         return (a, b) => a !== b;
-      case "!=":
+      case '!=':
         return (a, b) => a != b;
       default:
-        throw new Error("Invalid operator provided in action condition.");
+        throw new Error('Invalid operator provided in action condition.');
     }
   }
 
