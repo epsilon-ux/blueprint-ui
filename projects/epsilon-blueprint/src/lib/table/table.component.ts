@@ -74,8 +74,8 @@ export class TableComponent implements OnInit, OnChanges {
     this.setDisplayDensity(displayDensityName);
     this.sortColumnName = this.properties.sort.defaultSortedColumn;
 
-    if (localStorage.getItem('thead')) {
-      this.properties.columns = JSON.parse(localStorage.getItem('thead'));
+    if (localStorage.getItem('columns')) {
+      this.properties.columns = JSON.parse(localStorage.getItem('columns'));
     }
   }
 
