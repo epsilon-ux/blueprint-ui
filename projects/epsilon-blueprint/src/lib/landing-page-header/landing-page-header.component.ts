@@ -8,29 +8,43 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class LandingPageHeaderComponent implements OnInit {
 
   @Input()
-  headingText = '';
+  headingText: string;
 
   @Input()
-  buttonText = '';
+  actionText: string;
   
   @Input()
-  showButton = true;
+  hasAction = false;
 
   @Input()
-  buttonElement = 'button'; // Expects either 'button', 'dropdown', or 'a'
+  actionElement = 'a'; // Expects either 'button', 'dropdown', or 'a'
 
   @Input()
   href = ''; // Only required when buttonElement = 'a'
 
   @Output()
-  buttonClick = new EventEmitter();
+  actionClick = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    this.validateInputs()
   }
 
-  onButtonClick() {
-    this.buttonClick.emit();
+  validateInputs() {
+    if (!this.headingText) {
+      let err = new Error('headingText is a required Input of bp-landing-page-header');
+      err.name = 'Missing Input';
+      throw err;
+    }
+    if (this.hasAction && !this.actionText) {
+      let err = new Error('actionText is a required Input of bp-landing-page-header when showButton = true');
+      err.name = 'Missing Input';
+      throw err;
+    }
+  }
+
+  onActionClick() {
+    this.actionClick.emit();
   }
 }
