@@ -15,7 +15,7 @@
   <!-- Table Data Columns/Cells -->
   <td
     [hidden]="!column.isColumnDisplayed"
-    *ngFor="let column of properties.data.thead"
+    *ngFor="let column of properties.columns"
     [ngSwitch]="column.type"
   >
     <!-- Link Column -->
@@ -24,7 +24,8 @@
         *ngIf="properties.link.element === 'a'; else buttonLink"
         class="link-primary"
         [attr.aria-label]="parseLookupString(properties.link.ariaLabel, rowData)"
-        [routerLink]="[properties.link.path, rowData[properties.data.rowId]]"
+        [routerLink]="[properties.link.path, rowData[properties.rowId]]"
+        [attr.href]="rowData"
         [target]="properties.link.target"
       >
         {{ rowData[column.key] }}
@@ -33,7 +34,7 @@
         <button
           class="btn-text"
           [attr.aria-label]="parseLookupString(properties.link.ariaLabel, rowData)"
-          (click)="emitAction(properties.link.action, rowData[properties.data.rowId])"
+          (click)="emitAction(properties.link.action, rowData[properties.rowId])"
         >
           {{ rowData[column.key] }}
         </button>
@@ -68,15 +69,15 @@
       *ngIf="properties.actions.length < 3; else moreActions"
       class="action-items"
       [actionItems]="properties.actions"
-      [rowId]="properties.data.rowId"
+      [rowId]="properties.rowId"
       [rowData]="rowData"
       classList="btn btn-mini"
-      (emitAction)="emitAction($event, rowData[properties.data.rowId])"
+      (emitAction)="emitAction($event, rowData[properties.rowId])"
     >
     </app-actions>
     <ng-template #moreActions>
       <button
-        id="moreActions{{ rowData[properties.data.rowId] }}"
+        id="moreActions{{ rowData[properties.rowId] }}"
         class="btn-icon-inline more-actions-toggle"
         data-toggle="dropdown"
         aria-label="Actions Menu"
@@ -87,12 +88,12 @@
       </button>
       <app-actions
         class="dropdown-menu dropdown-menu-right"
-        attr.aria-labelledby="moreActions{{ rowData[properties.data.rowId] }}"
+        attr.aria-labelledby="moreActions{{ rowData[properties.rowId] }}"
         [actionItems]="properties.actions"
-        [rowId]="properties.data.rowId"
+        [rowId]="properties.rowId"
         [rowData]="rowData"
         classList="dropdown-item"
-        (emitAction)="emitAction($event, rowData[properties.data.rowId])"
+        (emitAction)="emitAction($event, rowData[properties.rowId])"
       >
       </app-actions>
     </ng-template>

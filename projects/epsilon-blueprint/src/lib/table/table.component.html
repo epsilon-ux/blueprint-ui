@@ -17,7 +17,7 @@
     <!-- Table Headings -->
     <thead>
       <tr>
-        <ng-container *ngIf="properties.data.thead">
+        <ng-container *ngIf="properties.columns">
           <th *ngIf="properties.hasSelectableRows" class="th-selectable">
             <input
               type="checkbox"
@@ -30,7 +30,7 @@
           <th
             scope="col"
             [hidden]="!column.isColumnDisplayed"
-            *ngFor="let column of properties.data.thead; let i = index"
+            *ngFor="let column of properties.columns; let i = index"
             [attr.aria-sort]="isSortActive ? getAriaSortOrder(i) : 'null'"
           >
             <button class="th-sortable" (click)="applySort(column.key, i)">
@@ -102,7 +102,7 @@
   [pageBuffer]="pageBuffer"
   [pageNumber]="currentPage"
   [showColumnSelector]="properties.hasColumnSelector"
-  [columnInfo]="properties.data.thead"
+  [columnInfo]="properties.columns"
   [defaultSortColumnName]="properties.sort.defaultSortedColumn"
   (pageData)="paginate($event)"
   (displayDensityEmitter)="setDisplayDensity($event)"

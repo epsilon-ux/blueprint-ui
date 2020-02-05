@@ -75,7 +75,7 @@ export class TableComponent implements OnInit, OnChanges {
     this.sortColumnName = this.properties.sort.defaultSortedColumn;
 
     if (localStorage.getItem('thead')) {
-      this.properties.data.thead = JSON.parse(localStorage.getItem('thead'));
+      this.properties.columns = JSON.parse(localStorage.getItem('thead'));
     }
   }
 
@@ -131,7 +131,7 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   getAriaSortOrder(rowIndex: number): string {
-    const columnIndex = this.properties.data.thead.findIndex(
+    const columnIndex = this.properties.columns.findIndex(
       (item: { key: string }, index: any) => {
         if (item.key === this.sortColumnName) {
           return index;
@@ -177,7 +177,7 @@ export class TableComponent implements OnInit, OnChanges {
 
   search(query) {
     this.filteredData = this.data.filter(d => {
-      for (const col of this.properties.data.thead) {
+      for (const col of this.properties.columns) {
         if (
           d[col.key] &&
           String(d[col.key])
@@ -269,7 +269,7 @@ export class TableComponent implements OnInit, OnChanges {
     const selectedRowsIds = [];
     this.filteredData.forEach(data => {
       if (data.checked) {
-        selectedRowsIds.push(data[this.properties.data.rowId]);
+        selectedRowsIds.push(data[this.properties.rowId]);
       }
     });
 
