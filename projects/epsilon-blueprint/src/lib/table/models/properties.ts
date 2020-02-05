@@ -1,15 +1,13 @@
 import { ColumnType } from './column';
 
 export default interface Properties {
-  data: {
-    thead: {
-      key: string,
-      headerText: string,
-      isColumnDisplayed: boolean,
-      type: ColumnType
-    }[];
-    rowId: string;
-  };
+  rowId: string;
+  columns: {
+    key: string,
+    headerText: string,
+    isColumnDisplayed: boolean,
+    type: ColumnType
+  }[];
   search:  {
     hasSearch: boolean;
     // TBD: Server Side / Client Side / Restricted

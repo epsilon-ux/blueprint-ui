@@ -14,41 +14,39 @@ export class OverviewComponent implements OnInit {
   isDataLoading = true;
 
   properties = {
-    data: {
-      thead: [
-        {
-          key: 'date',
-          headerText: 'Date',
-          isColumnDisplayed: true,
-          type: ColumnType.DATE
-        },
-        {
-          key: 'amount',
-          headerText: 'Amount',
-          isColumnDisplayed: true,
-          type: ColumnType.TEXT
-        },
-        {
-          key: 'phone',
-          headerText: 'Phone',
-          isColumnDisplayed: true,
-          type: ColumnType.LINK
-        },
-        {
-          key: 'description',
-          headerText: 'Description',
-          isColumnDisplayed: true,
-          type: ColumnType.TEXT
-        },
-        {
-          key: 'status',
-          headerText: 'Status',
-          isColumnDisplayed: true,
-          type: ColumnType.STATUS
-        }
-      ],
-      rowId: 'id'
-    },
+    rowId: 'id',
+    columns: [
+      {
+        key: 'date',
+        headerText: 'Date',
+        isColumnDisplayed: true,
+        type: ColumnType.DATE
+      },
+      {
+        key: 'amount',
+        headerText: 'Amount',
+        isColumnDisplayed: true,
+        type: ColumnType.TEXT
+      },
+      {
+        key: 'phone',
+        headerText: 'Phone',
+        isColumnDisplayed: true,
+        type: ColumnType.LINK
+      },
+      {
+        key: 'description',
+        headerText: 'Description',
+        isColumnDisplayed: true,
+        type: ColumnType.TEXT
+      },
+      {
+        key: 'status',
+        headerText: 'Status',
+        isColumnDisplayed: true,
+        type: ColumnType.STATUS
+      }
+    ],
     search: {
       hasSearch: true
     },
