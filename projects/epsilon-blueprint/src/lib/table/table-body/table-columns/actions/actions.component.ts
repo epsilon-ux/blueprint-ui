@@ -69,7 +69,7 @@ export class ActionsComponent implements OnInit {
         : logicalOperators.push(condition)
     );
 
-    // Gets array of booleans frome vaulating individual conditions
+    // Gets array of booleans from evaulating individual conditions
     const booleans = conditions.map(condition =>
       this.compare(condition.operator)(
         this.rowData[condition.column],
@@ -77,7 +77,7 @@ export class ActionsComponent implements OnInit {
       )
     );
 
-    // reduces conditions down to a single boolean based off the connecting logical operators
+    // Reduces conditions down to a single boolean based off the connecting logical operators
     if (booleans.length > 1) {
       return booleans.reduce((acc, curr, i) => {
         if (i > 0) {
@@ -98,7 +98,7 @@ export class ActionsComponent implements OnInit {
     }
   }
 
-  // Returns a function that cmapres two arguments dependent on the operator
+  // Returns a function that compares two arguments dependent on the operator
   compare(operator: string): Function {
     switch (operator) {
       case '>':

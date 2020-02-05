@@ -85,15 +85,15 @@ export class OverviewComponent implements OnInit {
         action: 'deploy',
         conditions: [
           {
-          column: 'status',
-          operator: '!==',
-          value: 'Deployed'
+            column: 'status',
+            operator: '!==',
+            value: 'Deployed'
           },
           '&&',
           {
-          column: 'status',
-          operator: '!==',
-          value: 'Deploying'
+            column: 'status',
+            operator: '!==',
+            value: 'Deploying'
           }
         ]
       },
