@@ -42,6 +42,11 @@ export default interface Properties {
       target?: string; // The target of the link i.e. "_blank" to open in a new tab
       path?: string; // Required if element = 'a'
       action?: string; // Required if element = 'button'
+      conditions: {
+        column: string;
+        operator: string;
+        value: any;
+        }[] | string[];
     }[];
   hasColumnSelector: boolean;
   hasDisplayDensity: boolean;

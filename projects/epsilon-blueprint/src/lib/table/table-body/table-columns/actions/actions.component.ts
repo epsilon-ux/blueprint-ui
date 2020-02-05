@@ -19,10 +19,10 @@ export class ActionsComponent implements OnInit {
   }[];
 
   @Input()
-  rowId;
+  rowId: string;
 
   @Input()
-  rowData;
+  rowData: {};
 
   @Input()
   classList: string;
@@ -44,6 +44,7 @@ export class ActionsComponent implements OnInit {
       });
     }
 
+    // Determines which action items to show for this row
     let filteredActions = [];
     this.actionItems.forEach(action => {
       if (action.conditions) {
@@ -57,7 +58,9 @@ export class ActionsComponent implements OnInit {
     this.renderedActions = filteredActions;
   }
 
-  reduceConditions(actionConditions) {
+  // Takes in conditions array from an actionItem and evaluates whether the conditions are met
+  reduceConditions(actionConditions): boolean {
+    // Splits conditions array into condition and the logical operator arrays
     const logicalOperators = [];
     const conditions = [];
     actionConditions.forEach((condition, i) =>
@@ -66,6 +69,7 @@ export class ActionsComponent implements OnInit {
         : logicalOperators.push(condition)
     );
 
+    // Gets array of booleans frome vaulating individual conditions
     const booleans = conditions.map(condition =>
       this.compare(condition.operator)(
         this.rowData[condition.column],
@@ -73,6 +77,7 @@ export class ActionsComponent implements OnInit {
       )
     );
 
+    // reduces conditions down to a single boolean based off the connecting logical operators
     if (booleans.length > 1) {
       return booleans.reduce((acc, curr, i) => {
         if (i > 0) {
@@ -93,6 +98,7 @@ export class ActionsComponent implements OnInit {
     }
   }
 
+  // Returns a function that cmapres two arguments dependent on the operator
   compare(operator: string): Function {
     switch (operator) {
       case ">":
@@ -116,7 +122,7 @@ export class ActionsComponent implements OnInit {
     }
   }
 
-  triggerAction(action) {
+  triggerAction(action): void {
     this.emitAction.emit(action);
   }
 }
