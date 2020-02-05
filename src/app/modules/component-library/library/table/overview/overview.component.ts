@@ -82,7 +82,20 @@ export class OverviewComponent implements OnInit {
         text: 'Deploy',
         ariaLabel: 'Deploy Object ${id}',
         class: 'btn-outline-primary',
-        action: 'deploy'
+        action: 'deploy',
+        conditions: [
+          {
+            column: 'status',
+            operator: '!==',
+            value: 'Deployed'
+          },
+          '&&',
+          {
+            column: 'status',
+            operator: '!==',
+            value: 'Deploying'
+          }
+        ]
       },
       {
         element: 'button',
