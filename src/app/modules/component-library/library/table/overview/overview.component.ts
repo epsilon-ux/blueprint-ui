@@ -38,7 +38,7 @@ export class OverviewComponent implements OnInit {
           ariaLabel: 'go to Object ${id}',
           target: '',
           path: '/table/object'
-        },
+        }
       },
       {
         key: 'description',
@@ -57,7 +57,7 @@ export class OverviewComponent implements OnInit {
           'in-progress': 'Deploying',
           'warning': 'Deployment Error',
           'complete': 'Deployed'
-        },
+        }
       }
     ],
     search: {
