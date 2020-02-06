@@ -9,11 +9,11 @@ export default interface Properties {
     type: ColumnType;
     link?: {
       element: string; // Expect 'a', or 'button'
-      text: string;
       ariaLabel: string; // Can use ${key} syntax to insert values from the row corresponding to the given key
       target?: string; // The target of the link i.e. "_blank" to open in a new tab
       action?: string; // Required if element = 'button'
-      path?: string; // Required if element = 'a'
+      path?: string; // Required if element = 'a' and you need to use routerLink
+      href?: string; // Required if element = 'a' and you need to use an external link
     };
     statusIndicatorMapping?: {
       'incomplete-primary': string;
@@ -40,11 +40,11 @@ export default interface Properties {
       target?: string; // The target of the link i.e. "_blank" to open in a new tab
       path?: string; // Required if element = 'a'
       action?: string; // Required if element = 'button'
-      conditions: {
+      conditions?: ({
         column: string;
         operator: string;
         value: any;
-        }[] | string[];
+        } | string)[];
     }[];
   hasColumnSelector: boolean;
   hasDisplayDensity: boolean;

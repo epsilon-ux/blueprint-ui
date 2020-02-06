@@ -1,4 +1,4 @@
-export class Column {
+export interface Column {
     key: string;
     headerText: string;
     isColumnDisplayed: boolean;
