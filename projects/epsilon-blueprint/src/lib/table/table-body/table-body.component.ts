@@ -46,9 +46,9 @@ export class TableBodyComponent implements OnInit {
   ngOnInit() {}
 
   // Statuses
-  getStatusClass(value) {
-    return Object.keys(this.properties.statusIndicatorMapping).find(
-      key => this.properties.statusIndicatorMapping[key] === value
+  getStatusClass(value, mapping) {
+    return Object.keys(mapping).find(
+      key => mapping[key] === value
     );
   }
 

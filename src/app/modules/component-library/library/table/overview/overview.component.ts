@@ -14,41 +14,52 @@ export class OverviewComponent implements OnInit {
   isDataLoading = true;
 
   properties = {
-    data: {
-      thead: [
-        {
-          key: 'date',
-          headerText: 'Date',
-          isColumnDisplayed: true,
-          type: ColumnType.DATE
-        },
-        {
-          key: 'amount',
-          headerText: 'Amount',
-          isColumnDisplayed: true,
-          type: ColumnType.TEXT
-        },
-        {
-          key: 'phone',
-          headerText: 'Phone',
-          isColumnDisplayed: true,
-          type: ColumnType.LINK
-        },
-        {
-          key: 'description',
-          headerText: 'Description',
-          isColumnDisplayed: true,
-          type: ColumnType.TEXT
-        },
-        {
-          key: 'status',
-          headerText: 'Status',
-          isColumnDisplayed: true,
-          type: ColumnType.STATUS
+    rowId: 'id',
+    columns: [
+      {
+        key: 'date',
+        headerText: 'Date',
+        isColumnDisplayed: true,
+        type: ColumnType.DATE
+      },
+      {
+        key: 'amount',
+        headerText: 'Amount',
+        isColumnDisplayed: true,
+        type: ColumnType.TEXT
+      },
+      {
+        key: 'phone',
+        headerText: 'Phone',
+        isColumnDisplayed: true,
+        type: ColumnType.LINK,
+        link: {
+          element: 'a',
+          ariaLabel: 'go to Object ${id}',
+          target: '',
+          path: '/table/object'
         }
-      ],
-      rowId: 'id'
-    },
+      },
+      {
+        key: 'description',
+        headerText: 'Description',
+        isColumnDisplayed: true,
+        type: ColumnType.TEXT
+      },
+      {
+        key: 'status',
+        headerText: 'Status',
+        isColumnDisplayed: true,
+        type: ColumnType.STATUS,
+        statusIndicatorMapping: {
+          'incomplete-primary': 'Not Deployed',
+          'incomplete-secondary': 'New Updates Not Deployed',
+          'in-progress': 'Deploying',
+          'warning': 'Deployment Error',
+          'complete': 'Deployed'
+        }
+      }
+    ],
     search: {
       hasSearch: true
     },
@@ -56,19 +67,6 @@ export class OverviewComponent implements OnInit {
       defaultSortedColumn: 'phone'
     },
     hasSelectableRows: true,
-    statusIndicatorMapping: {
-      'incomplete-primary': 'Not Deployed',
-      'incomplete-secondary': 'New Updates Not Deployed',
-      'in-progress': 'Deploying',
-      'warning': 'Deployment Error',
-      'complete': 'Deployed'
-    },
-    link: {
-      element: 'a',
-      ariaLabel: 'go to Object ${id}',
-      target: '',
-      path: '/table/object'
-    },
     actions: [
       {
         element: 'a',
