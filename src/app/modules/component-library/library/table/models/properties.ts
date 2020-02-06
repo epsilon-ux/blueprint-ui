@@ -44,7 +44,7 @@ export default interface Properties {
         column: string;
         operator: string;
         value: any;
-        } | string)[];
+      } | string)[];
     }[];
   hasColumnSelector: boolean;
   hasDisplayDensity: boolean;
