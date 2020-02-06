@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TabledataService } from '../service/table-data.service';
 import { ColumnType } from '../models/column';
+import Properties from '../models/properties';
 
 @Component({
   selector: 'app-overview',
@@ -13,7 +14,7 @@ export class OverviewComponent implements OnInit {
   data = [];
   isDataLoading = true;
 
-  properties = {
+  properties: Properties = {
     rowId: 'id',
     columns: [
       {
@@ -37,14 +38,20 @@ export class OverviewComponent implements OnInit {
           element: 'a',
           ariaLabel: 'go to Object ${id}',
           target: '',
-          path: '/table/object'
+          path: '/table/object/${id}'
         }
       },
       {
         key: 'description',
         headerText: 'Description',
         isColumnDisplayed: true,
-        type: ColumnType.TEXT
+        type: ColumnType.LINK,
+        link: {
+          element: 'a',
+          ariaLabel: 'go to Object ${id}',
+          target: '_blank',
+          href: 'https://www.example.com'
+        }
       },
       {
         key: 'status',

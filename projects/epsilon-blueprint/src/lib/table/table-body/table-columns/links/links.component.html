@@ -1,0 +1,26 @@
+<a
+  *ngIf="linkProperties.element === 'a' && linkProperties.path"
+  class="link-primary"
+  [attr.aria-label]="parseLookupString(linkProperties.ariaLabel, rowData)"
+  [routerLink]="parseLookupString(linkProperties.path, rowData)"
+  [target]="linkProperties.target"
+>
+  {{ linkText }}
+</a>
+<a
+  *ngIf="linkProperties.element === 'a' && linkProperties.href"
+  class="link-primary"
+  [attr.aria-label]="parseLookupString(linkProperties.ariaLabel, rowData)"
+  [attr.href]="parseLookupString(linkProperties.href, rowData)"
+  [target]="linkProperties.target"
+>
+  {{ linkText }}
+</a>
+<button
+  *ngIf="linkProperties.element === 'button'"
+  class="btn-text"
+  [attr.aria-label]="parseLookupString(linkProperties.ariaLabel, rowData)"
+  (click)="triggerAction(linkProperties.action)"
+>
+  {{ linkText }}
+</button>

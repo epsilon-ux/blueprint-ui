@@ -11,6 +11,7 @@ import { TableFooterComponent } from './table-footer/table-footer.component';
 import { ColumnSelectorComponent } from './table-footer/column-selector/column-selector.component';
 import { DisplayDensityComponent } from './table-footer/display-density/display-density.component';
 import { ActionsComponent } from './table-body/table-columns/actions/actions.component';
+import { LinksComponent } from './table-body/table-columns/links/links.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ActionsComponent } from './table-body/table-columns/actions/actions.com
     TableFooterComponent,
     DisplayDensityComponent,
     ColumnSelectorComponent,
-    ActionsComponent
+    ActionsComponent,
+    LinksComponent
   ],
   imports: [CommonModule, FormsModule, NgSelectModule, SearchModule, RouterModule.forChild([])],
   exports: [TableComponent],

@@ -20,24 +20,12 @@
   >
     <!-- Link Column -->
     <ng-container *ngSwitchCase="columnType.LINK">
-      <a
-        *ngIf="column.link.element === 'a'; else buttonLink"
-        class="link-primary"
-        [attr.aria-label]="parseLookupString(column.link.ariaLabel, rowData)"
-        [routerLink]="[column.link.path, rowData[properties.rowId]]"
-        [target]="column.link.target"
-      >
-        {{ rowData[column.key] }}
-      </a>
-      <ng-template #buttonLink>
-        <button
-          class="btn-text"
-          [attr.aria-label]="parseLookupString(column.link.ariaLabel, rowData)"
-          (click)="emitAction(column.link.action, rowData[properties.rowId])"
-        >
-          {{ rowData[column.key] }}
-        </button>
-      </ng-template>
+      <app-links
+        [rowData]="rowData"
+        [linkText]="rowData[column.key]"
+        [linkProperties]="column.link"
+        (emitAction)="emitAction($event, rowData[properties.rowId])"
+      ></app-links>
     </ng-container>
     <!-- Status Indicator Column -->
     <span *ngSwitchCase="columnType.STATUS" class="status-indicator">
