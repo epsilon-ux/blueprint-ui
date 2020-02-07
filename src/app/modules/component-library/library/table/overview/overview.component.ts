@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TabledataService } from '../service/table-data.service';
 import { ColumnType } from '../models/column';
 import Properties from '../models/properties';
+
+import tableData from 'src/app/datasets/tableData.json';
 
 @Component({
   selector: 'app-overview',
@@ -9,7 +10,11 @@ import Properties from '../models/properties';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
-  loadService: any;
+
+  set customerData(json) {
+    this.data = json.customerData.data;
+    this.isDataLoading = false;
+  }
 
   data = [];
   isDataLoading = true;
@@ -38,7 +43,7 @@ export class OverviewComponent implements OnInit {
           element: 'a',
           ariaLabel: 'go to Object ${id}',
           target: '',
-          path: '/table/object/${id}'
+          path: 'object/${id}'
         }
       },
       {
@@ -80,7 +85,7 @@ export class OverviewComponent implements OnInit {
         text: 'Edit',
         ariaLabel: 'Edit Object ${id}',
         class: 'btn-outline-primary',
-        path: '/table/object/edit'
+        path: 'object/edit'
       },
       {
         element: 'button',
@@ -116,14 +121,10 @@ export class OverviewComponent implements OnInit {
       hasPagination: true
     }
   };
-
-  constructor(private tableDataService: TabledataService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.loadService = this.tableDataService.get_cuData().subscribe(res => {
-      this.data = res.body.customerData.data;
-      this.isDataLoading = false;
-    });
+    this.customerData = tableData;
   }
 
   handleAction(action: { action: string; id: string }) {
@@ -131,9 +132,4 @@ export class OverviewComponent implements OnInit {
   }
 
   handleSelectedRowsAction(selectedRowIds: Array<number>) {}
-
-  ngOnDestroy() {
-    this.loadService.unsubscribe();
-  }
-
 }
