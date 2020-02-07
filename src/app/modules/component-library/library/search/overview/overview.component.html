@@ -2,19 +2,21 @@
   <div class="row">
     <div class="col">
       <h2 class="h2">Description</h2>
-      <p class="mb-5">The Search component enables users to specify a word or a phrase in order to find content within an application or data set.</p>
+      <p class="mb-5">The search component enables users to specify a word or a phrase in order to find content within an application or data set.</p>
 
       <h2 class="h2">Example</h2>
       <div class="card">
         <div class="card-body component-preview">
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <bp-search
-              label="Search"
-              placeholder="Search"
-              [isSearching]="isSearching"
-              (search)="handleSearch($event)"
-              (clearSearch)="handleClearSearch($event)"
-            ></bp-search>
+          <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+              <bp-search
+                label="Search"
+                placeholder="Search"
+                [isSearching]="isSearching"
+                (search)="handleSearch($event)"
+                (clearSearch)="handleClearSearch($event)"
+              ></bp-search>
+            </div>
           </div>
         </div>
       </div>
