@@ -1,7 +1,69 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col">
-      <p>API coming soon...</p>
+
+      <h2 class="h2">Inputs</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Search inputs</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">Input</th>
+            <th class="pt-0">Type</th>
+            <th class="pt-0">Description</th>
+            <th class="pt-0">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>label</td>
+            <td>string</td>
+            <td>The search input's label.</td>
+            <td>
+              <p>Required.</p>
+              <p>Default is "Search".</p>
+            </td>
+          </tr>
+          <tr>
+            <td>placeholder</td>
+            <td>string</td>
+            <td>The search input's placeholder.</td>
+            <td>
+              <p>Required.</p>
+              <p>Default is "Search".</p>
+            </td>
+          </tr>
+          <tr>
+            <td>isSearching</td>
+            <td>boolean</td>
+            <td>Determines whether or not a search is in progress.</td>
+            <td>Default is "false".</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="h2">Outputs</h2>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">Search outputs</caption>
+        <thead>
+          <tr>
+            <th class="w-25 pt-0">Output</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>search</td>
+            <td>Emits an event on click of the search icon button or on press of enter.</td>
+          </tr>
+          <tr>
+            <td>clearSearch</td>
+            <td>Emits an event on click of the clear icon button.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- TODO: add versions & features table -->
+
     </div>
   </div>
 </section>
