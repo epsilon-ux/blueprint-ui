@@ -9,7 +9,6 @@ import { ComponentHeaderModule } from 'src/app/shared/component-header/component
 
 import { ComponentLibraryComponent } from './component-library.component';
 import { OverviewComponent } from './overview/overview.component';
-import { TabledataService } from './library/table/service/table-data.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,7 @@ import { TabledataService } from './library/table/service/table-data.service';
     SearchModule,
     LandingPageHeaderModule
   ],
-  providers: [HttpClientModule, TabledataService],
+  providers: [HttpClientModule],
   exports: [ComponentLibraryComponent]
 })
 export class ComponentLibraryModule { }

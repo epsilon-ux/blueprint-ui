@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng build epsilon-blueprint && npm run refresh-table-data 101 && ng build --prod",
+    "refresh-table-data": "node scripts/refresh-table-data.js"
   },
   "private": true,
   "dependencies": {

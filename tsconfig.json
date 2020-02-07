@@ -25,7 +25,9 @@
       "epsilon-blueprint/*": [
         "dist/epsilon-blueprint/*"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

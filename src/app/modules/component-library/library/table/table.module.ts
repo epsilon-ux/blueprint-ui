@@ -11,7 +11,6 @@ import { TableComponent } from './table.component';
 import { UsageComponent } from './usage/usage.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
-import { DummyObjectComponent } from './dummy-object/dummy-object.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { DummyObjectComponent } from './dummy-object/dummy-object.component';
     OverviewComponent,
     UsageComponent,
     PlaygroundComponent,
-    ApiComponent,
-    DummyObjectComponent
+    ApiComponent
   ],
   imports: [
     CommonModule,
