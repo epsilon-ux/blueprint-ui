@@ -8,7 +8,7 @@
 1. `npm run generate-data` This will create mock data needed for components that consume data.
 
 ### Running the application
-You will need to run `ng serve` (or `npm start`) concurrently with `ng build --watch epsilon-blueprint` if you intend on making changes to the Blueprint library.
+You will need to run `ng serve` (or `npm start`) concurrently with `ng build --watch epsilon-blueprint` if you intend on making changes to the Blueprint library. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ### Making Changes
 1. Create feature branch off of the latest master.
@@ -22,10 +22,6 @@ You will need to run `ng serve` (or `npm start`) concurrently with `ng build --w
 ## Angular Docs
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
-
-### Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ### Code scaffolding
 
