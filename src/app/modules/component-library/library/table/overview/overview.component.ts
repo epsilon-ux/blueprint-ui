@@ -59,12 +59,6 @@ export class OverviewComponent implements OnInit {
         }
       },
       {
-        key: 'alert',
-        headerText: 'Alert',
-        isColumnDisplayed: true,
-        type: ColumnType.ICON
-      },
-      {
         key: 'status',
         headerText: 'Status',
         isColumnDisplayed: true,
