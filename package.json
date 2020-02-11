@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "dev": "concurrently -k \"ng serve\" \"gulp copyScss\"",
+    "dev": "concurrently -k \"gulp copyScss\" \"ng serve\"",
     "watch-blueprint": "ng build --watch epsilon-blueprint",
     "build": "ng build",
     "test": "ng test",
