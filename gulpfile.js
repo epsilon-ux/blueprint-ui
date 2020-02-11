@@ -1,13 +1,13 @@
-const { src, dest, series, parallel } = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 
-function indexStyle(cb) {
-  return src('projects/epsilon-blueprint/src/styles.scss')
-    .pipe(dest('dist/epsilon-blueprint/'));
+exports.copyScss = function() {
+  watch('projects/epsilon-blueprint/src/styles/*.scss', cb => {
+    return src('projects/epsilon-blueprint/src/styles/*.scss')
+      .pipe(dest('dist/epsilon-blueprint/styles/'));
+  });
+  
+  watch('projects/epsilon-blueprint/src/styles.scss', cb => {
+    return src('projects/epsilon-blueprint/src/styles.scss')
+      .pipe(dest('dist/epsilon-blueprint/'));
+  });
 }
-
-function styles(cb) {
-  return src('projects/epsilon-blueprint/src/styles/*.scss')
-    .pipe(dest('dist/epsilon-blueprint/styles/'));
-}
-
-exports.copyScss = series(styles, indexStyle);
