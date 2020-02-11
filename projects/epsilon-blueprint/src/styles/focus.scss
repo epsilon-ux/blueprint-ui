@@ -1,0 +1,88 @@
+@import './global-variables';
+
+a,
+.link-primary,
+button,
+.btn,
+tr[role="button"]
+{
+    &:focus:not([disabled])
+    {
+        outline: 0;
+        box-shadow: $box-shadow-focus-default;
+
+        &:not(.skip-link)
+        {
+            z-index: 1;
+        }
+    }
+}
+
+.btn-danger,
+.btn-outline-danger
+{
+    &:focus:not([disabled])
+    {
+        box-shadow: $box-shadow-focus-warning;
+    }
+}
+
+.form-control
+{
+    &:focus:not([disabled]),
+    &:focus:not([readonly])
+    {
+        outline: 0;
+        box-shadow: $box-shadow-focus-default;
+        z-index: 1;
+    }
+
+    &[readonly]:focus
+    {
+        box-shadow: $box-shadow-focus-readonly;
+    }
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container,
+.ng-select.ng-select-focused:not(.ng-select-disabled)>.ng-select-container
+{
+    outline: 0;
+    box-shadow: $box-shadow-focus-default;
+    border-color: $border-color-primary;
+    z-index: 1;
+}
+
+.ng-touched.ng-invalid:not(form):focus,
+.ng-touched.ng-dirty.ng-invalid:not(form):focus
+{
+    box-shadow: $box-shadow-focus-warning;
+}
+
+.ng-select.ng-select-focused.ng-touched.ng-invalid:not(.ng-select-opened)>.ng-select-container,
+.ng-select.ng-select-focused.ng-touched.ng-invalid:not(.ng-select-disabled)>.ng-select-container
+{
+    box-shadow: $box-shadow-focus-warning;
+    border-color: $feedback-color-warning;
+}
+
+.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option-marked,
+.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option-marked.ng-option-selected,
+.ng-select.ng-select-multiple .ng-dropdown-panel .ng-dropdown-panel-items .ng-option-marked.ng-option-selected
+{
+    outline: 0;
+    box-shadow: $box-shadow-focus-default;
+    border-color: $border-color-primary;
+    color: $coconut;
+    background-color: $accent-color-primary;
+    z-index: 1;
+
+    &:hover
+    {
+        box-shadow: none;
+    }
+
+    &.ng-option-disabled
+    {
+        color: $font-color-secondary;
+    }
+}

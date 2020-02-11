@@ -1,0 +1,25 @@
+@import "./styles/_global-variables";
+@import "./styles/typography";
+@import "./styles/focus";
+@import "./styles/tables";
+@import "./styles/buttons-links";
+@import "./styles/dropdowns";
+@import "./styles/forms";
+@import "./styles/status-indicators";
+@import "./styles/ng-select";
+@import "./styles/tabs";
+
+body
+{
+    color: $font-color-primary;
+    font-family: $font-family-default;
+    font-size: $font-size-body;
+    font-weight: $font-weight-regular;
+}
+
+:focus,
+button:focus
+{
+    outline: none;
+    box-shadow: $box-shadow-focus-default;
+}

@@ -1,0 +1,27 @@
+@import './global-variables';
+
+.tab
+{
+    display: inline-block;
+    margin-right: 20px;
+    border: 0;
+    padding: 10px;
+    background: transparent;
+    color: $font-color-primary;
+    font-size: $font-size-display2;
+    font-weight: $font-weight-regular;
+    
+    &:hover
+    {
+        color: $font-color-primary;
+        font-weight: $font-weight-semi-bold;
+        text-decoration: none;
+    }
+    
+    &.active
+    {
+        border-bottom: 5px solid $accent-color-secondary;
+        color: $font-color-primary;
+        font-weight: $font-weight-semi-bold;
+    }
+}
