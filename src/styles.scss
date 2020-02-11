@@ -1,14 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./styles/_global-variables";
-@import "./styles/typography";
-@import "./styles/focus";
-@import "./styles/tables";
-@import "./styles/buttons-links";
-@import "./styles/dropdowns";
-@import "./styles/forms";
-@import "./styles/status-indicators";
-@import "./styles/ng-select";
-@import "./styles/tabs";
+@import '../dist/epsilon-blueprint/styles';
 
 // Blueprint UI Styles
 @import './styles/blueprint-ui-styles/nav-primary';
