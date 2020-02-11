@@ -1,56 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./styles/_global-variables";
-@import "./styles/typography";
-@import "./styles/focus";
-@import "./styles/tables";
-@import "./styles/buttons-links";
-@import "./styles/dropdowns";
-@import "./styles/forms";
-@import "./styles/status-indicators";
-@import "./styles/ng-select";
-@import "./styles/tabs";
+@import '../dist/epsilon-blueprint/styles';
 
 // Blueprint UI Styles
 @import './styles/blueprint-ui-styles/nav-primary';
 @import './styles/blueprint-ui-styles/nav-secondary';
 @import './styles/blueprint-ui-styles/typography';
 @import './styles/blueprint-ui-styles/cards';
-
-body
-{
-    color: $font-color-primary;
-    font-family: $font-family-default;
-    font-size: $font-size-body;
-    font-weight: $font-weight-regular;
-}
-
-:focus,
-button:focus
-{
-    outline: none;
-    box-shadow: $box-shadow-focus-default;
-}
-
-/* grid overrides */
-.container,
-.container-fluid
-{
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.row
-{
-  margin-right: -10px;
-  margin-left: -10px;
-}
-
-.col,
-[class^="col-"]
-{
-  padding-right: 10px;
-  padding-left: 10px;
-}
 
 /* page-level styling */
 .app-body
