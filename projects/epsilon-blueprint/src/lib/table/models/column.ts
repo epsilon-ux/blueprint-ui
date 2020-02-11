@@ -12,5 +12,6 @@ export interface Column {
     BOOLEAN,
     INPUT,
     STATUS,
+    ICON,
     DROPDOWN
   }

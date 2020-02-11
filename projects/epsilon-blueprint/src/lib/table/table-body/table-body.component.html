@@ -27,6 +27,10 @@
         (emitAction)="emitAction($event, rowData[properties.rowId])"
       ></app-links>
     </ng-container>
+    <!-- Icon Column -->
+    <ng-container *ngSwitchCase="columnType.ICON">
+      <i class="fas {{ column.iconMapping[rowData[column.key]] }}" [attr.aria-label]="rowData[column.key]"></i>
+    </ng-container>
     <!-- Status Indicator Column -->
     <span *ngSwitchCase="columnType.STATUS" class="status-indicator">
       <div

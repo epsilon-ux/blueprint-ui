@@ -7,6 +7,9 @@ export default interface Properties {
     headerText: string;
     isColumnDisplayed: boolean;
     type: ColumnType;
+    iconMapping?: {
+      [key: string]: string;
+    };
     link?: {
       element: string; // Expect 'a', or 'button'
       ariaLabel: string; // Can use ${key} syntax to insert values from the row corresponding to the given key

@@ -59,6 +59,16 @@ export class OverviewComponent implements OnInit {
         }
       },
       {
+        key: 'alert',
+        headerText: 'Alert',
+        isColumnDisplayed: true,
+        type: ColumnType.ICON,
+        iconMapping: {
+          'true': 'fa-check',
+          'false': ''
+        }
+      },
+      {
         key: 'status',
         headerText: 'Status',
         isColumnDisplayed: true,
