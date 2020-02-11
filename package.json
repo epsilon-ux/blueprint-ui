@@ -4,13 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "dev": "concurrently -k \"gulp copyScss\" \"ng serve\"",
+    "dev": "concurrently -k \"gulp watchScss\" \"ng serve\"",
     "watch-blueprint": "ng build --watch epsilon-blueprint",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build epsilon-blueprint && npm run refresh-table-data 101 && ng build --prod",
+    "deploy": "ng build epsilon-blueprint && gulp copyStyles && npm run refresh-table-data 101 && ng build --prod",
     "refresh-table-data": "node scripts/refresh-table-data.js",
     "generate-data": "npm run refresh-table-data 101"
   },
