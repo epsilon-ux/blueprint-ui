@@ -23,24 +23,3 @@ button:focus
     outline: none;
     box-shadow: $box-shadow-focus-default;
 }
-
-/* grid overrides */
-.container,
-.container-fluid
-{
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.row
-{
-  margin-right: -10px;
-  margin-left: -10px;
-}
-
-.col,
-[class^="col-"]
-{
-  padding-right: 10px;
-  padding-left: 10px;
-}

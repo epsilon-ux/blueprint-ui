@@ -4,7 +4,7 @@
 
 ### Setup
 1. Clone repository
-1. `npm install -g gulp-cli` to install the Gulp cli. *Note: You may need local admin privileges on your machine to install packaages globally (`-g`).*
+1. `npm install -g gulp-cli` to install the Gulp cli. *Note: You may need local admin privileges on your machine to install packages globally (`-g`).*
 1. `npm install`
 1. `npm run generate-data` This will create mock data needed for components that consume data.
 
