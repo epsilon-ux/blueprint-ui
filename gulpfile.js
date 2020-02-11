@@ -1,27 +1,27 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 
-const copyStylesFolder = cb => {
+const copyScssFolder = cb => {
   return src('projects/epsilon-blueprint/src/styles/*.scss')
     .pipe(dest('dist/epsilon-blueprint/styles/'));
 }
 
-const copyStyles = cb => {
+const copyScss = cb => {
   return src('projects/epsilon-blueprint/src/styles.scss')
     .pipe(dest('dist/epsilon-blueprint/'));
 }
 
-exports.copyScss = parallel(copyStylesFolder, copyStyles);
+exports.copyStyles = parallel(copyScssFolder, copyScss);
 
-exports.watchScss = () => {
+exports.watchStyles = () => {
   watch(
     'projects/epsilon-blueprint/src/styles/*.scss',
     { ignoreInitial: false },
-    cb => copyStylesFolder(cb)
+    cb => copyScssFolder(cb)
   );
   
   watch(
     'projects/epsilon-blueprint/src/styles.scss',
     { ignoreInitial: false },
-    cb => copyStyles(cb)
+    cb => copyScss(cb)
   );
 };
