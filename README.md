@@ -9,7 +9,7 @@
 1. `npm run generate-data` This will create mock data needed for components that consume data.
 
 ### Running the application
-You will need to run `npm start` concurrently with `npm run watch-blueprint` if you intend on making changes to the Blueprint library. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You will need to run `npm run dev` concurrently with `npm run watch-blueprint` if you intend on making changes to the Blueprint library. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ### Making Changes
 1. Create feature branch off of the latest master.
