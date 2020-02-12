@@ -63,9 +63,12 @@ export class OverviewComponent implements OnInit {
         headerText: 'Alert',
         isColumnDisplayed: true,
         type: ColumnType.ICON,
-        iconMapping: {
-          'true': 'fa-check',
-          'false': ''
+        icon: {
+          color: 'midnight',
+          mapping: {
+            true: 'fa-check',
+            false: ''
+          }
         }
       },
       {

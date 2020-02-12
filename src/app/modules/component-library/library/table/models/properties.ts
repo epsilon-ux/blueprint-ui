@@ -7,8 +7,11 @@ export default interface Properties {
     headerText: string;
     isColumnDisplayed: boolean;
     type: ColumnType;
-    iconMapping?: {
-      [key: string]: string;
+    icon?: {
+      color: string;
+      mapping: {
+        [key: string]: string;
+      }
     };
     link?: {
       element: string; // Expect 'a', or 'button'
