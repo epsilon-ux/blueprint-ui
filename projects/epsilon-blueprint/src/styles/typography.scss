@@ -74,6 +74,16 @@ p
 	color: $font-color-secondary !important;
 }
 
+.icon-color-midnight
+{
+  color: $midnight;
+}
+
+.icon-color-warning
+{
+  color: $feedback-color-warning;
+}
+
 .text-small
 {
 	font-size: $font-size-small;
@@ -87,14 +97,4 @@ p
 .font-weight-bold
 {
 	font-weight: $font-weight-bold;
-}
-
-.color-midnight
-{
-  color: $midnight;
-}
-
-.color-tomato
-{
-  color: $tomato;
 }
