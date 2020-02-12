@@ -29,7 +29,11 @@
     </ng-container>
     <!-- Icon Column -->
     <ng-container *ngSwitchCase="columnType.ICON">
-      <i class="fas" [ngClass]="[column.icon.mapping[rowData[column.key]], 'color-' + column.icon.color]" [attr.aria-label]="rowData[column.key]"></i>
+      <i
+        class="fas"
+        [ngClass]="[column.icon.mapping[rowData[column.key]], 'color-' + column.icon.color]"
+        [attr.aria-label]="rowData[column.key]"
+      ></i>
     </ng-container>
     <!-- Status Indicator Column -->
     <span *ngSwitchCase="columnType.STATUS" class="status-indicator">
