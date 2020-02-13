@@ -42,7 +42,6 @@ export class OverviewComponent implements OnInit {
           type: ColumnType.TEXT
         },
         {
-          key: 'amount',
           headerText: 'Template',
           isColumnDisplayed: true,
           type: ColumnType.TEMPLATE,

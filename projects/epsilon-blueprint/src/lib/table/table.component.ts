@@ -133,7 +133,7 @@ export class TableComponent implements OnInit, OnChanges {
 
   getAriaSortOrder(rowIndex: number): string {
     const columnIndex = this.properties.columns.findIndex(
-      (item: { key: string }, index: any) => {
+      (item, index: any) => {
         if (item.key === this.sortColumnName) {
           return index;
         }

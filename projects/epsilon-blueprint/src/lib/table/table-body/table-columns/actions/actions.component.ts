@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { parseLookupString } from '../../../helpers';
+import { Action } from '../../../models/action';
 
 @Component({
   selector: 'app-actions',
@@ -8,15 +9,7 @@ import { parseLookupString } from '../../../helpers';
 })
 export class ActionsComponent implements OnInit {
   @Input()
-  actionItems: {
-    element: string; // Expect 'a', or 'button'
-    text: string;
-    ariaLabel: string; // Can use ${key} syntax to insert values from the row corresponding to the given key
-    class: string;
-    path?: string; // Required if element = 'a'
-    action?: string; // Required if element = 'button',
-    conditions?: any;
-  }[];
+  actionItems: Action[];
 
   @Input()
   rowId: string;

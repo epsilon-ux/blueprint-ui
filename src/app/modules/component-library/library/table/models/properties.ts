@@ -4,7 +4,7 @@ import { ColumnType } from './column';
 export default interface Properties {
   rowId: string;
   columns: {
-    key: string;
+    key?: string; // Only not required when columnType= = TEMPLATE
     headerText: string;
     isColumnDisplayed: boolean;
     type: ColumnType;
