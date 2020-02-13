@@ -44,7 +44,7 @@
     </span>
     <!-- Template Column -->
     <ng-container *ngSwitchCase="columnType.TEMPLATE">
-      <ng-container *ngTemplateOutlet="templateColumn;context:rowData"></ng-container>
+      <ng-container *ngTemplateOutlet="column.template;context:{$implicit: rowData}"></ng-container>
     </ng-container>
     <!-- Standard Column -->
     <ng-container *ngSwitchDefault>{{ rowData[column.key] }}</ng-container>
