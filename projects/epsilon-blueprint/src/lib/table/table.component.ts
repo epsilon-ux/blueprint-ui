@@ -82,10 +82,12 @@ export class TableComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes) {
     if (
-      changes.isDataLoading &&
+      (changes.isDataLoading &&
       changes.isDataLoading.currentValue === false &&
-      this.data.length > 0
+      this.data.length > 0) ||
+      (changes.data && !changes.data.firstChange)
     ) {
+      this.data = changes.data.currentValue;
       if (this.properties.hasSelectableRows) {
         this.data.forEach(row => {
           row.checked = false;

@@ -6,6 +6,12 @@ export interface Column {
   isColumnDisplayed: boolean;
   type: ColumnType;
   template?: TemplateRef<any>;
+  icon?: {
+      color: string;
+      mapping: {
+        [key: string]: string;
+      }
+    };
   link?: {
     element: string; // Expect 'a', or 'button'
     ariaLabel: string; // Can use ${key} syntax to insert values from the row corresponding to the given key
@@ -31,6 +37,7 @@ export enum ColumnType {
   BOOLEAN,
   INPUT,
   STATUS,
-  DROPDOWN,
-  TEMPLATE
+  TEMPLATE,
+  ICON,
+  DROPDOWN
 }
