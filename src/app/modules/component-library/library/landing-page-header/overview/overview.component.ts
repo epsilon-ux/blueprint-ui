@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
   headingText = 'Header Text';
-  buttonText = 'Button Text';
-  showButton = true;
-  buttonElement = 'button';
+  actionText = 'Action Text';
+  hasAction = true;
+  actionElement = 'button';
   href = '#';
 
   constructor() { }
