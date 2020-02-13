@@ -115,6 +115,6 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   getTotalPages() {
-    return Math.floor(this.totalRecords / this.numberOfRows) + 1;
+    return Math.ceil(this.totalRecords / this.numberOfRows);
   }
 }
