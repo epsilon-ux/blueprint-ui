@@ -32,7 +32,10 @@ export class ColumnSelectorComponent implements OnInit {
           ? true
           : false;
       });
-      localStorage.setItem('columns', JSON.stringify(this.columnInfo));
+      // TODO: Figure out local storage issues
+      // 1. What if there are multiple tables in the application
+      // 2. How can we store only the information we need (visible columns)
+      //localStorage.setItem('columns', JSON.stringify(this.columnInfo));
     }
   }
 }
