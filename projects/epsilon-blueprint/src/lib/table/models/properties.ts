@@ -1,3 +1,4 @@
+import { TemplateRef } from '@angular/core';
 import { ColumnType } from './column';
 
 export default interface Properties {
@@ -7,6 +8,7 @@ export default interface Properties {
     headerText: string;
     isColumnDisplayed: boolean;
     type: ColumnType;
+    template?: TemplateRef<any>;
     link?: {
       element: string; // Expect 'a', or 'button'
       ariaLabel: string; // Can use ${key} syntax to insert values from the row corresponding to the given key

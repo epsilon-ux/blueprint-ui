@@ -29,6 +29,8 @@ export class TableBodyComponent implements OnInit {
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
 
+  templateColumn;
+
   // displayDensity
   densityClass: string;
 
@@ -43,7 +45,10 @@ export class TableBodyComponent implements OnInit {
     return ColumnType;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.templateColumn = this.properties.columns[2].template;
+    console.log(this.templateColumn);
+  }
 
   // Statuses
   getStatusClass(value, mapping) {

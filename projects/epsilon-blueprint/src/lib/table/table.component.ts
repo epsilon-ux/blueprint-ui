@@ -74,9 +74,10 @@ export class TableComponent implements OnInit, OnChanges {
     this.setDisplayDensity(displayDensityName);
     this.sortColumnName = this.properties.sort.defaultSortedColumn;
 
-    if (localStorage.getItem('columns')) {
+    // TODO: Figure out local storage issues
+    /* if (localStorage.getItem('columns')) {
       this.properties.columns = JSON.parse(localStorage.getItem('columns'));
-    }
+    } */
   }
 
   ngOnChanges(changes) {

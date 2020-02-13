@@ -42,6 +42,10 @@
       ></i>
       {{ rowData[column.key] }}
     </span>
+    <!-- Template Column -->
+    <ng-container *ngSwitchCase="columnType.TEMPLATE">
+      <ng-container *ngTemplateOutlet="templateColumn;context:rowData"></ng-container>
+    </ng-container>
     <!-- Standard Column -->
     <ng-container *ngSwitchDefault>{{ rowData[column.key] }}</ng-container>
   </td>

@@ -12,5 +12,6 @@ export class Column {
     BOOLEAN,
     INPUT,
     STATUS,
-    DROPDOWN
+    DROPDOWN,
+    TEMPLATE
   }
