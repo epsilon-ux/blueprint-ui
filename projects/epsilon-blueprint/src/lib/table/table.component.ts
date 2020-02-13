@@ -77,22 +77,22 @@ export class TableComponent implements OnInit, OnChanges {
     // Input Validations
     this.properties.columns.forEach(col => {
       if (!col.key && col.type !== ColumnType.TEMPLATE) {
-        let err = new Error(`Missing 'key' property in ${JSON.stringify(col)}`);
+        let err = new Error(`Missing 'key' property in\n${JSON.stringify(col)}`);
         err.name = 'Missing Input';
         throw err;
       }
       if (col.link && !(col.link.element === 'a' || col.link.element === 'button')) {
-        let err = new Error(`Link element must be either 'a' or 'button' in ${JSON.stringify(col)}`);
+        let err = new Error(`Link element must be either 'a' or 'button' in\n${JSON.stringify(col)}`);
         err.name = 'Invalid Input';
         throw err;
       }
       if (col.link && col.link.element === 'a' && !(col.link.path || col.link.href)) {
-        let err = new Error(`Link must have either href or path when element is 'a' in ${JSON.stringify(col)}`);
+        let err = new Error(`Link must have either href or path when element is 'a' in\n${JSON.stringify(col)}`);
         err.name = 'Missing Input';
         throw err;
       }
       if (col.link && col.link.element === 'button' && !col.link.action) {
-        let err = new Error(`Link must have action when element is 'button' in ${JSON.stringify(col)}`);
+        let err = new Error(`Link must have action when element is 'button' in\n${JSON.stringify(col)}`);
         err.name = 'Missing Input';
         throw err;
       }

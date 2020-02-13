@@ -13,7 +13,7 @@ export default interface Properties {
     // TBD: Server Side / Client Side / Restricted
   };
   hasSelectableRows: boolean;
-  actions: Action[];
+  actions?: Action[];
   hasColumnSelector: boolean;
   hasDisplayDensity: boolean;
   pagination: {
