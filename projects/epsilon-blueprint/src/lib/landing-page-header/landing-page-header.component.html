@@ -3,8 +3,8 @@
     <div class="col">
       <h1 class="landing-page-heading">{{ headingText }}</h1>
     </div>
-    <div *ngIf="showButton" class="col-auto">
-      <div *ngIf="buttonElement === 'dropdown'" dropdown class="dropdown">
+    <div *ngIf="hasAction" class="col-auto">
+      <div *ngIf="actionElement === 'dropdown'" dropdown class="dropdown">
         <button
           dropdownToggle
           type="button"
@@ -14,7 +14,7 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          {{ buttonText }}
+          {{ actionText }}
         </button>
         <div
           class="dropdown-menu dropdown-menu-right object-dropdown"
@@ -24,19 +24,19 @@
         </div>
       </div>
       <button
-        *ngIf="buttonElement === 'button'"
+        *ngIf="actionElement === 'button'"
         type="button"
         class="btn btn-primary btn-wide"
-        (click)="onButtonClick()"
+        (click)="onActionClick()"
       >
-        {{ buttonText }}
+        {{ actionText }}
       </button>
       <a
-        *ngIf="buttonElement === 'a'"
+        *ngIf="actionElement === 'a'"
         class="btn btn-primary btn-wide"
         [attr.href]="href"
       >
-        {{ buttonText }}
+        {{ actionText }}
       </a>
     </div>
   </div>
