@@ -32,7 +32,7 @@ export class ColumnSelectorComponent implements OnInit {
           ? true
           : false;
       });
-      localStorage.setItem('thead', JSON.stringify(this.columnInfo));
+      localStorage.setItem('columns', JSON.stringify(this.columnInfo));
     }
   }
 }
