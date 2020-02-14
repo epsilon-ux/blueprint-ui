@@ -2,6 +2,7 @@ import { Column } from './column';
 import { Action } from './action';
 
 export default interface Properties {
+  caption: string;
   rowId: string;
   columns: Column[];
   search:  {
