@@ -1,1 +1,26 @@
-<p>action works!</p>
+<a
+  *ngIf="element === 'a' && routerLink"
+  [ngClass]="['link-primary', classes]"
+  [attr.aria-label]="ariaLabel"
+  [routerLink]="routerLink"
+  [target]="target"
+>
+  {{ text }}
+</a>
+<a
+  *ngIf="element === 'a' && href"
+  [ngClass]="['link-primary', classes]"
+  [attr.aria-label]="ariaLabel"
+  [attr.href]="href"
+  [target]="target"
+>
+  {{ text }}
+</a>
+<button
+  *ngIf="element === 'button'"
+  [ngClass]="['btn', classes]"
+  [attr.aria-label]="ariaLabel"
+  (click)="click($event)"
+>
+  {{ text }}
+</button>
