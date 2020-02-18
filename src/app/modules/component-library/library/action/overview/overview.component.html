@@ -7,14 +7,21 @@
       <div class="card">
         <div class="card-body component-preview">
           <div class="row">
-            <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="col-auto">
               <bp-action
-                [text]="text"
-                [element]="element"
-                [classes]="classes"
-                [ariaLabel]="ariaLabel"
-                [target]="target"
+                text="Action Button"
+                element="button"
+                classes="btn-primary"
+                ariaLabel="Demo action button"
                 [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Action Link"
+                element="a"
+                ariaLabel="Demo action link"
+                href="#"
               ></bp-action>
             </div>
           </div>

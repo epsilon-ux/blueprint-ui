@@ -8,12 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ActionComponent implements OnInit {
 
   @Input() text: string;
-  @Input() element: string = 'button'; // button, a
-  @Input() classes: string;
+  @Input() element = 'button'; // button, a
+  @Input() classes = '';
   @Input() ariaLabel: string;
   @Input() href: string;
   @Input() routerLink: string;
-  @Input() target: string;
+  @Input() target = '';
   @Input() click: Function;
 
   constructor() { }
