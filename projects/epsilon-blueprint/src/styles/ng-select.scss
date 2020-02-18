@@ -454,3 +454,8 @@
         color: $font-color-secondary;
     }
 }
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-label
+{
+  padding: 0 5px;
+}
