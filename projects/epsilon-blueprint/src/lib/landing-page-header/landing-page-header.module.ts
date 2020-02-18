@@ -8,7 +8,6 @@ import { LandingPageHeaderComponent } from './landing-page-header.component';
   ],
   imports: [CommonModule],
   exports: [LandingPageHeaderComponent],
-  providers: [],
-  bootstrap: [LandingPageHeaderComponent]
+  providers: []
 })
 export class LandingPageHeaderModule {}
