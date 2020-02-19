@@ -66,9 +66,20 @@
                 text="Icon Button"
                 element="button"
                 classes="btn-outline-primary"
-                ariaLabel="Demo mini button"
+                ariaLabel="Demo icon button"
                 [click]="click"
                 iconRight="fa-check"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Progress Button"
+                element="button"
+                classes="btn-outline-primary"
+                ariaLabel="Demo progress button"
+                [isDisabled]="true"
+                [click]="click"
+                iconRight="fa-spinner fa-spin"
               ></bp-action>
             </div>
           </div>
