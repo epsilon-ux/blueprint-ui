@@ -15,6 +15,8 @@ export class ActionComponent implements OnInit {
   @Input() routerLink: string;
   @Input() target = '';
   @Input() isDisabled = false;
+  @Input() iconLeft: string;
+  @Input() iconRight: string;
   @Input() click: Function;
 
   constructor() { }

@@ -5,7 +5,7 @@
   [routerLink]="routerLink"
   [target]="target"
 >
-  {{ text }}
+  <ng-container *ngTemplateOutlet="actionContent"></ng-container>
 </a>
 <a
   *ngIf="element === 'a' && href"
@@ -14,7 +14,7 @@
   [attr.href]="href"
   [target]="target"
 >
-  {{ text }}
+  <ng-container *ngTemplateOutlet="actionContent"></ng-container>
 </a>
 <button
   *ngIf="element === 'button'"
@@ -23,5 +23,11 @@
   [disabled]="isDisabled"
   (click)="click($event)"
 >
-  {{ text }}
+  <ng-container *ngTemplateOutlet="actionContent"></ng-container>
 </button>
+
+<ng-template #actionContent>
+  <i *ngIf="iconLeft" [ngClass]="['fas', iconLeft, 'icon-left']"></i>
+  {{ text }}
+  <i *ngIf="iconRight" [ngClass]="['fas', iconRight, 'icon-right']"></i>
+</ng-template>
