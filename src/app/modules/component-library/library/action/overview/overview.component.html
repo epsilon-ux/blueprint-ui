@@ -9,19 +9,95 @@
           <div class="row">
             <div class="col-auto">
               <bp-action
-                text="Action Button"
+                text="Primary Button"
                 element="button"
                 classes="btn-primary"
-                ariaLabel="Demo action button"
+                ariaLabel="Demo primary button"
                 [click]="click"
               ></bp-action>
             </div>
+            <div class="col-auto">
+              <bp-action
+                text="Secondary Button"
+                element="button"
+                classes="btn-outline-primary"
+                ariaLabel="Demo outline button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Warning Button"
+                element="button"
+                classes="btn-danger"
+                ariaLabel="Demo warning button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Secondary Warning Button"
+                element="button"
+                classes="btn-outline-danger"
+                ariaLabel="Demo secondary warning button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Disabled Button"
+                element="button"
+                ariaLabel="Demo disabled button"
+                [isDisabled]="true"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Mini Button"
+                element="button"
+                classes="btn-mini btn-primary"
+                ariaLabel="Demo mini button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Icon Button"
+                element="button"
+                classes="btn-outline-primary"
+                ariaLabel="Demo mini button"
+                [click]="click"
+                iconRight="fa-check"
+              ></bp-action>
+            </div>
+          </div>
+          <div class="row">
             <div class="col-auto">
               <bp-action
                 text="Action Link"
                 element="a"
                 ariaLabel="Demo action link"
                 href="#"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Back Link"
+                element="a"
+                ariaLabel="Demo back link"
+                href="#"
+                iconLeft="fa-angle-left"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Disabled Button Link"
+                element="button"
+                classes="btn-text"
+                ariaLabel="Demo disabled button link"
+                [isDisabled]="true"
+                [click]="click"
               ></bp-action>
             </div>
           </div>
