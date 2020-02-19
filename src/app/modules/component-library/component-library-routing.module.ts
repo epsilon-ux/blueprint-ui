@@ -9,7 +9,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
 
-    { path: 'action', loadChildren: () => import('./library/action/action.module')
+    { path: 'buttons-links', loadChildren: () => import('./library/action/action.module')
       .then(m => m.ActionLibraryModule) },
 
     { path: 'landing-page-header', loadChildren: () => import('./library/landing-page-header/landing-page-header.module')

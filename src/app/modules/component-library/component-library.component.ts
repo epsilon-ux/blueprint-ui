@@ -11,8 +11,8 @@ export class ComponentLibraryComponent {
     title: 'Components',
     items: [
       {
-        route: './action',
-        text: 'Action',
+        route: './buttons-links',
+        text: 'Buttons & Links',
       },
       {
         route: './landing-page-header',
