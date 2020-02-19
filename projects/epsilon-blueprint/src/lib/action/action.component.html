@@ -20,6 +20,7 @@
   *ngIf="element === 'button'"
   [ngClass]="['btn', classes]"
   [attr.aria-label]="ariaLabel"
+  [disabled]="isDisabled"
   (click)="click($event)"
 >
   {{ text }}

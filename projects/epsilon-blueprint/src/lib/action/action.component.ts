@@ -14,6 +14,7 @@ export class ActionComponent implements OnInit {
   @Input() href: string;
   @Input() routerLink: string;
   @Input() target = '';
+  @Input() isDisabled = false;
   @Input() click: Function;
 
   constructor() { }
@@ -32,6 +33,11 @@ export class ActionComponent implements OnInit {
     if (this.element === 'a' && !(this.href || this.routerLink)) {
       const err = new Error('Action needs either routerLink or href when element = \'a\'');
       err.name = 'Missing Input';
+      throw err;
+    }
+    if (this.element === 'a' && this.isDisabled) {
+      const err = new Error('Action can only be disabled if element = \'button\'');
+      err.name = 'Invalid Input';
       throw err;
     }
   }
