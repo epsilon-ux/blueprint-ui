@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { TableModule, SearchModule, LandingPageHeaderModule } from 'epsilon-blueprint';
+import { LandingPageHeaderModule } from 'epsilon-blueprint';
 
 import { ComponentsRoutingModule } from './component-library-routing.module';
 import { BaseTemplateModule } from 'src/app/shared/base-template/base-template.module';
@@ -20,8 +20,6 @@ import { OverviewComponent } from './overview/overview.component';
     BaseTemplateModule,
     ComponentHeaderModule,
     ComponentsRoutingModule,
-    TableModule,
-    SearchModule,
     LandingPageHeaderModule
   ],
   providers: [HttpClientModule],
