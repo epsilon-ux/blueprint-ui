@@ -1,9 +1,9 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col">
-      <p class="mb-5">Placeholder description</p>
+      <p class="mb-5">Buttons and links share one single action component. The action component covers all button and link styles.</p>
 
-      <h2 class="h2">Example</h2>
+      <h2 class="h2">Buttons</h2>
       <div class="card">
         <div class="card-body component-preview">
           <div class="row">
@@ -82,7 +82,22 @@
                 iconRight="fa-spinner fa-spin"
               ></bp-action>
             </div>
+            <div class="col-auto">
+              <bp-action
+                text="Link Button"
+                element="a"
+                classes="btn btn-primary"
+                href="#"
+                ariaLabel="Demo link button"
+              ></bp-action>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <h2 class="h2">Links</h2>
+      <div class="card">
+        <div class="card-body component-preview">
           <div class="row">
             <div class="col-auto">
               <bp-action

@@ -28,9 +28,7 @@ export class ActionComponent implements OnInit {
       throw err;
     }
     if (this.element === 'button' && !this.click) {
-      const err = new Error('Click function required when element = \'button\'');
-      err.name = 'Missing Input';
-      throw err;
+      console.warn('Missing click function on action button', this);
     }
     if (this.element === 'a' && !(this.href || this.routerLink)) {
       const err = new Error('Action needs either routerLink or href when element = \'a\'');
