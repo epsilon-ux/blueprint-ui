@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BaseTemplateComponent } from './base-template.component';
 import { NavPrimaryComponent } from './nav-primary/nav-primary.component';
-import { NavSecondaryComponent } from './nav-secondary/nav-secondary.component';
+import { NavSecondaryModule } from 'epsilon-blueprint';
 
 
 @NgModule({
   declarations: [
     BaseTemplateComponent,
-    NavPrimaryComponent,
-    NavSecondaryComponent
+    NavPrimaryComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NavSecondaryModule
   ],
   exports: [BaseTemplateComponent]
 })

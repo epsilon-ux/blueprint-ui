@@ -15,6 +15,10 @@ export class ComponentLibraryComponent {
         text: 'Landing Page Header',
       },
       {
+        route: './nav-secondary',
+        text: 'Secondary Nav'
+      },
+      {
         route: './search',
         text: 'Search',
       },

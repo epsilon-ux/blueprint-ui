@@ -17,6 +17,7 @@ export class NavSecondaryComponent implements OnInit {
 
   @Input() header: string;
   @Input() items: Item[];
+  @Input() shouldRouteMatchExact = false;
 
   constructor() { }
 

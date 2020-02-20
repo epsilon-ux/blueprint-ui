@@ -8,7 +8,6 @@ export class NavSecondaryComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

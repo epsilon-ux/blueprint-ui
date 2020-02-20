@@ -9,7 +9,7 @@
       <a
         routerLink="{{ item.route }}"
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}"
+        [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
         class="nav-link level-1"
       >
         {{ item.text }}
