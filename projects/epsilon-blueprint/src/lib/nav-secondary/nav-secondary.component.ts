@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'bp-nav-secondary',
@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-secondary.component.scss']
 })
 export class NavSecondaryComponent implements OnInit {
+  
+  isNavCollapsed = false;
+  
+  @Input() items: {
+    route: string;
+    text: string;
+  }[];
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  toggleNav() {
+    this.isNavCollapsed = !this.isNavCollapsed;
   }
 
 }

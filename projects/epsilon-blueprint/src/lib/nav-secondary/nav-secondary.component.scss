@@ -1,0 +1,107 @@
+@import '../../styles/global-variables';
+
+.nav-secondary
+{
+  position: sticky;
+  min-width: 200px;
+  border-right: 1px solid $border-color-secondary;
+  background: $coconut;
+  transition: min-width .25s ease-out;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.nav-secondary-toggle-wrapper
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nav-secondary-toggle
+{
+  width: 30px;
+  height: 30px;
+  border: 0;
+  padding: 0;
+  background: $coconut;
+  color: $accent-color-primary;
+  font-weight: $font-weight-semi-bold;
+}
+
+.nav-secondary-toggle:hover
+{
+  color: $accent-color-primary-hover;
+}
+
+.nav-secondary-toggle::after
+{
+  content: $icon-close;
+  font-family: $font-family-icon;
+}
+
+.nav-secondary-title
+{
+  margin: 15px;
+  font-size: $font-size-display2;
+}
+
+.nav-secondary-nav-list
+{
+  margin: 15px 0;
+  padding: 0 15px;
+  list-style-type: none;
+}
+
+.nav-secondary-nav-item
+{
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.level-2
+{
+  margin-left: 10px;
+}
+
+.level-3
+{
+  margin-left: 20px;
+}
+
+.level-4
+{
+  margin-left: 30px;
+}
+
+/* collapsed */
+
+.nav-secondary.collapsed
+{
+  min-width: 30px;
+}
+
+.nav-secondary.collapsed .nav-secondary-toggle
+{
+  border-bottom: 1px solid $border-color-secondary;
+  background: $ice;
+}
+
+.nav-secondary.collapsed .nav-secondary-toggle:hover
+{
+  border: 0;
+  background: $accent-color-primary-hover;
+  color: $coconut;
+}
+
+.nav-secondary.collapsed .nav-secondary-toggle::after
+{
+  content: $icon-menu;
+}
+
+.nav-secondary.collapsed .nav-secondary-title,
+.nav-secondary.collapsed .nav-secondary-nav-list
+{
+  display: none;
+}

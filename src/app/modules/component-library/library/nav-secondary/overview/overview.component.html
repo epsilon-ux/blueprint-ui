@@ -6,7 +6,15 @@
       <h2 class="h2">Example</h2>
       <div class="card">
         <div class="card-body component-preview">
-          <bp-nav-secondary></bp-nav-secondary>
+          <div class="demo-layout">
+            <bp-nav-secondary
+              [items]="navItems"
+              class="secondary-nav-demo"
+            ></bp-nav-secondary>
+            <div class="demo-main">
+              Main Content
+            </div>
+          </div>
         </div>
       </div>
     </div>

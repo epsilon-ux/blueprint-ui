@@ -7,6 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
+  navItems = [
+    {
+      text: 'Page',
+      route: ''
+    },
+    {
+      text: 'Page',
+      route: ''
+    },
+    {
+      text: 'Page',
+      route: ''
+    },
+    {
+      text: 'Page',
+      route: ''
+    },
+    {
+      text: 'Page',
+      route: ''
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
