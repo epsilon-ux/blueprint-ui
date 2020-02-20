@@ -10,11 +10,23 @@
       <h2>Setup &amp; Installation</h2>
       <p>This package has a few dependencies that are not included in the package itself. They are as follows:</p>
       <ul>
+        <li>Angular 8</li>
+        <li>Ng-select</li>
         <li>Bootstrap v4</li>
         <li>FontAwesome 5</li>
-        <li>Up-to-date stylesheets from the UX Team</li>
       </ul>
-      <p>Once you have all these, you can run <code>npm install epsilon-blueprint</code> to install the package to your node_modules.</p>
+      <p>Once you have all these, run <code>npm install epsilon-blueprint</code> to install the package to your node_modules. Once the package is installed you then need to imoprt the stylesheets from the package.</p>
+      <p>
+        In your application styles.scss file, add the following import statement.
+        <code class="code-block">
+          @import "~epsilon-blueprint/styles";
+        </code>
+      </p>
+      <p>When you need to use global variables in a scss file, add the following import statement.
+        <code class="code-block">
+          @import "~epsilon-blueprint/styles/global-variables";
+        </code>
+      </p>
     </div>
   </div>
 </section>
