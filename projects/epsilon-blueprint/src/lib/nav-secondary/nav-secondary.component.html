@@ -1,11 +1,19 @@
 <nav id="navSecondary" class="nav-secondary{{ isNavCollapsed ? ' collapsed' : '' }}">
-  <div class="nav-secondary-toggle-wrapper">
-    <button type="button" id="navSecondaryToggle" class="nav-secondary-toggle" aria-controls="navSecondary" aria-label="Toggle secondary navigation" (click)="toggleNav()">
+  <div class="toggle-wrapper">
+    <button type="button" class="toggle" aria-controls="navSecondary" aria-label="Toggle secondary navigation" (click)="toggleNav()">
     </button>
   </div>
-  <ul id="navSecondaryList" class="nav-secondary-nav-list">
-    <li *ngFor="let item of items" class="nav-secondary-nav-item">
-      <a routerLink="{{ item.route }}" class="nav-secondary-nav-link link-primary level-1">{{ item.text }}</a>
+  <h2 *ngIf="header" class="header">{{ header }}</h2>
+  <ul class="nav-list">
+    <li *ngFor="let item of items" class="nav-item">
+      <a
+        routerLink="{{ item.route }}"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+        class="nav-link level-1"
+      >
+        {{ item.text }}
+      </a>
     </li>
   </ul>
 </nav>

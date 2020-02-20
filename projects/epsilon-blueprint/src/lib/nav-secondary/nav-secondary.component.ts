@@ -1,5 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+interface Item {
+  route: string;
+  text: string;
+  children?: Item[];
+}[];
+
 @Component({
   selector: 'bp-nav-secondary',
   templateUrl: './nav-secondary.component.html',
@@ -8,11 +14,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavSecondaryComponent implements OnInit {
   
   isNavCollapsed = false;
-  
-  @Input() items: {
-    route: string;
-    text: string;
-  }[];
+
+  @Input() header: string;
+  @Input() items: Item[];
 
   constructor() { }
 

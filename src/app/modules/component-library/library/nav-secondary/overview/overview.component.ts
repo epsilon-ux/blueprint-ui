@@ -9,8 +9,8 @@ export class OverviewComponent implements OnInit {
 
   navItems = [
     {
-      text: 'Page',
-      route: ''
+      text: 'Active Page',
+      route: '/components/nav-secondary/overview'
     },
     {
       text: 'Page',
