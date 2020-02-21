@@ -11,6 +11,10 @@ export class ComponentLibraryComponent {
     title: 'Components',
     items: [
       {
+        route: './overview',
+        text: 'Introduction',
+      },
+      {
         route: './landing-page-header',
         text: 'Landing Page Header',
       },
