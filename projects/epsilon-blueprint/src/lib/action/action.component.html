@@ -1,6 +1,6 @@
 <a
   *ngIf="element === 'a' && routerLink"
-  [ngClass]="['link-primary', classes]"
+  [ngClass]="classes"
   [attr.aria-label]="ariaLabel"
   [routerLink]="routerLink"
   [target]="target"
@@ -9,7 +9,7 @@
 </a>
 <a
   *ngIf="element === 'a' && href"
-  [ngClass]="['link-primary', classes]"
+  [ngClass]="classes"
   [attr.aria-label]="ariaLabel"
   [attr.href]="href"
   [target]="target"
@@ -18,7 +18,7 @@
 </a>
 <button
   *ngIf="element === 'button'"
-  [ngClass]="['btn', classes]"
+  [ngClass]="classes"
   [attr.aria-label]="ariaLabel"
   [disabled]="isDisabled"
   (click)="click($event)"
