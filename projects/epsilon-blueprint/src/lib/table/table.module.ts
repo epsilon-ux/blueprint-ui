@@ -26,7 +26,6 @@ import { LinksComponent } from './table-body/table-columns/links/links.component
   ],
   imports: [CommonModule, FormsModule, NgSelectModule, SearchModule, RouterModule.forChild([])],
   exports: [TableComponent],
-  providers: [],
-  bootstrap: [TableComponent]
+  providers: []
 })
 export class TableModule {}
