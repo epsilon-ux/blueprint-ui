@@ -1,0 +1,19 @@
+<nav id="navSecondary" class="nav-secondary{{ isNavCollapsed ? ' collapsed' : '' }}">
+  <div class="toggle-wrapper">
+    <button type="button" class="toggle" aria-controls="navSecondary" aria-label="Toggle secondary navigation" (click)="toggleNav()">
+    </button>
+  </div>
+  <p *ngIf="title" class="title">{{ title }}</p>
+  <ul class="nav-list">
+    <li *ngFor="let item of items" class="nav-item">
+      <a
+        routerLink="{{ item.route }}"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
+        class="nav-link level-1"
+      >
+        {{ item.text }}
+      </a>
+    </li>
+  </ul>
+</nav>

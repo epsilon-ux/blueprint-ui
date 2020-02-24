@@ -11,12 +11,20 @@ export class ComponentLibraryComponent {
     title: 'Components',
     items: [
       {
+        route: './overview',
+        text: 'Introduction',
+      },
+      {
         route: './buttons-links',
         text: 'Buttons & Links',
       },
       {
         route: './landing-page-header',
         text: 'Landing Page Header',
+      },
+      {
+        route: './nav-secondary',
+        text: 'Secondary Nav'
       },
       {
         route: './search',

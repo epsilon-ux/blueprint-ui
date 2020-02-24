@@ -21,6 +21,9 @@ const routes: Routes = [
     { path: 'table', loadChildren: () => import('./library/table/table.module')
       .then(m => m.TableLibraryModule) },
 
+    { path: 'nav-secondary', loadChildren: () => import('./library/nav-secondary/nav-secondary.module')
+      .then(m => m.NavSecondaryLibraryModule) },
+
     { path: '**', redirectTo: 'overview', pathMatch: 'full' } // TODO: create a componentNotFound page for this instance
   ]}
 ];
