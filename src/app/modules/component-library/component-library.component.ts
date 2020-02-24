@@ -24,7 +24,7 @@ export class ComponentLibraryComponent {
       },
       {
         route: './nav-secondary',
-        text: 'Secondary Nav'
+        text: 'Secondary Navigation'
       },
       {
         route: './search',
