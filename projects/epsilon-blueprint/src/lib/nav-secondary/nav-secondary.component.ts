@@ -15,7 +15,7 @@ export class NavSecondaryComponent implements OnInit {
   
   isNavCollapsed = false;
 
-  @Input() header: string;
+  @Input() title: string;
   @Input() items: Item[];
   @Input() shouldRouteMatchExact = false;
 

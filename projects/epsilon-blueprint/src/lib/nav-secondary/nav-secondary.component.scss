@@ -27,22 +27,24 @@
     color: $accent-color-primary;
     font-size: $font-size-display2;
     font-weight: $font-weight-semi-bold;
+    
+    &:hover
+    {
+      color: $accent-color-primary-hover;
+    }
+    
+    &::after
+    {
+      content: $icon-close;
+      font-family: $font-family-icon;
+    }
   }
   
-  .toggle:hover
-  {
-    color: $accent-color-primary-hover;
-  }
-  
-  .toggle::after
-  {
-    content: $icon-close;
-    font-family: $font-family-icon;
-  }
 
-  .header
+  .title
   {
     margin: 0 20px 15px 20px;
+    font-size: $font-size-display2;
     font-weight: $font-weight-regular;
   }
   
@@ -80,22 +82,6 @@
   }
 }
 
-
-.level-2
-{
-  margin-left: 10px;
-}
-
-.level-3
-{
-  margin-left: 20px;
-}
-
-.level-4
-{
-  margin-left: 30px;
-}
-
 /* collapsed */
 
 .nav-secondary.collapsed
@@ -106,19 +92,20 @@
   {
     border-bottom: 1px solid $border-color-secondary;
     background: $ice;
+    
+    &:hover
+    {
+      border: 0;
+      background: $accent-color-primary-hover;
+      color: $coconut;
+    }
+    
+    &::after
+    {
+      content: $icon-menu;
+    }
   }
   
-  .toggle:hover
-  {
-    border: 0;
-    background: $accent-color-primary-hover;
-    color: $coconut;
-  }
-  
-  .toggle::after
-  {
-    content: $icon-menu;
-  }
   
   :not(.toggle-wrapper):not(.toggle)
   {

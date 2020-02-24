@@ -3,7 +3,7 @@
     <button type="button" class="toggle" aria-controls="navSecondary" aria-label="Toggle secondary navigation" (click)="toggleNav()">
     </button>
   </div>
-  <h2 *ngIf="header" class="header">{{ header }}</h2>
+  <p *ngIf="title" class="title">{{ title }}</p>
   <ul class="nav-list">
     <li *ngFor="let item of items" class="nav-item">
       <a
