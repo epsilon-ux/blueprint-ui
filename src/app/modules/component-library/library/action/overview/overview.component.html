@@ -1,0 +1,137 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <p class="mb-5">Buttons and links share one single action component. The action component covers all button and link styles.</p>
+
+      <h2 class="h2">Buttons</h2>
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-action
+                text="Primary Button"
+                element="button"
+                classes="btn btn-primary"
+                ariaLabel="Demo primary button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Secondary Button"
+                element="button"
+                classes="btn btn-outline-primary"
+                ariaLabel="Demo secondary button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Warning Button"
+                element="button"
+                classes="btn btn-danger"
+                ariaLabel="Demo warning button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Secondary Warning Button"
+                element="button"
+                classes="btn btn-outline-danger"
+                ariaLabel="Demo secondary warning button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Disabled Button"
+                element="button"
+                classes="btn"
+                ariaLabel="Demo disabled button"
+                [isDisabled]="true"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Mini Button"
+                element="button"
+                classes="btn btn-mini btn-primary"
+                ariaLabel="Demo mini button"
+                [click]="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Icon Button"
+                element="button"
+                classes="btn btn-outline-primary"
+                ariaLabel="Demo icon button"
+                [click]="click"
+                iconRight="fa-check"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Progress Button"
+                element="button"
+                classes="btn btn-outline-primary"
+                ariaLabel="Demo progress button"
+                [isDisabled]="true"
+                [click]="click"
+                iconRight="fa-spinner fa-spin"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Link Button"
+                element="a"
+                classes="btn btn-primary"
+                href="#"
+                ariaLabel="Demo link button"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="h2">Links</h2>
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-action
+                text="Link Primary"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Link primary"
+                href="#"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Back Link"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo back link"
+                href="#"
+                iconLeft="fa-angle-left"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                text="Disabled Button Link"
+                element="button"
+                classes="btn btn-text"
+                ariaLabel="Demo disabled button link"
+                [isDisabled]="true"
+                [click]="click"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

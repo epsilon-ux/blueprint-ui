@@ -11,6 +11,10 @@ export class ComponentLibraryComponent {
     title: 'Components',
     items: [
       {
+        route: './buttons-links',
+        text: 'Buttons & Links',
+      },
+      {
         route: './landing-page-header',
         text: 'Landing Page Header',
       },

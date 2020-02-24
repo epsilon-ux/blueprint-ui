@@ -2,6 +2,9 @@
  * Public API Surface of epsilon-blueprint
  */
 
+export * from './lib/action/action.component';
+export * from './lib/action/action.module';
+
 export * from './lib/table/table.component';
 export * from './lib/table/table.module';
 
