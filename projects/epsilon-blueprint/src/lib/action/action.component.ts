@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ActionComponent implements OnInit {
 
   @Input() text: string;
-  @Input() element = 'button'; // button, a
+  @Input() element = 'button';
   @Input() classes = '';
   @Input() ariaLabel: string;
   @Input() href: string;
@@ -22,6 +22,11 @@ export class ActionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.validation();
+  }
+  
+  validation() {
+    // Validation
     if (!(this.element === 'a' || this.element === 'button')) {
       const err = new Error('Action\'s element expects either \'button\' or \'a\'');
       err.name = 'Invalid Input';
