@@ -25,7 +25,8 @@ button.btn-text:disabled
 {
   font-weight: $font-weight-regular;
   
-  &:hover{
+  &:hover
+  {
     text-decoration: none;
   }
 }
