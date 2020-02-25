@@ -27,6 +27,17 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit() {
     this.properties = {
+      
+      /*Table - internationalization support starts here*/
+      selectCheckBoxLabel: 'Select all rows',
+      actionsVisibleHeader: 'Actions',
+      actionsHiddenHeader: 'Actions',
+      loadingText: 'Loading data',
+      noDataText: 'No data available',
+      selectRowText: 'Select Row',
+      actionMenuLabel: 'Actions Menu',
+      /*Ends here*/      
+      
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
       columns: [

@@ -4,6 +4,17 @@ import { Action } from './action';
 export default interface Properties {
   caption: string;
   rowId: string;
+  
+  /*Table - internationalization support starts here*/
+  selectCheckBoxLabel: string;
+  actionsVisibleHeader: string;
+  actionsHiddenHeader: string;
+  loadingText: string;
+  noDataText: string;
+  selectRowText: string;
+  actionMenuLabel: string;
+  /*Ends here*/
+
   columns: Column[];
   search:  {
     hasSearch: boolean;
