@@ -25,7 +25,7 @@ export class OverviewComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {    
     this.properties = {
       
       /*Table - internationalization support starts here*/
@@ -36,6 +36,16 @@ export class OverviewComponent implements OnInit {
       noDataText: 'No data available',
       selectRowText: 'Select Row',
       actionMenuLabel: 'Actions Menu',
+      columnSelectorLabel:'Column Selector:',
+      loadingLabel:'Showing',
+      outOfLabel: 'out of',
+      defaultLabel: '(Default)',
+      displayDensityLabel: 'Display Density:',      
+      numberOfRowsLabel: 'Number of Rows per Page',
+      firstPageText: 'First Page',
+      previousPageText: 'Previous Page',
+      nextPageText: 'Next Page',
+      lastPageText: 'Last Page', 
       /*Ends here*/      
       
       caption: 'This is an example of a table with all available table features turned on.',

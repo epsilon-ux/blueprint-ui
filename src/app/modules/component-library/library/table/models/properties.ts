@@ -28,6 +28,16 @@ export default interface Properties {
   actions?: Action[];
   hasColumnSelector: boolean;
   hasDisplayDensity: boolean;
+  displayDensityLabel: string;
+  columnSelectorLabel:string;
+  loadingLabel: string;
+  outOfLabel: string;
+  defaultLabel: string;
+  numberOfRowsLabel: string;
+  firstPageText: string;
+  previousPageText: string;
+  nextPageText: string;
+  lastPageText: string;
   pagination: {
     hasPagination: boolean;
     // TBD: Server Side / Client Side / Restricted 

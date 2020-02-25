@@ -11,6 +11,9 @@ export class DisplayDensityComponent implements OnInit {
 
   @Input()
   showDisplayDensity: boolean;
+  
+  @Input()
+  displayDensityText: string;
 
   displayDensity;
   displayDensityOptions = ['Comfortable', 'Compact'];
