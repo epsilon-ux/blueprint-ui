@@ -112,7 +112,7 @@ export class OverviewComponent implements OnInit {
           text: 'Edit',
           ariaLabel: 'Edit Object ${id}',
           class: 'btn-outline-primary',
-          path: 'object/edit'
+          routerLink: './'
         },
         {
           element: 'button',
@@ -134,13 +134,13 @@ export class OverviewComponent implements OnInit {
             }
           ]
         },
-        {
+        /* {
           element: 'button',
           text: 'Delete',
           ariaLabel: 'Delete Object ${id}',
           class: 'btn-outline-danger',
           action: 'delete'
-        }
+        } */
       ],
       hasColumnSelector: true,
       hasDisplayDensity: true,
@@ -152,6 +152,7 @@ export class OverviewComponent implements OnInit {
   }
 
   handleAction(action: { action: string; id: string }) {
+    console.log(action);
     // Use action from action buttons to trigger different events here
   }
 

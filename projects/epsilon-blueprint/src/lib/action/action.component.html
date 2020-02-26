@@ -21,7 +21,7 @@
   [ngClass]="classes"
   [attr.aria-label]="ariaLabel"
   [disabled]="isDisabled"
-  (click)="click($event)"
+  (click)="emitClick($event)"
 >
   <ng-container *ngTemplateOutlet="actionContent"></ng-container>
 </button>
