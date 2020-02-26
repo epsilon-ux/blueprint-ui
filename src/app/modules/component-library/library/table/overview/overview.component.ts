@@ -134,13 +134,13 @@ export class OverviewComponent implements OnInit {
             }
           ]
         },
-        /* {
+        {
           element: 'button',
           text: 'Delete',
           ariaLabel: 'Delete Object ${id}',
           class: 'btn-outline-danger',
           action: 'delete'
-        } */
+        }
       ],
       hasColumnSelector: true,
       hasDisplayDensity: true,
