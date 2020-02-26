@@ -152,7 +152,6 @@ export class OverviewComponent implements OnInit {
   }
 
   handleAction(action: { action: string; id: string }) {
-    console.log(action);
     // Use action from action buttons to trigger different events here
   }
 
