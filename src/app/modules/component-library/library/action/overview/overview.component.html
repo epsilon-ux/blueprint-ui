@@ -13,7 +13,7 @@
                 element="button"
                 classes="btn btn-primary"
                 ariaLabel="Demo primary button"
-                [click]="click"
+                (click)="click"
               ></bp-action>
             </div>
             <div class="col-auto">
@@ -22,7 +22,7 @@
                 element="button"
                 classes="btn btn-outline-primary"
                 ariaLabel="Demo secondary button"
-                [click]="click"
+                (click)="click"
               ></bp-action>
             </div>
             <div class="col-auto">
@@ -31,7 +31,7 @@
                 element="button"
                 classes="btn btn-danger"
                 ariaLabel="Demo warning button"
-                [click]="click"
+                (click)="click"
               ></bp-action>
             </div>
             <div class="col-auto">
@@ -40,7 +40,7 @@
                 element="button"
                 classes="btn btn-outline-danger"
                 ariaLabel="Demo secondary warning button"
-                [click]="click"
+                (click)="click"
               ></bp-action>
             </div>
             <div class="col-auto">
@@ -50,7 +50,7 @@
                 classes="btn"
                 ariaLabel="Demo disabled button"
                 [isDisabled]="true"
-                [click]="click"
+                (click)="click"
               ></bp-action>
             </div>
             <div class="col-auto">
@@ -59,7 +59,7 @@
                 element="button"
                 classes="btn btn-mini btn-primary"
                 ariaLabel="Demo mini button"
-                [click]="click"
+                (click)="click"
               ></bp-action>
             </div>
             <div class="col-auto">
@@ -68,7 +68,7 @@
                 element="button"
                 classes="btn btn-outline-primary"
                 ariaLabel="Demo icon button"
-                [click]="click"
+                (click)="click"
                 iconRight="fa-check"
               ></bp-action>
             </div>
@@ -79,7 +79,7 @@
                 classes="btn btn-outline-primary"
                 ariaLabel="Demo progress button"
                 [isDisabled]="true"
-                [click]="click"
+                (click)="click"
                 iconRight="fa-spinner fa-spin"
               ></bp-action>
             </div>
@@ -126,7 +126,7 @@
                 classes="btn btn-text"
                 ariaLabel="Demo disabled button link"
                 [isDisabled]="true"
-                [click]="click"
+                (click)="click"
               ></bp-action>
             </div>
           </div>
