@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'bp-action',
@@ -17,7 +17,8 @@ export class ActionComponent implements OnInit {
   @Input() isDisabled = false;
   @Input() iconLeft: string;
   @Input() iconRight: string;
-  @Input() click: Function;
+
+  @Output() click = new EventEmitter();
 
   constructor() { }
 
@@ -45,6 +46,10 @@ export class ActionComponent implements OnInit {
       err.name = 'Invalid Input';
       throw err;
     }
+  }
+
+  emitClick(e) {
+    this.click.emit(e);
   }
 
 }

@@ -1,22 +1,13 @@
 <ng-container *ngFor="let actionItem of renderedActions">
-  <button
-    *ngIf="actionItem.element === 'button'; else link"
-    class="action-item {{ classList }}"
-    [ngClass]="actionItem.class"
+  <bp-action
+    [ngClass]="{ 'action-item': actionItems.length < 3 }"
+    [element]="actionItem.element"
+    [text]="actionItem.text"
+    [classes]="[actionItem.class, classList]"
     [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"
+    [target]="actionItem.target"
+    [routerLink]="actionItem.routerLink ? parseLookupString(actionItem.routerLink, rowData) : ''"
+    [href]="actionItem.href ? parseLookupString(actionItem.href, rowData) : ''"
     (click)="triggerAction(actionItem.action)"
-  >
-    {{ actionItem.text }}
-  </button>
-  <ng-template #link>
-    <a
-      [routerLink]="[actionItem.path, rowData[rowId]]"
-      class="action-item {{ classList }}"
-      [target]="actionItem.target"
-      [ngClass]="actionItem.class"
-      [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"
-    >
-      {{ actionItem.text }}
-    </a>
-  </ng-template>
+  ></bp-action>
 </ng-container>

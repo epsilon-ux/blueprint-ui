@@ -112,7 +112,7 @@ export class OverviewComponent implements OnInit {
           text: 'Edit',
           ariaLabel: 'Edit Object ${id}',
           class: 'btn-outline-primary',
-          path: 'object/edit'
+          routerLink: './'
         },
         {
           element: 'button',
