@@ -16,3 +16,6 @@ export * from './lib/landing-page-header/landing-page-header.module';
 
 export * from './lib/nav-secondary/nav-secondary.component';
 export * from './lib/nav-secondary/nav-secondary.module';
+
+export * from './lib/toggletip/toggletip.component';
+export * from './lib/toggletip/toggletip.module';

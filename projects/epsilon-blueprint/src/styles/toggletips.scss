@@ -1,0 +1,116 @@
+@import "_global-variables.scss";
+
+.btn-toggletip
+{
+  position: relative;
+  display: inline-flex;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: $accent-color-primary;
+  font-size: $font-size-body;
+  transform: translateY(3px);
+
+  & .fa-stack
+  {
+    transform: scale(0.72);
+  }
+
+  & .fa-circle
+  {
+    color: $accent-color-primary;
+  }
+
+  & .fas.fa-circle
+  {
+    display: none;
+  }
+
+  & .far.fa-circle
+  {
+    display: inline-block;
+  }
+
+  & .fa-question
+  {
+    color: $accent-color-primary;
+  }
+
+  &:hover,
+  &:focus
+  {
+    & .fas.fa-circle
+    {
+      display: inline-block;
+    }
+
+    & .far.fa-circle
+    {
+      display: none;
+    }
+
+    & .fa-question
+    {
+      color: $coconut;
+    }
+  }
+}
+
+.popover
+{
+  box-shadow: $box-shadow-secondary;
+  border-radius: 0;
+  border-color: $accent-color-primary;
+  font-size: $font-size-body;
+
+  &.bs-popover-top
+  {
+    & > .arrow
+    {
+      &::before
+      {
+        border-top-color: $accent-color-primary;
+      }
+    }
+  }
+
+  &.bs-popover-right
+  {
+    & > .arrow
+    {
+      &::before
+      {
+        border-right-color: $accent-color-primary;
+      }
+    }
+  }
+
+  &.bs-popover-bottom
+  {
+    & > .arrow
+    {
+      &::before
+      {
+        border-bottom-color: $accent-color-primary;
+      }
+    }
+  }
+
+  &.bs-popover-left
+  {
+    & > .arrow
+    {
+      &::before
+      {
+        border-left-color: $accent-color-primary;
+      }
+    }
+  }
+
+  & .popover-body
+  {
+    padding: 10px;
+    color: $font-color-primary;
+    font-family: $font-family-default;
+  }
+}

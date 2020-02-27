@@ -21,6 +21,9 @@ const routes: Routes = [
     { path: 'table', loadChildren: () => import('./library/table/table.module')
       .then(m => m.TableLibraryModule) },
 
+    { path: 'toggletip', loadChildren: () => import('./library/toggletip/toggletip.module')
+      .then(m => m.ToggletipLibraryModule) },
+
     { path: 'nav-secondary', loadChildren: () => import('./library/nav-secondary/nav-secondary.module')
       .then(m => m.NavSecondaryLibraryModule) },
 
