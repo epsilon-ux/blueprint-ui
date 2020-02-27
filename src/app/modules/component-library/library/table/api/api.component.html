@@ -54,52 +54,126 @@
         </thead>
         <tbody>
           <tr>
-            <td>data.thead</td>
-            <td>object[]</td>
-            <td>An array of the column headers.</td>
+            <td>caption</td>
+            <td>string</td>
+            <td>A sentence used for explaining the table to people using a screen reader. The text is only visible to screen readers.</td>
             <td>Required.</td>
           </tr>
           <tr>
-            <td>data.thead.key</td>
+            <td>rowId</td>
+            <td>string</td>
+            <td>The key from the data to use as the identifier.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>columns</td>
+            <td>object[]</td>
+            <td>An array of objects that define the columns in the table. Columns will render in the table in the same order as in this array.</td>
+            <td>Required.</td>
+          </tr>
+          <tr>
+            <td>columns.key</td>
             <td>string</td>
             <td>The key from the inputted data to use for data in the corresponding column.</td>
             <td>Required.</td>
           </tr>
           <tr>
-            <td>data.thead.headerText</td>
+            <td>columns.headerText</td>
             <td>string</td>
             <td>The text to display in the corresponding column header.</td>
             <td>Required.</td>
           </tr>
           <tr>
-            <td>data.thead.isColumnDisplayed</td>
+            <td>columns.isColumnDisplayed</td>
             <td>boolean</td>
             <td>Indicates whether or not the column should be displayed by default.</td>
             <td>Use "true" if the column should be displayed by default.</td>
           </tr>
           <tr>
-            <td>data.thead.type</td>
+            <td>columns.type</td>
             <!-- TODO: fix type col -->
             <td>
-              enum ColumnType  &#123; <br>
-              ID, <br>
-              TEXT,  <br>
-              LINK,  <br>
-              DATE,  <br>
-              BOOLEAN,  <br>
-              INPUT,  <br>
-              STATUS,  <br>
-              DROPDOWN  <br>
+              enum ColumnType  &#123;<br>
+              ID,<br>
+              TEXT,<br>
+              LINK,<br>
+              DATE,<br>
+              BOOLEAN,<br>
+              INPUT,<br>
+              STATUS,<br>
+              ICON,<br>
+              DROPDOWN<br>
               &#125;
             </td>
             <td>The type of the column.</td>
             <td>This determines how to handle the content.</td>
           </tr>
           <tr>
-            <td>data.rowId</td>
+            <td>columns.template</td>
+            <td>TemplateRef</td>
+            <td>Pass in an ng-template that will be used for the content in this column.</td>
+            <td>Required when column type is TEMPLATE.</td>
+          </tr>
+          <tr>
+            <td>columns.icon</td>
+            <td>object</td>
+            <td>An object containing information for when and how to render icons in an icon column.</td>
+            <td>Required when column type is ICON.</td>
+          </tr>
+          <tr>
+            <td>columns.icon.color</td>
             <td>string</td>
-            <td>The key from the data to use as the identifier.</td>
+            <td>The color of the icon.</td>
+            <td>Expects either 'midnight' or 'warning'.</td>
+          </tr>
+          <tr>
+            <td>columns.icon.mapping</td>
+            <td>object</td>
+            <td>Maps icons to text.</td>
+            <td>The key is the text that represents the icon, the value is the class name for the fontawesome icon.</td>
+          </tr>
+          <tr>
+            <td>columns.link.element</td>
+            <td>string</td>
             <td></td>
+            <td>Expects either 'a' or 'button'. Use 'a' when the link column should route to another part of the application. Use 'button' when the link column should perform an action on the page, e.g. opens a modal.</td>
+          </tr>
+          <tr>
+            <td>columns.link.ariaLabel</td>
+            <td>string</td>
+            <td>The format of the aria label to be used for the link.</td>
+            <td>To use values from the row, insert $&#123;key&#125; }anywhere into the string where 'key' is the name of the data property to insert into the label, e.g. 'Open row $&#123;id&#125;' NOTE: These are still regular strings, not javascript template strings, so use single/double quotes.</td>
+          </tr>
+          <tr>
+            <td>columns.link.target</td>
+            <td>string</td>
+            <td>The string to be used in the link's target attribute.</td>
+            <td>Required when element = 'a'. "_blank" opens in a new tab.</td>
+          </tr>
+          <tr>
+            <!-- TODO: Change path to routerLink -->
+            <td>columns.link.path</td>
+            <td>string</td>
+            <td>The string to be used in the link's routerLink attribute.</td>
+            <td>One of either path or href is required when element = 'a'.</td>
+          </tr>
+          <tr>
+            <td>columns.link.href</td>
+            <td>string</td>
+            <td>The string to be used in the link's href attribute.</td>
+            <td>One of either <!-- TODO: Change path to routerLink --> path  or href is required when element = 'a'.</td>
+          </tr>
+          <tr>
+            <td>columns.link.action</td>
+            <td>string</td>
+            <td>The string to be emitted when the button is clicked.</td>
+            <td>Required if element = 'button'. See Outputs for more information on what is emitted.</td>
+          </tr>
+          <tr>
+            <td>columns.statusIndicatorMapping</td>
+            <td>object</td>
+            <td>Maps the standardized class names for status indicators to the product specific text.</td>
+            <td>Required when column type is STATUS. The available classes for mapping are incomplete-primary, incomplete-secondary, in-progress, warning, complete. For more information on status indicators see <a href="https://zpl.io/anLnePv" class="link-primary">Zeplin</a>.</td>
           </tr>
           <tr>
             <td>search.hasSearch</td>
@@ -118,42 +192,6 @@
             <td>boolean</td>
             <td>Enables the selectable rows feature.</td>
             <td>Use "true" to enable the selectable rows feature, and render checkboxes in the first column of each table row.</td>
-          </tr>
-          <tr>
-            <td>statusIndicatorMapping</td>
-            <td>object</td>
-            <td>Maps the standardized class names for status indicators to the product specific text.</td>
-            <td>The available classes for mapping are incomplete-primary, incomplete-secondary, in-progress, warning, complete. For more information on status indicators see <a href="https://zpl.io/anLnePv" class="link-primary">Zeplin</a>.</td>
-          </tr>
-          <tr>
-            <td>link.element</td>
-            <td>string</td>
-            <td></td>
-            <td>Expects either a or button. Use a when the link column should route to another part of the application. Use button when the link column should perform an action on the page, e.g. opens a modal.</td>
-          </tr>
-          <tr>
-            <td>link.ariaLabel</td>
-            <td>string</td>
-            <td>The format of the aria label to be used for the link.</td>
-            <td>To use values from the row, insert $&#123;key&#125; anywhere into the string where 'key' is the name of the data property to insert into the label, e.g. 'Open row $&#123;id&#125;' NOTE: These are still regular strings, not javascript template strings, so use single/double quotes.</td>
-          </tr>
-          <tr>
-            <td>link.target</td>
-            <td>string</td>
-            <td>The string to be used in the link's target attribute.</td>
-            <td>Required when element = 'a'. "_blank" opens in a new tab.</td>
-          </tr>
-          <tr>
-            <td>link.path</td>
-            <td>string</td>
-            <td>The string to be used in the link's routerLink attribute.</td>
-            <td>Required when element = 'a'.</td>
-          </tr>
-          <tr>
-            <td>link.action</td>
-            <td>string</td>
-            <td>The string to be emitted when the button is clicked.</td>
-            <td>Required if element = 'button'. See Outputs for more information on what is emitted.</td>
           </tr>
           <tr>
             <td>actions</td>
@@ -201,16 +239,28 @@
             <td>Required when element = 'a'. E.g. "_blank" opens in a new tab.</td>
           </tr>
           <tr>
-            <td>actions.path</td>
+            <td>actions.routerLink</td>
             <td>string</td>
             <td>The string to be used in the link's routerLink attribute.</td>
-            <td>Required when element = 'a'.</td>
+            <td>One of either path or href is required when element = 'a'.</td>
+          </tr>
+          <tr>
+            <td>actions.href</td>
+            <td>string</td>
+            <td>The string to be used in the link's href attribute.</td>
+            <td>One of either path or href is required when element = 'a'.</td>
           </tr>
           <tr>
             <td>actions.action</td>
             <td>string</td>
             <td>The string to be emitted when the button is clicked.</td>
             <td>Required if element = 'button'. See outputs for more information on what is emitted.</td>
+          </tr>
+          <tr>
+            <td>actions.conditions</td>
+            <td>(object | string)[]</td>
+            <td>The conidtions used to determine if the action will render.</td>
+            <td>Conditions is an array containing objects and strings. The condition objects have compare operator strings between them.<!-- TODO: Link to feature section describing this feature in more detail --></td>
           </tr>
           <tr>
             <td>hasColumnSelector</td>
@@ -229,7 +279,7 @@
             </td>
           </tr>
           <tr>
-            <td>hasPagination</td>
+            <td>pagination.hasPagination</td>
             <td>boolean</td>
             <td>Enables the pagination feature.</td>
             <td>
@@ -239,6 +289,18 @@
           </tr>
         </tbody>
       </table>
+
+      <!--
+        TODO: features
+          - column types
+          - tempalate columns
+          - actions
+          - search
+          - pagination
+          - column selector
+          - selectable rows
+          - link columns
+      -->
 
       <h2 class="h2">Outputs</h2>
       <table class="table table-bordered-rows mb-5">
