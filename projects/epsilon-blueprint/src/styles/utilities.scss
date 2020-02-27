@@ -1,4 +1,11 @@
+@import '../styles/global-variables';
+
 .u-min-w-100px
 {
   min-width: 100px;
+}
+
+.u-font-2
+{
+  font-size: $font-size-h2;
 }

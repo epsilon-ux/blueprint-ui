@@ -12,5 +12,16 @@
 	&.component-preview
 	{
 		padding: 40px;
-	}
+  }
+  
+  &.component-wrap
+  {
+    margin-bottom: -40px;
+
+    .component
+    {
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+  }
 }

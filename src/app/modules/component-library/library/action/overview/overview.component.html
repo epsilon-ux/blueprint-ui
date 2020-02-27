@@ -1,14 +1,15 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col">
-      <p class="mb-5">Buttons and links share one single action component. The action component covers all button and link styles.</p>
+      <p class="mb-5 u-font-2">Buttons and links share one single action component. The action component covers all button and link styles..</p>
 
-      <h2 class="h2">Buttons</h2>
+      <h2 class="h2">Example</h2>
       <div class="card">
-        <div class="card-body component-preview">
-          <div class="row">
+        <div class="card-body component-wrap component-preview">
+          <div class="row justify-content-center align-items-center">
             <div class="col-auto">
               <bp-action
+                class="component"
                 text="Primary Button"
                 element="button"
                 classes="btn btn-primary"
@@ -18,6 +19,18 @@
             </div>
             <div class="col-auto">
               <bp-action
+                class="component"
+                text="Button with Icon"
+                element="button"
+                classes="btn btn-primary"
+                ariaLabel="Demo button with icon"
+                (click)="click"
+                iconRight="fa-check"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
                 text="Secondary Button"
                 element="button"
                 classes="btn btn-outline-primary"
@@ -27,6 +40,7 @@
             </div>
             <div class="col-auto">
               <bp-action
+                class="component"
                 text="Warning Button"
                 element="button"
                 classes="btn btn-danger"
@@ -36,6 +50,7 @@
             </div>
             <div class="col-auto">
               <bp-action
+                class="component"
                 text="Secondary Warning Button"
                 element="button"
                 classes="btn btn-outline-danger"
@@ -45,16 +60,7 @@
             </div>
             <div class="col-auto">
               <bp-action
-                text="Disabled Button"
-                element="button"
-                classes="btn"
-                ariaLabel="Demo disabled button"
-                [isDisabled]="true"
-                (click)="click"
-              ></bp-action>
-            </div>
-            <div class="col-auto">
-              <bp-action
+                class="component"
                 text="Mini Button"
                 element="button"
                 classes="btn btn-mini btn-primary"
@@ -64,44 +70,17 @@
             </div>
             <div class="col-auto">
               <bp-action
-                text="Icon Button"
+                class="component"
+                text="Text Button"
                 element="button"
-                classes="btn btn-outline-primary"
-                ariaLabel="Demo icon button"
+                classes="btn btn-text"
+                ariaLabel="Demo text button"
                 (click)="click"
-                iconRight="fa-check"
               ></bp-action>
             </div>
             <div class="col-auto">
               <bp-action
-                text="Progress Button"
-                element="button"
-                classes="btn btn-outline-primary"
-                ariaLabel="Demo progress button"
-                [isDisabled]="true"
-                (click)="click"
-                iconRight="fa-spinner fa-spin"
-              ></bp-action>
-            </div>
-            <div class="col-auto">
-              <bp-action
-                text="Link Button"
-                element="a"
-                classes="btn btn-primary"
-                href="#"
-                ariaLabel="Demo link button"
-              ></bp-action>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="h2">Links</h2>
-      <div class="card">
-        <div class="card-body component-preview">
-          <div class="row">
-            <div class="col-auto">
-              <bp-action
+                class="component"
                 text="Link Primary"
                 element="a"
                 classes="link-primary"
@@ -111,22 +90,13 @@
             </div>
             <div class="col-auto">
               <bp-action
+                class="component"
                 text="Back Link"
                 element="a"
                 classes="link-primary"
-                ariaLabel="Demo back link"
+                ariaLabel="Demo link with icon"
                 href="#"
                 iconLeft="fa-angle-left"
-              ></bp-action>
-            </div>
-            <div class="col-auto">
-              <bp-action
-                text="Disabled Button Link"
-                element="button"
-                classes="btn btn-text"
-                ariaLabel="Demo disabled button link"
-                [isDisabled]="true"
-                (click)="click"
               ></bp-action>
             </div>
           </div>
