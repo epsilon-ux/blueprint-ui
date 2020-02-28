@@ -5,15 +5,33 @@
   </div>
   <p *ngIf="title" class="title">{{ title }}</p>
   <ul class="nav-list">
-    <li *ngFor="let item of items" class="nav-item">
-      <a
-        routerLink="{{ item.route }}"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
-        class="nav-link level-1"
-      >
-        {{ item.text }}
-      </a>
-    </li>
+    <ng-container *ngTemplateOutlet="lists; context:{$implicit: items}"></ng-container>
   </ul>
 </nav>
+
+<ng-template #lists let-navItems>
+  <li *ngFor="let item of navItems" class="nav-item">
+    <ng-container *ngIf="item.children; else noChildren">
+      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item}"></ng-container>
+      <ul class="nested-list">
+        <ng-container *ngTemplateOutlet="lists; context:{$implicit: item.children}"></ng-container>
+      </ul>
+    </ng-container>
+    <ng-template #noChildren>
+      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item}"></ng-container>
+    </ng-template>
+  </li>
+</ng-template>
+
+<ng-template #navItem let-item>
+  <a
+    *ngIf="item.route !== undefined"
+    routerLink="{{ item.route }}"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
+    class="nav-link"
+  >
+    {{ item.text }}
+  </a>
+  <span *ngIf="item.route === undefined" class="nav-link">{{ item.text }}</span>
+</ng-template>

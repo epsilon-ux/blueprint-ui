@@ -17,16 +17,35 @@ export class OverviewComponent implements OnInit {
       route: ''
     },
     {
-      text: 'Page',
+      text: 'Page 2',
+      route: '',
+      children: [
+        {
+          text: 'Nested Page0',
+          route: ''
+        },
+        {
+          text: 'Nested Page1',
+          route: '',
+          children: [
+            {
+              text: 'Nested Page2',
+              route: ''
+            },
+            {
+              text: 'Nested Page3',
+              route: ''
+            }
+          ]
+        }
+      ]
+    },
+    {
+      text: 'Page 3',
       route: ''
     },
     {
-      text: 'Page',
-      route: ''
-    },
-    {
-      text: 'Page',
-      route: ''
+      text: 'Page 4'
     }
   ];
 

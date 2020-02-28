@@ -79,6 +79,13 @@
          font-weight: $font-weight-semi-bold;
        }
      }
+
+     .nested-list
+     {
+       margin-bottom: 0;
+       padding-left: 20px;
+       list-style-type: none;
+     }
   }
 }
 
