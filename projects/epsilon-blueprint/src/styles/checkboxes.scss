@@ -63,18 +63,17 @@
 
     &:indeterminate
     {
-        // TODO: test this before merging
         + .checkbox-label // dash
         {
             &::after
             {
                 content: $icon-dash;
-                top: 0;
-                left: 0;
-                width: 16px;
-                height: 16px;
+                position: absolute;
+                left: 1px;
+                color: $coconut;
                 font-family: $font-family-icon;
                 font-weight: $font-weight-semi-bold;
+                font-size: 16px;
                 transform: scale(0.75);
             }
         }
@@ -94,7 +93,6 @@
 
     &:disabled
     {
-        // TODO: test this before merging
         + .checkbox-label
         {
             opacity: 0.5;
