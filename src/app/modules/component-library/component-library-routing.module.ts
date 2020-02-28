@@ -12,6 +12,9 @@ const routes: Routes = [
     { path: 'buttons-links', loadChildren: () => import('./library/action/action.module')
       .then(m => m.ActionLibraryModule) },
 
+    { path: 'checkbox', loadChildren: () => import('./library/checkbox/checkbox.module')
+      .then(m => m.CheckboxLibraryModule) },
+
     { path: 'landing-page-header', loadChildren: () => import('./library/landing-page-header/landing-page-header.module')
       .then(m => m.LandingPageHeaderLibraryModule) },
 

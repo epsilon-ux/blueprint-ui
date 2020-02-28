@@ -19,6 +19,10 @@ export class ComponentLibraryComponent {
         text: 'Buttons & Links',
       },
       {
+        route: './checkbox',
+        text: 'Checkbox',
+      },
+      {
         route: './landing-page-header',
         text: 'Landing Page Header',
       },
