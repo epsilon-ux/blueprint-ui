@@ -64,7 +64,7 @@
       border-left: 5px solid transparent;
       padding: 8px 15px 9px 15px;
       font-size: $font-size-body;
-      font-weight: $font-weight-semi-bold;
+      font-weight: $font-weight-regular;
       color: $font-color-primary;
 
        &:hover
@@ -76,7 +76,7 @@
        {
          border-left: 5px solid $accent-color-secondary;
          background: $mist;
-         font-weight: $font-weight-bold;
+         font-weight: $font-weight-semi-bold;
        }
      }
   }
