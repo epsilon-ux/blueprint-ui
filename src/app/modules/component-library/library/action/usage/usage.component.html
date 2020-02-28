@@ -288,6 +288,86 @@
         <!-- TODO: Uncomment and hook up link when voice and tone is complete <li>For more information on this, see Voice &amp; Tone - Content Guidelines</li> -->
       </ul>
 
+      <h2>Links</h2>
+      <p>Links are used to navigate the user through the product. Links are generally used for navigation, while buttons are used for anything that would change the state of the product.</p>
+      <p>The &lt;a&gt; element creates a link to other web pages, files, locations within the same page, email addresses, or any other URL. It should not be overridden by setting the href to javascript:void(0) or #. Links should not be disabled.</p>
+
+      <h3>Primary Link</h3>
+      <p>Primary buttons are used to indicate the page’s main action. There should only be one primary button per page or modal.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Primary Link"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo primary link"
+                routerLink="./"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Link with icon</h3>
+      <p>Primary buttons are used to indicate the page’s main action. There should only be one primary button per page or modal.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Link with icon"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo primary icon link"
+                routerLink="./"
+                iconLeft="fa-plus"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Link with icon"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo primary icon link"
+                routerLink="./"
+                iconLeft="fa-chevron-left"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Link with icon"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo primary icon link"
+                routerLink="./"
+                iconRight="fa-external-link-alt"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Link Text Guidelines</h3>
+      <ul>
+        <li>Use specific link text and state the destination of the link</li>
+        <li>
+          Avoid vague text such as
+          <ul>
+            <li>'Click here'</li>
+            <li>'Back'</li>
+            <li>'View'</li>
+          </ul>
+        </li>
+        <li>Link text must make sense to users of assistive technology</li>
+        <li>Link text must warn users if the destination will open in another tab or window</li>
+      </ul>
+
     </div>
   </div>
 </section>
