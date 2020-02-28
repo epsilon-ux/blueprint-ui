@@ -34,6 +34,10 @@ export class ComponentLibraryComponent {
         route: './table',
         text: 'Table',
       },
+      {
+        route: './toggletip',
+        text: 'Toggletip',
+      }
     ]
   };
 
