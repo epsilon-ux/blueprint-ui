@@ -46,7 +46,8 @@ export class OverviewComponent implements OnInit {
           headerText: 'Template',
           isColumnDisplayed: true,
           type: ColumnType.TEMPLATE,
-          template: this.templateColumn
+          template: this.templateColumn,
+          isSortable: false
         },
         {
           key: 'phone',

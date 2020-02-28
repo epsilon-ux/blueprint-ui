@@ -26,6 +26,23 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
 
+  propertyDefaults = {
+    search:  {
+      hasSearch: true
+    },
+    hasSelectableRows: false,
+    hasColumnSelector: true,
+    hasDisplayDensity: true,
+    pagination: {
+      hasPagination: true
+    }
+  };
+
+  columnDefaults = {
+    isColumnDisplayed: true,
+    isSortable: true
+  }
+
   // Data
   filteredData = [];
   tableData = [];
@@ -69,6 +86,11 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+    // Set defaults
+    this.properties = Object.assign(this.propertyDefaults, this.properties);
+    this.properties.columns = this.properties.columns.map(column => Object.assign({...this.columnDefaults}, column));
+
+    // LocalStorage
     const displayDensityName =
       localStorage.getItem('selectedDensity') || 'Comfortable';
     this.setDisplayDensity(displayDensityName);
