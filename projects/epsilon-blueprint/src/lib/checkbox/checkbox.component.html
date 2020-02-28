@@ -1,1 +1,22 @@
-<p>checkbox works!</p>
+<input 
+    type="checkbox" 
+    [id]="id" 
+    class="checkbox" 
+    [name]="name"
+>
+<label for="{{ id }}" class="checkbox-label">
+    {{ label }}
+</label>
+
+<!-- hardcoded test -->
+<input 
+    type="checkbox" 
+    id="testCheck"
+    class="checkbox" 
+    name="check"
+>
+<label for="testCheck" class="checkbox-label">
+    Test checkbox
+</label>
+
+<!-- add value, disabled, checked? -->
