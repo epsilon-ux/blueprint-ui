@@ -5,20 +5,20 @@ export default interface Properties {
   caption: string;
   rowId: string;
   columns: Column[];
-  search:  {
-    hasSearch: true;
+  search?:  {
+    hasSearch?: boolean;
     // TBD: Server Side / Client Side / Restricted
   };
   sort: {
     defaultSortedColumn: string;
     // TBD: Server Side / Client Side / Restricted
   };
-  hasSelectableRows: false;
+  hasSelectableRows?: boolean;
   actions?: Action[];
-  hasColumnSelector: true;
-  hasDisplayDensity: true;
-  pagination: {
-    hasPagination: true;
+  hasColumnSelector?: boolean;
+  hasDisplayDensity?: boolean;
+  pagination?: {
+    hasPagination?: boolean;
     // TBD: Server Side / Client Side / Restricted 
   };
 }
