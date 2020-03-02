@@ -117,45 +117,41 @@
       padding-left: 0;
       list-style-type: none;
     }
-  }
-}
 
-.nav-item
-{
-  // Nesting 1
-  > .nested-list > .nav-item,
-  > .nested-list > .nav-item
-  {
-    > .nav-link,
-    > .nav-link-parent
-    {
-      padding-left: 35px;
-    }
-
-    // Nesting 2
+    // Nesting 1
     > .nested-list > .nav-item,
     > .nested-list > .nav-item
     {
       > .nav-link,
       > .nav-link-parent
       {
-        padding-left: 55px;
+        padding-left: 35px;
       }
 
-      // Nesting 3
+      // Nesting 2
       > .nested-list > .nav-item,
       > .nested-list > .nav-item
       {
         > .nav-link,
         > .nav-link-parent
         {
-          padding-left: 75px;
+          padding-left: 55px;
+        }
+
+        // Nesting 3
+        > .nested-list > .nav-item,
+        > .nested-list > .nav-item
+        {
+          > .nav-link,
+          > .nav-link-parent
+          {
+            padding-left: 75px;
+          }
         }
       }
     }
   }
 }
-
 
 /* collapsed */
 
