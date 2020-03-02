@@ -9,7 +9,7 @@ export class OverviewComponent implements OnInit {
 
   navItems = [
     {
-      text: 'ActivePage',
+      text: 'Active Page',
       route: '/components/nav-secondary/overview'
     },
     {
@@ -46,7 +46,6 @@ export class OverviewComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
