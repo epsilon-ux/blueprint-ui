@@ -12,12 +12,12 @@ interface Item {
   styleUrls: ['./nav-secondary.component.scss']
 })
 export class NavSecondaryComponent implements OnInit {
-  
-  isNavCollapsed = false;
 
   @Input() title: string;
   @Input() items: Item[];
   @Input() shouldRouteMatchExact = false;
+  @Input() isNavCollapsed = false;
+  @Input() areItemsExpanded = false;
 
   uuid = Math.floor(Math.random() * 100);
 
