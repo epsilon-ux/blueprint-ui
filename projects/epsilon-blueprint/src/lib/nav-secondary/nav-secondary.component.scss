@@ -98,27 +98,64 @@
       font-weight: $font-weight-regular;
       color: $font-color-primary;
 
-       &:hover
-       {
-         background: $mist;
-       }
+      &:hover
+      {
+        background: $mist;
+      }
 
-       &.active
-       {
-         border-left: 5px solid $accent-color-secondary;
-         background: $mist;
-         font-weight: $font-weight-semi-bold;
-       }
-     }
+      &.active
+      {
+        border-left: 5px solid $accent-color-secondary;
+        background: $mist;
+        font-weight: $font-weight-semi-bold;
+      }
+    }
 
-     .nested-list
-     {
-       margin-bottom: 0;
-       padding-left: 20px;
-       list-style-type: none;
-     }
+    .nested-list
+    {
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style-type: none;
+    }
   }
 }
+
+.nav-item
+{
+  // Nesting 1
+  > .nested-list > .nav-item,
+  > .nested-list > .nav-item
+  {
+    > .nav-link,
+    > .nav-link-parent
+    {
+      padding-left: 35px;
+    }
+
+    // Nesting 2
+    > .nested-list > .nav-item,
+    > .nested-list > .nav-item
+    {
+      > .nav-link,
+      > .nav-link-parent
+      {
+        padding-left: 55px;
+      }
+
+      // Nesting 3
+      > .nested-list > .nav-item,
+      > .nested-list > .nav-item
+      {
+        > .nav-link,
+        > .nav-link-parent
+        {
+          padding-left: 75px;
+        }
+      }
+    }
+  }
+}
+
 
 /* collapsed */
 
