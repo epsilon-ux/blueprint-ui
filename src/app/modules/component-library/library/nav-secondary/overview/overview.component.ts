@@ -17,12 +17,26 @@ export class OverviewComponent implements OnInit {
       route: ''
     },
     {
-      text: 'Page',
-      route: ''
-    },
-    {
-      text: 'Page',
-      route: ''
+      text: 'Parent Page',
+      children: [
+        {
+          text: 'Page',
+          route: ''
+        },
+        {
+          text: 'Parent Page',
+          children: [
+            {
+              text: 'Page',
+              route: ''
+            },
+            {
+              text: 'Page',
+              route: ''
+            }
+          ]
+        }
+      ]
     },
     {
       text: 'Page',
@@ -32,7 +46,6 @@ export class OverviewComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
