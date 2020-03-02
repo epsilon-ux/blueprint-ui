@@ -68,10 +68,11 @@
 
       &::after
       {
-        content: $icon-angle-down;
+        content: $icon-chevron-down;
         margin-left: 5px;
         font-family: $font-family-icon;
         font-weight: $font-weight-semi-bold;
+        font-size: 0.875em;
       }
       
       &.collapsed
@@ -80,7 +81,7 @@
 
         &::after
         {
-          content: $icon-angle-right;
+          content: $icon-chevron-right;
         }
       }
       
@@ -120,7 +121,6 @@
     }
 
     // Nesting 1
-    > .nested-list > .nav-item,
     > .nested-list > .nav-item
     {
       > .nav-link,
@@ -130,7 +130,6 @@
       }
 
       // Nesting 2
-      > .nested-list > .nav-item,
       > .nested-list > .nav-item
       {
         > .nav-link,
@@ -140,7 +139,6 @@
         }
 
         // Nesting 3
-        > .nested-list > .nav-item,
         > .nested-list > .nav-item
         {
           > .nav-link,

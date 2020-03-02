@@ -19,6 +19,8 @@ export class NavSecondaryComponent implements OnInit {
   @Input() items: Item[];
   @Input() shouldRouteMatchExact = false;
 
+  uuid = Math.floor(Math.random() * 100);
+
   constructor() { }
 
   ngOnInit() {

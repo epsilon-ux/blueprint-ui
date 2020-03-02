@@ -11,32 +11,47 @@ export class ComponentLibraryComponent {
     title: 'Components',
     items: [
       {
-        route: './overview',
         text: 'Introduction',
+        route: './overview',
       },
       {
-        route: './buttons-links',
-        text: 'Buttons & Links',
+        text: 'Small Components',
+        children: [
+          {
+            text: 'Buttons & Links',
+            route: './buttons-links',
+          },
+          {
+            text: 'Search',
+            route: './search',
+          },
+          {
+            text: 'Toggletip',
+            route: './toggletip',
+          }
+        ]
       },
       {
-        route: './landing-page-header',
-        text: 'Landing Page Header',
+        text: 'Medium Components',
+        children: [
+          {
+            text: 'Landing Page Header',
+            route: './landing-page-header',
+          },
+          {
+            text: 'Secondary Navigation',
+            route: './nav-secondary',
+          }
+        ]
       },
       {
-        route: './nav-secondary',
-        text: 'Secondary Navigation'
-      },
-      {
-        route: './search',
-        text: 'Search',
-      },
-      {
-        route: './table',
-        text: 'Table',
-      },
-      {
-        route: './toggletip',
-        text: 'Toggletip',
+        text: 'Large Components',
+        children: [
+          {
+            text: 'Table',
+            route: './table',
+          }
+        ]
       }
     ]
   };
