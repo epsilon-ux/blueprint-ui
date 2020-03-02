@@ -17,21 +17,21 @@ export class OverviewComponent implements OnInit {
       route: ''
     },
     {
-      text: 'Page2',
+      text: 'Parent Page',
       children: [
         {
-          text: 'NestedPage0',
+          text: 'Page',
           route: ''
         },
         {
-          text: 'NestedPage1',
+          text: 'Parent Page',
           children: [
             {
-              text: 'NestedPage2',
+              text: 'Page',
               route: ''
             },
             {
-              text: 'NestedPage3',
+              text: 'Page',
               route: ''
             }
           ]
@@ -39,7 +39,7 @@ export class OverviewComponent implements OnInit {
       ]
     },
     {
-      text: 'Page3',
+      text: 'Page',
       route: ''
     }
   ];

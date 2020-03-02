@@ -10,20 +10,20 @@
 </nav>
 
 <ng-template #lists let-navItems>
-  <li *ngFor="let item of navItems" class="nav-item">
+  <li *ngFor="let item of navItems; let index = index" class="nav-item">
     <ng-container *ngIf="item.children; else noChildren">
-      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item}"></ng-container>
-      <ul class="collapse nested-list" id="{{ item.text }}">
+      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index}"></ng-container>
+      <ul class="collapse nested-list" id="nestedList{{ index }}">
         <ng-container *ngTemplateOutlet="lists; context:{$implicit: item.children}"></ng-container>
       </ul>
     </ng-container>
     <ng-template #noChildren>
-      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item}"></ng-container>
+      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index}"></ng-container>
     </ng-template>
   </li>
 </ng-template>
 
-<ng-template #navItem let-item>
+<ng-template #navItem let-item let-index="index">
   <a
     *ngIf="item.route !== undefined"
     routerLink="{{ item.route }}"
@@ -38,9 +38,9 @@
     type="button"
     class="nav-link-parent collapsed"
     data-toggle="collapse"
-    attr.data-target="#{{ item.text }}"
+    attr.data-target="#nestedList{{ index }}"
     attr.aria-expanded="false"
-    attr.aria-controls="{{ item.text }}"
+    attr.aria-controls="nestedList{{ index }}"
   >
     {{ item.text }}
   </button>
