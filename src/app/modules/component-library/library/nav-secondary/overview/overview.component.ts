@@ -9,7 +9,7 @@ export class OverviewComponent implements OnInit {
 
   navItems = [
     {
-      text: 'Active Page',
+      text: 'ActivePage',
       route: '/components/nav-secondary/overview'
     },
     {
@@ -17,23 +17,21 @@ export class OverviewComponent implements OnInit {
       route: ''
     },
     {
-      text: 'Page 2',
-      route: '',
+      text: 'Page2',
       children: [
         {
-          text: 'Nested Page0',
+          text: 'NestedPage0',
           route: ''
         },
         {
-          text: 'Nested Page1',
-          route: '',
+          text: 'NestedPage1',
           children: [
             {
-              text: 'Nested Page2',
+              text: 'NestedPage2',
               route: ''
             },
             {
-              text: 'Nested Page3',
+              text: 'NestedPage3',
               route: ''
             }
           ]
@@ -41,11 +39,8 @@ export class OverviewComponent implements OnInit {
       ]
     },
     {
-      text: 'Page 3',
+      text: 'Page3',
       route: ''
-    },
-    {
-      text: 'Page 4'
     }
   ];
 

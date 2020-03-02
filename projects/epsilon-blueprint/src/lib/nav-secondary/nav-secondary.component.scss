@@ -58,8 +58,39 @@
   .nav-item
   {
     margin: 0 0 2px 0;
+
+    .nav-link-parent
+    {
+      border: none;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+
+      &::after
+      {
+        content: $icon-angle-down;
+        font-family: $font-family-icon;
+        font-weight: $font-weight-semi-bold;
+      }
+      
+      &.collapsed
+      {
+        font-weight: $font-weight-regular;
+
+        &::after
+        {
+          content: $icon-angle-right;
+        }
+      }
+      
+      &:not(.collapsed)
+      {
+        font-weight: $font-weight-semi-bold;
+      }
+    }
     
-    .nav-link
+    .nav-link,
+    .nav-link-parent
     {
       border-left: 5px solid transparent;
       padding: 8px 15px 9px 15px;
