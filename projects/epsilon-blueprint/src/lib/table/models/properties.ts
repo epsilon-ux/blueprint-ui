@@ -6,13 +6,23 @@ export default interface Properties {
   rowId: string;
 
   /*Table - internationalization support starts here*/
-  selectCheckBoxLabel : string;
-  actionsVisibleHeader: string;
-  actionsHiddenHeader: string;
-  loadingText: string;
-  noDataText: string;
-  selectRowText: string;
-  actionMenuLabel: string;  
+  internationalization: {
+    'Select all rows': 'Select all rows',
+    'Actions': 'Actions',
+    'Loading data': 'Loading data',
+    'No data': 'No data available',
+    'Select Row': 'Select Row',
+    'Actions Menu': 'Actions Menu',
+    'Column Selector': 'Column Selector:',
+    'Default': '(Default)',
+    'Display Density': 'Display Density:',
+    'Number of Rows': 'Number of Rows per Page',
+    'First Page': 'First Page',
+    'Previous Page': 'Previous Page',
+    'Next Page': 'Next Page',
+    'Last Page': 'Last Page',
+    'Total Records': 0
+  };
   /*Ends here*/
 
   columns: Column[];
@@ -26,16 +36,6 @@ export default interface Properties {
   };
   hasSelectableRows?: boolean;
   actions?: Action[];
-  displayDensityLabel:string;
-  columnSelectorLabel: string;
-  loadingLabel: string;
-  outOfLabel: string;
-  defaultLabel: string;
-  numberOfRowsLabel: string;
-  firstPageText: string;
-  previousPageText: string;
-  nextPageText: string;
-  lastPageText: string;
   hasColumnSelector?: boolean;
   hasDisplayDensity?: boolean;
   pagination?: {

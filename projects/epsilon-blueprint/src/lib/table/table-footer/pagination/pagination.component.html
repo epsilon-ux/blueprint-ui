@@ -1,9 +1,9 @@
 <div class="pagination-wrapper flex-column flex-sm-row">
   <div class="d-flex align-items-center mb-3 mb-sm-0">
     <span class="pagination-records">
-      <span class="font-weight-semi-bold">{{ totalRecords }}</span> results
+      <span class="font-weight-semi-bold">{{ totalGridRecords }}</span> results
     </span>
-    <label for="numberOfRows" class="sr-only">{{ numberOfRowsText }}</label>
+    <label for="numberOfRows" class="sr-only">{{ rowCount }}</label>
     <ng-select
       labelForId="numberOfRows"
       name="numberOfRows"
@@ -19,7 +19,7 @@
   <div class="pagination-buttons">
     <button
       class="btn-pager btn-pager-icon"
-      [attr.aria-label]="firstPageLabel"
+      [attr.aria-label]="firstPage"
       [disabled]="isStepperDisabled(1)"
       (click)="changePage(1)"
     >
@@ -27,7 +27,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      [attr.aria-label]="previousPageLabel"
+      [attr.aria-label]="previousPage"
       [disabled]="isStepperDisabled(1)"
       (click)="changePage(currentPage - 1)"
     >
@@ -44,7 +44,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      [attr.aria-label]="nextPageLabel"
+      [attr.aria-label]="nextPage"
       [disabled]="isStepperDisabled(totalPages)"
       (click)="changePage(currentPage + 1)"
     >
@@ -52,7 +52,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      [attr.aria-label]="lastPageLabel"
+      [attr.aria-label]="lastPage"
       [disabled]="isStepperDisabled(totalPages)"
       (click)="changePage(totalPages)"
     >

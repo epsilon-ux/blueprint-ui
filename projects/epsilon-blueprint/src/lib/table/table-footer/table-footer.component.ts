@@ -38,34 +38,31 @@ export class TableFooterComponent implements OnInit {
   displayDensityEmitter = new EventEmitter();
 
   @Input()
-  displayDensityText: string;
+  densityDisplay: string;
   
   @Input()
-  columnSelectorText: string;  
+  columnNameSelector: string;  
 
   @Input()
-  loadingLabelText: string;
+  defaultColumn: string;
 
   @Input()
-  outOfLabelText: string;
+  rowCount: string;
 
   @Input()
-  defaultText: string;
-
-  @Input()
-  numberOfRowsText: string;
-
-  @Input()
-  firstPageLabel: string;
+  firstPage: string;
   
   @Input()
-  previousPageLabel: string;
+  previousPage: string;
 
   @Input()
-  nextPageLabel: string;
+  nextPage: string;
 
   @Input()
-  lastPageLabel: string;
+  lastPage: string;
+
+  @Input()
+  totalGridRecords: number;
 
   constructor() {}
 

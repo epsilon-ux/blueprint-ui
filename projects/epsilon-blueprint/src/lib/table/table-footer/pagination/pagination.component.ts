@@ -44,19 +44,22 @@ export class PaginationComponent implements OnInit, OnChanges {
   ];
   
   @Input()
-  numberOfRowsText: string;
+  rowCount: string;
 
   @Input()
-  firstPageLabel: string;
+  firstPage: string;
 
   @Input()
-  previousPageLabel: string;
+  previousPage: string;
 
   @Input()
-  nextPageLabel: string;
+  nextPage: string;
 
   @Input()
-  lastPageLabel: string;
+  lastPage: string;
+
+  @Input()
+  totalGridRecords: number;
 
   constructor() {}
 

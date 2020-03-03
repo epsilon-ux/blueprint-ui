@@ -29,24 +29,24 @@ export class OverviewComponent implements OnInit {
     this.properties = {
       
       /*Table - internationalization support starts here*/
-      selectCheckBoxLabel: 'Select all rows',
-      actionsVisibleHeader: 'Actions',
-      actionsHiddenHeader: 'Actions',
-      loadingText: 'Loading data',
-      noDataText: 'No data available',
-      selectRowText: 'Select Row',
-      actionMenuLabel: 'Actions Menu',
-      columnSelectorLabel:'Column Selector:',
-      loadingLabel:'Showing',
-      outOfLabel: 'out of',
-      defaultLabel: '(Default)',
-      displayDensityLabel: 'Display Density:',      
-      numberOfRowsLabel: 'Number of Rows per Page',
-      firstPageText: 'First Page',
-      previousPageText: 'Previous Page',
-      nextPageText: 'Next Page',
-      lastPageText: 'Last Page', 
-      /*Ends here*/      
+      internationalization: {
+        'Select all rows': 'Select all rows',
+        'Actions': 'Actions',
+        'Loading data': 'Loading data',
+        'No data': 'No data available',
+        'Select Row': 'Select Row',
+        'Actions Menu': 'Actions Menu',
+        'Column Selector': 'Column Selector:',
+        'Default': '(Default)',
+        'Display Density': 'Display Density:',
+        'Number of Rows': 'Number of Rows per Page',
+        'First Page': 'First Page',
+        'Previous Page': 'Previous Page',
+        'Next Page': 'Next Page',
+        'Last Page': 'Last Page',
+        'Total Records': tableData.customerData.data.length
+      },
+      /*Ends here*/
       
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
