@@ -13,7 +13,7 @@
   <li *ngFor="let item of navItems; let index = index" class="nav-item">
     <ng-container *ngIf="item.children; else noChildren">
       <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index}"></ng-container>
-      <ul class="collapse nested-list" id="nestedList{{ uuid }}-{{ index }}">
+      <ul [ngClass]="{'collapse nested-list': true, 'show': areItemsExpanded}" id="nestedList{{ uuid }}-{{ index }}">
         <ng-container *ngTemplateOutlet="lists; context:{$implicit: item.children}"></ng-container>
       </ul>
     </ng-container>
@@ -36,10 +36,10 @@
   <button
     *ngIf="item.children"
     type="button"
-    class="nav-link-parent collapsed"
+    [ngClass]="{'nav-link-parent': true, 'collapsed': !areItemsExpanded}"
     data-toggle="collapse"
     attr.data-target="#nestedList{{ uuid }}-{{ index }}"
-    attr.aria-expanded="false"
+    attr.aria-expanded="{{ areItemsExpanded }}"
     attr.aria-controls="nestedList{{ uuid }}-{{ index }}"
   >
     {{ item.text }}
