@@ -3,7 +3,7 @@
   class="table-footer-dropdown column-selector"
 >
   <label for="columnSelector" class="table-footer-dropdown-label">
-    Column Selector:
+    {{ columnSelectorText }}
   </label>
   <ng-select
     #columnSelectorDropdown
@@ -21,7 +21,7 @@
     <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
       <div class="ng-value multiselect-value">
         <span class="ng-value-label">
-          Showing {{ selectedColumns.length }} out of {{ columnInfo.length }}
+          {{ loadingLabelText }} {{ selectedColumns.length }} {{ outOfLabelText }} {{ columnInfo.length }}
         </span>
       </div>
     </ng-template>
@@ -41,7 +41,7 @@
       <label [for]="column.key" class="multiselect-label">
         {{ column.headerText }}
         <ng-container *ngIf="column.key === defaultSortColumnName">
-          (Default)
+          {{ defaultText }}
         </ng-container>
       </label>
     </ng-template>
