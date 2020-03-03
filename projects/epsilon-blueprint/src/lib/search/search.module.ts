@@ -10,6 +10,5 @@ import { SearchComponent } from './search.component';
   imports: [CommonModule, FormsModule],
   exports: [SearchComponent],
   providers: [],
-  bootstrap: [SearchComponent]
 })
 export class SearchModule {}

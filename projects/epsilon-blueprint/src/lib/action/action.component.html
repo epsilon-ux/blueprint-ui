@@ -1,0 +1,33 @@
+<a
+  *ngIf="element === 'a' && routerLink"
+  [ngClass]="classes"
+  [attr.aria-label]="ariaLabel"
+  [routerLink]="routerLink"
+  [target]="target"
+>
+  <ng-container *ngTemplateOutlet="actionContent"></ng-container>
+</a>
+<a
+  *ngIf="element === 'a' && href"
+  [ngClass]="classes"
+  [attr.aria-label]="ariaLabel"
+  [attr.href]="href"
+  [target]="target"
+>
+  <ng-container *ngTemplateOutlet="actionContent"></ng-container>
+</a>
+<button
+  *ngIf="element === 'button'"
+  [ngClass]="classes"
+  [attr.aria-label]="ariaLabel"
+  [disabled]="isDisabled"
+  (click)="emitClick($event)"
+>
+  <ng-container *ngTemplateOutlet="actionContent"></ng-container>
+</button>
+
+<ng-template #actionContent>
+  <i *ngIf="iconLeft" [ngClass]="['fas', iconLeft, 'icon-left']"></i>{{
+    text
+  }}<i *ngIf="iconRight" [ngClass]="['fas', iconRight, 'icon-right']"></i>
+</ng-template>

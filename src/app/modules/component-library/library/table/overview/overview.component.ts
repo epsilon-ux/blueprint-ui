@@ -67,7 +67,8 @@ export class OverviewComponent implements OnInit {
           headerText: 'Template',
           isColumnDisplayed: true,
           type: ColumnType.TEMPLATE,
-          template: this.templateColumn
+          template: this.templateColumn,
+          isSortable: false
         },
         {
           key: 'phone',
@@ -133,7 +134,7 @@ export class OverviewComponent implements OnInit {
           text: 'Edit',
           ariaLabel: 'Edit Object ${id}',
           class: 'btn-outline-primary',
-          path: 'object/edit'
+          routerLink: './'
         },
         {
           element: 'button',

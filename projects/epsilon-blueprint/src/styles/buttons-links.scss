@@ -12,12 +12,23 @@ a
 	}
 }
 
-.btn-text
+button.btn-text,
+button.btn-text:disabled
 {
   outline: unset;
   border: none;
   padding: 0;
   background: none;
+}
+
+button.btn-text:disabled
+{
+  font-weight: $font-weight-regular;
+  
+  &:hover
+  {
+    text-decoration: none;
+  }
 }
 
 .btn-text,

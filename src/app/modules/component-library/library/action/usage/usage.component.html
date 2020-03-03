@@ -1,0 +1,433 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <p class="mb-5 u-font-size-2">The action component is used in many places throughout our product suite. It is used variably in different situations. The action component can appear on the interface as a button or as a link, or as a button that looks like a link, or as a link that looks like a button.</p>
+      
+      <h2>Should I use a button or a link?</h2>
+      <p>Buttons and links should not be used interchangeably. They do very different things and we should respect their individual jobs. If you find yourself wondering which to use, please refer to these guidelines:</p>
+
+      <h3>Button</h3>
+      <p>Use a button if it is used to perform an action.</p>
+      <h4>Example</h4>
+      <ul>
+        <li>Submit</li>
+        <li>Save</li>
+      </ul>
+
+      <h3>Link</h3>
+      <p>Use a link when it is used to navigate the user to another place in the product.</p>
+      <h4>Example</h4>
+      <ul>
+        <li>Back to search results</li>
+        <li>View documentation</li>
+      </ul>
+
+      <h3>Button styled as a link (we call them text buttons)</h3>
+      <p>Use a text button when the action is one of the below:</p>
+      <ul>
+        <li>Optional</li>
+        <li>Dependent on other actions</li>
+        <li>Should be less pronounced</li>
+      </ul>
+      <p>Icons can be added to illustrate what the button will do to add clarity and make scanning easier.</p>
+      <h4>Example</h4>
+      <ul>
+        <li>Add Another</li>
+        <li>Cancel (in modals)</li>
+      </ul>
+
+      <h3>Link styled as a button</h3>
+      <p>Use a link styled as a button when the action component needs to perform the action and take the user somewhere else.</p>
+      <h4>Example</h4>
+      <ul>
+        <li>Creating a new object creates a new object and also takes the user into the object detail page</li>
+      </ul>
+
+      <h2>Buttons</h2>
+      <p>Buttons should be used to perform an action on the page. See the <a href="https://epsilon-ux.github.io/code-standards/index.html">Code Standards</a> for more information on this topic.</p>
+      <h3>Primary button</h3>
+      <p>Primary buttons are used to indicate the page’s main action. There should only be one primary button per page or modal.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Primary Button"
+                element="button"
+                classes="btn btn-primary"
+                ariaLabel="Demo primary button"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Disabled"
+                element="button"
+                classes="btn btn-primary"
+                ariaLabel="Demo disabled primary button"
+                [isDisabled]="true"
+                (click)="click"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>Secondary button</h3>
+      <p>Secondary buttons are used for actions that are lesser, opposite, or relating to the page or modal’s primary button action.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Secondary Button"
+                element="button"
+                classes="btn btn-outline-primary"
+                ariaLabel="Demo primary button"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Disabled"
+                element="button"
+                classes="btn btn-outline-primary"
+                ariaLabel="Demo disabled secondary button"
+                [isDisabled]="true"
+                (click)="click"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>Button with icon</h3>
+      <p>Icons are used within buttons to indicate the progress of the button’s action or to illustrate the button’s action.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Button with Icon"
+                element="button"
+                classes="btn btn-primary"
+                ariaLabel="Demo primary button with caret icon"
+                iconRight="fa-caret-down"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Button with Icon"
+                element="button"
+                classes="btn btn-primary"
+                ariaLabel="Demo primary button with check icon"
+                iconRight="fa-check"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Button with Icon"
+                element="button"
+                classes="btn btn-outline-primary"
+                ariaLabel="Demo secondary button with caret icon"
+                iconRight="fa-caret-down"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Button with Icon"
+                element="button"
+                classes="btn btn-outline-primary"
+                ariaLabel="Demo secondary button with check icon"
+                iconRight="fa-check"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Loading State"
+                element="button"
+                classes="btn btn-outline-primary"
+                ariaLabel="Demo loading button"
+                iconRight="fa-spinner fa-spin"
+                [isDisabled]="true"
+                (click)="click"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Mini Button</h3>
+      <p>Mini buttons are used for minor page actions or if there is not much space available. All buttons in tables are mini buttons.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Mini Button"
+                element="button"
+                classes="btn btn-mini btn-outline-primary"
+                ariaLabel="Demo mini button"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Disabled"
+                element="button"
+                classes="btn btn-mini btn-outline-primary"
+                ariaLabel="Demo disabled mini button"
+                [isDisabled]="true"
+                (click)="click"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>Warning Button</h3>
+      <p>Warning buttons are used if the action is irreversible, destructive, or could result in a loss of data.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Primary Warning"
+                element="button"
+                classes="btn btn-danger"
+                ariaLabel="Demo warning button"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Secondary Warning"
+                element="button"
+                classes="btn btn-outline-danger"
+                ariaLabel="Demo secondary warning button"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Disabled"
+                element="button"
+                classes="btn btn-danger"
+                ariaLabel="Demo disabled warning button"
+                [isDisabled]="true"
+                (click)="click"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Text button</h3>
+      <p>Text buttons are used for actions that are optional or are less important than other actions on the page.</p>
+      <p class="note-text">Note: Text buttons can be disabled because they are buttons, not links.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Text Button"
+                element="button"
+                classes="btn btn-text"
+                ariaLabel="Demo text button"
+                (click)="click"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Disabled"
+                element="button"
+                classes="btn btn-text"
+                ariaLabel="Demo disabled text button"
+                [isDisabled]="true"
+                (click)="click"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Button Text Guidelines</h3>
+      <ul>
+        <li>
+          Use action words and keep it short
+          <ul>
+            <li>Ampersands (&amp;) may be used in buttons to shorten the length</li>
+          </ul>
+        </li>
+        <li>
+          Text may be an answer to a question within the interface, such as 'Are you sure?' question in warning modals
+          <ul>
+            <li>For example: 'Yes, Continue' or 'No, Undo' button text</li>
+          </ul>
+        </li>
+        <li>For primary buttons that create new objects use the format 'Create Object'</li>
+        <!-- TODO: Uncomment and hook up link when voice and tone is complete <li>For more information on this, see Voice &amp; Tone - Content Guidelines</li> -->
+      </ul>
+
+      <h2>Links</h2>
+      <p>Links are used to navigate the user through the product. Links are generally used for navigation, while buttons are used for anything that would change the state of the product.</p>
+      <p>The &lt;a&gt; element creates a link to other web pages, files, locations within the same page, email addresses, or any other URL. It should not be overridden by setting the href to javascript:void(0) or #. Links cannot be disabled.</p>
+
+      <h3>Primary Link</h3>
+      <p>Primary links are used to link to other content either within the application or in another application.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Primary Link"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo primary link"
+                routerLink="./"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Link with icon</h3>
+      <p>Icons are used within links to illustrate the link's action.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Link with icon"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo primary icon link"
+                routerLink="./"
+                iconLeft="fa-plus"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Link with icon"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo primary icon link"
+                routerLink="./"
+                iconLeft="fa-chevron-left"
+              ></bp-action>
+            </div>
+            <div class="col-auto">
+              <bp-action
+                class="component"
+                text="Link with icon"
+                element="a"
+                classes="link-primary"
+                ariaLabel="Demo primary icon link"
+                routerLink="./"
+                iconRight="fa-external-link-alt"
+              ></bp-action>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Link Text Guidelines</h3>
+      <ul>
+        <li>Use specific link text and state the destination of the link</li>
+        <li>
+          Avoid vague text such as
+          <ul>
+            <li>'Click here'</li>
+            <li>'Back'</li>
+            <li>'View'</li>
+          </ul>
+        </li>
+        <li>Link text must make sense to users of assistive technology</li>
+        <li>Link text must warn users if the destination will open in another tab or window</li>
+      </ul>
+
+      <h2 class="h2">Configurations</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Action configurations</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">Element</th>
+            <th class="pt-0">Classes</th>
+            <th class="pt-0">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr>
+           <td>Primary button</td>
+           <td>btn btn-primary</td>
+           <td></td>
+         </tr>
+         <tr>
+           <td>Secondary button</td>
+           <td>btn btn-outline-primary</td>
+           <td></td>
+         </tr>
+         <tr>
+           <td>Button with icon</td>
+           <td>btn</td>
+           <td>Add "btn-primary" or "btn-outline-primary" depending on the use case.</td>
+         </tr>
+         <tr>
+           <td>Mini button</td>
+           <td>btn btn-mini</td>
+           <td>Add "btn-primary" or "btn-outline-primary" depending on the use case.</td>
+         </tr>
+         <tr>
+           <td>Primary warning button</td>
+           <td>btn btn-danger</td>
+           <td></td>
+         </tr>
+         <tr>
+           <td>Secondary warning button</td>
+           <td>btn btn-outline-danger</td>
+           <td></td>
+         </tr>
+         <tr>
+           <td>Text button</td>
+           <td>btn btn-text</td>
+           <td></td>
+         </tr>
+         <tr>
+           <td>Primary link</td>
+           <td>link-primary</td>
+           <td></td>
+         </tr>
+         <tr>
+           <td>Link with icon</td>
+           <td>link-primary</td>
+           <td></td>
+         </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>

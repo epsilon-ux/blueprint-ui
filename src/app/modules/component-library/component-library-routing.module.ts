@@ -9,6 +9,9 @@ const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
 
+    { path: 'buttons-links', loadChildren: () => import('./library/action/action.module')
+      .then(m => m.ActionLibraryModule) },
+
     { path: 'landing-page-header', loadChildren: () => import('./library/landing-page-header/landing-page-header.module')
       .then(m => m.LandingPageHeaderLibraryModule) },
 
@@ -17,6 +20,12 @@ const routes: Routes = [
 
     { path: 'table', loadChildren: () => import('./library/table/table.module')
       .then(m => m.TableLibraryModule) },
+
+    { path: 'toggletip', loadChildren: () => import('./library/toggletip/toggletip.module')
+      .then(m => m.ToggletipLibraryModule) },
+
+    { path: 'nav-secondary', loadChildren: () => import('./library/nav-secondary/nav-secondary.module')
+      .then(m => m.NavSecondaryLibraryModule) },
 
     { path: '**', redirectTo: 'overview', pathMatch: 'full' } // TODO: create a componentNotFound page for this instance
   ]}

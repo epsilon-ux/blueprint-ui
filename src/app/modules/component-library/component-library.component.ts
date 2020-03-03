@@ -8,20 +8,50 @@ import { Component } from '@angular/core';
 export class ComponentLibraryComponent {
 
   components = {
-    title: 'Components',
     items: [
       {
-        route: './landing-page-header',
-        text: 'Landing Page Header',
+        text: 'Introduction',
+        route: './overview',
       },
       {
-        route: './search',
-        text: 'Search',
+        text: 'Small Components',
+        children: [
+          {
+            text: 'Buttons & Links',
+            route: './buttons-links',
+          },
+          {
+            text: 'Search',
+            route: './search',
+          },
+          {
+            text: 'Toggletip',
+            route: './toggletip',
+          }
+        ]
       },
       {
-        route: './table',
-        text: 'Table',
+        text: 'Medium Components',
+        children: [
+          {
+            text: 'Landing Page Header',
+            route: './landing-page-header',
+          },
+          {
+            text: 'Secondary Navigation',
+            route: './nav-secondary',
+          }
+        ]
       },
+      {
+        text: 'Large Components',
+        children: [
+          {
+            text: 'Table',
+            route: './table',
+          }
+        ]
+      }
     ]
   };
 
