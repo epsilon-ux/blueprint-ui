@@ -26,7 +26,7 @@
               #selectAllRowsRef
               (change)="onSelectAllRows($event)"
             />
-            <label for="selectAllRows" class="sr-only">{{ properties.selectCheckBoxLabel }}</label>
+            <label for="selectAllRows" class="sr-only">Select all rows</label>
           </th>
           <ng-container *ngFor="let column of properties.columns; let i = index">
             <th
@@ -55,15 +55,14 @@
               scope="col"
               class="th-not-sortable"
             >
-            {{ properties.actionsVisibleHeader }}
+              Actions
             </th>
             <th
               *ngIf="properties.actions.length >= 3"
               scope="col"
               class="th-not-sortable more-actions"
             >
-              <span class="sr-only">
-                {{ properties.actionsHiddenHeader }}</span>
+              <span class="sr-only">Actions</span>
             </th>
           </ng-container>
         </ng-container>
@@ -75,7 +74,7 @@
       <tr class="table-empty">
         <td colspan="100%">
           <i class="fa fa-spinner fa-spin icon-left" aria-hidden="true"></i>
-          {{ properties.loadingText }} 
+          Loading data
         </td>
       </tr>
     </tbody>
@@ -98,7 +97,7 @@
       <tbody>
         <tr class="table-empty">
           <td colspan="100%">
-            {{ properties.noDataText }} 
+            No data available
           </td>
         </tr>
       </tbody>
@@ -120,14 +119,4 @@
   (pageData)="paginate($event)"
   (displayDensityEmitter)="setDisplayDensity($event)"
   [showDisplayDensity]="properties.hasDisplayDensity"
-  [displayDensityText]="properties.displayDensityLabel"
-  [columnSelectorText]="properties.columnSelectorLabel"
-  [loadingLabelText]="properties.loadingLabel"
-  [outOfLabelText]="properties.outOfLabel"
-  [defaultText]="properties.defaultLabel"
-  [numberOfRowsText]="properties.numberOfRowsLabel"
-  [firstPageLabel]="properties.firstPageText"
-  [previousPageLabel]="properties.previousPageText"
-  [nextPageLabel]="properties.nextPageText"
-  [lastPageLabel]="properties.lastPageText"
 ></app-table-footer>

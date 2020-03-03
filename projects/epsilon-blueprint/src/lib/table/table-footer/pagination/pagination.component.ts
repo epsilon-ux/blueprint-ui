@@ -42,21 +42,6 @@ export class PaginationComponent implements OnInit, OnChanges {
     { optionText: '50 rows', optionValue: 50 },
     { optionText: '100 rows', optionValue: 100 }
   ];
-  
-  @Input()
-  numberOfRowsText: string;
-
-  @Input()
-  firstPageLabel: string;
-
-  @Input()
-  previousPageLabel: string;
-
-  @Input()
-  nextPageLabel: string;
-
-  @Input()
-  lastPageLabel: string;
 
   constructor() {}
 

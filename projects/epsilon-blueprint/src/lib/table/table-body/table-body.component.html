@@ -8,7 +8,7 @@
       [checked]="rowData.checked"
     />
     <label [for]="rowData.id" class="sr-only">
-      {{ properties.selectRowText }} {{ rowData.id }}
+      Select Row {{ rowData.id }}
     </label>
   </td>
 
@@ -79,7 +79,7 @@
         id="moreActions{{ rowData[properties.rowId] }}"
         class="btn-icon-inline more-actions-toggle"
         data-toggle="dropdown"
-        [attr.aria-label]="properties.actionMenuLabel"
+        aria-label="Actions Menu"
         aria-haspopup="true"
         aria-expanded="false"
       >

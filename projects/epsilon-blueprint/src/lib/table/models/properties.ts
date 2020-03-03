@@ -4,17 +4,6 @@ import { Action } from './action';
 export default interface Properties {
   caption: string;
   rowId: string;
-
-  /*Table - internationalization support starts here*/
-  selectCheckBoxLabel : string;
-  actionsVisibleHeader: string;
-  actionsHiddenHeader: string;
-  loadingText: string;
-  noDataText: string;
-  selectRowText: string;
-  actionMenuLabel: string;  
-  /*Ends here*/
-
   columns: Column[];
   search?:  {
     hasSearch?: boolean;
@@ -26,16 +15,6 @@ export default interface Properties {
   };
   hasSelectableRows?: boolean;
   actions?: Action[];
-  displayDensityLabel:string;
-  columnSelectorLabel: string;
-  loadingLabel: string;
-  outOfLabel: string;
-  defaultLabel: string;
-  numberOfRowsLabel: string;
-  firstPageText: string;
-  previousPageText: string;
-  nextPageText: string;
-  lastPageText: string;
   hasColumnSelector?: boolean;
   hasDisplayDensity?: boolean;
   pagination?: {
