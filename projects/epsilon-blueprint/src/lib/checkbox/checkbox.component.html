@@ -1,22 +1,20 @@
-<input 
-    type="checkbox" 
-    [id]="id" 
-    class="checkbox" 
-    [name]="name"
->
-<label for="{{ id }}" class="checkbox-label">
-    {{ label }}
+<label class="checkbox">
+    <input 
+        type="checkbox" 
+        [id]="id" 
+        class="checkbox-input" 
+        [name]="name" 
+        [value]="value" 
+        [checked]="isChecked" 
+        [disabled]="isDisabled" 
+        [required]="isRequired"
+    >
+    <span class="checkbox-label">
+        <span *ngIf="visuallyHiddenLabel; else visibleLabel" class="sr-only">
+            {{ label }}
+        </span>
+        <ng-template #visibleLabel>
+            {{ label }}
+        </ng-template>
+    </span>
 </label>
-
-<!-- hardcoded test -->
-<input 
-    type="checkbox" 
-    id="testCheck"
-    class="checkbox" 
-    name="check"
->
-<label for="testCheck" class="checkbox-label">
-    Test checkbox
-</label>
-
-<!-- add value, disabled, checked? -->
