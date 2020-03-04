@@ -17,8 +17,6 @@ export class CheckboxComponent implements OnInit {
   @Input() label: string;
   @Input() visuallyHiddenLabel?: boolean;
 
-  model = false;
-
   constructor() { }
 
   ngOnInit() {
