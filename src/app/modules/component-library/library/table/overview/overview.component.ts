@@ -27,8 +27,6 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit() {    
     this.properties = {
-      
-      /*Table - internationalization support starts here*/
       internationalization: {
         'Select all rows': 'Select all rows',
         'Actions': 'Actions',
@@ -45,9 +43,7 @@ export class OverviewComponent implements OnInit {
         'Next Page': 'Next Page',
         'Last Page': 'Last Page',
         'Total Records': tableData.customerData.data.length
-      },
-      /*Ends here*/
-      
+      },      
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
       columns: [

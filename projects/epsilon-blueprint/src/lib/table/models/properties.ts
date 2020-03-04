@@ -4,8 +4,6 @@ import { Action } from './action';
 export default interface Properties {
   caption: string;
   rowId: string;
-
-  /*Table - internationalization support starts here*/
   internationalization: {
     'Select all rows': 'Select all rows',
     'Actions': 'Actions',
@@ -23,8 +21,6 @@ export default interface Properties {
     'Last Page': 'Last Page',
     'Total Records': 0
   };
-  /*Ends here*/
-
   columns: Column[];
   search?:  {
     hasSearch?: boolean;

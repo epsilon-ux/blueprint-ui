@@ -4,9 +4,7 @@ import { Action } from './action';
 export default interface Properties {
   caption: string;
   rowId: string;
-  
-  /*Table - internationalization support starts here*/
-  internationalization:{
+  internationalization: {
     'Select all rows': string;
     'Actions': string;
     'Loading data': string;
@@ -21,10 +19,8 @@ export default interface Properties {
     'Previous Page': string,
     'Next Page': string,
     'Last Page': string,
-    'Total Records':number
-  }
-  /*Ends here*/
-
+    'Total Records': number
+  };
   columns: Column[];
   search:  {
     hasSearch: boolean;
