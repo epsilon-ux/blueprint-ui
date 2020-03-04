@@ -26,32 +26,44 @@
               #selectAllRowsRef
               (change)="onSelectAllRows($event)"
             />
-            <label for="selectAllRows" class="sr-only">Select all rows</label>
+            <label for="selectAllRows" class="sr-only">{{ properties.selectCheckBoxLabel }}</label>
           </th>
-          <th
-            scope="col"
-            [hidden]="!column.isColumnDisplayed"
-            *ngFor="let column of properties.columns; let i = index"
-            [attr.aria-sort]="isSortActive ? getAriaSortOrder(i) : 'null'"
-          >
-            <button class="th-sortable" (click)="applySort(column.key, i)">
-              {{ column.headerText }}
-            </button>
-          </th>
+          <ng-container *ngFor="let column of properties.columns; let i = index">
+            <th
+              *ngIf="column.isSortable; else columnNotSortable"
+              class="th-sortable"
+              scope="col"
+              [hidden]="!column.isColumnDisplayed"
+              [attr.aria-sort]="isSortActive ? getAriaSortOrder(i) : 'null'"
+            >
+              <button (click)="applySort(column.key, i)">
+                {{ column.headerText }}
+              </button>
+            </th>
+            <ng-template #columnNotSortable>
+              <th
+                scope="col"
+                class="th-not-sortable"
+              >
+                {{ column.headerText }}
+              </th>
+            </ng-template>
+          </ng-container>
           <ng-container *ngIf="properties.actions">
             <th
               *ngIf="properties.actions.length < 3"
               scope="col"
               class="th-not-sortable"
             >
-              Actions
+            {{ properties.actionsVisibleHeader }}
             </th>
             <th
               *ngIf="properties.actions.length >= 3"
               scope="col"
               class="th-not-sortable more-actions"
             >
-              <span class="sr-only">Actions</span>
+              <span class="sr-only">
+                {{ properties.actionsHiddenHeader }}</span>
             </th>
           </ng-container>
         </ng-container>
@@ -63,7 +75,7 @@
       <tr class="table-empty">
         <td colspan="100%">
           <i class="fa fa-spinner fa-spin icon-left" aria-hidden="true"></i>
-          Loading data
+          {{ properties.loadingText }} 
         </td>
       </tr>
     </tbody>
@@ -86,7 +98,7 @@
       <tbody>
         <tr class="table-empty">
           <td colspan="100%">
-            No data available
+            {{ properties.noDataText }} 
           </td>
         </tr>
       </tbody>
@@ -108,4 +120,14 @@
   (pageData)="paginate($event)"
   (displayDensityEmitter)="setDisplayDensity($event)"
   [showDisplayDensity]="properties.hasDisplayDensity"
+  [displayDensityText]="properties.displayDensityLabel"
+  [columnSelectorText]="properties.columnSelectorLabel"
+  [loadingLabelText]="properties.loadingLabel"
+  [outOfLabelText]="properties.outOfLabel"
+  [defaultText]="properties.defaultLabel"
+  [numberOfRowsText]="properties.numberOfRowsLabel"
+  [firstPageLabel]="properties.firstPageText"
+  [previousPageLabel]="properties.previousPageText"
+  [nextPageLabel]="properties.nextPageText"
+  [lastPageLabel]="properties.lastPageText"
 ></app-table-footer>

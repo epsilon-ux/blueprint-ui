@@ -5,6 +5,7 @@ export interface Column {
   headerText: string;
   isColumnDisplayed: boolean;
   type: ColumnType;
+  isSortable?: boolean;
   template?: TemplateRef<any>;
   icon?: {
       color: string;

@@ -20,7 +20,7 @@ export class TableFooterComponent implements OnInit {
   pageNumber: number;
 
   @Input()
-  showDisplayDensity: boolean;
+  showDisplayDensity: boolean;  
 
   @Input()
   showColumnSelector = false;
@@ -36,6 +36,36 @@ export class TableFooterComponent implements OnInit {
 
   @Output()
   displayDensityEmitter = new EventEmitter();
+
+  @Input()
+  displayDensityText: string;
+  
+  @Input()
+  columnSelectorText: string;  
+
+  @Input()
+  loadingLabelText: string;
+
+  @Input()
+  outOfLabelText: string;
+
+  @Input()
+  defaultText: string;
+
+  @Input()
+  numberOfRowsText: string;
+
+  @Input()
+  firstPageLabel: string;
+  
+  @Input()
+  previousPageLabel: string;
+
+  @Input()
+  nextPageLabel: string;
+
+  @Input()
+  lastPageLabel: string;
 
   constructor() {}
 

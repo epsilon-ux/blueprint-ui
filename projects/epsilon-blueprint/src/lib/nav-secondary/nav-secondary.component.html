@@ -5,15 +5,43 @@
   </div>
   <p *ngIf="title" class="title">{{ title }}</p>
   <ul class="nav-list">
-    <li *ngFor="let item of items" class="nav-item">
-      <a
-        routerLink="{{ item.route }}"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
-        class="nav-link level-1"
-      >
-        {{ item.text }}
-      </a>
-    </li>
+    <ng-container *ngTemplateOutlet="lists; context:{$implicit: items}"></ng-container>
   </ul>
 </nav>
+
+<ng-template #lists let-navItems>
+  <li *ngFor="let item of navItems; let index = index" class="nav-item">
+    <ng-container *ngIf="item.children; else noChildren">
+      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index}"></ng-container>
+      <ul [ngClass]="{'collapse nested-list': true, 'show': areItemsExpanded}" id="nestedList{{ uuid }}-{{ index }}">
+        <ng-container *ngTemplateOutlet="lists; context:{$implicit: item.children}"></ng-container>
+      </ul>
+    </ng-container>
+    <ng-template #noChildren>
+      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index}"></ng-container>
+    </ng-template>
+  </li>
+</ng-template>
+
+<ng-template #navItem let-item let-index="index">
+  <a
+    *ngIf="item.route !== undefined"
+    routerLink="{{ item.route }}"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
+    class="nav-link"
+  >
+    {{ item.text }}
+  </a>
+  <button
+    *ngIf="item.children"
+    type="button"
+    [ngClass]="{'nav-link-parent': true, 'collapsed': !areItemsExpanded}"
+    data-toggle="collapse"
+    attr.data-target="#nestedList{{ uuid }}-{{ index }}"
+    attr.aria-expanded="{{ areItemsExpanded }}"
+    attr.aria-controls="nestedList{{ uuid }}-{{ index }}"
+  >
+    {{ item.text }}
+  </button>
+</ng-template>

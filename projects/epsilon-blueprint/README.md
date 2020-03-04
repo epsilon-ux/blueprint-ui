@@ -5,7 +5,7 @@
 This package has a few dependencies that are not included in the package itself. They are as follows:
 
 - Bootstrap v4
-- FontAwesome 5
+- Font Awesome 5
 
 Once you have all these, you can run `npm install epsilon-blueprint` to install the package to your node_modules.
 

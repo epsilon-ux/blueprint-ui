@@ -3,7 +3,7 @@
     <span class="pagination-records">
       <span class="font-weight-semi-bold">{{ totalRecords }}</span> results
     </span>
-    <label for="numberOfRows" class="sr-only">Number of Rows per Page</label>
+    <label for="numberOfRows" class="sr-only">{{ numberOfRowsText }}</label>
     <ng-select
       labelForId="numberOfRows"
       name="numberOfRows"
@@ -19,7 +19,7 @@
   <div class="pagination-buttons">
     <button
       class="btn-pager btn-pager-icon"
-      aria-label="First page"
+      [attr.aria-label]="firstPageLabel"
       [disabled]="isStepperDisabled(1)"
       (click)="changePage(1)"
     >
@@ -27,7 +27,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      aria-label="Previous page"
+      [attr.aria-label]="previousPageLabel"
       [disabled]="isStepperDisabled(1)"
       (click)="changePage(currentPage - 1)"
     >
@@ -44,7 +44,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      aria-label="Next page"
+      [attr.aria-label]="nextPageLabel"
       [disabled]="isStepperDisabled(totalPages)"
       (click)="changePage(currentPage + 1)"
     >
@@ -52,7 +52,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      aria-label="Last page"
+      [attr.aria-label]="lastPageLabel"
       [disabled]="isStepperDisabled(totalPages)"
       (click)="changePage(totalPages)"
     >
