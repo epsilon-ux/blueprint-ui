@@ -1,0 +1,20 @@
+<label class="checkbox">
+    <input 
+        type="checkbox"
+        [id]="id"
+        class="checkbox-input"
+        [attr.name]="name ? name : null"
+        [attr.value]="value ? value : null"
+        [attr.checked]="isChecked ? isChecked : null"
+        [attr.disabled]="isDisabled ? isDisabled : null"
+        [attr.required]="isRequired ? isRequired : null"
+    >
+    <span class="checkbox-label">
+        <span *ngIf="visuallyHiddenLabel; else visibleLabel" class="sr-only">
+            {{ label }}
+        </span>
+        <ng-template #visibleLabel>
+            {{ label }}
+        </ng-template>
+    </span>
+</label>
