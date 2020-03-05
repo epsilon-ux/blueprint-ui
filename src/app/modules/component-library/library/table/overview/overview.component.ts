@@ -42,7 +42,14 @@ export class OverviewComponent implements OnInit {
         'Previous Page': 'Previous Page',
         'Next Page': 'Next Page',
         'Last Page': 'Last Page',
-        'Total Records': tableData.customerData.data.length
+        'Total Records': tableData.customerData.data.length,        
+        'displayDensityOptions': ['Comfortable', 'Compact'],
+        'numberOfRowsOptions': [
+          { optionText: '10 rows', optionValue: 10 },
+          { optionText: '25 rows', optionValue: 25 },
+          { optionText: '50 rows', optionValue: 50 },
+          { optionText: '100 rows', optionValue: 100 }
+        ]
       },      
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',

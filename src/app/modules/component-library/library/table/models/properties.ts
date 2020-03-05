@@ -19,7 +19,9 @@ export default interface Properties {
     'Previous Page': string,
     'Next Page': string,
     'Last Page': string,
-    'Total Records': number
+    'Total Records': number,
+    'displayDensityOptions': any,
+    'numberOfRowsOptions': any
   };
   columns: Column[];
   search:  {

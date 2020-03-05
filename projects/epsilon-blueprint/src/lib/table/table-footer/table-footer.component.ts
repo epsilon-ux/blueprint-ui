@@ -20,7 +20,10 @@ export class TableFooterComponent implements OnInit {
   pageNumber: number;
 
   @Input()
-  showDisplayDensity: boolean;  
+  showDisplayDensity: boolean; 
+
+  @Input()
+  showDisplayDensityOptions: any;
 
   @Input()
   showColumnSelector = false;
@@ -63,6 +66,9 @@ export class TableFooterComponent implements OnInit {
 
   @Input()
   totalGridRecords: number;
+
+  @Input()
+  showNumberOfRowsOptions: any;
 
   constructor() {}
 
