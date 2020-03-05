@@ -9,6 +9,9 @@ const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
 
+    { path: 'badge', loadChildren: () => import('./library/badge/badge.module')
+      .then(m => m.BadgeLibraryModule) },
+
     { path: 'buttons-links', loadChildren: () => import('./library/action/action.module')
       .then(m => m.ActionLibraryModule) },
 

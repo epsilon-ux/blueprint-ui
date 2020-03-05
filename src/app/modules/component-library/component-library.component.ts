@@ -17,6 +17,10 @@ export class ComponentLibraryComponent {
         text: 'Small Components',
         children: [
           {
+            text: 'Badge',
+            route: './badge'
+          },
+          {
             text: 'Buttons & Links',
             route: './buttons-links'
           },
