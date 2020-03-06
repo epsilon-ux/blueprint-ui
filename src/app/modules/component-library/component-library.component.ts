@@ -14,15 +14,6 @@ export class ComponentLibraryComponent {
         route: './overview',
       },
       {
-        text: 'Foundations',
-        children: [
-          {
-            text: 'Voice & Tone',
-            route: './voice-tone',
-          }
-        ]
-      },
-      {
         text: 'Small Components',
         children: [
           {
