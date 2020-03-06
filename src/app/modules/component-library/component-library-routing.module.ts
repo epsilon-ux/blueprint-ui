@@ -21,6 +21,9 @@ const routes: Routes = [
     { path: 'landing-page-header', loadChildren: () => import('./library/landing-page-header/landing-page-header.module')
       .then(m => m.LandingPageHeaderLibraryModule) },
 
+    { path: 'radio-button', loadChildren: () => import('./library/radio-button/radio-button.module')
+      .then(m => m.RadioButtonLibraryModule) },
+
     { path: 'search', loadChildren: () => import('./library/search/search.module')
       .then(m => m.SearchLibraryModule) },
 

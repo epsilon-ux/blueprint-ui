@@ -29,6 +29,10 @@ export class ComponentLibraryComponent {
             route: './checkbox'
           },
           {
+            text: 'Radio Button',
+            route: './radio-button'
+          },
+          {
             text: 'Search',
             route: './search'
           },
