@@ -1,7 +1,112 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col">
-      <p class="mb-5 u-font-size-2">The landing page header is often used on pages that contain data tables. It may contain a primary button or dropdown menu used to create an object, as well as tabbed navigation used to switch between data sets within a collection of related objects.</p>
+      <p class="mb-5 u-font-size-2">The page title is the only required element in a landing page header. All other additions shown below are optional and depend on the situation.</p>
+
+      <h2>Variations</h2>
+
+      <h3>Standard header</h3>
+      <p>This is a barebones variation of the landing page header. Use this if you only need to show the page title.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <bp-landing-page-header
+            headingText="Page Title"
+            [hasAction]="false"
+          ></bp-landing-page-header>
+        </div>
+      </div>
+      
+      <h3>Standard header with primary button</h3>
+      <p>Use this header for when a user can take an action, or a few actions, from the landing page itself. If there is more than one action on the page, keep in mind that there should still only be one primary button.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <bp-landing-page-header
+            headingText="Page Title"
+            [hasAction]="true"
+            actionText="Create Item"
+            actionElement="button"
+          ></bp-landing-page-header>
+        </div>
+      </div>
+
+      <h3>Standard header with dropdown menu</h3>
+      <p>If a landing page header has more than three actions, all actions should roll into a dropdown menu.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <bp-landing-page-header
+            headingText="Page Title"
+            [hasAction]="true"
+            actionText="Create Item"
+            actionElement="dropdown"
+          >
+            <div dropdown-items>
+              <a class="dropdown-item" href="">Dropdown Item</a>
+              <a class="dropdown-item" href="">Dropdown Item</a>
+            </div>
+          </bp-landing-page-header>
+        </div>
+      </div>
+      
+      <h3>Standard header with tabs</h3>
+      <p>Use this header if the user needs to be able to navigate between related data sets.</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <bp-landing-page-header
+            headingText="Page Title"
+            [hasAction]="false"
+          >
+            <div tab-items>
+              <div class="row">
+                <div class="col">
+                  <button class="tab active" href="">Active Tab</button>
+                  <button class="tab" href="">Tab</button>
+                  <button class="tab" href="">Tab</button>
+                </div>
+              </div>
+            </div>
+          </bp-landing-page-header>
+        </div>
+      </div>
+
+      <h3>Standard header with primary button</h3>
+      <p>Use this header to navigate between related data sets and the user can take a global action, or actions</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <bp-landing-page-header
+            headingText="Page Title"
+            [hasAction]="true"
+            actionText="Create Item"
+            actionElement="button"
+          ></bp-landing-page-header>
+        </div>
+      </div>
+      
+      <h3>Standard header with dropdown menu</h3>
+      <p>Use this header to navigate between related data sets and there are more than three actions</p>
+      <div class="card component-wrap">
+        <div class="card-body component-preview">
+          <bp-landing-page-header
+            headingText="Page Title"
+            [hasAction]="true"
+            actionText="Create Item"
+            actionElement="dropdown"
+          >
+            <div dropdown-items>
+              <a class="dropdown-item" href="">Dropdown Item</a>
+              <a class="dropdown-item" href="">Dropdown Item</a>
+            </div>
+            <div tab-items>
+              <div class="row">
+                <div class="col">
+                  <button class="tab active" href="">Active Tab</button>
+                  <button class="tab" href="">Tab</button>
+                  <button class="tab" href="">Tab</button>
+                </div>
+              </div>
+            </div>
+          </bp-landing-page-header>
+        </div>
+      </div>
 
       <h2 class="h2">Configurations</h2>
       <p>The page title is the only required element in a landing page header. All elements in the table below are optional.</p>

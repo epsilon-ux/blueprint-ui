@@ -9,7 +9,7 @@ export class OverviewComponent implements OnInit {
   headingText = 'Header Text';
   actionText = 'Action Text';
   hasAction = true;
-  actionElement = 'button';
+  actionElement = 'dropdown';
   href = '#';
 
   constructor() { }
