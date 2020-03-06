@@ -111,7 +111,7 @@
 <app-table-footer
   *ngIf="totalRecords"
   class="row justify-content-center justify-content-xl-start align-items-center mb-3"
-  [totalRecords]="totalRecords"
+  [totalRecords]="properties.internationalization['Total Records']"
   [defaultNumberOfRows]="defaultNumberOfRows"
   [pageBuffer]="pageBuffer"
   [pageNumber]="currentPage"
@@ -129,7 +129,6 @@
   [previousPage]="properties.internationalization['Previous Page']"
   [nextPage]="properties.internationalization['Next Page']"
   [lastPage]="properties.internationalization['Last Page']"
-  [totalGridRecords]="properties.internationalization['Total Records']"
   [showDisplayDensityOptions]="properties.internationalization['displayDensityOptions']"
   [showNumberOfRowsOptions]="properties.internationalization['numberOfRowsOptions']"
 ></app-table-footer>

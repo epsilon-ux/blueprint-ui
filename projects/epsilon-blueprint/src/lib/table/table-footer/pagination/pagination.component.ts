@@ -54,9 +54,6 @@ export class PaginationComponent implements OnInit, OnChanges {
   @Input()
   lastPage: string;
 
-  @Input()
-  totalGridRecords: number;
-
   constructor() {}
 
   ngOnInit() {

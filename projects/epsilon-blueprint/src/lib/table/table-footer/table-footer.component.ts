@@ -65,9 +65,6 @@ export class TableFooterComponent implements OnInit {
   lastPage: string;
 
   @Input()
-  totalGridRecords: number;
-
-  @Input()
   showNumberOfRowsOptions: any;
 
   constructor() {}
