@@ -9,11 +9,19 @@ import { ComponentHeaderModule } from 'src/app/shared/component-header/component
 
 import { ComponentLibraryComponent } from './component-library.component';
 import { OverviewComponent } from './overview/overview.component';
+import { VoiceToneComponent } from './library/voice-tone/voice-tone.component';
+import { GrammarPunctuationComponent } from './library/voice-tone/grammar-punctuation/grammar-punctuation.component';
+import { ContentGuidelinesComponent } from './library/voice-tone/content-guidelines/content-guidelines.component';
+import { AccessibiltiyInternationalizationComponent } from './library/voice-tone/accessibiltiy-internationalization/accessibiltiy-internationalization.component';
 
 @NgModule({
   declarations: [
     ComponentLibraryComponent,
-    OverviewComponent
+    OverviewComponent,
+    VoiceToneComponent,
+    GrammarPunctuationComponent,
+    ContentGuidelinesComponent,
+    AccessibiltiyInternationalizationComponent
   ],
   imports: [
     CommonModule,
