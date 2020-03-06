@@ -44,10 +44,10 @@ export class TableFooterComponent implements OnInit {
   densityDisplay: string;
   
   @Input()
-  columnNameSelector: string;  
+  columnSelectorText: string;  
 
   @Input()
-  defaultColumn: string;
+  defaultText: string;
 
   @Input()
   rowCount: string;

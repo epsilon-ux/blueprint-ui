@@ -9,8 +9,8 @@ export class ColumnSelectorComponent implements OnInit {
   @Input() columnInfo = [];
   @Input() defaultSortColumnName: string;
   @Input() showColumnSelector = false;
-  @Input() columnNameSelector: string;
-  @Input() defaultColumn: string;
+  @Input() columnSelectorText: string;
+  @Input() defaultText: string;
   selectedColumns = [];
 
   constructor() {}
