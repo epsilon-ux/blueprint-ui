@@ -41,7 +41,7 @@ export class TableFooterComponent implements OnInit {
   displayDensityEmitter = new EventEmitter();
 
   @Input()
-  densityDisplay: string;
+  displayDensity: string;
   
   @Input()
   columnSelectorText: string;  

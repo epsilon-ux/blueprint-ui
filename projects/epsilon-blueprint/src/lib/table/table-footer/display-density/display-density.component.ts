@@ -13,21 +13,28 @@ export class DisplayDensityComponent implements OnInit {
   showDisplayDensity: boolean;
   
   @Input()
-  densityDisplay: string;
+  displayDensity: string;
 
-  displayDensity;
+  
   @Input()
   showDisplayDensityOptions: any;
 
+  @Input()
+  internationalization: any;
+  
   constructor() {}
 
   ngOnInit() {
-    this.displayDensity = !localStorage.getItem('selectedDensity')
+    this.internationalization = {
+      'displayDensity': ""
+    }
+    
+    this.internationalization.displayDensity = !localStorage.getItem('selectedDensity')
       ? this.showDisplayDensityOptions[0]
       : localStorage.getItem('selectedDensity');
   }
 
   setDisplayDensity() {
-    this.displayDensityEmitter.emit(this.displayDensity);
+    this.displayDensityEmitter.emit(this.internationalization.displayDensity);
   }
 }
