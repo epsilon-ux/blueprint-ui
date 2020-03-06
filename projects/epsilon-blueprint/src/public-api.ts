@@ -17,6 +17,9 @@ export * from './lib/landing-page-header/landing-page-header.module';
 export * from './lib/nav-secondary/nav-secondary.component';
 export * from './lib/nav-secondary/nav-secondary.module';
 
+export * from './lib/radio-button/radio-button.component';
+export * from './lib/radio-button/radio-button.module';
+
 export * from './lib/search/search.component';
 export * from './lib/search/search.module';
 

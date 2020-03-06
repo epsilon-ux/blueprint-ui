@@ -1,17 +1,23 @@
+// global styles
 @import "./styles/_global-variables";
 @import "./styles/typography";
+@import "./styles/utilities";
 @import "./styles/focus";
-@import "./styles/tables";
+
+// blueprint components
 @import "./styles/badges";
 @import "./styles/buttons-links";
 @import "./styles/checkboxes";
 @import "./styles/dropdowns";
 @import "./styles/forms";
+@import "./styles/radio-buttons";
 @import "./styles/status-indicators";
-@import "./styles/ng-select";
+@import "./styles/tables";
 @import "./styles/tabs";
 @import "./styles/toggletips";
-@import "./styles/utilities";
+
+// third-party library theming
+@import "./styles/ng-select";
 
 body
 {

@@ -1,0 +1,15 @@
+<label class="radio-button">
+  <input 
+    type="radio"
+    [id]="id"
+    class="radio-button-input"
+    [attr.name]="name ? name : null"
+    [attr.value]="value ? value : null"
+    [attr.checked]="isChecked ? isChecked : null"
+    [attr.disabled]="isDisabled ? isDisabled : null"
+    [attr.required]="isRequired ? isRequired : null"
+  >
+  <span class="radio-button-label">
+    {{ label }}
+  </span>
+</label>
