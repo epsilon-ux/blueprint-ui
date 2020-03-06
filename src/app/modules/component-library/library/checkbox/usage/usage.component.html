@@ -1,7 +1,32 @@
 <section class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <p class="mb-5 u-font-size-2">Checkboxes are used for lists of two or more options that aren’t exclusive of each other. Users can select all, none, or multiple checkbox options within a list.</p>
+  <div class="row">
+    <div class="col">
+      <p class="mb-5 u-font-size-2">Checkboxes are used for lists of two or more options that aren’t exclusive of each other. Users can select all, none, or multiple checkbox options within a list.</p>
+      <p>An unchecked checkbox represents a negative selection and a checked checkbox represents a positive selection. If there is a large number of options or not enough space, consider using a multi-select dropdown.</p>
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-checkbox
+                id="checked"
+                label="Selected Option"
+                value="option"
+                isChecked="checked"
+              ></bp-checkbox>
+              <bp-checkbox
+                id="default"
+                name="unchecked example"
+                label="Unselected Option"
+              ></bp-checkbox>
+              <bp-checkbox
+                id="disabled"
+                label="Disabled Option"
+                isDisabled="disabled"
+              ></bp-checkbox>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
