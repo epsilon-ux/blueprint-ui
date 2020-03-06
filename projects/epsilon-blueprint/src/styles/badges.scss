@@ -1,0 +1,28 @@
+@import '_global-variables';
+
+.badge
+{
+    border-radius: 0;
+    border: 1px solid transparent;
+    padding: 4px 10px 5px;
+    font-size: $font-size-body;
+}
+
+.badge-primary
+{
+    background: $mist;
+    color: $font-color-secondary;
+}
+
+.badge-secondary
+{
+    background: $blueberry;
+    color: $coconut;
+}
+
+.badge-success
+{
+    border-color: $feedback-color-success;
+    background: rgba($feedback-color-success, 0.2);
+    color: $font-color-primary;
+}

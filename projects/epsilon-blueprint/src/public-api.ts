@@ -5,6 +5,9 @@
 export * from './lib/action/action.component';
 export * from './lib/action/action.module';
 
+export * from './lib/badge/badge.component';
+export * from './lib/badge/badge.module';
+
 export * from './lib/checkbox/checkbox.component';
 export * from './lib/checkbox/checkbox.module';
 
