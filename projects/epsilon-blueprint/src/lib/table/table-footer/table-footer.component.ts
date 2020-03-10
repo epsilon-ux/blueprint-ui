@@ -23,6 +23,9 @@ export class TableFooterComponent implements OnInit {
   showDisplayDensity: boolean; 
 
   @Input()
+  displayDensityOptions: any;
+
+  @Input()
   showColumnSelector = false;
 
   @Input()
