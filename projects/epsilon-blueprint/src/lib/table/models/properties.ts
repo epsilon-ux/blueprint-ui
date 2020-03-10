@@ -20,7 +20,10 @@ export default interface Properties {
     'Next Page': 'Next Page',
     'Last Page': 'Last Page',
     'Total Records': 0,
-    'Display Density Options': ['Comfortable', 'Compact'],
+    'Display Density Options': {
+      'Comfortable': 'Comfortable',
+      'Compact': 'Compact'
+    },
     'Number Of Rows Options': [
       { optionText: '10 rows', optionValue: 10 },
       { optionText: '25 rows', optionValue: 25 },

@@ -43,7 +43,10 @@ export class OverviewComponent implements OnInit {
         'Next Page': 'Next Page',
         'Last Page': 'Last Page',
         'Total Records': tableData.customerData.data.length,        
-        'Display Density Options': ['Comfortable', 'Compact'],
+        'Display Density Options': {
+          'Comfortable': 'Comfortable',
+          'Compact': 'Compact'
+        },
         'Number Of Rows Options': [
           { optionText: '10 rows', optionValue: 10 },
           { optionText: '25 rows', optionValue: 25 },
