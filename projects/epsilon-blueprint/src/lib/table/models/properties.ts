@@ -5,31 +5,28 @@ export default interface Properties {
   caption: string;
   rowId: string;
   internationalization: {
-    'Select all rows': 'Select all rows',
-    'Actions': 'Actions',
-    'Loading data': 'Loading data',
-    'No data': 'No data available',
-    'Select Row': 'Select Row',
-    'Actions Menu': 'Actions Menu',
-    'Column Selector': 'Column Selector:',
-    'Default': '(Default)',
-    'Display Density': 'Display Density:',
-    'Number of Rows': 'Number of Rows per Page',
-    'First Page': 'First Page',
-    'Previous Page': 'Previous Page',
-    'Next Page': 'Next Page',
-    'Last Page': 'Last Page',
-    'Total Records': 0,
+    'Select all rows': string;
+    'Actions': string;
+    'Loading data': string;
+    'No data': string;
+    'Select Row': string;
+    'Actions Menu': string;
+    'Column Selector': string;
+    'Default': string;
+    'Display Density': string;
+    'Number of Rows': string;
+    'First Page': string;
+    'Previous Page': string;
+    'Next Page': string;
+    'Last Page': string;
     'Display Density Options': {
-      'Comfortable': 'Comfortable',
-      'Compact': 'Compact'
-    },
-    'Number Of Rows Options': [
-      { optionText: '10 rows', optionValue: 10 },
-      { optionText: '25 rows', optionValue: 25 },
-      { optionText: '50 rows', optionValue: 50 },
-      { optionText: '100 rows', optionValue: 100 }
-    ]
+      'Comfortable': string;
+      'Compact': string;
+    };
+    'Number Of Rows Options': {
+      optionText: string;
+      optionValue: number;
+    }[];
   };
   columns: Column[];
   search?:  {
