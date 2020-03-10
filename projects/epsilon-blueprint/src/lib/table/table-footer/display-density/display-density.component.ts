@@ -14,7 +14,6 @@ export class DisplayDensityComponent implements OnInit {
   
   @Input()
   displayDensity: string;
-
   
   @Input()
   showDisplayDensityOptions: any;
@@ -26,7 +25,7 @@ export class DisplayDensityComponent implements OnInit {
 
   ngOnInit() {
     this.internationalization = {
-      'displayDensity': ""
+      "displayDensity": ""
     }
     
     this.internationalization.displayDensity = !localStorage.getItem('selectedDensity')
