@@ -41,32 +41,8 @@ export class TableFooterComponent implements OnInit {
   displayDensityEmitter = new EventEmitter();
 
   @Input()
-  displayDensity: string;
+  internationalization: any;
   
-  @Input()
-  columnSelectorText: string;  
-
-  @Input()
-  defaultText: string;
-
-  @Input()
-  rowCount: string;
-
-  @Input()
-  firstPage: string;
-  
-  @Input()
-  previousPage: string;
-
-  @Input()
-  nextPage: string;
-
-  @Input()
-  lastPage: string;
-
-  @Input()
-  numberOfRowsOptions: any;
-
   constructor() {}
 
   ngOnInit() {}

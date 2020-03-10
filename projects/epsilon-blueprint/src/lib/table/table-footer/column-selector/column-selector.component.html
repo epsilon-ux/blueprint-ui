@@ -3,7 +3,7 @@
   class="table-footer-dropdown column-selector"
 >
   <label for="columnSelector" class="table-footer-dropdown-label">
-    {{ columnSelectorText }}
+    {{ internationalization['Column Selector'] }}
   </label>
   <ng-select
     #columnSelectorDropdown
@@ -41,7 +41,7 @@
       <label [for]="column.key" class="multiselect-label">
         {{ column.headerText }}
         <ng-container *ngIf="column.key === defaultSortColumnName">
-          {{ defaultText }}
+          {{ internationalization['Default'] }}
         </ng-container>
       </label>
     </ng-template>

@@ -3,11 +3,11 @@
     <span class="pagination-records">
       <span class="font-weight-semi-bold">{{ totalRecords }}</span> results
     </span>
-    <label for="numberOfRows" class="sr-only">{{ rowCount }}</label>
+    <label for="numberOfRows" class="sr-only">{{ internationalization['Number of Rows'] }}</label>
     <ng-select
       labelForId="numberOfRows"
       name="numberOfRows"
-      [items]="numberOfRowsOptions"
+      [items]="internationalization['Number Of Rows Options']"
       bindLabel="optionText"
       bindValue="optionValue"
       [(ngModel)]="numberOfRows"
@@ -19,7 +19,7 @@
   <div class="pagination-buttons">
     <button
       class="btn-pager btn-pager-icon"
-      [attr.aria-label]="firstPage"
+      [attr.aria-label]="internationalization['First Page']"
       [disabled]="isStepperDisabled(1)"
       (click)="changePage(1)"
     >
@@ -27,7 +27,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      [attr.aria-label]="previousPage"
+      [attr.aria-label]="internationalization['Previous Page']"
       [disabled]="isStepperDisabled(1)"
       (click)="changePage(currentPage - 1)"
     >
@@ -44,7 +44,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      [attr.aria-label]="nextPage"
+      [attr.aria-label]="internationalization['Next Page']"
       [disabled]="isStepperDisabled(totalPages)"
       (click)="changePage(currentPage + 1)"
     >
@@ -52,7 +52,7 @@
     </button>
     <button
       class="btn-pager btn-pager-icon"
-      [attr.aria-label]="lastPage"
+      [attr.aria-label]="internationalization['Last Page']"
       [disabled]="isStepperDisabled(totalPages)"
       (click)="changePage(totalPages)"
     >

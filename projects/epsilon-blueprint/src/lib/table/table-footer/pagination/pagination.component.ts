@@ -34,25 +34,10 @@ export class PaginationComponent implements OnInit, OnChanges {
   totalPages: number;
   currentPage = 1;
   pageButtons = [];
-  numberOfRows = 10;
-    
-  @Input()
-  numberOfRowsOptions: any;
+  numberOfRows = 10;    
 
   @Input()
-  rowCount: string;
-
-  @Input()
-  firstPage: string;
-
-  @Input()
-  previousPage: string;
-
-  @Input()
-  nextPage: string;
-
-  @Input()
-  lastPage: string;
+  internationalization: any;
 
   constructor() {}
 
