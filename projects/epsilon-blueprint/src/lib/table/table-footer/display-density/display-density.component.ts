@@ -16,7 +16,10 @@ export class DisplayDensityComponent implements OnInit {
   internationalization: any;
   
   displayDensity: string;
-  displayOptions: any;
+  displayOptions: {
+    text: string;
+    value: string;
+  }[];
 
   constructor() {}
 
