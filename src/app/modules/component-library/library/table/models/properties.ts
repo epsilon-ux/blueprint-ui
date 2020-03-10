@@ -20,8 +20,8 @@ export default interface Properties {
     'Next Page': string,
     'Last Page': string,
     'Total Records': number,
-    'displayDensityOptions': any,
-    'numberOfRowsOptions': any
+    'Display Density Options': any,
+    'Number Of Rows Options': any
   };
   columns: Column[];
   search:  {

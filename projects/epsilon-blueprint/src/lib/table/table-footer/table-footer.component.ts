@@ -23,7 +23,7 @@ export class TableFooterComponent implements OnInit {
   showDisplayDensity: boolean; 
 
   @Input()
-  showDisplayDensityOptions: any;
+  displayDensityOptions: any;
 
   @Input()
   showColumnSelector = false;
@@ -65,7 +65,7 @@ export class TableFooterComponent implements OnInit {
   lastPage: string;
 
   @Input()
-  showNumberOfRowsOptions: any;
+  numberOfRowsOptions: any;
 
   constructor() {}
 

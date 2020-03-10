@@ -37,7 +37,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   numberOfRows = 10;
     
   @Input()
-  showNumberOfRowsOptions: any;
+  numberOfRowsOptions: any;
 
   @Input()
   rowCount: string;
