@@ -4,7 +4,7 @@ export interface Column {
   key?: string; // Required, unless columnType = TEMPLATE
   headerText: string;
   isColumnDisplayed: boolean;
-  type: ColumnType;
+  type?: ColumnType;
   isSortable?: boolean;
   template?: TemplateRef<any>;
   icon?: {
@@ -31,14 +31,8 @@ export interface Column {
 }
 
 export enum ColumnType {
-  ID,
-  TEXT,
+  ICON,
   LINK,
-  DATE,
-  BOOLEAN,
-  INPUT,
   STATUS,
   TEMPLATE,
-  ICON,
-  DROPDOWN
 }

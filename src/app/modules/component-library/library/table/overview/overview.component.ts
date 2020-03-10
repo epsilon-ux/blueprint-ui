@@ -27,7 +27,7 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit() {    
     this.properties = {
-      internationalization: {
+      /* internationalization: {
         'Select all rows': 'Select all rows',
         'Actions': 'Actions',
         'Loading data': 'Loading data',
@@ -53,21 +53,19 @@ export class OverviewComponent implements OnInit {
           { optionText: '50 rows', optionValue: 50 },
           { optionText: '100 rows', optionValue: 100 }
         ]
-      },      
+      }, */
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
       columns: [
         {
           key: 'date',
           headerText: 'Date',
-          isColumnDisplayed: true,
-          type: ColumnType.DATE
+          isColumnDisplayed: true
         },
         {
           key: 'amount',
           headerText: 'Amount',
-          isColumnDisplayed: true,
-          type: ColumnType.TEXT
+          isColumnDisplayed: true
         },
         {
           headerText: 'Template',

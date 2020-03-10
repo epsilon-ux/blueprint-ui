@@ -25,7 +25,6 @@ export class DisplayDensityComponent implements OnInit {
       text: this.internationalization['Display Density Options'][option],
       value: option
     }));
-    console.log(this.internationalization['Display Density Options']);
     this.displayDensity = !localStorage.getItem('selectedDensity')
       ? this.displayDensity
       : localStorage.getItem('selectedDensity');

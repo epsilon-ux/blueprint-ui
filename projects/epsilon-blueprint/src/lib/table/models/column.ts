@@ -31,14 +31,8 @@ export interface Column {
 }
 
 export enum ColumnType {
-  ID,
-  TEXT,
+  ICON,
   LINK,
-  DATE,
-  BOOLEAN,
-  INPUT,
   STATUS,
   TEMPLATE,
-  ICON,
-  DROPDOWN
 }
