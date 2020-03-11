@@ -4,17 +4,30 @@ import { Action } from './action';
 export default interface Properties {
   caption: string;
   rowId: string;
-
-  /*Table - internationalization support starts here*/
-  selectCheckBoxLabel : string;
-  actionsVisibleHeader: string;
-  actionsHiddenHeader: string;
-  loadingText: string;
-  noDataText: string;
-  selectRowText: string;
-  actionMenuLabel: string;  
-  /*Ends here*/
-
+  internationalization: {
+    'Select all rows': 'Select all rows',
+    'Actions': 'Actions',
+    'Loading data': 'Loading data',
+    'No data': 'No data available',
+    'Select Row': 'Select Row',
+    'Actions Menu': 'Actions Menu',
+    'Column Selector': 'Column Selector:',
+    'Default': '(Default)',
+    'Display Density': 'Display Density:',
+    'Number of Rows': 'Number of Rows per Page',
+    'First Page': 'First Page',
+    'Previous Page': 'Previous Page',
+    'Next Page': 'Next Page',
+    'Last Page': 'Last Page',
+    'Total Records': 0,
+    'Display Density Options': ['Comfortable', 'Compact'],
+    'Number Of Rows Options': [
+      { optionText: '10 rows', optionValue: 10 },
+      { optionText: '25 rows', optionValue: 25 },
+      { optionText: '50 rows', optionValue: 50 },
+      { optionText: '100 rows', optionValue: 100 }
+    ]
+  };
   columns: Column[];
   search?:  {
     hasSearch?: boolean;
@@ -26,16 +39,6 @@ export default interface Properties {
   };
   hasSelectableRows?: boolean;
   actions?: Action[];
-  displayDensityLabel:string;
-  columnSelectorLabel: string;
-  loadingLabel: string;
-  outOfLabel: string;
-  defaultLabel: string;
-  numberOfRowsLabel: string;
-  firstPageText: string;
-  previousPageText: string;
-  nextPageText: string;
-  lastPageText: string;
   hasColumnSelector?: boolean;
   hasDisplayDensity?: boolean;
   pagination?: {
