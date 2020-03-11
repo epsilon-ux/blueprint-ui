@@ -23,10 +23,10 @@
         <span class="ng-value-label">
           {{
             parseLookupString(
-              internationalization['Showing x out of y'],
+              internationalization['Showing numVisible out of numTotal'],
               {
-                x: selectedColumns.length,
-                y: columnInfo.length
+                numVisible: selectedColumns.length,
+                numTotal: columnInfo.length
               }
             )
           }}

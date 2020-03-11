@@ -13,7 +13,9 @@ export default interface Properties {
     'Actions Menu': string;
     'Column Selector': string;
     'Default': string;
+    'Showing numVisible out of numTotal': string;
     'Display Density': string;
+    'numResults results': string;
     'Number of Rows': string;
     'First Page': string;
     'Previous Page': string;
