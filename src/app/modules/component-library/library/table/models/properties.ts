@@ -4,7 +4,7 @@ import { Action } from './action';
 export default interface Properties {
   caption: string;
   rowId: string;
-  internationalization: {
+  internationalization?: {
     'Select all rows': string;
     'Actions': string;
     'Loading data': string;
