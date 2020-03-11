@@ -1,5 +1,15 @@
 @import '../../../dist/epsilon-blueprint/styles/global-variables';
 
+.component-description
+{
+  font-size: $font-size-display2;
+
+  &:last-of-type
+  {
+    margin-bottom: 3rem; // maps to Bootstrap's .mb-5 spacing utility
+  }
+}
+
 .note-text
 {
   color: $font-color-secondary;
