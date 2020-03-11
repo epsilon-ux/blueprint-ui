@@ -54,9 +54,9 @@ export class OverviewComponent implements OnInit {
           type: ColumnType.LINK,
           link: {
             element: 'a',
-            ariaLabel: 'go to Object ${id}',
+            ariaLabel: 'go to Object #{id}',
             target: '',
-            path: 'object/${id}'
+            path: 'object/#{id}'
           }
         },
         {
@@ -66,7 +66,7 @@ export class OverviewComponent implements OnInit {
           type: ColumnType.LINK,
           link: {
             element: 'a',
-            ariaLabel: 'go to Object ${id}',
+            ariaLabel: 'go to Object #{id}',
             target: '_blank',
             href: 'https://www.example.com'
           }
@@ -109,14 +109,14 @@ export class OverviewComponent implements OnInit {
         {
           element: 'a',
           text: 'Edit',
-          ariaLabel: 'Edit Object ${id}',
+          ariaLabel: 'Edit Object #{id}',
           class: 'btn-outline-primary',
           routerLink: './'
         },
         {
           element: 'button',
           text: 'Deploy',
-          ariaLabel: 'Deploy Object ${id}',
+          ariaLabel: 'Deploy Object #{id}',
           class: 'btn-outline-primary',
           action: 'deploy',
           conditions: [
@@ -136,7 +136,7 @@ export class OverviewComponent implements OnInit {
         {
           element: 'button',
           text: 'Delete',
-          ariaLabel: 'Delete Object ${id}',
+          ariaLabel: 'Delete Object #{id}',
           class: 'btn-outline-danger',
           action: 'delete'
         }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { parseLookupString } from '../../helpers';
 
 @Component({
   selector: 'app-column-selector',
@@ -11,6 +12,8 @@ export class ColumnSelectorComponent implements OnInit {
   @Input() showColumnSelector = false;
   @Input() internationalization: any;
   selectedColumns = [];
+
+  parseLookupString = parseLookupString;
 
   constructor() {}
 

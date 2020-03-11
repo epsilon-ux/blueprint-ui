@@ -21,7 +21,15 @@
     <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
       <div class="ng-value multiselect-value">
         <span class="ng-value-label">
-          Showing {{ selectedColumns.length }} out of {{ columnInfo.length }}
+          {{
+            parseLookupString(
+              internationalization['Showing numVisible out of numTotal'],
+              {
+                numVisible: selectedColumns.length,
+                numTotal: columnInfo.length
+              }
+            )
+          }}
         </span>
       </div>
     </ng-template>
