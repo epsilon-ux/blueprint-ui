@@ -34,7 +34,6 @@ export class DisplayDensityComponent implements OnInit {
   }
 
   setDisplayDensity() {
-    console.log(this.displayDensity);
     this.displayDensityEmitter.emit(this.displayDensity);
   }
 }

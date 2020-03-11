@@ -34,5 +34,5 @@ export enum ColumnType {
   ICON,
   LINK,
   STATUS,
-  TEMPLATE,
+  TEMPLATE
 }
