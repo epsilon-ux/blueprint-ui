@@ -15,7 +15,7 @@ export interface Column {
     };
   link?: {
     element: string; // Expect 'a', or 'button'
-    ariaLabel: string; // Can use ${key} syntax to insert values from the row corresponding to the given key
+    ariaLabel: string; // Can use #{key} syntax to insert values from the row corresponding to the given key
     target?: string; // The target of the link i.e. "_blank" to open in a new tab
     action?: string; // Required if element = 'button'
     path?: string; // Required if element = 'a' and you need to use routerLink
