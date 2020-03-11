@@ -1,7 +1,7 @@
 <div class="pagination-wrapper flex-column flex-sm-row">
   <div class="d-flex align-items-center mb-3 mb-sm-0">
     <span class="pagination-records">
-      <span class="font-weight-semi-bold">{{ totalRecords }}</span> results
+      {{ parseLookupString(internationalization['n results'], {n: totalRecords}) }}
     </span>
     <label for="numberOfRows" class="sr-only">{{ internationalization['Number of Rows'] }}</label>
     <ng-select
