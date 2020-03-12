@@ -2,18 +2,18 @@
 
 .card
 {
-	margin-bottom: 20px;
-	border-radius: 0;
-	border-color: $border-color-secondary;
-  
+  margin-bottom: 30px;
+  border-radius: 0;
+  border-color: $border-color-secondary;
+
   &.component-wrap
   {
     overflow-y: hidden;
-    
+
     .card-body
     {
       margin-bottom: -40px;
-    
+
       .component
       {
         display: inline-block;
@@ -25,9 +25,8 @@
 
 .card-body
 {
-	&.component-preview
-	{
-		padding: 30px;
+  &.component-preview
+  {
+    padding: 30px;
   }
-  
 }

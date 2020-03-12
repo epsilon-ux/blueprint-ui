@@ -1,5 +1,21 @@
 @import '../../../dist/epsilon-blueprint/styles/global-variables';
 
+// TODO: figure out vertical spacing
+// .section-level-1:last-child
+// {
+//   margin-bottom: 40px;
+// }
+
+// .section-level-2:last-child
+// {
+//   margin-bottom: 30px;
+// }
+
+// .section-level-3:last-child
+// {
+//   margin-bottom: 20px;
+// }
+
 .component-description
 {
   font-size: $font-size-display2;
@@ -7,6 +23,8 @@
   &:last-of-type
   {
     margin-bottom: 3rem; // maps to Bootstrap's .mb-5 spacing utility
+    // TODO: figure out vertical spacing
+    // margin-bottom: 40px;
   }
 }
 
