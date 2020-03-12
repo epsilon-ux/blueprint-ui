@@ -259,6 +259,11 @@
       outline: 0;
       background: transparent;
     }
+
+    &.parent-row td
+    {
+      border-bottom: none;
+    }
   }
 
   th
@@ -270,9 +275,20 @@
   {
     color: $font-color-primary;
 
+    .table.table-bordered-rows
+    {
+      margin-bottom: 0;
+
+      tbody tr:last-of-type td
+      {
+        border-bottom: none;
+      }
+    }
+
     p
     {
       margin-bottom: 0;
     }
   }
+
 }
