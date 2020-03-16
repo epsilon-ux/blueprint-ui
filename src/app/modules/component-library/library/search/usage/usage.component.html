@@ -3,9 +3,32 @@
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
+          The way a user searches varies slightly depending on the situation. The search component behavior depends on the amount of data, the type of data, and the location of the search within the product.
+      </p>
+      <p>
         The search component is most often used on pages that contain data tables.
       </p>
-      <h2 class="h2">Configurations</h2>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+              <bp-search
+                label="Search"
+                placeholder="Search"
+                [isSearching]="isSearching"
+                (search)="handleSearch($event)"
+                (clearSearch)="handleClearSearch($event)"
+              ></bp-search>
+              <!-- TODO: update example with table -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2>Configurations</h2>
       <p>
         All of the elements in the search component are required. The elements in the table below are configurable.
       </p>
