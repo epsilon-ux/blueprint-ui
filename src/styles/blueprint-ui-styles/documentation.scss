@@ -15,37 +15,3 @@
   color: $font-color-secondary;
   font-style: italic;
 }
-
-summary h2,
-summary h3,
-summary h4
-{
-  display: inline-block;
-}
-
-details
-{
-  & > summary
-  {
-    display: inline-block;
-    list-style: none;
-  
-    &::after
-    {
-      content: $icon-chevron-right;
-      margin-left: 5px;
-      font-family: $font-family-icon;
-      font-weight: $font-weight-semi-bold;
-      font-size: 0.875em;
-    }
-  
-    &::-webkit-details-marker {
-      display: none;
-    }
-  }
-
-  &[open] > summary::after
-  {
-    content: $icon-chevron-down;
-  }
-}
