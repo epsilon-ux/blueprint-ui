@@ -3,9 +3,11 @@
 ></bp-landing-page-header>
 <section class="container-fluid">
   <div class="row">
-    <div class="col">
-      <h2>Epsilon Blueprint</h2>
-      <p class="mb-5">You can see in progress and upcoming work on our <a href="https://trello.com/b/AoJ0Tpd2/blueprint">Blueprint Trello board.</a></p>
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="mt-0">Epsilon Blueprint</h2>
+      <p>
+        You can see in progress and upcoming work on our <a href="https://trello.com/b/AoJ0Tpd2/blueprint">Blueprint Trello board.</a>
+      </p>
 
       <h2>Setup &amp; Installation</h2>
       <p>This package has a few dependencies that are not included in the package itself. They are as follows:</p>
@@ -15,14 +17,17 @@
         <li>Bootstrap v4</li>
         <li>Font Awesome 5</li>
       </ul>
-      <p>Once you have all these, run <code>npm install epsilon-blueprint</code> to install the package to your node_modules. Once the package is installed you then need to import the stylesheets from the package.</p>
+      <p>
+        Once you have all these, run <code>npm install epsilon-blueprint</code> to install the package to your node_modules. Once the package is installed you then need to import the stylesheets from the package.
+      </p>
       <p>
         In your application styles.scss file, add the following import statement.
         <code class="d-block">
           @import "~epsilon-blueprint/styles";
         </code>
       </p>
-      <p>When you need to use global variables in a scss file, add the following import statement.
+      <p>
+        When you need to use global variables in a scss file, add the following import statement.
         <code class="d-block">
           @import "~epsilon-blueprint/styles/global-variables";
         </code>
