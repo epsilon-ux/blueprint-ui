@@ -10,7 +10,9 @@ export class UsageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  handleSearch(e) { }
+
+  handleClearSearch(e) { }
 }
