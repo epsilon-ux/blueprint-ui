@@ -7,6 +7,8 @@ import {
   OnChanges
 } from '@angular/core';
 
+import { parseLookupString } from '../../helpers';
+
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
@@ -16,6 +18,8 @@ import {
 // This component only handles the actual pagination part of the table,
 // the actual rows and rendering is handled by the table component
 export class PaginationComponent implements OnInit, OnChanges {
+  parseLookupString = parseLookupString;
+
   @Input()
   totalRecords: number;
 
@@ -34,29 +38,10 @@ export class PaginationComponent implements OnInit, OnChanges {
   totalPages: number;
   currentPage = 1;
   pageButtons = [];
-
   numberOfRows = 10;
-  numberOfRowsOptions = [
-    { optionText: '10 rows', optionValue: 10 },
-    { optionText: '25 rows', optionValue: 25 },
-    { optionText: '50 rows', optionValue: 50 },
-    { optionText: '100 rows', optionValue: 100 }
-  ];
-  
-  @Input()
-  numberOfRowsText: string;
 
   @Input()
-  firstPageLabel: string;
-
-  @Input()
-  previousPageLabel: string;
-
-  @Input()
-  nextPageLabel: string;
-
-  @Input()
-  lastPageLabel: string;
+  internationalization: any;
 
   constructor() {}
 

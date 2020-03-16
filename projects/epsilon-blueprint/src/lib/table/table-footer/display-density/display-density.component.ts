@@ -11,18 +11,25 @@ export class DisplayDensityComponent implements OnInit {
 
   @Input()
   showDisplayDensity: boolean;
-  
-  @Input()
-  displayDensityText: string;
 
-  displayDensity;
-  displayDensityOptions = ['Comfortable', 'Compact'];
+  @Input()
+  internationalization: any;
+  
+  displayDensity: string;
+  displayOptions: {
+    text: string;
+    value: string;
+  }[];
 
   constructor() {}
 
   ngOnInit() {
+    this.displayOptions = Object.keys(this.internationalization['Display Density Options']).map(option => ({
+      text: this.internationalization['Display Density Options'][option],
+      value: option
+    }));
     this.displayDensity = !localStorage.getItem('selectedDensity')
-      ? this.displayDensityOptions[0]
+      ? this.displayDensity
       : localStorage.getItem('selectedDensity');
   }
 

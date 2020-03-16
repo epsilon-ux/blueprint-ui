@@ -4,7 +4,7 @@ export interface Column {
   key?: string; // Required, unless columnType = TEMPLATE
   headerText: string;
   isColumnDisplayed: boolean;
-  type: ColumnType;
+  type?: ColumnType;
   isSortable?: boolean;
   template?: TemplateRef<any>;
   icon?: {
@@ -15,7 +15,7 @@ export interface Column {
     };
   link?: {
     element: string; // Expect 'a', or 'button'
-    ariaLabel: string; // Can use ${key} syntax to insert values from the row corresponding to the given key
+    ariaLabel: string; // Can use #{key} syntax to insert values from the row corresponding to the given key
     target?: string; // The target of the link i.e. "_blank" to open in a new tab
     action?: string; // Required if element = 'button'
     path?: string; // Required if element = 'a' and you need to use routerLink
@@ -31,14 +31,8 @@ export interface Column {
 }
 
 export enum ColumnType {
-  ID,
-  TEXT,
-  LINK,
-  DATE,
-  BOOLEAN,
-  INPUT,
-  STATUS,
-  TEMPLATE,
   ICON,
-  DROPDOWN
+  LINK,
+  STATUS,
+  TEMPLATE
 }

@@ -3,7 +3,7 @@
   class="table-footer-dropdown column-selector"
 >
   <label for="columnSelector" class="table-footer-dropdown-label">
-    {{ columnSelectorText }}
+    {{ internationalization['Column Selector'] }}
   </label>
   <ng-select
     #columnSelectorDropdown
@@ -21,7 +21,15 @@
     <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
       <div class="ng-value multiselect-value">
         <span class="ng-value-label">
-          {{ loadingLabelText }} {{ selectedColumns.length }} {{ outOfLabelText }} {{ columnInfo.length }}
+          {{
+            parseLookupString(
+              internationalization['Showing numVisible out of numTotal'],
+              {
+                numVisible: selectedColumns.length,
+                numTotal: columnInfo.length
+              }
+            )
+          }}
         </span>
       </div>
     </ng-template>
@@ -41,7 +49,7 @@
       <label [for]="column.key" class="multiselect-label">
         {{ column.headerText }}
         <ng-container *ngIf="column.key === defaultSortColumnName">
-          {{ defaultText }}
+          {{ internationalization['Default'] }}
         </ng-container>
       </label>
     </ng-template>

@@ -26,6 +26,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
 
+  // Defaults
   propertyDefaults = {
     search:  {
       hasSearch: true
@@ -35,6 +36,34 @@ export class TableComponent implements OnInit, OnChanges {
     hasDisplayDensity: true,
     pagination: {
       hasPagination: true
+    },
+    internationalization: {
+      'Select all rows': 'Select all rows',
+      'Actions': 'Actions',
+      'Loading data': 'Loading data',
+      'No data': 'No data available',
+      'Select Row': 'Select Row',
+      'Actions Menu': 'Actions Menu',
+      'Column Selector': 'Column Selector:',
+      'Default': '(Default)',
+      'Showing numVisible out of numTotal': 'Showing #{numVisible} out of #{numTotal}',
+      'Display Density': 'Display Density:',
+      'numResults results': '#{numResults} result(s)', 
+      'Number of Rows': 'Number of Rows per Page',
+      'First Page': 'First Page',
+      'Previous Page': 'Previous Page',
+      'Next Page': 'Next Page',
+      'Last Page': 'Last Page',
+      'Display Density Options': {
+        'Comfortable': 'Comfortable',
+        'Compact': 'Compact'
+      },
+      'Number Of Rows Options': [
+        { optionText: '10 rows', optionValue: 10 },
+        { optionText: '25 rows', optionValue: 25 },
+        { optionText: '50 rows', optionValue: 50 },
+        { optionText: '100 rows', optionValue: 100 }
+      ]
     }
   };
 
