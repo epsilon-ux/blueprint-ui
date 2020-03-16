@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usage.component.scss']
 })
 export class UsageComponent implements OnInit {
+  isSearching = false;
 
   constructor() { }
 
