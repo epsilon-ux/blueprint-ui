@@ -1,4 +1,6 @@
-<details class="mb-4" [open]="isOpen">
-  <summary class="link-primary mb-3" (click)="toggleDetails($event)">{{ summaryText }}</summary>
+<details [open]="isOpen">
+  <summary class="link-primary" (click)="toggleDetails($event)">
+    {{ summaryText }}
+  </summary>
   <ng-content></ng-content>
 </details>
