@@ -8,10 +8,13 @@ const routes: Routes = [
   { path: '', component: ComponentLibraryComponent, children: [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
-
+    
+    { path: 'voice-tone', loadChildren: () => import('./foundations/voice-tone/voice-tone.module')
+    .then(m => m.VoiceToneModule) },
+    
     { path: 'badge', loadChildren: () => import('./library/badge/badge.module')
       .then(m => m.BadgeLibraryModule) },
-
+    
     { path: 'buttons-links', loadChildren: () => import('./library/action/action.module')
       .then(m => m.ActionLibraryModule) },
 

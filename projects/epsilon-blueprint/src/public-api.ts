@@ -28,3 +28,6 @@ export * from './lib/table/table.module';
 
 export * from './lib/toggletip/toggletip.component';
 export * from './lib/toggletip/toggletip.module';
+
+export * from './lib/voice-tone/voice-tone.component';
+export * from './lib/voice-tone/voice-tone.module';
