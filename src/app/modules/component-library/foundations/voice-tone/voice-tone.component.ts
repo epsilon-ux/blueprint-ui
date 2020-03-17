@@ -5,13 +5,13 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './voice-tone.component.html',
   styleUrls: ['./voice-tone.component.scss']
 })
+
 export class VoiceToneComponent implements OnInit {
-  
+
   headingText = "Voice & Tone";
-  
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

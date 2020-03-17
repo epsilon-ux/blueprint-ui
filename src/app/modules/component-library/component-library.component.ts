@@ -18,7 +18,11 @@ export class ComponentLibraryComponent {
         children: [
           {
             text: 'Voice & Tone',
-            route: './voice-tone',
+            route: './voice-tone'
+          },
+          {
+            text: 'Typography',
+            route: './typography'
           }
         ]
       },
