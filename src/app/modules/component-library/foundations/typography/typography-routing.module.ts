@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TypographyComponent } from './typography.component';
 import { OverviewComponent } from './overview/overview.component';
-import { UsageComponent } from './usage/usage.component';
+// TODO: uncomment once mockup is added
+// import { UsageComponent } from './usage/usage.component';
 
 const routes: Routes = [
   { path: '', component: TypographyComponent, children: [
