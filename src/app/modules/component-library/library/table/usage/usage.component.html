@@ -1,7 +1,164 @@
+<!-- TODO: should we show table with search, col selector, display density, pagination? -->
 <section class="container-fluid">
   <div class="row">
-    <div class="col">
-      <p>Usage coming soon...</p>
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        This component is highly customizable. There are many types of information you can show in our data table component, as shown in the following examples. All table columns are sortable, except for the actions column.
+      </p>
+      <p>
+        While the number of columns is not fixed, the amount of columns  should not be so high as to interfere with the user’s ability to read the table. The user cannot edit in-line within a table due to accessibility concerns.
+      </p>
+      <h2>Variations</h2>
+      <h3>Standard table</h3>
+      <p>
+        This is our standard table. It can contain static information or a link and static information. It can have a footer or not, depending on the amount of data in the table.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <!-- TODO: add example -->
+          <p class="mb-0">Example coming soon</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <!-- TODO: should this be 'Table with selectable rows'? -->
+      <h3>Table with checkboxes</h3>
+      <p>
+        Adding checkboxes to each row will allow the user the ability to select and deselect groups of rows.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <!-- TODO: add example -->
+          <p class="mb-0">Example coming soon</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with actions</h3>
+      <p>
+        The user can perform individual actions each table row. These actions appear in the last column to the right. If there are more than two actions, these actions should appear in a dropdown (see the next example).
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <!-- TODO: add example -->
+          <p class="mb-0">Example coming soon</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with action dropdown</h3>
+      <p>
+        If there are more than two actions (see the preceding example), these options should appear in a dropdown represented by an icon. In this case, the action column should not have a header.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <!-- TODO: add example -->
+          <p class="mb-0">Example coming soon</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with an icon column</h3>
+      <p>
+        Boolean information can be represented as an icon. The icons that are most often used are checkmarks and warning icons. These icon columns should only be used for simple yes / no, true / false options. These icons must always be accompanied with an aria label.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <!-- TODO: add example -->
+          <p class="mb-0">Example coming soon</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with a status column</h3>
+      <p>
+        If all objects are assigned statuses, these statuses should be shown in the table. Indicators accompany status text to help with scannability. Status indicators must always have a label. 
+        <!-- TODO: uncomment after adding Icons -->
+        <!-- See the Icons page for more information around status indicators. -->
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <!-- TODO: add example -->
+          <p class="mb-0">Example coming soon</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2>Configurations</h2>
+      <p>
+        The page title is the only required element in a landing page header. All elements in the table below are optional.
+      </p>
+    </div>
+    <div class="col-12">
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Table optional elements and descriptions</caption>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Purpose</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pagination</td>
+            <td>Navigates the user to other pages of data of the same table</td>
+            <td>Use when the table has more than ten rows of data</td>
+          </tr>
+          <tr>
+            <td>Column selector</td>
+            <td>Allows the user to show and hide columns from the table</td>
+            <td><!-- TODO: add notes --></td>
+          </tr>
+          <tr>
+            <td>Display density</td>
+            <td>Navigates the user to a page or opens a modal where the user can create a new object</td>
+            <td><!-- TODO: add notes --></td>
+          </tr>
+          <tr>
+            <td>Link</td>
+            <td>Navigates the user to another page related to that row’s information</td>
+            <td>Use when the user needs to see more information about a row or an object</td>
+          </tr>
+          <tr>
+            <td>Multi-select checkboxes</td>
+            <td>Allows the user to select an entire row</td>
+            <td>Use when the user should be able to perform bulk actions on selected rows</td>
+          </tr>
+          <tr>
+            <td>One to two actions</td>
+            <td>Allows the user to take individual actions on one row at a time</td>
+            <td>Use when the user should be able to take one or two actions on an individual row</td>
+          </tr>
+          <tr>
+            <td>More than two actions</td>
+            <td>Allows the user to take individual actions on one row at a time</td>
+            <td>Use when the user should be able to take more than two actions on an individual row</td>
+          </tr>
+          <tr>
+            <td>Icon column</td>
+            <td>Represents boolean information with icons</td>
+            <td>Use when there is boolean information that would better be represented by icons</td>
+          </tr>
+          <tr>
+            <td>Status column</td>
+            <td>Shows the status of each row or object</td>
+            <td>Use when every row or object within the table has a status</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

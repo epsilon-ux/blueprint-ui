@@ -1,5 +1,21 @@
 @import '../../../dist/epsilon-blueprint/styles/global-variables';
 
+// We add margin-top to headings for vertical spacing in our docs
+h2
+{
+  margin-top: 40px;
+}
+
+h3
+{
+  margin-top: 30px;
+}
+
+h4
+{
+  margin-top: 20px;
+}
+
 .component-description
 {
   font-size: $font-size-display2;

@@ -1,8 +1,73 @@
+<!-- TODO: update usage docs when we add primary toggletip -->
 <section class="container-fluid">
   <div class="row">
-    <div class="col">
-      <p class="u-font-size-2">Toggletips describe single elements or give simple instructions. Toggletips should be used sparingly, and only when the action, label, or function is complex and cannot be explained to the user any other way. Toggletips appear to the right of the element they are explaining.</p>
-      <p class="u-font-size-2">Hover-only interactions are not accessible and not possible on touch devices, so the user must click on the toggletip button to open and close the toggletip.</p>
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Toggletips appear to the right of the element they are explaining. The user must click on the trigger as hover-only interactions are not accessible and not possible on touch devices.
+      </p>
+      <p>
+        Toggletips are triggered through a question mark icon button. Toggletips should be used to describe single elements or give simple instructions.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <!-- TODO: update examples when we make placement configurable -->
+              <bp-toggletip
+                content="This is toggletip content"
+                placement="bottom"
+              ></bp-toggletip>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!--
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Toggletips should generally appear to the right of the element they are explaining. If there is no room, the toggletip can appear below the element.
+      </p>
+      <p>
+        We have two types of toggletips depending on the situation. For both toggletips, the user must click on the trigger as hover-only interactions are not accessible and not possible on touch devices.
+      </p>
+      <h3>Primary toggletips</h3>
+      <p>
+        Primary toggletips are triggered through a text button. Primary toggletips should be used to describe important concepts or large page elements.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              ADD EXAMPLE HERE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Secondary toggletips</h3>
+      <p>
+        Secondary toggletips are triggered through a question mark icon button. Secondary toggletips should be used to describe single elements or give simple instructions.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              ADD EXAMPLE HERE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
 </section>
