@@ -6,9 +6,8 @@ import { AccessibilityInternationalizationComponent } from './accessibility-inte
 import { ContentGuidelinesComponent } from './content-guidelines/content-guidelines.component';
 import { GrammarPunctuationComponent } from './grammar-punctuation/grammar-punctuation.component';
 
-
 const routes: Routes = [
-    { path: '', component: VoiceToneComponent, children: [
+  { path: '', component: VoiceToneComponent, children: [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
     { path: 'accessibility-internationalization', component: AccessibilityInternationalizationComponent, pathMatch: 'full' },
