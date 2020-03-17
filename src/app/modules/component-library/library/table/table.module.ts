@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { TableModule } from 'epsilon-blueprint';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
+import { ShowMoreModule } from 'src/app/shared/show-more/show-more.module';
 import { TableRoutingModule } from './table-routing.module';
 
 import { OverviewComponent } from './overview/overview.component';
@@ -25,7 +26,8 @@ import { ApiComponent } from './api/api.component';
     RouterModule,
     ComponentHeaderModule,
     TableRoutingModule,
-    TableModule
+    TableModule,
+    ShowMoreModule
   ],
   providers: [],
   exports: [TableComponent]

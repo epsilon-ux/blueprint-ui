@@ -351,8 +351,6 @@ export class TableComponent implements OnInit, OnChanges {
       }
     });
 
-    this.selectedRowsAction.emit({
-      selectedRowsIds
-    });
+    this.selectedRowsAction.emit(selectedRowsIds);
   }
 }

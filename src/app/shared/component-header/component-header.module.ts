@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ComponentHeaderComponent } from './component-header.component';
 import { LandingPageHeaderModule } from 'epsilon-blueprint';
 
