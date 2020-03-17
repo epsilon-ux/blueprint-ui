@@ -6,7 +6,7 @@ details
   {
     display: inline-block;
     list-style: none;
-  
+
     &::after
     {
       content: $icon-chevron-right;
@@ -15,14 +15,20 @@ details
       font-weight: $font-weight-semi-bold;
       font-size: 0.875em;
     }
-  
-    &::-webkit-details-marker {
+
+    &::-webkit-details-marker
+    {
       display: none;
     }
   }
 
-  &[open] > summary::after
+  &[open] > summary
   {
-    content: $icon-chevron-down;
+    margin-bottom: 1rem;
+
+    &::after
+    {
+      content: $icon-chevron-down;
+    }
   }
 }
