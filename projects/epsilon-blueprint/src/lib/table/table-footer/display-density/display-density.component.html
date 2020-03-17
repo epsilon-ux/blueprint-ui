@@ -1,6 +1,6 @@
 <div *ngIf="showDisplayDensity" class="table-footer-dropdown">
   <label for="displayDensity" class="table-footer-dropdown-label">
-    {{ displayDensityText }}
+    {{ internationalization['Display Density'] }}
   </label>
   <ng-select
     #displayDensityDropdown
@@ -8,7 +8,9 @@
     labelForId="displayDensity"
     name="displayDensity"
     (change)="setDisplayDensity()"
-    [items]="displayDensityOptions"
+    [items]="displayOptions"
+    bindLabel="text"
+    bindValue="value"
     [searchable]="false"
     [clearable]="false"
     [(ngModel)]="displayDensity"

@@ -47,3 +47,6 @@ Thumbs.db
 
 # Datasets
 /src/app/datasets
+
+# Application Host
+/.vs

@@ -3,17 +3,14 @@
   [showColumnSelector]="showColumnSelector"
   [columnInfo]="columnInfo"
   [defaultSortColumnName]="defaultSortColumnName"
-  [columnSelectorText]="columnSelectorText"
-  [loadingLabelText]="loadingLabelText"
-  [outOfLabelText]="outOfLabelText"
-  [defaultText]="defaultText"
+  [internationalization]="internationalization"
 ></app-column-selector>
 
 <app-display-density
   class="col-12 col-sm-auto d-flex justify-content-center mb-3 mb-xl-0"
   (displayDensityEmitter)="setDisplayDensity($event)"
   [showDisplayDensity]="showDisplayDensity"
-  [displayDensityText]="displayDensityText"  
+  [internationalization]="internationalization"
 ></app-display-density>
 
 <app-pagination
@@ -23,9 +20,5 @@
   [pageBuffer]="pageBuffer"
   [pageNumber]="pageNumber"
   (pageData)="emitPageData($event)"
-  [numberOfRowsText]="numberOfRowsText"
-  [firstPageLabel]="firstPageLabel"
-  [nextPageLabel]="nextPageLabel"
-  [previousPageLabel]="previousPageLabel"
-  [lastPageLabel]="lastPageLabel"
+  [internationalization]="internationalization"
 ></app-pagination>

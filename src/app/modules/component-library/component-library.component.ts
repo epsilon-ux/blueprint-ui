@@ -11,7 +11,7 @@ export class ComponentLibraryComponent {
     items: [
       {
         text: 'Introduction',
-        route: './overview',
+        route: './overview'
       },
       {
         text: 'Foundations',
@@ -26,16 +26,28 @@ export class ComponentLibraryComponent {
         text: 'Small Components',
         children: [
           {
+            text: 'Badge',
+            route: './badge'
+          },
+          {
             text: 'Buttons & Links',
-            route: './buttons-links',
+            route: './buttons-links'
+          },
+          {
+            text: 'Checkbox',
+            route: './checkbox'
+          },
+          {
+            text: 'Radio Button',
+            route: './radio-button'
           },
           {
             text: 'Search',
-            route: './search',
+            route: './search'
           },
           {
             text: 'Toggletip',
-            route: './toggletip',
+            route: './toggletip'
           }
         ]
       },
@@ -44,11 +56,11 @@ export class ComponentLibraryComponent {
         children: [
           {
             text: 'Landing Page Header',
-            route: './landing-page-header',
+            route: './landing-page-header'
           },
           {
             text: 'Secondary Navigation',
-            route: './nav-secondary',
+            route: './nav-secondary'
           }
         ]
       },
@@ -57,7 +69,7 @@ export class ComponentLibraryComponent {
         children: [
           {
             text: 'Table',
-            route: './table',
+            route: './table'
           }
         ]
       }
