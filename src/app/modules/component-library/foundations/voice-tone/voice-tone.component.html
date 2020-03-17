@@ -1,0 +1,41 @@
+<bp-landing-page-header [headingText]="headingText">
+  <div tab-items>
+    <div class="row">
+      <div class="col">
+        <a
+          class="tab"
+          routerLink="./overview"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Overview
+        </a>
+        <a
+          class="tab"
+          routerLink="./grammar-punctuation"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Grammar & Punctuation
+        </a>
+        <a
+          class="tab"
+          routerLink="./content-guidelines"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Content Guidelines
+        </a>
+        <a
+          class="tab"
+          routerLink="./accessibility-internationalization"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Accessibility & Internationalization
+        </a>
+      </div>
+    </div>
+  </div>
+</bp-landing-page-header>
+<router-outlet></router-outlet>

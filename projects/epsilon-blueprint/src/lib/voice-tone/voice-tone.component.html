@@ -1,1 +1,26 @@
-<p>kjfsdkjf</p>
+<div class="container-fluid landing-page-header">
+  <div class="row">
+    <div class="col">
+      <h1 class="landing-page-heading">{{ headingText }}</h1>
+    </div>
+    <!-- <div *ngIf="hasAction" class="col-auto">
+
+      <button
+        *ngIf="actionElement === 'button'"
+        type="button"
+        class="btn btn-primary btn-wide"
+        (click)="onActionClick()"
+      >
+        {{ actionText }}
+      </button>
+      <a
+        *ngIf="actionElement === 'a'"
+        class="btn btn-primary btn-wide"
+        [attr.href]="href"
+      >
+        {{ actionText }}
+      </a>
+    </div> -->
+  </div>
+  <ng-content select="[tab-items]"></ng-content>
+</div>

@@ -9,7 +9,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
 
-    { path: 'voice-tone', loadChildren: () => import('./library/voice-tone/voice-tone.module')
+    { path: 'voice-tone', loadChildren: () => import('./foundations/voice-tone/voice-tone.module')
     .then(m => m.VoiceToneModule) },
 
     { path: 'buttons-links', loadChildren: () => import('./library/action/action.module')

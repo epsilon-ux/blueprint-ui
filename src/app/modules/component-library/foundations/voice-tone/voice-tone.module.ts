@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { VoiceToneLibraryModule } from 'epsilon-blueprint';
-
-import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
-import { VoiceToneRountingModule } from './voice-tone-routing.module';
+import { VoiceToneLibraryModule, LandingPageHeaderModule } from 'epsilon-blueprint';
+import { VoiceToneRoutingModule } from './voice-tone-routing.module';
 
 import { VoiceToneComponent } from './voice-tone.component';
 import { OverviewComponent } from './overview/overview.component';
@@ -23,9 +21,9 @@ import { AccessibilityInternationalizationComponent } from './accessibility-inte
   imports: [
     CommonModule,
     RouterModule,
-    ComponentHeaderModule,
-    VoiceToneRountingModule,
-    VoiceToneLibraryModule
+    VoiceToneRoutingModule,
+    VoiceToneLibraryModule,
+    LandingPageHeaderModule
   ],
   providers: [],
   exports: [VoiceToneComponent]
