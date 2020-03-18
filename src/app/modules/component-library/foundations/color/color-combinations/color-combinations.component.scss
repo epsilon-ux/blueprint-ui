@@ -1,0 +1,127 @@
+@import 'projects/epsilon-blueprint/src/styles/_global-variables';
+
+.table-contrast
+{
+  padding: 20px;
+
+  &.ultramarine
+  {
+    background: $ultramarine;
+  }
+
+  &.midnight
+  {
+    background: $midnight;
+  }
+
+  &.coconut
+  {
+    border: 1px solid $border-color-primary;
+    background: $coconut;
+  }
+
+  &.cobalt
+  {
+    background: $cobalt;
+  }
+
+  &.blueberry
+  {
+    background: $blueberry;
+  }
+
+  &.cornflower
+  {
+    background: $cornflower;
+  }
+
+  &.ice
+  {
+    background: $ice;
+  }
+
+  &.storm
+  {
+    background: $storm;
+  }
+
+  &.haze
+  {
+    background: $haze;
+  }
+
+  &.mist
+  {
+    background: $mist;
+  }
+
+  &.cloud
+  {
+    background: $cloud;
+  }
+
+  .table.table-bordered-rows
+  {
+    margin: 0;
+
+    &.light
+    {
+      th,
+      td
+      {
+        border-color: $coconut;
+        color: $coconut;
+      }
+    }
+
+    thead tr th
+    {
+      padding-top: 0;
+    }
+
+    tbody tr td
+    {
+      font-weight: $font-weight-regular;
+
+      &.pass
+      {
+        font-weight: $font-weight-bold;
+      }
+
+      &.midnight
+      {
+        color: $midnight;
+      }
+
+      &.storm
+      {
+        color: $storm;
+      }
+
+      &.ultramarine
+      {
+        color: $ultramarine;
+      }
+
+      &.coconut
+      {
+        color: $coconut;
+      }
+
+      &.tomato
+      {
+        color: $tomato;
+      }
+
+      &.shamrock
+      {
+        color: $shamrock;
+      }
+
+      &.clementine
+      {
+        color: $clementine;
+      }
+    }
+  }
+}
