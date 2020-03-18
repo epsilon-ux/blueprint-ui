@@ -20,6 +20,11 @@ export class ComponentLibraryComponent {
             text: 'Voice & Tone',
             route: './voice-tone'
           },
+          // TODO: uncomment when adding color
+          // {
+          //   text: 'Color',
+          //   route: './color'
+          // },
           {
             text: 'Typography',
             route: './typography'

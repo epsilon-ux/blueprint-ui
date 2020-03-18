@@ -13,6 +13,9 @@ const routes: Routes = [
     { path: 'voice-tone', loadChildren: () => import('./foundations/voice-tone/voice-tone.module')
     .then(m => m.VoiceToneModule) },
 
+    { path: 'color', loadChildren: () => import('./foundations/color/color.module')
+    .then(m => m.ColorModule) },
+
     { path: 'typography', loadChildren: () => import('./foundations/typography/typography.module')
     .then(m => m.TypographyModule) },
 
