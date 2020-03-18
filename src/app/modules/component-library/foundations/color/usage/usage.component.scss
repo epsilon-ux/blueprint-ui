@@ -1,0 +1,18 @@
+@import 'projects/epsilon-blueprint/src/styles/_global-variables';
+
+.swatch-sm
+{
+  &.swatch-dropshadow-primary, 
+  &.swatch-dropshadow-secondary, 
+  &.swatch-dropshadow-tertiary, 
+  &.swatch-dropshadow-primary-navigation, 
+  &.swatch-focus-default, 
+  &.swatch-focus-default-inset, 
+  &.swatch-focus-warning, 
+  &.swatch-focus-readonly
+  {
+    width: 58px;
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+}
