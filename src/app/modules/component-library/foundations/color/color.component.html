@@ -1,0 +1,33 @@
+<bp-landing-page-header [headingText]="headingText">
+  <div tab-items>
+    <div class="row">
+      <div class="col">
+        <a
+          class="tab"
+          routerLink="./overview"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Overview
+        </a>
+        <a
+          class="tab"
+          routerLink="./usage"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Usage
+        </a>
+        <a
+          class="tab"
+          routerLink="./color-combinations"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Color Combinations
+        </a>
+      </div>
+    </div>
+  </div>
+</bp-landing-page-header>
+<router-outlet></router-outlet>

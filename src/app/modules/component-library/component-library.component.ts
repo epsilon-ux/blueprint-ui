@@ -21,6 +21,10 @@ export class ComponentLibraryComponent {
             route: './voice-tone'
           },
           {
+            text: 'Color',
+            route: './color'
+          },
+          {
             text: 'Typography',
             route: './typography'
           }

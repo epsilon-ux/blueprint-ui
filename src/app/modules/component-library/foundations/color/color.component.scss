@@ -1,0 +1,140 @@
+@import 'projects/epsilon-blueprint/src/styles/_global-variables';
+
+.swatch
+{
+  border: 1px solid transparent;
+  background: $coconut;
+
+  &.swatch-sm
+  {
+    width: 70px;
+    height: 30px;
+  }
+
+  &.swatch-lg
+  {
+    width: 100%;
+    height: 75px;
+    margin: 10px 0;
+  }
+
+  &.swatch-apricot
+  {
+    background: $apricot;
+  }
+
+  &.swatch-ultramarine
+  {
+    background: $ultramarine;
+  }
+
+  &.swatch-midnight
+  {
+    background: $midnight;
+  }
+
+  &.swatch-coconut
+  {
+    border-color: $border-color-primary;
+  }
+
+  &.swatch-cobalt
+  {
+    background: $cobalt;
+  }
+
+  &.swatch-blueberry
+  {
+    background: $blueberry;
+  }
+
+  &.swatch-cornflower
+  {
+    background: $cornflower;
+  }
+
+  &.swatch-ice
+  {
+    background: $ice;
+  }
+
+  &.swatch-storm
+  {
+    background: $storm;
+  }
+
+  &.swatch-haze
+  {
+    background: $haze;
+  }
+
+  &.swatch-cloud
+  {
+    background: $cloud;
+  }
+
+  &.swatch-mist
+  {
+    background: $mist;
+  }
+
+  &.swatch-tomato
+  {
+    background: $tomato;
+  }
+
+  &.swatch-brick
+  {
+    background: $brick;
+  }
+
+  &.swatch-shamrock
+  {
+    background: $shamrock;
+  }
+
+  &.swatch-clementine
+  {
+    background: $clementine;
+  }
+
+  &.swatch-dropshadow-primary
+  {
+    box-shadow: $box-shadow-primary;
+  }
+
+  &.swatch-dropshadow-secondary
+  {
+    box-shadow: $box-shadow-secondary;
+  }
+
+  &.swatch-dropshadow-tertiary
+  {
+    box-shadow: $box-shadow-tertiary;
+  }
+
+  &.swatch-dropshadow-primary-navigation
+  {
+    box-shadow: $box-shadow-nav-primary;
+  }
+
+  &.swatch-focus-default
+  {
+    box-shadow: $box-shadow-focus-default;
+  }
+
+  &.swatch-focus-default-inset
+  {
+    box-shadow: $box-shadow-focus-default-inset;
+  }
+
+  &.swatch-focus-warning
+  {
+    box-shadow: $box-shadow-focus-warning;
+  }
+
+  &.swatch-focus-readonly
+  {
+    box-shadow: $box-shadow-focus-readonly;
+  }
+}
