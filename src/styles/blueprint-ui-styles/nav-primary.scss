@@ -2,10 +2,10 @@
 
 .navbar
 {
-  box-shadow: 0 0 7px 0 rgba(11, 66, 168, 0.2); /* use $cobalt variable with Sass */
+  box-shadow: $box-shadow-nav-primary;
   padding: 0;
   background: $coconut;
-  z-index: 5;
+  z-index: 1001;
 }
 
 .navbar-brand
