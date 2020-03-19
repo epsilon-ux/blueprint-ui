@@ -2,7 +2,7 @@
 
 .navbar
 {
-  box-shadow: 0 0 7px 0 rgba($cobalt, 0.2);
+  box-shadow: $box-shadow-nav-primary;
   padding: 0;
   background: $coconut;
   z-index: 1001;
