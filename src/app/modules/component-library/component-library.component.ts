@@ -27,6 +27,10 @@ export class ComponentLibraryComponent {
           {
             text: 'Typography',
             route: './typography'
+          },
+          {
+            text: 'Icons',
+            route: './icons'
           }
         ]
       },
