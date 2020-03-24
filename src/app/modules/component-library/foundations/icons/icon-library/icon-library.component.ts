@@ -226,6 +226,24 @@ export class IconLibraryComponent implements OnInit {
     }
   ];
 
+  customerIcons = [
+    {
+      name: 'Edit secondary',
+      style: 'Solid',
+      class: 'fas fa-edit'
+    },
+    {
+      name: 'Expand',
+      style: 'Solid',
+      class: 'fas fa-expand-alt'
+    },
+    {
+      name: 'Sort amount down',
+      style: 'Solid',
+      class: 'fas fa-sort-amount-down'
+    }
+  ];
+
   dataHubIcons = [
     {
       name: 'Arrow circle right',
@@ -346,7 +364,7 @@ export class IconLibraryComponent implements OnInit {
     }
   ];
 
-  marketingPromotionsIcons = [
+  marketingIcons = [
     {
       name: 'Auction',
       style: 'SVG',
@@ -494,24 +512,6 @@ export class IconLibraryComponent implements OnInit {
       name: 'Upload',
       style: 'Solid',
       class: 'fas fa-upload'
-    }
-  ];
-
-  uniteIcons = [
-    {
-      name: 'Edit secondary',
-      style: 'Solid',
-      class: 'fas fa-edit'
-    },
-    {
-      name: 'Expand',
-      style: 'Solid',
-      class: 'fas fa-expand-alt'
-    },
-    {
-      name: 'Sort amount down',
-      style: 'Solid',
-      class: 'fas fa-sort-amount-down'
     }
   ];
 

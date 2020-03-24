@@ -36,6 +36,21 @@
       </div>
     </div>
     <div class="col-lg-8 col-xl-7">
+      <h2 class="u-mt-20">Customer</h2>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of customerIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <i class="{{ icon.class }} icon"></i>
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.class }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
       <h2 class="u-mt-20">Data Hub</h2>
     </div>
     <div class="col-12">
@@ -100,11 +115,11 @@
       </div>
     </div>
     <div class="col-lg-8 col-xl-7">
-      <h2 class="u-mt-20">Marketing Promotions</h2>
+      <h2 class="u-mt-20">Marketing</h2>
     </div>
     <div class="col-12">
       <div class="row">
-        <div *ngFor="let icon of marketingPromotionsIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+        <div *ngFor="let icon of marketingIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
           <div class="icon-container">
             <img src="{{ icon.src }}" class="icon-svg">
             <p class="icon-name">{{ icon.name }}</p>
@@ -120,21 +135,6 @@
     <div class="col-12">
       <div class="row">
         <div *ngFor="let icon of messagingGeneralIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
-          <div class="icon-container">
-            <i class="{{ icon.class }} icon"></i>
-            <p class="icon-name">{{ icon.name }}</p>
-            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
-            <p class="text-color-secondary mb-0">{{ icon.class }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-8 col-xl-7">
-      <h2 class="u-mt-20">Unite</h2>
-    </div>
-    <div class="col-12">
-      <div class="row">
-        <div *ngFor="let icon of uniteIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
           <div class="icon-container">
             <i class="{{ icon.class }} icon"></i>
             <p class="icon-name">{{ icon.name }}</p>
