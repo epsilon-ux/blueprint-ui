@@ -29,7 +29,7 @@
         </div>
         <div *ngFor="let icon of statusIndicatorIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
           <div class="icon-container status">
-            <div class="{{ icon.class }} icon"></div>
+            <div class="{{ icon.class }} icon" aria-hidden="true"></div>
             <p class="icon-name">{{ icon.name }}</p>
           </div>
         </div>
