@@ -19,6 +19,9 @@ const routes: Routes = [
     { path: 'typography', loadChildren: () => import('./foundations/typography/typography.module')
     .then(m => m.TypographyModule) },
 
+    { path: 'icons', loadChildren: () => import('./foundations/icons/icons.module')
+    .then(m => m.IconsModule) },
+
     // Small components
     { path: 'badge', loadChildren: () => import('./library/badge/badge.module')
       .then(m => m.BadgeLibraryModule) },

@@ -1,0 +1,148 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="mt-0">Global Icons</h2>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of globalIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <i class="{{ icon.class }} icon"></i>
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.class }}</p>
+            <p *ngIf="icon.variable" class="text-color-secondary mb-0">{{icon.variable}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="u-mt-20">Status Indicators</h2>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container status">
+            <i class="fas fa-spinner fa-spin in-progress icon"></i>
+            <p class="icon-name">In progress</p>
+          </div>
+        </div>
+        <div *ngFor="let icon of statusIndicatorIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container status">
+            <div class="{{ icon.class }} icon"></div>
+            <p class="icon-name">{{ icon.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="u-mt-20">Data Hub</h2>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of dataHubIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <i class="{{ icon.class }} icon"></i>
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.class }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="u-mt-20">Loyalty</h2>
+      <h3>General</h3>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of loyaltyGeneralIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <i class="{{ icon.class }} icon"></i>
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.class }}</p>
+            <p *ngIf="icon.variable" class="text-color-secondary mb-0">{{icon.variable}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3 class="u-mt-10">Customer Banner</h3>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of loyaltyCustomerBannerIcons" 
+          class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <i class="{{ icon.class }} icon"></i>
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.class }}</p>
+            <p *ngIf="icon.variable" class="text-color-secondary mb-0">{{icon.variable}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3 class="u-mt-10">Customer Segments</h3>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of loyaltyCustomerSegmentIcons" 
+          class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <img src="{{ icon.src }}" class="icon-svg">
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="u-mt-20">Marketing Promotions</h2>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of marketingPromotionsIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <img src="{{ icon.src }}" class="icon-svg">
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="u-mt-20">Messaging</h2>
+      <h3>General</h3>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of messagingGeneralIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <i class="{{ icon.class }} icon"></i>
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.class }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="u-mt-20">Unite</h2>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div *ngFor="let icon of uniteIcons" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 icon-col">
+          <div class="icon-container">
+            <i class="{{ icon.class }} icon"></i>
+            <p class="icon-name">{{ icon.name }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.style }}</p>
+            <p class="text-color-secondary mb-0">{{ icon.class }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
