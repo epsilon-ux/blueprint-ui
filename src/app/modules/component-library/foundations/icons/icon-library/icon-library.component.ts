@@ -300,9 +300,9 @@ export class IconLibraryComponent implements OnInit {
       variable: '$icon-calendar'
     },
     {
-      name: 'Credit card',
+      name: 'Card number',
       style: 'Solid',
-      class: 'fas fa-credit-card'
+      class: 'fas fa-address-card'
     },
     {
       name: 'Map marker',
