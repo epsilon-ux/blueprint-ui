@@ -23,6 +23,32 @@ export class ApiComponent implements OnInit {
     \`\`\`
     `;
 
+  templateColsMD1 = `
+    \`\`\`html
+    <ng-template #templateColumn let-rowData>
+      Template column example for row {{ rowData.id }}
+    </ng-template>
+    \`\`\`
+    `
+
+  templateColsMD2 = `
+    \`\`\`typescript
+    @ViewChild('templateColumn', {static: true}) templateColumn;
+    \`\`\`
+    `
+
+  templateColsMD3 = `
+    \`\`\`typescript
+    {
+      headerText: 'Template Column',
+      isColumnDisplayed: true,
+      type: ColumnType.TEMPLATE,
+      template: this.templateColumn,
+      isSortable: false
+    },
+    \`\`\`
+    `
+
   constructor() { }
 
   ngOnInit() {

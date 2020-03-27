@@ -875,26 +875,31 @@
 
       <h2>Template Columns</h2>
       <p>Templates can be provided to specified columns to allow custom columns.</p>
-      <!-- <ol>
+      <ol>
         <li>
-          Create template in component html file.
-          <markdown ngPreserveWhitespaces lineNumbers lineHighlight [line]="'8-10'">
-            ```html
-            &lt;ng-template #templateColumn let-rowData&gt;
-              Template column example for row {{ rowData.id }}
-            &lt;/ng-template&gt;
-            ```
-          </markdown>
+          Create template anywhere in component html file. This should either be a sibling or a child of the table component.
+          <markdown
+            [data]="templateColsMD1"
+            lineNumbers
+          ></markdown>
         </li>
         <li>
           Select the template in the component typescript.
-          <markdown ngPreserveWhitespaces lineNumbers lineHighlight [line]="'8-10'">
-            ```typescript
-            @ViewChild('templateColumn', {static: true}) templateColumn;
-            ```
-          </markdown>
+          <markdown
+            [data]="templateColsMD2"
+            lineNumbers
+          ></markdown>
         </li>
-      </ol> -->
+        <li>
+          Pass the template into a <a routerLink="." fragment="columns">column object</a> of type "TEMPLATE".
+          <markdown
+            [data]="templateColsMD3"
+            lineNumbers
+            lineHighlight
+            [line]="'4-5'"
+          ></markdown>
+        </li>
+      </ol>
 
 
       <!-- TODO: add versions & features table -->
