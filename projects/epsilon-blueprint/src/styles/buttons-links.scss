@@ -132,7 +132,8 @@ button.btn-text:disabled
   width: 100%;
 }
 
-.btn-group-toggle
+// TODO: Uncomment when ready to finish toggle styling
+/* .btn-group-toggle
 {
   display: flex;
 }
@@ -157,7 +158,7 @@ button.btn-text:disabled
     color: $font-color-primary;
     box-shadow: inset 0 0 4px 0 $ultramarine;
   }
-}
+} */
 
 .btn-input-addon
 {
