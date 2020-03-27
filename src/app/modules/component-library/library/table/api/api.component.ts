@@ -7,6 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApiComponent implements OnInit {
 
+  tableFiltersMD = `
+    \`\`\`html
+    <bp-table
+      [isDataLoading]="isDataLoading"
+      [data]="data"
+      [properties]="properties"
+      (action)="handleAction($event)"
+      (selectedRowsAction)="handleSelectedRowsAction($event)"
+    >
+      <ng-container table-filters>
+        <!-- Add content here -->
+      </ng-container>
+    </bp-table>
+    \`\`\`
+    `;
+
   constructor() { }
 
   ngOnInit() {

@@ -866,29 +866,36 @@
 
       <h3>table-filters</h3>
       <p>Row above the table, where the search is, to add additional custom filters or content.</p>
-      <markdown ngPreserveWhitespaces lineNumbers lineHighlight [line]="'8-10'">
-        ```html
-        &lt;bp-table
-          [isDataLoading]="isDataLoading"
-          [data]="data"
-          [properties]="properties"
-          (action)="handleAction($event)"
-          (selectedRowsAction)="handleSelectedRowsAction($event)"
-        &gt;
-          &lt;ng-container table-filters&gt;
-            &lt;!-- Add content here. --&gt;
-          &lt;/ng-container&gt;
-        &lt;/bp-table&gt;
-        ```
-      </markdown>
+      <markdown
+        [data]="tableFiltersMD"
+        lineNumbers
+        lineHighlight
+        [line]="'8-10'"
+      ></markdown>
 
-      <h3>tab-items</h3>
-      <p>Tabbed navigation items should be routerLinks or links.</p>
-      <p>
-        <code>
-          code snippet coming soon
-        </code>
-      </p>
+      <h2>Template Columns</h2>
+      <p>Templates can be provided to specified columns to allow custom columns.</p>
+      <!-- <ol>
+        <li>
+          Create template in component html file.
+          <markdown ngPreserveWhitespaces lineNumbers lineHighlight [line]="'8-10'">
+            ```html
+            &lt;ng-template #templateColumn let-rowData&gt;
+              Template column example for row {{ rowData.id }}
+            &lt;/ng-template&gt;
+            ```
+          </markdown>
+        </li>
+        <li>
+          Select the template in the component typescript.
+          <markdown ngPreserveWhitespaces lineNumbers lineHighlight [line]="'8-10'">
+            ```typescript
+            @ViewChild('templateColumn', {static: true}) templateColumn;
+            ```
+          </markdown>
+        </li>
+      </ol> -->
+
 
       <!-- TODO: add versions & features table -->
     </div>
