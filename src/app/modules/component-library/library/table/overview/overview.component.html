@@ -17,7 +17,11 @@
             [properties]="properties"
             (action)="handleAction($event)"
             (selectedRowsAction)="handleSelectedRowsAction($event)"
-          ></bp-table>
+          >
+            <ng-container table-filters>
+              <button>Test</button>
+            </ng-container>
+          </bp-table>
         </div>
       </div>
     </div>

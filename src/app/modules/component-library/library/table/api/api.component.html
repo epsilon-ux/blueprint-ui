@@ -860,17 +860,27 @@
 
       <h2>Content Projection</h2>
       <p>
-        The dropdown-items and tab-items attributes are values for the optional
+        The table-filters and tab-items attributes are values for the optional
         ng-content directives' select attribute.
       </p>
 
-      <h3>dropdown-items</h3>
-      <p>Dropdown menu items could be buttons, routerLinks, or links.</p>
-      <p>
-        <code>
-          code snippet coming soon
-        </code>
-      </p>
+      <h3>table-filters</h3>
+      <p>Row above the table, where the search is, to add additional custom filters or content.</p>
+      <markdown ngPreserveWhitespaces lineNumbers lineHighlight [line]="'8-10'">
+        ```html
+        &lt;bp-table
+          [isDataLoading]="isDataLoading"
+          [data]="data"
+          [properties]="properties"
+          (action)="handleAction($event)"
+          (selectedRowsAction)="handleSelectedRowsAction($event)"
+        &gt;
+          &lt;ng-container table-filters&gt;
+            &lt;!-- Add content here. --&gt;
+          &lt;/ng-container&gt;
+        &lt;/bp-table&gt;
+        ```
+      </markdown>
 
       <h3>tab-items</h3>
       <p>Tabbed navigation items should be routerLinks or links.</p>
