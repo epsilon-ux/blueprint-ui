@@ -860,12 +860,12 @@
 
       <h2>Content Projection</h2>
       <p>
-        The table-filters and tab-items attributes are values for the optional
+        The table-filters are values for the optional
         ng-content directives' select attribute.
       </p>
 
       <h3>table-filters</h3>
-      <p>Row above the table, where the search is, to add additional custom filters or content.</p>
+      <p>A content area above the table used for adding additional custom filters. Content will be added to the same row as the search.</p>
       <markdown
         [data]="tableFiltersMD"
         lineNumbers
@@ -877,7 +877,7 @@
       <p>Templates can be provided to specified columns to allow custom columns.</p>
       <ol>
         <li>
-          Create template in component html file. This should either be a sibling or a child of the table component.
+          Create a template in component. This should either be a sibling or a child of the table component.
           <markdown
             [data]="templateColsMD1"
             lineNumbers
