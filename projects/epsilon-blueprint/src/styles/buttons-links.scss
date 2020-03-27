@@ -219,59 +219,6 @@ button.btn-text:disabled
   }
 }
 
-.btn-icon-inline-tooltip
-{
-  display: inline-flex;
-  border: 0;
-  padding: 0;
-  background: transparent;
-  color: $accent-color-primary;
-  transform: translateY(3px);
-
-  & .fa-stack
-  {
-    transform: scale(0.72);
-  }
-
-  & .fa-circle
-  {
-    color: $accent-color-primary;
-  }
-
-  & .fas.fa-circle
-  {
-    display: none;
-  }
-
-  & .far.fa-circle
-  {
-    display: inline-block;
-  }
-
-  & .fa-question
-  {
-    color: $accent-color-primary;
-  }
-
-  &:hover
-  {
-    & .fas.fa-circle
-    {
-      display: inline-block;
-    }
-
-    & .far.fa-circle
-    {
-      display: none;
-    }
-
-    & .fa-question
-    {
-      color: $coconut;
-    }
-  }
-}
-
 .btn-icon[disabled]
 {
   border: 1px solid $haze;
