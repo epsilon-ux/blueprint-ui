@@ -22,7 +22,7 @@ import { OverviewComponent } from './overview/overview.component';
     ComponentHeaderModule,
     ComponentsRoutingModule,
     LandingPageHeaderModule,
-    MarkdownModule.forChild(),
+    MarkdownModule.forChild()
   ],
   providers: [HttpClientModule],
   exports: [ComponentLibraryComponent]
