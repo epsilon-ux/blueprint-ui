@@ -27,13 +27,13 @@ export class ColumnSelectorComponent implements OnInit {
     );
     this.updateSelected(this.selectedColumns);
   }
-
+  
   updateSelected(e) {
     if (Array.isArray(e)) {
       this.columnInfo.forEach(column => {
         column.isColumnDisplayed = this.selectedColumns.includes(column.key)
-          ? true
-          : false;
+        ? true
+        : false;
       });
       // TODO: Figure out local storage issues
       // 1. What if there are multiple tables in the application

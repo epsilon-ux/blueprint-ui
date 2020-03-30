@@ -37,7 +37,6 @@ export class CheckboxComponent implements OnInit {
   }
 
   emitChange(e) {
-    console.log(e);
     this.change.emit(e);
   }
 }

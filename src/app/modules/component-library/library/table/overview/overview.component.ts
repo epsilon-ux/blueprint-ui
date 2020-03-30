@@ -155,6 +155,5 @@ export class OverviewComponent implements OnInit {
   }
 
   handleSelectedRowsAction(selectedRowIds: Array<number>) {
-    console.log(selectedRowIds);
   }
 }

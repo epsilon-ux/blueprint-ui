@@ -2,29 +2,83 @@
 
 .table-footer-dropdown
 {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .table-footer-dropdown-label
 {
-    width: auto;
-    margin-right: 5px;
+  width: auto;
+  margin-right: 5px;
 }
 
 .column-selector
 {
-    ng-select .multiselect-value
+  ng-select .multiselect-value
+  {
+    font-size: $font-size-body;
+    color: $font-color-primary;
+    background: transparent;
+  }
+
+  ng-select .multiselect-label
+  {
+    pointer-events: none;
+    display: inline;
+  }
+}
+
+.decrative-checkbox-container
+{
+  position: relative;
+
+  .decrative-checkbox // checkmark
+  {
+    padding-left: 22px;
+    line-height: 17px;
+    cursor: pointer;
+  
+    &::before
     {
-        font-size: $font-size-body;
-        color: $font-color-primary;
-        background: transparent;
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $border-color-primary;
+      background: $coconut;
+    }
+  
+    &.is-checked
+    {
+      &::before{
+        border: transparent;
+        background: $accent-color-primary;
+      }
+
+      &::after
+      {
+        content: $icon-checkmark;
+        position: absolute;
+        left: 0;
+        color: $coconut;
+        font-family: $font-family-icon;
+        font-weight: $font-weight-semi-bold;
+        font-size: 16px;
+        transform: scale(0.75);
+      }
     }
 
-    ng-select .multiselect-label
+    &:focus::before
     {
-        pointer-events: none;
-        display: inline;
+      box-shadow: $box-shadow-focus-default;
     }
+  
+    &.is-disabled
+    {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
 }
