@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'bp-checkbox',
@@ -17,9 +17,14 @@ export class CheckboxComponent implements OnInit {
   @Input() label: string;
   @Input() visuallyHiddenLabel?: boolean;
 
-  constructor() { }
+  @Output() change = new EventEmitter();
 
+  checked;
+  
+  constructor() { }
+  
   ngOnInit() {
+    this.checked = this.isChecked;
     this.validation();
   }
 
@@ -29,5 +34,10 @@ export class CheckboxComponent implements OnInit {
       err.name = 'Missing Input';
       throw err;
     }
+  }
+
+  emitChange(e) {
+    console.log(e);
+    this.change.emit(e);
   }
 }

@@ -154,5 +154,7 @@ export class OverviewComponent implements OnInit {
     // Use action from action buttons to trigger different events here
   }
 
-  handleSelectedRowsAction(selectedRowIds: Array<number>) {}
+  handleSelectedRowsAction(selectedRowIds: Array<number>) {
+    console.log(selectedRowIds);
+  }
 }

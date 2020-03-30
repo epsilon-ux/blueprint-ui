@@ -5,9 +5,12 @@
         class="checkbox-input"
         [attr.name]="name ? name : null"
         [attr.value]="value ? value : null"
-        [attr.checked]="isChecked ? isChecked : null"
+        [checked]="isChecked"
+        [attr.aria-checked]="checked"
         [attr.disabled]="isDisabled ? isDisabled : null"
         [attr.required]="isRequired ? isRequired : null"
+        (change)="emitChange($event)"
+        [(ngModel)]="checked"
     >
     <span class="checkbox-label">
         <span *ngIf="visuallyHiddenLabel; else visibleLabel" class="sr-only">
