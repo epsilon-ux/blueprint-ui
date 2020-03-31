@@ -1,15 +1,13 @@
 <tr *ngFor="let rowData of tableData">
   <!-- Selectable Row Checkboxes -->
   <td *ngIf="properties.hasSelectableRows" class="td-selectable">
-    <input
-      type="checkbox"
+    <bp-checkbox
+      label="{{ properties.internationalization['Select Row'] }} {{ rowData.id }}"
+      [visuallyHiddenLabel]="true"
       [id]="rowData.id"
+      [isChecked]="rowData.checked"
       (change)="selectRows($event)"
-      [checked]="rowData.checked"
-    />
-    <label [for]="rowData.id" class="sr-only">
-      {{ properties.internationalization['Select Row'] }} {{ rowData.id }}
-    </label>
+    ></bp-checkbox>
   </td>
 
   <!-- Table Data Columns/Cells -->

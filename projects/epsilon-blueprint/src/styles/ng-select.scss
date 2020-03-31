@@ -459,3 +459,78 @@
 {
   padding: 0 5px;
 }
+
+// Fake checkbox for multiselect
+// Any changes made here should be reflected in the checkbox styles also
+.decorative-checkbox-container
+{
+  position: relative;
+
+  .decorative-checkbox // checkmark
+  {
+    padding-left: 22px;
+    line-height: 17px;
+    cursor: pointer;
+  
+    &::before
+    {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $border-color-primary;
+      background: $coconut;
+    }
+  
+    &.is-checked
+    {
+      &::before
+      {
+        border: transparent;
+        background: $accent-color-primary;
+      }
+      
+      &::after
+      {
+        content: $icon-checkmark;
+        position: absolute;
+        left: 0;
+        color: $coconut;
+        font-family: $font-family-icon;
+        font-weight: $font-weight-semi-bold;
+        font-size: 16px;
+        transform: scale(0.75);
+      }
+    }
+
+    &:focus::before
+    {
+      box-shadow: $box-shadow-focus-default;
+    }
+  
+    &.is-disabled
+    {
+      cursor: not-allowed;
+
+      &::before
+      {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+// Marked checkbox (hover & focus)
+.ng-option-marked .decorative-checkbox-container .decorative-checkbox.is-checked
+{
+  &::before
+  {
+    background: $coconut;
+  }
+
+  &::after
+  {
+    color: $accent-color-primary;
+  }
+}

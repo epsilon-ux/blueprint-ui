@@ -1,5 +1,7 @@
 @import '../../styles/global-variables';
 
+// Any changes made here should be reflected in the decorative checkbox styles also (see ng-select stylesheet)
+
 .checkbox
 {
     margin-bottom: 15px;
@@ -32,6 +34,7 @@
             width: 16px;
             height: 16px;
             border: 1px solid $border-color-primary;
+            background: $coconut;
         }
     }
 
@@ -42,8 +45,8 @@
         {
             &::before
             {
-                border-color: transparent;
-                background-color: $accent-color-primary;
+                border: transparent;
+                background: $accent-color-primary;
             }
         }
     }
@@ -100,8 +103,13 @@
     {
         + .checkbox-label
         {
+          cursor: not-allowed;
+          color: $font-color-secondary;
+
+          &::before
+          {
             opacity: 0.5;
-            cursor: not-allowed;
+          }
         }
     }
 }

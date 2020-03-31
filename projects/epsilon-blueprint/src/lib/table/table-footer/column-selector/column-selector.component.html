@@ -39,19 +39,19 @@
       let-item$="item$"
       let-index="index"
     >
-      <input
-        type="checkbox"
-        [id]="column.key"
-        [disabled]="column.key === defaultSortColumnName"
-        [name]="column.headerText"
-        [ngModel]="item$.selected"
-      />
-      <label [for]="column.key" class="multiselect-label">
-        {{ column.headerText }}
-        <ng-container *ngIf="column.key === defaultSortColumnName">
-          {{ internationalization['Default'] }}
-        </ng-container>
-      </label>
+      <div class="decorative-checkbox-container">
+        <span [ngClass]="{
+            'decorative-checkbox': true,
+            'is-checked': item$.selected,
+            'is-disabled': column.key === defaultSortColumnName
+          }"
+        >
+          {{ column.headerText }}
+          <ng-container *ngIf="column.key === defaultSortColumnName">
+            {{ internationalization['Default'] }}
+          </ng-container>
+        </span>
+      </div>
     </ng-template>
   </ng-select>
 </div>
