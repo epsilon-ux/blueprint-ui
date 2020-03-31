@@ -101,8 +101,13 @@
     {
         + .checkbox-label
         {
+          cursor: not-allowed;
+          color: $font-color-secondary;
+
+          &::before
+          {
             opacity: 0.5;
-            cursor: not-allowed;
+          }
         }
     }
 }
