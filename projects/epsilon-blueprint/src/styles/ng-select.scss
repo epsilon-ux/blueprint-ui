@@ -461,11 +461,12 @@
 }
 
 // Fake checkbox for multiselect
-.decrative-checkbox-container
+// Any changes made here should be reflected in the checkbox styles also
+.decorative-checkbox-container
 {
   position: relative;
 
-  .decrative-checkbox // checkmark
+  .decorative-checkbox // checkmark
   {
     padding-left: 22px;
     line-height: 17px;
@@ -488,7 +489,6 @@
       {
         border: transparent;
         background: $accent-color-primary;
-
       }
       
       &::after
@@ -522,7 +522,7 @@
 }
 
 // Marked checkbox (hover & focus)
-.ng-option-marked .decrative-checkbox-container .decrative-checkbox.is-checked
+.ng-option-marked .decorative-checkbox-container .decorative-checkbox.is-checked
 {
   &::before
   {

@@ -13,19 +13,9 @@
   margin-right: 5px;
 }
 
-.column-selector
+.column-selector ng-select .multiselect-value
 {
-  ng-select .multiselect-value
-  {
-    font-size: $font-size-body;
-    color: $font-color-primary;
-    background: transparent;
-  }
-
-  ng-select .multiselect-label
-  {
-    pointer-events: none;
-    display: inline;
-  }
+  font-size: $font-size-body;
+  color: $font-color-primary;
+  background: transparent;
 }
-

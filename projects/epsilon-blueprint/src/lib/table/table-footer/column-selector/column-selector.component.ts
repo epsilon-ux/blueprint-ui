@@ -27,7 +27,7 @@ export class ColumnSelectorComponent implements OnInit {
     );
     this.updateSelected(this.selectedColumns);
   }
-  
+
   updateSelected(e) {
     if (Array.isArray(e)) {
       this.columnInfo.forEach(column => {
