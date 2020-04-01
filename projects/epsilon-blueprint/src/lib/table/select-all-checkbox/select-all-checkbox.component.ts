@@ -1,15 +1,16 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'bp-checkbox',
-  templateUrl: './checkbox.component.html'
+  selector: 'app-select-all-checkbox',
+  templateUrl: './select-all-checkbox.component.html'
 })
-export class CheckboxComponent implements OnInit, OnChanges {
+export class SelectAllCheckboxComponent implements OnInit, OnChanges {
 
   @Input() id: string;
   @Input() name?: string;
   @Input() value?: string;
   @Input() isChecked = false;
+  @Input() isMixed = false;
   @Input() isDisabled = false;
   @Input() isRequired = false;
 
@@ -23,14 +24,12 @@ export class CheckboxComponent implements OnInit, OnChanges {
   constructor() { }
   
   ngOnInit() {
-    this.checked = this.isChecked;
     this.validation();
+    this.getState();
   }
 
-  ngOnChanges(changes) {
-    if (changes.isChecked && !changes.isChecked.firstChange) {
-      this.checked = changes.isChecked.currentValue;
-    }
+  ngOnChanges() {
+    this.getState();
   }
 
   validation() {
@@ -41,7 +40,22 @@ export class CheckboxComponent implements OnInit, OnChanges {
     }
   }
 
-  emitChange(e) {
+  getState() {
+    switch (true) {
+      case this.isMixed:
+        this.checked = 'mixed';
+        break;
+      case this.isChecked:
+        this.checked = 'true';
+        break;
+      default:
+        this.checked = 'false';
+    }
+  }
+
+  emitEvent(e) {
+    console.log(e);
+    e.preventDefault();
     this.change.emit(e);
   }
 }
