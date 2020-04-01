@@ -30,7 +30,7 @@ export class SelectAllCheckboxComponent implements OnInit, OnChanges {
 
   validation() {
     if (!this.label) {
-      let err = new Error('\'label\' is a required Input of bp-checkbox');
+      let err = new Error('\'label\' is a required Input of app-select-all-checkbox');
       err.name = 'Missing Input';
       throw err;
     }

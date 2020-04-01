@@ -316,7 +316,7 @@ export class TableComponent implements OnInit, OnChanges {
       selectedRowsCount < this.filteredData.length
     ) {
       this.isSelectAllIndeterminate = true;
-      this.isSelectAllChecked = true;
+      this.isSelectAllChecked = false;
     } else if (selectedRowsCount === 0) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = false;
