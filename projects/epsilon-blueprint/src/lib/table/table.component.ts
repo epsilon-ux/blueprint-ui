@@ -76,6 +76,10 @@ export class TableComponent implements OnInit, OnChanges {
   filteredData = [];
   tableData = [];
 
+  // Select All Rows
+  isSelectAllChecked = false;
+  isSelectAllIndeterminate = false;
+
   // Sorting
   sortColumnName: string;
   columnIndex: number;
@@ -296,7 +300,6 @@ export class TableComponent implements OnInit, OnChanges {
 
   // To select/unselect one row at a time
   onSelectRow(event) {
-    const selectAllCheckbox = this.selectAllRowsRef.nativeElement;
     const selectedRow = this.filteredData.find(
       data => data.id === Number(event.target.id)
     );
@@ -306,25 +309,27 @@ export class TableComponent implements OnInit, OnChanges {
       .length;
     
     if (selectedRowsCount === this.filteredData.length) {
-      selectAllCheckbox.indeterminate = false;
-      selectAllCheckbox.checked = true;
+      this.isSelectAllIndeterminate = false;
+      this.isSelectAllChecked = true;
     } else if (
       selectedRowsCount > 0 &&
       selectedRowsCount < this.filteredData.length
     ) {
-      selectAllCheckbox.indeterminate = true;
-      selectAllCheckbox.checked = true;
+      this.isSelectAllIndeterminate = true;
+      this.isSelectAllChecked = false;
     } else if (selectedRowsCount === 0) {
-      selectAllCheckbox.indeterminate = false;
-      selectAllCheckbox.checked = false;
+      this.isSelectAllIndeterminate = false;
+      this.isSelectAllChecked = false;
     }
     this.emitSelectedRowsAction();
   }
 
   // To select/deselect all the rows
   onSelectAllRows(event) {
+    this.isSelectAllChecked = !this.isSelectAllChecked;
+    this.isSelectAllIndeterminate = false;
     this.filteredData.forEach(row => {
-      row.checked = event.target.checked;
+      row.checked = this.isSelectAllChecked;
     });
     this.emitSelectedRowsAction();
   }

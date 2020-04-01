@@ -20,13 +20,14 @@
       <tr>
         <ng-container *ngIf="properties.columns">
           <th *ngIf="properties.hasSelectableRows" class="th-selectable">
-            <input
-              type="checkbox"
+            <app-select-all-checkbox
               id="selectAllRows"
-              #selectAllRowsRef
+              [label]="properties.internationalization['Select all rows']"
+              [visuallyHiddenLabel]="true"
+              [isChecked]="isSelectAllChecked"
+              [isMixed]="isSelectAllIndeterminate"
               (change)="onSelectAllRows($event)"
-            />
-            <label for="selectAllRows" class="sr-only">{{ properties.internationalization['Select all rows'] }}</label>
+            ></app-select-all-checkbox>
           </th>
           <ng-container *ngFor="let column of properties.columns; let i = index">
             <th

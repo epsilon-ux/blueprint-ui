@@ -1,0 +1,15 @@
+<span
+  role="checkbox"
+  class="checkbox-input"
+  [attr.aria-checked]="checked"
+  tabindex="0"
+  (keyup.space)="emitEvent($event)"
+></span>
+<label class="checkbox-label" [id]="id" (click)="emitEvent($event)">
+  <span *ngIf="visuallyHiddenLabel; else visibleLabel" class="sr-only">
+      {{ label }}
+  </span>
+  <ng-template #visibleLabel>
+      {{ label }}
+  </ng-template>
+</label>
