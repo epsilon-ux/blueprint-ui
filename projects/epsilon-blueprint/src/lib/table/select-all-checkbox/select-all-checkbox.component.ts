@@ -7,12 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angu
 export class SelectAllCheckboxComponent implements OnInit, OnChanges {
 
   @Input() id: string;
-  @Input() name?: string;
-  @Input() value?: string;
   @Input() isChecked = false;
   @Input() isMixed = false;
-  @Input() isDisabled = false;
-  @Input() isRequired = false;
 
   @Input() label: string;
   @Input() visuallyHiddenLabel?: boolean;
@@ -54,8 +50,6 @@ export class SelectAllCheckboxComponent implements OnInit, OnChanges {
   }
 
   emitEvent(e) {
-    console.log(e);
-    e.preventDefault();
     this.change.emit(e);
   }
 }
