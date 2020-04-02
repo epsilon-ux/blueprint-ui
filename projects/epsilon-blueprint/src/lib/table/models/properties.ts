@@ -37,6 +37,7 @@ export default interface Properties {
   };
   sort: {
     defaultSortedColumn: string;
+    defaultSortOrder: string;
     // TBD: Server Side / Client Side / Restricted
   };
   hasSelectableRows?: boolean;

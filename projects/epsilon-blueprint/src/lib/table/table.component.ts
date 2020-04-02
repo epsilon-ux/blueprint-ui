@@ -31,6 +31,9 @@ export class TableComponent implements OnInit, OnChanges {
     search:  {
       hasSearch: true
     },
+    sort: {
+      defaultSortOrder: 'ascending'
+    },
     hasSelectableRows: false,
     hasColumnSelector: true,
     hasDisplayDensity: true,
@@ -151,7 +154,7 @@ export class TableComponent implements OnInit, OnChanges {
         err.name = 'Missing Input';
         throw err;
       }
-    })
+    });
 
     // TODO: Figure out local storage issues
     /* if (localStorage.getItem('columns')) {
@@ -174,18 +177,23 @@ export class TableComponent implements OnInit, OnChanges {
       }
       this.filteredData = [...this.data];
       this.totalRecords = this.data.length;
+      this.defaultSort();
       this.paginate({
         currentPage: this.currentPage,
         numberOfRows: this.defaultNumberOfRows
       });
-      this.defaultSort();
     }
   }
 
   // --------------- Sorting ---------------
 
   defaultSort() {
-    this.ascSort(this.properties.sort.defaultSortedColumn);
+    this.sortOrder = this.properties.sort.defaultSortOrder;
+    this.sortColumnName = this.properties.sort.defaultSortedColumn;
+
+    this.sortOrder === 'ascending'
+    ? this.ascSort(this.sortColumnName)
+    : this.descSort(this.sortColumnName);
   }
 
   ascSort(colHeader: string) {
@@ -212,18 +220,20 @@ export class TableComponent implements OnInit, OnChanges {
     });
   }
 
-  getAriaSortOrder(rowIndex: number): string {
-    const columnIndex = this.properties.columns.findIndex(
-      (item, index: any) => {
-        if (item.key === this.sortColumnName) {
-          return index;
-        }
-      }
-    );
-    if (columnIndex === rowIndex) {
-      return 'ascending';
+  getAriaSortOrder(index: number): string {
+    if (!this.sortColumnName) {
+      this.sortColumnName = this.properties.sort.defaultSortedColumn;
     }
-    if (this.columnIndex === rowIndex) {
+    if (!this.columnIndex) {
+      this.columnIndex = this.properties.columns.findIndex(
+        (item, i: any) => {
+          if (item.key === this.sortColumnName) {
+            return i;
+          }
+        }
+      );
+    }
+    if (this.columnIndex === index) {
       this.isSortActive = true;
       return this.sortOrder;
     } else {
