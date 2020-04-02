@@ -102,7 +102,8 @@ export class OverviewComponent implements OnInit {
         hasSearch: true
       },
       sort: {
-        defaultSortedColumn: 'phone'
+        defaultSortedColumn: 'phone',
+        defaultSortOrder: 'ascending'
       },
       hasSelectableRows: true,
       actions: [
