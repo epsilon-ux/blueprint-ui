@@ -8,7 +8,7 @@
       >
         <i
           class="fas"
-          [ngClass]="{'fa-caret-right': !isRowExpanded, 'fa-caret-down': isRowExpanded }"
+          [ngClass]="{'fa-caret-right': !rowData._meta.isExpanded, 'fa-caret-down': rowData._meta.isExpanded }"
         ></i>
       </button>
     </td>
