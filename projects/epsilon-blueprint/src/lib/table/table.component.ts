@@ -43,6 +43,7 @@ export class TableComponent implements OnInit, OnChanges {
     internationalization: {
       'Select all rows': 'Select all rows',
       'Actions': 'Actions',
+      'Expand/Collapse': 'Expand/Collapse',
       'Loading data': 'Loading data',
       'No data': 'No data available',
       'Select Row': 'Select Row',

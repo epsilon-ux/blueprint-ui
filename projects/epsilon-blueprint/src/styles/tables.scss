@@ -87,12 +87,12 @@
   {
     tr
     {
-      &:nth-child(odd)
+      &tr-stripe-odd
       {
         background: $coconut;
       }
 
-      &:nth-child(even)
+      &.tr-stripe-even
       {
         background: $cloud;
       }

@@ -1,5 +1,5 @@
-<ng-container *ngFor="let rowData of tableData">
-  <tr>
+<ng-container *ngFor="let rowData of tableData; let index = index">
+  <tr class="{{ index % 2 === 0 ? 'tr-stripe-even' : 'tr-stripe-odd' }}">
     <!-- Expandable Rows Icon -->
     <td *ngIf="properties.expandableRowsTemplate" class="td-expandable">
       <button
@@ -110,7 +110,10 @@
   </tr>
     
   <!-- Expandable Row Content -->
-  <tr *ngIf="properties.expandableRowsTemplate && rowData._meta.isExpanded">
+  <tr
+    *ngIf="properties.expandableRowsTemplate && rowData._meta.isExpanded"
+    class="{{ index % 2 === 0 ? 'tr-stripe-even' : 'tr-stripe-odd' }}"
+  >
     <td colspan="100%">
       <ng-container *ngTemplateOutlet="properties.expandableRowsTemplate;context:{$implicit: rowData}">
       </ng-container>

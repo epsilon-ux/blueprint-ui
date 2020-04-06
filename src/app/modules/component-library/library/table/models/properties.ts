@@ -8,6 +8,7 @@ export default interface Properties {
   internationalization?: {
     'Select all rows': string;
     'Actions': string;
+    'Expand/Collapse': string;
     'Loading data': string;
     'No data': string;
     'Select Row': string;
