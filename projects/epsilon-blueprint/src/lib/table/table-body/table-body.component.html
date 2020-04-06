@@ -4,6 +4,8 @@
     <td *ngIf="properties.expandableRowsTemplate" class="td-expandable">
       <button
         class="btn-icon-inline"
+        [attr.aria-expanded]="rowData._meta.isExpanded"
+        attr.aria-controls="expandable{{rowData[properties.rowId]}}"
         (click)="toggleExpanded(rowData)"
       >
         <i
@@ -113,6 +115,7 @@
   <tr
     *ngIf="properties.expandableRowsTemplate && rowData._meta.isExpanded"
     class="{{ index % 2 === 0 ? 'tr-stripe-even' : 'tr-stripe-odd' }}"
+    id="expandable{{rowData[properties.rowId]}}"
   >
     <td colspan="100%">
       <ng-container *ngTemplateOutlet="properties.expandableRowsTemplate;context:{$implicit: rowData}">
