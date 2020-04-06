@@ -27,3 +27,7 @@
 <ng-template #templateColumn let-rowData>
   Template column example for row {{ rowData.id }}
 </ng-template>
+<ng-template #expandableRowsTemplate let-rowData>
+  <p>Expandable row content example. This is tied to row {{ rowData.id }}.</p>
+  <p>With amount {{ rowData.amount }}</p>
+</ng-template>

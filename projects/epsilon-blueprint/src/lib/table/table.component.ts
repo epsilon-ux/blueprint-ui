@@ -170,11 +170,15 @@ export class TableComponent implements OnInit, OnChanges {
       (changes.data && !changes.data.firstChange)
     ) {
       this.data = changes.data.currentValue;
-      if (this.properties.hasSelectableRows) {
-        this.data.forEach(row => {
+      this.data.forEach(row => {
+        row._meta = {};
+        if (this.properties.hasSelectableRows) {
           row.checked = false;
-        });
-      }
+        }
+        if (this.properties.expandableRowsTemplate) {
+          row._meta.isExpanded = false;
+        }
+      });
       this.filteredData = [...this.data];
       this.totalRecords = this.data.length;
       this.defaultSort();

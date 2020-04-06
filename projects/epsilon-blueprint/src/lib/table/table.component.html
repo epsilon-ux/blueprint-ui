@@ -19,6 +19,7 @@
     <thead>
       <tr>
         <ng-container *ngIf="properties.columns">
+          <th *ngIf="properties.expandableRowsTemplate" class="th-expandable"></th>
           <th *ngIf="properties.hasSelectableRows" class="th-selectable">
             <app-select-all-checkbox
               id="selectAllRows"
@@ -84,15 +85,15 @@
 
     <!-- Table Loaded -->
     <ng-template #loaded>
-      <tbody
-        table-body
-        *ngIf="tableData.length > 0; else noColumnData"
-        [tableData]="tableData"
-        [properties]="properties"
-        [pageData]="pageData"
-        (action)="emitAction($event)"
-        (selectedRowsAction)="onSelectRow($event)"
-      ></tbody>
+      <ng-container *ngIf="tableData.length > 0; else noColumnData">
+        <tbody
+          app-table-body
+          [tableData]="tableData"
+          [properties]="properties"
+          (action)="emitAction($event)"
+          (selectedRowsAction)="onSelectRow($event)"
+        ></tbody>
+      </ng-container>
     </ng-template>
 
     <!-- Table Empty -->

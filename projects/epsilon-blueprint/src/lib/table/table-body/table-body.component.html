@@ -1,98 +1,119 @@
-<tr *ngFor="let rowData of tableData">
-  <!-- Selectable Row Checkboxes -->
-  <td *ngIf="properties.hasSelectableRows" class="td-selectable">
-    <bp-checkbox
-      label="{{ properties.internationalization['Select Row'] }} {{ rowData.id }}"
-      [visuallyHiddenLabel]="true"
-      [id]="rowData.id"
-      [isChecked]="rowData.checked"
-      (change)="selectRows($event)"
-    ></bp-checkbox>
-  </td>
-
-  <!-- Table Data Columns/Cells -->
-  <td
-    *ngFor="let column of properties.columns"
-    [hidden]="!column.isColumnDisplayed"
-    [ngSwitch]="column.type"
-  >
-    <!-- Link Column -->
-    <ng-container *ngSwitchCase="columnType.LINK">
-      <app-links
-        [rowData]="rowData"
-        [linkText]="rowData[column.key]"
-        [linkProperties]="column.link"
-        (emitAction)="emitAction($event, rowData[properties.rowId])"
-      ></app-links>
-    </ng-container>
-    <!-- Icon Column -->
-    <ng-container *ngSwitchCase="columnType.ICON">
-      <i
-        class="fas"
-        [ngClass]="[column.icon.mapping[rowData[column.key]], 'icon-color-' + column.icon.color]"
-        [attr.aria-label]="rowData[column.key]"
-      ></i>
-    </ng-container>
-    <!-- Status Indicator Column -->
-    <span *ngSwitchCase="columnType.STATUS" class="status-indicator">
-      <div
-        *ngIf="column.statusIndicatorMapping['in-progress'] !== rowData[column.key]"
-        class="status-icon"
-        [ngClass]="getStatusClass(rowData[column.key], column.statusIndicatorMapping)"
-        aria-hidden="true"
-      ></div>
-      <i
-        *ngIf="column.statusIndicatorMapping['in-progress'] === rowData[column.key]"
-        class="fa fa-spinner fa-spin in-progress"
-        aria-hidden="true"
-      ></i>
-      {{ rowData[column.key] }}
-    </span>
-    <!-- Template Column -->
-    <ng-container *ngSwitchCase="columnType.TEMPLATE">
-      <ng-container *ngTemplateOutlet="column.template;context:{$implicit: rowData}"></ng-container>
-    </ng-container>
-    <!-- Standard Column -->
-    <ng-container *ngSwitchDefault>{{ rowData[column.key] }}</ng-container>
-  </td>
-
-  <!-- Actions Column -->
-  <td
-    *ngIf="properties.actions"
-    class="{{ properties.actions.length < 3 ? 'actions' : 'more-actions' }}"
-  >
-    <!-- May move into its own nested component if table gets too large -->
-    <app-actions
-      *ngIf="properties.actions.length < 3; else moreActions"
-      class="action-items"
-      [actionItems]="properties.actions"
-      [rowId]="properties.rowId"
-      [rowData]="rowData"
-      classList="btn btn-mini"
-      (emitAction)="emitAction($event, rowData[properties.rowId])"
-    >
-    </app-actions>
-    <ng-template #moreActions>
+<ng-container *ngFor="let rowData of tableData">
+  <tr>
+    <!-- Expandable Rows Icon -->
+    <td *ngIf="properties.expandableRowsTemplate" class="td-expandable">
       <button
-        id="moreActions{{ rowData[properties.rowId] }}"
-        class="btn-icon-inline more-actions-toggle"
-        data-toggle="dropdown"
-        [attr.aria-label]="properties.internationalization['Actions Menu']"       
-        aria-haspopup="true"
-        aria-expanded="false"
+        class="btn-icon-inline"
+        (click)="toggleExpanded(rowData)"
       >
-        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+        <i
+          class="fas"
+          [ngClass]="{'fa-caret-right': !isRowExpanded, 'fa-caret-down': isRowExpanded }"
+        ></i>
       </button>
+    </td>
+
+    <!-- Selectable Row Checkboxes -->
+    <td *ngIf="properties.hasSelectableRows" class="td-selectable">
+      <bp-checkbox
+        label="{{ properties.internationalization['Select Row'] }} {{ rowData.id }}"
+        [visuallyHiddenLabel]="true"
+        [id]="rowData.id"
+        [isChecked]="rowData.checked"
+        (change)="selectRows($event)"
+      ></bp-checkbox>
+    </td>
+
+    <!-- Table Data Columns/Cells -->
+    <td
+      *ngFor="let column of properties.columns"
+      [hidden]="!column.isColumnDisplayed"
+      [ngSwitch]="column.type"
+    >
+      <!-- Link Column -->
+      <ng-container *ngSwitchCase="columnType.LINK">
+        <app-links
+          [rowData]="rowData"
+          [linkText]="rowData[column.key]"
+          [linkProperties]="column.link"
+          (emitAction)="emitAction($event, rowData[properties.rowId])"
+        ></app-links>
+      </ng-container>
+      <!-- Icon Column -->
+      <ng-container *ngSwitchCase="columnType.ICON">
+        <i
+          class="fas"
+          [ngClass]="[column.icon.mapping[rowData[column.key]], 'icon-color-' + column.icon.color]"
+          [attr.aria-label]="rowData[column.key]"
+        ></i>
+      </ng-container>
+      <!-- Status Indicator Column -->
+      <span *ngSwitchCase="columnType.STATUS" class="status-indicator">
+        <div
+          *ngIf="column.statusIndicatorMapping['in-progress'] !== rowData[column.key]"
+          class="status-icon"
+          [ngClass]="getStatusClass(rowData[column.key], column.statusIndicatorMapping)"
+          aria-hidden="true"
+        ></div>
+        <i
+          *ngIf="column.statusIndicatorMapping['in-progress'] === rowData[column.key]"
+          class="fa fa-spinner fa-spin in-progress"
+          aria-hidden="true"
+        ></i>
+        {{ rowData[column.key] }}
+      </span>
+      <!-- Template Column -->
+      <ng-container *ngSwitchCase="columnType.TEMPLATE">
+        <ng-container *ngTemplateOutlet="column.template;context:{$implicit: rowData}"></ng-container>
+      </ng-container>
+      <!-- Standard Column -->
+      <ng-container *ngSwitchDefault>{{ rowData[column.key] }}</ng-container>
+    </td>
+
+    <!-- Actions Column -->
+    <td
+      *ngIf="properties.actions"
+      class="{{ properties.actions.length < 3 ? 'actions' : 'more-actions' }}"
+    >
+      <!-- May move into its own nested component if table gets too large -->
       <app-actions
-        class="dropdown-menu dropdown-menu-right"
-        attr.aria-labelledby="moreActions{{ rowData[properties.rowId] }}"
+        *ngIf="properties.actions.length < 3; else moreActions"
+        class="action-items"
         [actionItems]="properties.actions"
         [rowId]="properties.rowId"
         [rowData]="rowData"
-        classList="dropdown-item"
+        classList="btn btn-mini"
         (emitAction)="emitAction($event, rowData[properties.rowId])"
-      >
-      </app-actions>
-    </ng-template>
-  </td>
-</tr>
+      ></app-actions>
+      <ng-template #moreActions>
+        <button
+          id="moreActions{{ rowData[properties.rowId] }}"
+          class="btn-icon-inline more-actions-toggle"
+          data-toggle="dropdown"
+          [attr.aria-label]="properties.internationalization['Actions Menu']"       
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+        </button>
+        <app-actions
+          class="dropdown-menu dropdown-menu-right"
+          attr.aria-labelledby="moreActions{{ rowData[properties.rowId] }}"
+          [actionItems]="properties.actions"
+          [rowId]="properties.rowId"
+          [rowData]="rowData"
+          classList="dropdown-item"
+          (emitAction)="emitAction($event, rowData[properties.rowId])"
+        ></app-actions>
+      </ng-template>
+    </td>
+  </tr>
+    
+  <!-- Expandable Row Content -->
+  <tr *ngIf="properties.expandableRowsTemplate && rowData._meta.isExpanded">
+    <td colspan="100%">
+      <ng-container *ngTemplateOutlet="properties.expandableRowsTemplate;context:{$implicit: rowData}">
+      </ng-container>
+    </td>
+  </tr>
+</ng-container>

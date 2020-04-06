@@ -201,6 +201,16 @@
           vertical-align: middle;
           padding: 0 0 0 15px;
         }
+
+        th.th-expandable
+        {
+          border-right: 0;
+
+          & + .th-selectable
+          {
+            padding-left: 0;
+          }
+        }
       }
     }
 
@@ -211,6 +221,24 @@
         td.td-selectable
         {
           padding: 0 0 0 15px;
+        }
+
+        td.td-expandable
+        {
+          padding: 0 0 0 0;
+
+          button
+          {
+            font-size: $font-size-display2;
+            color: $font-color-primary;
+            min-width: 44px;
+            min-height: 44px;
+          }
+
+          & + .td-selectable
+          {
+            padding-left: 0;
+          }
         }
       }
     }
