@@ -20,11 +20,11 @@
             [actionElement]="actionElement"
             [href]="href"
           >
-            <div dropdown-items>
+            <ng-container dropdown-items>
               <a class="dropdown-item" href="">Dropdown Item</a>
               <a class="dropdown-item" href="">Dropdown Item</a>
-            </div>
-            <div tab-items>
+            </ng-container>
+            <ng-container tab-items>
               <div class="row">
                 <div class="col">
                   <button class="tab active" href="">Active Tab</button>
@@ -32,7 +32,7 @@
                   <button class="tab" href="">Tab</button>
                 </div>
               </div>
-            </div>
+            </ng-container>
           </bp-landing-page-header>
         </div>
       </div>

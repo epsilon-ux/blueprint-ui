@@ -155,6 +155,9 @@ export class TableComponent implements OnInit, OnChanges {
         err.name = 'Missing Input';
         throw err;
       }
+      if (col.icon && !(col.icon.color === 'warning' || col.icon.color === 'midnight')) {
+        console.warn(`"${col.icon.color}" invalid value for bp-table icon column color: expects either "midnight" or "warning".`);
+      }
     });
 
     // TODO: Figure out local storage issues
