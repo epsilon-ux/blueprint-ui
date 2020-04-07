@@ -89,15 +89,14 @@
 
     <!-- Table Loaded -->
     <ng-template #loaded>
-      <ng-container *ngIf="tableData.length > 0; else noColumnData">
-        <tbody
-          app-table-body
-          [tableData]="tableData"
-          [properties]="properties"
-          (action)="emitAction($event)"
-          (selectedRowsAction)="onSelectRow($event)"
-        ></tbody>
-      </ng-container>
+      <tbody
+        *ngIf="tableData.length > 0; else noColumnData"
+        app-table-body
+        [tableData]="tableData"
+        [properties]="properties"
+        (action)="emitAction($event)"
+        (selectedRowsAction)="onSelectRow($event)"
+      ></tbody>
     </ng-template>
 
     <!-- Table Empty -->
