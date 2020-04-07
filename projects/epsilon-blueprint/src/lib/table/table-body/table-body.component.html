@@ -21,7 +21,7 @@
         label="{{ properties.internationalization['Select Row'] }} {{ rowData.id }}"
         [visuallyHiddenLabel]="true"
         [id]="rowData.id"
-        [isChecked]="rowData.checked"
+        [isChecked]="rowData._meta.isChecked"
         (change)="selectRows($event)"
       ></bp-checkbox>
     </td>
