@@ -114,7 +114,7 @@
   <!-- Expandable Row Content -->
   <tr
     *ngIf="properties.expandableRowsTemplate && rowData._meta.isExpanded"
-    class="{{ index % 2 === 0 ? 'tr-stripe-even' : 'tr-stripe-odd' }}"
+    class="tr-expandable {{ index % 2 === 0 ? 'tr-stripe-even' : 'tr-stripe-odd' }}"
     id="expandable{{rowData[properties.rowId]}}"
   >
     <td colspan="100%">

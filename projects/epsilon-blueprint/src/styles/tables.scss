@@ -52,6 +52,12 @@
         }
       }
 
+      &.th-expandable
+      {
+        border-right: 0;
+        max-width: 44px;
+      }
+
       &[aria-sort]
       {
         &.th-sortable button::after
@@ -87,7 +93,7 @@
   {
     tr
     {
-      &tr-stripe-odd
+      &.tr-stripe-odd
       {
         background: $coconut;
       }
@@ -95,6 +101,11 @@
       &.tr-stripe-even
       {
         background: $cloud;
+      }
+
+      &.tr-expandable td > :last-child
+      {
+        margin-bottom: 0;
       }
 
       &:hover
@@ -110,6 +121,24 @@
         padding: 11px 15px 12px;
         vertical-align: middle;
         transition: padding $transition-primary;
+
+        &.td-expandable
+        {
+          padding: 0;
+
+          button
+          {
+            min-width: 44px;
+            min-height: 44px;
+            color: $font-color-primary;
+            font-size: $font-size-display2;
+          }
+
+          & + .td-selectable
+          {
+            padding-left: 0;
+          }
+        }
 
         &.actions // col containing 1-2 action buttons
         {
@@ -202,14 +231,9 @@
           padding: 0 0 0 15px;
         }
 
-        th.th-expandable
+        th.th-expandable + .th-selectable
         {
-          border-right: 0;
-
-          & + .th-selectable
-          {
-            padding-left: 0;
-          }
+          padding-left: 0;
         }
       }
     }
@@ -223,22 +247,9 @@
           padding: 0 0 0 15px;
         }
 
-        td.td-expandable
+        td.td-expandable + .td-selectable
         {
-          padding: 0 0 0 0;
-
-          button
-          {
-            font-size: $font-size-display2;
-            color: $font-color-primary;
-            min-width: 44px;
-            min-height: 44px;
-          }
-
-          & + .td-selectable
-          {
-            padding-left: 0;
-          }
+          padding-left: 0;
         }
       }
     }
