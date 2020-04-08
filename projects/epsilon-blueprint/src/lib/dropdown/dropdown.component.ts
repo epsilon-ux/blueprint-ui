@@ -24,31 +24,7 @@ export class DropdownComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.validation();
-  }
-  
-  validation() {
-    // Validation
-    /* if (!(this.element === 'a' || this.element === 'button')) {
-      const err = new Error('Action\'s element expects either \'button\' or \'a\'');
-      err.name = 'Invalid Input';
-      throw err;
-    }
-    if (this.element === 'button' && !this.click) {
-      console.warn('Missing click function on action button', this);
-    }
-    if (this.element === 'a' && !(this.href || this.routerLink)) {
-      const err = new Error('Action needs either routerLink or href when element = \'a\'');
-      err.name = 'Missing Input';
-      throw err;
-    }
-    if (this.element === 'a' && this.isDisabled) {
-      const err = new Error('Action can only be disabled if element = \'button\'');
-      err.name = 'Invalid Input';
-      throw err;
-    } */
-  }
+  ngOnInit() { }
 
   emitAction(e) {
     this.action.emit(e);
