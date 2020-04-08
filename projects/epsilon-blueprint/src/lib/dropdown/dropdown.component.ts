@@ -1,23 +1,26 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
-  selector: 'bp-action',
-  templateUrl: './action.component.html',
-  styleUrls: ['./action.component.scss']
+  selector: 'bp-dropdown',
+  templateUrl: './dropdown.component.html'
 })
-export class ActionComponent implements OnInit {
+export class DropdownComponent implements OnInit {
 
-  @Input() text: string;
-  @Input() classes = '';
-  @Input() ariaLabel: string;
-  @Input() href: string = undefined;
-  @Input() routerLink: string = undefined;
-  @Input() target = '';
-  @Input() isDisabled = false;
-  @Input() iconLeft: string;
-  @Input() iconRight: string;
+  @Input() dropdownText: string;
+  @Input() dropdownItems: {
+    text: string;
+    ariaLabel?: string;
+    action?: string;
+    href?: string;
+    routerLink?: string;
+    target?: string;
+    isDisabled?: boolean;
+  }
 
-  @Output() click = new EventEmitter();
+  @Output() action = new EventEmitter();
+
+  uuid = 'dropdown' + generateUniqueId();
 
   constructor() { }
 
@@ -27,11 +30,6 @@ export class ActionComponent implements OnInit {
   
   validation() {
     // Validation
-    /* if((this.href !== undefined) && (this.routerLink !== undefined)) {
-      const err = new Error('Can not pass in both href and routerLink.');
-      err.name = 'Invalid Input';
-      throw err;
-    } */
     /* if (!(this.element === 'a' || this.element === 'button')) {
       const err = new Error('Action\'s element expects either \'button\' or \'a\'');
       err.name = 'Invalid Input';
@@ -52,8 +50,8 @@ export class ActionComponent implements OnInit {
     } */
   }
 
-  emitClick(e) {
-    this.click.emit(e);
+  emitAction(e) {
+    this.action.emit(e);
   }
 
 }

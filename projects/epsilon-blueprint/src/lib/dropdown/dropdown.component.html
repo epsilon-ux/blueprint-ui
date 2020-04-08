@@ -1,0 +1,27 @@
+<button
+  dropdownToggle
+  type="button"
+  [id]="uuid"
+  class="btn btn-primary btn-wide dropdown-toggle"
+  data-toggle="dropdown"
+  aria-haspopup="true"
+  aria-expanded="false"
+>
+  {{ dropdownText }}
+</button>
+<div
+  class="dropdown-menu dropdown-menu-right object-dropdown"
+  [attr.aria-labelledby]="uuid"
+>
+  <bp-action
+    *ngFor="let dropwdownItem of dropdownItems"
+    classes="dropdown-item"
+    [text]="dropwdownItem.text"
+    [ariaLabel]="dropwdownItem.ariaLabel"
+    [href]="dropwdownItem.href"
+    [routerLink]="dropwdownItem.routerLink"
+    [target]="dropwdownItem.target"
+    [isDisabled]="dropwdownItem.isDisabled"
+    (click)="emitAction(dropwdownItem.action)"
+  ></bp-action>
+</div>

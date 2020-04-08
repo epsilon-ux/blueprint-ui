@@ -1,7 +1,6 @@
 <ng-container *ngFor="let actionItem of renderedActions">
   <bp-action
     [ngClass]="{ 'action-item': actionItems.length < 3 }"
-    [element]="actionItem.element"
     [text]="actionItem.text"
     [classes]="[actionItem.class, classList]"
     [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"

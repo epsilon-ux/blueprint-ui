@@ -15,7 +15,6 @@
         <div class="card-body component-preview">
           <bp-landing-page-header
             headingText="Page Title"
-            [hasAction]="false"
           ></bp-landing-page-header>
         </div>
       </div>
@@ -31,9 +30,8 @@
         <div class="card-body component-preview">
           <bp-landing-page-header
             headingText="Page Title"
-            [hasAction]="true"
             actionText="Create Item"
-            actionElement="button"
+            href="https://www.example.com"
           ></bp-landing-page-header>
         </div>
       </div>
@@ -47,9 +45,9 @@
         <div class="card-body component-preview">
           <bp-landing-page-header
             headingText="Page Title"
-            [hasAction]="true"
             actionText="Create Item"
-            actionElement="dropdown"
+            [dropdownItems]="dropdownItems"
+            (actionClick)="handleAction($event)"
           >
             <div dropdown-items>
               <a class="dropdown-item" href="">Dropdown Item</a>
@@ -68,7 +66,6 @@
         <div class="card-body component-preview">
           <bp-landing-page-header
             headingText="Page Title"
-            [hasAction]="false"
           >
             <div tab-items>
               <div class="row">
@@ -94,9 +91,8 @@
         <div class="card-body component-preview">
           <bp-landing-page-header
             headingText="Page Title"
-            [hasAction]="true"
             actionText="Create Item"
-            actionElement="button"
+            routerLink="./"
           >
             <div tab-items>
               <div class="row">
@@ -120,14 +116,9 @@
         <div class="card-body component-preview">
           <bp-landing-page-header
             headingText="Page Title"
-            [hasAction]="true"
             actionText="Create Item"
-            actionElement="dropdown"
+            [dropdownItems]="dropdownItems"
           >
-            <div dropdown-items>
-              <a class="dropdown-item" href="">Dropdown Item</a>
-              <a class="dropdown-item" href="">Dropdown Item</a>
-            </div>
             <div tab-items>
               <div class="row">
                 <div class="col">
