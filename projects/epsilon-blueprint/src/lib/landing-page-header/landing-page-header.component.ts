@@ -12,15 +12,15 @@ export class LandingPageHeaderComponent implements OnInit {
 
   @Input()
   actionText: string;
+
+  @Input()
+  dropdownItems;
   
   @Input()
-  hasAction = false;
+  routerLink: string = undefined;
 
   @Input()
-  actionElement = 'a'; // Expects either 'button', 'dropdown', or 'a'
-
-  @Input()
-  href = ''; // Only required when buttonElement = 'a'
+  href: string = undefined;
 
   @Output()
   actionClick = new EventEmitter();
@@ -37,14 +37,9 @@ export class LandingPageHeaderComponent implements OnInit {
       err.name = 'Missing Input';
       throw err;
     }
-    if (this.hasAction && !this.actionText) {
-      let err = new Error('actionText is a required Input of bp-landing-page-header when showButton = true');
-      err.name = 'Missing Input';
-      throw err;
-    }
   }
 
-  onActionClick() {
-    this.actionClick.emit();
+  onActionClick(e) {
+    this.actionClick.emit(e);
   }
 }

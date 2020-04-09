@@ -8,11 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ActionComponent implements OnInit {
 
   @Input() text: string;
-  @Input() element = 'button';
   @Input() classes = '';
   @Input() ariaLabel: string;
-  @Input() href: string;
-  @Input() routerLink: string;
+  @Input() href: string = undefined;
+  @Input() routerLink: string = undefined;
   @Input() target = '';
   @Input() isDisabled = false;
   @Input() iconLeft: string;
@@ -27,22 +26,13 @@ export class ActionComponent implements OnInit {
   }
   
   validation() {
-    // Validation
-    if (!(this.element === 'a' || this.element === 'button')) {
-      const err = new Error('Action\'s element expects either \'button\' or \'a\'');
+    if((this.href !== undefined) && (this.routerLink !== undefined)) {
+      const err = new Error('Can not pass in both href and routerLink.');
       err.name = 'Invalid Input';
       throw err;
     }
-    if (this.element === 'button' && !this.click) {
-      console.warn('Missing click function on action button', this);
-    }
-    if (this.element === 'a' && !(this.href || this.routerLink)) {
-      const err = new Error('Action needs either routerLink or href when element = \'a\'');
-      err.name = 'Missing Input';
-      throw err;
-    }
-    if (this.element === 'a' && this.isDisabled) {
-      const err = new Error('Action can only be disabled if element = \'button\'');
+    if(((this.href !== undefined) || (this.routerLink !== undefined)) && this.isDisabled) {
+      const err = new Error('Action cannot be disabled when routerLink or href is provided.');
       err.name = 'Invalid Input';
       throw err;
     }

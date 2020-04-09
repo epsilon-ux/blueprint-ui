@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsageComponent implements OnInit {
 
+  dropdownItems = [
+    {
+      text: 'Item 1',
+      action: 'test'
+    },
+    {
+      text: 'Item 2',
+      routerLink: ''
+    }
+  ];
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+
+  handleAction(e) { }
 
 }
