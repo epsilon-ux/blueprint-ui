@@ -12,6 +12,7 @@ import tableData from 'src/app/datasets/tableData.json';
 export class OverviewComponent implements OnInit {
 
   @ViewChild('templateColumn', {static: true}) templateColumn;
+  @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
 
   set customerData(json) {
     this.data = json.customerData.data;
@@ -142,6 +143,7 @@ export class OverviewComponent implements OnInit {
           action: 'delete'
         }
       ],
+      expandableRowsTemplate: this.expandableRowsTemplate,
       hasColumnSelector: true,
       hasDisplayDensity: true,
       pagination: {

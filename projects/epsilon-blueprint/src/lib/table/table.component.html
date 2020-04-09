@@ -19,6 +19,11 @@
     <thead>
       <tr>
         <ng-container *ngIf="properties.columns">
+          <th *ngIf="properties.expandableRowsTemplate" class="th-expandable">
+            <span class="sr-only">
+              {{ properties.internationalization['Expand/Collapse'] }}
+            </span>
+          </th>
           <th *ngIf="properties.hasSelectableRows" class="th-selectable">
             <app-select-all-checkbox
               id="selectAllRows"
@@ -85,11 +90,10 @@
     <!-- Table Loaded -->
     <ng-template #loaded>
       <tbody
-        table-body
         *ngIf="tableData.length > 0; else noColumnData"
+        app-table-body
         [tableData]="tableData"
         [properties]="properties"
-        [pageData]="pageData"
         (action)="emitAction($event)"
         (selectedRowsAction)="onSelectRow($event)"
       ></tbody>

@@ -43,6 +43,7 @@ export class TableComponent implements OnInit, OnChanges {
     internationalization: {
       'Select all rows': 'Select all rows',
       'Actions': 'Actions',
+      'Expand/Collapse': 'Expand/Collapse',
       'Loading data': 'Loading data',
       'No data': 'No data available',
       'Select Row': 'Select Row',
@@ -154,6 +155,9 @@ export class TableComponent implements OnInit, OnChanges {
         err.name = 'Missing Input';
         throw err;
       }
+      if (col.icon && !(col.icon.color === 'warning' || col.icon.color === 'midnight')) {
+        console.warn(`"${col.icon.color}" invalid value for bp-table icon column color: expects either "midnight" or "warning".`);
+      }
     });
 
     // TODO: Figure out local storage issues
@@ -170,11 +174,15 @@ export class TableComponent implements OnInit, OnChanges {
       (changes.data && !changes.data.firstChange)
     ) {
       this.data = changes.data.currentValue;
-      if (this.properties.hasSelectableRows) {
-        this.data.forEach(row => {
-          row.checked = false;
-        });
-      }
+      this.data.forEach(row => {
+        row._meta = {};
+        if (this.properties.hasSelectableRows) {
+          row._meta.isChecked = false;
+        }
+        if (this.properties.expandableRowsTemplate) {
+          row._meta.isExpanded = false;
+        }
+      });
       this.filteredData = [...this.data];
       this.totalRecords = this.data.length;
       this.defaultSort();
@@ -313,9 +321,9 @@ export class TableComponent implements OnInit, OnChanges {
     const selectedRow = this.filteredData.find(
       data => data.id === Number(event.target.id)
     );
-    selectedRow.checked = event.target.checked;
+    selectedRow._meta.isChecked = event.target.checked;
     const selectedRowsCount = this.filteredData
-      .filter(data => data.checked)
+      .filter(data => data._meta.isChecked)
       .length;
     
     if (selectedRowsCount === this.filteredData.length) {
@@ -339,7 +347,7 @@ export class TableComponent implements OnInit, OnChanges {
     this.isSelectAllChecked = !this.isSelectAllChecked;
     this.isSelectAllIndeterminate = false;
     this.filteredData.forEach(row => {
-      row.checked = this.isSelectAllChecked;
+      row._meta.isChecked = this.isSelectAllChecked;
     });
     this.emitSelectedRowsAction();
   }
@@ -361,7 +369,7 @@ export class TableComponent implements OnInit, OnChanges {
   emitSelectedRowsAction() {
     const selectedRowsIds = [];
     this.filteredData.forEach(data => {
-      if (data.checked) {
+      if (data._meta.isChecked) {
         selectedRowsIds.push(data[this.properties.rowId]);
       }
     });
