@@ -14,14 +14,14 @@
   [attr.aria-labelledby]="uuid"
 >
   <bp-action
-    *ngFor="let dropwdownItem of dropdownItems"
+    *ngFor="let dropdownItem of dropdownItems"
     classes="dropdown-item"
-    [text]="dropwdownItem.text"
-    [ariaLabel]="dropwdownItem.ariaLabel"
-    [href]="dropwdownItem.href"
-    [routerLink]="dropwdownItem.routerLink"
-    [target]="dropwdownItem.target"
-    [isDisabled]="dropwdownItem.isDisabled"
-    (click)="emitAction(dropwdownItem.action)"
+    [text]="dropdownItem.text"
+    [ariaLabel]="dropdownItem.ariaLabel"
+    [href]="dropdownItem.href"
+    [routerLink]="dropdownItem.routerLink"
+    [target]="dropdownItem.target"
+    [isDisabled]="dropdownItem.isDisabled"
+    (click)="emitAction(dropdownItem.action)"
   ></bp-action>
 </div>
