@@ -12,14 +12,21 @@ export class OverviewComponent implements OnInit {
   actionElement = 'dropdown';
   href = '#';
 
-  dropwdownItems = [{
-    text: 'Item 1',
-    routerLink: ''
-  }];
+  dropdownItems = [
+    {
+      text: 'Item 1',
+      action: 'test'
+    },
+    {
+      text: 'Item 2',
+      routerLink: ''
+    }
+  ];
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+
+  handleAction(e) { }
 
 }
