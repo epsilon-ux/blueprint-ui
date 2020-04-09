@@ -24,14 +24,18 @@ export class ActionComponent implements OnInit {
   ngOnInit() {
     this.validation();
   }
+
+  isDefined(variable) {
+    return variable !== undefined && variable !== null;
+  }
   
   validation() {
-    if((this.href !== undefined) && (this.routerLink !== undefined)) {
+    if(this.isDefined(this.href) && this.isDefined(this.routerLink)) {
       const err = new Error('Can not pass in both href and routerLink.');
       err.name = 'Invalid Input';
       throw err;
     }
-    if(((this.href !== undefined) || (this.routerLink !== undefined)) && this.isDisabled) {
+    if((this.isDefined(this.href) || this.isDefined(this.routerLink)) && this.isDisabled) {
       const err = new Error('Action cannot be disabled when routerLink or href is provided.');
       err.name = 'Invalid Input';
       throw err;
