@@ -13,7 +13,7 @@ import { parseLookupString } from '../helpers';
 import Properties from '../models/properties';
 
 @Component({
-  selector: '[table-body]',
+  selector: '[app-table-body]',
   templateUrl: './table-body.component.html'
 })
 export class TableBodyComponent implements OnInit {
@@ -21,10 +21,10 @@ export class TableBodyComponent implements OnInit {
     [key: string]: any;
   }[];
   @Input() properties: Properties;
-  @Input() pageData;
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
+  isRowExpanded = false;
 
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
@@ -54,6 +54,10 @@ export class TableBodyComponent implements OnInit {
 
   selectRows(event) {
     this.selectedRowsAction.emit(event);
+  }
+
+  toggleExpanded(row) {
+    row._meta.isExpanded = !row._meta.isExpanded;
   }
 
   emitAction(action: string, rowId: string) {

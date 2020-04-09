@@ -118,6 +118,15 @@
               </td>
             </tr>
             <tr>
+              <td>expandableRowsTemplate</td>
+              <td>TemplateRef</td>
+              <td>Template for the content of the expandable row.</td>
+              <td>
+                <p>Expandable rows feature is enabled when a template is passed in.</p>
+                <p>See <a routerlink="." fragment="expandable-rows">Expandable Rows</a> </p>
+              </td>
+            </tr>
+            <tr>
               <td>hasSelectableRows</td>
               <td>boolean</td>
               <td>Enables the selectable rows feature.</td>
@@ -901,6 +910,31 @@
         </li>
       </ol>
 
+      <h2>Expandable Rows</h2>
+      <p>When enabled, each row has an expandable row using a template passed in from the properties object.</p>
+      <ol>
+        <li>
+          Create a template in the component. This should either be a sibling or a child of the table component.
+          <markdown
+            [data]="expandableRowsMD1"
+            lineNumbers
+          ></markdown>
+        </li>
+        <li>
+          Select the template in the component typescript.
+          <markdown
+            [data]="expandableRowsMD2"
+            lineNumbers
+          ></markdown>
+        </li>
+        <li>
+          Pass the template into the <code>expandableRowsTemplate</code> via the properties Input object.
+          <markdown
+            [data]="expandableRowsMD3"
+            lineNumbers
+          ></markdown>
+        </li>
+      </ol>
 
       <!-- TODO: add versions & features table -->
     </div>
