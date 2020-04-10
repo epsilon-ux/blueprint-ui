@@ -31,6 +31,9 @@ const routes: Routes = [
 
     { path: 'checkbox', loadChildren: () => import('./library/checkbox/checkbox.module')
       .then(m => m.CheckboxLibraryModule) },
+    
+    { path: 'dropdown', loadChildren: () => import('./library/dropdown/dropdown.module')
+    .then(m => m.DropdownLibraryModule) },
 
     { path: 'radio-button', loadChildren: () => import('./library/radio-button/radio-button.module')
       .then(m => m.RadioButtonLibraryModule) },

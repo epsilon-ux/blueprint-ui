@@ -8,6 +8,7 @@ import { generateUniqueId } from '../../helpers';
 export class DropdownComponent implements OnInit {
 
   @Input() dropdownText: string;
+  @Input() classes = '';
   @Input() dropdownItems: {
     text: string;
     ariaLabel?: string;
