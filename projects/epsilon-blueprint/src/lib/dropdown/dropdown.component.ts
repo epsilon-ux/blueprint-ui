@@ -17,6 +17,7 @@ export class DropdownComponent implements OnInit {
     routerLink?: string;
     target?: string;
     isDisabled?: boolean;
+    isDestructive?: boolean;
   }
 
   @Output() action = new EventEmitter();

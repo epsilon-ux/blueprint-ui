@@ -15,7 +15,7 @@
 >
   <bp-action
     *ngFor="let dropdownItem of dropdownItems"
-    classes="dropdown-item"
+    classes="dropdown-item{{ dropdownItem.isDestructive ? ' btn-outline-danger' : '' }}"
     [text]="dropdownItem.text"
     [ariaLabel]="dropdownItem.ariaLabel"
     [href]="dropdownItem.href"

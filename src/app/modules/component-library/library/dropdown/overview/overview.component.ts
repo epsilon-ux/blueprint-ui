@@ -14,7 +14,13 @@ export class OverviewComponent implements OnInit {
     },
     {
       text: 'Dropdown Item',
-      action: 'item2'
+      action: 'item2',
+      isDisabled: true
+    },
+    {
+      text: 'Dropdown Item',
+      action: 'item3',
+      isDestructive: true
     }
   ];
 
