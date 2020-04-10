@@ -1,5 +1,7 @@
 # Blueprint Ui
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/74d2d0bc-7d0d-430e-9114-88cd4d00f57e/deploy-status)](https://app.netlify.com/sites/epsilon-blueprint/deploys)
+
 ## Development
 
 ### Setup
