@@ -17,7 +17,7 @@
 {
     ng-select .multiselect-value
     {
-        font-size: $font-size-body;
+        font-size: $font-size-md;
         color: $font-color-primary;
         background: transparent;
     }
@@ -27,4 +27,9 @@
         pointer-events: none;
         display: inline;
     }
+}
+
+.select-display-density
+{
+    min-width: 100px;
 }

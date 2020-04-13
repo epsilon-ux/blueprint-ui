@@ -20,7 +20,7 @@ label
   border: 1px solid $border-color-primary;
   padding: 5px 10px;
   color: $font-color-primary;
-  font-size: $font-size-body;
+  font-size: $font-size-md;
 
   &::placeholder
   {
@@ -73,5 +73,5 @@ label
   margin-top: 2px;
   margin-bottom: 0;
   color: $feedback-color-warning;
-  font-size: $font-size-body;
+  font-size: $font-size-md;
 }
