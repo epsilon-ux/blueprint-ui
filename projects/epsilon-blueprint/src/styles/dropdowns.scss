@@ -42,19 +42,20 @@
     {
       border: none;
     }
-}
-
-.dropdown-item:first-child,
-.dropdown-item:last-child
-{
-    border-radius: 0;
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus,
-a:not([href]).dropdown-item:hover,
-a:not([href]).dropdown-item:focus
-{
-    background: $accent-color-primary;
-    color: $coconut;
-}
+    
+    &:first-child,
+    &:last-child
+    {
+        border-radius: 0;
+    }
+    
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus,
+  a:not([href]).dropdown-item:hover,
+  a:not([href]).dropdown-item:focus
+  {
+      background: $accent-color-primary;
+      color: $coconut;
+  }
