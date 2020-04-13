@@ -14,11 +14,11 @@
         <div class="card-body component-preview">
           <div class="row">
             <div class="col-auto">
-              <!-- TODO: update examples when we make placement configurable -->
-              <bp-toggletip
-                content="This is toggletip content"
-                placement="bottom"
-              ></bp-toggletip>
+              <bp-dropdown
+                dropdownText="Primary Dropdown"
+                [dropdownItems]="exampleItems"
+                classes="btn-primary"
+              ></bp-dropdown>
             </div>
           </div>
         </div>
