@@ -21,6 +21,15 @@
     margin-bottom: 2px;
     padding: 5px 10px;
 
+    &:hover,
+    &:focus,
+    &a:not([href]):hover,
+    &a:not([href]):focus
+    {
+        background: $accent-color-primary;
+        color: $coconut;
+    }
+
     &.is-destructive:not(:disabled):not(.disabled)
     {
       color: $feedback-color-warning;
@@ -51,11 +60,3 @@
     
   }
   
-  .dropdown-item:hover,
-  .dropdown-item:focus,
-  a:not([href]).dropdown-item:hover,
-  a:not([href]).dropdown-item:focus
-  {
-      background: $accent-color-primary;
-      color: $coconut;
-  }
