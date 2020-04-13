@@ -10,12 +10,12 @@
   {{ dropdownText }}
 </button>
 <div
-  class="dropdown-menu dropdown-menu-right object-dropdown"
+  class="dropdown-menu dropdown-menu-right"
   [attr.aria-labelledby]="uuid"
 >
   <bp-action
     *ngFor="let dropdownItem of dropdownItems"
-    classes="dropdown-item{{ dropdownItem.isDestructive ? ' btn-outline-danger' : '' }}"
+    classes="dropdown-item{{ dropdownItem.isDestructive ? ' is-destructive' : '' }}"
     [text]="dropdownItem.text"
     [ariaLabel]="dropdownItem.ariaLabel"
     [href]="dropdownItem.href"
