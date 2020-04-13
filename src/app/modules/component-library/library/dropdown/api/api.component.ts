@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApiComponent implements OnInit {
 
+  codeExample = `
+  \`\`\`html
+  <div class="col-auto">
+    <bp-dropdown
+      class="dropdown"
+      dropdownText="Primary Dropdown"
+      [dropdownItems]="exampleItems"
+      classes="btn-primary"
+    ></bp-dropdown>
+  </div>
+  \`\`\`
+  `;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

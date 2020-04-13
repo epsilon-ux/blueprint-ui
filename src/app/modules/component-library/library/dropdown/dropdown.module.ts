@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { MarkdownModule } from 'ngx-markdown';
 
 import { ComponentHeaderModule } from "src/app/shared/component-header/component-header.module";
 
@@ -19,6 +20,6 @@ import { DropdownModule } from 'epsilon-blueprint';
     UsageComponent,
     PlaygroundComponent,
   ],
-  imports: [CommonModule, DropdownRoutingModule, ComponentHeaderModule, DropdownModule],
+  imports: [CommonModule, DropdownRoutingModule, ComponentHeaderModule, DropdownModule, MarkdownModule.forChild()],
 })
 export class DropdownLibraryModule {}
