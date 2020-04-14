@@ -2,18 +2,18 @@
 
 .table-footer-dropdown
 {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .table-footer-dropdown-label
 {
-    width: auto;
-    margin-right: 5px;
+  width: auto;
+  margin-right: 5px;
 }
 
-.column-selector
+.column-selector ng-select .multiselect-value
 {
     ng-select .multiselect-value
     {

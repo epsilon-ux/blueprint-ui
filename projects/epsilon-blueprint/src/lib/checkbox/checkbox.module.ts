@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { CheckboxComponent } from './checkbox.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CheckboxComponent],
   imports: [
     CommonModule,
-    RouterModule
+    FormsModule
   ],
   exports: [CheckboxComponent]
 })

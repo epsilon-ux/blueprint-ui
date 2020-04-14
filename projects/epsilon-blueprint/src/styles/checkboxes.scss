@@ -1,4 +1,8 @@
-@import '../../styles/global-variables';
+@import '_global-variables.scss';
+
+// Any changes made here should be reflected in the decorative checkbox styles also (see ng-select stylesheet)
+
+// This stylesheet affects checkboxes and the select all checkbox
 
 .checkbox
 {
@@ -19,7 +23,9 @@
 
     + .checkbox-label
     {
+        display: inline;
         position: relative;
+        vertical-align: middle;
         padding-left: 22px;
         line-height: 17px;
         cursor: pointer;
@@ -32,23 +38,26 @@
             width: 16px;
             height: 16px;
             border: 1px solid $border-color-primary;
+            background: $coconut;
         }
     }
 
     &:checked,
-    &:indeterminate
+    &[aria-checked="mixed"],
+    &[aria-checked="true"]
     {
         + .checkbox-label
         {
             &::before
             {
-                border-color: transparent;
-                background-color: $accent-color-primary;
+                border: transparent;
+                background: $accent-color-primary;
             }
         }
     }
 
-    &:checked
+    &:checked,
+    &[aria-checked="true"]
     {
         + .checkbox-label // checkmark
         {
@@ -66,7 +75,7 @@
         }
     }
 
-    &:indeterminate
+    &[aria-checked="mixed"]
     {
         + .checkbox-label // dash
         {
@@ -100,8 +109,13 @@
     {
         + .checkbox-label
         {
+          cursor: not-allowed;
+          color: $font-color-secondary;
+
+          &::before
+          {
             opacity: 0.5;
-            cursor: not-allowed;
+          }
         }
     }
 }

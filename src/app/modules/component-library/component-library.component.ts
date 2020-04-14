@@ -50,6 +50,10 @@ export class ComponentLibraryComponent {
             route: './checkbox'
           },
           {
+            text: 'Dropdown',
+            route: './dropdown'
+          },
+          {
             text: 'Radio Button',
             route: './radio-button'
           },

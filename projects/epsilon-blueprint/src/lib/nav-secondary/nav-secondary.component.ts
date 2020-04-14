@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 interface Item {
   route: string;
@@ -19,7 +20,7 @@ export class NavSecondaryComponent implements OnInit {
   @Input() isNavCollapsed = false;
   @Input() areItemsExpanded = false;
 
-  uuid = Math.floor(Math.random() * 100);
+  uuid = 'dropdown' + generateUniqueId();
 
   constructor() { }
 

@@ -3,41 +3,23 @@
     <div class="col">
       <h1 class="landing-page-heading">{{ headingText }}</h1>
     </div>
-    <div *ngIf="hasAction" class="col-auto">
-      <div *ngIf="actionElement === 'dropdown'" dropdown class="dropdown">
-        <button
-          dropdownToggle
-          type="button"
-          id="createObjectDropdown"
-          class="btn btn-primary btn-wide dropdown-toggle"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          {{ actionText }}
-        </button>
-        <div
-          class="dropdown-menu dropdown-menu-right object-dropdown"
-          aria-labelledby="createObjectDropdown"
-        >
-          <ng-content select="[dropdown-items]"></ng-content>
-        </div>
+    <div *ngIf="href || routerLink !== undefined || dropdownItems || actionText" class="col-auto">
+      <div *ngIf="dropdownItems" class="dropdown">
+        <bp-dropdown
+          [dropdownText]="actionText"
+          [dropdownItems]="dropdownItems"
+          classes="btn-primary btn-lg"
+          (action)="onActionClick($event)"
+        ></bp-dropdown>
       </div>
-      <button
-        *ngIf="actionElement === 'button'"
-        type="button"
-        class="btn btn-primary btn-wide"
-        (click)="onActionClick()"
-      >
-        {{ actionText }}
-      </button>
-      <a
-        *ngIf="actionElement === 'a'"
-        class="btn btn-primary btn-wide"
-        [attr.href]="href"
-      >
-        {{ actionText }}
-      </a>
+      <bp-action
+        *ngIf="!dropdownItems"
+        classes="btn btn-primary btn-lg"
+        [text]="actionText"
+        [href]="href"
+        [routerLink]="routerLink"
+        (click)="onActionClick($event)"
+      ></bp-action>
     </div>
   </div>
   <ng-content select="[tab-items]"></ng-content>

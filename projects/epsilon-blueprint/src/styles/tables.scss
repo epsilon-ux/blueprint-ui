@@ -52,6 +52,12 @@
         }
       }
 
+      &.th-expandable
+      {
+        border-right: 0;
+        max-width: 44px;
+      }
+
       &[aria-sort]
       {
         &.th-sortable button::after
@@ -87,14 +93,19 @@
   {
     tr
     {
-      &:nth-child(odd)
+      &.tr-stripe-odd
       {
         background: $coconut;
       }
 
-      &:nth-child(even)
+      &.tr-stripe-even
       {
         background: $cloud;
+      }
+
+      &.tr-expandable td > :last-child
+      {
+        margin-bottom: 0;
       }
 
       &:hover
@@ -110,6 +121,24 @@
         padding: 11px 15px 12px;
         vertical-align: middle;
         transition: padding $transition-primary;
+
+        &.td-expandable
+        {
+          padding: 0;
+
+          button
+          {
+            min-width: 44px;
+            min-height: 44px;
+            color: $font-color-primary;
+            font-size: $font-size-lg;
+          }
+
+          & + .td-selectable
+          {
+            padding-left: 0;
+          }
+        }
 
         &.actions // col containing 1-2 action buttons
         {
@@ -156,6 +185,11 @@
     }
   }
 
+  bp-checkbox label.checkbox
+  {
+    margin-bottom: 0;
+  }
+
   &.table-compact
   {
     tbody
@@ -196,6 +230,11 @@
           vertical-align: middle;
           padding: 0 0 0 15px;
         }
+
+        th.th-expandable + .th-selectable
+        {
+          padding-left: 0;
+        }
       }
     }
 
@@ -206,6 +245,11 @@
         td.td-selectable
         {
           padding: 0 0 0 15px;
+        }
+
+        td.td-expandable + .td-selectable
+        {
+          padding-left: 0;
         }
       }
     }

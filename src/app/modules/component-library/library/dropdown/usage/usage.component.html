@@ -1,0 +1,27 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Dropdowns contain a list of actions a user can take. The user must click on the dropdown trigger to open the menu.
+      </p>
+      <p>
+        Dropdown items can either route the user to a new page or perform an action on the page. The component will use the appropriate element for accessibility and semantics determined by it's Inputs.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-dropdown
+                dropdownText="Primary Dropdown"
+                [dropdownItems]="exampleItems"
+                classes="btn-primary"
+              ></bp-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

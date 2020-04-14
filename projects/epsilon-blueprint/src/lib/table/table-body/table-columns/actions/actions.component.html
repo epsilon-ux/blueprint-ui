@@ -1,13 +1,12 @@
 <ng-container *ngFor="let actionItem of renderedActions">
   <bp-action
     [ngClass]="{ 'action-item': actionItems.length < 3 }"
-    [element]="actionItem.element"
     [text]="actionItem.text"
     [classes]="[actionItem.class, classList]"
     [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"
     [target]="actionItem.target"
-    [routerLink]="actionItem.routerLink ? parseLookupString(actionItem.routerLink, rowData) : ''"
-    [href]="actionItem.href ? parseLookupString(actionItem.href, rowData) : ''"
+    [routerLink]="actionItem.routerLink ? parseLookupString(actionItem.routerLink, rowData) : null"
+    [href]="actionItem.href ? parseLookupString(actionItem.href, rowData) : null"
     (click)="triggerAction(actionItem.action)"
   ></bp-action>
 </ng-container>

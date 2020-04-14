@@ -31,6 +31,9 @@ export class TableComponent implements OnInit, OnChanges {
     search:  {
       hasSearch: true
     },
+    sort: {
+      defaultSortOrder: 'ascending'
+    },
     hasSelectableRows: false,
     hasColumnSelector: true,
     hasDisplayDensity: true,
@@ -40,6 +43,7 @@ export class TableComponent implements OnInit, OnChanges {
     internationalization: {
       'Select all rows': 'Select all rows',
       'Actions': 'Actions',
+      'Expand/Collapse': 'Expand/Collapse',
       'Loading data': 'Loading data',
       'No data': 'No data available',
       'Select Row': 'Select Row',
@@ -75,6 +79,10 @@ export class TableComponent implements OnInit, OnChanges {
   // Data
   filteredData = [];
   tableData = [];
+
+  // Select All Rows
+  isSelectAllChecked = false;
+  isSelectAllIndeterminate = false;
 
   // Sorting
   sortColumnName: string;
@@ -147,7 +155,10 @@ export class TableComponent implements OnInit, OnChanges {
         err.name = 'Missing Input';
         throw err;
       }
-    })
+      if (col.icon && !(col.icon.color === 'warning' || col.icon.color === 'midnight')) {
+        console.warn(`"${col.icon.color}" invalid value for bp-table icon column color: expects either "midnight" or "warning".`);
+      }
+    });
 
     // TODO: Figure out local storage issues
     /* if (localStorage.getItem('columns')) {
@@ -163,25 +174,34 @@ export class TableComponent implements OnInit, OnChanges {
       (changes.data && !changes.data.firstChange)
     ) {
       this.data = changes.data.currentValue;
-      if (this.properties.hasSelectableRows) {
-        this.data.forEach(row => {
-          row.checked = false;
-        });
-      }
+      this.data.forEach(row => {
+        row._meta = {};
+        if (this.properties.hasSelectableRows) {
+          row._meta.isChecked = false;
+        }
+        if (this.properties.expandableRowsTemplate) {
+          row._meta.isExpanded = false;
+        }
+      });
       this.filteredData = [...this.data];
       this.totalRecords = this.data.length;
+      this.defaultSort();
       this.paginate({
         currentPage: this.currentPage,
         numberOfRows: this.defaultNumberOfRows
       });
-      this.defaultSort();
     }
   }
 
   // --------------- Sorting ---------------
 
   defaultSort() {
-    this.ascSort(this.properties.sort.defaultSortedColumn);
+    this.sortOrder = this.properties.sort.defaultSortOrder;
+    this.sortColumnName = this.properties.sort.defaultSortedColumn;
+
+    this.sortOrder === 'ascending'
+    ? this.ascSort(this.sortColumnName)
+    : this.descSort(this.sortColumnName);
   }
 
   ascSort(colHeader: string) {
@@ -208,18 +228,20 @@ export class TableComponent implements OnInit, OnChanges {
     });
   }
 
-  getAriaSortOrder(rowIndex: number): string {
-    const columnIndex = this.properties.columns.findIndex(
-      (item, index: any) => {
-        if (item.key === this.sortColumnName) {
-          return index;
-        }
-      }
-    );
-    if (columnIndex === rowIndex) {
-      return 'ascending';
+  getAriaSortOrder(index: number): string {
+    if (!this.sortColumnName) {
+      this.sortColumnName = this.properties.sort.defaultSortedColumn;
     }
-    if (this.columnIndex === rowIndex) {
+    if (!this.columnIndex) {
+      this.columnIndex = this.properties.columns.findIndex(
+        (item, i: any) => {
+          if (item.key === this.sortColumnName) {
+            return i;
+          }
+        }
+      );
+    }
+    if (this.columnIndex === index) {
       this.isSortActive = true;
       return this.sortOrder;
     } else {
@@ -296,35 +318,36 @@ export class TableComponent implements OnInit, OnChanges {
 
   // To select/unselect one row at a time
   onSelectRow(event) {
-    const selectAllCheckbox = this.selectAllRowsRef.nativeElement;
     const selectedRow = this.filteredData.find(
       data => data.id === Number(event.target.id)
     );
-    selectedRow.checked = event.target.checked;
+    selectedRow._meta.isChecked = event.target.checked;
     const selectedRowsCount = this.filteredData
-      .filter(data => data.checked)
+      .filter(data => data._meta.isChecked)
       .length;
     
     if (selectedRowsCount === this.filteredData.length) {
-      selectAllCheckbox.indeterminate = false;
-      selectAllCheckbox.checked = true;
+      this.isSelectAllIndeterminate = false;
+      this.isSelectAllChecked = true;
     } else if (
       selectedRowsCount > 0 &&
       selectedRowsCount < this.filteredData.length
     ) {
-      selectAllCheckbox.indeterminate = true;
-      selectAllCheckbox.checked = true;
+      this.isSelectAllIndeterminate = true;
+      this.isSelectAllChecked = false;
     } else if (selectedRowsCount === 0) {
-      selectAllCheckbox.indeterminate = false;
-      selectAllCheckbox.checked = false;
+      this.isSelectAllIndeterminate = false;
+      this.isSelectAllChecked = false;
     }
     this.emitSelectedRowsAction();
   }
 
   // To select/deselect all the rows
   onSelectAllRows(event) {
+    this.isSelectAllChecked = !this.isSelectAllChecked;
+    this.isSelectAllIndeterminate = false;
     this.filteredData.forEach(row => {
-      row.checked = event.target.checked;
+      row._meta.isChecked = this.isSelectAllChecked;
     });
     this.emitSelectedRowsAction();
   }
@@ -346,7 +369,7 @@ export class TableComponent implements OnInit, OnChanges {
   emitSelectedRowsAction() {
     const selectedRowsIds = [];
     this.filteredData.forEach(data => {
-      if (data.checked) {
+      if (data._meta.isChecked) {
         selectedRowsIds.push(data[this.properties.rowId]);
       }
     });

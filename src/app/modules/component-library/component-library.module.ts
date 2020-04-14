@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
 import { LandingPageHeaderModule } from 'epsilon-blueprint';
 
 import { ComponentsRoutingModule } from './component-library-routing.module';
@@ -20,7 +21,8 @@ import { OverviewComponent } from './overview/overview.component';
     BaseTemplateModule,
     ComponentHeaderModule,
     ComponentsRoutingModule,
-    LandingPageHeaderModule
+    LandingPageHeaderModule,
+    MarkdownModule.forChild()
   ],
   providers: [HttpClientModule],
   exports: [ComponentLibraryComponent]

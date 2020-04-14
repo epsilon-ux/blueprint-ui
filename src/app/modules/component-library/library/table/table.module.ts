@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MarkdownModule } from 'ngx-markdown';
 import { TableModule } from 'epsilon-blueprint';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
@@ -27,7 +28,8 @@ import { ApiComponent } from './api/api.component';
     ComponentHeaderModule,
     TableRoutingModule,
     TableModule,
-    ShowMoreModule
+    ShowMoreModule,
+    MarkdownModule.forChild()
   ],
   providers: [],
   exports: [TableComponent]

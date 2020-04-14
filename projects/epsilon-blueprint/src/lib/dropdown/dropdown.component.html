@@ -1,0 +1,27 @@
+<button
+  dropdownToggle
+  type="button"
+  [id]="uuid"
+  [ngClass]="['btn dropdown-toggle', classes]"
+  data-toggle="dropdown"
+  aria-haspopup="true"
+  aria-expanded="false"
+>
+  {{ dropdownText }}
+</button>
+<div
+  class="dropdown-menu dropdown-menu-right"
+  [attr.aria-labelledby]="uuid"
+>
+  <bp-action
+    *ngFor="let dropdownItem of dropdownItems"
+    classes="dropdown-item{{ dropdownItem.isDestructive ? ' is-destructive' : '' }}"
+    [text]="dropdownItem.text"
+    [ariaLabel]="dropdownItem.ariaLabel"
+    [href]="dropdownItem.href"
+    [routerLink]="dropdownItem.routerLink"
+    [target]="dropdownItem.target"
+    [isDisabled]="dropdownItem.isDisabled"
+    (click)="emitAction(dropdownItem.action)"
+  ></bp-action>
+</div>

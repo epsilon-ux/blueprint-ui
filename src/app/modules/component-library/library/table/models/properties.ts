@@ -1,3 +1,4 @@
+import { TemplateRef } from '@angular/core';
 import { Column } from './column';
 import { Action } from './action';
 
@@ -7,6 +8,7 @@ export default interface Properties {
   internationalization?: {
     'Select all rows': string;
     'Actions': string;
+    'Expand/Collapse': string;
     'Loading data': string;
     'No data': string;
     'Select Row': string;
@@ -37,8 +39,10 @@ export default interface Properties {
   };
   sort: {
     defaultSortedColumn: string;
+    defaultSortOrder: string;
     // TBD: Server Side / Client Side / Restricted
   };
+  expandableRowsTemplate?: TemplateRef<any>;
   hasSelectableRows?: boolean;
   actions?: Action[];
   hasColumnSelector?: boolean;
