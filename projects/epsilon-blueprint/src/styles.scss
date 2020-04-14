@@ -1,7 +1,10 @@
 // global styles
 @import "./styles/_global-variables";
 @import "./styles/typography";
-@import "./styles/utilities";
+@import "./styles/u-typography";
+@import "./styles/u-colors";
+@import "./styles/u-spacing";
+@import "./styles/u-sizing";
 @import "./styles/focus";
 
 // blueprint components

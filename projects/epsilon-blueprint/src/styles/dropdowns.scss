@@ -16,13 +16,13 @@
   &::after
   {
     margin-left: 5px;
-    font-size: $font-size-display2;
+    font-size: $font-size-lg;
   }
 }
 
 .dropdown-menu
 {
-  font-size: $font-size-body;
+  font-size: $font-size-md;
   margin: 1px 0 0;
   border-radius: 0;
   border: 1px solid $border-color-primary;
@@ -64,7 +64,7 @@
   {
     border: none;
   }
-  
+
   &:first-child,
   &:last-child
   {

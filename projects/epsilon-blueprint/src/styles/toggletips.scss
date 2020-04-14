@@ -10,7 +10,7 @@
   padding: 0;
   background: transparent;
   color: $accent-color-primary;
-  font-size: $font-size-body;
+  font-size: $font-size-md;
   transform: translateY(3px);
 
   & .fa-stack
@@ -63,7 +63,7 @@
   box-shadow: $box-shadow-secondary;
   border-radius: 0;
   border-color: $accent-color-primary;
-  font-size: $font-size-body;
+  font-size: $font-size-md;
 
   &.bs-popover-top
   {

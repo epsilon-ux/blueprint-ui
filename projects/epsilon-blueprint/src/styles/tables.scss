@@ -25,7 +25,7 @@
         padding: 11px 15px 12px;
         color: $font-color-primary;
         font-family: $font-family-default;
-        font-size: $font-size-body;
+        font-size: $font-size-md;
         font-weight: $font-weight-semi-bold;
         text-align: left;
         
@@ -131,7 +131,7 @@
             min-width: 44px;
             min-height: 44px;
             color: $font-color-primary;
-            font-size: $font-size-display2;
+            font-size: $font-size-lg;
           }
 
           & + .td-selectable

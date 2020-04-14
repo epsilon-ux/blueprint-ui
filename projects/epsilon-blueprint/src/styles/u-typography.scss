@@ -1,0 +1,238 @@
+@import '../styles/global-variables';
+
+// The top utility class(es) in each pairing map(s) to Bootstrap's naming conventions
+// The bottom utility class(es) in each pairing map(s) to Blueprint's naming conventions
+
+// Bootstrap is using !important, so we need to use it in order to override Bootstrap until we remove Bootstrap
+
+//
+// font sizes
+//
+
+.font-size-body
+{
+  font-size: $font-size-body;
+}
+
+.font-size-body-lead
+{
+  font-size: $font-size-body-lead;
+}
+
+.small,
+.font-size-sm // previously .text-small
+{
+  font-size: $font-size-sm;
+}
+
+.font-size-md
+{
+  font-size: $font-size-md;
+}
+
+.font-size-lg // previously .u-font-size-2
+{
+  font-size: $font-size-lg;
+}
+
+.font-size-xl
+{
+  font-size: $font-size-xl;
+}
+
+//
+// font weights
+//
+
+.font-weight-normal,
+.font-weight-regular
+{
+  font-weight: $font-weight-regular;
+}
+
+.font-weight-semi-bold
+{
+  font-weight: $font-weight-semi-bold;
+}
+
+.font-weight-bold
+{
+  font-weight: $font-weight-bold;
+}
+
+//
+// font styles
+//
+
+.font-style-normal
+{
+  font-style: normal;
+}
+
+.font-style-italic
+{
+  font-style: italic;
+}
+
+//
+// text styles
+//
+
+.h1
+{
+  margin-bottom: $space-md;
+  font-size: $font-size-h1;
+  font-weight: $font-weight-regular;
+}
+
+.h2
+{
+  margin-bottom: $space-md;
+  font-size: $font-size-h2;
+  font-weight: $font-weight-semi-bold;
+}
+
+.h3
+{
+  margin-bottom: $space-sm;
+  font-size: $font-size-h3;
+  font-weight: $font-weight-bold;
+}
+
+.h4
+{
+  margin-bottom: $space-sm;
+  font-size: $font-size-h4;
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-secondary;
+}
+
+.display-1,
+.text-style-1
+{
+  font-size: $font-size-xl;
+  font-weight: $font-weight-regular;
+  color: $font-color-primary;
+}
+
+.display-2,
+.text-style-2
+{
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-primary;
+}
+
+.display-3,
+.text-style-3
+{
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $font-color-primary;
+}
+
+.display-4,
+.text-style-4
+{
+  font-size: $font-size-md;
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-secondary;
+}
+
+.text-style-muted-1
+{
+  font-weight: $font-weight-regular;
+  color: $font-color-secondary;
+}
+
+.text-style-muted-2
+{
+  font-weight: $font-weight-regular;
+  font-style: italic;
+  color: $font-color-secondary;
+}
+
+.text-style-muted-3 // previously .text-secondary
+{
+  font-weight: $font-weight-semi-bold;
+  color: $font-color-secondary;
+}
+
+//
+// text alignment
+//
+
+.text-left,
+.text-align-left
+{
+  text-align: left;
+}
+
+.text-center,
+.text-align-center
+{
+  text-align: center;
+}
+
+.text-right,
+.text-align-right
+{
+  text-align: right;
+}
+
+//
+// text transforms
+//
+
+.text-uppercase,
+.text-transform-uppercase
+{
+  text-transform: uppercase;
+}
+
+.text-lowercase,
+.text-transform-lowercase
+{
+  text-transform: lowercase;
+}
+
+.text-capitalize,
+.text-transform-capitalize
+{
+  text-transform: capitalize;
+}
+
+//
+// text decoration
+//
+
+.text-decoration-none
+{
+  text-decoration: none !important;
+}
+
+.text-decoration-underline
+{
+  text-decoration: underline !important;
+}
+
+//
+// text wrapping
+//
+
+.text-nowrap
+{
+  white-space: nowrap !important;
+}
+
+.text-wrap
+{
+  white-space: normal !important;
+}
+
+.text-break
+{
+  word-break: break-all !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}

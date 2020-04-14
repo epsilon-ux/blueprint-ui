@@ -15,7 +15,12 @@
 
 .column-selector ng-select .multiselect-value
 {
-  font-size: $font-size-body;
+  font-size: $font-size-md;
   color: $font-color-primary;
   background: transparent;
+}
+
+.select-display-density
+{
+    min-width: 100px;
 }
