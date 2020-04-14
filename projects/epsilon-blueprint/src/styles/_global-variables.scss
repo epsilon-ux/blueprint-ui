@@ -35,16 +35,18 @@ $font-family-default: 'Open Sans', sans-serif;
 $font-family-icon: 'Font Awesome 5 Free'; // only used for CSS pseudo elements
 
 // font sizes
-$font-size-body: 12px;
-$font-size-small: 10px;
 $font-size-h1: 22px;
 $font-size-h2: 15px;
 $font-size-h3: 12px;
 $font-size-h4: 12px;
-$font-size-display1: 22px;
-$font-size-display2: 15px;
-$font-size-display3: 12px;
-$font-size-display4: 12px;
+$font-size-body-lead: 15px;
+$font-size-body: 12px;
+
+// abstracted font sizes
+$font-size-sm: 10px; // previously $font-size-small
+$font-size-md: 12px; // previously $font-size-display3, $font-size-display4
+$font-size-lg: 15px; // previously $font-size-display2
+$font-size-xl: 22px; // previously $font-size-display1
 
 // font weights
 $font-weight-regular: 400;
@@ -104,7 +106,14 @@ $box-shadow-focus-warning: 0 0 0 0.2rem rgba($feedback-color-warning, 0.25);
 $box-shadow-focus-readonly: 0 0 0 0.2rem rgba($storm, 0.3);
 
 // gradients
-$gradient-progress-bar: linear-gradient(to right, #0095F6 -39%, #0312DD 100%);
+$gradient-primary: linear-gradient(to right, #0095F6 -39%, #0312DD 100%);
+$gradient-progress-bar: $gradient-primary;
 
 // transition
 $transition-primary: 0.05s ease-out;
+
+// space token variables
+$space-xs: 5px;
+$space-sm: 10px;
+$space-md: 20px;
+$space-lg: 40px;

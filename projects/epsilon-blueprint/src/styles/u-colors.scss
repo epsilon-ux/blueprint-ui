@@ -1,0 +1,119 @@
+@import '../styles/global-variables';
+
+// The top utility class(es) in each pairing map(s) to Bootstrap's naming conventions
+// The bottom utility class(es) in each pairing map(s) to Blueprint's naming conventions
+
+// Bootstrap is using !important, so we need to use it in order to override Bootstrap until we remove Bootstrap
+
+//
+// text colors
+//
+
+.text-body,
+.text-color-primary
+{
+  color: $font-color-primary !important;
+}
+
+.text-muted,
+.text-secondary, // previously mapped to styles now grouped under .text-style-muted-3
+.text-color-secondary
+{
+  color: $font-color-secondary !important;
+}
+
+.text-success,
+.text-color-success
+{
+  color: $feedback-color-success !important;
+}
+
+.text-warning,
+.text-color-alert
+{
+  color: $feedback-color-alert !important;
+}
+
+.text-danger,
+.text-color-warning // previously .text-color-danger
+{
+  color: $feedback-color-warning !important;
+}
+
+.text-info,
+.text-primary,
+.text-color-accent-primary
+{
+  color: $accent-color-primary !important;
+}
+
+.text-white,
+.text-color-white
+{
+  color: $coconut !important;
+}
+
+//
+// icon colors
+//
+
+.icon-color-midnight
+{
+  color: $midnight;
+}
+
+.icon-color-success
+{
+  color: $feedback-color-success;
+}
+
+.icon-color-warning
+{
+  color: $feedback-color-warning;
+}
+
+//
+// border colors
+//
+
+.border-primary,
+.border-color-primary
+{
+  border-color: $border-color-primary !important;
+}
+
+.border-secondary,
+.border-color-secondary
+{
+  border-color: $border-color-secondary !important;
+}
+
+//
+// background colors
+//
+
+.bg-transparent
+{
+  background: transparent;
+}
+
+.bg-coconut
+{
+  background: $coconut;
+}
+
+.bg-cloud
+{
+  background: $cloud;
+}
+
+.bg-mist
+{
+  background: $mist;
+}
+
+.bg-gradient-primary
+{
+  background: $accent-color-primary;
+  background-image: $gradient-primary;
+}
