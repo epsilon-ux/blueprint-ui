@@ -15,18 +15,9 @@
 
 .column-selector ng-select .multiselect-value
 {
-    ng-select .multiselect-value
-    {
-        font-size: $font-size-md;
-        color: $font-color-primary;
-        background: transparent;
-    }
-
-    ng-select .multiselect-label
-    {
-        pointer-events: none;
-        display: inline;
-    }
+  font-size: $font-size-md;
+  color: $font-color-primary;
+  background: transparent;
 }
 
 .select-display-density
