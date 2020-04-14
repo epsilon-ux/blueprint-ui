@@ -8,6 +8,7 @@ import { generateUniqueId } from '../../helpers';
 export class DropdownComponent implements OnInit {
 
   @Input() dropdownText: string;
+  @Input() classes = '';
   @Input() dropdownItems: {
     text: string;
     ariaLabel?: string;
@@ -16,6 +17,7 @@ export class DropdownComponent implements OnInit {
     routerLink?: string;
     target?: string;
     isDisabled?: boolean;
+    isDestructive?: boolean;
   }
 
   @Output() action = new EventEmitter();
