@@ -1,5 +1,3 @@
-@import '_global-variables.scss';
-
 a
 {
   color: $link-color-primary;
@@ -49,7 +47,7 @@ button.btn-text:disabled
 {
   border-radius: 0;
   padding: 5px 10px;
-  font-size: $font-size-body;
+  font-size: $font-size-md;
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active

@@ -9,13 +9,15 @@ import { ColorComponent } from './color.component';
 import { OverviewComponent } from './overview/overview.component';
 import { UsageComponent } from './usage/usage.component';
 import { ColorCombinationsComponent } from './color-combinations/color-combinations.component';
+import { UtilitiesComponent } from './utilities/utilities.component';
 
 @NgModule({
   declarations: [
     ColorComponent,
     OverviewComponent,
     UsageComponent,
-    ColorCombinationsComponent
+    ColorCombinationsComponent,
+    UtilitiesComponent
   ],
   imports: [
     CommonModule,

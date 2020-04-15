@@ -1,5 +1,3 @@
-@import './global-variables';
-
 .tab
 {
     display: inline-block;
@@ -8,7 +6,7 @@
     padding: 10px;
     background: transparent;
     color: $font-color-primary;
-    font-size: $font-size-display2;
+    font-size: $font-size-lg;
     font-weight: $font-weight-regular;
     
     &:hover

@@ -1,0 +1,161 @@
+@import '../styles/global-variables';
+
+// The top utility class(es) in each pairing map(s) to Bootstrap's naming conventions
+// The bottom utility class(es) in each pairing map(s) to Blueprint's naming conventions
+
+// Bootstrap is using !important, so we need to use it in order to override Bootstrap until we remove Bootstrap
+
+//
+// text colors
+//
+
+.text-body,
+.text-color-midnight,
+.text-color-primary
+{
+  color: $font-color-primary !important;
+}
+
+.text-muted,
+.text-secondary, // previously mapped to styles now grouped under .text-style-4
+.text-color-storm,
+.text-color-secondary
+{
+  color: $font-color-secondary !important;
+}
+
+.text-info,
+.text-primary,
+.text-color-ultramarine,
+.text-color-accent-primary
+{
+  color: $accent-color-primary !important;
+}
+
+.text-white,
+.text-color-coconut
+{
+  color: $coconut !important;
+}
+
+.text-danger,
+.text-color-tomato,
+.text-color-warning // previously .text-color-danger
+{
+  color: $feedback-color-warning !important;
+}
+
+//
+// icon colors
+//
+
+.icon-color-midnight
+{
+  color: $midnight !important;
+}
+
+.icon-color-success
+{
+  color: $feedback-color-success !important;
+}
+
+.icon-color-warning
+{
+  color: $feedback-color-warning !important;
+}
+
+//
+// border colors
+//
+
+.border-color-transparent
+{
+  border-color: transparent !important;
+}
+
+.border-primary,
+.border-color-primary
+{
+  border-color: $border-color-primary !important;
+}
+
+.border-secondary,
+.border-color-secondary
+{
+  border-color: $border-color-secondary !important;
+}
+
+//
+// background colors
+//
+
+.bg-transparent
+{
+  background: transparent !important;
+}
+
+.bg-ultramarine
+{
+  background: $ultramarine !important;
+}
+
+.bg-midnight
+{
+  background: $midnight !important;
+}
+
+.bg-coconut
+{
+  background: $coconut !important;
+}
+
+.bg-cobalt
+{
+  background: $cobalt !important;
+}
+
+.bg-blueberry
+{
+  background: $blueberry !important;
+}
+
+.bg-cornflower
+{
+  background: $cornflower !important;
+}
+
+.bg-ice
+{
+  background: $ice !important;
+}
+
+.bg-storm
+{
+  background: $storm !important;
+}
+
+.bg-haze
+{
+  background: $haze !important;
+}
+
+.bg-mist
+{
+  background: $mist !important;
+}
+
+.bg-cloud
+{
+  background: $cloud !important;
+}
+
+.bg-accent-primary
+{
+  background: $accent-color-primary !important;
+}
+
+.bg-gradient-primary
+{
+  background: $accent-color-primary !important;
+  background-image: $gradient-primary !important;
+}

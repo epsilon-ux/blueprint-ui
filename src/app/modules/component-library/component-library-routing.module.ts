@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ComponentLibraryComponent } from './component-library.component';
-import { OverviewComponent } from './overview/overview.component';
+import { IntroductionComponent } from './introduction/introduction.component';
 
 const routes: Routes = [
   { path: '', component: ComponentLibraryComponent, children: [
-    { path: '', redirectTo: 'overview', pathMatch: 'full' },
-    { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
+    { path: '', redirectTo: 'introduction', pathMatch: 'full' },
+    { path: 'introduction', component: IntroductionComponent, pathMatch: 'full' },
 
     // Foundations
     { path: 'voice-tone', loadChildren: () => import('./foundations/voice-tone/voice-tone.module')
@@ -31,6 +31,9 @@ const routes: Routes = [
 
     { path: 'checkbox', loadChildren: () => import('./library/checkbox/checkbox.module')
       .then(m => m.CheckboxLibraryModule) },
+    
+    { path: 'dropdown', loadChildren: () => import('./library/dropdown/dropdown.module')
+    .then(m => m.DropdownLibraryModule) },
 
     { path: 'radio-button', loadChildren: () => import('./library/radio-button/radio-button.module')
       .then(m => m.RadioButtonLibraryModule) },
@@ -52,7 +55,7 @@ const routes: Routes = [
     { path: 'table', loadChildren: () => import('./library/table/table.module')
     .then(m => m.TableLibraryModule) },
 
-    { path: '**', redirectTo: 'overview', pathMatch: 'full' } // TODO: create a componentNotFound page for this instance
+    { path: '**', redirectTo: 'introduction', pathMatch: 'full' } // TODO: create a componentNotFound page for this instance
   ]}
 ];
 

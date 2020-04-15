@@ -11,7 +11,7 @@ export class ComponentLibraryComponent {
     items: [
       {
         text: 'Introduction',
-        route: './overview'
+        route: './introduction'
       },
       {
         text: 'Foundations',
@@ -48,6 +48,10 @@ export class ComponentLibraryComponent {
           {
             text: 'Checkbox',
             route: './checkbox'
+          },
+          {
+            text: 'Dropdown',
+            route: './dropdown'
           },
           {
             text: 'Radio Button',
