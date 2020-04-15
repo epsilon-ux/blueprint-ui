@@ -6,75 +6,6 @@
 // Bootstrap is using !important, so we need to use it in order to override Bootstrap until we remove Bootstrap
 
 //
-// font sizes
-//
-
-.font-size-body
-{
-  font-size: $font-size-body !important;
-}
-
-.font-size-body-lead
-{
-  font-size: $font-size-body-lead !important;
-}
-
-.small,
-.font-size-sm // previously .text-small
-{
-  font-size: $font-size-sm !important;
-}
-
-.font-size-md
-{
-  font-size: $font-size-md !important;
-}
-
-.font-size-lg // previously .u-font-size-2
-{
-  font-size: $font-size-lg !important;
-}
-
-.font-size-xl
-{
-  font-size: $font-size-xl !important;
-}
-
-//
-// font weights
-//
-
-.font-weight-normal,
-.font-weight-regular
-{
-  font-weight: $font-weight-regular !important;
-}
-
-.font-weight-semi-bold
-{
-  font-weight: $font-weight-semi-bold !important;
-}
-
-.font-weight-bold
-{
-  font-weight: $font-weight-bold !important;
-}
-
-//
-// font styles
-//
-
-.font-style-normal
-{
-  font-style: normal !important;
-}
-
-.font-style-italic
-{
-  font-style: italic !important;
-}
-
-//
 // text styles
 //
 
@@ -152,6 +83,117 @@
   color: $font-color-secondary !important;
 }
 
+.text-style-muted-3
+{
+  font-weight: $font-weight-semi-bold !important;
+  color: $font-color-secondary !important;
+}
+
+//
+// font sizes
+//
+
+.font-size-xl
+{
+  font-size: $font-size-xl !important;
+}
+
+.font-size-lg // previously .u-font-size-2
+{
+  font-size: $font-size-lg !important;
+}
+
+.font-size-md
+{
+  font-size: $font-size-md !important;
+}
+
+.small,
+.font-size-sm // previously .text-small
+{
+  font-size: $font-size-sm !important;
+}
+
+.font-size-body-lead
+{
+  font-size: $font-size-body-lead !important;
+}
+
+.font-size-body
+{
+  font-size: $font-size-body !important;
+}
+
+//
+// font weights
+//
+
+.font-weight-normal,
+.font-weight-regular
+{
+  font-weight: $font-weight-regular !important;
+}
+
+.font-weight-semi-bold
+{
+  font-weight: $font-weight-semi-bold !important;
+}
+
+.font-weight-bold
+{
+  font-weight: $font-weight-bold !important;
+}
+
+//
+// font styles
+//
+
+.font-style-normal
+{
+  font-style: normal !important;
+}
+
+.font-style-italic
+{
+  font-style: italic !important;
+}
+
+//
+// text transforms
+//
+
+.text-lowercase,
+.text-transform-lowercase
+{
+  text-transform: lowercase !important;
+}
+
+.text-capitalize,
+.text-transform-capitalize
+{
+  text-transform: capitalize !important;
+}
+
+.text-uppercase,
+.text-transform-uppercase
+{
+  text-transform: uppercase !important;
+}
+
+//
+// text decoration
+//
+
+.text-decoration-none
+{
+  text-decoration: none !important;
+}
+
+.text-decoration-underline
+{
+  text-decoration: underline !important;
+}
+
 //
 // text alignment
 //
@@ -172,42 +214,6 @@
 .text-align-right
 {
   text-align: right !important;
-}
-
-//
-// text transforms
-//
-
-.text-uppercase,
-.text-transform-uppercase
-{
-  text-transform: uppercase !important;
-}
-
-.text-lowercase,
-.text-transform-lowercase
-{
-  text-transform: lowercase !important;
-}
-
-.text-capitalize,
-.text-transform-capitalize
-{
-  text-transform: capitalize !important;
-}
-
-//
-// text decoration
-//
-
-.text-decoration-none
-{
-  text-decoration: none !important;
-}
-
-.text-decoration-underline
-{
-  text-decoration: underline !important;
 }
 
 //

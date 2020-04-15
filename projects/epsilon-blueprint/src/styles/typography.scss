@@ -78,6 +78,11 @@ dd
   font-weight: $font-weight-semi-bold;
 }
 
+code
+{
+  color: $font-color-code;
+}
+
 //
 // resetting styles of non-semantic elements to reinforce use of semantic html for content and css for presentation
 //
