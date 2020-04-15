@@ -1,23 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Blueprint UI</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- 
-    When updating any of the below links,
-    also update the introduction page.
-  -->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
-  <link
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-    crossorigin="anonymous">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-introduction',
+  templateUrl: './introduction.component.html',
+  styleUrls: ['./introduction.component.scss']
+})
+export class IntroductionComponent {
+
+  bootstrapImport = `
+  \`\`\`html
   <link rel="stylesheet" 
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
@@ -31,8 +22,27 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-</head>
-<body>
-  <app-root></app-root>
-</body>
-</html>
+  \`\`\`
+  `;
+
+  fontawesomeImport = `
+  \`\`\`html
+  <link
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+    crossorigin="anonymous">
+  \`\`\`
+  `;
+
+  fontImport = `
+  \`\`\`html
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+  \`\`\`
+  `;
+
+  constructor() {}
+
+}
