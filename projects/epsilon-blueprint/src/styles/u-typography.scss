@@ -6,38 +6,122 @@
 // Bootstrap is using !important, so we need to use it in order to override Bootstrap until we remove Bootstrap
 
 //
+// text styles
+//
+
+.h1
+{
+  margin-bottom: $space-md !important;
+  font-size: $font-size-h1 !important;
+  font-weight: $font-weight-regular !important;
+}
+
+.h2
+{
+  margin-bottom: $space-md !important;
+  font-size: $font-size-h2 !important;
+  font-weight: $font-weight-semi-bold !important;
+}
+
+.h3
+{
+  margin-bottom: $space-sm !important;
+  font-size: $font-size-h3 !important;
+  font-weight: $font-weight-bold !important;
+}
+
+.h4
+{
+  margin-bottom: $space-sm !important;
+  font-size: $font-size-h4 !important;
+  font-weight: $font-weight-semi-bold !important;
+  color: $font-color-secondary !important;
+}
+
+.display-1,
+.text-style-1
+{
+  font-size: $font-size-xl !important;
+  font-weight: $font-weight-regular !important;
+  color: $font-color-primary !important;
+}
+
+.display-2,
+.text-style-2
+{
+  font-size: $font-size-lg !important;
+  font-weight: $font-weight-semi-bold !important;
+  color: $font-color-primary !important;
+}
+
+.display-3,
+.text-style-3
+{
+  font-size: $font-size-md !important;
+  font-weight: $font-weight-bold !important;
+  color: $font-color-primary !important;
+}
+
+.display-4,
+.text-style-4 // previously .text-secondary
+{
+  font-size: $font-size-md !important;
+  font-weight: $font-weight-semi-bold !important;
+  color: $font-color-secondary !important;
+}
+
+.text-style-muted-1
+{
+  font-weight: $font-weight-regular !important;
+  color: $font-color-secondary !important;
+}
+
+.text-style-muted-2
+{
+  font-weight: $font-weight-regular !important;
+  font-style: italic !important;
+  color: $font-color-secondary !important;
+}
+
+.text-style-muted-3
+{
+  font-weight: $font-weight-semi-bold !important;
+  color: $font-color-secondary !important;
+}
+
+//
 // font sizes
 //
 
-.font-size-body
+.font-size-xl
 {
-  font-size: $font-size-body;
+  font-size: $font-size-xl !important;
 }
 
-.font-size-body-lead
+.font-size-lg // previously .u-font-size-2
 {
-  font-size: $font-size-body-lead;
+  font-size: $font-size-lg !important;
+}
+
+.font-size-md
+{
+  font-size: $font-size-md !important;
 }
 
 .small,
 .font-size-sm // previously .text-small
 {
-  font-size: $font-size-sm;
+  font-size: $font-size-sm !important;
 }
 
-.font-size-md
+.font-size-body-lead
 {
-  font-size: $font-size-md;
+  font-size: $font-size-body-lead !important;
 }
 
-.font-size-lg // previously .u-font-size-2
+.font-size-body
 {
-  font-size: $font-size-lg;
-}
-
-.font-size-xl
-{
-  font-size: $font-size-xl;
+  font-size: $font-size-body !important;
 }
 
 //
@@ -47,17 +131,17 @@
 .font-weight-normal,
 .font-weight-regular
 {
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-regular !important;
 }
 
 .font-weight-semi-bold
 {
-  font-weight: $font-weight-semi-bold;
+  font-weight: $font-weight-semi-bold !important;
 }
 
 .font-weight-bold
 {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-bold !important;
 }
 
 //
@@ -66,140 +150,34 @@
 
 .font-style-normal
 {
-  font-style: normal;
+  font-style: normal !important;
 }
 
 .font-style-italic
 {
-  font-style: italic;
-}
-
-//
-// text styles
-//
-
-.h1
-{
-  margin-bottom: $space-md;
-  font-size: $font-size-h1;
-  font-weight: $font-weight-regular;
-}
-
-.h2
-{
-  margin-bottom: $space-md;
-  font-size: $font-size-h2;
-  font-weight: $font-weight-semi-bold;
-}
-
-.h3
-{
-  margin-bottom: $space-sm;
-  font-size: $font-size-h3;
-  font-weight: $font-weight-bold;
-}
-
-.h4
-{
-  margin-bottom: $space-sm;
-  font-size: $font-size-h4;
-  font-weight: $font-weight-semi-bold;
-  color: $font-color-secondary;
-}
-
-.display-1,
-.text-style-1
-{
-  font-size: $font-size-xl;
-  font-weight: $font-weight-regular;
-  color: $font-color-primary;
-}
-
-.display-2,
-.text-style-2
-{
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semi-bold;
-  color: $font-color-primary;
-}
-
-.display-3,
-.text-style-3
-{
-  font-size: $font-size-md;
-  font-weight: $font-weight-bold;
-  color: $font-color-primary;
-}
-
-.display-4,
-.text-style-4
-{
-  font-size: $font-size-md;
-  font-weight: $font-weight-semi-bold;
-  color: $font-color-secondary;
-}
-
-.text-style-muted-1
-{
-  font-weight: $font-weight-regular;
-  color: $font-color-secondary;
-}
-
-.text-style-muted-2
-{
-  font-weight: $font-weight-regular;
-  font-style: italic;
-  color: $font-color-secondary;
-}
-
-.text-style-muted-3 // previously .text-secondary
-{
-  font-weight: $font-weight-semi-bold;
-  color: $font-color-secondary;
-}
-
-//
-// text alignment
-//
-
-.text-left,
-.text-align-left
-{
-  text-align: left;
-}
-
-.text-center,
-.text-align-center
-{
-  text-align: center;
-}
-
-.text-right,
-.text-align-right
-{
-  text-align: right;
+  font-style: italic !important;
 }
 
 //
 // text transforms
 //
 
-.text-uppercase,
-.text-transform-uppercase
-{
-  text-transform: uppercase;
-}
-
 .text-lowercase,
 .text-transform-lowercase
 {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 
 .text-capitalize,
 .text-transform-capitalize
 {
-  text-transform: capitalize;
+  text-transform: capitalize !important;
+}
+
+.text-uppercase,
+.text-transform-uppercase
+{
+  text-transform: uppercase !important;
 }
 
 //
@@ -214,6 +192,28 @@
 .text-decoration-underline
 {
   text-decoration: underline !important;
+}
+
+//
+// text alignment
+//
+
+.text-left,
+.text-align-left
+{
+  text-align: left !important;
+}
+
+.text-center,
+.text-align-center
+{
+  text-align: center !important;
+}
+
+.text-right,
+.text-align-right
+{
+  text-align: right !important;
 }
 
 //

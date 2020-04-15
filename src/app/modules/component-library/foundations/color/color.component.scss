@@ -3,13 +3,7 @@
 .swatch
 {
   border: 1px solid transparent;
-  background: $coconut;
-
-  &.swatch-sm
-  {
-    width: 70px;
-    height: 30px;
-  }
+  background: transparent;
 
   &.swatch-lg
   {
@@ -18,123 +12,84 @@
     margin: 10px 0;
   }
 
-  &.swatch-apricot
+  &.swatch-sm
   {
-    background: $apricot;
+    width: 70px;
+    height: 30px;
   }
 
-  &.swatch-ultramarine
+  &.swatch-dropshadow, 
+  &.swatch-focus, 
+  &.swatch-bg
   {
-    background: $ultramarine;
+    width: 58px;
+    height: 30px;
+    margin-right: 6px;
+    margin-left: 6px;
   }
+}
 
-  &.swatch-midnight
-  {
-    background: $midnight;
-  }
+.swatch-dropshadow-primary
+{
+  box-shadow: $box-shadow-primary;
+}
 
-  &.swatch-coconut
-  {
-    border-color: $border-color-primary;
-  }
+.swatch-dropshadow-secondary
+{
+  box-shadow: $box-shadow-secondary;
+}
 
-  &.swatch-cobalt
-  {
-    background: $cobalt;
-  }
+.swatch-dropshadow-tertiary
+{
+  box-shadow: $box-shadow-tertiary;
+}
 
-  &.swatch-blueberry
-  {
-    background: $blueberry;
-  }
+.swatch-dropshadow-primary-navigation
+{
+  box-shadow: $box-shadow-nav-primary;
+}
 
-  &.swatch-cornflower
-  {
-    background: $cornflower;
-  }
+.swatch-focus-default
+{
+  box-shadow: $box-shadow-focus-default;
+}
 
-  &.swatch-ice
-  {
-    background: $ice;
-  }
+.swatch-focus-default-inset
+{
+  box-shadow: $box-shadow-focus-default-inset;
+}
 
-  &.swatch-storm
-  {
-    background: $storm;
-  }
+.swatch-focus-warning
+{
+  box-shadow: $box-shadow-focus-warning;
+}
 
-  &.swatch-haze
-  {
-    background: $haze;
-  }
+.swatch-focus-readonly
+{
+  box-shadow: $box-shadow-focus-readonly;
+}
 
-  &.swatch-cloud
-  {
-    background: $cloud;
-  }
+.bg-apricot
+{
+  background: $apricot;
+}
 
-  &.swatch-mist
-  {
-    background: $mist;
-  }
+.bg-shamrock
+{
+  background: $shamrock;
+}
 
-  &.swatch-tomato
-  {
-    background: $tomato;
-  }
+.bg-clementine
+{
+  background: $clementine;
+}
 
-  &.swatch-brick
-  {
-    background: $brick;
-  }
+.bg-tomato
+{
+  background: $tomato;
+}
 
-  &.swatch-shamrock
-  {
-    background: $shamrock;
-  }
-
-  &.swatch-clementine
-  {
-    background: $clementine;
-  }
-
-  &.swatch-dropshadow-primary
-  {
-    box-shadow: $box-shadow-primary;
-  }
-
-  &.swatch-dropshadow-secondary
-  {
-    box-shadow: $box-shadow-secondary;
-  }
-
-  &.swatch-dropshadow-tertiary
-  {
-    box-shadow: $box-shadow-tertiary;
-  }
-
-  &.swatch-dropshadow-primary-navigation
-  {
-    box-shadow: $box-shadow-nav-primary;
-  }
-
-  &.swatch-focus-default
-  {
-    box-shadow: $box-shadow-focus-default;
-  }
-
-  &.swatch-focus-default-inset
-  {
-    box-shadow: $box-shadow-focus-default-inset;
-  }
-
-  &.swatch-focus-warning
-  {
-    box-shadow: $box-shadow-focus-warning;
-  }
-
-  &.swatch-focus-readonly
-  {
-    box-shadow: $box-shadow-focus-readonly;
-  }
+.bg-brick
+{
+  background: $brick;
 }
