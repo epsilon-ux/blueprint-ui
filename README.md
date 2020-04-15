@@ -30,13 +30,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+Run `ng generate component component-name --project epsilon-blueprint` to generate a new component in the project. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project epsilon-blueprint`.
+> Note: Don't forget to add `--project epsilon-blueprint` or else it will be added to the default project in your `angular.json` file. 
+
 ### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+Run `ng build epsilon-blueprint` to build the project. The build artifacts will be stored in the `dist/` directory.
+
 ### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Run `ng test epsilon-blueprint` to execute the unit tests on the project via [Karma](https://karma-runner.github.io).
 
 ### Running end-to-end tests
 

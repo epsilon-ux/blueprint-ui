@@ -1,0 +1,67 @@
+<bp-landing-page-header
+  headingText="Blueprint Component Library"
+></bp-landing-page-header>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <h2 class="mt-0">Epsilon Blueprint</h2>
+      <p>
+        You can see in progress and upcoming work on our <a href="https://trello.com/b/AoJ0Tpd2/blueprint">Blueprint Trello board.</a>
+      </p>
+
+      <h3>Usage</h3>
+      <p>
+        <span class="font-weight-bold">Please do not override or customize Blueprint components.</span> If Blueprint components are overridden or customized in products, we will be unable to safely update the epsilon-blueprint component library without introducing breaking changes in the products. If you experience any issues integrating Blueprint components, please reach out to the UX team.
+      </p>
+
+      <h3>Setup</h3>
+      <p>Reach out to the UX Team when setting up the application's base template and architecture to work best with Blueprint, align to other products, and ensure scalability.</p>
+      <p>This package has a few dependencies that are not included in the package itself. They are as follows:</p>
+      <ul>
+        <li>Angular 8</li>
+        <li>ng-select</li>
+      </ul>
+      <p class="mb-0">The package also relies on having the following imports in the application's index.html.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h4>Bootstrap v4</h4>
+      <markdown [data]="bootstrapImport" lineNumbers></markdown>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h4>Font Awesome 5</h4>
+      <markdown [data]="fontawesomeImport" lineNumbers></markdown>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h4>Open Sans</h4>
+      <markdown [data]="fontImport" lineNumbers></markdown>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <h3>Installation</h3>
+      <p>
+        Once you have all these, run <code>npm install epsilon-blueprint</code> to install the package to node_modules. Once the package is installed, import the stylesheets from the package.
+      </p>
+      <p>
+        In the application's styles.scss file, add the following import statement.
+        <code class="d-block">
+          @import "~epsilon-blueprint/styles";
+        </code>
+      </p>
+      <p>
+        When global variables are needed in a scss file, add the following import statement.
+        <code class="d-block">
+          @import "~epsilon-blueprint/styles/global-variables";
+        </code>
+      </p>
+    </div>
+  </div>
+</section>

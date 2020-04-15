@@ -11,7 +11,7 @@ export class ComponentLibraryComponent {
     items: [
       {
         text: 'Introduction',
-        route: './overview'
+        route: './introduction'
       },
       {
         text: 'Foundations',

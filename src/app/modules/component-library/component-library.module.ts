@@ -9,12 +9,12 @@ import { BaseTemplateModule } from 'src/app/shared/base-template/base-template.m
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
 
 import { ComponentLibraryComponent } from './component-library.component';
-import { OverviewComponent } from './overview/overview.component';
+import { IntroductionComponent } from './introduction/introduction.component';
 
 @NgModule({
   declarations: [
     ComponentLibraryComponent,
-    OverviewComponent
+    IntroductionComponent
   ],
   imports: [
     CommonModule,
