@@ -4,6 +4,7 @@ import { TypographyComponent } from './typography.component';
 import { OverviewComponent } from './overview/overview.component';
 // TODO: uncomment once mockup is added
 // import { UsageComponent } from './usage/usage.component';
+import { UtilitiesComponent } from './utilities/utilities.component';
 
 const routes: Routes = [
   { path: '', component: TypographyComponent, children: [
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
     // TODO: uncomment once mockup is added
     // { path: 'usage', component: UsageComponent, pathMatch: 'full' },
+    { path: 'utilities', component: UtilitiesComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
   ]},
 ];
