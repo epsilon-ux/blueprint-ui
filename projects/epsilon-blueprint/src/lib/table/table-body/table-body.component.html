@@ -18,9 +18,9 @@
     <!-- Selectable Row Checkboxes -->
     <td *ngIf="properties.hasSelectableRows" class="td-selectable">
       <bp-checkbox
-        label="{{ properties.internationalization['Select Row'] }} {{ rowData.id }}"
+        label="{{ properties.internationalization['Select Row'] }} {{ rowData[properties.rowId] }}"
         [visuallyHiddenLabel]="true"
-        [id]="rowData.id"
+        [id]="rowData[properties.rowId]"
         [isChecked]="rowData._meta.isChecked"
         (change)="selectRows($event)"
       ></bp-checkbox>
