@@ -9,7 +9,7 @@ export class DropdownComponent implements OnInit {
 
   @Input() triggerText: string;
   @Input() triggerClasses = ''; 
-  @Input() menuPlacement: 'up' | 'down' | 'left' | 'right' = 'down';
+  @Input() dropDirection: 'up' | 'down' | 'left' | 'right' = 'down';
   @Input() dropdownItems: {
     text: string;
     ariaLabel?: string;

@@ -12,9 +12,9 @@ export class ApiComponent implements OnInit {
   <div class="col-auto">
     <bp-dropdown
       triggerText="Primary Dropdown"
-      [dropdownItems]="exampleItems"
       triggerClasses="btn-primary"
-      menuPlacement="up"
+      dropDirection="up"
+      [dropdownItems]="exampleItems"
     ></bp-dropdown>
   </div>
   \`\`\`
