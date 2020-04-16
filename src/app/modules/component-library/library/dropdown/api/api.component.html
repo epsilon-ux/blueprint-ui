@@ -1,6 +1,6 @@
 <section class="container-fluid">
   <div class="row">
-    <div class="col">
+    <div class="col-12">
 
       <h2 class="mt-0">Inputs</h2>
       <table class="table table-bordered-rows">
@@ -15,16 +15,25 @@
         </thead>
         <tbody>
           <tr>
-            <td>dropdownText</td>
+            <td>triggerText</td>
             <td>string</td>
             <td>The text used in the dropdown trigger button.</td>
             <td></td>
           </tr>
           <tr>
-            <td>classes</td>
+            <td>triggerClasses</td>
             <td>string</td>
             <td>The classes used on the dropdown trigger button.</td>
             <td></td>
+          </tr>
+          <tr>
+            <td>dropDirection</td>
+            <td>string</td>
+            <td>The direction in which the menu should open.</td>
+            <td>
+              <p>Expects either "up", "down", "left", or "right".</p>
+              <p>Default is "down".</p>
+            </td>
           </tr>
           <tr>
             <td>dropdownItems</td>
@@ -34,9 +43,13 @@
           </tr>
         </tbody>
       </table>
-      
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
       <h3>Dropdown Items</h3>
       <p>The dropdown item will render either an anchor or a button depending on the properties. If either an href or routerLink is provided, the action will be an anchor. If neither are provided, the action will be a button.</p>
+    </div>
+    <div class="col-12">
       <table class="table table-bordered-rows">
         <caption class="sr-only">Dropdown item properties</caption>
         <thead>
@@ -117,7 +130,7 @@
       </table>
 
       <h2>Code</h2>
-      <p>Dropdowns should have a class of "dropdown" and be wrapped in a <code>col-auto</code> grid column.</p>
+      <p>Dropdowns should be wrapped in a <code>col-auto</code> grid column.</p>
       <markdown
         [data]="codeExample"
         lineNumbers

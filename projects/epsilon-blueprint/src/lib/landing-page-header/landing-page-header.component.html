@@ -4,14 +4,13 @@
       <h1 class="landing-page-heading">{{ headingText }}</h1>
     </div>
     <div *ngIf="href || routerLink !== undefined || dropdownItems || actionText" class="col-auto">
-      <div *ngIf="dropdownItems" class="dropdown">
-        <bp-dropdown
-          [dropdownText]="actionText"
-          [dropdownItems]="dropdownItems"
-          classes="btn-primary btn-lg"
-          (action)="onActionClick($event)"
-        ></bp-dropdown>
-      </div>
+      <bp-dropdown
+        *ngIf="dropdownItems"
+        [triggerText]="actionText"
+        [dropdownItems]="dropdownItems"
+        triggerClasses="btn-primary btn-lg"
+        (action)="onActionClick($event)"
+      ></bp-dropdown>
       <bp-action
         *ngIf="!dropdownItems"
         classes="btn btn-primary btn-lg"

@@ -7,8 +7,9 @@ import { generateUniqueId } from '../../helpers';
 })
 export class DropdownComponent implements OnInit {
 
-  @Input() dropdownText: string;
-  @Input() classes = '';
+  @Input() triggerText: string;
+  @Input() triggerClasses = ''; 
+  @Input() dropDirection: 'up' | 'down' | 'left' | 'right' = 'down';
   @Input() dropdownItems: {
     text: string;
     ariaLabel?: string;
