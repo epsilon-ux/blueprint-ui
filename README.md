@@ -13,7 +13,7 @@
 ### Running the application
 You will need to run `npm run dev` concurrently with `npm run watch-blueprint` if you intend on making changes to the Blueprint library. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### Making Changes
+### Making changes
 1. Create feature branch off of the latest master.
 1. Make your feature changes.
 1. Rebase if needed.
@@ -52,3 +52,26 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Component Definition of Done
+- Feature complete
+  - Accessibility attributes
+  - Matches mockups
+  - Responsive
+  - Error handling (error states & messages)
+  - Input validation e.g.: required
+  - Tech debt should be marked with // TODO: comment
+- No console errors
+- Meets code standards
+- Consistent and clean code formatting
+- Passes accessibility testing
+  - Keyboard
+  - Screen reader
+  - Browser extension
+- Cross-browser tested
+- Has been reviewed and feedback has been remediated
+- Github/Netlify checks pass
+- Documentation
+
+### Long term additions
+- Unit tests
