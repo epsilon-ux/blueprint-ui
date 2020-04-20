@@ -1,1 +1,50 @@
-<p>It works!</p>
+<div class="multiselect">
+  <label [for]="uuid">
+    {{ label }}
+  </label>
+  <ng-select
+    #columnSelectorDropdown
+    [labelForId]="uuid"
+    [multiple]="true"
+    [items]="optionItems"
+    placeholder="Select an Item"
+    [searchable]="isSearchable"
+    [clearable]="false"
+    [closeOnSelect]="false"
+    [(ngModel)]="selectedOptions"
+    (change)="emitSelected($event)"
+  >
+    <!-- <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+      <div class="ng-value multiselect-value">
+        <span class="ng-value-label">
+          {{
+            parseLookupString(
+              internationalization['Showing numVisible out of numTotal'],
+              {
+                numVisible: selectedColumns.length,
+                numTotal: columnInfo.length
+              }
+            )
+          }}
+        </span>
+      </div>
+    </ng-template> -->
+    <ng-template
+      ng-option-tmp
+      let-item="item"
+      let-item$="item$"
+      let-index="index"
+    >
+      <div class="decorative-checkbox-container">
+        <span [ngClass]="{
+            'decorative-checkbox': true,
+            'is-checked': item$.selected,
+            'is-disabled': false
+          }"
+        >
+          {{ item }}
+        </span>
+      </div>
+    </ng-template>
+  </ng-select>
+</div>

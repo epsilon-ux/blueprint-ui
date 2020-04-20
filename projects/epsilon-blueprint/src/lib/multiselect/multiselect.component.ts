@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-multiselect',
@@ -7,13 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MultiselectComponent implements OnInit {
 
-  constructor() { }
+  @Input() label = '';
+  @Input() optionItems = [];
+  @Input() isSearchable = false;
+  @Output() change = new EventEmitter();
+  selectedOptions = [];
+
+  uuid = 'mutliselect' + generateUniqueId();
+
+  constructor() {}
 
   ngOnInit() {
-    this.validation();
   }
 
-  validation() {
-
+  emitSelected(e) {
+    this.change.emit(e);
   }
 }
