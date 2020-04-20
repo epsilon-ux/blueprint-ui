@@ -88,25 +88,27 @@
         (emitAction)="emitAction($event, rowData[properties.rowId])"
       ></app-actions>
       <ng-template #moreActions>
-        <button
-          id="moreActions{{ rowData[properties.rowId] }}"
-          class="btn-icon-inline more-actions-toggle"
-          data-toggle="dropdown"
-          [attr.aria-label]="properties.internationalization['Actions Menu']"       
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-        </button>
-        <app-actions
-          class="dropdown-menu dropdown-menu-right"
-          attr.aria-labelledby="moreActions{{ rowData[properties.rowId] }}"
-          [actionItems]="properties.actions"
-          [rowId]="properties.rowId"
-          [rowData]="rowData"
-          classList="dropdown-item"
-          (emitAction)="emitAction($event, rowData[properties.rowId])"
-        ></app-actions>
+        <div class="dropdown">
+          <button
+            id="moreActions{{ rowData[properties.rowId] }}"
+            class="btn-icon-inline more-actions-toggle"
+            data-toggle="dropdown"
+            [attr.aria-label]="properties.internationalization['Actions Menu']"       
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+          </button>
+          <app-actions
+            class="dropdown-menu dropdown-menu-right"
+            attr.aria-labelledby="moreActions{{ rowData[properties.rowId] }}"
+            [actionItems]="properties.actions"
+            [rowId]="properties.rowId"
+            [rowData]="rowData"
+            classList="dropdown-item"
+            (emitAction)="emitAction($event, rowData[properties.rowId])"
+          ></app-actions>
+        </div>
       </ng-template>
     </td>
   </tr>
