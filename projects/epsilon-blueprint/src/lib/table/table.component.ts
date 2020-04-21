@@ -28,7 +28,7 @@ export class TableComponent implements OnInit, OnChanges {
 
   // Defaults
   propertyDefaults = {
-    search:  {
+    search: {
       hasSearch: true
     },
     sort: {
@@ -50,9 +50,10 @@ export class TableComponent implements OnInit, OnChanges {
       'Actions Menu': 'Actions Menu',
       'Column Selector': 'Column Selector:',
       'Default': '(Default)',
-      'Showing numVisible out of numTotal': 'Showing #{numVisible} out of #{numTotal}',
+      'Showing numVisible out of numTotal':
+        'Showing #{numVisible} out of #{numTotal}',
       'Display Density': 'Display Density:',
-      'numResults results': '#{numResults} result(s)', 
+      'numResults results': '#{numResults} result(s)',
       'Number of Rows': 'Number of Rows per Page',
       'First Page': 'First Page',
       'Previous Page': 'Previous Page',
@@ -60,7 +61,7 @@ export class TableComponent implements OnInit, OnChanges {
       'Last Page': 'Last Page',
       'Display Density Options': {
         'Comfortable': 'Comfortable',
-        'Compact': 'Compact'
+        'Compact': 'Compact',
       },
       'Number Of Rows Options': [
         { optionText: '10 rows', optionValue: 10 },
@@ -74,7 +75,7 @@ export class TableComponent implements OnInit, OnChanges {
   columnDefaults = {
     isColumnDisplayed: true,
     isSortable: true
-  }
+  };
 
   // Data
   filteredData = [];
@@ -85,10 +86,8 @@ export class TableComponent implements OnInit, OnChanges {
   isSelectAllIndeterminate = false;
 
   // Sorting
-  sortColumnName: string;
-  columnIndex: number;
-  sortOrder = 'ascending';
-  isSortActive = true;
+  sortColumnKey: string;
+  sortOrder: string;
 
   // Pagination
   startIndex: number;
@@ -125,38 +124,65 @@ export class TableComponent implements OnInit, OnChanges {
   ngOnInit() {
     // Set defaults
     this.properties = Object.assign(this.propertyDefaults, this.properties);
-    this.properties.columns = this.properties.columns.map(column => Object.assign({...this.columnDefaults}, column));
+    this.properties.columns = this.properties.columns.map(column =>
+      Object.assign({ ...this.columnDefaults }, column)
+    );
 
     // LocalStorage
     const displayDensityName =
       localStorage.getItem('selectedDensity') || 'Comfortable';
     this.setDisplayDensity(displayDensityName);
-    this.sortColumnName = this.properties.sort.defaultSortedColumn;
 
     // Input Validations
     this.properties.columns.forEach(col => {
       if (!col.key && col.type !== ColumnType.TEMPLATE) {
-        let err = new Error(`Missing 'key' property in\n${JSON.stringify(col)}`);
+        let err = new Error(
+          `Missing 'key' property in\n${JSON.stringify(col)}`
+        );
         err.name = 'Missing Input';
         throw err;
       }
-      if (col.link && !(col.link.element === 'a' || col.link.element === 'button')) {
-        let err = new Error(`Link element must be either 'a' or 'button' in\n${JSON.stringify(col)}`);
+      if (
+        col.link &&
+        !(col.link.element === 'a' || col.link.element === 'button')
+      ) {
+        let err = new Error(
+          `Link element must be either 'a' or 'button' in\n${JSON.stringify(
+            col
+          )}`
+        );
         err.name = 'Invalid Input';
         throw err;
       }
-      if (col.link && col.link.element === 'a' && !(col.link.path || col.link.href)) {
-        let err = new Error(`Link must have either href or path when element is 'a' in\n${JSON.stringify(col)}`);
+      if (
+        col.link &&
+        col.link.element === 'a' &&
+        !(col.link.path || col.link.href)
+      ) {
+        let err = new Error(
+          `Link must have either href or path when element is 'a' in\n${JSON.stringify(
+            col
+          )}`
+        );
         err.name = 'Missing Input';
         throw err;
       }
       if (col.link && col.link.element === 'button' && !col.link.action) {
-        let err = new Error(`Link must have action when element is 'button' in\n${JSON.stringify(col)}`);
+        let err = new Error(
+          `Link must have action when element is 'button' in\n${JSON.stringify(
+            col
+          )}`
+        );
         err.name = 'Missing Input';
         throw err;
       }
-      if (col.icon && !(col.icon.color === 'warning' || col.icon.color === 'midnight')) {
-        console.warn(`"${col.icon.color}" invalid value for bp-table icon column color: expects either "midnight" or "warning".`);
+      if (
+        col.icon &&
+        !(col.icon.color === 'warning' || col.icon.color === 'midnight')
+      ) {
+        console.warn(
+          `"${col.icon.color}" invalid value for bp-table icon column color: expects either "midnight" or "warning".`
+        );
       }
     });
 
@@ -169,8 +195,8 @@ export class TableComponent implements OnInit, OnChanges {
   ngOnChanges(changes) {
     if (
       (changes.isDataLoading &&
-      changes.isDataLoading.currentValue === false &&
-      this.data.length > 0) ||
+        changes.isDataLoading.currentValue === false &&
+        this.data.length > 0) ||
       (changes.data && !changes.data.firstChange)
     ) {
       this.data = changes.data.currentValue;
@@ -193,15 +219,19 @@ export class TableComponent implements OnInit, OnChanges {
     }
   }
 
+  getColumn(key) {
+    return this.properties.columns.filter(column => column.key === key)[0];
+  }
+
   // --------------- Sorting ---------------
 
   defaultSort() {
     this.sortOrder = this.properties.sort.defaultSortOrder;
-    this.sortColumnName = this.properties.sort.defaultSortedColumn;
+    this.sortColumnKey = this.properties.sort.defaultSortedColumn;
 
     this.sortOrder === 'ascending'
-    ? this.ascSort(this.sortColumnName)
-    : this.descSort(this.sortColumnName);
+      ? this.ascSort(this.properties.sort.defaultSortedColumn)
+      : this.descSort(this.properties.sort.defaultSortedColumn);
   }
 
   ascSort(colHeader: string) {
@@ -213,59 +243,61 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   sortByKeyAsc(array, key) {
-    return array.sort((a, b) => {
-      const x = a[key];
-      const y = b[key];
-      return x < y ? -1 : 1;
-    });
+    const column: any = this.properties.columns.filter(
+      column => column.key === key
+    )[0];
+    if (column.sortFunctionAsc) {
+      return array.sort((a, b) => column.sortFunctionAsc(a[key], b[key]));
+    } else {
+      return array.sort((a, b) => {
+        const x = a[key];
+        const y = b[key];
+        return x < y ? -1 : 1;
+      });
+    }
   }
 
   sortByKeyDesc(array, key) {
-    return array.sort((a, b) => {
-      const x = a[key];
-      const y = b[key];
-      return x > y ? -1 : 1;
-    });
+    const column: any = this.properties.columns.filter(
+      column => column.key === key
+    )[0];
+    if (column.sortFunctionDesc) {
+      return array.sort((a, b) => column.sortFunctionDesc(a[key], b[key]));
+    } else {
+      return array.sort((a, b) => {
+        const x = a[key];
+        const y = b[key];
+        return x > y ? -1 : 1;
+      });
+    }
   }
 
-  getAriaSortOrder(index: number): string {
-    if (!this.sortColumnName) {
-      this.sortColumnName = this.properties.sort.defaultSortedColumn;
+  getAriaSortOrder(key: string): string {
+    // Set aria attributes before data is loaded, but after column headers have rendered
+    if (this.isDataLoading && key === this.sortColumnKey) {
+      return this.properties.sort.defaultSortOrder;
     }
-    if (!this.columnIndex) {
-      this.columnIndex = this.properties.columns.findIndex(
-        (item, i: any) => {
-          if (item.key === this.sortColumnName) {
-            return i;
-          }
-        }
-      );
-    }
-    if (this.columnIndex === index) {
-      this.isSortActive = true;
+    // Set aria attributes after data is loaded
+    else if (key === this.sortColumnKey) {
       return this.sortOrder;
     } else {
       return null;
     }
   }
 
-  applySort(colHeader: string, columnIndex: number) {
-    this.columnIndex = columnIndex;
-    if (
-      (this.sortColumnName !== colHeader &&
-        typeof this.sortOrder !== undefined) ||
-      this.sortOrder === '' ||
-      this.sortOrder === 'descending'
-    ) {
-      this.ascSort(colHeader);
-      this.isSortActive = true;
-      this.sortOrder = 'ascending';
-      this.sortColumnName = colHeader;
+  applySort(colHeader: string) {
+    if (colHeader === this.sortColumnKey) {
+      if (this.sortOrder === '' || this.sortOrder === 'descending') {
+        this.sortOrder = 'ascending';
+        this.ascSort(colHeader);
+      } else {
+        this.sortOrder = 'descending';
+        this.descSort(colHeader);
+      }
     } else {
-      this.descSort(colHeader);
-      this.isSortActive = true;
-      this.sortOrder = 'descending';
-      this.sortColumnName = '';
+      this.sortColumnKey = colHeader;
+      this.sortOrder = 'ascending';
+      this.ascSort(colHeader);
     }
     this.paginate({
       currentPage: this.currentPage,
