@@ -61,7 +61,7 @@ export class TableComponent implements OnInit, OnChanges {
       'Last Page': 'Last Page',
       'Display Density Options': {
         'Comfortable': 'Comfortable',
-        'Compact': 'Compact',
+        'Compact': 'Compact'
       },
       'Number Of Rows Options': [
         { optionText: '10 rows', optionValue: 10 },
@@ -285,7 +285,7 @@ export class TableComponent implements OnInit, OnChanges {
     }
   }
 
-  applySort(colHeader: string) {
+  sort(colHeader: string) {
     if (colHeader === this.sortColumnKey) {
       if (this.sortOrder === '' || this.sortOrder === 'descending') {
         this.sortOrder = 'ascending';

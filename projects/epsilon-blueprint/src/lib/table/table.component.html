@@ -42,7 +42,7 @@
               [hidden]="!column.isColumnDisplayed"
               [attr.aria-sort]="getAriaSortOrder(column.key)"
             >
-              <button (click)="applySort(column.key)">
+              <button (click)="sort(column.key)">
                 {{ column.headerText }}
               </button>
             </th>
