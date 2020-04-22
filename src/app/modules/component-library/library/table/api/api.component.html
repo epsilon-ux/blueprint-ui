@@ -250,7 +250,7 @@
                 Indicates whether or not the column should be displayed by
                 default.
               </td>
-              <td>Use "true" if the column should be displayed by default.</td>
+              <td>When "true" the column is displayed by default.</td>
             </tr>
             <tr>
               <td>type</td>
@@ -269,6 +269,24 @@
               </td>
               <td>The type of the column.</td>
               <td>This determines how to handle the content.</td>
+            </tr>
+            <tr>
+              <td>isSortable</td>
+              <td>boolean</td>
+              <td>Indicates if the column is sortable.</td>
+              <td>
+                <p>Default is "true".</p>
+                <p>When "true" the column is sortable.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>sortFunctionAsc</td>
+              <td>Function</td>
+              <td>The function passed into the sort function when sorting the data by the column in ascending order (small to large).</td>
+              <td>
+                <p>The function should be formatted like a sort function, including having two parameters.</p>
+                <p>The function will be used and then the array will be reversed for descending sort.</p>
+              </td>
             </tr>
             <tr>
               <td>template</td>
