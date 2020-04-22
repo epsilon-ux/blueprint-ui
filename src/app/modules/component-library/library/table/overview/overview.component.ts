@@ -34,6 +34,8 @@ export class OverviewComponent implements OnInit {
         {
           key: 'date',
           headerText: 'Date',
+          sortFunctionAsc: (a, b) => new Date(a).getTime() - new Date(b).getTime(),
+          sortFunctionDesc: (a, b) => new Date(b).getTime() - new Date(a).getTime(),
           isColumnDisplayed: true
         },
         {
