@@ -261,8 +261,8 @@ export class TableComponent implements OnInit, OnChanges {
     const column: any = this.properties.columns.filter(
       column => column.key === key
     )[0];
-    if (column.sortFunctionDesc) {
-      return array.sort((a, b) => column.sortFunctionDesc(a[key], b[key]));
+    if (column.sortFunctionAsc) {
+      return array.sort((a, b) => column.sortFunctionAsc(a[key], b[key])).reverse();
     } else {
       return array.sort((a, b) => {
         const x = a[key];
