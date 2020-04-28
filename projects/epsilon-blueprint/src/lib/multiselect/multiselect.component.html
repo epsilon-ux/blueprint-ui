@@ -1,0 +1,58 @@
+<div class="multiselect">
+  <label [for]="uuid" [ngClass]="{'sr-only': isLabelHidden}">
+    {{ label }}
+  </label>
+  <ng-select
+    #columnSelectorDropdown
+    [labelForId]="uuid"
+    [multiple]="true"
+    [items]="optionItems"
+    bindValue="value"
+    bindLabel="label"
+    [placeholder]="placeholder"
+    [searchable]="isSearchable"
+    [clearable]="false"
+    [closeOnSelect]="false"
+    [disabled]="isDisabled"
+    [(ngModel)]="ngModel"
+    (change)="emitSelected()"
+  >
+    <!-- TODO: Implement custom placeholder
+    <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+      <div class="ng-value multiselect-value">
+        <span class="ng-value-label">
+          {{
+            parseLookupString(
+              internationalization['Showing numVisible out of numTotal'],
+              {
+                numVisible: selectedColumns.length,
+                numTotal: columnInfo.length
+              }
+            )
+          }}
+        </span>
+      </div>
+    </ng-template> -->
+
+    <!-- TODO: Add tag templates -->
+
+    <!-- Option Template -->
+    <ng-template
+      ng-option-tmp
+      let-item="item"
+      let-item$="item$"
+      let-index="index"
+    >
+      <div class="decorative-checkbox-container">
+        <span [ngClass]="{
+            'decorative-checkbox': true,
+            'is-checked': item$.selected,
+            'is-disabled': item.disabled
+          }"
+        >
+          {{ bindLabel ? item[bindLabel] : item }}
+        </span>
+      </div>
+    </ng-template>
+  </ng-select>
+</div>

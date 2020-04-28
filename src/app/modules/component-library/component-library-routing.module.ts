@@ -48,6 +48,9 @@ const routes: Routes = [
     { path: 'landing-page-header', loadChildren: () => import('./library/landing-page-header/landing-page-header.module')
     .then(m => m.LandingPageHeaderLibraryModule) },
 
+    { path: 'multiselect', loadChildren: () => import('./library/multiselect/multiselect.module')
+      .then(m => m.MultiselectLibraryModule) },
+
     { path: 'nav-secondary', loadChildren: () => import('./library/nav-secondary/nav-secondary.module')
       .then(m => m.NavSecondaryLibraryModule) },
 

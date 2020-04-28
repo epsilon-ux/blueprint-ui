@@ -1,0 +1,41 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-2">
+              <bp-multiselect
+                label="Label Text"
+                [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                [isSearchable]="false"
+                [(ngModel)]="selectedOptions"
+                (change)="handleMulti($event)"
+              ></bp-multiselect>
+            </div>
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-2">
+              <bp-multiselect
+                label="Label Text"
+                [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                [isSearchable]="false"
+                [isDisabled]="true"
+                (change)="handleMulti($event)"
+              ></bp-multiselect>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
