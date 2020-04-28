@@ -9,6 +9,7 @@ import { generateUniqueId } from '../../helpers';
 export class MultiselectComponent implements OnInit {
 
   @Input() label = '';
+  @Input() isLabelHidden = false;
   @Input() optionItems = [];
   @Input() isSearchable = false;
   @Input() placeholder = '';
@@ -21,7 +22,17 @@ export class MultiselectComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.validate();
+  }
+
+  validate() {
+    if (!this.label) {
+      let err = new Error('\'label\' is a required Input of bp-multiselect. The label can be visually hidden using the \'isLabelHidden\' property.');
+      err.name = 'Missing Input';
+      throw err;
+    }
+  }
 
   emitSelected() {
     this.change.emit(this.selectedOptions);

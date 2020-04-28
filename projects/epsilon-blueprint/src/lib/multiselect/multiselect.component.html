@@ -1,5 +1,5 @@
 <div class="multiselect">
-  <label [for]="uuid">
+  <label [for]="uuid" [ngClass]="{'sr-only': isLabelHidden}">
     {{ label }}
   </label>
   <ng-select
