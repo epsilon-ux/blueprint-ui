@@ -15,6 +15,7 @@ export class MultiselectComponent implements OnInit {
   @Input() placeholder = '';
   @Input() bindValue = '';
   @Input() bindLabel = '';
+  @Input() isDisabled = false;
   @Input() ngModel = [];
   @Input() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
