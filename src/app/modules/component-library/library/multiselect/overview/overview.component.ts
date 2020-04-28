@@ -17,6 +17,10 @@ export class OverviewComponent implements OnInit {
     },
     {
       label: 'Option 3',
+      value: 'option3'
+    },
+    {
+      label: 'Option 3',
       value: 'option3',
       disabled: true
     }

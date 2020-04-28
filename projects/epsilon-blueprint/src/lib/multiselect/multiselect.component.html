@@ -35,6 +35,25 @@
     </ng-template> -->
 
     <!-- TODO: Add tag templates -->
+    <ng-template
+      ng-multi-label-tmp
+      let-items="items"
+      let-clear="clear"
+    >
+      <div class="ng-value" *ngFor="let item of items | slice:0:2">
+        <span
+          class="ng-value-icon left"
+          aria-hidden="true"
+          (click)="clear(item)"
+        >
+          <i class="fas fa-times"></i>
+        </span>
+        <span class="ng-value-label">{{ item[bindLabel] }}</span>
+      </div>
+      <div class="ng-value" *ngIf="items.length > 2">
+        <span class="ng-value-label">{{items.length - 2}} more...</span>
+      </div>
+    </ng-template>
 
     <!-- Option Template -->
     <ng-template
