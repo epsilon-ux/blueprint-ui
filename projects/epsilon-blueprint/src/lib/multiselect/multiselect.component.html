@@ -48,10 +48,10 @@
         >
           <i class="fas fa-times"></i>
         </span>
-        <span class="ng-value-label">{{ item[bindLabel] }}</span>
+        <span class="ng-value-label">{{ item[bindLabel] | slice:0:10 }}{{ item[bindLabel].length > 10 ? '...' :  '' }}</span>
       </div>
       <div class="ng-value" *ngIf="items.length > 2">
-        <span class="ng-value-label">{{items.length - 2}} more...</span>
+        <span class="ng-value-label">+{{items.length - 2}} more</span>
       </div>
     </ng-template>
 
