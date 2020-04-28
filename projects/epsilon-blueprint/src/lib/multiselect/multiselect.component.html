@@ -16,7 +16,8 @@
     [(ngModel)]="ngModel"
     (change)="emitSelected()"
   >
-    <!-- <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+    <!-- TODO: Implement custom placeholder
+    <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
       <div class="ng-value multiselect-value">
         <span class="ng-value-label">
           {{
@@ -31,6 +32,10 @@
         </span>
       </div>
     </ng-template> -->
+
+    <!-- TODO: Add tag templates -->
+
+    <!-- Option Template -->
     <ng-template
       ng-option-tmp
       let-item="item"

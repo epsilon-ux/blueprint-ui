@@ -12,7 +12,7 @@ export class OverviewComponent implements OnInit {
       value: 'option1'
     },
     {
-      label: 'Option 2',
+      label: 'Option 2 has very very long text',
       value: 'option2'
     },
     {
