@@ -6,13 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
-  optionItems = ['Option 1', 'Option 2'];
+  optionItemsSimple = ['Option 1', 'Option 2'];
+  optionItems = [
+    {
+      label: 'Option 1',
+      value: 'option1'
+    },
+    {
+      label: 'Option 2',
+      value: 'option2'
+    }
+  ];
 
   constructor() { }
 
   ngOnInit() { }
 
-  handleMulti(e) {
-    console.log(e);
-  }
+  handleMulti(e) { }
 }

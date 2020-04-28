@@ -11,7 +11,19 @@
             <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-2">
               <bp-multiselect
                 label="Label Text"
+                [optionItems]="optionItemsSimple"
+                placeholder="Select an item"
+                [isSearchable]="true"
+                (change)="handleMulti($event)"
+              ></bp-multiselect>
+            </div>
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-2">
+              <bp-multiselect
+                label="Label Text"
                 [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select an item"
                 [isSearchable]="true"
                 (change)="handleMulti($event)"
               ></bp-multiselect>

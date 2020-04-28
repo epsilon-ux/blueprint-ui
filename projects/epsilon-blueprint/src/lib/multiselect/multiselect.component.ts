@@ -11,6 +11,9 @@ export class MultiselectComponent implements OnInit {
   @Input() label = '';
   @Input() optionItems = [];
   @Input() isSearchable = false;
+  @Input() placeholder = '';
+  @Input() bindValue = '';
+  @Input() bindLabel = '';
   @Output() change = new EventEmitter();
   selectedOptions = [];
 
@@ -18,10 +21,9 @@ export class MultiselectComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  emitSelected(e) {
-    this.change.emit(e);
+  emitSelected() {
+    this.change.emit(this.selectedOptions);
   }
 }

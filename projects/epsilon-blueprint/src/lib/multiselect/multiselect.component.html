@@ -7,12 +7,14 @@
     [labelForId]="uuid"
     [multiple]="true"
     [items]="optionItems"
-    placeholder="Select an Item"
+    bindValue="value"
+    bindLabel="label"
+    [placeholder]="placeholder"
     [searchable]="isSearchable"
     [clearable]="false"
     [closeOnSelect]="false"
     [(ngModel)]="selectedOptions"
-    (change)="emitSelected($event)"
+    (change)="emitSelected()"
   >
     <!-- <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
       <div class="ng-value multiselect-value">
@@ -42,7 +44,7 @@
             'is-disabled': false
           }"
         >
-          {{ item }}
+          {{ bindLabel ? item[bindLabel] : item }}
         </span>
       </div>
     </ng-template>
