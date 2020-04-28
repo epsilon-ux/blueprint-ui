@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
+
       </p>
     </div>
     <div class="col-12">
@@ -16,6 +17,7 @@
                 bindValue="value"
                 placeholder="Select an item"
                 [isSearchable]="false"
+                [(ngModel)]="selectedOptions"
                 (change)="handleMulti($event)"
               ></bp-multiselect>
             </div>

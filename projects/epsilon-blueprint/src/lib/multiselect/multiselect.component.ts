@@ -15,8 +15,9 @@ export class MultiselectComponent implements OnInit {
   @Input() placeholder = '';
   @Input() bindValue = '';
   @Input() bindLabel = '';
+  @Input() ngModel = [];
+  @Input() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
-  selectedOptions = [];
 
   uuid = 'mutliselect' + generateUniqueId();
 
@@ -28,13 +29,13 @@ export class MultiselectComponent implements OnInit {
 
   validate() {
     if (!this.label) {
-      let err = new Error('\'label\' is a required Input of bp-multiselect. The label can be visually hidden using the \'isLabelHidden\' property.');
+      let err = new Error('\'label\' is a required Input of bp-multiselect. The label can be visually hidden using the \'isLabelHidden property.');
       err.name = 'Missing Input';
       throw err;
     }
   }
 
   emitSelected() {
-    this.change.emit(this.selectedOptions);
+    this.change.emit(this.ngModel);
   }
 }

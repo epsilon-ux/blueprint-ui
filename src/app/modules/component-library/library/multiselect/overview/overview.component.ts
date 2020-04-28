@@ -17,9 +17,13 @@ export class OverviewComponent implements OnInit {
     }
   ];
 
+  selectedOptions;
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.selectedOptions = ['option1'];
+  }
 
   handleMulti(e) { }
 }
