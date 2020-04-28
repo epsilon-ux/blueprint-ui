@@ -41,7 +41,7 @@
         <span [ngClass]="{
             'decorative-checkbox': true,
             'is-checked': item$.selected,
-            'is-disabled': false
+            'is-disabled': item.disabled
           }"
         >
           {{ bindLabel ? item[bindLabel] : item }}
