@@ -20,11 +20,11 @@ export class MultiselectComponent implements OnInit {
   @Input() optionItems = [];
   @Input() isSearchable = false;
   @Input() placeholder = '';
-  @Input() bindValue = '';
-  @Input() bindLabel = '';
+  @Input() bindValue: string = null;
+  @Input() bindLabel: string = null;
   @Input() isDisabled = false;
   @Input() ngModel = [];
-  @Input() ngModelChange = new EventEmitter();
+  @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
 
   uuid = 'mutliselect' + generateUniqueId();
