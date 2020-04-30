@@ -17,24 +17,35 @@
     [(ngModel)]="ngModel"
     (change)="emitSelected()"
   >
-    <!-- TODO: Implement custom placeholder
-    <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
-      <div class="ng-value multiselect-value">
-        <span class="ng-value-label">
-          {{
-            parseLookupString(
-              internationalization['Showing numVisible out of numTotal'],
-              {
-                numVisible: selectedColumns.length,
-                numTotal: columnInfo.length
-              }
-            )
-          }}
-        </span>
-      </div>
-    </ng-template> -->
 
-    <!-- TODO: Add tag templates -->
+    <!-- Custom Placeholder Template -->
+    <ng-template *ngIf="multiLabelTemplate" ng-multi-label-tmp let-items="items" let-clear="clear">
+      <ng-template
+        [ngTemplateOutlet]="multiLabelTemplate"
+        [ngTemplateOutletContext]="{ items: items, clear: clear }">
+      </ng-template>
+    </ng-template>
+
+    <!-- Tag Template -->
+    <ng-template
+      ng-multi-label-tmp
+      let-items="items"
+      let-clear="clear"
+    >
+      <div class="ng-value" *ngFor="let item of items | slice:0:2">
+        <span
+          class="ng-value-icon left"
+          aria-hidden="true"
+          (click)="clear(item)"
+        >
+          <i class="fas fa-times"></i>
+        </span>
+        <span class="ng-value-label">{{ item[bindLabel] | slice:0:10 }}{{ item[bindLabel].length > 10 ? '...' :  '' }}</span>
+      </div>
+      <div class="ng-value" *ngIf="items.length > 2">
+        <span class="ng-value-label">+{{items.length - 2}} more</span>
+      </div>
+    </ng-template>
 
     <!-- Option Template -->
     <ng-template

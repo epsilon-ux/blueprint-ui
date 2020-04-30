@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { MultiselectComponent } from './multiselect.component';
+import { MultiselectComponent, NgMultiLabelTemplateDirective } from './multiselect.component';
 
 @NgModule({
-  declarations: [MultiselectComponent],
+  declarations: [MultiselectComponent, NgMultiLabelTemplateDirective],
   imports: [
     CommonModule,
     RouterModule,
     NgSelectModule,
     FormsModule
   ],
-  exports: [MultiselectComponent]
+  exports: [MultiselectComponent, NgMultiLabelTemplateDirective]
 })
 export class MultiselectModule { }

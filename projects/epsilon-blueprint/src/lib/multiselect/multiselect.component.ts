@@ -1,5 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive } from '@angular/core';
 import { generateUniqueId } from '../../helpers';
+
+@Directive({ selector: '[ng-multi-label-tmp]' })
+export class NgMultiLabelTemplateDirective {
+    constructor(public template: TemplateRef<any>) { }
+}
 
 @Component({
   selector: 'bp-multiselect',
@@ -7,6 +12,8 @@ import { generateUniqueId } from '../../helpers';
   styleUrls: ['./multiselect.component.scss']
 })
 export class MultiselectComponent implements OnInit {
+
+  @ContentChild(NgMultiLabelTemplateDirective, { read: TemplateRef, static: false }) multiLabelTemplate: TemplateRef<any>;
 
   @Input() label = '';
   @Input() isLabelHidden = false;
