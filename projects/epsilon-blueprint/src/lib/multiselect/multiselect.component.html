@@ -1,0 +1,69 @@
+<div class="multiselect">
+  <label [for]="uuid" [ngClass]="{'sr-only': isLabelHidden}">
+    {{ label }}
+  </label>
+  <ng-select
+    #columnSelectorDropdown
+    [labelForId]="uuid"
+    [multiple]="true"
+    [items]="optionItems"
+    bindValue="value"
+    bindLabel="label"
+    [placeholder]="placeholder"
+    [searchable]="isSearchable"
+    [clearable]="false"
+    [closeOnSelect]="false"
+    [disabled]="isDisabled"
+    [(ngModel)]="ngModel"
+    (change)="emitSelected()"
+  >
+
+    <!-- Custom Placeholder Template -->
+    <ng-template *ngIf="multiLabelTemplate" ng-multi-label-tmp let-items="items" let-clear="clear">
+      <ng-template
+        [ngTemplateOutlet]="multiLabelTemplate"
+        [ngTemplateOutletContext]="{ items: items, clear: clear }">
+      </ng-template>
+    </ng-template>
+
+    <!-- Tag Template -->
+    <ng-template
+      ng-multi-label-tmp
+      let-items="items"
+      let-clear="clear"
+    >
+      <div class="ng-value" *ngFor="let item of items | slice:0:2">
+        <span
+          class="ng-value-icon left"
+          aria-hidden="true"
+          (click)="clear(item)"
+        >
+          <i class="fas fa-times"></i>
+        </span>
+        <span class="ng-value-label">{{ item[bindLabel] | slice:0:10 }}{{ item[bindLabel].length > 10 ? '...' :  '' }}</span>
+      </div>
+      <div class="ng-value" *ngIf="items.length > 2">
+        <span class="ng-value-label">+{{items.length - 2}} more</span>
+      </div>
+    </ng-template>
+
+    <!-- Option Template -->
+    <ng-template
+      ng-option-tmp
+      let-item="item"
+      let-item$="item$"
+      let-index="index"
+    >
+      <div class="decorative-checkbox-container">
+        <span [ngClass]="{
+            'decorative-checkbox': true,
+            'is-checked': item$.selected,
+            'is-disabled': item.disabled
+          }"
+        >
+          {{ bindLabel ? item[bindLabel] : item }}
+        </span>
+      </div>
+    </ng-template>
+  </ng-select>
+</div>

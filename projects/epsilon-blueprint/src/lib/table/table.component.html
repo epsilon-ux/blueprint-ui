@@ -34,15 +34,15 @@
               (change)="onSelectAllRows($event)"
             ></app-select-all-checkbox>
           </th>
-          <ng-container *ngFor="let column of properties.columns; let i = index">
+          <ng-container *ngFor="let column of properties.columns">
             <th
               *ngIf="column.isSortable; else columnNotSortable"
               class="th-sortable"
               scope="col"
               [hidden]="!column.isColumnDisplayed"
-              [attr.aria-sort]="isSortActive ? getAriaSortOrder(i) : 'null'"
+              [attr.aria-sort]="getAriaSortOrder(column.key)"
             >
-              <button (click)="applySort(column.key, i)">
+              <button (click)="sort(column.key)">
                 {{ column.headerText }}
               </button>
             </th>

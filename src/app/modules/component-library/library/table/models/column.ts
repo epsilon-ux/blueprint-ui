@@ -6,6 +6,7 @@ export interface Column {
   isColumnDisplayed: boolean;
   type?: ColumnType;
   isSortable?: boolean;
+  sortFunctionAsc?: Function;
   template?: TemplateRef<any>;
   icon?: {
       color: string;
