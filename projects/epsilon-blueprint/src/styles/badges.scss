@@ -19,6 +19,13 @@
     color: $coconut;
 }
 
+.badge-alert
+{
+    border-color: $feedback-color-alert;
+    background: rgba($feedback-color-alert, 0.2);
+    color: $font-color-primary;
+}
+
 .badge-success
 {
     border-color: $feedback-color-success;
