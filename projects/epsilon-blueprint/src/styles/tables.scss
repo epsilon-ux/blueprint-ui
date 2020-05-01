@@ -95,12 +95,12 @@
   {
     tr
     {
-      &.tr-stripe-odd
+      &.tr-stripe-even
       {
         background: $coconut;
       }
 
-      &.tr-stripe-even
+      &.tr-stripe-odd
       {
         background: $cloud;
       }

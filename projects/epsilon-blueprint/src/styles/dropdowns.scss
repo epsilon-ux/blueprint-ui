@@ -80,7 +80,8 @@
   {
     color: $feedback-color-warning;
 
-    &:hover
+    &:hover,
+    &:focus
     {
       border-color: transparent;
       background: $feedback-color-warning;
