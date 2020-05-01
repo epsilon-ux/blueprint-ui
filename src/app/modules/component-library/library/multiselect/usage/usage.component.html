@@ -2,8 +2,165 @@
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
-        
+        Label and optionItems are the only requried Inputs for the multiselect component. All other additions shown below are optional and depend on the situation.
+      </p>
+
+      <h2>Variations</h2>
+      <h3>Standard multiselect</h3>
+      <p>
+        This is a barebones variation of the multiselect.
       </p>
     </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <bp-multiselect
+                label="Label Text"
+                [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                (change)="handleMulti($event)"
+              ></bp-multiselect>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard multiselect with search</h3>
+      <p>
+        Use this variation to allow searching in a multiselect.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <bp-multiselect
+                label="Label Text"
+                [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                [isSearchable]="true"
+                (change)="handleMulti($event)"
+              ></bp-multiselect>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard multiselect with disabled options</h3>
+      <p>
+        Use this variation to disable individual options within the select menu.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <bp-multiselect
+                label="Label Text"
+                [optionItems]="optionItemsWithDisabled"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                (change)="handleMulti($event)"
+              ></bp-multiselect>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h3>Disabled multiselect</h3>
+      <p>
+        Use this variation when the user can not change the value of the multiselect, and the selected items should not be submitted in a form.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <bp-multiselect
+                label="Label Text"
+                [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                [isDisabled]="true"
+                (change)="handleMulti($event)"
+              ></bp-multiselect>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-8 col-xl-7">
+      <h3>Readonly multiselect</h3>
+      <p>
+        Use this variation when the user can not change the value of the multiselect, and the selected items should be submitted in a form.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <bp-multiselect
+                label="Label Text"
+                [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                [isReadonly]="true"
+                (change)="handleMulti($event)"
+              ></bp-multiselect>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard multiselect with custom placeholder</h3>
+      <p>
+        Use this variation when the user can not change the value of the multiselect, and the selected items should be submitted in a form.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <bp-multiselect
+                label="Label Text"
+                [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                (change)="handleMulti($event)"
+              >
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                  <span>Selected {{ items.length }} items</span>
+                </ng-template>
+              </bp-multiselect>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
