@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { parseLookupString } from '../../helpers';
+import { parseLookupString } from '../../../../helpers';
 
 @Component({
   selector: 'app-column-selector',

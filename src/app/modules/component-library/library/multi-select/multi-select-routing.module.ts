@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MultiselectComponent } from './multiselect.component';
+import { MultiselectComponent } from './multi-select.component';
 import { OverviewComponent } from './overview/overview.component';
 import { UsageComponent } from './usage/usage.component';
 import { PlaygroundComponent } from './playground/playground.component';

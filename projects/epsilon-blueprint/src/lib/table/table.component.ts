@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { Column, ColumnType } from './models/column';
 import Properties from './models/properties';
-import { parseLookupString } from './helpers';
+import { parseLookupString } from '../../helpers';
 
 @Component({
   selector: 'bp-table',

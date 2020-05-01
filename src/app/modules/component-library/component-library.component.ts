@@ -54,8 +54,8 @@ export class ComponentLibraryComponent {
             route: './dropdown'
           },
           {
-            text: 'Multiselect',
-            route: './multiselect'
+            text: 'Multi-select',
+            route: './multi-select'
           },
           {
             text: 'Radio Button',
