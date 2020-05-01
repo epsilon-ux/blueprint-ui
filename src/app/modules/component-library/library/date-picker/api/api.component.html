@@ -1,7 +1,27 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col">
-      <p>For API documentation, visit the <a href="https://daniel-projects.firebaseapp.com/owlng/date-time-picker">ng-pick-datetime documentation site</a>.</p>
+      <p>
+        The date picker has a few dependencies that are not included in the epsilon-blueprint package:
+      </p>
+      <ul>
+        <li>
+          ng-pick-datetime@6.0.16
+        </li>
+        <li>
+          @angular/cdk@6.4.7
+        </li>
+        <li>
+          In the application's app.module.ts file, import BrowserAnimationsModule from @angular/platform-browser/animations
+        </li>
+        <li>
+          In the application's styles.scss file, add the following:
+          <code class="d-block">
+            @import "~ng-pick-datetime/assets/style/picker.min.css";
+          </code>
+        </li>
+      </ul>
+      <p>For ng-pick-datetime API documentation, visit the <a href="https://daniel-projects.firebaseapp.com/owlng/date-time-picker">ng-pick-datetime website</a>.</p>
     </div>
   </div>
 </section>
