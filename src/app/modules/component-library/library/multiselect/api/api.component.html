@@ -1,10 +1,11 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col">
-
       <h2 class="mt-0">Inputs</h2>
-      <table class="table table-bordered-rows mb-5">
-        <caption class="sr-only">Multiselect inputs</caption>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          Multiselect inputs
+        </caption>
         <thead>
           <tr>
             <th class="pt-0">Input</th>
@@ -34,8 +35,13 @@
             <td>string[] | object[]</td>
             <td>The data used to populate the options of the multiselect.</td>
             <td>
-              <p>This can be either an array of strings, or an array of objects.</p>
-              <p>Individual options can be disabled by adding a "disabled" key with a value of true to the object for that option.</p>
+              <p>
+                This can be either an array of strings, or an array of objects.
+              </p>
+              <p>
+                Individual options can be disabled by adding a key:value pair of
+                disabled:true to the object for that option.
+              </p>
             </td>
           </tr>
           <tr>
@@ -72,7 +78,10 @@
             <td>
               <p>Default is "false".</p>
               <p>When "true" the multiselect is disabled.</p>
-              <p>When disabled, the formcontrol is not editable, and the data will not be submitted.</p>
+              <p>
+                When disabled, the form control is not editable, and the data
+                will not be submitted.
+              </p>
             </td>
           </tr>
           <tr>
@@ -82,15 +91,20 @@
             <td>
               <p>Default is "false".</p>
               <p>When "true" the multiselect is readonly.</p>
-              <p>When readonly, the formcontrol is not editable, and the data will be submitted.</p>
+              <p>
+                When readonly, the form control is not editable, and the data
+                will be submitted.
+              </p>
             </td>
           </tr>
         </tbody>
       </table>
 
       <h2>Outputs</h2>
-      <table class="table table-bordered-rows mb-5">
-        <caption class="sr-only">Multiselect outputs</caption>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          Multiselect outputs
+        </caption>
         <thead>
           <tr>
             <th class="w-25 pt-0">Output</th>
@@ -100,20 +114,32 @@
         <tbody>
           <tr>
             <td>ngModel</td>
-            <td>Exposes the ngModel of the select. Reflects the current selection in the form of an array of the selected values.</td>
+            <td>
+              Exposes the ngModel of the select. Reflects the current selection
+              in the form of an array of the selected values.
+            </td>
           </tr>
           <tr>
             <td>change</td>
-            <td>Whenever the selection is updated an array of the selected values will be emitted.</td>
+            <td>
+              Whenever the selection is updated, an array of the selected values
+              will be emitted.
+            </td>
           </tr>
         </tbody>
       </table>
 
       <h2>Content Projection</h2>
-      <p>The ng-multi-label-tmp attribute is the value for the optional ng-content directives' select attribute.</p>
+      <p>
+        The ng-multi-label-tmp attribute is the value for the optional
+        ng-content directives' select attribute.
+      </p>
 
       <h3>ng-multi-label-tmp</h3>
-      <p>Used to create a custom placeholder that can utilize the selected items array and clear function.</p>
+      <p>
+        Used to create a custom placeholder that can utilize the selected items
+        array and clear function.
+      </p>
       <markdown
         [data]="codeExample"
         lineNumbers

@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
-        Label and optionItems are the only requried Inputs for the multiselect component. All other additions shown below are optional and depend on the situation.
+        Label and optionItems are the only required Inputs for the multiselect
+        component. All other additions shown below are optional and depend on
+        the situation.
       </p>
 
       <h2>Variations</h2>
@@ -81,7 +83,8 @@
     <div class="col-lg-8 col-xl-7">
       <h3>Disabled multiselect</h3>
       <p>
-        Use this variation when the user can not change the value of the multiselect, and the selected items should not be submitted in a form.
+        Use this variation when the user can not change the value of the
+        multiselect, and the selected items should not be submitted in a form.
       </p>
     </div>
     <div class="col-12">
@@ -102,11 +105,12 @@
         </div>
       </div>
     </div>
-    
+
     <div class="col-lg-8 col-xl-7">
       <h3>Readonly multiselect</h3>
       <p>
-        Use this variation when the user can not change the value of the multiselect, and the selected items should be submitted in a form.
+        Use this variation when the user can not change the value of the
+        multiselect, and the selected items should be submitted in a form.
       </p>
     </div>
     <div class="col-12">
@@ -127,11 +131,12 @@
         </div>
       </div>
     </div>
-    
+
     <div class="col-lg-8 col-xl-7">
       <h3>Standard multiselect with custom placeholder</h3>
       <p>
-        Use this variation when the user can not change the value of the multiselect, and the selected items should be submitted in a form.
+        Use this variation when the user can not change the value of the
+        multiselect, and the selected items should be submitted in a form.
       </p>
     </div>
     <div class="col-12">
@@ -146,7 +151,11 @@
                 bindValue="value"
                 placeholder="Select items"
               >
-                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                <ng-template
+                  ng-multi-label-tmp
+                  let-items="items"
+                  let-clear="clear"
+                >
                   <span>Selected {{ items.length }} items</span>
                 </ng-template>
               </bp-multiselect>
@@ -155,6 +164,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
