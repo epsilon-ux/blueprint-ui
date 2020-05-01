@@ -50,6 +50,10 @@ export class ComponentLibraryComponent {
             route: './checkbox'
           },
           {
+            text: 'Date Picker',
+            route: './date-picker'
+          },
+          {
             text: 'Dropdown',
             route: './dropdown'
           },
