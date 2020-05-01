@@ -9,7 +9,7 @@ import {
   ElementRef
 } from '@angular/core';
 import { Column, ColumnType } from '../models/column';
-import { parseLookupString } from '../helpers';
+import { parseLookupString } from '../../../helpers';
 import Properties from '../models/properties';
 
 @Component({

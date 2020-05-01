@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive } from '@angular/core';
-import { generateUniqueId } from '../../helpers';
+import { generateUniqueId, parseLookupString } from '../../helpers';
 
 @Directive({ selector: '[ng-multi-label-tmp]' })
 export class NgMultiLabelTemplateDirective {
@@ -12,9 +12,9 @@ export class NgMultiLabelTemplateDirective {
   styleUrls: ['./multiselect.component.scss']
 })
 export class MultiselectComponent implements OnInit {
-
+  
   @ContentChild(NgMultiLabelTemplateDirective, { read: TemplateRef, static: false }) multiLabelTemplate: TemplateRef<any>;
-
+  
   @Input() label = '';
   @Input() isLabelHidden = false;
   @Input() optionItems = [];
@@ -24,10 +24,14 @@ export class MultiselectComponent implements OnInit {
   @Input() bindLabel: string = null;
   @Input() isDisabled = false;
   @Input() isReadonly = false;
+  @Input() internationalization = {
+    '+ additional more': '+ #{additional} more'
+  };
   @Input() ngModel = [];
   @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
-
+  
+  parseLookupString = parseLookupString;
   uuid = 'mutliselect' + generateUniqueId();
 
   constructor() {}

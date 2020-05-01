@@ -51,7 +51,14 @@
           </span>
       </div>
       <div class="ng-value ng-value-additional" *ngIf="items.length > 3">
-        <span class="ng-value-label">+ {{ items.length - 3 }} more</span>
+        <span class="ng-value-label">
+          {{
+            parseLookupString(
+              internationalization['+ additional more'],
+              {additional: items.length - 3}
+            )
+          }}
+        </span>
       </div>
     </ng-template>
 

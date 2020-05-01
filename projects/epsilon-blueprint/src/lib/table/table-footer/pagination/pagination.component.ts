@@ -7,7 +7,7 @@ import {
   OnChanges
 } from '@angular/core';
 
-import { parseLookupString } from '../../helpers';
+import { parseLookupString } from '../../../../helpers';
 
 @Component({
   selector: 'app-pagination',
