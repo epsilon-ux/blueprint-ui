@@ -8,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class ApiComponent implements OnInit {
   codeExample = `
   \`\`\`html
-  <bp-multiselect
+  <bp-multi-select
     label="Label Text"
     ...
   >
     <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
       <span>Selected {{ items.length }} items</span>
     </ng-template>
-  </bp-multiselect>
+  </bp-multi-select>
   \`\`\`
   `;
 

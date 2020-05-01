@@ -7,9 +7,9 @@ export class NgMultiLabelTemplateDirective {
 }
 
 @Component({
-  selector: 'bp-multiselect',
-  templateUrl: './multiselect.component.html',
-  styleUrls: ['./multiselect.component.scss']
+  selector: 'bp-multi-select',
+  templateUrl: './multi-select.component.html',
+  styleUrls: ['./multi-select.component.scss']
 })
 export class MultiselectComponent implements OnInit {
   
@@ -42,7 +42,7 @@ export class MultiselectComponent implements OnInit {
 
   validate() {
     if (!this.label) {
-      let err = new Error('\'label\' is a required Input of bp-multiselect. The label can be visually hidden using the \'isLabelHidden\' property.');
+      let err = new Error('\'label\' is a required Input of bp-multi-select. The label can be visually hidden using the \'isLabelHidden\' property.');
       err.name = 'Missing Input';
       throw err;
     }

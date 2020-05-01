@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MultiselectComponent } from './multiselect.component';
+import { MultiselectComponent } from './multi-select.component';
 
 describe('MultiselectComponent', () => {
   let component: MultiselectComponent;
