@@ -22,7 +22,6 @@
                 bindLabel="label"
                 bindValue="value"
                 placeholder="Select items"
-                (change)="handleMulti($event)"
               ></bp-multiselect>
             </div>
           </div>
@@ -48,7 +47,6 @@
                 bindValue="value"
                 placeholder="Select items"
                 [isSearchable]="true"
-                (change)="handleMulti($event)"
               ></bp-multiselect>
             </div>
           </div>
@@ -73,7 +71,6 @@
                 bindLabel="label"
                 bindValue="value"
                 placeholder="Select items"
-                (change)="handleMulti($event)"
               ></bp-multiselect>
             </div>
           </div>
@@ -99,7 +96,6 @@
                 bindValue="value"
                 placeholder="Select items"
                 [isDisabled]="true"
-                (change)="handleMulti($event)"
               ></bp-multiselect>
             </div>
           </div>
@@ -125,7 +121,6 @@
                 bindValue="value"
                 placeholder="Select items"
                 [isReadonly]="true"
-                (change)="handleMulti($event)"
               ></bp-multiselect>
             </div>
           </div>
@@ -150,7 +145,6 @@
                 bindLabel="label"
                 bindValue="value"
                 placeholder="Select items"
-                (change)="handleMulti($event)"
               >
                 <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
                   <span>Selected {{ items.length }} items</span>
