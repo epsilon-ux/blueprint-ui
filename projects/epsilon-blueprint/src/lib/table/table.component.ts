@@ -351,7 +351,8 @@ export class TableComponent implements OnInit, OnChanges {
   // To select/unselect one row at a time
   onSelectRow(event) {
     const selectedRow = this.filteredData.find(
-      data => data[this.properties.rowId] === Number(event.target.id)
+      // Double equals to allow flexibility in the data since we aren't concerned with type here
+      data => data[this.properties.rowId] == event.target.id
     );
     selectedRow._meta.isChecked = event.target.checked;
     const selectedRowsCount = this.filteredData
