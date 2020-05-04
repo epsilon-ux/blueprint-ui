@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-multiselect',
-  templateUrl: './multiselect.component.html'
+  selector: 'app-multi-select',
+  templateUrl: './multi-select.component.html'
 })
 export class MultiselectComponent implements OnInit {
 

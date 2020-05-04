@@ -2,7 +2,13 @@
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
-
+        Multi-selects are a type of select used in forms where the user is
+        submitting data. The user can select multiple options within the
+        multi-select.
+      </p>
+      <p>
+        This component is built on top of
+        <a href="https://github.com/ng-select/ng-select">ng-select</a>.
       </p>
     </div>
     <div class="col-12">
@@ -10,33 +16,19 @@
         <div class="card-body component-preview">
           <div class="row">
             <div class="col-12 col-sm-6 col-md-5 col-lg-3">
-              <bp-multiselect
+              <bp-multi-select
                 label="Label Text"
                 [optionItems]="optionItems"
                 bindLabel="label"
                 bindValue="value"
                 placeholder="Select items"
                 [isSearchable]="false"
-                [(ngModel)]="selectedOptions"
                 (change)="handleMulti($event)"
-              ></bp-multiselect>
-            </div>
-            <div class="col-12 col-sm-6 col-md-5 col-lg-3">
-              <bp-multiselect
-                label="Label Text"
-                [optionItems]="optionItems"
-                bindLabel="label"
-                bindValue="value"
-                placeholder="Select items"
-                [isSearchable]="false"
-                [isDisabled]="true"
-                [(ngModel)]="selectedOptions"
-                (change)="handleMulti($event)"
-              ></bp-multiselect>
+              ></bp-multi-select>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section> 
+</section>

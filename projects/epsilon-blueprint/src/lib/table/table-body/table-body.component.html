@@ -20,9 +20,8 @@
       <bp-checkbox
         label="{{ properties.internationalization['Select Row'] }} {{ rowData[properties.rowId] }}"
         [visuallyHiddenLabel]="true"
-        [id]="rowData[properties.rowId]"
         [isChecked]="rowData._meta.isChecked"
-        (change)="selectRows($event)"
+        (change)="selectRows($event, rowData[properties.rowId])"
       ></bp-checkbox>
     </td>
 

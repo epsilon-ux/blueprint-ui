@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive } from '@angular/core';
-import { generateUniqueId } from '../../helpers';
+import { generateUniqueId, parseLookupString } from '../../helpers';
 
 @Directive({ selector: '[ng-multi-label-tmp]' })
 export class NgMultiLabelTemplateDirective {
@@ -7,26 +7,31 @@ export class NgMultiLabelTemplateDirective {
 }
 
 @Component({
-  selector: 'bp-multiselect',
-  templateUrl: './multiselect.component.html',
-  styleUrls: ['./multiselect.component.scss']
+  selector: 'bp-multi-select',
+  templateUrl: './multi-select.component.html',
+  styleUrls: ['./multi-select.component.scss']
 })
 export class MultiselectComponent implements OnInit {
-
+  
   @ContentChild(NgMultiLabelTemplateDirective, { read: TemplateRef, static: false }) multiLabelTemplate: TemplateRef<any>;
-
+  
   @Input() label = '';
   @Input() isLabelHidden = false;
   @Input() optionItems = [];
   @Input() isSearchable = false;
   @Input() placeholder = '';
-  @Input() bindValue = '';
-  @Input() bindLabel = '';
+  @Input() bindValue: string = null;
+  @Input() bindLabel: string = null;
   @Input() isDisabled = false;
+  @Input() isReadonly = false;
+  @Input() internationalization = {
+    '+ additional more': '+ #{additional} more'
+  };
   @Input() ngModel = [];
-  @Input() ngModelChange = new EventEmitter();
+  @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
-
+  
+  parseLookupString = parseLookupString;
   uuid = 'mutliselect' + generateUniqueId();
 
   constructor() {}
@@ -37,7 +42,7 @@ export class MultiselectComponent implements OnInit {
 
   validate() {
     if (!this.label) {
-      let err = new Error('\'label\' is a required Input of bp-multiselect. The label can be visually hidden using the \'isLabelHidden\' property.');
+      let err = new Error('\'label\' is a required Input of bp-multi-select. The label can be visually hidden using the \'isLabelHidden\' property.');
       err.name = 'Missing Input';
       throw err;
     }

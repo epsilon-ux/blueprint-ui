@@ -9,7 +9,7 @@ import {
   ElementRef
 } from '@angular/core';
 import { Column, ColumnType } from '../models/column';
-import { parseLookupString } from '../helpers';
+import { parseLookupString } from '../../../helpers';
 import Properties from '../models/properties';
 
 @Component({
@@ -52,8 +52,8 @@ export class TableBodyComponent implements OnInit {
     );
   }
 
-  selectRows(event) {
-    this.selectedRowsAction.emit(event);
+  selectRows(event, rowId) {
+    this.selectedRowsAction.emit({event, rowId});
   }
 
   toggleExpanded(row) {

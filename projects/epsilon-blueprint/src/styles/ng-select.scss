@@ -455,9 +455,23 @@
     }
 }
 
-.ng-select.ng-select-multiple > .ng-select-container > .ng-value-container .ng-value .ng-value-label
+.ng-select.ng-select-multiple > .ng-select-container > .ng-value-container .ng-value
 {
-  padding: 0 5px;
+  &.ng-value-additional
+  {
+    color: $font-color-primary;
+    background: transparent;
+
+    .ng-value-label
+    {
+      padding: 0;
+    }
+  }
+
+  .ng-value-label
+  {
+    padding: 0 5px;
+  }
 }
 
 .ng-select.ng-select-multiple.ng-select-disabled .ng-select-container .ng-value-container .ng-value
@@ -465,7 +479,7 @@
   background-color: $storm;
 }
 
-// Fake checkbox for multiselect
+// Fake checkbox for multi-select
 // Any changes made here should be reflected in the checkbox styles also
 .decorative-checkbox-container
 {

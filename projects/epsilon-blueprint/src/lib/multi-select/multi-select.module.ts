@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { MultiselectComponent, NgMultiLabelTemplateDirective } from './multiselect.component';
+import { MultiselectComponent, NgMultiLabelTemplateDirective } from './multi-select.component';
 
 @NgModule({
   declarations: [MultiselectComponent, NgMultiLabelTemplateDirective],

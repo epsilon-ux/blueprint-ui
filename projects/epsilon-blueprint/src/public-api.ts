@@ -17,8 +17,8 @@ export * from './lib/dropdown/dropdown.module';
 export * from './lib/landing-page-header/landing-page-header.component';
 export * from './lib/landing-page-header/landing-page-header.module';
 
-export * from './lib/multiselect/multiselect.component';
-export * from './lib/multiselect/multiselect.module';
+export * from './lib/multi-select/multi-select.component';
+export * from './lib/multi-select/multi-select.module';
 
 export * from './lib/nav-secondary/nav-secondary.component';
 export * from './lib/nav-secondary/nav-secondary.module';

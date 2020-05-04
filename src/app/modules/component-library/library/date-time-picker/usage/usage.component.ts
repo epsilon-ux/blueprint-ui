@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usage.component.scss']
 })
 export class UsageComponent implements OnInit {
-  click = (e) => {};
 
   constructor() { }
 

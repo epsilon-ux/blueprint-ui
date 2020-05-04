@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { parseLookupString } from '../../../helpers';
+import { parseLookupString } from '../../../../../helpers';
 import { Action } from '../../../models/action';
 
 @Component({
