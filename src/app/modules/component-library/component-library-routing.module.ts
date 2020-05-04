@@ -32,6 +32,9 @@ const routes: Routes = [
     { path: 'checkbox', loadChildren: () => import('./library/checkbox/checkbox.module')
       .then(m => m.CheckboxLibraryModule) },
     
+    { path: 'date-time-picker', loadChildren: () => import('./library/date-time-picker/date-time-picker.module')
+    .then(m => m.DateTimePickerLibraryModule) },
+    
     { path: 'dropdown', loadChildren: () => import('./library/dropdown/dropdown.module')
     .then(m => m.DropdownLibraryModule) },
 

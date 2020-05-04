@@ -1,0 +1,249 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Date and time pickers are often used within forms. The user can type in a date and time in the correct format, or select a date and time from the calendar. The calendar appears on click of the date picker’s trigger.
+      </p>
+      <p>
+        The placeholder text within a date and time picker should reflect the correct date and time format. If the user enters a valid date or time, but in a different format, the field should correct to the accepted format, without the user having to re-format their entry.
+      </p>
+      <h2>Variations</h2>
+      <h3>Date picker</h3>
+      <p>
+        The date picker allows the user to select a single date, either by typing it into the field or by selecting it from the calendar widget.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+              <label for="date">Date Picker</label>
+              <div class="input-group">
+                <input 
+                  [owlDateTime]="datePicker" 
+                  type="text" 
+                  id="date" 
+                  class="form-control" 
+                  placeholder="MM/DD/YYYY" 
+                />
+                <div class="input-group-append">
+                  <button 
+                    [owlDateTimeTrigger]="datePicker" 
+                    class="btn btn-icon btn-input-addon" 
+                    aria-label="Toggle date picker"
+                  >
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <owl-date-time 
+                  #datePicker 
+                  pickerType="calendar"
+                ></owl-date-time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Time picker</h3>
+      <p>
+        The time picker allows the user to select a specific time. The user can type it in the field or select the correct time by using the arrows within the widget.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+              <label for="timePicker">Time Picker</label>
+              <div class="input-group">
+                <input 
+                  [owlDateTime]="timePicker" 
+                  type="text" 
+                  id="timePicker" 
+                  class="form-control" 
+                  placeholder="12:00am" 
+                />
+                <div class="input-group-append">
+                  <button 
+                    [owlDateTimeTrigger]="timePicker" 
+                    class="btn btn-icon btn-input-addon" 
+                    aria-label="Toggle time picker"
+                  >
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <owl-date-time 
+                  #timePicker 
+                  pickerType="timer" 
+                  [hour12Timer]="true"
+                ></owl-date-time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Date and time picker</h3>
+      <p>
+        The date and time picker allows the user to select a single date and time, either by typing it into the field or by selecting both from the widget.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+              <label for="dateTime">Date and Time Picker</label>
+              <div class="input-group">
+                <input 
+                  [owlDateTime]="dateTimePicker" 
+                  type="text" 
+                  id="dateTime" 
+                  class="form-control" 
+                  placeholder="MM/DD/YYYY, 12:00am" 
+                />
+                <div class="input-group-append">
+                  <button 
+                    [owlDateTimeTrigger]="dateTimePicker" 
+                    class="btn btn-input-addon"
+                    aria-label="Toggle date time picker"
+                  >
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <owl-date-time 
+                  #dateTimePicker 
+                  pickerType="both" 
+                  [hour12Timer]="true"
+                ></owl-date-time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Date range picker</h3>
+      <p>
+        The date range picker allows the user to select a date range, by selecting two separate dates. The user can type the range into the field or select start and end dates from the calendar widget.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+              <label for="dateRange">Date Range Picker</label>
+              <div class="input-group">
+                <input 
+                  [owlDateTime]="dateRangePicker" 
+                  selectMode="range" 
+                  rangeSeparator="-"
+                  type="text" 
+                  id="dateRange" 
+                  class="form-control" 
+                  placeholder="MM/DD/YYYY, 12:00am - MM/DD/YYYY, 12:00am" 
+                />
+                <div class="input-group-append">
+                  <button 
+                    [owlDateTimeTrigger]="dateRangePicker" 
+                    class="btn btn-input-addon"
+                    aria-label="Toggle date range picker"
+                  >
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <owl-date-time 
+                  #dateRangePicker
+                ></owl-date-time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Start and end date picker</h3>
+      <p>
+        The start and end date picker allows the user to select two different dates, using two different date pickers. The start and end date picker allows for clearer labeling for the field group and for each of the date pickers, and is generally used for selecting start and end dates.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <!--
+            We would strongly prefer to use fieldset and legend elements (rather than aria) here, but there are bugs in Chromium-based browsers that prevent us from being able to use flexbox layouts within a fieldset.
+          -->
+          <div class="row align-items-center" role="group" aria-labelledby="groupLabel">
+            <div class="col-12">
+              <p id="groupLabel" class="font-weight-bold">Group Label</p>
+            </div>
+            <div class="col-12 col-lg-4 col-xl-3">
+              <label for="startDate">Start Date</label>
+              <div class="input-group">
+                <input 
+                  [owlDateTime]="startDatePicker" 
+                  type="text" 
+                  id="startDate" 
+                  class="form-control" 
+                  placeholder="MM/DD/YYYY, 12:00am" 
+                />
+                <div class="input-group-append">
+                  <button 
+                    [owlDateTimeTrigger]="startDatePicker" 
+                    class="btn btn-input-addon"
+                    aria-label="Toggle start date picker"
+                  >
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <owl-date-time 
+                  #startDatePicker 
+                  pickerType="both" 
+                  [hour12Timer]="true"
+                ></owl-date-time>
+              </div>
+            </div>
+            <div class="col-auto px-lg-0 align-self-end my-2">
+              <span>to</span>
+            </div>
+            <div class="col-12 col-lg-4 col-xl-3">
+              <label for="endDate">End Date</label>
+              <div class="input-group">
+                <input 
+                  [owlDateTime]="endDatePicker" 
+                  type="text" 
+                  id="endDateTime" 
+                  class="form-control" 
+                  placeholder="MM/DD/YYYY, 12:00am" 
+                />
+                <div class="input-group-append">
+                  <button 
+                    [owlDateTimeTrigger]="endDatePicker" 
+                    class="btn btn-input-addon"
+                    aria-label="Toggle end date picker"
+                  >
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <owl-date-time 
+                  #endDatePicker 
+                  pickerType="both" 
+                  [hour12Timer]="true"
+                ></owl-date-time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
