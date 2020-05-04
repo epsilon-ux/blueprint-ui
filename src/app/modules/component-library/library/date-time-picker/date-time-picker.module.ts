@@ -10,6 +10,7 @@ import { DateTimePickerRoutingModule } from './date-time-picker-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { DateTimePickerComponent } from './date-time-picker.component';
 import { UsageComponent } from './usage/usage.component';
+import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ApiComponent } from './api/api.component';
     DateTimePickerComponent,
     OverviewComponent,
     UsageComponent,
+    PlaygroundComponent,
     ApiComponent
   ],
   imports: [
