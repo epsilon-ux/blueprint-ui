@@ -4,7 +4,9 @@
       <p class="component-description">
         Date and time pickers are commonly used form elements. They allow the user to select a single date and time or a range of dates.
       </p>
-      <p>Blueprint provides a custom theme for <a href="https://daniel-projects.firebaseapp.com/owlng/date-time-picker">ng-pick-datetime</a>.</p>
+      <p>
+        Blueprint provides a custom theme for <a href="https://www.npmjs.com/package/ng-pick-datetime/v/6.0.16">ng-pick-datetime</a>.
+      </p>
       <h2>Example</h2>
     </div>
     <div class="col-12">
@@ -14,9 +16,19 @@
             <div class="col-md-6 col-lg-4 col-xl-3">
               <label for="date">Date Picker</label>
               <div class="input-group">
-                <input [owlDateTime]="datePicker" type="text" id="date" class="form-control" placeholder="MM/DD/YYYY" />
+                <input 
+                  [owlDateTime]="datePicker" 
+                  type="text" 
+                  id="date" 
+                  class="form-control" 
+                  placeholder="MM/DD/YYYY" 
+                />
                 <div class="input-group-append">
-                  <button class="btn btn-icon btn-input-addon" [owlDateTimeTrigger]="datePicker">
+                  <button 
+                    [owlDateTimeTrigger]="datePicker" 
+                    class="btn btn-icon btn-input-addon" 
+                    aria-label="Toggle date picker"
+                  >
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                   </button>
                 </div>

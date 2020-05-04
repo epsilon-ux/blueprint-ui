@@ -28,11 +28,15 @@
                   placeholder="MM/DD/YYYY" 
                 />
                 <div class="input-group-append">
-                  <button [owlDateTimeTrigger]="datePicker" class="btn btn-icon btn-input-addon">
+                  <button 
+                    [owlDateTimeTrigger]="datePicker" 
+                    class="btn btn-icon btn-input-addon" 
+                    aria-label="Toggle date picker"
+                  >
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #datePicker [pickerType]="'calendar'" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time #datePicker pickerType="calendar"></owl-date-time>
               </div>
             </div>
           </div>
@@ -60,11 +64,15 @@
                   placeholder="12:00am" 
                 />
                 <div class="input-group-append">
-                  <button [owlDateTimeTrigger]="timePicker" class="btn btn-icon btn-input-addon">
+                  <button 
+                    [owlDateTimeTrigger]="timePicker" 
+                    class="btn btn-icon btn-input-addon" 
+                    aria-label="Toggle time picker"
+                  >
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #timePicker [pickerType]="'timer'" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time #timePicker pickerType="timer" [hour12Timer]="true"></owl-date-time>
               </div>
             </div>
           </div>
@@ -92,12 +100,16 @@
                   placeholder="MM/DD/YYYY, 12:00am" 
                 />
                 <div class="input-group-append">
-                  <button [owlDateTimeTrigger]="dateTimePicker" class="btn btn-input-addon">
+                  <button 
+                    [owlDateTimeTrigger]="dateTimePicker" 
+                    class="btn btn-input-addon"
+                    aria-label="Toggle date time picker"
+                  >
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #dateTimePicker [pickerType]="'both'" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time #dateTimePicker pickerType="both" [hour12Timer]="true"></owl-date-time>
               </div>
             </div>
           </div>
@@ -119,15 +131,19 @@
               <div class="input-group">
                 <input 
                   [owlDateTime]="dateRangePicker" 
-                  [selectMode]="'range'" 
-                  [rangeSeparator]="'-'"
+                  selectMode="range" 
+                  rangeSeparator="-"
                   type="text" 
                   id="dateRange" 
                   class="form-control" 
                   placeholder="MM/DD/YYYY, 12:00am - MM/DD/YYYY, 12:00am" 
                 />
                 <div class="input-group-append">
-                  <button [owlDateTimeTrigger]="dateRangePicker" class="btn btn-input-addon">
+                  <button 
+                    [owlDateTimeTrigger]="dateRangePicker" 
+                    class="btn btn-input-addon"
+                    aria-label="Toggle date range picker"
+                  >
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
@@ -148,9 +164,12 @@
     <div class="col-12">
       <div class="card mb-3">
         <div class="card-body component-preview">
-          <div class="row align-items-center">
+          <!--
+            We would strongly prefer to use fieldset and legend elements (rather than aria) here, but there are bugs in Chromium-based browsers that prevent us from being able to use flexbox layouts within a fieldset.
+          -->
+          <div class="row align-items-center" role="group" aria-labelledby="groupLabel">
             <div class="col-12">
-              <p class="font-weight-bold">Group Label</p>
+              <p id="groupLabel" class="font-weight-bold">Group Label</p>
             </div>
             <div class="col col-lg-4 col-xl-3">
               <label for="startDate">Start Date</label>
@@ -163,12 +182,16 @@
                   placeholder="MM/DD/YYYY, 12:00am" 
                 />
                 <div class="input-group-append">
-                  <button [owlDateTimeTrigger]="startDatePicker" class="btn btn-input-addon">
+                  <button 
+                    [owlDateTimeTrigger]="startDatePicker" 
+                    class="btn btn-input-addon"
+                    aria-label="Toggle start date picker"
+                  >
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #startDatePicker [pickerType]="'both'" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time #startDatePicker pickerType="both" [hour12Timer]="true"></owl-date-time>
               </div>
             </div>
             <div class="col-auto px-0 align-self-end mb-2">
@@ -185,15 +208,20 @@
                   placeholder="MM/DD/YYYY, 12:00am" 
                 />
                 <div class="input-group-append">
-                  <button [owlDateTimeTrigger]="endDatePicker" class="btn btn-input-addon">
+                  <button 
+                    [owlDateTimeTrigger]="endDatePicker" 
+                    class="btn btn-input-addon"
+                    aria-label="Toggle end date picker"
+                  >
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #endDatePicker [pickerType]="'both'" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time #endDatePicker pickerType="both" [hour12Timer]="true"></owl-date-time>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
