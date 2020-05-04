@@ -52,8 +52,8 @@ export class TableBodyComponent implements OnInit {
     );
   }
 
-  selectRows(event) {
-    this.selectedRowsAction.emit(event);
+  selectRows(event, rowId) {
+    this.selectedRowsAction.emit({event, rowId});
   }
 
   toggleExpanded(row) {
