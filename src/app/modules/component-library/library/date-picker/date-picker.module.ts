@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+// import { FormsModule } from '@angular/forms';
+
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
@@ -22,6 +24,7 @@ import { ApiComponent } from './api/api.component';
   imports: [
     CommonModule,
     RouterModule,
+    // FormsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     ComponentHeaderModule,

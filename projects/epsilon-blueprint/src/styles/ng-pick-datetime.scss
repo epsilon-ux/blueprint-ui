@@ -159,13 +159,15 @@
     line-height: 1;
     border: 1px solid transparent;
     border-radius: 0;
-    color: inherit;
+    color: $font-color-primary;
+    font-weight: $font-weight-semi-bold;
   }
 
   .owl-dt-calendar-cell-out
   {
     opacity: 1;
-    color: $font-color-secondary;
+    color: $font-color-primary;
+    font-weight: $font-weight-regular;
   }
 
   .owl-dt-calendar-cell-today:not(.owl-dt-calendar-cell-selected)
@@ -185,22 +187,23 @@
     }
   }
 
-  // TODO add styles for disabled cells
-  // .owl-dt-calendar-cell-disabled {
-  //   cursor: not-allowed;
+  .owl-dt-calendar-cell-disabled {
 
-  //   & > .owl-dt-calendar-cell-content:not(.owl-dt-calendar-cell-selected) {
-  //     color: $font-color-secondary;
-  //   }
+    & > .owl-dt-calendar-cell-content:not(.owl-dt-calendar-cell-selected) {
+      color: $font-color-secondary;
+      cursor: not-allowed;
+    }
 
-  //   & > .owl-dt-calendar-cell-content.owl-dt-calendar-cell-selected {
-  //     opacity: .4;
-  //   }
+    & > .owl-dt-calendar-cell-content.owl-dt-calendar-cell-selected {
+      opacity: 1;
+      cursor: not-allowed;
+    }
 
-  //   & > .owl-dt-calendar-cell-today:not(.owl-dt-calendar-cell-selected) {
-  //     border-color: $border-color-primary;
-  //   }
-  // }
+    & > .owl-dt-calendar-cell-today:not(.owl-dt-calendar-cell-selected) {
+      border-color: $border-color-primary;
+      cursor: not-allowed;
+    }
+  }
 
   .owl-dt-calendar-cell-active:focus > .owl-dt-calendar-cell-content:not(.owl-dt-calendar-cell-selected),
   :not(.owl-dt-calendar-cell-disabled):hover > .owl-dt-calendar-cell-content:not(.owl-dt-calendar-cell-selected)
@@ -210,21 +213,23 @@
     font-weight: $font-weight-semi-bold;
   }
 
-  // TODO add if we want range in single picker
-  // .owl-dt-calendar-cell-in-range {
-  //   background: rgba($accent-color-primary, 0.4);
-  //   font-weight: $font-weight-semi-bold;
+  .owl-dt-calendar-cell-in-range
+  {
+    background: rgba($accent-color-primary, 0.2);
+    font-weight: $font-weight-semi-bold;
 
-  //   &.owl-dt-calendar-cell-range-from {
-  //     border-top-left-radius: 0;
-  //     border-bottom-left-radius: 0;
-  //   }
+    &.owl-dt-calendar-cell-range-from
+    {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
 
-  //   &.owl-dt-calendar-cell-range-to {
-  //     border-top-right-radius: 0;
-  //     border-bottom-right-radius: 0;
-  //   }
-  // }
+    &.owl-dt-calendar-cell-range-to
+    {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
 }
 
 .owl-dt-timer
@@ -301,6 +306,11 @@
   {
     bottom: 35%;
   }
+}
+
+.owl-dt-control:focus > .owl-dt-control-content
+{
+  background-color: transparent;
 }
 
 .owl-dt-control-button
@@ -504,30 +514,27 @@
   }
 }
 
-// TODO add if we want range in single picker
-// .owl-dt-container-info
-//   {
-//   padding: 0 .5em;
-//   cursor: pointer;
+.owl-dt-container-info
+{
+  padding: 0 .5em;
+  cursor: pointer;
 
-//   .owl-dt-container-range
-//   {
-//     display: flex;
-//     justify-content: space-between;
-//     padding: .5em 0;
-//     font-size: .8em;
+  .owl-dt-container-range
+  {
+    display: flex;
+    justify-content: space-between;
 
-//     &:last-child
-//     {
-//       border-top: 1px solid rgba(0, 0, 0, 0.12);
-//     }
-//   }
+    &:last-child
+    {
+      border-top: 1px solid $border-color-secondary;
+    }
+  }
 
-  // .owl-dt-container-info-active
-  // {
-  //   color: $theme-color; // whats this
-  // }
-// }
+  .owl-dt-container-info-active
+  {
+    color: $font-color-primary;
+  }
+}
 
 .owl-dt-container-disabled,
 .owl-dt-trigger-disabled
