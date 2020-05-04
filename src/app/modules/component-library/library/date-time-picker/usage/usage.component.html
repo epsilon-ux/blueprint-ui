@@ -36,7 +36,10 @@
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #datePicker pickerType="calendar"></owl-date-time>
+                <owl-date-time 
+                  #datePicker 
+                  pickerType="calendar"
+                ></owl-date-time>
               </div>
             </div>
           </div>
@@ -72,7 +75,11 @@
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #timePicker pickerType="timer" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time 
+                  #timePicker 
+                  pickerType="timer" 
+                  [hour12Timer]="true"
+                ></owl-date-time>
               </div>
             </div>
           </div>
@@ -109,7 +116,11 @@
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #dateTimePicker pickerType="both" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time 
+                  #dateTimePicker 
+                  pickerType="both" 
+                  [hour12Timer]="true"
+                ></owl-date-time>
               </div>
             </div>
           </div>
@@ -148,7 +159,9 @@
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #dateRangePicker></owl-date-time>
+                <owl-date-time 
+                  #dateRangePicker
+                ></owl-date-time>
               </div>
             </div>
           </div>
@@ -191,7 +204,11 @@
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #startDatePicker pickerType="both" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time 
+                  #startDatePicker 
+                  pickerType="both" 
+                  [hour12Timer]="true"
+                ></owl-date-time>
               </div>
             </div>
             <div class="col-auto px-0 align-self-end mb-2">
@@ -217,11 +234,14 @@
                     <i class="fas fa-clock" aria-hidden="true"></i>
                   </button>
                 </div>
-                <owl-date-time #endDatePicker pickerType="both" [hour12Timer]="true"></owl-date-time>
+                <owl-date-time 
+                  #endDatePicker 
+                  pickerType="both" 
+                  [hour12Timer]="true"
+                ></owl-date-time>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
