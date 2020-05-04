@@ -42,6 +42,7 @@ export class CheckboxComponent implements OnInit, OnChanges {
   }
 
   emitChange(e) {
+    e.stopPropagation();
     this.change.emit(e);
   }
 }

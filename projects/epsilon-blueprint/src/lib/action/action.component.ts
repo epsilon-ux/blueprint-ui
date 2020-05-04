@@ -43,6 +43,7 @@ export class ActionComponent implements OnInit {
   }
 
   emitClick(e) {
+    e.stopPropagation();
     this.click.emit(e);
   }
 
