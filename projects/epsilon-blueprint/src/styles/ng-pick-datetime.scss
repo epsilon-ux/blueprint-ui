@@ -1,5 +1,12 @@
 // custom theming for owl-date-time
 
+.cdk-global-scrollblock
+{
+  position: initial;
+  width: initial;
+  overflow: hidden;
+}
+
 .owl-dt-container,
 .owl-dt-container *
 {

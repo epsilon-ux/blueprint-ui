@@ -2,10 +2,11 @@
   <label for="search">{{ label }}</label>
   <div class="input-group">
     <input
-      type="text"
+      type="search"
       id="search"
       class="form-control"
       [placeholder]="placeholder"
+      [attr.value]="searchFilter ? searchFilter : null"
       (keyup)="inputController($event)"
       [(ngModel)]="searchFilter"
     />

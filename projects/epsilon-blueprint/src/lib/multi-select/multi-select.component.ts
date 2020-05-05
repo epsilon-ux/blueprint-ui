@@ -22,8 +22,11 @@ export class MultiselectComponent implements OnInit {
   @Input() placeholder = '';
   @Input() bindValue: string = null;
   @Input() bindLabel: string = null;
+  @Input() maxSelectedItems: number = null;
+  @Input() notFoundText: string = null;
   @Input() isDisabled = false;
   @Input() isReadonly = false;
+  @Input() inputAttrs: {[key: string]: string};
   @Input() internationalization = {
     '+ additional more': '+ #{additional} more'
   };
