@@ -32,5 +32,8 @@ export * from './lib/search/search.module';
 export * from './lib/table/table.component';
 export * from './lib/table/table.module';
 
+export * from './lib/tile/tile.component';
+export * from './lib/tile/tile.module';
+
 export * from './lib/toggletip/toggletip.component';
 export * from './lib/toggletip/toggletip.module';
