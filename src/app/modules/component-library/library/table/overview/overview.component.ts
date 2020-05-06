@@ -100,9 +100,6 @@ export class OverviewComponent implements OnInit {
           }
         }
       ],
-      search: {
-        hasSearch: true
-      },
       sort: {
         defaultSortedColumn: 'phone',
         defaultSortOrder: 'ascending'
