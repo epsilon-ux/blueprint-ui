@@ -28,9 +28,6 @@ export class TableComponent implements OnInit, OnChanges {
 
   // Defaults
   propertyDefaults = {
-    search: {
-      hasSearch: true
-    },
     sort: {
       defaultSortOrder: 'ascending'
     },
@@ -303,33 +300,6 @@ export class TableComponent implements OnInit, OnChanges {
       currentPage: this.currentPage,
       numberOfRows: this.numberOfRows
     });
-  }
-
-  // --------------- Searching ---------------
-
-  search(query) {
-    this.filteredData = this.data.filter(d => {
-      for (const col of this.properties.columns) {
-        if (
-          d[col.key] &&
-          String(d[col.key])
-            .toLowerCase()
-            .includes(query.toLowerCase())
-        ) {
-          return true;
-        }
-      }
-      return false;
-    });
-    this.totalRecords = this.filteredData.length;
-    this.paginate({ currentPage: 1, numberOfRows: this.numberOfRows });
-  }
-
-  clearSearch() {
-    this.filteredData = [...this.data];
-    this.totalRecords = this.filteredData.length;
-    this.paginate({ currentPage: 1, numberOfRows: this.numberOfRows });
-    this.defaultSort();
   }
 
   // --------------- Pagination ---------------
