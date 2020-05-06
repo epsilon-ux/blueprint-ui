@@ -33,10 +33,6 @@ export default interface Properties {
     }[];
   };
   columns: Column[];
-  search?:  {
-    hasSearch?: boolean;
-    // TBD: Server Side / Client Side / Restricted
-  };
   sort: {
     defaultSortedColumn: string;
     defaultSortOrder: string;
