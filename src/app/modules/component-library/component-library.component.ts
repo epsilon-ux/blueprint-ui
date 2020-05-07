@@ -66,6 +66,10 @@ export class ComponentLibraryComponent {
             route: './radio-button'
           },
           {
+            text: 'Ribbon',
+            route: './ribbon'
+          },
+          {
             text: 'Search',
             route: './search'
           },
