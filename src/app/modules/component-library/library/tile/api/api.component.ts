@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApiComponent implements OnInit {
 
+  tileBodyContent = `
+    \`\`\`html
+    <bp-tile titleText="Tile Title">
+      <ng-container tile-body>
+        <!-- Add content here -->
+      </ng-container>
+    </bp-tile>
+    \`\`\`
+  `;
+
   constructor() { }
 
   ngOnInit() {

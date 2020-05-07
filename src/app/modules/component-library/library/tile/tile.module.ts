@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TileModule } from 'epsilon-blueprint';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
 import { TileRoutingModule } from './tile-routing.module';
@@ -25,7 +26,8 @@ import { ApiComponent } from './api/api.component';
     RouterModule,
     ComponentHeaderModule,
     TileRoutingModule,
-    TileModule
+    TileModule,
+    MarkdownModule
   ],
   providers: [],
   exports: [TileComponent]
