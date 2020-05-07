@@ -1,0 +1,16 @@
+<div class="panel">
+  <div class="panel-header">
+    <p class="text-style-2 mb-0">
+      {{ titleText }}
+    </p>
+    <ng-container *ngIf="panelHeaderLink">
+      <ng-content select="[panel-header-link]"></ng-content>
+    </ng-container>
+  </div>
+  <div class="panel-body">
+    <ng-content select="[panel-body]"></ng-content>
+  </div>
+  <div *ngIf="panelFooter" class="panel-footer">
+    <ng-content select="[panel-footer]"></ng-content>
+  </div>
+</div>

@@ -38,6 +38,9 @@ const routes: Routes = [
     { path: 'dropdown', loadChildren: () => import('./library/dropdown/dropdown.module')
     .then(m => m.DropdownLibraryModule) },
 
+    { path: 'panel', loadChildren: () => import('./library/panel/panel.module')
+      .then(m => m.PanelLibraryModule) },
+
     { path: 'radio-button', loadChildren: () => import('./library/radio-button/radio-button.module')
       .then(m => m.RadioButtonLibraryModule) },
 
