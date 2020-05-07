@@ -44,6 +44,9 @@ const routes: Routes = [
     { path: 'search', loadChildren: () => import('./library/search/search.module')
       .then(m => m.SearchLibraryModule) },
 
+    { path: 'tile', loadChildren: () => import('./library/tile/tile.module')
+      .then(m => m.TileLibraryModule) },
+
     { path: 'toggletip', loadChildren: () => import('./library/toggletip/toggletip.module')
       .then(m => m.ToggletipLibraryModule) },
 

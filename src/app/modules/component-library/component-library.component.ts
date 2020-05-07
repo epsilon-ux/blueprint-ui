@@ -70,6 +70,10 @@ export class ComponentLibraryComponent {
             route: './search'
           },
           {
+            text: 'Tile',
+            route: './tile'
+          },
+          {
             text: 'Toggletip',
             route: './toggletip'
           }
