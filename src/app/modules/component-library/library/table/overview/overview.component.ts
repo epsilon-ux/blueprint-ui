@@ -14,19 +14,23 @@ export class OverviewComponent implements OnInit {
   @ViewChild('templateColumn', {static: true}) templateColumn;
   @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
 
-  set customerData(json) {
-    this.data = json.customerData.data;
+  set exampleData(json) {
+    this.rawData = json.customerData.data;
+    this.filteredData = json.customerData.data;
+    this.tableData = this.filteredData.slice(0, 10);
     this.isDataLoading = false;
   }
 
-  data = [];
+  rawData = [];
+  filteredData = [];
+  tableData = [];
   isDataLoading = true;
 
   properties: Properties;
 
   constructor() {}
 
-  ngOnInit() {    
+  async ngOnInit() {
     this.properties = {
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
@@ -145,10 +149,11 @@ export class OverviewComponent implements OnInit {
       hasColumnSelector: true,
       hasDisplayDensity: true,
       pagination: {
-        hasPagination: true
+        hasPagination: true,
+        isServerside: true
       }
     };
-    this.customerData = tableData;
+    this.exampleData = tableData;
   }
 
   handleAction(action: { action: string; id: string }) {
@@ -156,4 +161,10 @@ export class OverviewComponent implements OnInit {
   }
 
   handleSelectedRowsAction(selectedRowIds: Array<number>) {}
+
+  handlePageChange(pageData) {
+    const startIndex = (pageData.currentPage - 1) * pageData.rowsPerPage;
+    const endIndex = startIndex + pageData.rowsPerPage;
+    this.tableData = this.rawData.slice(startIndex, endIndex);
+  }
 }

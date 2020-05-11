@@ -4,11 +4,11 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SearchModule } from '../search/search.module';
+import { PaginationModule } from '../pagination/pagination.module';
 import { ActionModule } from '../action/action.module';
 import { CheckboxModule } from '../checkbox/checkbox.module';
 import { TableComponent } from './table.component';
 import { TableBodyComponent } from './table-body/table-body.component';
-import { PaginationComponent } from './table-footer/pagination/pagination.component';
 import { TableFooterComponent } from './table-footer/table-footer.component';
 import { ColumnSelectorComponent } from './table-footer/column-selector/column-selector.component';
 import { DisplayDensityComponent } from './table-footer/display-density/display-density.component';
@@ -20,7 +20,6 @@ import { SelectAllCheckboxComponent } from './select-all-checkbox/select-all-che
   declarations: [
     TableComponent,
     TableBodyComponent,
-    PaginationComponent,
     TableFooterComponent,
     DisplayDensityComponent,
     ColumnSelectorComponent,
@@ -35,6 +34,7 @@ import { SelectAllCheckboxComponent } from './select-all-checkbox/select-all-che
     SearchModule,
     ActionModule,
     CheckboxModule,
+    PaginationModule,
     RouterModule.forChild([])
   ],
   exports: [TableComponent],

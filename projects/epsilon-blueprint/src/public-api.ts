@@ -23,6 +23,9 @@ export * from './lib/multi-select/multi-select.module';
 export * from './lib/nav-secondary/nav-secondary.component';
 export * from './lib/nav-secondary/nav-secondary.module';
 
+export * from './lib/pagination/pagination.component';
+export * from './lib/pagination/pagination.module';
+
 export * from './lib/radio-button/radio-button.component';
 export * from './lib/radio-button/radio-button.module';
 

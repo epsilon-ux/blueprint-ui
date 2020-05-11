@@ -25,6 +25,7 @@ export class TableComponent implements OnInit, OnChanges {
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
+  @Output() pageChange = new EventEmitter();
 
   // Defaults
   propertyDefaults = {
@@ -35,7 +36,8 @@ export class TableComponent implements OnInit, OnChanges {
     hasColumnSelector: true,
     hasDisplayDensity: true,
     pagination: {
-      hasPagination: true
+      hasPagination: true,
+      isServerside: false
     },
     internationalization: {
       'Select all rows': 'Select all rows',
@@ -50,22 +52,10 @@ export class TableComponent implements OnInit, OnChanges {
       'Showing numVisible out of numTotal':
         'Showing #{numVisible} out of #{numTotal}',
       'Display Density': 'Display Density:',
-      'numResults results': '#{numResults} result(s)',
-      'Number of Rows': 'Number of Rows per Page',
-      'First Page': 'First Page',
-      'Previous Page': 'Previous Page',
-      'Next Page': 'Next Page',
-      'Last Page': 'Last Page',
       'Display Density Options': {
         'Comfortable': 'Comfortable',
         'Compact': 'Compact'
-      },
-      'Number Of Rows Options': [
-        { optionText: '10 rows', optionValue: 10 },
-        { optionText: '25 rows', optionValue: 25 },
-        { optionText: '50 rows', optionValue: 50 },
-        { optionText: '100 rows', optionValue: 100 }
-      ]
+      }
     }
   };
 
@@ -209,10 +199,6 @@ export class TableComponent implements OnInit, OnChanges {
       this.filteredData = [...this.data];
       this.totalRecords = this.data.length;
       this.defaultSort();
-      this.paginate({
-        currentPage: this.currentPage,
-        numberOfRows: this.defaultNumberOfRows
-      });
     }
   }
 
@@ -296,27 +282,9 @@ export class TableComponent implements OnInit, OnChanges {
       this.sortOrder = 'ascending';
       this.ascSort(colHeader);
     }
-    this.paginate({
-      currentPage: this.currentPage,
-      numberOfRows: this.numberOfRows
-    });
   }
 
-  // --------------- Pagination ---------------
-
-  paginate(pageData: { currentPage: number; numberOfRows: number }) {
-    this.pageData = pageData;
-    if (pageData.numberOfRows !== this.numberOfRows) {
-      this.currentPage =
-        Math.floor(this.startIndex / pageData.numberOfRows) + 1 || 1;
-    } else {
-      this.currentPage = pageData.currentPage;
-    }
-    this.numberOfRows = pageData.numberOfRows;
-    this.startIndex = (this.currentPage - 1) * this.numberOfRows;
-    this.endIndex = this.startIndex + this.numberOfRows;
-    this.tableData = this.filteredData.slice(this.startIndex, this.endIndex);
-  }
+  // --------------- Selectable Rows ---------------
 
   // To select/unselect one row at a time
   onSelectRow(e) {

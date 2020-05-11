@@ -7,10 +7,10 @@ import {
   OnChanges
 } from '@angular/core';
 
-import { parseLookupString } from '../../../../helpers';
+import { parseLookupString } from '../../helpers';
 
 @Component({
-  selector: 'app-pagination',
+  selector: 'bp-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
@@ -39,20 +39,36 @@ export class PaginationComponent implements OnInit, OnChanges {
   currentPage = 1;
   pageButtons = [];
   numberOfRows = 10;
+  indeces = {
+    start: 0,
+    end: this.defaultNumberOfRows - 1
+  };
 
   @Input()
-  internationalization: any;
+  internationalization= {
+    'numResults results': '#{numResults} result(s)',
+    'Number of Rows': 'Number of Rows per Page',
+    'First Page': 'First Page',
+    'Previous Page': 'Previous Page',
+    'Next Page': 'Next Page',
+    'Last Page': 'Last Page',
+    'Number Of Rows Options': [
+      { optionText: '10 rows', optionValue: 10 },
+      { optionText: '25 rows', optionValue: 25 },
+      { optionText: '50 rows', optionValue: 50 },
+      { optionText: '100 rows', optionValue: 100 }
+    ]
+  };
 
   constructor() {}
 
   ngOnInit() {
     this.numberOfRows = this.defaultNumberOfRows;
-    this.paginate(1);
   }
 
   ngOnChanges(changes) {
     // Select the first page when the data changes
-    if (changes.totalRecords && !changes.totalRecords.firstChange) {
+    if (changes.totalRecords) {
       this.paginate(1);
     }
 
@@ -68,11 +84,18 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   paginate(page: number) {
     this.totalPages = this.getTotalPages();
+    this.indeces.start = (this.currentPage - 1) * this.numberOfRows;
+    this.indeces.end = this.indeces.start + this.numberOfRows;
     this.changePage(page);
   }
 
   isStepperDisabled(selectedPage: number): boolean {
     return this.currentPage === selectedPage ? true : false;
+  }
+
+  rowChangePage(page) {
+    this.currentPage = Math.floor(this.indeces.start / this.numberOfRows) + 1 || 1;
+    this.paginate(this.currentPage);
   }
 
   // Determines the numbers to show in pagination
@@ -110,7 +133,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     // Sends the current page and number of rows back to table to let the table handle determining the rows
     this.pageData.emit({
       currentPage: this.currentPage,
-      numberOfRows: this.numberOfRows
+      rowsPerPage: this.numberOfRows
     });
   }
 

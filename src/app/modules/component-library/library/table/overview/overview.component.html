@@ -4,20 +4,29 @@
       <p class="component-description">
         The table component is a highly configurable component used to display tabular data. Tables exist in all Epsilon products. The table component should be used consistently across products to allow the user to quickly scan, sort, filter, and search for data in all situations.
       </p>
-      <h2>Example</h2>
+      <h2>Example {{ isDataLoading || !isDataReady }}</h2>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <div class="card component-wrap mb-3">
+      <div class="card mb-3">
         <div class="card-body component-preview">
           <bp-table
             [isDataLoading]="isDataLoading"
-            [data]="data"
+            [data]="tableData ? tableData : null"
             [properties]="properties"
             (action)="handleAction($event)"
             (selectedRowsAction)="handleSelectedRowsAction($event)"
-          ></bp-table>
+          >
+            <bp-pagination
+              class="col-12 col-xl-auto ml-xl-auto"
+              [totalRecords]="filteredData.length"
+              [defaultNumberOfRows]="10"
+              [pageBuffer]="1"
+              [pageNumber]="pageNumber"
+              (pageData)="handlePageChange($event)"
+            ></bp-pagination>
+          </bp-table>
         </div>
       </div>
     </div>

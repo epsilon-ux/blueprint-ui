@@ -13,12 +13,4 @@
   [internationalization]="internationalization"
 ></app-display-density>
 
-<app-pagination
-  class="col-12 col-xl-auto ml-xl-auto"
-  [totalRecords]="totalRecords"
-  [defaultNumberOfRows]="defaultNumberOfRows"
-  [pageBuffer]="pageBuffer"
-  [pageNumber]="pageNumber"
-  (pageData)="emitPageData($event)"
-  [internationalization]="internationalization"
-></app-pagination>
+<ng-content select="[pagination]"></ng-content>

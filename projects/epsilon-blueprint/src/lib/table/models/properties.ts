@@ -45,6 +45,7 @@ export default interface Properties {
   hasDisplayDensity?: boolean;
   pagination?: {
     hasPagination?: boolean;
-    // TBD: Server Side / Client Side / Restricted 
+    isServerside?: boolean;
+    // TBD: Restricted 
   };
 }
