@@ -1,0 +1,4 @@
+<div [ngClass]="classes">
+  <p *ngIf="text !== undefined" class="mb-0">{{ text }}</p>
+  <ng-content select="[ribbon-content]"></ng-content>
+</div>

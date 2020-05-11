@@ -26,8 +26,14 @@ export * from './lib/nav-secondary/nav-secondary.module';
 export * from './lib/pagination/pagination.component';
 export * from './lib/pagination/pagination.module';
 
+export * from './lib/panel/panel.component';
+export * from './lib/panel/panel.module';
+
 export * from './lib/radio-button/radio-button.component';
 export * from './lib/radio-button/radio-button.module';
+
+export * from './lib/ribbon/ribbon.component';
+export * from './lib/ribbon/ribbon.module';
 
 export * from './lib/search/search.component';
 export * from './lib/search/search.module';

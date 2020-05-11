@@ -1,0 +1,30 @@
+@import '../../styles/global-variables';
+
+.ribbon
+{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  font-weight: $font-weight-semi-bold;
+
+  &.ribbon-alert
+  {
+    border: 1px solid $feedback-color-alert;
+    background: rgba($feedback-color-alert, 0.2);
+  }
+
+  &.ribbon-info
+  {
+    border: 1px solid $accent-color-primary;
+    background: $ice;
+  }
+}
+
+@media (min-width: 768px)
+{
+  .ribbon
+  {
+    flex-direction: row;
+    align-items: center;
+  }
+}

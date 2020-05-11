@@ -38,8 +38,14 @@ const routes: Routes = [
     { path: 'dropdown', loadChildren: () => import('./library/dropdown/dropdown.module')
     .then(m => m.DropdownLibraryModule) },
 
+    { path: 'panel', loadChildren: () => import('./library/panel/panel.module')
+      .then(m => m.PanelLibraryModule) },
+
     { path: 'radio-button', loadChildren: () => import('./library/radio-button/radio-button.module')
       .then(m => m.RadioButtonLibraryModule) },
+
+    { path: 'ribbon', loadChildren: () => import('./library/ribbon/ribbon.module')
+      .then(m => m.RibbonLibraryModule) },
 
     { path: 'search', loadChildren: () => import('./library/search/search.module')
       .then(m => m.SearchLibraryModule) },

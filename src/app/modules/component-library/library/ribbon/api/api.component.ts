@@ -5,21 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './api.component.html',
   styleUrls: ['./api.component.scss']
 })
+
 export class ApiComponent implements OnInit {
 
-  tileBodyContent = `
-    \`\`\`html
-    <bp-tile titleText="Tile Title">
-      <ng-container tile-body>
-        <!-- Add content here -->
-      </ng-container>
-    </bp-tile>
-    \`\`\`
+  ribbonContent = `
+  \`\`\`html
+  <bp-ribbon>
+    <div ribbon-content class="font-weight-regular mx-auto">
+      <!-- Add content here -->
+    </div>
+  </bp-ribbon>
+  \`\`\`
   `;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

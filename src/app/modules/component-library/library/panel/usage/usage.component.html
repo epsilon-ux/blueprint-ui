@@ -1,0 +1,134 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Panels contain a title and body content. They have no set width and can be adjusted depending on the content.
+      </p>
+      <p>
+        Panels usually contain charts or tables in the body. They also can have links in the header or footer that take the user to see more information related to the panel content.
+      </p>
+      <h2>Variations</h2>
+      <h3>Standard panel</h3>
+      <p>This is the standard panel. Use this variation for a panel that does not need a primary or secondary link.</p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-panel titleText="Panel Title">
+                <div panel-body class="demo-body">
+                  Content projection area for panel body
+                </div>
+              </bp-panel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Panel with primary link</h3>
+      <p>Panels can have a primary link that appears in the tile header. The link is usually a 'view more' link.</p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-panel 
+                titleText="Panel Title"
+                [panelHeaderLink]="true"
+              >
+                <ng-container panel-header-link>
+                  <bp-action
+                    text="Primary Link"
+                    classes="link-primary d-inline-flex align-items-center mt-2 mt-md-0 ml-md-auto pl-md-3"
+                    routerLink="./"
+                    iconRight="fa-angle-right"
+                  ></bp-action>
+                </ng-container>
+                <div panel-body class="demo-body">
+                  This is a panel using content projection to add a link in the panel header
+                </div>
+              </bp-panel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Panel with secondary link</h3>
+      <p>
+        Panels can have a secondary link that appears in the panel footer. Use this variation when the link should be de-emphasized or pertains more to the content at the bottom of the content area.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-panel 
+                titleText="Panel Title"
+                [panelFooter]="true"
+              >
+                <div panel-body class="demo-body">
+                  This is a panel using content projection to add a panel footer
+                </div>
+                <ng-container panel-footer>
+                  <bp-action
+                    text="Secondary Link"
+                    classes="link-primary d-inline-flex align-items-center"
+                    routerLink="./"
+                    iconRight="fa-angle-right"
+                  ></bp-action>
+                </ng-container>
+              </bp-panel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Panel with primary link and secondary link</h3>
+      <p>
+        Panels can have primary and secondary links. Use this variation when there are two different places the user could go to view more information related to the panel content.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-panel 
+                titleText="Panel Title"
+                [panelHeaderLink]="true"
+                [panelFooter]="true"
+              >
+                <ng-container panel-header-link>
+                  <bp-action
+                    text="Primary Link"
+                    classes="link-primary d-inline-flex align-items-center mt-2 mt-md-0 ml-md-auto pl-md-3"
+                    routerLink="./"
+                    iconRight="fa-angle-right"
+                  ></bp-action>
+                </ng-container>
+                <div panel-body class="demo-body">
+                  This is a panel using content projection to add a link in the panel header and a panel footer
+                </div>
+                <ng-container panel-footer>
+                  <bp-action
+                    text="Secondary Link"
+                    classes="link-primary d-inline-flex align-items-center"
+                    routerLink="./"
+                    iconRight="fa-angle-right"
+                  ></bp-action>
+                </ng-container>
+              </bp-panel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TODO: add related components -->
+</section>
