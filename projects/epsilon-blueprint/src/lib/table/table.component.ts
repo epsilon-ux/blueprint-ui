@@ -25,7 +25,6 @@ export class TableComponent implements OnInit, OnChanges {
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
-  @Output() pageChange = new EventEmitter();
 
   // Defaults
   propertyDefaults = {
