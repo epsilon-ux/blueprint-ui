@@ -35,10 +35,6 @@ export class TableComponent implements OnInit, OnChanges {
     hasSelectableRows: false,
     hasColumnSelector: true,
     hasDisplayDensity: true,
-    pagination: {
-      hasPagination: true,
-      isServerside: false
-    },
     internationalization: {
       'Select all rows': 'Select all rows',
       'Actions': 'Actions',
