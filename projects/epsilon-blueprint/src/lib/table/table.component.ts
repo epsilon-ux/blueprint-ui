@@ -76,15 +76,6 @@ export class TableComponent implements OnInit, OnChanges {
   sortColumnKey: string;
   sortOrder: string;
 
-  // Pagination
-  startIndex: number;
-  endIndex: number;
-  totalRecords: number;
-  numberOfRows;
-  currentPage = 1;
-  pageBuffer = 1;
-  defaultNumberOfRows = 10;
-
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
 
@@ -94,12 +85,6 @@ export class TableComponent implements OnInit, OnChanges {
   showSelectedRowsAction = false;
   @ViewChild('selectAllRowsRef', { static: false })
   selectAllRowsRef: ElementRef;
-
-  // Used for pagination
-  pageData: {
-    currentPage: number;
-    numberOfRows: number;
-  };
 
   constructor() {}
 
@@ -197,7 +182,6 @@ export class TableComponent implements OnInit, OnChanges {
         }
       });
       this.filteredData = [...this.data];
-      this.totalRecords = this.data.length;
       this.defaultSort();
     }
   }
