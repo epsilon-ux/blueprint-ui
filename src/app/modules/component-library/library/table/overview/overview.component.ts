@@ -147,11 +147,7 @@ export class OverviewComponent implements OnInit {
       ],
       expandableRowsTemplate: this.expandableRowsTemplate,
       hasColumnSelector: true,
-      hasDisplayDensity: true,
-      pagination: {
-        hasPagination: true,
-        isServerside: true
-      }
+      hasDisplayDensity: true
     };
     this.exampleData = tableData;
   }

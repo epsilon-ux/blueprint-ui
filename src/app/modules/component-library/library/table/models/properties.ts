@@ -43,9 +43,4 @@ export default interface Properties {
   actions?: Action[];
   hasColumnSelector?: boolean;
   hasDisplayDensity?: boolean;
-  pagination?: {
-    hasPagination?: boolean;
-    isServerside?: boolean;
-    // TBD: Restricted 
-  };
 }
