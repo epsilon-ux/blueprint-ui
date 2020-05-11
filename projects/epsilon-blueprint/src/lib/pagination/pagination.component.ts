@@ -39,7 +39,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   currentPage = 1;
   pageButtons = [];
   numberOfRows = 10;
-  indeces = {
+  indices = {
     start: 0,
     end: this.defaultNumberOfRows - 1
   };
@@ -84,8 +84,6 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   paginate(page: number) {
     this.totalPages = this.getTotalPages();
-    this.indeces.start = (this.currentPage - 1) * this.numberOfRows;
-    this.indeces.end = this.indeces.start + this.numberOfRows;
     this.changePage(page);
   }
 
@@ -94,7 +92,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   rowChangePage(page) {
-    this.currentPage = Math.floor(this.indeces.start / this.numberOfRows) + 1 || 1;
+    this.currentPage = Math.floor(this.indices.start / this.numberOfRows) + 1 || 1;
     this.paginate(this.currentPage);
   }
 
@@ -102,6 +100,8 @@ export class PaginationComponent implements OnInit, OnChanges {
   changePage(page: number): void {
     this.currentPage = page;
     this.pageButtons = [];
+    this.indices.start = (this.currentPage - 1) * this.numberOfRows;
+    this.indices.end = this.indices.start + this.numberOfRows;
 
     if (this.currentPage - this.pageBuffer <= 1) {
       for (
@@ -133,7 +133,8 @@ export class PaginationComponent implements OnInit, OnChanges {
     // Sends the current page and number of rows back to table to let the table handle determining the rows
     this.pageData.emit({
       currentPage: this.currentPage,
-      rowsPerPage: this.numberOfRows
+      rowsPerPage: this.numberOfRows,
+      indices: {...this.indices}
     });
   }
 

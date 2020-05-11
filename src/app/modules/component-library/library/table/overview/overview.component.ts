@@ -159,8 +159,6 @@ export class OverviewComponent implements OnInit {
   handleSelectedRowsAction(selectedRowIds: Array<number>) {}
 
   handlePageChange(pageData) {
-    const startIndex = (pageData.currentPage - 1) * pageData.rowsPerPage;
-    const endIndex = startIndex + pageData.rowsPerPage;
-    this.tableData = this.rawData.slice(startIndex, endIndex);
+    this.tableData = this.rawData.slice(pageData.indices.start, pageData.indices.end);
   }
 }
