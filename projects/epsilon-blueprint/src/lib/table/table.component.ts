@@ -24,6 +24,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Input() properties: Properties;
 
   @Output() action = new EventEmitter();
+  @Output() onSort = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
 
   // Defaults
@@ -94,6 +95,9 @@ export class TableComponent implements OnInit, OnChanges {
     this.properties.columns = this.properties.columns.map(column =>
       Object.assign({ ...this.columnDefaults }, column)
     );
+
+    this.sortOrder = this.properties.sort.defaultSortOrder;
+    this.sortColumnKey = this.properties.sort.defaultSortedColumn;
 
     // LocalStorage
     const displayDensityName =
@@ -177,7 +181,6 @@ export class TableComponent implements OnInit, OnChanges {
         }
       });
       this.filteredData = [...this.data];
-      this.defaultSort();
     }
   }
 
@@ -190,48 +193,6 @@ export class TableComponent implements OnInit, OnChanges {
   defaultSort() {
     this.sortOrder = this.properties.sort.defaultSortOrder;
     this.sortColumnKey = this.properties.sort.defaultSortedColumn;
-
-    this.sortOrder === 'ascending'
-      ? this.ascSort(this.properties.sort.defaultSortedColumn)
-      : this.descSort(this.properties.sort.defaultSortedColumn);
-  }
-
-  ascSort(colHeader: string) {
-    this.sortByKeyAsc(this.filteredData, colHeader);
-  }
-
-  descSort(colHeader: string) {
-    this.sortByKeyDesc(this.filteredData, colHeader);
-  }
-
-  sortByKeyAsc(array, key) {
-    const column: any = this.properties.columns.filter(
-      column => column.key === key
-    )[0];
-    if (column.sortFunctionAsc) {
-      return array.sort((a, b) => column.sortFunctionAsc(a[key], b[key]));
-    } else {
-      return array.sort((a, b) => {
-        const x = a[key];
-        const y = b[key];
-        return x < y ? -1 : 1;
-      });
-    }
-  }
-
-  sortByKeyDesc(array, key) {
-    const column: any = this.properties.columns.filter(
-      column => column.key === key
-    )[0];
-    if (column.sortFunctionAsc) {
-      return array.sort((a, b) => column.sortFunctionAsc(a[key], b[key])).reverse();
-    } else {
-      return array.sort((a, b) => {
-        const x = a[key];
-        const y = b[key];
-        return x > y ? -1 : 1;
-      });
-    }
   }
 
   getAriaSortOrder(key: string): string {
@@ -251,16 +212,17 @@ export class TableComponent implements OnInit, OnChanges {
     if (colHeader === this.sortColumnKey) {
       if (this.sortOrder === '' || this.sortOrder === 'descending') {
         this.sortOrder = 'ascending';
-        this.ascSort(colHeader);
       } else {
         this.sortOrder = 'descending';
-        this.descSort(colHeader);
       }
     } else {
       this.sortColumnKey = colHeader;
       this.sortOrder = 'ascending';
-      this.ascSort(colHeader);
     }
+    this.onSort.emit({
+      column: this.sortColumnKey,
+      order: this.sortOrder
+    });
   }
 
   // --------------- Selectable Rows ---------------
