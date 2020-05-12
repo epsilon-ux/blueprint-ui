@@ -7,17 +7,6 @@ import { Column } from '../models/column';
   styleUrls: ['./table-footer.component.scss']
 })
 export class TableFooterComponent implements OnInit {
-  @Input()
-  totalRecords: number;
-
-  @Input()
-  defaultNumberOfRows: number;
-
-  @Input()
-  pageBuffer: number;
-
-  @Input()
-  pageNumber: number;
 
   @Input()
   showDisplayDensity: boolean; 
@@ -32,9 +21,6 @@ export class TableFooterComponent implements OnInit {
   defaultSortColumnName: string;
 
   @Output()
-  pageData = new EventEmitter();
-
-  @Output()
   displayDensityEmitter = new EventEmitter();
 
   @Input()
@@ -43,10 +29,6 @@ export class TableFooterComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  emitPageData(event) {
-    this.pageData.emit(event);
-  }
 
   setDisplayDensity(event) {
     this.displayDensityEmitter.emit(event);
