@@ -24,6 +24,7 @@ export class OverviewComponent implements OnInit {
   rawData = [];
   filteredData = [];
   tableData = [];
+  pageIndices;
   isDataLoading = true;
 
   properties: Properties;
@@ -38,7 +39,6 @@ export class OverviewComponent implements OnInit {
         {
           key: 'date',
           headerText: 'Date',
-          sortFunctionAsc: (a, b) => new Date(a).getTime() - new Date(b).getTime(),
           isColumnDisplayed: true
         },
         {
@@ -156,9 +156,41 @@ export class OverviewComponent implements OnInit {
     // Use action from action buttons to trigger different events here
   }
 
+  sortByKeyAsc(array, key) {
+    return array.sort((a, b) => {
+      const x = a[key];
+      const y = b[key];
+      return x < y ? -1 : 1;
+    });
+  }
+
+  sortByKeyDesc(array, key) {
+    return array.sort((a, b) => {
+      const x = a[key];
+      const y = b[key];
+      return x > y ? -1 : 1;
+    });
+  }
+  
+  handleSort(sort) {
+    if (sort.order === 'ascending') {
+      this.sortByKeyAsc(this.filteredData, sort.column);
+    } else {
+      this.sortByKeyDesc(this.filteredData, sort.column);
+    }
+    this.tableData = this.filteredData.slice(
+      this.pageIndices.start,
+      this.pageIndices.end
+    );
+  }
+
   handleSelectedRowsAction(selectedRowIds: Array<number>) {}
 
   handlePageChange(pageData) {
-    this.tableData = this.rawData.slice(pageData.indices.start, pageData.indices.end);
+    this.pageIndices = {...pageData.indices};
+    this.tableData = this.filteredData.slice(
+      pageData.indices.start,
+      pageData.indices.end
+    );
   }
 }

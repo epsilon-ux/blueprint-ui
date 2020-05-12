@@ -16,6 +16,7 @@
             [data]="tableData"
             [properties]="properties"
             (action)="handleAction($event)"
+            (onSort)="handleSort($event)"
             (selectedRowsAction)="handleSelectedRowsAction($event)"
           >
             <bp-pagination
