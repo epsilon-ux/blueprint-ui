@@ -91,7 +91,10 @@ export class TableComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     // Set defaults
-    this.properties = Object.assign(this.propertyDefaults, this.properties);
+    this.properties = Object.assign(
+      this.propertyDefaults,
+      this.properties
+    );
     this.properties.columns = this.properties.columns.map(column =>
       Object.assign({ ...this.columnDefaults }, column)
     );

@@ -178,13 +178,19 @@ export class OverviewComponent implements OnInit {
     } else {
       this.sortByKeyDesc(this.filteredData, sort.column);
     }
-    this.tableData = this.filteredData.slice(this.pageIndices.start, this.pageIndices.end);
+    this.tableData = this.filteredData.slice(
+      this.pageIndices.start,
+      this.pageIndices.end
+    );
   }
 
   handleSelectedRowsAction(selectedRowIds: Array<number>) {}
 
   handlePageChange(pageData) {
     this.pageIndices = {...pageData.indices};
-    this.tableData = this.filteredData.slice(pageData.indices.start, pageData.indices.end);
+    this.tableData = this.filteredData.slice(
+      pageData.indices.start,
+      pageData.indices.end
+    );
   }
 }
