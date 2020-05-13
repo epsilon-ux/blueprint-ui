@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsageComponent implements OnInit {
 
-  exampleTwoOptions = [
+  exampleTwoToggleButtons = [
     {
       id: 'ex1-Opt1',
       text: 'Option 1',
@@ -21,7 +21,7 @@ export class UsageComponent implements OnInit {
     }
   ];
 
-  exampleThreeOptions = [
+  exampleThreeToggleButtons = [
     {
       id: 'ex2-Opt1',
       text: 'Option 1',

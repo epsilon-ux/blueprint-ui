@@ -9,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ToggleComponent implements OnInit {
 
   @Input() toggleGroupName: string;
-  @Input() toggleOptions: {
+  @Input() toggles: {
     text: string;
     id?: string;
     value?: string;

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  exampleTwoOptions = [
+  exampleTwoToggleButtons = [
     {
       id: 'ex1-Opt1',
       text: 'Option 1',
@@ -21,7 +21,7 @@ export class OverviewComponent implements OnInit {
     }
   ];
 
-  exampleThreeOptions = [
+  exampleThreeToggleButtons = [
     {
       id: 'ex2-Opt1',
       text: 'Option 1',
