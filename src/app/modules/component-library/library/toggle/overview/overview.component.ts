@@ -17,7 +17,8 @@ export class OverviewComponent implements OnInit {
     {
       id: 'ex1-Opt2',
       text: 'Option 2',
-      value: 'option2'
+      value: 'option2',
+      isChecked: false
     }
   ];
 
@@ -31,12 +32,14 @@ export class OverviewComponent implements OnInit {
     {
       id: 'ex2-Opt2',
       text: 'Option 2',
-      value: 'option2'
+      value: 'option2',
+      isChecked: false
     },
     {
       id: 'ex2-Opt3',
       text: 'Option 3',
       value: 'option3',
+      isChecked: false,
       isDisabled: true
     }
   ];
