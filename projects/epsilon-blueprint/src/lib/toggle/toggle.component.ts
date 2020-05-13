@@ -1,5 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+interface Toggle {
+  text: string;
+  id: string;
+  value?: string;
+  isChecked: boolean;
+  isDisabled: boolean;
+}
+
 @Component({
   selector: 'bp-toggle',
   templateUrl: './toggle.component.html',
@@ -9,15 +17,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ToggleComponent implements OnInit {
 
   @Input() toggleGroupName: string;
-  @Input() toggles: [
-    {
-      text: string;
-      id: string;
-      value?: string;
-      isChecked: boolean;
-      isDisabled: boolean;
-    }
-  ];
+  @Input() toggles: Toggle[];
 
   @Output() change = new EventEmitter();
 
@@ -27,15 +27,13 @@ export class ToggleComponent implements OnInit {
 
   emitChange(e) {
     e.stopPropagation();
-    this.change.emit(e);
-
     this.toggles.forEach(element => {
       element.isChecked = false;
     });
-
     const selectedElement = this.toggles.find(element => {
       return element.id === e.target.id;
     });
     selectedElement.isChecked = true;
+    this.change.emit(e);
   }
 }
