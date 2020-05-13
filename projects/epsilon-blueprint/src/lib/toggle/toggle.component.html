@@ -1,0 +1,17 @@
+<div class="btn-group btn-group-toggle">
+  <label 
+    *ngFor="let toggleOption of toggleOptions; let i = index" 
+    class="btn btn-toggle" 
+    [ngClass]="{ checked: toggleOption.isChecked, disabled: toggleOption.isDisabled }"
+  >
+    <input 
+      type="radio" 
+      [id]="toggleOption.id ? toggleOption.id : null" 
+      [name]="toggleGroupName" 
+      [value]="toggleOption.value ? toggleOption.value : null" 
+      [checked]="toggleOption.isChecked" 
+      [disabled]="toggleOption.isDisabled"
+    >
+    {{ toggleOption.text }}
+  </label>
+</div>

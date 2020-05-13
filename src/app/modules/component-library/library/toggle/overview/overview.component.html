@@ -1,0 +1,31 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Toggles allow the user to switch between two or more mutually exclusive states. The options should be related, but completely separate or even opposite.
+      </p>
+      <h2>Example</h2>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-toggle
+                toggleGroupName="demoToggleTwo"
+                [toggleOptions]="exampleTwoOptions"
+              ></bp-toggle>
+            </div>
+            <div class="col-auto">
+              <bp-toggle
+                toggleGroupName="demoToggleThree"
+                [toggleOptions]="exampleThreeOptions"
+              ></bp-toggle>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TODO: add related components -->
+</section>

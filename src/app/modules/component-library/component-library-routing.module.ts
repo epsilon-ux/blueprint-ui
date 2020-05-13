@@ -53,6 +53,9 @@ const routes: Routes = [
     { path: 'tile', loadChildren: () => import('./library/tile/tile.module')
       .then(m => m.TileLibraryModule) },
 
+    { path: 'toggle', loadChildren: () => import('./library/toggle/toggle.module')
+      .then(m => m.ToggleLibraryModule) },
+
     { path: 'toggletip', loadChildren: () => import('./library/toggletip/toggletip.module')
       .then(m => m.ToggletipLibraryModule) },
 

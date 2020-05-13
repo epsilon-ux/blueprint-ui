@@ -82,6 +82,10 @@ export class ComponentLibraryComponent {
             route: './tile'
           },
           {
+            text: 'Toggle',
+            route: './toggle'
+          },
+          {
             text: 'Toggletip',
             route: './toggletip'
           }
