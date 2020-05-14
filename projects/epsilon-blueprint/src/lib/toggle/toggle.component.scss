@@ -14,6 +14,11 @@
     background: $ice;
   }
 
+  &:active
+  {
+    background: $storm;
+  }
+
   &.checked
   {
     border-color: $border-color-primary;
@@ -22,7 +27,7 @@
     color: $font-color-primary;
     font-weight: $font-weight-bold;
 
-    &:focus
+    &.focus // TODO: add .focus to label.btn.btn-toggle.checked on :focus of input
     {
       box-shadow: inset 0 0 4px 0 $accent-color-primary, $box-shadow-focus-default;
     }
@@ -34,7 +39,10 @@
     background: $mist;
     color: $font-color-secondary;
     opacity: 1;
+
+    &:hover
+    {
+      cursor: not-allowed;
+    }
   }
 }
-
-// TODO: figure out :active
