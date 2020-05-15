@@ -44,5 +44,8 @@ export * from './lib/table/table.module';
 export * from './lib/tile/tile.component';
 export * from './lib/tile/tile.module';
 
+export * from './lib/toggle/toggle.component';
+export * from './lib/toggle/toggle.module';
+
 export * from './lib/toggletip/toggletip.component';
 export * from './lib/toggletip/toggletip.module';

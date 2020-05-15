@@ -1,0 +1,33 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Toggles are stylized radio buttons, and function like a radio group. There must be a default selection and the user can only select one option. Toggles should deliver an immediate result when the user switches to another option.
+      </p>
+      <p>
+        Toggles should be used for binary or mutually exclusive options and should activate or deactivate a state. Do not use toggles for navigation or actions. Limit the use of toggles within forms, unless the toggle has two binary options, such as activating or deactivating.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-toggle
+                toggleGroupName="demoToggleTwo"
+                [toggles]="exampleTwoToggleButtons"
+              ></bp-toggle>
+            </div>
+            <div class="col-auto">
+              <bp-toggle
+                toggleGroupName="demoToggleThree"
+                [toggles]="exampleThreeToggleButtons"
+              ></bp-toggle>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TODO: add related components -->
+</section>
