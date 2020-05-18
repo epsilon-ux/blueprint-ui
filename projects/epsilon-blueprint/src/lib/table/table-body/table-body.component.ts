@@ -21,6 +21,8 @@ export class TableBodyComponent implements OnInit {
     [key: string]: any;
   }[];
   @Input() properties: Properties;
+  @Input() selectedRows: Set<any>;
+  @Input() expandedRows: Set<any>;
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
@@ -52,12 +54,14 @@ export class TableBodyComponent implements OnInit {
     );
   }
 
-  selectRows(event, rowId) {
-    this.selectedRowsAction.emit({event, rowId});
+  selectRows(event, row) {
+    this.selectedRowsAction.emit({event, row});
   }
 
   toggleExpanded(row) {
-    row._meta.isExpanded = !row._meta.isExpanded;
+    this.expandedRows.has(row)
+    ? this.expandedRows.delete(row)
+    : this.expandedRows.add(row);
   }
 
   emitAction(action: string, rowId: string) {
