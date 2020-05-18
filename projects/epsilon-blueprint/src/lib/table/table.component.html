@@ -84,6 +84,8 @@
         app-table-body
         [tableData]="data"
         [properties]="properties"
+        [selectedRows]="selectedRows"
+        [expandedRows]="expandedRows"
         (action)="emitAction($event)"
         (selectedRowsAction)="onSelectRow($event)"
       ></tbody>
