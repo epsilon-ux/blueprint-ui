@@ -33,8 +33,7 @@ export class TableBodyComponent implements OnInit {
 
   // displayDensity
   densityClass: string;
-
-  showSelectedRowsAction = false;
+  
   @ViewChild('selectAllRowsRef', { static: false })
   selectAllRowsRef: ElementRef;
 
