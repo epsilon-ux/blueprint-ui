@@ -236,7 +236,6 @@ export class TableComponent implements OnInit, OnChanges {
     } else {
       this.selectedRows.delete(selectedRow);
     }
-    console.log(this.selectedRows.size, this.dataLength);
     if (this.selectedRows.size === this.dataLength) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
