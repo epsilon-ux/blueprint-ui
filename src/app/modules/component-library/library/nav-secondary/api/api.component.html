@@ -1,8 +1,11 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col">
-
-      <h2 class="mt-0">Inputs</h2>
+      <dl class="inline-details font-size-lg">
+        <dt>Selector</dt>
+        <dd>bp-nav-secondary</dd>
+      </dl>
+      <h2>Inputs</h2>
       <table class="table table-bordered-rows mb-5">
         <caption class="sr-only">Secondary navigation inputs</caption>
         <thead>
@@ -29,7 +32,9 @@
           <tr>
             <td>shouldRouteMatchExact</td>
             <td>boolean</td>
-            <td>Determines if the routes should match exactly to be active. Equates to the routerLinkActiveOptions “exact” option.</td>
+            <td>
+              Determines if the routes should match exactly to be active. Equates to the routerLinkActiveOptions “exact” option.
+            </td>
             <td>
               <p>Default is "false".</p>
               <p>When "true" the routes should match exactly.</p>
@@ -55,11 +60,12 @@
           </tr>
         </tbody>
       </table>
-
       <h2 id="navItemDocs">NavItem</h2>
       <p>There are two kinds of NavItems that are determiend by what properties are defined.</p>
       <h3>Routing Node</h3>
-      <p>The routing node represents a link to another page in the application. This node is defined by providing the following properties to a NavItem object.</p>
+      <p>
+        The routing node represents a link to another page in the application. This node is defined by providing the following properties to a NavItem object.
+      </p>
       <table class="table table-bordered-rows mb-5">
         <caption class="sr-only">NavItem routing node properties</caption>
         <thead>
@@ -83,7 +89,9 @@
         </tbody>
       </table>
       <h3>Parent Node</h3>
-      <p>The parent node has children that are routing nodes, and represents a grouping of NavItems. This node is defined by providing the following properties to a NavItem object.</p>
+      <p>
+        The parent node has children that are routing nodes, and represents a grouping of NavItems. This node is defined by providing the following properties to a NavItem object.
+      </p>
       <table class="table table-bordered-rows mb-5">
         <caption class="sr-only">NavItem parent node properties</caption>
         <thead>
@@ -106,9 +114,7 @@
           </tr>
         </tbody>
       </table>
-
       <!-- TODO: add versions & features table -->
-
     </div>
   </div>
 </section>
