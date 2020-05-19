@@ -36,3 +36,27 @@ abbr[title]
   color: $font-color-secondary;
   font-style: italic;
 }
+
+.inline-details
+{
+  dt, 
+  dd
+  {
+    display: inline;
+  }
+
+  dt
+  {
+    font-weight: $font-weight-regular;
+
+    &::after
+    {
+      content: ":\00a0";
+    }
+  }
+
+  dd
+  {
+    font-weight: $font-weight-semi-bold;
+  }
+}
