@@ -26,7 +26,7 @@ export class TableComponent implements OnInit, OnChanges {
 
   @Output() action = new EventEmitter();
   @Output() onSort = new EventEmitter();
-  @Output() selectedRowsAction = new EventEmitter();
+  @Output() rowSelected = new EventEmitter();
 
   // Defaults
   propertyDefaults = {
@@ -81,7 +81,6 @@ export class TableComponent implements OnInit, OnChanges {
   // displayDensity
   densityClass: string;
 
-  showSelectedRowsAction = false;
   @ViewChild('selectAllRowsRef', { static: false })
   selectAllRowsRef: ElementRef;
 
@@ -237,6 +236,7 @@ export class TableComponent implements OnInit, OnChanges {
     } else {
       this.selectedRows.delete(selectedRow);
     }
+    console.log(this.selectedRows.size, this.dataLength);
     if (this.selectedRows.size === this.dataLength) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
@@ -250,7 +250,7 @@ export class TableComponent implements OnInit, OnChanges {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = false;
     }
-    this.selectedRowsAction.emit({
+    this.rowSelected.emit({
       areAllSelected: this.isSelectAllChecked,
       selected: selectedRow
     });
@@ -265,7 +265,7 @@ export class TableComponent implements OnInit, OnChanges {
     } else {
       this.tableData.forEach(d => this.selectedRows.delete(d));
     }
-    this.selectedRowsAction.emit({
+    this.rowSelected.emit({
       areAllSelected: this.isSelectAllChecked,
       selected: null
     });
