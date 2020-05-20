@@ -31,12 +31,6 @@ abbr[title]
   }
 }
 
-.note-text
-{
-  color: $font-color-secondary;
-  font-style: italic;
-}
-
 .inline-details
 {
   dt, 
@@ -58,5 +52,35 @@ abbr[title]
   dd
   {
     font-weight: $font-weight-semi-bold;
+  }
+}
+
+.card
+{
+  border-radius: 0;
+  border-color: $border-color-secondary;
+
+  &.component-wrap
+  {
+    overflow-y: hidden;
+
+    .card-body
+    {
+      margin-bottom: -40px;
+
+      .component
+      {
+        display: inline-block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.card-body
+{
+  &.component-preview
+  {
+    padding: 30px;
   }
 }
