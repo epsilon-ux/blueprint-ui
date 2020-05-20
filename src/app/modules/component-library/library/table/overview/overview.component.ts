@@ -184,7 +184,12 @@ export class OverviewComponent implements OnInit {
     );
   }
 
-  handleSelectedRowsAction(selectedRowIds: Array<number>) {}
+  handleSelectedRowsAction(selectedRowIds: {
+    areAllSelected: boolean;
+    selected: {[key: string]: any;}
+  }) {
+    // Handle the selected rows here
+  }
 
   handlePageChange(pageData) {
     this.pageIndices = {...pageData.indices};

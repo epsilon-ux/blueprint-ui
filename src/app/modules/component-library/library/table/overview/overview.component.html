@@ -14,6 +14,7 @@
           <bp-table
             [isDataLoading]="isDataLoading"
             [data]="tableData"
+            [dataLength]="filteredData.length"
             [properties]="properties"
             (action)="handleAction($event)"
             (onSort)="handleSort($event)"
