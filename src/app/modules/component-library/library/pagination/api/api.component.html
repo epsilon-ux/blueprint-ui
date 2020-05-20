@@ -35,10 +35,10 @@
           <tr>
             <td>pageBuffer</td>
             <td>number</td>
-            <td>The number of page numbers to show in the page selector before and after the current page.</td>
+            <td>The number of pager buttons to show in the page selector before and after the current page.</td>
             <td>
               <p>Default is "1".</p>
-              <p>When "1", there will be one page number on either side of the current page number. On the first or last page there will be two page numbers to either the right or left of the current page respectively.</p>
+              <p>When "1", there will be one page number on either side of the current pager button. On the first or last page there will be two pager buttons to either the right or left of the current pager button respectively.</p>
             </td>
           </tr>
           <tr>
@@ -51,14 +51,14 @@
             <td>internationalization</td>
             <td>object</td>
             <td>Used to change any text in the component and set the option vales of the "number of rows" selector.</td>
-            <td>See internationalization.</td>
+            <td>See <a routerLink="." fragment="intl">internationalization</a>.</td>
           </tr>
         </tbody>
       </table>
 
-      <h3>Internationalization</h3>
+      <h3 id="intl">Internationalization</h3>
       <table class="table table-bordered-rows mb-5">
-        <caption class="sr-only">Pagination inputs</caption>
+        <caption class="sr-only">Internationalization</caption>
         <thead>
           <tr>
             <th class="pt-0">Input</th>
@@ -134,7 +134,7 @@
           </tr>
           <tr>
             <td>indices</td>
-            <td>An object containing <code>start</code> and <code>end</code> keys whose values corresponding to the start and end indices of the data based on the current page and number of rows option selected.</td>
+            <td>An object containing <code>start</code> and <code>end</code> keys whose values correspond to the start and end indices of the data based on the current page and number of rows option selected.</td>
           </tr>
         </tbody>
       </table>
