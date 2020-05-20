@@ -20,12 +20,13 @@ export class TableComponent implements OnInit, OnChanges {
   @Input() data: {
     [key: string]: any;
   }[];
+  @Input() dataLength: number;
   @Input() isDataLoading: boolean;
   @Input() properties: Properties;
 
   @Output() action = new EventEmitter();
   @Output() onSort = new EventEmitter();
-  @Output() selectedRowsAction = new EventEmitter();
+  @Output() rowSelected = new EventEmitter();
 
   // Defaults
   propertyDefaults = {
@@ -61,8 +62,10 @@ export class TableComponent implements OnInit, OnChanges {
   };
 
   // Data
-  filteredData = [];
   tableData = [];
+
+  selectedRows = new Set();
+  expandedRows = new Set();
 
   // Select All Rows
   isSelectAllChecked = false;
@@ -78,7 +81,6 @@ export class TableComponent implements OnInit, OnChanges {
   // displayDensity
   densityClass: string;
 
-  showSelectedRowsAction = false;
   @ViewChild('selectAllRowsRef', { static: false })
   selectAllRowsRef: ElementRef;
 
@@ -170,20 +172,15 @@ export class TableComponent implements OnInit, OnChanges {
     if (
       (changes.isDataLoading &&
         changes.isDataLoading.currentValue === false &&
-        this.data.length > 0) ||
+        this.tableData.length > 0) ||
       (changes.data && !changes.data.firstChange)
     ) {
-      this.data = changes.data.currentValue;
-      this.data.forEach(row => {
-        row._meta = {};
-        if (this.properties.hasSelectableRows) {
-          row._meta.isChecked = false;
-        }
-        if (this.properties.expandableRowsTemplate) {
-          row._meta.isExpanded = false;
-        }
-      });
-      this.filteredData = [...this.data];
+      this.tableData = changes.data.currentValue;
+      if (this.isSelectAllChecked) {
+        this.tableData.forEach(row => this.selectedRows.add(row));
+      } else if (!this.isSelectAllChecked && !this.isSelectAllIndeterminate) {
+        this.tableData.forEach(row => this.selectedRows.delete(row));
+      }
     }
   }
 
@@ -233,40 +230,44 @@ export class TableComponent implements OnInit, OnChanges {
   // To select/unselect one row at a time
   onSelectRow(e) {
     const event = e.event;
-    const rowId = e.rowId;
-    const selectedRow = this.filteredData.find(
-      // Double equals to allow flexibility in the data since we aren't concerned with type here
-      data => data[this.properties.rowId] == rowId
-    );
-    selectedRow._meta.isChecked = event.target.checked;
-    const selectedRowsCount = this.filteredData
-      .filter(data => data._meta.isChecked)
-      .length;
-    
-    if (selectedRowsCount === this.filteredData.length) {
+    const selectedRow = e.row;
+    if (event.target.checked) {
+      this.selectedRows.add(selectedRow);
+    } else {
+      this.selectedRows.delete(selectedRow);
+    }
+    if (this.selectedRows.size === this.dataLength) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
     } else if (
-      selectedRowsCount > 0 &&
-      selectedRowsCount < this.filteredData.length
+      this.selectedRows.size > 0 &&
+      this.selectedRows.size < this.dataLength
     ) {
       this.isSelectAllIndeterminate = true;
       this.isSelectAllChecked = false;
-    } else if (selectedRowsCount === 0) {
+    } else if (this.selectedRows.size === 0) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = false;
     }
-    this.emitSelectedRowsAction();
+    this.rowSelected.emit({
+      areAllSelected: this.isSelectAllChecked,
+      selected: selectedRow
+    });
   }
 
   // To select/deselect all the rows
   onSelectAllRows(event) {
     this.isSelectAllChecked = !this.isSelectAllChecked;
     this.isSelectAllIndeterminate = false;
-    this.filteredData.forEach(row => {
-      row._meta.isChecked = this.isSelectAllChecked;
+    if (this.isSelectAllChecked) {
+      this.tableData.forEach(d => this.selectedRows.add(d));
+    } else {
+      this.tableData.forEach(d => this.selectedRows.delete(d));
+    }
+    this.rowSelected.emit({
+      areAllSelected: this.isSelectAllChecked,
+      selected: null
     });
-    this.emitSelectedRowsAction();
   }
 
   // --------------- DisplayDensity ---------------
@@ -280,17 +281,5 @@ export class TableComponent implements OnInit, OnChanges {
 
   emitAction(action: string) {
     this.action.emit(action);
-  }
-
-  // To perform an action on selected rows
-  emitSelectedRowsAction() {
-    const selectedRowsIds = [];
-    this.filteredData.forEach(data => {
-      if (data._meta.isChecked) {
-        selectedRowsIds.push(data[this.properties.rowId]);
-      }
-    });
-
-    this.selectedRowsAction.emit(selectedRowsIds);
   }
 }
