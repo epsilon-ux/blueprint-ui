@@ -21,7 +21,7 @@
             (selectedRowsAction)="handleSelectedRowsAction($event)"
           >
             <bp-pagination
-              [totalRecords]="filteredData.length"
+              [dataLength]="filteredData.length"
               [defaultNumberOfRows]="10"
               [pageBuffer]="1"
               (pageData)="handlePageChange($event)"

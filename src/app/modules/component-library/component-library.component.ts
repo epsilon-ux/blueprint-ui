@@ -62,6 +62,10 @@ export class ComponentLibraryComponent {
             route: './multi-select'
           },
           {
+            text: 'Pagination',
+            route: './pagination'
+          },
+          {
             text: 'Panel',
             route: './panel'
           },

@@ -21,7 +21,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   parseLookupString = parseLookupString;
 
   @Input()
-  totalRecords: number;
+  dataLength: number;
 
   @Input()
   defaultNumberOfRows: number;
@@ -31,19 +31,7 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   @Input()
   pageNumber: number;
-
-  @Output()
-  pageData = new EventEmitter();
-
-  totalPages: number;
-  currentPage = 1;
-  pageButtons = [];
-  numberOfRows = 10;
-  indices = {
-    start: 0,
-    end: this.defaultNumberOfRows - 1
-  };
-
+  
   @Input()
   internationalization= {
     'numResults results': '#{numResults} result(s)',
@@ -60,6 +48,18 @@ export class PaginationComponent implements OnInit, OnChanges {
     ]
   };
 
+  @Output()
+  pageData = new EventEmitter();
+
+  totalPages: number;
+  currentPage = 1;
+  pageButtons = [];
+  numberOfRows = 10;
+  indices = {
+    start: 0,
+    end: this.defaultNumberOfRows - 1
+  };
+
   constructor() {}
 
   ngOnInit() {
@@ -68,11 +68,11 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes) {
     // Select the first page when the data changes
-    if (changes.totalRecords) {
+    if (changes.dataLength) {
       this.paginate(1);
     }
 
-    // Handles when page needs to eb changed from parent component
+    // Handles when page needs to be changed from parent component
     if (
       changes.pageNumber &&
       changes.pageNumber.currentValue &&
@@ -139,6 +139,6 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   getTotalPages() {
-    return Math.ceil(this.totalRecords / this.numberOfRows);
+    return Math.ceil(this.dataLength / this.numberOfRows);
   }
 }
