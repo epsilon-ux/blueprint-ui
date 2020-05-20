@@ -1,4 +1,4 @@
-@import '../../../../dist/epsilon-blueprint/styles/global-variables';
+@import '../../dist/epsilon-blueprint/styles/global-variables';
 
 .skip-link
 {
@@ -24,4 +24,24 @@
     left: 0;
     transition: top 0.5s ease-in;
   }
+}
+
+app-base-template
+{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-body
+{
+  display: flex;
+  flex: 1 1 auto;
+  overflow-y: hidden;
+}
+
+.app-main
+{
+  width: 100%;
+  overflow-y: auto;
 }

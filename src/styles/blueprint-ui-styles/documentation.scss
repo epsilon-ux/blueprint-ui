@@ -31,8 +31,32 @@ abbr[title]
   }
 }
 
-.note-text
+.card
 {
-  color: $font-color-secondary;
-  font-style: italic;
+  border-radius: 0;
+  border-color: $border-color-secondary;
+
+  &.component-wrap
+  {
+    overflow-y: hidden;
+
+    .card-body
+    {
+      margin-bottom: -40px;
+
+      .component
+      {
+        display: inline-block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.card-body
+{
+  &.component-preview
+  {
+    padding: 30px;
+  }
 }

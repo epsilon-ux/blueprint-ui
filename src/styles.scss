@@ -1,34 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+// epsilon-blueprint styles
 @import '../dist/epsilon-blueprint/styles';
+@import './styles/base-template';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 // Blueprint UI Styles
 @import './styles/blueprint-ui-styles/nav-primary';
-@import './styles/blueprint-ui-styles/nav-secondary';
-@import './styles/blueprint-ui-styles/typography';
-@import './styles/blueprint-ui-styles/cards';
 @import './styles/blueprint-ui-styles/documentation';
-
-@import "~ng-pick-datetime/assets/style/picker.min.css";
-
-/* page-level styling */
-.app-body
-{
-  position: relative;
-  display: flex;
-  overflow: visible;
-  margin-top: 54px;
-}
-
-.app-main
-{
-  flex: 1;
-  overflow-x: auto;
-}
-
-.page-header
-{
-  margin-bottom: 40px;
-  border-bottom: 1px solid $border-color-primary;
-  padding: 25px 0;
-  background: $cloud;
-}
