@@ -1,0 +1,26 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        The pagination component enables users to step through data in consumable chunks.
+      </p>
+      <h2>Example</h2>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col">
+              <bp-pagination
+                [dataLength]="100"
+                [defaultNumberOfRows]="10"
+                [pageBuffer]="1"
+                (pageData)="handlePageChange($event)"
+              ></bp-pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
