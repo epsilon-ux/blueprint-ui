@@ -1,0 +1,62 @@
+<div class="pagination-wrapper flex-column flex-sm-row">
+  <div class="d-flex align-items-center mb-3 mb-sm-0">
+    <span class="pagination-records">
+      {{ parseLookupString(internationalization['numResults results'], {numResults: dataLength}) }}
+    </span>
+    <label for="numberOfRows" class="sr-only">{{ internationalization['Number of Rows'] }}</label>
+    <ng-select
+      labelForId="numberOfRows"
+      name="numberOfRows"
+      [items]="internationalization['Number Of Rows Options']"
+      bindLabel="optionText"
+      bindValue="optionValue"
+      [(ngModel)]="numberOfRows"
+      [searchable]="false"
+      [clearable]="false"
+      (change)="rowChangePage(currentPage)"
+    ></ng-select>
+  </div>
+  <div class="pagination-buttons">
+    <button
+      class="btn-pager btn-pager-icon"
+      [attr.aria-label]="internationalization['First Page']"
+      [disabled]="isStepperDisabled(1)"
+      (click)="changePage(1)"
+    >
+      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+    </button>
+    <button
+      class="btn-pager btn-pager-icon"
+      [attr.aria-label]="internationalization['Previous Page']"
+      [disabled]="isStepperDisabled(1)"
+      (click)="changePage(currentPage - 1)"
+    >
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </button>
+    <button
+      *ngFor="let page of pageButtons"
+      class="btn-pager btn-pager-number"
+      [class.active]="page === currentPage"
+      [attr.aria-label]="'Page ' + page"
+      (click)="changePage(page)"
+    >
+      {{ page }}
+    </button>
+    <button
+      class="btn-pager btn-pager-icon"
+      [attr.aria-label]="internationalization['Next Page']"
+      [disabled]="isStepperDisabled(totalPages)"
+      (click)="changePage(currentPage + 1)"
+    >
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </button>
+    <button
+      class="btn-pager btn-pager-icon"
+      [attr.aria-label]="internationalization['Last Page']"
+      [disabled]="isStepperDisabled(totalPages)"
+      (click)="changePage(totalPages)"
+    >
+      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>

@@ -9,15 +9,24 @@
   </div>
   <div class="row">
     <div class="col">
-      <div class="card component-wrap mb-3">
+      <div class="card mb-3">
         <div class="card-body component-preview">
           <bp-table
             [isDataLoading]="isDataLoading"
-            [data]="data"
+            [data]="tableData"
+            [dataLength]="filteredData.length"
             [properties]="properties"
             (action)="handleAction($event)"
+            (onSort)="handleSort($event)"
             (selectedRowsAction)="handleSelectedRowsAction($event)"
-          ></bp-table>
+          >
+            <bp-pagination
+              [dataLength]="filteredData.length"
+              [defaultNumberOfRows]="10"
+              [pageBuffer]="1"
+              (pageData)="handlePageChange($event)"
+            ></bp-pagination>
+          </bp-table>
         </div>
       </div>
     </div>

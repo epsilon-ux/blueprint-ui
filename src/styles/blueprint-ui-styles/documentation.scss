@@ -31,8 +31,56 @@ abbr[title]
   }
 }
 
-.note-text
+.inline-details
 {
-  color: $font-color-secondary;
-  font-style: italic;
+  dt, 
+  dd
+  {
+    display: inline;
+  }
+
+  dt
+  {
+    font-weight: $font-weight-regular;
+
+    &::after
+    {
+      content: ":\00a0";
+    }
+  }
+
+  dd
+  {
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+.card
+{
+  border-radius: 0;
+  border-color: $border-color-secondary;
+
+  &.component-wrap
+  {
+    overflow-y: hidden;
+
+    .card-body
+    {
+      margin-bottom: -40px;
+
+      .component
+      {
+        display: inline-block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.card-body
+{
+  &.component-preview
+  {
+    padding: 30px;
+  }
 }

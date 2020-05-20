@@ -20,26 +20,22 @@ export class TableComponent implements OnInit, OnChanges {
   @Input() data: {
     [key: string]: any;
   }[];
+  @Input() dataLength: number;
   @Input() isDataLoading: boolean;
   @Input() properties: Properties;
 
   @Output() action = new EventEmitter();
-  @Output() selectedRowsAction = new EventEmitter();
+  @Output() onSort = new EventEmitter();
+  @Output() rowSelected = new EventEmitter();
 
   // Defaults
   propertyDefaults = {
-    search: {
-      hasSearch: true
-    },
     sort: {
       defaultSortOrder: 'ascending'
     },
     hasSelectableRows: false,
     hasColumnSelector: true,
     hasDisplayDensity: true,
-    pagination: {
-      hasPagination: true
-    },
     internationalization: {
       'Select all rows': 'Select all rows',
       'Actions': 'Actions',
@@ -53,22 +49,10 @@ export class TableComponent implements OnInit, OnChanges {
       'Showing numVisible out of numTotal':
         'Showing #{numVisible} out of #{numTotal}',
       'Display Density': 'Display Density:',
-      'numResults results': '#{numResults} result(s)',
-      'Number of Rows': 'Number of Rows per Page',
-      'First Page': 'First Page',
-      'Previous Page': 'Previous Page',
-      'Next Page': 'Next Page',
-      'Last Page': 'Last Page',
       'Display Density Options': {
         'Comfortable': 'Comfortable',
         'Compact': 'Compact'
-      },
-      'Number Of Rows Options': [
-        { optionText: '10 rows', optionValue: 10 },
-        { optionText: '25 rows', optionValue: 25 },
-        { optionText: '50 rows', optionValue: 50 },
-        { optionText: '100 rows', optionValue: 100 }
-      ]
+      }
     }
   };
 
@@ -78,8 +62,10 @@ export class TableComponent implements OnInit, OnChanges {
   };
 
   // Data
-  filteredData = [];
   tableData = [];
+
+  selectedRows = new Set();
+  expandedRows = new Set();
 
   // Select All Rows
   isSelectAllChecked = false;
@@ -89,30 +75,14 @@ export class TableComponent implements OnInit, OnChanges {
   sortColumnKey: string;
   sortOrder: string;
 
-  // Pagination
-  startIndex: number;
-  endIndex: number;
-  totalRecords: number;
-  numberOfRows;
-  currentPage = 1;
-  pageBuffer = 1;
-  defaultNumberOfRows = 10;
-
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
 
   // displayDensity
   densityClass: string;
 
-  showSelectedRowsAction = false;
   @ViewChild('selectAllRowsRef', { static: false })
   selectAllRowsRef: ElementRef;
-
-  // Used for pagination
-  pageData: {
-    currentPage: number;
-    numberOfRows: number;
-  };
 
   constructor() {}
 
@@ -123,10 +93,16 @@ export class TableComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     // Set defaults
-    this.properties = Object.assign(this.propertyDefaults, this.properties);
+    this.properties = Object.assign(
+      this.propertyDefaults,
+      this.properties
+    );
     this.properties.columns = this.properties.columns.map(column =>
       Object.assign({ ...this.columnDefaults }, column)
     );
+
+    this.sortOrder = this.properties.sort.defaultSortOrder;
+    this.sortColumnKey = this.properties.sort.defaultSortedColumn;
 
     // LocalStorage
     const displayDensityName =
@@ -196,26 +172,15 @@ export class TableComponent implements OnInit, OnChanges {
     if (
       (changes.isDataLoading &&
         changes.isDataLoading.currentValue === false &&
-        this.data.length > 0) ||
+        this.tableData.length > 0) ||
       (changes.data && !changes.data.firstChange)
     ) {
-      this.data = changes.data.currentValue;
-      this.data.forEach(row => {
-        row._meta = {};
-        if (this.properties.hasSelectableRows) {
-          row._meta.isChecked = false;
-        }
-        if (this.properties.expandableRowsTemplate) {
-          row._meta.isExpanded = false;
-        }
-      });
-      this.filteredData = [...this.data];
-      this.totalRecords = this.data.length;
-      this.defaultSort();
-      this.paginate({
-        currentPage: this.currentPage,
-        numberOfRows: this.defaultNumberOfRows
-      });
+      this.tableData = changes.data.currentValue;
+      if (this.isSelectAllChecked) {
+        this.tableData.forEach(row => this.selectedRows.add(row));
+      } else if (!this.isSelectAllChecked && !this.isSelectAllIndeterminate) {
+        this.tableData.forEach(row => this.selectedRows.delete(row));
+      }
     }
   }
 
@@ -228,48 +193,6 @@ export class TableComponent implements OnInit, OnChanges {
   defaultSort() {
     this.sortOrder = this.properties.sort.defaultSortOrder;
     this.sortColumnKey = this.properties.sort.defaultSortedColumn;
-
-    this.sortOrder === 'ascending'
-      ? this.ascSort(this.properties.sort.defaultSortedColumn)
-      : this.descSort(this.properties.sort.defaultSortedColumn);
-  }
-
-  ascSort(colHeader: string) {
-    this.sortByKeyAsc(this.filteredData, colHeader);
-  }
-
-  descSort(colHeader: string) {
-    this.sortByKeyDesc(this.filteredData, colHeader);
-  }
-
-  sortByKeyAsc(array, key) {
-    const column: any = this.properties.columns.filter(
-      column => column.key === key
-    )[0];
-    if (column.sortFunctionAsc) {
-      return array.sort((a, b) => column.sortFunctionAsc(a[key], b[key]));
-    } else {
-      return array.sort((a, b) => {
-        const x = a[key];
-        const y = b[key];
-        return x < y ? -1 : 1;
-      });
-    }
-  }
-
-  sortByKeyDesc(array, key) {
-    const column: any = this.properties.columns.filter(
-      column => column.key === key
-    )[0];
-    if (column.sortFunctionAsc) {
-      return array.sort((a, b) => column.sortFunctionAsc(a[key], b[key])).reverse();
-    } else {
-      return array.sort((a, b) => {
-        const x = a[key];
-        const y = b[key];
-        return x > y ? -1 : 1;
-      });
-    }
   }
 
   getAriaSortOrder(key: string): string {
@@ -289,102 +212,62 @@ export class TableComponent implements OnInit, OnChanges {
     if (colHeader === this.sortColumnKey) {
       if (this.sortOrder === '' || this.sortOrder === 'descending') {
         this.sortOrder = 'ascending';
-        this.ascSort(colHeader);
       } else {
         this.sortOrder = 'descending';
-        this.descSort(colHeader);
       }
     } else {
       this.sortColumnKey = colHeader;
       this.sortOrder = 'ascending';
-      this.ascSort(colHeader);
     }
-    this.paginate({
-      currentPage: this.currentPage,
-      numberOfRows: this.numberOfRows
+    this.onSort.emit({
+      column: this.sortColumnKey,
+      order: this.sortOrder
     });
   }
 
-  // --------------- Searching ---------------
-
-  search(query) {
-    this.filteredData = this.data.filter(d => {
-      for (const col of this.properties.columns) {
-        if (
-          d[col.key] &&
-          String(d[col.key])
-            .toLowerCase()
-            .includes(query.toLowerCase())
-        ) {
-          return true;
-        }
-      }
-      return false;
-    });
-    this.totalRecords = this.filteredData.length;
-    this.paginate({ currentPage: 1, numberOfRows: this.numberOfRows });
-  }
-
-  clearSearch() {
-    this.filteredData = [...this.data];
-    this.totalRecords = this.filteredData.length;
-    this.paginate({ currentPage: 1, numberOfRows: this.numberOfRows });
-    this.defaultSort();
-  }
-
-  // --------------- Pagination ---------------
-
-  paginate(pageData: { currentPage: number; numberOfRows: number }) {
-    this.pageData = pageData;
-    if (pageData.numberOfRows !== this.numberOfRows) {
-      this.currentPage =
-        Math.floor(this.startIndex / pageData.numberOfRows) + 1 || 1;
-    } else {
-      this.currentPage = pageData.currentPage;
-    }
-    this.numberOfRows = pageData.numberOfRows;
-    this.startIndex = (this.currentPage - 1) * this.numberOfRows;
-    this.endIndex = this.startIndex + this.numberOfRows;
-    this.tableData = this.filteredData.slice(this.startIndex, this.endIndex);
-  }
+  // --------------- Selectable Rows ---------------
 
   // To select/unselect one row at a time
   onSelectRow(e) {
     const event = e.event;
-    const rowId = e.rowId;
-    const selectedRow = this.filteredData.find(
-      // Double equals to allow flexibility in the data since we aren't concerned with type here
-      data => data[this.properties.rowId] == rowId
-    );
-    selectedRow._meta.isChecked = event.target.checked;
-    const selectedRowsCount = this.filteredData
-      .filter(data => data._meta.isChecked)
-      .length;
-    
-    if (selectedRowsCount === this.filteredData.length) {
+    const selectedRow = e.row;
+    if (event.target.checked) {
+      this.selectedRows.add(selectedRow);
+    } else {
+      this.selectedRows.delete(selectedRow);
+    }
+    if (this.selectedRows.size === this.dataLength) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
     } else if (
-      selectedRowsCount > 0 &&
-      selectedRowsCount < this.filteredData.length
+      this.selectedRows.size > 0 &&
+      this.selectedRows.size < this.dataLength
     ) {
       this.isSelectAllIndeterminate = true;
       this.isSelectAllChecked = false;
-    } else if (selectedRowsCount === 0) {
+    } else if (this.selectedRows.size === 0) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = false;
     }
-    this.emitSelectedRowsAction();
+    this.rowSelected.emit({
+      areAllSelected: this.isSelectAllChecked,
+      selected: selectedRow
+    });
   }
 
   // To select/deselect all the rows
   onSelectAllRows(event) {
     this.isSelectAllChecked = !this.isSelectAllChecked;
     this.isSelectAllIndeterminate = false;
-    this.filteredData.forEach(row => {
-      row._meta.isChecked = this.isSelectAllChecked;
+    if (this.isSelectAllChecked) {
+      this.tableData.forEach(d => this.selectedRows.add(d));
+    } else {
+      this.tableData.forEach(d => this.selectedRows.delete(d));
+    }
+    this.rowSelected.emit({
+      areAllSelected: this.isSelectAllChecked,
+      selected: null
     });
-    this.emitSelectedRowsAction();
   }
 
   // --------------- DisplayDensity ---------------
@@ -398,17 +281,5 @@ export class TableComponent implements OnInit, OnChanges {
 
   emitAction(action: string) {
     this.action.emit(action);
-  }
-
-  // To perform an action on selected rows
-  emitSelectedRowsAction() {
-    const selectedRowsIds = [];
-    this.filteredData.forEach(data => {
-      if (data._meta.isChecked) {
-        selectedRowsIds.push(data[this.properties.rowId]);
-      }
-    });
-
-    this.selectedRowsAction.emit(selectedRowsIds);
   }
 }

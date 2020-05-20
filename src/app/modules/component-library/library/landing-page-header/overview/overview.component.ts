@@ -10,7 +10,6 @@ export class OverviewComponent implements OnInit {
   actionText = 'Action Text';
   hasAction = true;
   actionElement = 'dropdown';
-  href = '#';
 
   dropdownItems = [
     {

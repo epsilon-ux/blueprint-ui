@@ -17,26 +17,12 @@ export default interface Properties {
     'Default': string;
     'Showing numVisible out of numTotal': string;
     'Display Density': string;
-    'numResults results': string;
-    'Number of Rows': string;
-    'First Page': string;
-    'Previous Page': string;
-    'Next Page': string;
-    'Last Page': string;
     'Display Density Options': {
       'Comfortable': string;
       'Compact': string;
     };
-    'Number Of Rows Options': {
-      optionText: string;
-      optionValue: number;
-    }[];
   };
   columns: Column[];
-  search?:  {
-    hasSearch?: boolean;
-    // TBD: Server Side / Client Side / Restricted
-  };
   sort: {
     defaultSortedColumn: string;
     defaultSortOrder: string;
@@ -47,8 +33,4 @@ export default interface Properties {
   actions?: Action[];
   hasColumnSelector?: boolean;
   hasDisplayDensity?: boolean;
-  pagination?: {
-    hasPagination?: boolean;
-    // TBD: Server Side / Client Side / Restricted 
-  };
 }

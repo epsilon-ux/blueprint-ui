@@ -1,7 +1,11 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col">
-      <h2 id="inputs" class="mt-0">Inputs</h2>
+      <dl class="inline-details font-size-lg">
+        <dt>Selector</dt>
+        <dd>bp-table</dd>
+      </dl>
+      <h2 id="inputs">Inputs</h2>
       <table class="table table-bordered-rows">
         <caption class="sr-only">
           Table inputs
@@ -21,6 +25,14 @@
             <td>
               An array of objects where each object represents a row in the
               table.
+            </td>
+            <td>Required.</td>
+          </tr>
+          <tr>
+            <td>dataLength</td>
+            <td>number</td>
+            <td>
+              The total number of rows in the entire dataset the table can paginate through.
             </td>
             <td>Required.</td>
           </tr>
@@ -97,15 +109,6 @@
               <td>Required.</td>
             </tr>
             <tr>
-              <td>search.hasSearch</td>
-              <td>boolean</td>
-              <td>Enables the search feature.</td>
-              <td>
-                Use "true" to enable search, and render the search component above
-                the table.
-              </td>
-            </tr>
-            <tr>
               <td>sort.defaultSortedColumn</td>
               <td>string</td>
               <td>
@@ -169,22 +172,6 @@
                 <p>
                   The user can select "compact" to decrease the padding of the
                   table's rows.
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>pagination.hasPagination</td>
-              <td>boolean</td>
-              <td>Enables the pagination feature.</td>
-              <td>
-                <p>
-                  Use "true" to enable pagination, and render the pagination below
-                  the table.
-                </p>
-                <p>
-                  Pagination includes: the total number of results, a select that
-                  allows the user to select the number of rows to display per
-                  page, and pager buttons.
                 </p>
               </td>
             </tr>
@@ -277,16 +264,6 @@
               <td>
                 <p>Default is "true".</p>
                 <p>When "true" the column is sortable.</p>
-              </td>
-            </tr>
-            <tr>
-              <td>sortFunctionAsc</td>
-              <td>Function</td>
-              <td>The function passed into the sort function when sorting the data by the column in ascending order (small to large).</td>
-              <td>
-                <p>The default sort function takes the difference of the first and second elements to determine sort order.</p>
-                <p>The function should be formatted like a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">compare function</a>, including having two parameters.</p>
-                <p>The function will be used and then the array will be reversed for descending sort.</p>
               </td>
             </tr>
             <tr>
@@ -667,73 +644,11 @@
               <td>Default is "Display Density:".</td>
             </tr>
             <tr>
-              <td>'numResults results'</td>
-              <td>string</td>
-              <td>
-                The text used to show the number of results/rows in the table.
-              </td>
-              <td>Default is "#&#123;numResults&#125; result(s)".</td>
-            </tr>
-            <tr>
-              <td>'Number of Rows'</td>
-              <td>string</td>
-              <td>
-                The text used for the screen reader only label of the "number of
-                rows per page" selector.
-              </td>
-              <td>Default is "Number of Rows per Page".</td>
-            </tr>
-            <tr>
-              <td>'First Page'</td>
-              <td>string</td>
-              <td>
-                The text used for the aria-label of the “first page” icon button in
-                pagination.
-              </td>
-              <td>Default is "First Page".</td>
-            </tr>
-            <tr>
-              <td>'Previous Page'</td>
-              <td>string</td>
-              <td>
-                The text used for the aria-label of the "previous page” icon button in
-                pagination.
-              </td>
-              <td>Default is "Previous Page".</td>
-            </tr>
-            <tr>
-              <td>'Next Page'</td>
-              <td>string</td>
-              <td>
-                The text used for the aria-label of the “next page” icon button in
-                pagination.
-              </td>
-              <td>Default is "Next Page".</td>
-            </tr>
-            <tr>
-              <td>'Last Page'</td>
-              <td>string</td>
-              <td>
-                The text used for the aria-label of the "last page” icon button in
-                pagination.
-              </td>
-              <td>Default is "Last Page".</td>
-            </tr>
-            <tr>
               <td>'Display Density Options'</td>
               <td>object</td>
               <td>
                 The object containing the options for the "display density"
                 selector.
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>'Number Of Rows Options'</td>
-              <td>object[]</td>
-              <td>
-                The object containing the options for the "number of rows per
-                page" selector.
               </td>
               <td></td>
             </tr>
@@ -772,42 +687,6 @@
             </tr>
           </tbody>
         </table>
-
-        <h4>Number of rows</h4>
-        <table class="table table-bordered-rows">
-          <caption class="sr-only">Number of rows properties</caption>
-          <thead>
-            <tr>
-              <th class="pt-0">Property</th>
-              <th class="pt-0">Type</th>
-              <th class="pt-0">Description</th>
-              <th class="pt-0">Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>optionText</td>
-              <td>string</td>
-              <td>
-                The text used for the option in the "number of rows per
-                page" selector.
-              </td>
-              <td>
-                Defaults are "10 rows", "25 rows", "50 rows", and "100
-                rows".
-              </td>
-            </tr>
-            <tr>
-              <td>optionValue</td>
-              <td>number</td>
-              <td>
-                The value used for the option in the "number of rows per
-                page" selector.
-              </td>
-              <td>Defaults are 10, 25, 50, and 100.</td>
-            </tr>
-          </tbody>
-        </table>
       </app-show-more>
 
       <!--
@@ -823,41 +702,8 @@
       -->
 
       <h2 id="outputs">Outputs</h2>
-      <table class="table table-bordered-rows">
-        <caption class="sr-only">
-          Table outputs
-        </caption>
-        <thead>
-          <tr>
-            <th class="w-25 pt-0">Output</th>
-            <th class="w-25 pt-0">Type</th>
-            <th class="pt-0">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>action</td>
-            <td>object</td>
-            <td>
-              Actions occur when the user selects rows, clicks an element in the
-              link column, and/or clicks an element in the actions column. When
-              an action is triggered, the table emits an action object that
-              contains an action and an id. See <a routerLink="." fragment="actionOutput">action output object</a> for more details.
-            </td>
-          </tr>
-          <tr>
-            <td>selectedRowsAction</td>
-            <td>array</td>
-            <td>
-              An array of the currently selected rows is emitted whenever a
-              change is made to the selected rows i.e. one or all row(s) is
-              select or deselected.
-            </td>
-          </tr>
-        </tbody>
-      </table>
 
-      <h3 id="actionOutput">Action output object</h3>
+      <h3 id="actionOutput">action</h3>
       <table class="table table-bordered-rows">
         <caption class="sr-only">
           Action properties
@@ -886,20 +732,60 @@
         </tbody>
       </table>
 
-      <h2>Content Projection</h2>
-      <p>
-        The table-filters are values for the optional
-        ng-content directives' select attribute.
-      </p>
+      <h3 id="actionOutput">onSort</h3>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          onSort properties
+        </caption>
+        <thead>
+          <tr>
+            <th class="w-25 pt-0">Output</th>
+            <th class="w-25 pt-0">Type</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>column</td>
+            <td>string</td>
+            <td>The key of the sorted column. The key is determined by what was provided for the <a routerLink="." fragment="columns">key property</a> of the corresponding column object.</td>
+          </tr>
+          <tr>
+            <td>order</td>
+            <td>string</td>
+            <td>Will be either "ascending" (smallest to largest) or "descending" (largest to smallest).</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <h3>table-filters</h3>
-      <p>A content area above the table used for adding additional custom filters. Content will be added to the same row as the search.</p>
-      <markdown
-        [data]="tableFiltersMD"
-        lineNumbers
-        lineHighlight
-        [line]="'8-10'"
-      ></markdown>
+      <h3 id="actionOutput">rowSelected</h3>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          rowSelected properties
+        </caption>
+        <thead>
+          <tr>
+            <th class="w-25 pt-0">Output</th>
+            <th class="w-25 pt-0">Type</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>areAllSelected</td>
+            <td>boolean</td>
+            <td>"true" when all rows have been selected.</td>
+          </tr>
+          <tr>
+            <td>selected</td>
+            <td>object</td>
+            <td>
+              <p>The object representing the row that was selected.</p>
+              <p>"null" when the "select all" checkbox is toggled.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
       <h2>Template Columns</h2>
       <p>Templates can be provided to specified columns to allow custom columns.</p>

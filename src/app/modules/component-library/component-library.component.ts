@@ -62,12 +62,32 @@ export class ComponentLibraryComponent {
             route: './multi-select'
           },
           {
+            text: 'Pagination',
+            route: './pagination'
+          },
+          {
+            text: 'Panel',
+            route: './panel'
+          },
+          {
             text: 'Radio Button',
             route: './radio-button'
           },
           {
+            text: 'Ribbon',
+            route: './ribbon'
+          },
+          {
             text: 'Search',
             route: './search'
+          },
+          {
+            text: 'Tile',
+            route: './tile'
+          },
+          {
+            text: 'Toggle',
+            route: './toggle'
           },
           {
             text: 'Toggletip',

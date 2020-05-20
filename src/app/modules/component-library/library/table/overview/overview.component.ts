@@ -14,19 +14,24 @@ export class OverviewComponent implements OnInit {
   @ViewChild('templateColumn', {static: true}) templateColumn;
   @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
 
-  set customerData(json) {
-    this.data = json.customerData.data;
+  set exampleData(json) {
+    this.rawData = json.customerData.data;
+    this.filteredData = json.customerData.data;
+    this.tableData = this.filteredData.slice(0, 10);
     this.isDataLoading = false;
   }
 
-  data = [];
+  rawData = [];
+  filteredData = [];
+  tableData = [];
+  pageIndices;
   isDataLoading = true;
 
   properties: Properties;
 
   constructor() {}
 
-  ngOnInit() {    
+  async ngOnInit() {
     this.properties = {
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
@@ -34,7 +39,6 @@ export class OverviewComponent implements OnInit {
         {
           key: 'date',
           headerText: 'Date',
-          sortFunctionAsc: (a, b) => new Date(a).getTime() - new Date(b).getTime(),
           isColumnDisplayed: true
         },
         {
@@ -100,9 +104,6 @@ export class OverviewComponent implements OnInit {
           }
         }
       ],
-      search: {
-        hasSearch: true
-      },
       sort: {
         defaultSortedColumn: 'phone',
         defaultSortOrder: 'ascending'
@@ -146,17 +147,55 @@ export class OverviewComponent implements OnInit {
       ],
       expandableRowsTemplate: this.expandableRowsTemplate,
       hasColumnSelector: true,
-      hasDisplayDensity: true,
-      pagination: {
-        hasPagination: true
-      }
+      hasDisplayDensity: true
     };
-    this.customerData = tableData;
+    this.exampleData = tableData;
   }
 
   handleAction(action: { action: string; id: string }) {
     // Use action from action buttons to trigger different events here
   }
 
-  handleSelectedRowsAction(selectedRowIds: Array<number>) {}
+  sortByKeyAsc(array, key) {
+    return array.sort((a, b) => {
+      const x = a[key];
+      const y = b[key];
+      return x < y ? -1 : 1;
+    });
+  }
+
+  sortByKeyDesc(array, key) {
+    return array.sort((a, b) => {
+      const x = a[key];
+      const y = b[key];
+      return x > y ? -1 : 1;
+    });
+  }
+  
+  handleSort(sort) {
+    if (sort.order === 'ascending') {
+      this.sortByKeyAsc(this.filteredData, sort.column);
+    } else {
+      this.sortByKeyDesc(this.filteredData, sort.column);
+    }
+    this.tableData = this.filteredData.slice(
+      this.pageIndices.start,
+      this.pageIndices.end
+    );
+  }
+
+  handleSelectedRowsAction(selectedRowIds: {
+    areAllSelected: boolean;
+    selected: {[key: string]: any;}
+  }) {
+    // Handle the selected rows here
+  }
+
+  handlePageChange(pageData) {
+    this.pageIndices = {...pageData.indices};
+    this.tableData = this.filteredData.slice(
+      pageData.indices.start,
+      pageData.indices.end
+    );
+  }
 }

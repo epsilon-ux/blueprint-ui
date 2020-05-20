@@ -48,6 +48,7 @@ button.btn-text:disabled
   border-radius: 0;
   padding: 5px 10px;
   font-size: $font-size-md;
+  white-space: nowrap;
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active
