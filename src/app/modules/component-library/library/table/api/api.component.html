@@ -704,6 +704,7 @@
       <h2 id="outputs">Outputs</h2>
 
       <h3 id="actionOutput">action</h3>
+      <p>The action output is emitted when a button in the actions column is clicked.</p>
       <table class="table table-bordered-rows">
         <caption class="sr-only">
           Action properties
@@ -733,6 +734,7 @@
       </table>
 
       <h3 id="actionOutput">onSort</h3>
+      <p>The onSort output is emitted when a sortable column header or sort icon is clicked.</p>
       <table class="table table-bordered-rows">
         <caption class="sr-only">
           onSort properties
@@ -759,6 +761,7 @@
       </table>
 
       <h3 id="actionOutput">rowSelected</h3>
+      <p>The rowSelected output is emitted when a row is selected in the table or the select all checkbox is toggled.</p>
       <table class="table table-bordered-rows">
         <caption class="sr-only">
           rowSelected properties
@@ -786,6 +789,16 @@
           </tr>
         </tbody>
       </table>
+
+      <h2>Pagination</h2>
+      <p>Pagination can be added to the table by nesting the <a routerLink="/components/pagination/overview">bp-pagination component</a> in the table component.</p>
+      <markdown
+        [data]="paginationMD"
+        lineNumbers
+        lineHighlight
+        [line]="'10-15'"
+      ></markdown>
+      <p>You can also provide a custom pagination component if needed by adding a <code>pagination</code> attribute to the nested component.e.g. <code>&lt;myPagination pagination&gt;&lt;/myPagination&gt;</code></p>
 
       <h2>Template Columns</h2>
       <p>Templates can be provided to specified columns to allow custom columns.</p>
