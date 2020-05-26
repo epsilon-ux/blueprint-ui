@@ -1,10 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { generateUniqueId } from '../../helpers';
+import { RouterLinkActive } from '@angular/router';
 
 interface Item {
-  route: string;
   text: string;
+  route?: string;
   children?: Item[];
+  isExpanded?: boolean;
 }[];
 
 @Component({
@@ -20,12 +22,38 @@ export class NavSecondaryComponent implements OnInit {
   @Input() isNavCollapsed = false;
   @Input() areItemsExpanded = false;
 
-  uuid = 'dropdown' + generateUniqueId();
+  uuid = 'navDropdown' + generateUniqueId();
+  activeItem: string;
+
+  @ViewChildren(RouterLinkActive, { read: ElementRef })
+  linkRefs: QueryList<ElementRef>
 
   constructor() { }
 
   ngOnInit() {
     this.validate();
+    setTimeout(() => {
+      this.activeItem = this.linkRefs.toArray()
+        .find(link => link.nativeElement.classList.contains('active'))
+        .nativeElement.textContent.trim();
+      for (let item of this.items) {
+        this.findActive(item, null);
+      }
+    }, 0);
+  }
+
+  findActive(node, parent) {
+    if (node.text === this.activeItem) {
+      if (parent) {
+        parent.isExpanded = true;
+      }
+      return node;
+    }
+    else if (node.children) {
+      for (let item of node.children) {
+        this.findActive(item, node);
+      }
+    }
   }
 
   validate() {
