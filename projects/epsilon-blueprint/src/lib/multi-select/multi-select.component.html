@@ -80,7 +80,13 @@
             'is-disabled': item.disabled
           }"
         >
-          {{ bindLabel ? item[bindLabel] : item }}
+          <ng-template
+            [ngTemplateOutlet]="optionTemplate"
+            [ngTemplateOutletContext]="{ item: item, index: index }"
+          ></ng-template>
+          <ng-container *ngIf="!optionTemplate">
+            {{ bindLabel ? item[bindLabel] : item }}
+          </ng-container>
         </span>
       </div>
     </ng-template>

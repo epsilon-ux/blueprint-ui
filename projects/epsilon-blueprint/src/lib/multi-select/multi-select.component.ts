@@ -6,6 +6,11 @@ export class NgMultiLabelTemplateDirective {
     constructor(public template: TemplateRef<any>) { }
 }
 
+@Directive({ selector: '[ng-option-tmp]' })
+export class NgOptionTemplateDirective {
+    constructor(public template: TemplateRef<any>) { }
+}
+
 @Component({
   selector: 'bp-multi-select',
   templateUrl: './multi-select.component.html',
@@ -14,6 +19,8 @@ export class NgMultiLabelTemplateDirective {
 export class MultiselectComponent implements OnInit, OnChanges {
   
   @ContentChild(NgMultiLabelTemplateDirective, { read: TemplateRef, static: false }) multiLabelTemplate: TemplateRef<any>;
+
+  @ContentChild(NgOptionTemplateDirective, { read: TemplateRef, static: false }) optionTemplate: TemplateRef<any>;
   
   @Input() label = '';
   @Input() isLabelHidden = false;
