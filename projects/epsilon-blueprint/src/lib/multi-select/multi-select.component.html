@@ -79,15 +79,14 @@
             'is-checked': item$.selected,
             'is-disabled': item.disabled
           }"
-        >
-          <ng-template
-            [ngTemplateOutlet]="optionTemplate"
-            [ngTemplateOutletContext]="{ item: item, index: index }"
-          ></ng-template>
-          <ng-container *ngIf="!optionTemplate">
-            {{ bindLabel ? item[bindLabel] : item }}
-          </ng-container>
-        </span>
+        ></span>
+        <ng-template
+          [ngTemplateOutlet]="optionTemplate"
+          [ngTemplateOutletContext]="{ item: item, index: index }"
+        ></ng-template>
+        <ng-container *ngIf="!optionTemplate">
+          {{ bindLabel ? item[bindLabel] : item }}
+        </ng-container>
       </div>
     </ng-template>
 
