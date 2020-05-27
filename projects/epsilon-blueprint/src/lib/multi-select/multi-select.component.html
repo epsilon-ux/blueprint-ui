@@ -6,7 +6,7 @@
     #columnSelectorDropdown
     [labelForId]="uuid"
     [multiple]="true"
-    [items]="optionItems"
+    [items]="isDataLoaded ? optionItems : []"
     bindValue="value"
     bindLabel="label"
     [placeholder]="placeholder"
@@ -14,6 +14,7 @@
     [clearable]="false"
     [closeOnSelect]="false"
     [maxSelectedItems]="maxSelectedItems"
+    [loading]="!isDataLoaded"
     [notFoundText]="notFoundText"
     [inputAttrs]="inputAttrs"
     [disabled]="isDisabled"
@@ -31,8 +32,7 @@
       <ng-template
         [ngTemplateOutlet]="multiLabelTemplate"
         [ngTemplateOutletContext]="{ items: items, clear: clear }"
-      >
-      </ng-template>
+      ></ng-template>
     </ng-template>
 
     <!-- Tag Template -->
@@ -83,6 +83,11 @@
           {{ bindLabel ? item[bindLabel] : item }}
         </span>
       </div>
+    </ng-template>
+
+    <!-- Custom loading spinner -->
+    <ng-template ng-loadingspinner-tmp>
+      <i class="fas fa-spinner fa-spin"></i>
     </ng-template>
   </ng-select>
 </div>
