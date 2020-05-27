@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  styleUrls: ['../nav-secondary.component.scss']
 })
 export class OverviewComponent implements OnInit {
 
@@ -17,21 +17,21 @@ export class OverviewComponent implements OnInit {
       route: ''
     },
     {
-      text: 'Parent Page',
+      text: 'Page Group',
       children: [
         {
-          text: 'Page',
+          text: 'Child Page',
           route: ''
         },
         {
-          text: 'Parent Page',
+          text: 'Nested Page Group',
           children: [
             {
-              text: 'Page',
+              text: 'Nested Child Page',
               route: ''
             },
             {
-              text: 'Page',
+              text: 'Nested Child Page',
               route: ''
             }
           ]
