@@ -1,8 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive, OnChanges } from '@angular/core';
 import { generateUniqueId, parseLookupString } from '../../helpers';
 
 @Directive({ selector: '[ng-multi-label-tmp]' })
 export class NgMultiLabelTemplateDirective {
+    constructor(public template: TemplateRef<any>) { }
+}
+
+@Directive({ selector: '[ng-option-tmp]' })
+export class NgOptionTemplateDirective {
     constructor(public template: TemplateRef<any>) { }
 }
 
@@ -11,13 +16,15 @@ export class NgMultiLabelTemplateDirective {
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss']
 })
-export class MultiselectComponent implements OnInit {
+export class MultiselectComponent implements OnInit, OnChanges {
   
   @ContentChild(NgMultiLabelTemplateDirective, { read: TemplateRef, static: false }) multiLabelTemplate: TemplateRef<any>;
+
+  @ContentChild(NgOptionTemplateDirective, { read: TemplateRef, static: false }) optionTemplate: TemplateRef<any>;
   
   @Input() label = '';
   @Input() isLabelHidden = false;
-  @Input() optionItems = [];
+  @Input() optionItems: any;
   @Input() isSearchable = false;
   @Input() placeholder = '';
   @Input() bindValue: string = null;
@@ -37,10 +44,18 @@ export class MultiselectComponent implements OnInit {
   parseLookupString = parseLookupString;
   uuid = 'mutliselect' + generateUniqueId();
 
+  isDataLoaded = false;
+
   constructor() {}
 
   ngOnInit() {
     this.validate();
+  }
+
+  ngOnChanges(changes) {
+    if (changes.optionItems && Array.isArray(changes.optionItems.currentValue)) {
+      this.isDataLoaded = true;
+    }
   }
 
   validate() {
