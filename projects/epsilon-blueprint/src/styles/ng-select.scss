@@ -467,6 +467,13 @@
   {
     padding: 0 5px;
   }
+
+  &.ng-value-custom
+  {
+    font-size: $font-size-md;
+    color: $font-color-primary;
+    background: transparent;
+  }
 }
 
 .ng-select.ng-select-multiple.ng-select-disabled .ng-select-container .ng-value-container .ng-value
