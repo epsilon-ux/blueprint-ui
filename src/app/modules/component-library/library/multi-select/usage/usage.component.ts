@@ -24,6 +24,24 @@ export class UsageComponent implements OnInit {
       value: 'option4'
     }
   ];
+  optionStatuses = [
+    {
+      label: 'Deployed',
+      value: 'complete'
+    },
+    {
+      label: 'Approved',
+      value: 'incomplete-secondary'
+    },
+    {
+      label: 'Draft',
+      value: 'incomplete-primary'
+    },
+    {
+      label: 'Error',
+      value: 'warning'
+    }
+  ];
 
   optionItemsWithDisabled = [
     {
@@ -49,19 +67,5 @@ export class UsageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
-
-  // Returns a status depending on the index
-  randomStatus(index) {
-    switch (0) {
-      case index % 4:
-        return 'warning'
-      case index % 3:
-        return 'incomplete-primary'
-      case index % 2:
-        return 'incomplete-secondary'
-      case index % 1:
-        return 'complete';
-    }
-  }
 
 }

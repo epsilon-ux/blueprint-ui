@@ -181,7 +181,7 @@
     </div>
     
     <div class="col-lg-8 col-xl-7">
-      <h3>Multi-select with a custom options</h3>
+      <h3>Multi-select with custom options</h3>
       <p>
         This variation shows custom options. This variation should
         be used if additional content is needed in each option.
@@ -197,7 +197,7 @@
             <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
               <bp-multi-select
                 label="Label Text"
-                [optionItems]="optionItems"
+                [optionItems]="optionStatuses"
                 bindLabel="label"
                 bindValue="value"
                 placeholder="Select items"
@@ -205,10 +205,9 @@
                 <ng-template
                   ng-option-tmp
                   let-item="item"
-                  let-index="index"
                 >
                   <div class="status-indicator text-wrap">
-                    <span class="status-icon {{ randomStatus(index) }}"></span>
+                    <span class="status-icon {{ item.value }}"></span>
                     {{ item.label }}
                   </div>
                 </ng-template>
