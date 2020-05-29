@@ -29,10 +29,14 @@
       let-items="items"
       let-clear="clear"
     >
-      <ng-template
-        [ngTemplateOutlet]="multiLabelTemplate"
-        [ngTemplateOutletContext]="{ items: items, clear: clear }"
-      ></ng-template>
+      <div class="ng-value ng-value-custom">
+        <div class="ng-value-label">
+          <ng-template
+            [ngTemplateOutlet]="multiLabelTemplate"
+            [ngTemplateOutletContext]="{ items: items, clear: clear }"
+          ></ng-template>
+        </div>
+      </div>
     </ng-template>
 
     <!-- Tag Template -->

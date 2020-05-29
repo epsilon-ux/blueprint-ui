@@ -24,6 +24,24 @@ export class UsageComponent implements OnInit {
       value: 'option4'
     }
   ];
+  optionStatuses = [
+    {
+      label: 'Deployed',
+      value: 'complete'
+    },
+    {
+      label: 'Approved',
+      value: 'incomplete-secondary'
+    },
+    {
+      label: 'Draft',
+      value: 'incomplete-primary'
+    },
+    {
+      label: 'Error',
+      value: 'warning'
+    }
+  ];
 
   optionItemsWithDisabled = [
     {
@@ -48,7 +66,6 @@ export class UsageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
