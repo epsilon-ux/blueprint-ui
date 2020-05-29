@@ -1,5 +1,5 @@
 <section class="container-fluid">
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
         Multi-selects are used for lists of options that aren’t exclusive to
@@ -150,7 +150,8 @@
         option tags. This variation should be used when the placeholder is more
         important than showing what was selected or when the selected options
         are seen within the page. For example, this variation is used for the
-        column selector within the table.
+        column selector within the table. Custom placeholder can be used with
+        custom options.
       </p>
     </div>
     <div class="col-12">
@@ -178,5 +179,45 @@
         </div>
       </div>
     </div>
+    
+    <div class="col-lg-8 col-xl-7">
+      <h3>Multi-select with a custom options</h3>
+      <p>
+        This variation shows custom options. This variation should
+        be used if additional content is needed in each option.
+        An example of this would be a status filter where the status
+        icon is shown with the option text. Custom options can be used
+        with custom placeholder.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <bp-multi-select
+                label="Label Text"
+                [optionItems]="optionItems"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+              >
+                <ng-template
+                  ng-option-tmp
+                  let-item="item"
+                  let-index="index"
+                >
+                  <div class="status-indicator text-wrap">
+                    <span class="status-icon {{ randomStatus(index) }}"></span>
+                    {{ item.label }}
+                  </div>
+                </ng-template>
+              </bp-multi-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </section>

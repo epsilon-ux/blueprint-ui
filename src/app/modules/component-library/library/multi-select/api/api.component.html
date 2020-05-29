@@ -144,16 +144,31 @@
           </tr>
         </tbody>
       </table>
-      <h2>Content Projection</h2>
-      <p>
-        The ng-multi-label-tmp attribute is the value for the optional ng-content directives' select attribute.
-      </p>
-      <h3>ng-multi-label-tmp</h3>
-      <p>
-        Used to create a custom placeholder that can utilize the selected items array and clear function.
-      </p>
+      <div class="col-lg-8 col-xl-7">
+        <h2>Content Projection</h2>
+        <p>
+          The ng-multi-label-tmp attribute is the value for the optional ng-content directives' select attribute.
+        </p>
+        <h3>ng-multi-label-tmp</h3>
+        <p>
+          Used to create a custom placeholder that can utilize the selected items array and clear function.
+        </p>
+      </div>
       <markdown
         [data]="codeExample"
+        lineNumbers
+        lineHighlight
+        [line]="'5-7'"
+      ></markdown>
+      
+      <div class="col-lg-8 col-xl-7">
+        <h3>ng-option-tmp</h3>
+        <p>
+          Used to to create a custom template for options. An example use case would be adding icons to statuses. The template replaces content to the right of the checkbox. The option item and index are exposed and can be used, see below example.
+        </p>
+      </div>
+      <markdown
+        [data]="optionTmpExample"
         lineNumbers
         lineHighlight
         [line]="'5-7'"

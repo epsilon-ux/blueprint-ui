@@ -48,7 +48,20 @@ export class UsageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  // Returns a status depending on the index
+  randomStatus(index) {
+    switch (0) {
+      case index % 4:
+        return 'warning'
+      case index % 3:
+        return 'incomplete-primary'
+      case index % 2:
+        return 'incomplete-secondary'
+      case index % 1:
+        return 'complete';
+    }
   }
 
 }
