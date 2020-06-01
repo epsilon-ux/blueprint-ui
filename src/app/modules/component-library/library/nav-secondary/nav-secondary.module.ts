@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MarkdownModule } from 'ngx-markdown';
 import { NavSecondaryModule } from 'epsilon-blueprint';
 
 import { RouterModule } from '@angular/router';
@@ -25,7 +26,8 @@ import { OverviewComponent } from './overview/overview.component';
     RouterModule,
     NavSecondaryRoutingModule,
     NavSecondaryModule,
-    ComponentHeaderModule
+    ComponentHeaderModule,
+    MarkdownModule.forChild()
   ]
 })
 export class NavSecondaryLibraryModule { }

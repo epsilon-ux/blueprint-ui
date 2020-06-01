@@ -1,6 +1,6 @@
 <section class="container-fluid">
-  <div class="row">
-    <div class="col">
+  <div class="row mb-5">
+    <div class="col-12">
       <dl class="inline-details font-size-lg">
         <dt>Selector</dt>
         <dd>bp-nav-secondary</dd>
@@ -115,6 +115,21 @@
         </tbody>
       </table>
       <!-- TODO: add versions & features table -->
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h2>Content Projection</h2>
+      <p>
+        The search and footer attributes are the values for the optional ng-content directives' select attributes.
+      </p>
+    </div>
+    <div class="col">
+      <markdown
+        [data]="contentProjection"
+        lineNumbers
+        lineHighlight
+        [line]="'5-13'"
+      ></markdown>
     </div>
   </div>
 </section>
