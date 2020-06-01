@@ -7,6 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApiComponent implements OnInit {
 
+  contentProjection = `
+    \`\`\`html
+    <bp-nav-secondary
+      title="Title"
+      [items]="navItems"
+    >
+      <ng-container search>
+        <!-- Place search here. The search will render between the title and nav links. -->
+      </ng-container>
+      <ng-container footer>
+        <!-- Place content that appears below the nav links here. -->
+      </ng-container>
+    </bp-nav-secondary>
+  \`\`\`
+  `;
+
   constructor() { }
 
   ngOnInit() {
