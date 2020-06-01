@@ -14,10 +14,7 @@ export class ApiComponent implements OnInit {
       [items]="navItems"
     >
       <ng-container search>
-        <!--
-          Place content that appears below the title and above
-          the nav links here. Likely a search input.
-        -->
+        <!-- Place search here. The search will render between the title and nav links. -->
       </ng-container>
       <ng-container footer>
         <!-- Place content that appears below the nav links here. -->
