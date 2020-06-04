@@ -30,6 +30,8 @@ export class UsageComponent implements OnInit {
     }
   ];
 
+  click = (e) => {};
+
   constructor() { }
 
   ngOnInit() { }
