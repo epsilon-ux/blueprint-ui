@@ -116,6 +116,15 @@ export class ComponentLibraryComponent {
             route: './table'
           }
         ]
+      },
+      {
+        text: 'Templates',
+        children: [
+          {
+            text: 'Object Page Header',
+            route: './object-page-header'
+          }
+        ]
       }
     ]
   };

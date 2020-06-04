@@ -1,0 +1,716 @@
+<!-- 
+  TODO: 
+    h1 -> p.h1
+    unique ids
+    dh: secondary type, status, select & dropdown
+    btn-block bp-dropdown
+    conditionals
+-->
+
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        The object page header is a template.
+      </p>
+      <h2>Variations</h2>
+      <h3>Readonly</h3>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <button type="button" class="btn btn-text" (click)="unsavedChangesWarning()">
+                      <i class="fa fa-angle-left icon-left" aria-hidden="true"></i>Back to Landing Page
+                    </button>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <h1 class="mb-0">Object Name</h1>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Editable</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <button type="button" class="btn btn-text" (click)="unsavedChangesWarning()">
+                      <i class="fa fa-angle-left icon-left" aria-hidden="true"></i>Back to Landing Page
+                    </button>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label id="objectName" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Editable with inline error message</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <button type="button" class="btn btn-text" (click)="unsavedChangesWarning()">
+                      <i class="fa fa-angle-left icon-left" aria-hidden="true"></i>Back to Landing Page
+                    </button>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label id="objectName" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <div class="text-color-warning">
+                      This is an error message explaining what is wrong with the user-entered object name
+                    </div>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Readonly with dropdown</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <button type="button" class="btn btn-text" (click)="unsavedChangesWarning()">
+                      <i class="fa fa-angle-left icon-left" aria-hidden="true"></i>Back to Landing Page
+                    </button>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <h1 class="mb-0">Object Name</h1>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-dropdown
+                      triggerText="Dropdown Menu"
+                      [dropdownItems]="exampleItems"
+                      triggerClasses="btn-outline-primary btn-block btn-md btn-object-page-header"
+                    ></bp-dropdown>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Editable with dropdown</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <button type="button" class="btn btn-text" (click)="unsavedChangesWarning()">
+                      <i class="fa fa-angle-left icon-left" aria-hidden="true"></i>Back to Landing Page
+                    </button>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label id="objectName" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-dropdown
+                      triggerText="Dropdown Menu"
+                      [dropdownItems]="exampleItems"
+                      triggerClasses="btn-outline-primary btn-block btn-md btn-object-page-header"
+                    ></bp-dropdown>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Readonly with select</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      ariaLabel="Demo back to landing page button"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <h1 class="mb-0">Object Name</h1>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <label id="objectPageHeaderSelector" class="sr-only">Selector</label>
+                    <ng-select
+                      class="btn-object-page-header"
+                      labelForId="objectPageHeaderSelector"
+                      [items]="selectorOptions"
+                      bindValue="value"
+                      bindValue="text"
+                      [searchable]="false"
+                      [clearable]="false"
+                      placeholder="Select an option"
+                      (change)="handleSelectionChange($event)"
+                      [(ngModel)]="optionSelected"
+                    ></ng-select>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Editable with select</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      ariaLabel="Demo back to landing page button"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label id="objectName" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <label id="objectPageHeaderSelector" class="sr-only">Selector</label>
+                    <ng-select
+                      class="btn-object-page-header"
+                      labelForId="objectPageHeaderSelector"
+                      [items]="selectorOptions"
+                      bindValue="value"
+                      bindValue="text"
+                      [searchable]="false"
+                      [clearable]="false"
+                      placeholder="Select an option"
+                      (change)="handleSelectionChange($event)"
+                      [(ngModel)]="optionSelected"
+                    ></ng-select>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Readonly with tabs</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      ariaLabel="Demo back to landing page button"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <h1 class="mb-0">Object Name</h1>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button type="button" class="tab active">Active Tab</button>
+                    <button type="button" class="tab">Tab</button>
+                    <button type="button" class="tab">Tab</button>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Editable with tabs</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      ariaLabel="Demo back to landing page button"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label id="objectName" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button type="button" class="tab active">Active Tab</button>
+                    <button type="button" class="tab">Tab</button>
+                    <button type="button" class="tab">Tab</button>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Readonly with multiple actions</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      ariaLabel="Demo back to landing page button"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <h1 class="mb-0">Object Name</h1>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0">
+                    <bp-action
+                      text="Destructive"
+                      classes="btn btn-danger btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Secondary"
+                      classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template starts here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Editable with multiple actions</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      ariaLabel="Demo back to landing page button"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label id="objectName" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0">
+                    <bp-action
+                      text="Destructive"
+                      classes="btn btn-danger btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Secondary"
+                      classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template starts here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Readonly with multiple actions and tabs</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      ariaLabel="Demo back to landing page button"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <h1 class="mb-0">Object Name</h1>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0">
+                    <bp-action
+                      text="Destructive"
+                      classes="btn btn-danger btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Secondary"
+                      classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button type="button" class="tab active">Active Tab</button>
+                    <button type="button" class="tab">Tab</button>
+                    <button type="button" class="tab">Tab</button>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template starts here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Editable with multiple actions and tabs</h3>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      ariaLabel="Demo back to landing page button"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label id="objectName" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0">
+                    <bp-action
+                      text="Destructive"
+                      classes="btn btn-danger btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Secondary"
+                      classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button type="button" class="tab active">Active Tab</button>
+                    <button type="button" class="tab">Tab</button>
+                    <button type="button" class="tab">Tab</button>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template starts here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

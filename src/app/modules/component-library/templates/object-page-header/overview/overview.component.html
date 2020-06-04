@@ -1,0 +1,49 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        The object page header is a template.
+      </p>
+      <h2>Example</h2>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <button type="button" class="btn btn-text" (click)="unsavedChangesWarning()">
+                      <i class="fa fa-angle-left icon-left" aria-hidden="true"></i>Back to Landing Page
+                    </button>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <input 
+                      type="text" 
+                      id="objectName" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <label for="objectName" class="mt-2 mb-4">Object Type</label>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto">
+                    <button type="button" class="btn btn-primary btn-block btn-md btn-object-page-header">
+                      Save & Deploy
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
