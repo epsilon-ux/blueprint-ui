@@ -76,6 +76,13 @@ const routes: Routes = [
     { path: 'table', loadChildren: () => import('./library/table/table.module')
     .then(m => m.TableLibraryModule) },
 
+    // Templates
+    { path: 'object-page-header', loadChildren: () => import('./templates/object-page-header/object-page-header.module')
+    .then(m => m.ObjectPageHeaderModule) },
+
+    { path: 'color', loadChildren: () => import('./foundations/color/color.module')
+    .then(m => m.ColorModule) },
+
     { path: '**', redirectTo: 'introduction', pathMatch: 'full' } // TODO: create a componentNotFound page for this instance
   ]}
 ];
