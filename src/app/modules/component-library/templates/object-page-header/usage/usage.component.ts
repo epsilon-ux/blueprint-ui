@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-usage',
@@ -7,10 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UsageComponent implements OnInit {
 
-  @Input()
   selectorOptions = [];
-
-  @Input()
   optionSelected: string;
 
   exampleItems = [
@@ -30,11 +27,11 @@ export class UsageComponent implements OnInit {
     }
   ];
 
-  click = (e) => {};
+  click = (e) => { };
+
+  handleSelectionChange = (e) => { }
 
   constructor() { }
 
   ngOnInit() { }
-
-  handleSelectionChange = (event) => { }
 }

@@ -4,16 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { ObjectPageHeaderComponent } from './object-page-header.component';
 import { OverviewComponent } from './overview/overview.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
-import { ApiComponent } from './api/api.component';
 
 const routes: Routes = [
   { path: '', component: ObjectPageHeaderComponent, children: [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
     { path: 'usage', component: UsageComponent, pathMatch: 'full' },
-    { path: 'playground', component: PlaygroundComponent, pathMatch: 'full' },
-    { path: 'api', component: ApiComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
   ]},
 ];

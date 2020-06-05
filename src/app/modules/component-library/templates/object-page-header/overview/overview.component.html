@@ -2,7 +2,16 @@
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
-        The object page header is a template.
+        Object headers vary from product to product depending on what information needs to show in the header.
+      </p>
+      <p class="component-description">
+        Information options are shown below the object name. These options can be turned on or off depending on the object type. Object headers can have up to three buttons before overflowing to a 'More Actions' dropdown button.
+      </p>
+      <p class="component-description">
+        In most products, the user edits the object name using an object name input field. This field must be the first component in the object hierarchy.
+      </p>
+      <p class="component-description">
+        The object page header appears below the primary navigation and to the right of the secondary navigation. The secondary navigation is optional.
       </p>
       <h2>Example</h2>
     </div>
@@ -11,9 +20,31 @@
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
             <div class="col-12">
-
-              <!-- OPH template here -->
-
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <h1 class="mb-0">Object Name</h1>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Save"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,20 +1,23 @@
 <!-- 
   TODO: 
-    h1 -> p.h1
     unique ids
-    dh: secondary type, status, select & dropdown
     btn-block bp-dropdown
-    conditionals
 -->
 
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
-        The object page header is a template.
+        The back to landing page action, object name, object type, and primary action are required elements in an object page header. All other variations shown below are optional and depend on the situation.
       </p>
       <h2>Variations</h2>
-      <h3>Readonly</h3>
+      <h3>Standard</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/standard.html" target="_blank" class="link-primary">
+          Standard template code
+        </a>
+      </p>
+      <h4>Standard readonly</h4>
     </div>
 
     <div class="col-12">
@@ -29,7 +32,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -37,14 +39,13 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <h1 class="mb-0">Object Name</h1>
+                    <p class="text-style-1">Object Name</p>
                     <p class="my-2 mb-lg-4">Object Type</p>
                   </div>
                   <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
                     <bp-action
-                      text="Primary"
+                      text="Save"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -58,7 +59,7 @@
     </div>
 
     <div class="col-12">
-      <h3>Editable</h3>
+      <h4>Standard editable</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -70,7 +71,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -78,10 +78,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label id="objectName" class="sr-only">Object Name</label>
+                    <label for="objectName1" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName" 
+                      id="objectName1" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -89,9 +89,8 @@
                   </div>
                   <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
                     <bp-action
-                      text="Primary"
+                      text="Save"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -105,7 +104,7 @@
     </div>
 
     <div class="col-12">
-      <h3>Editable with inline error message</h3>
+      <h4>Standard editable with inline error message</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -117,7 +116,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -125,10 +123,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label id="objectName" class="sr-only">Object Name</label>
+                    <label for="objectName2" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName" 
+                      id="objectName2" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -139,9 +137,8 @@
                   </div>
                   <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
                     <bp-action
-                      text="Primary"
+                      text="Save"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -155,7 +152,7 @@
     </div>
 
     <div class="col-12">
-      <h3>Readonly with dropdown</h3>
+      <h4>Standard editable with dynamic button</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -167,7 +164,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -175,7 +171,62 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <h1 class="mb-0">Object Name</h1>
+                    <label for="objectName3" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName3" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <ng-container>
+                      <bp-action
+                        text="Saving"
+                        classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                        iconRight="fa-spinner fa-spin"
+                        [isDisabled]="true"
+                        (click)="click"
+                      ></bp-action>
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>With dropdown</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/dropdown.html" target="_blank" class="link-primary">
+          Dropdown template code
+        </a>
+      </p>
+      <h4>Readonly with dropdown</h4>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <p class="text-style-1">Object Name</p>
                     <p class="my-2 mb-lg-4">Object Type</p>
                   </div>
                   <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
@@ -189,7 +240,6 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -203,7 +253,7 @@
     </div>
 
     <div class="col-12">
-      <h3>Editable with dropdown</h3>
+      <h4>Editable with dropdown</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -215,7 +265,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -223,10 +272,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label id="objectName" class="sr-only">Object Name</label>
+                    <label for="objectName4" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName" 
+                      id="objectName4" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -243,7 +292,6 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -257,7 +305,13 @@
     </div>
 
     <div class="col-12">
-      <h3>Readonly with select</h3>
+      <h3>With select</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/select.html" target="_blank" class="link-primary">
+          Select template code
+        </a>
+      </p>
+      <h4>Readonly with select</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -269,7 +323,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -277,21 +330,21 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <h1 class="mb-0">Object Name</h1>
+                    <p class="text-style-1">Object Name</p>
                     <p class="my-2 mb-lg-4">Object Type</p>
                   </div>
                   <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
-                    <label id="objectPageHeaderSelector" class="sr-only">Selector</label>
+                    <label for="objectPageHeaderSelector1" class="sr-only">Version</label>
                     <ng-select
                       class="btn-object-page-header"
-                      labelForId="objectPageHeaderSelector"
+                      labelForId="objectPageHeaderSelector1"
                       [items]="selectorOptions"
                       bindValue="value"
                       bindValue="text"
                       [searchable]="false"
                       [clearable]="false"
                       placeholder="Select an option"
-                      (change)="handleSelectionChange($event)"
+                      (change)="handleSelectionChange($e)"
                       [(ngModel)]="optionSelected"
                     ></ng-select>
                   </div>
@@ -299,7 +352,6 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -313,7 +365,7 @@
     </div>
 
     <div class="col-12">
-      <h3>Editable with select</h3>
+      <h4>Editable with select</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -325,7 +377,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -333,27 +384,27 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label id="objectName" class="sr-only">Object Name</label>
+                    <label for="objectName5" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName" 
+                      id="objectName5" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
                     <p class="my-2 mb-lg-4">Object Type</p>
                   </div>
                   <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
-                    <label id="objectPageHeaderSelector" class="sr-only">Selector</label>
+                    <label for="objectPageHeaderSelector2" class="sr-only">Version</label>
                     <ng-select
                       class="btn-object-page-header"
-                      labelForId="objectPageHeaderSelector"
+                      labelForId="objectPageHeaderSelector2"
                       [items]="selectorOptions"
                       bindValue="value"
                       bindValue="text"
                       [searchable]="false"
                       [clearable]="false"
                       placeholder="Select an option"
-                      (change)="handleSelectionChange($event)"
+                      (change)="handleSelectionChange($e)"
                       [(ngModel)]="optionSelected"
                     ></ng-select>
                   </div>
@@ -361,7 +412,6 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -375,7 +425,13 @@
     </div>
 
     <div class="col-12">
-      <h3>Readonly with tabs</h3>
+      <h3>With tabs</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/tabs.html" target="_blank" class="link-primary">
+          Tabs template code
+        </a>
+      </p>
+      <h4>Readonly with tabs</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -388,7 +444,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -396,14 +451,13 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <h1 class="mb-0">Object Name</h1>
+                    <p class="text-style-1">Object Name</p>
                     <p class="my-2 mb-lg-4">Object Type</p>
                   </div>
                   <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -425,7 +479,7 @@
     </div>
 
     <div class="col-12">
-      <h3>Editable with tabs</h3>
+      <h4>Editable with tabs</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -437,7 +491,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -445,10 +498,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label id="objectName" class="sr-only">Object Name</label>
+                    <label for="objectName6" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName" 
+                      id="objectName6" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -458,7 +511,6 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -479,7 +531,13 @@
     </div>
 
     <div class="col-12">
-      <h3>Readonly with multiple actions</h3>
+      <h3>With multiple actions</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/multiple-actions.html" target="_blank" class="link-primary">
+          Multiple actions template code
+        </a>
+      </p>
+      <h4>Readonly with multiple actions</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -491,7 +549,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -499,14 +556,13 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <h1 class="mb-0">Object Name</h1>
+                    <p class="text-style-1">Object Name</p>
                     <p class="my-2 mb-lg-4">Object Type</p>
                   </div>
                   <div class="col-12 col-md col-lg-auto mt-2 mt-md-0">
                     <bp-action
                       text="Destructive"
                       classes="btn btn-danger btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -514,7 +570,6 @@
                     <bp-action
                       text="Secondary"
                       classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -522,7 +577,6 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -536,7 +590,7 @@
     </div>
 
     <div class="col-12">
-      <h3>Editable with multiple actions</h3>
+      <h4>Editable with multiple actions</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -548,7 +602,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -556,10 +609,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label id="objectName" class="sr-only">Object Name</label>
+                    <label for="objectName7" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName" 
+                      id="objectName7" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -569,7 +622,6 @@
                     <bp-action
                       text="Destructive"
                       classes="btn btn-danger btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -577,7 +629,6 @@
                     <bp-action
                       text="Secondary"
                       classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -585,7 +636,6 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -599,7 +649,13 @@
     </div>
 
     <div class="col-12">
-      <h3>Readonly with multiple actions and tabs</h3>
+      <h3>With select and multiple actions</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/multiple-actions-select.html" target="_blank" class="link-primary">
+          Select and multiple actions template code
+        </a>
+      </p>
+      <h4>Readonly with select and multiple actions</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -611,7 +667,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -619,22 +674,28 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <h1 class="mb-0">Object Name</h1>
+                    <p class="text-style-1">Object Name</p>
                     <p class="my-2 mb-lg-4">Object Type</p>
                   </div>
                   <div class="col-12 col-md col-lg-auto mt-2 mt-md-0">
-                    <bp-action
-                      text="Destructive"
-                      classes="btn btn-danger btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
-                      (click)="click"
-                    ></bp-action>
+                    <label for="objectPageHeaderSelector3" class="sr-only">Version</label>
+                    <ng-select
+                      class="btn-object-page-header"
+                      labelForId="objectPageHeaderSelector3"
+                      [items]="selectorOptions"
+                      bindValue="value"
+                      bindValue="text"
+                      [searchable]="false"
+                      [clearable]="false"
+                      placeholder="Select an option"
+                      (change)="handleSelectionChange($e)"
+                      [(ngModel)]="optionSelected"
+                    ></ng-select>
                   </div>
                   <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
                     <bp-action
                       text="Secondary"
                       classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -642,7 +703,132 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template starts here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h4>Editable with select and multiple actions</h4>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label for="objectName8" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName8" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0">
+                    <label for="objectPageHeaderSelector4" class="sr-only">Version</label>
+                    <ng-select
+                      class="btn-object-page-header"
+                      labelForId="objectPageHeaderSelector4"
+                      [items]="selectorOptions"
+                      bindValue="value"
+                      bindValue="text"
+                      [searchable]="false"
+                      [clearable]="false"
+                      placeholder="Select an option"
+                      (change)="handleSelectionChange($e)"
+                      [(ngModel)]="optionSelected"
+                    ></ng-select>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Secondary"
+                      classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template starts here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>With multiple actions and tabs</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/multiple-actions-tabs.html" target="_blank" class="link-primary">
+          Multiple actions and tabs template code
+        </a>
+      </p>
+      <h4>Readonly with multiple actions and tabs</h4>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <p class="text-style-1">Object Name</p>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0">
+                    <bp-action
+                      text="Destructive"
+                      classes="btn btn-danger btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Secondary"
+                      classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-12 col-md col-lg-auto mt-2 mt-md-0 pl-md-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -663,7 +849,7 @@
     </div>
 
     <div class="col-12">
-      <h3>Editable with multiple actions and tabs</h3>
+      <h4>Editable with multiple actions and tabs</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
@@ -675,7 +861,6 @@
                     <bp-action
                       text="Back to Landing Page"
                       classes="btn btn-text"
-                      ariaLabel="Demo back to landing page button"
                       iconLeft="fa-angle-left"
                       (click)="click"
                     ></bp-action>
@@ -683,10 +868,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label id="objectName" class="sr-only">Object Name</label>
+                    <label for="objectName9" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName" 
+                      id="objectName9" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -696,7 +881,6 @@
                     <bp-action
                       text="Destructive"
                       classes="btn btn-danger btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -704,7 +888,6 @@
                     <bp-action
                       text="Secondary"
                       classes="btn btn-outline-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
@@ -712,7 +895,6 @@
                     <bp-action
                       text="Primary"
                       classes="btn btn-primary btn-block btn-md btn-object-page-header"
-                      ariaLabel="Demo primary button"
                       (click)="click"
                     ></bp-action>
                   </div>
