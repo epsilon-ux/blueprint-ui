@@ -1,7 +1,6 @@
 <!-- 
   TODO: 
-    unique ids
-    btn-block bp-dropdown
+    fix bug with bp-dropdown triggerClasses="btn-outline-primary btn-block btn-md btn-object-page-header"
 -->
 
 <section class="container-fluid">
@@ -344,7 +343,7 @@
                       [searchable]="false"
                       [clearable]="false"
                       placeholder="Select an option"
-                      (change)="handleSelectionChange($e)"
+                      (change)="handleSelectionChange($event)"
                       [(ngModel)]="optionSelected"
                     ></ng-select>
                   </div>
@@ -404,7 +403,7 @@
                       [searchable]="false"
                       [clearable]="false"
                       placeholder="Select an option"
-                      (change)="handleSelectionChange($e)"
+                      (change)="handleSelectionChange($event)"
                       [(ngModel)]="optionSelected"
                     ></ng-select>
                   </div>
@@ -688,7 +687,7 @@
                       [searchable]="false"
                       [clearable]="false"
                       placeholder="Select an option"
-                      (change)="handleSelectionChange($e)"
+                      (change)="handleSelectionChange($event)"
                       [(ngModel)]="optionSelected"
                     ></ng-select>
                   </div>
@@ -755,7 +754,7 @@
                       [searchable]="false"
                       [clearable]="false"
                       placeholder="Select an option"
-                      (change)="handleSelectionChange($e)"
+                      (change)="handleSelectionChange($event)"
                       [(ngModel)]="optionSelected"
                     ></ng-select>
                   </div>

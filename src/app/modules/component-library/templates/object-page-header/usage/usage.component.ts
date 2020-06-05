@@ -29,7 +29,7 @@ export class UsageComponent implements OnInit {
 
   click = (e) => { };
 
-  handleSelectionChange = (e) => { }
+  handleSelectionChange = (event) => { }
 
   constructor() { }
 
