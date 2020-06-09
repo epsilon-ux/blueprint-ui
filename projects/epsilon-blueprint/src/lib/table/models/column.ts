@@ -28,6 +28,7 @@ export interface Column {
     'warning': string;
     'complete': string;
   };
+  columnIndex: number; // This is set internally in the component and should not be provided by the user
 }
 
 export enum ColumnType {

@@ -24,6 +24,7 @@ export class MultiselectComponent implements OnInit, OnChanges {
   
   @Input() label = '';
   @Input() isLabelHidden = false;
+  @Input() isInline = false;
   @Input() optionItems: any;
   @Input() isSearchable = false;
   @Input() placeholder = '';
@@ -37,7 +38,7 @@ export class MultiselectComponent implements OnInit, OnChanges {
   @Input() internationalization = {
     '+ additional more': '+ #{additional} more'
   };
-  @Input() ngModel = [];
+  @Input() ngModel: Array<any>;
   @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
   
