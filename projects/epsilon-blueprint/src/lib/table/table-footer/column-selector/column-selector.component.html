@@ -2,56 +2,27 @@
   [hidden]="!showColumnSelector"
   class="table-footer-dropdown column-selector"
 >
-  <label for="columnSelector" class="table-footer-dropdown-label">
-    {{ internationalization['Column Selector'] }}
-  </label>
-  <ng-select
+  <bp-multi-select
     #columnSelectorDropdown
-    labelForId="columnSelector"
-    [items]="columnInfo"
+    [label]="internationalization['Column Selector']"
+    [isInline]="true"
+    [optionItems]="columnInfo"
     bindLabel="headerText"
-    bindValue="key"
-    [multiple]="true"
-    [searchable]="false"
-    [clearable]="false"
-    [closeOnSelect]="false"
+    bindValue="columnIndex"
     [(ngModel)]="selectedColumns"
     (change)="updateSelected($event)"
+    ngDefaultControl
   >
     <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
-      <div class="ng-value multi-select-value">
-        <span class="ng-value-label">
-          {{
-            parseLookupString(
-              internationalization['Showing numVisible out of numTotal'],
-              {
-                numVisible: selectedColumns.length,
-                numTotal: columnInfo.length
-              }
-            )
-          }}
-        </span>
-      </div>
+      {{
+        parseLookupString(
+          internationalization['Showing numVisible out of numTotal'],
+          {
+            numVisible: selectedColumns.length,
+            numTotal: columnInfo.length
+          }
+        )
+      }}
     </ng-template>
-    <ng-template
-      ng-option-tmp
-      let-column="item"
-      let-item$="item$"
-      let-index="index"
-    >
-      <div class="decorative-checkbox-container">
-        <span [ngClass]="{
-            'decorative-checkbox': true,
-            'is-checked': item$.selected,
-            'is-disabled': column.key === defaultSortColumnName
-          }"
-        >
-          {{ column.headerText }}
-          <ng-container *ngIf="column.key === defaultSortColumnName">
-            {{ internationalization['Default'] }}
-          </ng-container>
-        </span>
-      </div>
-    </ng-template>
-  </ng-select>
+  </bp-multi-select>
 </div>

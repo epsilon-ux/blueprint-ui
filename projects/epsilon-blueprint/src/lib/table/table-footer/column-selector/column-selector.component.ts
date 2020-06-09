@@ -23,15 +23,16 @@ export class ColumnSelectorComponent implements OnInit {
     )[0].disabled = true;
     this.selectedColumns = Array.from(
       this.columnInfo.filter(column => column.isColumnDisplayed),
-      filtered => filtered.key
+      filtered => filtered.columnIndex
     );
     this.updateSelected(this.selectedColumns);
   }
 
   updateSelected(e) {
+    this.selectedColumns = e;
     if (Array.isArray(e)) {
       this.columnInfo.forEach(column => {
-        column.isColumnDisplayed = this.selectedColumns.includes(column.key)
+        column.isColumnDisplayed = this.selectedColumns.includes(column.columnIndex)
           ? true
           : false;
       });
