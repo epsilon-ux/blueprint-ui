@@ -123,10 +123,6 @@ export class ComponentLibraryComponent {
           {
             text: 'Object Page Header',
             route: './object-page-header'
-          },
-          {
-            text: 'Table Filters',
-            route: './table-filters'
           }
         ]
       }
