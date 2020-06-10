@@ -121,6 +121,11 @@ button.btn-text:disabled
   padding: 2px 6px;
 }
 
+.btn-md
+{
+  min-width: 100px;
+}
+
 .btn-lg
 {
   min-width: 150px;
@@ -247,4 +252,9 @@ button[disabled],
 .icon-right
 {
   margin-left: 5px;
+}
+
+.btn-object-page-header
+{
+  margin-top: 2px;
 }

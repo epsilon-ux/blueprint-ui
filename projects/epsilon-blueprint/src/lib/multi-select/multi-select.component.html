@@ -1,4 +1,4 @@
-<div class="multi-select">
+<div class="multi-select{{ isInline ? ' inline' : '' }}">
   <label [for]="uuid" [ngClass]="{ 'sr-only': isLabelHidden }">
     {{ label }}
   </label>
@@ -6,14 +6,15 @@
     #columnSelectorDropdown
     [labelForId]="uuid"
     [multiple]="true"
-    [items]="optionItems"
-    bindValue="value"
-    bindLabel="label"
+    [items]="isDataLoaded ? optionItems : []"
+    [bindValue]="bindValue"
+    [bindLabel]="bindLabel"
     [placeholder]="placeholder"
     [searchable]="isSearchable"
     [clearable]="false"
     [closeOnSelect]="false"
     [maxSelectedItems]="maxSelectedItems"
+    [loading]="!isDataLoaded"
     [notFoundText]="notFoundText"
     [inputAttrs]="inputAttrs"
     [disabled]="isDisabled"
@@ -28,11 +29,14 @@
       let-items="items"
       let-clear="clear"
     >
-      <ng-template
-        [ngTemplateOutlet]="multiLabelTemplate"
-        [ngTemplateOutletContext]="{ items: items, clear: clear }"
-      >
-      </ng-template>
+      <div class="ng-value ng-value-custom">
+        <div class="ng-value-label">
+          <ng-template
+            [ngTemplateOutlet]="multiLabelTemplate"
+            [ngTemplateOutletContext]="{ items: items, clear: clear }"
+          ></ng-template>
+        </div>
+      </div>
     </ng-template>
 
     <!-- Tag Template -->
@@ -79,10 +83,20 @@
             'is-checked': item$.selected,
             'is-disabled': item.disabled
           }"
-        >
+        ></span>
+        <ng-template
+          [ngTemplateOutlet]="optionTemplate"
+          [ngTemplateOutletContext]="{ item: item, index: index }"
+        ></ng-template>
+        <ng-container *ngIf="!optionTemplate">
           {{ bindLabel ? item[bindLabel] : item }}
-        </span>
+        </ng-container>
       </div>
+    </ng-template>
+
+    <!-- Custom loading spinner -->
+    <ng-template ng-loadingspinner-tmp>
+      <i class="fas fa-spinner fa-spin"></i>
     </ng-template>
   </ng-select>
 </div>

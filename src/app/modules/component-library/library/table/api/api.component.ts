@@ -7,6 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApiComponent implements OnInit {
 
+  paginationMD = `
+    \`\`\`html
+    <bp-table
+      [isDataLoading]="isDataLoading"
+      [data]="tableData"
+      [dataLength]="filteredData.length"
+      [properties]="properties"
+      (action)="handleAction($event)"
+      (onSort)="handleSort($event)"
+      (selectedRowsAction)="handleSelectedRowsAction($event)"
+    >
+      <bp-pagination
+        [dataLength]="filteredData.length"
+        [defaultNumberOfRows]="10"
+        [pageBuffer]="1"
+        (pageData)="handlePageChange($event)"
+      ></bp-pagination>
+    </bp-table>
+    \`\`\`
+  `;
+
   tableFiltersMD = `
     \`\`\`html
     <bp-table

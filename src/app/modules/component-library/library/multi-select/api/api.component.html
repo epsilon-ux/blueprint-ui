@@ -1,6 +1,6 @@
 <section class="container-fluid">
   <div class="row">
-    <div class="col">
+    <div class="col-12">
       <dl class="inline-details font-size-lg">
         <dt>Selector</dt>
         <dd>bp-multi-select</dd>
@@ -33,6 +33,12 @@
               <p>Default is "false".</p>
               <p>When "true" the label is hidden.</p>
             </td>
+          </tr>
+          <tr>
+            <td>isInline</td>
+            <td>boolean</td>
+            <td>Determines whether to show the label and select inline with each other, or stacked.</td>
+            <td>When "true" the label and select are inline.</td>
           </tr>
           <tr>
             <td>optionItems</td>
@@ -144,16 +150,35 @@
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="col-lg-8 col-xl-7">
       <h2>Content Projection</h2>
       <p>
-        The ng-multi-label-tmp attribute is the value for the optional ng-content directives' select attribute.
+        The ng-multi-label-tmp and ng-option-tmp attributes are the values for the optional ng-content directives' select attributes.
       </p>
       <h3>ng-multi-label-tmp</h3>
       <p>
         Used to create a custom placeholder that can utilize the selected items array and clear function.
       </p>
+    </div>
+    <div class="col">
       <markdown
         [data]="codeExample"
+        lineNumbers
+        lineHighlight
+        [line]="'5-7'"
+      ></markdown>
+    </div>
+    
+    <div class="col-lg-8 col-xl-7">
+      <h3>ng-option-tmp</h3>
+      <p>
+        Used to create a custom template for options. An example use case would be adding icons to statuses. The template replaces content to the right of the checkbox. The option item and index are exposed and can be used.
+      </p>
+    </div>
+    <div class="col">
+      <markdown
+        [data]="optionTmpExample"
         lineNumbers
         lineHighlight
         [line]="'5-7'"

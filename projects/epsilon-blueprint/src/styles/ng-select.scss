@@ -80,12 +80,7 @@
     padding-left: 0;
 }
 
-.ng-select .ng-select-container .ng-value-container .ng-placeholder
-{
-    color: $font-color-primary;
-    opacity: 0.5;
-}
-
+.ng-select .ng-select-container .ng-value-container .ng-placeholder,
 .ng-select.ng-select-disabled>.ng-select-container .ng-value-container .ng-placeholder
 {
     color: $font-color-secondary;
@@ -472,6 +467,13 @@
   {
     padding: 0 5px;
   }
+
+  &.ng-value-custom
+  {
+    font-size: $font-size-md;
+    color: $font-color-primary;
+    background: transparent;
+  }
 }
 
 .ng-select.ng-select-multiple.ng-select-disabled .ng-select-container .ng-value-container .ng-value
@@ -483,33 +485,23 @@
 // Any changes made here should be reflected in the checkbox styles also
 .decorative-checkbox-container
 {
-  position: relative;
+  display: flex;
+  line-height: 17px;
+  cursor: pointer;
 
   .decorative-checkbox // checkmark
   {
-    padding-left: 22px;
-    line-height: 17px;
-    cursor: pointer;
-  
-    &::before
-    {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 16px;
-      height: 16px;
-      border: 1px solid $border-color-primary;
-      background: $coconut;
-    }
+    position: relative;
+    flex: 0 0 16px;
+    margin-right: 7px;
+    height: 16px;
+    border: 1px solid $border-color-primary;
+    background: $coconut;
   
     &.is-checked
     {
-      &::before
-      {
-        border: transparent;
-        background: $accent-color-primary;
-      }
+      border: transparent;
+      background: $accent-color-primary;
       
       &::after
       {
@@ -525,7 +517,7 @@
       }
     }
 
-    &:focus::before
+    &:focus
     {
       box-shadow: $box-shadow-focus-default;
     }
@@ -533,11 +525,7 @@
     &.is-disabled
     {
       cursor: not-allowed;
-
-      &::before
-      {
-        opacity: 0.5;
-      }
+      opacity: 0.5;
     }
   }
 }
@@ -545,13 +533,15 @@
 // Marked checkbox (hover & focus)
 .ng-option-marked .decorative-checkbox-container .decorative-checkbox.is-checked
 {
-  &::before
-  {
-    background: $coconut;
-  }
+  background: $coconut;
 
   &::after
   {
     color: $accent-color-primary;
   }
+}
+
+.multi-select .ng-input
+{
+  position: absolute;
 }

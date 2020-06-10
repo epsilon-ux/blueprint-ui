@@ -104,6 +104,8 @@ export class TableComponent implements OnInit, OnChanges {
     this.sortOrder = this.properties.sort.defaultSortOrder;
     this.sortColumnKey = this.properties.sort.defaultSortedColumn;
 
+    this.properties.columns.forEach((col, i) => col.columnIndex = i);
+
     // LocalStorage
     const displayDensityName =
       localStorage.getItem('selectedDensity') || 'Comfortable';

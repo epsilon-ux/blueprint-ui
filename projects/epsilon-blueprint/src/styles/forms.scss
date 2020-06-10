@@ -10,10 +10,9 @@ label
   margin-bottom: 0;
 }
 
-.custom-select,
 .form-control
 {
-  height: 30px;
+  min-height: 30px;
   border-radius: 0;
   border: 1px solid $border-color-primary;
   padding: 5px 10px;
