@@ -1,0 +1,40 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Table filters vary from product to product. They appear below the landing page header and above the table.
+      </p>
+      <h2>Example</h2>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-12 col-lg">
+                  <div class="row">
+                    <div class="col-sm-6 col-xl-3">
+                      <bp-search
+                        label="Search"
+                        placeholder="Search"
+                        [isSearching]="isSearching"
+                        (search)="handleSearch($event)"
+                        (clearSearch)="handleClearSearch($event)"
+                      ></bp-search>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
