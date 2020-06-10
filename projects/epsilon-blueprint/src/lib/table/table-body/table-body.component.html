@@ -90,7 +90,7 @@
     <!-- Actions Column -->
     <td
       *ngIf="properties.actions"
-      class="{{ properties.actions.length < 3 ? 'actions' : 'more-actions' }}"
+      class="{{ properties.actions.length < 3 ? 'actions' : 'more-actions sticky-last' }}"
     >
       <!-- May move into its own nested component if table gets too large -->
       <app-actions

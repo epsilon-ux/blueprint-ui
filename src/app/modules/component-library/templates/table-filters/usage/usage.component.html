@@ -1,0 +1,886 @@
+<!-- 
+  TODO: 
+    fix bug with bp-dropdown triggerClasses="btn-outline-primary btn-block btn-md btn-object-page-header"
+-->
+
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        The back to landing page action, object name, object type, and primary action are required elements in an object page header. All other variations shown below are optional and depend on the situation.
+      </p>
+      <h2>Variations</h2>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-auto align-self-center ml-md-auto">
+                    <p class="text-style-muted-2 mb-0">
+                      Showing objects as of <span class="font-weight-semi-bold">current date</span>
+                    </p>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-auto align-self-center ml-auto">
+                    <bp-action
+                      text="Button"
+                      classes="btn btn-outline-primary btn"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-auto ml-sm-auto">
+                    <div class="form-group">
+                      <bp-toggle
+                        toggleGroupName="toggle-current-archive"
+                        [toggles]="toggleButtons"
+                      ></bp-toggle>
+                    </div>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-auto align-self-center">
+                    <bp-action
+                      text="Button"
+                      classes="btn btn-outline-primary btn-sm"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-auto ml-sm-auto">
+                    <div class="form-group">
+                      <bp-toggle
+                        toggleGroupName="toggle-current-archive"
+                        [toggles]="toggleButtons"
+                      ></bp-toggle>
+                    </div>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto ml-sm-auto">
+                    <div class="form-group">
+                      <bp-toggle
+                        toggleGroupName="toggle-current-archive"
+                        [toggles]="toggleButtons"
+                      ></bp-toggle>
+                    </div>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Status"
+                        [optionItems]="optionStatuses"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                      >
+                        <ng-template
+                          ng-option-tmp
+                          let-item="item"
+                        >
+                          <div class="status-indicator text-wrap">
+                            <span class="status-icon {{ item.value }}"></span>
+                            {{ item.label }}
+                          </div>
+                        </ng-template>
+                      </bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto ml-sm-auto">
+                    <div class="form-group">
+                      <bp-toggle
+                        toggleGroupName="toggle-current-archive"
+                        [toggles]="toggleButtons"
+                      ></bp-toggle>
+                    </div>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Status"
+                        [optionItems]="optionStatuses"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                      >
+                        <ng-template
+                          ng-option-tmp
+                          let-item="item"
+                        >
+                          <div class="status-indicator text-wrap">
+                            <span class="status-icon {{ item.value }}"></span>
+                            {{ item.label }}
+                          </div>
+                        </ng-template>
+                      </bp-multi-select>
+                    </div>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Date Range"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto ml-sm-auto">
+                    <div class="form-group">
+                      <bp-toggle
+                        toggleGroupName="toggle-current-archive"
+                        [toggles]="toggleButtons"
+                      ></bp-toggle>
+                    </div>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Status"
+                        [optionItems]="optionStatuses"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                      >
+                        <ng-template
+                          ng-option-tmp
+                          let-item="item"
+                        >
+                          <div class="status-indicator text-wrap">
+                            <span class="status-icon {{ item.value }}"></span>
+                            {{ item.label }}
+                          </div>
+                        </ng-template>
+                      </bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto ml-sm-auto">
+                    <div class="form-group">
+                      <bp-toggle
+                        toggleGroupName="toggle-current-archive"
+                        [toggles]="toggleButtons"
+                      ></bp-toggle>
+                    </div>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Date Range"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto align-self-center">
+                    <bp-action
+                      text="Text Button"
+                      classes="btn btn-text"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-auto ml-sm-auto align-self-center">
+                    <bp-toggle
+                      toggleGroupName="toggle-current-archive"
+                      [toggles]="toggleButtons"
+                    ></bp-toggle>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Date Range"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Status"
+                        [optionItems]="optionStatuses"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                      >
+                        <ng-template
+                          ng-option-tmp
+                          let-item="item"
+                        >
+                          <div class="status-indicator text-wrap">
+                            <span class="status-icon {{ item.value }}"></span>
+                            {{ item.label }}
+                          </div>
+                        </ng-template>
+                      </bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto ml-sm-auto align-self-center">
+                    <bp-toggle
+                      toggleGroupName="toggle-current-archive"
+                      [toggles]="toggleButtons"
+                    ></bp-toggle>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Date Range"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Status"
+                        [optionItems]="optionStatuses"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                      >
+                        <ng-template
+                          ng-option-tmp
+                          let-item="item"
+                        >
+                          <div class="status-indicator text-wrap">
+                            <span class="status-icon {{ item.value }}"></span>
+                            {{ item.label }}
+                          </div>
+                        </ng-template>
+                      </bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto align-self-center">
+                    <bp-action
+                      text="Text Button"
+                      classes="btn btn-text"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-auto ml-sm-auto align-self-center">
+                    <bp-toggle
+                      toggleGroupName="toggle-current-archive"
+                      [toggles]="toggleButtons"
+                    ></bp-toggle>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Date Range"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Status"
+                        [optionItems]="optionStatuses"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                      >
+                        <ng-template
+                          ng-option-tmp
+                          let-item="item"
+                        >
+                          <div class="status-indicator text-wrap">
+                            <span class="status-icon {{ item.value }}"></span>
+                            {{ item.label }}
+                          </div>
+                        </ng-template>
+                      </bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto align-self-center">
+                    <bp-action
+                      text="Text Button"
+                      classes="btn btn-text"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <div class="col-auto ml-sm-auto align-self-center">
+                    <bp-toggle
+                      toggleGroupName="toggle-current-archive"
+                      [toggles]="toggleButtons"
+                    ></bp-toggle>
+                  </div>
+                  <div class="col-auto align-self-center">
+                    <bp-action
+                      text="Button"
+                      classes="btn btn-outline-primary"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+                <div class="row align-items-end">
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <bp-search
+                      label="Search"
+                      placeholder="Search by keyword"
+                      [isSearching]="isSearching"
+                      (search)="handleSearch($event)"
+                      (clearSearch)="handleClearSearch($event)"
+                    ></bp-search>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Type"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Status"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Channel"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="form-group">
+                      <bp-multi-select
+                        label="Filter by Audience"
+                        [optionItems]="optionItems"
+                        bindLabel="label"
+                        bindValue="value"
+                        placeholder="Select items"
+                        [isSearchable]="false"
+                        (change)="handleMulti($event)"
+                      ></bp-multi-select>
+                    </div>
+                  </div>
+                  <div class="col-auto align-self-center ml-auto">
+                    <bp-action
+                      text="Button"
+                      classes="btn btn-outline-primary"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              <!-- TF template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
