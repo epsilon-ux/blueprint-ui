@@ -38,6 +38,25 @@
         </div>
       </div>
     </ng-template>
+    
+    <!-- Default Placeholder Template -->
+    <ng-template
+      *ngIf="!multiLabelTemplate && !hasTags"
+      ng-multi-label-tmp
+      let-items="items"
+      let-clear="clear"
+    >
+      <div class="ng-value ng-value-custom">
+        <div class="ng-value-label">
+          {{
+            parseLookupString(
+              internationalization["numSelected out of numTotal selected"],
+              {numSelected: items.length, numTotal: optionItems.length}
+            )
+          }}
+        </div>
+      </div>
+    </ng-template>
 
     <!-- Tag Template -->
     <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
