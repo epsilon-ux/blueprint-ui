@@ -63,6 +63,16 @@
             </td>
           </tr>
           <tr>
+            <td>hasTags</td>
+            <td>boolean</td>
+            <td>Determines if the multi-select has tags instead of "_ out of _ selected" text.</td>
+            <td>
+              <p>Default is "false".</p>
+              <p>When "true" the multi-select shows the selected options with tags.</p>
+              <p>When "false" the multi-select shows the selected options with "_ out of _ selected" text.</p>
+            </td>
+          </tr>
+          <tr>
             <td>placeholder</td>
             <td>string</td>
             <td>The placeholder text for the multi-select.</td>
@@ -124,6 +134,36 @@
           </tr>
         </tbody>
       </table>
+
+      <h3>Internationalization</h3>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          Multiselect internationalization input
+        </caption>
+        <thead>
+          <tr>
+            <th class="pt-0">Key</th>
+            <th class="pt-0">Type</th>
+            <th class="pt-0">Description</th>
+            <th class="pt-0">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>'+ additional more'</td>
+            <td>string</td>
+            <td>The text used for the overflow tag text.</td>
+            <td>Dafault is "+ {{ '#\{additional\}' }} more".</td>
+          </tr>
+          <tr>
+            <td>'numSelected out of numTotal selected'</td>
+            <td>string</td>
+            <td>The text used for the selected palceholder text.</td>
+            <td>Dafault is "{{ '#\{numSelected\}' }} out of {{ '#\{numTotal\}' }} selected".</td>
+          </tr>
+        </tbody>
+      </table>
+
       <h2>Outputs</h2>
       <table class="table table-bordered-rows">
         <caption class="sr-only">

@@ -26,6 +26,7 @@ export class MultiselectComponent implements OnInit, OnChanges {
   @Input() isLabelHidden = false;
   @Input() isInline = false;
   @Input() optionItems: any;
+  @Input() hasTags = false;
   @Input() isSearchable = false;
   @Input() placeholder = '';
   @Input() bindValue: string = null;
@@ -36,7 +37,8 @@ export class MultiselectComponent implements OnInit, OnChanges {
   @Input() isReadonly = false;
   @Input() inputAttrs: {[key: string]: string};
   @Input() internationalization = {
-    '+ additional more': '+ #{additional} more'
+    '+ additional more': '+ #{additional} more',
+    'numSelected out of numTotal selected': '#{numSelected} out of #{numTotal} selected'
   };
   @Input() ngModel: Array<any>;
   @Output() ngModelChange = new EventEmitter();
