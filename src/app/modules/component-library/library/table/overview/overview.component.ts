@@ -182,7 +182,6 @@ export class OverviewComponent implements OnInit {
   }
   
   handleSort(sort) {
-    console.log(sort);
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(this.filteredData, sort.column);
     } else {
