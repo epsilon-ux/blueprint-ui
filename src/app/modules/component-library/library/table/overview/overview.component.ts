@@ -47,11 +47,11 @@ export class OverviewComponent implements OnInit {
           isColumnDisplayed: true
         },
         {
+          key: 'templateCol',
           headerText: 'Template',
           isColumnDisplayed: true,
           type: ColumnType.TEMPLATE,
-          template: this.templateColumn,
-          isSortable: false
+          template: this.templateColumn
         },
         {
           key: 'phone',
@@ -70,6 +70,7 @@ export class OverviewComponent implements OnInit {
           headerText: 'Description',
           isColumnDisplayed: true,
           type: ColumnType.LINK,
+          isSortable: false,
           link: {
             element: 'a',
             ariaLabel: 'go to Object #{id}',
@@ -157,19 +158,27 @@ export class OverviewComponent implements OnInit {
   }
 
   sortByKeyAsc(array, key) {
-    return array.sort((a, b) => {
-      const x = a[key];
-      const y = b[key];
-      return x < y ? -1 : 1;
-    });
+    if (key === 'templateCol') {
+      return array.sort((a, b) => a.id < b.id ? -1 : 1);
+    } else {
+      return array.sort((a, b) => {
+        const x = a[key];
+        const y = b[key];
+        return x < y ? -1 : 1;
+      });
+    }
   }
 
   sortByKeyDesc(array, key) {
-    return array.sort((a, b) => {
-      const x = a[key];
-      const y = b[key];
-      return x > y ? -1 : 1;
-    });
+    if (key === 'templateCol') {
+      return array.sort((a, b) => b.id < a.id ? -1 : 1);
+    } else {
+      return array.sort((a, b) => {
+        const x = a[key];
+        const y = b[key];
+        return x > y ? -1 : 1;
+      });
+    }
   }
   
   handleSort(sort) {
