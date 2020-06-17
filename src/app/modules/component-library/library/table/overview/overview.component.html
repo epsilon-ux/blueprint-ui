@@ -18,7 +18,7 @@
             [properties]="properties"
             (action)="handleAction($event)"
             (onSort)="handleSort($event)"
-            (selectedRowsAction)="handleSelectedRowsAction($event)"
+            (rowSelected)="handleSelectedRows($event)"
           >
             <bp-pagination
               [dataLength]="filteredData.length"

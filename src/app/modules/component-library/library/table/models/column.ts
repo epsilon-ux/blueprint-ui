@@ -1,7 +1,7 @@
 import { TemplateRef } from '@angular/core';
 
 export interface Column {
-  key?: string; // Required, unless columnType = TEMPLATE
+  key: string;
   headerText: string;
   isColumnDisplayed: boolean;
   type?: ColumnType;
