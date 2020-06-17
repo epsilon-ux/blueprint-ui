@@ -193,7 +193,7 @@ export class OverviewComponent implements OnInit {
     );
   }
 
-  handleSelectedRowsAction(selectedRowIds: {
+  handleSelectedRows(selectedRowIds: {
     areAllSelected: boolean;
     selected: {[key: string]: any;}
   }) {
