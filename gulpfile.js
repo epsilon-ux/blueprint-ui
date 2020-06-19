@@ -14,10 +14,12 @@ const copyScss = cb => {
   return src('projects/epsilon-blueprint/src/styles.scss')
     .pipe(dest('dist/epsilon-blueprint/'));
 }
+const copyModels = cb => {
+  return src('projects/epsilon-blueprint/src/models/*.ts')
+    .pipe(dest('dist/epsilon-blueprint/models/'));
+}
 
-exports.copyStyles = parallel(copyScssFolder, copyCUIFolder, copyScss);
-
-exports.watchStyles = () => {
+const watchStyles = () => {
   watch(
     'projects/epsilon-blueprint/src/styles/*.scss',
     { ignoreInitial: false },
@@ -36,3 +38,15 @@ exports.watchStyles = () => {
     cb => copyScss(cb)
   );
 };
+
+
+const watchModels = () => {
+  watch(
+    'projects/epsilon-blueprint/src/models/*.ts',
+    { ignoreInitial: false },
+    cb => copyModels(cb)
+  );
+};
+
+exports.copyStyles = parallel(copyScssFolder, copyCUIFolder, copyScss);
+exports.watchAssets = parallel(watchModels, watchStyles);

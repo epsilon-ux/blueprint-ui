@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
-import { ColumnType } from '../models/column';
-import Properties from '../models/properties';
+import { ColumnType } from 'epsilon-blueprint/models/column';
+import Properties from 'epsilon-blueprint/models/properties';
 
 import tableData from 'src/app/datasets/tableData.json';
 
@@ -151,6 +151,7 @@ export class OverviewComponent implements OnInit {
       hasDisplayDensity: true
     };
     this.exampleData = tableData;
+    console.log(this.properties.test);
   }
 
   handleAction(action: { action: string; id: string }) {

@@ -8,9 +8,9 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { Column, ColumnType } from '../models/column';
+import { Column, ColumnType } from '../../../models/column';
 import { parseLookupString } from '../../../helpers';
-import Properties from '../models/properties';
+import Properties from '../../../models/properties';
 
 @Component({
   selector: '[app-table-body]',
