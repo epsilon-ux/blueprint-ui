@@ -151,7 +151,6 @@ export class OverviewComponent implements OnInit {
       hasDisplayDensity: true
     };
     this.exampleData = tableData;
-    console.log(this.properties.test);
   }
 
   handleAction(action: { action: string; id: string }) {
