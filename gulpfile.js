@@ -14,10 +14,6 @@ const copyScss = cb => {
   return src('projects/epsilon-blueprint/src/styles.scss')
     .pipe(dest('dist/epsilon-blueprint/'));
 }
-const copyModels = cb => {
-  return src('projects/epsilon-blueprint/src/models/*.ts')
-    .pipe(dest('dist/epsilon-blueprint/models/'));
-}
 
 const watchStyles = () => {
   watch(
@@ -39,6 +35,10 @@ const watchStyles = () => {
   );
 };
 
+exports.copyModels = cb => {
+  return src('projects/epsilon-blueprint/src/models/*.ts')
+    .pipe(dest('dist/epsilon-blueprint/models/'));
+}
 
 const watchModels = () => {
   watch(
