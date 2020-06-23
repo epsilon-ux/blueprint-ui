@@ -1,19 +1,27 @@
 <!-- 
   TODO:
-  update multiselect to total of total selected on load
+  error when adding [(ngModel)]="selectedThings" to multiple bp-multi-select on pg
+  name error for ng-select
+  update template resources
 -->
 
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
-        All variations of the table filters shown below are optional and depend on the situation.
+        Filters vary depending on the complexity of the data set. Table filters could be a single search field or could contain up to five separate filtering options.
+      </p>
+      <p>
+        Note that the width of the filters will depend on the amount and size of the items on the right side of the table.
       </p>
       <h2 class="mb-0">Variations</h2>
     </div>
 
     <div class="col-12">
       <h3>Standard</h3>
+      <p>
+        This is our simplest table filter. The user can search the table using a keyword. Whenever possible, the user should be able to search the entire table, not just a single column.
+      </p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard.html" target="_blank" class="link-primary">
           Standard template code
@@ -44,7 +52,10 @@
         </div>
       </div>
 
-      <h4>Standard with text</h4>
+      <h3>Standard with text</h3>
+      <p>
+        Use this variation if the data set shown is not complete or the user needs more information on when this data was collected. One common use case for this variation is showing when the data was last updated.
+      </p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard-with-text.html" target="_blank" class="link-primary">
           Standard with text template code
@@ -80,8 +91,10 @@
         </div>
       </div>
 
-      <h4>Standard with button</h4>
-      <p>Button can be primary, secondary, default, or large</p>
+      <h3>Standard with button</h3>
+      <p>
+        Use this variation if the user can take an action that is related to the data shown in the table. The button can be primary, secondary, default, or large, depending on the importance of the action.
+      </p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard-with-button.html" target="_blank" class="link-primary">
           Standard with button template code
@@ -119,7 +132,8 @@
         </div>
       </div>
 
-      <h4>Standard with toggle</h4>
+      <h3>Standard with toggle</h3>
+      <p>Use this variation if the user can have two or three preset filters of the same data set.</p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard-with-toggle.html" target="_blank" class="link-primary">
           Standard with toggle template code
@@ -156,7 +170,8 @@
         </div>
       </div>
 
-      <h4>Standard with date range selector, type filter, status filter, and toggle</h4>
+      <h3>Standard with four filters and a toggle</h3>
+      <p>This variation shows our limit of four filters that can appear above the table before collapsing.</p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard-loaded.html" target="_blank" class="link-primary">
           Fully loaded standard template code
@@ -181,9 +196,9 @@
                     </div>
                     <div class="col-sm-6 col-xl-3">
                       <div class="form-group">
-                        <label id="dateFilter">Date Range</label>
+                        <label id="dateFilter0">Date Range</label>
                         <ng-select
-                          labelForId="dateFilter"
+                          labelForId="dateFilter0"
                           [items]="dateOptions"
                           bindLabel="text"
                           [clearable]="false"
@@ -213,6 +228,7 @@
                           bindValue="value"
                           placeholder="Select types"
                           [isSearchable]="false"
+                          [(ngModel)]="selectedOptions"
                           (change)="handleMulti($event)"
                         ></bp-multi-select>
                       </div>
@@ -225,6 +241,9 @@
                           bindLabel="label"
                           bindValue="value"
                           placeholder="Select statuses"
+                          [isSearchable]="false"
+                          [(ngModel)]="selectedStatuses"
+                          (change)="handleMulti($event)"
                         >
                           <ng-template ng-option-tmp let-item="item">
                             <div class="status-indicator text-wrap">
@@ -253,11 +272,13 @@
         </div>
       </div>
 
-      <h3>With collapsible filters and bulk actions ribbon</h3>
-      <p>When there are more than 4 filters, collapse them. When there are bulk actions, show in ribbon.</p>
+      <h3>Collapsible filters and actions ribbon</h3>
+      <p>
+        If there are more than four filters, they will collapse into a separate filter section. This allows the user to focus on the data set, rather than on filters. The bulk actions ribbon is shown to illustrate how filters will show and hide above the table.
+      </p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/collapsible-with-ribbon.html" target="_blank" class="link-primary">
-          Collapsible filters and bulk actions ribbon template code
+          Collapsible filters and actions ribbon template code
         </a>
       </p>
       <div class="card mb-3">
@@ -294,9 +315,9 @@
                     <div class="row">
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <label id="dateFilter">Date Range</label>
+                          <label id="dateFilter1">Date Range</label>
                           <ng-select
-                            labelForId="dateFilter"
+                            labelForId="dateFilter1"
                             [items]="dateOptions"
                             bindLabel="text"
                             [clearable]="false"
@@ -319,6 +340,7 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Type"
                             [optionItems]="optionItems"
@@ -332,12 +354,15 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedStatuses" -->
                           <bp-multi-select
                             label="Filter by Status"
                             [optionItems]="optionStatuses"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select statuses"
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
                           >
                             <ng-template ng-option-tmp let-item="item">
                               <div class="status-indicator text-wrap">
@@ -350,21 +375,16 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Tag"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select tags"
-                          >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} audience(s)</span>
-                            </ng-template>
-                          </bp-multi-select>
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
+                          ></bp-multi-select>
                         </div>
                       </div>
                     </div>
@@ -416,8 +436,14 @@
         </div>
       </div>
 
-      <h3>Product-specific table filters</h3>
-      <h4>Events: Programs</h4>
+      <h2>Product-specific Table Filters</h2>
+      <p>
+        Below are products that have a specific set of filters either due to the data set, how the data is viewed, or what the user needs to filter on.
+      </p>
+      <h3>Events — Programs</h3>
+      <p>
+        For the Programs data set, the user can toggle between views, either table or list. Sorting appears in the filters section when the user is on the list view. This is because the user can't sort through a column header on the list view.
+      </p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/events-programs.html" target="_blank" class="link-primary">
           Events Programs template code
@@ -470,78 +496,58 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Action Destination"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select action destinations"
-                          >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} type(s)</span>
-                            </ng-template>
-                          </bp-multi-select>
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
+                          ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Business Unit"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select business units"
-                          >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} type(s)</span>
-                            </ng-template>
-                          </bp-multi-select>
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
+                          ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Company"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select companies"
-                          >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} channel(s)</span>
-                            </ng-template>
-                          </bp-multi-select>
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
+                          ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Event Source Provider"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select event source providers"
-                          >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} audience(s)</span>
-                            </ng-template>
-                          </bp-multi-select>
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
+                          ></bp-multi-select>
                         </div>
                       </div>
                     </div>
@@ -564,7 +570,10 @@
         </div>
       </div>
 
-      <h4>Marketing: Promotions</h4>
+      <h3>Marketing — Promotions</h3>
+      <p>
+        The Promotions table has five filters, but no right side content or actions.
+      </p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/marketing-promotions.html" target="_blank" class="link-primary">
           Marketing Promotions template code
@@ -604,43 +613,31 @@
                     <div class="row">
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Type"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select types"
-                          >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} type(s)</span>
-                            </ng-template>
-                          </bp-multi-select>
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
+                          ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedStatuses" -->
                           <bp-multi-select
                             label="Filter by Status"
                             [optionItems]="optionStatuses"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select statuses"
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
                           >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} status(es)</span>
-                            </ng-template>
-                            <ng-template
-                              ng-option-tmp
-                              let-item="item"
-                            >
+                            <ng-template ng-option-tmp let-item="item">
                               <div class="status-indicator text-wrap">
                                 <span class="status-icon {{ item.value }}"></span>
                                 {{ item.label }}
@@ -651,40 +648,30 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Channel"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select channels"
-                          >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} channel(s)</span>
-                            </ng-template>
-                          </bp-multi-select>
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
+                          ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
+                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Audience"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select audiences"
-                          >
-                            <ng-template
-                              ng-multi-label-tmp
-                              let-items="items"
-                              let-clear="clear"
-                            >
-                              <span>Selected {{ items.length }} audience(s)</span>
-                            </ng-template>
-                          </bp-multi-select>
+                            [isSearchable]="false"
+                            (change)="handleMulti($event)"
+                          ></bp-multi-select>
                         </div>
                       </div>
                     </div>
@@ -700,7 +687,10 @@
         </div>
       </div>
 
-      <h4>Messaging: Data</h4>
+      <h3>Messaging — Data</h3>
+      <p>
+        The Data table has a one-off filter for 'Auto-Refresh Segments.' The filtered data appears in a modal, instead of the table below. This design is under review, do not use this pattern for anything else.
+      </p>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/messaging-data.html" target="_blank" class="link-primary">
           Messaging Data template code
@@ -725,9 +715,9 @@
                     </div>
                     <div class="col-sm-6 col-xl-3">
                       <div class="form-group">
-                        <label id="dateFilter">Date Range</label>
+                        <label id="dateFilter2">Date Range</label>
                         <ng-select
-                          labelForId="dateFilter"
+                          labelForId="dateFilter2"
                           [items]="dateOptions"
                           bindLabel="text"
                           placeholder="Select a date range"
@@ -751,6 +741,7 @@
                     </div>
                     <div class="col-sm-6 col-xl-3">
                       <div class="form-group">
+                        <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                         <bp-multi-select
                           label="Filter by Type"
                           [optionItems]="optionItems"

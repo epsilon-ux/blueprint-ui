@@ -11,38 +11,38 @@ export class UsageComponent implements OnInit {
   dateOptions = [
     {
       text: 'Today',
-      range: 'MM/DD/YYYY',
+      range: 'MM/DD/YYYY'
     },
     {
       text: 'Yesterday',
-      range: 'MM/DD/YYYY',
+      range: 'MM/DD/YYYY'
     },
     {
       text: 'Last 3 Days',
-      range: 'MM/DD/YYYY - MM/DD/YYY',
+      range: 'MM/DD/YYYY - MM/DD/YYYY'
     },
     {
       text: 'Last 7 Days',
-      range: 'MM/DD/YYYY - MM/DD/YYY',
+      range: 'MM/DD/YYYY - MM/DD/YYYY'
     },
     {
       text: 'Current Week',
-      range: 'MM/DD/YYYY - MM/DD/YYY',
+      range: 'MM/DD/YYYY - MM/DD/YYYY'
     },
     {
       text: 'Last 30 Days',
-      range: 'MM/DD/YYYY - MM/DD/YYY',
+      range: 'MM/DD/YYYY - MM/DD/YYYY'
     },
     {
       text: 'Last 60 Days',
-      range: 'MM/DD/YYYY - MM/DD/YYY',
+      range: 'MM/DD/YYYY - MM/DD/YYYY'
     },
     {
       text: 'Last 90 Days',
-      range: 'MM/DD/YYYY - MM/DD/YYY',
+      range: 'MM/DD/YYYY - MM/DD/YYYY'
     }
   ];
-  selectedDate = this.dateOptions[0];
+  selectedDate = this.dateOptions[7];
 
   // generic multi-select options
   optionItems = [
@@ -63,7 +63,7 @@ export class UsageComponent implements OnInit {
       value: 'option4'
     }
   ];
-  selectedOptions = this.optionItems[0];
+  selectedOptions;
 
   // status multi-select options
   optionStatuses = [
@@ -84,7 +84,27 @@ export class UsageComponent implements OnInit {
       value: 'warning'
     }
   ];
-  selectedStatus = this.optionStatuses[0];
+  selectedStatuses;
+
+  // events sort by filter
+  sortByOptions = [
+    {
+      text: 'Create Date'
+    },
+    {
+      text: 'Modified Date'
+    },
+    {
+      text: 'Program Name'
+    },
+    {
+      text: 'Schedule Date'
+    },
+    {
+      text: 'Status'
+    }
+  ];
+  selectedSortOption = this.sortByOptions[1];
 
   // generic toggles
   toggleButtons = [
@@ -117,26 +137,6 @@ export class UsageComponent implements OnInit {
     }
   ];
 
-  // events sort by filter
-  sortByOptions = [
-    {
-      text: 'Create Date'
-    },
-    {
-      text: 'Modified Date'
-    },
-    {
-      text: 'Program Name'
-    },
-    {
-      text: 'Schedule Date'
-    },
-    {
-      text: 'Status'
-    }
-  ];
-  selectedSortOption = this.sortByOptions[1];
-
   // messaging current/archive toggles
   currentArchiveToggles = [
     {
@@ -154,13 +154,18 @@ export class UsageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.selectedOptions = ['option1', 'option2', 'option3', 'option4'];
+    this.selectedStatuses = ['complete', 'incomplete-primary', 'incomplete-secondary', 'warning'];
+  }
 
-  public toggleView(event) {
-    if(event.target.value === 'list') {
+  toggleView(e) {
+    if(e.target.value === 'list') {
       this.listView = true;
     } else {
       this.listView = false;
     }
   }
+
+  handleMulti(e) { }
 }
