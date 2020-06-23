@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { parseLookupString } from '../../../../../helpers';
-import { Action } from '../../../../../models/action';
+import { Action } from '../../../../../models/table-models';
 
 @Component({
   selector: 'app-actions',

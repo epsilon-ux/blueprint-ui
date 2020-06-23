@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
-import { ColumnType } from 'epsilon-blueprint/models/column';
-import Properties from 'epsilon-blueprint/models/properties';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ColumnType, Properties } from 'epsilon-blueprint/models/table-models';
 
 import tableData from 'src/app/datasets/tableData.json';
 

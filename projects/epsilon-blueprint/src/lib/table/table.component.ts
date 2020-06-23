@@ -8,8 +8,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { Column, ColumnType } from '../../models/column';
-import Properties from '../../models/properties';
+import { Column, ColumnType, Properties } from '../../models/table-models';
 import { parseLookupString } from '../../helpers';
 
 @Component({
