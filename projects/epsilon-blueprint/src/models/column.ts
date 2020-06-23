@@ -3,8 +3,8 @@ import { TemplateRef } from '@angular/core';
 export interface Column {
   key: string;
   headerText: string;
-  isColumnDisplayed: boolean;
-  type: ColumnType;
+  isColumnDisplayed?: boolean;
+  type?: ColumnType;
   isSortable?: boolean;
   template?: TemplateRef<any>;
   icon?: {
@@ -28,7 +28,7 @@ export interface Column {
     'warning': string;
     'complete': string;
   };
-  columnIndex: number; // This is set internally in the component and should not be provided by the user
+  columnIndex?: number; // This is set internally in the component and should not be provided by the user
 }
 
 export enum ColumnType {

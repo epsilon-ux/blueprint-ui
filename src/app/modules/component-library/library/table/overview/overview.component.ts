@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
-import { ColumnType } from '../models/column';
-import Properties from '../models/properties';
+import { ColumnType } from 'epsilon-blueprint/models/column';
+import Properties from 'epsilon-blueprint/models/properties';
 
 import tableData from 'src/app/datasets/tableData.json';
 
@@ -31,7 +31,7 @@ export class OverviewComponent implements OnInit {
 
   constructor() {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.properties = {
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',

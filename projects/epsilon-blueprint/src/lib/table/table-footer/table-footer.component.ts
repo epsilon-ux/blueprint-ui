@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Column } from '../models/column';
+import { Column } from '../../../models/column';
 
 @Component({
   selector: 'app-table-footer',
