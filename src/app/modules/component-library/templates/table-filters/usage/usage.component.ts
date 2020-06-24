@@ -157,6 +157,12 @@ export class UsageComponent implements OnInit {
 
   ngOnInit() { }
 
+  handleSearch(e) { }
+
+  handleClearSearch(e) { }
+
+  handleMulti(e) { }
+
   toggleView(e) {
     if(e.target.value === 'list') {
       this.listView = true;
@@ -164,4 +170,6 @@ export class UsageComponent implements OnInit {
       this.listView = false;
     }
   }
+
+  click = (e) => {};
 }
