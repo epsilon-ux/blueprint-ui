@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../table-filters.component.scss']
 })
 export class UsageComponent implements OnInit {
+  isSearching = false;
 
   // date range select options
   dateOptions = [
