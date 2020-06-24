@@ -44,7 +44,7 @@ const watchModels = () => {
   watch(
     'projects/epsilon-blueprint/src/models/*.ts',
     { ignoreInitial: false },
-    cb => copyModels(cb)
+    cb => this.copyModels(cb)
   );
 };
 
