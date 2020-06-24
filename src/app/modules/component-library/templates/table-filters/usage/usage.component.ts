@@ -42,9 +42,9 @@ export class UsageComponent implements OnInit {
       range: 'MM/DD/YYYY - MM/DD/YYYY'
     }
   ];
-  selectedDate = this.dateOptions[7];
+  selectedDateRange;
 
-  // generic multi-select options
+  // generic options used for types, tags, events, and marketing multi-selects
   optionItems = [
     {
       label: 'Option 1',
@@ -154,10 +154,7 @@ export class UsageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.selectedOptions = ['option1', 'option2', 'option3', 'option4'];
-    this.selectedStatuses = ['complete', 'incomplete-primary', 'incomplete-secondary', 'warning'];
-  }
+  ngOnInit() { }
 
   toggleView(e) {
     if(e.target.value === 'list') {
@@ -166,6 +163,4 @@ export class UsageComponent implements OnInit {
       this.listView = false;
     }
   }
-
-  handleMulti(e) { }
 }

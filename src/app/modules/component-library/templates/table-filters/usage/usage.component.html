@@ -1,10 +1,4 @@
-<!-- 
-  TODO:
-  error when adding [(ngModel)]="selectedThings" to multiple bp-multi-select on pg
-  name error for ng-select
-  update template resources
--->
-
+<!-- TODO: 'last 90 days' date range and all multiselect options should be selected on load -->
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
@@ -12,7 +6,7 @@
         Filters vary depending on the complexity of the data set. Table filters could be a single search field or could contain up to five separate filtering options.
       </p>
       <p>
-        Note that the width of the filters will depend on the amount and size of the items on the right side of the table.
+        Note that the width of the filters will depend on the amount and size of the items on the right side of the table. For the most part, filters options should be selected on page load.
       </p>
       <h2 class="mb-0">Variations</h2>
     </div>
@@ -69,7 +63,7 @@
               <div class="row">
                 <div class="col-sm-6 col-xl-3">
                   <bp-search
-                    label="Search test"
+                    label="Search"
                     placeholder="Search"
                     [isSearching]="isSearching"
                     (search)="handleSearch($event)"
@@ -201,9 +195,9 @@
                           labelForId="dateFilter0"
                           [items]="dateOptions"
                           bindLabel="text"
+                          placeholder="Select date range"
                           [clearable]="false"
                           [searchable]="false"
-                          [(ngModel)]="selectedDate"
                         >
                           <ng-template
                             ng-option-tmp
@@ -227,9 +221,6 @@
                           bindLabel="label"
                           bindValue="value"
                           placeholder="Select types"
-                          [isSearchable]="false"
-                          [(ngModel)]="selectedOptions"
-                          (change)="handleMulti($event)"
                         ></bp-multi-select>
                       </div>
                     </div>
@@ -241,11 +232,11 @@
                           bindLabel="label"
                           bindValue="value"
                           placeholder="Select statuses"
-                          [isSearchable]="false"
-                          [(ngModel)]="selectedStatuses"
-                          (change)="handleMulti($event)"
                         >
-                          <ng-template ng-option-tmp let-item="item">
+                          <ng-template
+                            ng-option-tmp
+                            let-item="item"
+                          >
                             <div class="status-indicator text-wrap">
                               <span class="status-icon {{ item.value }}"></span>
                               {{ item.label }}
@@ -320,9 +311,9 @@
                             labelForId="dateFilter1"
                             [items]="dateOptions"
                             bindLabel="text"
+                            placeholder="Select date range"
                             [clearable]="false"
                             [searchable]="false"
-                            [(ngModel)]="selectedDate"
                           >
                             <ng-template
                               ng-option-tmp
@@ -340,31 +331,28 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Type"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select types"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedStatuses" -->
                           <bp-multi-select
                             label="Filter by Status"
                             [optionItems]="optionStatuses"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select statuses"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           >
-                            <ng-template ng-option-tmp let-item="item">
+                            <ng-template
+                              ng-option-tmp
+                              let-item="item"
+                            >
                               <div class="status-indicator text-wrap">
                                 <span class="status-icon {{ item.value }}"></span>
                                 {{ item.label }}
@@ -375,15 +363,12 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Tag"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select tags"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -496,57 +481,45 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Action Destination"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select action destinations"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Business Unit"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select business units"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Company"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select companies"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Event Source Provider"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select event source providers"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -601,43 +574,40 @@
                         type="button" 
                         class="btn btn-text" 
                         data-toggle="collapse" 
-                        data-target="#collapseExample" 
+                        data-target="#collapsePromotionsFilters" 
                         aria-expanded="true" 
-                        aria-controls="collapseExample"
+                        aria-controls="collapsePromotionsFilters"
                       >
                         <i class="fas fa-filter icon-left" aria-hidden="true"></i>Filter
                       </button>
                     </div>
                   </div>
-                  <div class="collapse show" id="collapseExample">
+                  <div class="collapse show" id="collapsePromotionsFilters">
                     <div class="row">
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Type"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select types"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedStatuses" -->
                           <bp-multi-select
                             label="Filter by Status"
                             [optionItems]="optionStatuses"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select statuses"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           >
-                            <ng-template ng-option-tmp let-item="item">
+                            <ng-template
+                              ng-option-tmp
+                              let-item="item"
+                            >
                               <div class="status-indicator text-wrap">
                                 <span class="status-icon {{ item.value }}"></span>
                                 {{ item.label }}
@@ -648,29 +618,23 @@
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Channel"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select channels"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
                       <div class="col-sm-6 col-xl-3">
                         <div class="form-group">
-                          <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                           <bp-multi-select
                             label="Filter by Audience"
                             [optionItems]="optionItems"
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select audiences"
-                            [isSearchable]="false"
-                            (change)="handleMulti($event)"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -720,10 +684,9 @@
                           labelForId="dateFilter2"
                           [items]="dateOptions"
                           bindLabel="text"
-                          placeholder="Select a date range"
+                          placeholder="Select date range"
                           [clearable]="false"
                           [searchable]="false"
-                          [(ngModel)]="selectedDate"
                         >
                           <ng-template
                             ng-option-tmp
@@ -741,15 +704,12 @@
                     </div>
                     <div class="col-sm-6 col-xl-3">
                       <div class="form-group">
-                        <!-- TODO: hook up [(ngModel)]="selectedOptions" -->
                         <bp-multi-select
                           label="Filter by Type"
                           [optionItems]="optionItems"
                           bindLabel="label"
                           bindValue="value"
                           placeholder="Select types"
-                          [isSearchable]="false"
-                          (change)="handleMulti($event)"
                         ></bp-multi-select>
                       </div>
                     </div>
