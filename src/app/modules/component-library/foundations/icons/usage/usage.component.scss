@@ -1,0 +1,35 @@
+@import 'projects/epsilon-blueprint/src/styles/_global-variables';
+
+.bg-tomato {
+    background-color: $tomato;
+}
+
+.bg-shamrock {
+    background-color: $shamrock;
+}
+
+.bordered {
+    border: 1px solid;
+}
+
+.bordered-haze {
+    border: 1px solid;
+    border-color: $haze;
+}
+
+.text-color-cobalt {
+    color: $cobalt;
+}
+
+.text-color-shamrock {
+    color: $shamrock;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.pull-left {
+    display: flex;
+  }
