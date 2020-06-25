@@ -11,7 +11,7 @@ import standard from './example-properties/standard';
 })
 export class UsageComponent implements OnInit {
 
-  @ViewChild('templateColumn', {static: true}) templateColumn;
+  // @ViewChild('templateColumn', {static: true}) templateColumn;
   @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
 
   filteredData = [];
