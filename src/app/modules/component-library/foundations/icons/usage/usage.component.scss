@@ -8,15 +8,6 @@
     background-color: $shamrock;
 }
 
-.bordered {
-    border: 1px solid;
-}
-
-.bordered-haze {
-    border: 1px solid;
-    border-color: $haze;
-}
-
 .text-color-cobalt {
     color: $cobalt;
 }
@@ -25,11 +16,34 @@
     color: $shamrock;
 }
 
-.icon-container {
+.text-color-haze {
+    color: $haze;
+}
+
+.icon-box {
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-  }
-  
-.pull-left {
-    display: flex;
+
+    &.icon-box-style-1 {
+        color: $ultramarine;
+        background-color: $coconut;
+    }
+
+    &.icon-box-style-2 {
+        border-color: $haze;
+        color: $storm;
+        background-color: $mist;
+    }
+
+    & i.fa-caret-up {
+        transform: translateY(3px);
+    }
+    & i.fa-caret-down {
+        transform: translateY(-3px);
+    }
   }
