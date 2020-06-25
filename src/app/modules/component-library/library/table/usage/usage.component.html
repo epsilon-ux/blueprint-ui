@@ -17,8 +17,15 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="standard"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -32,8 +39,15 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withCheckboxes"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -46,8 +60,15 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withActions"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -60,8 +81,15 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withDropdown"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -74,8 +102,15 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withIcons"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -90,8 +125,44 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withStatus"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with a expandable rows</h3>
+      <p>
+        Table rows can expand to reveal more information relating to the open row. Information can appear in columns or in multi-line strings. The information shown should be necessary to help the user make an action or decision on the page.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withExpandable"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          >
+            <!-- <ng-template expanded-row-template>
+              This is a test
+            </ng-template> -->
+          </bp-table>
+          <ng-template #expandableRowsTemplate let-rowData>
+            <p>Expandable row content example. This is tied to row {{ rowData.id }}.</p>
+            <p>With amount {{ rowData.amount }}</p>
+          </ng-template>
         </div>
       </div>
     </div>
