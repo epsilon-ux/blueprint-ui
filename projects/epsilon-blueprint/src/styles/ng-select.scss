@@ -545,3 +545,20 @@
 {
   position: absolute;
 }
+
+.option-text-secondary
+{
+  color: $font-color-secondary;
+}
+
+.ng-option-marked .option-text-secondary,
+.ng-option-selected .option-text-secondary
+{
+  color: $coconut;
+}
+
+// ng select with add on
+.input-group > .ng-select
+{
+    flex-grow: 1;
+}
