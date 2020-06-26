@@ -17,23 +17,36 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="standard"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
     <div class="col-lg-8 col-xl-7">
-      <!-- TODO: should this be 'Table with selectable rows'? -->
-      <h3>Table with checkboxes</h3>
+      <h3>Table with selectable rows</h3>
       <p>
-        Adding checkboxes to each row will allow the user the ability to select and deselect groups of rows.
+        Adding a checkbox to each row will allow the user to select and deselect rows.
       </p>
     </div>
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withSelectable"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -46,8 +59,15 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withActions"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -60,8 +80,15 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withDropdown"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -74,8 +101,15 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withIcons"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
         </div>
       </div>
     </div>
@@ -83,15 +117,132 @@
       <h3>Table with a status column</h3>
       <p>
         If all objects are assigned statuses, these statuses should be shown in the table. Indicators accompany status text to help with scannability. Status indicators must always have a label. 
-        <!-- TODO: uncomment after adding Icons -->
-        <!-- See the Icons page for more information around status indicators. -->
+        See the <a routerLink="/components/icons/icon-library">icons</a> page for more information around status indicators.
       </p>
     </div>
     <div class="col-12">
       <div class="card">
         <div class="card-body component-preview">
-          <!-- TODO: add example -->
-          <p class="mb-0">Example coming soon</p>
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withStatus"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with expandable rows</h3>
+      <p>
+        Table rows can expand to reveal more information relating to the open row. Information can appear in columns or in multi-line strings. The information shown should be necessary to help the user make an action or decision on the page.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withExpandable"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
+          <ng-template #expandableRowsTemplate let-rowData>
+            <p>Expandable row content example. This is tied to row {{ rowData.id }}.</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with expandable and selectable rows</h3>
+      <p>
+       Table rows can be expandable and selectable.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withExpandableAndSelectable"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
+          <ng-template #expandableRowsTemplate let-rowData>
+            <p>Expandable row content example. This is tied to row {{ rowData.id }}.</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with a link column</h3>
+      <p>
+        The link column most commonly appears as the first column, as the object or row identifier.
+        The link takes the user into the object to view or edit. Tables can have multiple link columns.
+        This is generally used if the object or row contains information that lives in different places. 
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withLinks"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with filters</h3>
+      <p>
+        Table filters allow the user to view subsets of a larger data set. Table filters vary from
+        product to product, and depend on the filterable data set. They appear below the page header
+        and above the table. Please see <a routerLink="/components/table-filters/overview">table filters</a> for more information.
+      </p>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with footer</h3>
+      <p>
+        Most of our tables have footers attached. The footer allows the user to go through multiple
+        pages of data and choose how many rows they want to see per page. The footer can also contain
+        a column selector and/or a display density selector. The user can select which columns to
+        display through the column selector, and, if applicable, at which density they want to view
+        the data. Pagination is required when using the table footer.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-table
+            [data]="usageDataPage"
+            [properties]="withFooter"
+            [dataLength]="usageData.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageData, true)"
+            (rowSelected)="handleSelectedRows($event)"
+          >
+            <bp-pagination
+              [dataLength]="usageData.length"
+              [defaultNumberOfRows]="10"
+              [pageBuffer]="1"
+              (pageData)="handlePageChange($event)"
+            ></bp-pagination>
+          </bp-table>
         </div>
       </div>
     </div>
