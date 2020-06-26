@@ -41,11 +41,13 @@ export class UsageComponent implements OnInit {
 
     this.withCheckboxes = {
       ...this.standard,
+      caption: 'This is an example of a table with checkboxes.',
       hasSelectableRows: true
     };
 
     this.withActions = {
       ...this.standard,
+      caption: 'This is an example of a table with actions.',
       actions: [
         {
           element: 'button',
@@ -66,6 +68,7 @@ export class UsageComponent implements OnInit {
 
     this.withDropdown = {
       ...this.standard,
+      caption: 'This is an example of a table with an actions dropdown.',
       actions: [
         {
           element: 'button',
@@ -93,6 +96,7 @@ export class UsageComponent implements OnInit {
 
     this.withIcons = {
       ...this.standard,
+      caption: 'This is an example of a table with icons.',
       columns: [
         ...this.standard.columns,
         {
@@ -113,6 +117,7 @@ export class UsageComponent implements OnInit {
 
     this.withStatus = {
       ...this.standard,
+      caption: 'This is an example of a table with statuses.',
       columns: [
         ...this.standard.columns,
         {
@@ -133,17 +138,20 @@ export class UsageComponent implements OnInit {
 
     this.withExpandable = {
       ...this.standard,
+      caption: 'This is an example of a table with expandable rows.',
       expandableRowsTemplate: this.expandableRowsTemplate
     };
 
     this.withExpandableAndCheckboxes = {
       ...this.standard,
+      caption: 'This is an example of a table with checkboxes and expandable rows.',
       hasSelectableRows: true,
       expandableRowsTemplate: this.expandableRowsTemplate
     };
 
     this.withLinks = {
       ...this.standard,
+      caption: 'This is an example of a table with links.',
       columns: [
         ...this.standard.columns,
         {
@@ -163,6 +171,7 @@ export class UsageComponent implements OnInit {
 
     this.withFooter = {
       ...standard,
+      caption: 'This is an example of a table with a footer.',
       hasColumnSelector: true,
       hasDisplayDensity: true
     };
