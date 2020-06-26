@@ -23,7 +23,7 @@
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
-            (onSort)="handleSort($event, false)"
+            (onSort)="handleSort($event, usageDataShort, false)"
             (rowSelected)="handleSelectedRows($event)"
           ></bp-table>
         </div>
@@ -45,7 +45,7 @@
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
-            (onSort)="handleSort($event, false)"
+            (onSort)="handleSort($event, usageDataShort, false)"
             (rowSelected)="handleSelectedRows($event)"
           ></bp-table>
         </div>
@@ -66,7 +66,7 @@
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
-            (onSort)="handleSort($event, false)"
+            (onSort)="handleSort($event, usageDataShort, false)"
             (rowSelected)="handleSelectedRows($event)"
           ></bp-table>
         </div>
@@ -87,7 +87,7 @@
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
-            (onSort)="handleSort($event, false)"
+            (onSort)="handleSort($event, usageDataShort, false)"
             (rowSelected)="handleSelectedRows($event)"
           ></bp-table>
         </div>
@@ -108,7 +108,7 @@
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
-            (onSort)="handleSort($event, false)"
+            (onSort)="handleSort($event, usageDataShort, false)"
             (rowSelected)="handleSelectedRows($event)"
           ></bp-table>
         </div>
@@ -131,7 +131,7 @@
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
-            (onSort)="handleSort($event, false)"
+            (onSort)="handleSort($event, usageDataShort, false)"
             (rowSelected)="handleSelectedRows($event)"
           ></bp-table>
         </div>
@@ -152,16 +152,99 @@
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
-            (onSort)="handleSort($event, false)"
+            (onSort)="handleSort($event, usageDataShort, false)"
             (rowSelected)="handleSelectedRows($event)"
-          >
-            <!-- <ng-template expanded-row-template>
-              This is a test
-            </ng-template> -->
-          </bp-table>
+          ></bp-table>
           <ng-template #expandableRowsTemplate let-rowData>
             <p>Expandable row content example. This is tied to row {{ rowData.id }}.</p>
           </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Expandable table with checkboxes</h3>
+      <p>
+        Expandable table rows can contain checkboxes. Users can select or expand table rows.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withExpandableAndCheckboxes"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
+          <ng-template #expandableRowsTemplate let-rowData>
+            <p>Expandable row content example. This is tied to row {{ rowData.id }}.</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with a link column</h3>
+      <p>
+        The link column most commonly appears as the first column, as the object or row identifier.
+        The link takes the user into the object to view or edit. Tables can have multiple link columns.
+        This is generally used to if the object or row contains information that lives in different places. 
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-table
+            [data]="usageDataShort"
+            [properties]="withLinks"
+            [dataLength]="usageDataShort.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageDataShort, false)"
+            (rowSelected)="handleSelectedRows($event)"
+          ></bp-table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with filters</h3>
+      <p>
+        Table filters allow the user to view subsets of a larger data set. Table filters vary from
+        product to product, and depend on the filterable data set. They appear below the page header
+        and above the table. Please see <a routerLink="/components/table-filters/overview">Table Filters</a> for more information.
+      </p>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Table with footer</h3>
+      <p>
+        Most of our tables have footers attached. The footer allows the user to go through multiple
+        pages of data and choose how many rows they want to see per page. The footer can also contain
+        a column selector and / or a display density selector. The user can select which columns to
+        display through the column selector, and, if applicable, at which density they want to view
+        the data. Pagination is required when using the table footer.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-table
+            [data]="usageDataPage"
+            [properties]="withFooter"
+            [dataLength]="usageData.length"
+            [isDataLoading]="false"
+            (action)="handleAction($event)"
+            (onSort)="handleSort($event, usageData, true)"
+            (rowSelected)="handleSelectedRows($event)"
+          >
+            <bp-pagination
+              [dataLength]="usageData.length"
+              [defaultNumberOfRows]="10"
+              [pageBuffer]="1"
+              (pageData)="handlePageChange($event)"
+            ></bp-pagination>
+          </bp-table>
         </div>
       </div>
     </div>

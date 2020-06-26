@@ -14,8 +14,7 @@ export class UsageComponent implements OnInit {
   // @ViewChild('templateColumn', {static: true}) templateColumn;
   @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
 
-  filteredData = [];
-  tableData = [];
+  usageDataPage = usageData.slice(0, 10);
   pageIndices;
   isDataLoading = true;
 
@@ -23,102 +22,151 @@ export class UsageComponent implements OnInit {
   usageDataShort = usageData.slice(0, 2);
 
   // Properties
-  standard = standard;
-  withCheckboxes = {
-    ...standard,
-    hasSelectableRows: true
-  };
-  withActions = {
-    ...standard,
-    actions: [
-      {
-        element: 'button',
-        text: 'Action',
-        ariaLabel: 'action1 for #{id}',
-        class: 'btn-outline-primary',
-        action: 'action1'
-      },
-      {
-        element: 'button',
-        text: 'Action',
-        ariaLabel: 'action2 for #{id}',
-        class: 'btn-outline-primary',
-        action: 'action2'
-      }
-    ]
-  };
-  withDropdown = {
-    ...standard,
-    actions: [
-      {
-        element: 'button',
-        text: 'Action',
-        ariaLabel: 'action1 for #{id}',
-        class: 'btn-outline-primary',
-        action: 'action1'
-      },
-      {
-        element: 'button',
-        text: 'Action',
-        ariaLabel: 'action1 for #{id}',
-        class: 'btn-outline-primary',
-        action: 'action1'
-      },
-      {
-        element: 'button',
-        text: 'Action',
-        ariaLabel: 'action3 for #{id}',
-        class: 'btn-outline-primary',
-        action: 'action3'
-      }
-    ]
-  };
-  withIcons = {
-    ...standard,
-    columns: [
-      ...standard.columns,
-      {
-        key: 'icon',
-        headerText: 'Icon Column',
-        isColumnDisplayed: true,
-        type: ColumnType.ICON,
-        icon: {
-          color: 'midnight',
-          mapping: {
-            true: 'fa-check',
-            false: ''
-          }
-        }
-      },
-    ]
-  };
-  withStatus = {
-    ...standard,
-    columns: [
-      ...standard.columns,
-      {
-        key: 'status',
-        headerText: 'Status Column',
-        isColumnDisplayed: true,
-        type: ColumnType.STATUS,
-        statusIndicatorMapping: {
-          'incomplete-primary': 'Incomplete Primary',
-          'incomplete-secondary': 'Incomplete Secondary',
-          'in-progress': 'In Progress',
-          'warning': 'Warning',
-          'complete': 'Complete'
-        }
-      },
-    ]
-  };
-  withExpandable = {
-    ...standard,
-    expandableRowsTemplate: this.expandableRowsTemplate
-  };
+  standard;
+  withCheckboxes;
+  withActions;
+  withDropdown;
+  withIcons;
+  withStatus;
+  withExpandable;
+  withExpandableAndCheckboxes;
+  withLinks;
+  withFooter;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // Properties
+    this.standard = standard;
+
+    this.withCheckboxes = {
+      ...this.standard,
+      hasSelectableRows: true
+    };
+
+    this.withActions = {
+      ...this.standard,
+      actions: [
+        {
+          element: 'button',
+          text: 'Action',
+          ariaLabel: 'action1 for #{id}',
+          class: 'btn-outline-primary',
+          action: 'action1'
+        },
+        {
+          element: 'button',
+          text: 'Action',
+          ariaLabel: 'action2 for #{id}',
+          class: 'btn-outline-primary',
+          action: 'action2'
+        }
+      ]
+    };
+
+    this.withDropdown = {
+      ...this.standard,
+      actions: [
+        {
+          element: 'button',
+          text: 'Action',
+          ariaLabel: 'action1 for #{id}',
+          class: 'btn-outline-primary',
+          action: 'action1'
+        },
+        {
+          element: 'button',
+          text: 'Action',
+          ariaLabel: 'action1 for #{id}',
+          class: 'btn-outline-primary',
+          action: 'action1'
+        },
+        {
+          element: 'button',
+          text: 'Action',
+          ariaLabel: 'action3 for #{id}',
+          class: 'btn-outline-primary',
+          action: 'action3'
+        }
+      ]
+    };
+
+    this.withIcons = {
+      ...this.standard,
+      columns: [
+        ...this.standard.columns,
+        {
+          key: 'icon',
+          headerText: 'Icon Column',
+          isColumnDisplayed: true,
+          type: ColumnType.ICON,
+          icon: {
+            color: 'midnight',
+            mapping: {
+              true: 'fa-check',
+              false: ''
+            }
+          }
+        },
+      ]
+    };
+
+    this.withStatus = {
+      ...this.standard,
+      columns: [
+        ...this.standard.columns,
+        {
+          key: 'status',
+          headerText: 'Status Column',
+          isColumnDisplayed: true,
+          type: ColumnType.STATUS,
+          statusIndicatorMapping: {
+            'incomplete-primary': 'Incomplete Primary',
+            'incomplete-secondary': 'Incomplete Secondary',
+            'in-progress': 'In Progress',
+            'warning': 'Warning',
+            'complete': 'Complete'
+          }
+        },
+      ]
+    };
+
+    this.withExpandable = {
+      ...this.standard,
+      expandableRowsTemplate: this.expandableRowsTemplate
+    };
+
+    this.withExpandableAndCheckboxes = {
+      ...this.standard,
+      hasSelectableRows: true,
+      expandableRowsTemplate: this.expandableRowsTemplate
+    };
+
+    this.withLinks = {
+      ...this.standard,
+      columns: [
+        ...this.standard.columns,
+        {
+          key: 'link',
+          headerText: 'Link Column',
+          isColumnDisplayed: true,
+          type: ColumnType.LINK,
+          link: {
+            element: 'a',
+            ariaLabel: 'go to Object #{id}',
+            href: 'https://www.example.com',
+            target: null
+          }
+        }
+      ]
+    };
+
+    this.withFooter = {
+      ...standard,
+      hasColumnSelector: true,
+      hasDisplayDensity: true
+    };
+  }
 
   handleAction(action: { action: string; id: string }) {
     // Use action from action buttons to trigger different events here
@@ -148,14 +196,14 @@ export class UsageComponent implements OnInit {
     }
   }
   
-  handleSort(sort, hasPagination) {
+  handleSort(sort, data, hasPagination) {
     if (sort.order === 'ascending') {
-      this.sortByKeyAsc(this.filteredData, sort.column);
+      this.sortByKeyAsc(data, sort.column);
     } else {
-      this.sortByKeyDesc(this.filteredData, sort.column);
+      this.sortByKeyDesc(data, sort.column);
     }
     if (hasPagination) {
-        this.tableData = this.filteredData.slice(
+        this.usageDataPage = data.slice(
         this.pageIndices.start,
         this.pageIndices.end
       );
@@ -171,7 +219,7 @@ export class UsageComponent implements OnInit {
 
   handlePageChange(pageData) {
     this.pageIndices = {...pageData.indices};
-    this.tableData = this.filteredData.slice(
+    this.usageDataPage = this.usageData.slice(
       pageData.indices.start,
       pageData.indices.end
     );
