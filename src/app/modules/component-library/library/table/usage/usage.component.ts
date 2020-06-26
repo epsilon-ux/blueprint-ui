@@ -143,7 +143,7 @@ export class UsageComponent implements OnInit {
 
     this.withExpandableAndSelectable = {
       ...this.standard,
-      caption: 'This is an example of a table with selectable and expandable rows.',
+      caption: 'This is an example of a table with expandable and selectable rows.',
       hasSelectableRows: true,
       expandableRowsTemplate: this.expandableRowsTemplate
     };
