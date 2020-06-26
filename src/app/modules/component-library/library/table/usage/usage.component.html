@@ -31,9 +31,9 @@
     </div>
     <div class="col-lg-8 col-xl-7">
       <!-- TODO: should this be 'Table with selectable rows'? -->
-      <h3>Table with checkboxes</h3>
+      <h3>Table with selectable rows</h3>
       <p>
-        Adding checkboxes to each row will allow the user the ability to select and deselect groups of rows.
+        Adding a checkbox to each row will allow the user the ability to select and deselect groups of rows.
       </p>
     </div>
     <div class="col-12">
@@ -41,7 +41,7 @@
         <div class="card-body component-preview">
           <bp-table
             [data]="usageDataShort"
-            [properties]="withCheckboxes"
+            [properties]="withSelectable"
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
@@ -138,7 +138,7 @@
       </div>
     </div>
     <div class="col-lg-8 col-xl-7">
-      <h3>Table with a expandable rows</h3>
+      <h3>Table with expandable rows</h3>
       <p>
         Table rows can expand to reveal more information relating to the open row. Information can appear in columns or in multi-line strings. The information shown should be necessary to help the user make an action or decision on the page.
       </p>
@@ -162,9 +162,9 @@
       </div>
     </div>
     <div class="col-lg-8 col-xl-7">
-      <h3>Expandable table with checkboxes</h3>
+      <h3>Expandable table with selectable rows</h3>
       <p>
-        Expandable table rows can contain checkboxes. Users can select or expand table rows.
+       Table rows can be expandable and selectable.
       </p>
     </div>
     <div class="col-12">
@@ -172,7 +172,7 @@
         <div class="card-body component-preview">
           <bp-table
             [data]="usageDataShort"
-            [properties]="withExpandableAndCheckboxes"
+            [properties]="withExpandableAndSelectable"
             [dataLength]="usageDataShort.length"
             [isDataLoading]="false"
             (action)="handleAction($event)"
@@ -190,7 +190,7 @@
       <p>
         The link column most commonly appears as the first column, as the object or row identifier.
         The link takes the user into the object to view or edit. Tables can have multiple link columns.
-        This is generally used to if the object or row contains information that lives in different places. 
+        This is generally used if the object or row contains information that lives in different places. 
       </p>
     </div>
     <div class="col-12">
@@ -213,7 +213,7 @@
       <p>
         Table filters allow the user to view subsets of a larger data set. Table filters vary from
         product to product, and depend on the filterable data set. They appear below the page header
-        and above the table. Please see <a routerLink="/components/table-filters/overview">Table Filters</a> for more information.
+        and above the table. Please see <a routerLink="/components/table-filters/overview">table filters</a> for more information.
       </p>
     </div>
     <div class="col-lg-8 col-xl-7">
@@ -221,7 +221,7 @@
       <p>
         Most of our tables have footers attached. The footer allows the user to go through multiple
         pages of data and choose how many rows they want to see per page. The footer can also contain
-        a column selector and / or a display density selector. The user can select which columns to
+        a column selector and/or a display density selector. The user can select which columns to
         display through the column selector, and, if applicable, at which density they want to view
         the data. Pagination is required when using the table footer.
       </p>

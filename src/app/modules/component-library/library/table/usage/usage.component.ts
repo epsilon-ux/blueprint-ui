@@ -11,7 +11,6 @@ import standard from './example-properties/standard';
 })
 export class UsageComponent implements OnInit {
 
-  // @ViewChild('templateColumn', {static: true}) templateColumn;
   @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
 
   usageDataPage = usageData.slice(0, 10);
@@ -23,13 +22,13 @@ export class UsageComponent implements OnInit {
 
   // Properties
   standard;
-  withCheckboxes;
+  withSelectable;
   withActions;
   withDropdown;
   withIcons;
   withStatus;
   withExpandable;
-  withExpandableAndCheckboxes;
+  withExpandableAndSelectable;
   withLinks;
   withFooter;
 
@@ -39,9 +38,9 @@ export class UsageComponent implements OnInit {
     // Properties
     this.standard = standard;
 
-    this.withCheckboxes = {
+    this.withSelectable = {
       ...this.standard,
-      caption: 'This is an example of a table with checkboxes.',
+      caption: 'This is an example of a table with selectable rows.',
       hasSelectableRows: true
     };
 
@@ -142,9 +141,9 @@ export class UsageComponent implements OnInit {
       expandableRowsTemplate: this.expandableRowsTemplate
     };
 
-    this.withExpandableAndCheckboxes = {
+    this.withExpandableAndSelectable = {
       ...this.standard,
-      caption: 'This is an example of a table with checkboxes and expandable rows.',
+      caption: 'This is an example of a table with selectable and expandable rows.',
       hasSelectableRows: true,
       expandableRowsTemplate: this.expandableRowsTemplate
     };
