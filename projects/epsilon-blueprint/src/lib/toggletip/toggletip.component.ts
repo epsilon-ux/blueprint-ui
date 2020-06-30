@@ -11,6 +11,7 @@ declare var $: any;
 export class ToggletipComponent implements OnInit, OnDestroy {
 
   @Input() content: string;
+  @Input() triggerAriaLabel = 'Toggle tooltip';
 
   popover;
 
