@@ -15,15 +15,14 @@
             'fa-caret-down': expandedRows.has(rowData[properties.rowId])
           }"
         ></i>
+        <span class="sr-only">{{parseLookupString(properties.internationalization['Toggle Row'], rowData)}}</span>
       </button>
     </td>
 
     <!-- Selectable Row Checkboxes -->
     <td *ngIf="properties.hasSelectableRows" class="td-selectable">
       <bp-checkbox
-        label="{{ properties.internationalization['Select Row'] }} {{
-          rowData[properties.rowId]
-        }}"
+        [label]="parseLookupString(properties.internationalization['Select Row'], rowData)"
         [visuallyHiddenLabel]="true"
         [isChecked]="selectedRows.has(rowData)"
         (change)="selectRows($event, rowData)"
