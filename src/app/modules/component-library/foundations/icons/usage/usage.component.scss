@@ -1,49 +1,64 @@
 @import 'projects/epsilon-blueprint/src/styles/_global-variables';
 
-.bg-tomato {
-    background-color: $tomato;
+.bg-tomato 
+{
+  background-color: $tomato;
 }
 
-.bg-shamrock {
-    background-color: $shamrock;
+.bg-shamrock
+{
+  background-color: $shamrock;
 }
 
-.text-color-cobalt {
-    color: $cobalt;
+.text-color-cobalt 
+{
+  color: $cobalt;
 }
 
-.text-color-shamrock {
-    color: $shamrock;
+.text-color-shamrock 
+{
+  color: $shamrock;
 }
 
-.text-color-haze {
-    color: $haze;
+.text-color-haze 
+{
+  color: $haze;
 }
 
-.icon-box {
-    border: 1px solid;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.decorative-btn-icon
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  border: 1px solid $accent-color-primary;
+  padding: 5px;
+  background: $coconut;
+  color: $accent-color-primary;
+  font-size: $font-size-md;
 
-    &.icon-box-style-1 {
-        color: $ultramarine;
-        background-color: $coconut;
-    }
-
-    &.icon-box-style-2 {
-        border-color: $haze;
-        color: $storm;
-        background-color: $mist;
-    }
-
-    & i.fa-caret-up {
-        transform: translateY(3px);
-    }
-    & i.fa-caret-down {
-        transform: translateY(-3px);
-    }
+  &.disabled 
+  {
+    border: 1px solid $haze;
+    background: $mist;
+    color: $font-color-secondary;
+    cursor: not-allowed;
   }
+}
+
+.decorative-stepper
+{
+  flex-direction: column;
+
+  & i.fa-caret-up 
+  {
+    transform: translateY(2px);
+  }
+
+  & i.fa-caret-down 
+  {
+    transform: translateY(-2px);
+  }
+}
