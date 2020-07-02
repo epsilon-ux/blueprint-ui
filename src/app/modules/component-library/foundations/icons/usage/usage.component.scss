@@ -15,11 +15,6 @@
   color: $cobalt;
 }
 
-.text-color-shamrock 
-{
-  color: $shamrock;
-}
-
 .text-color-haze 
 {
   color: $haze;
@@ -38,14 +33,6 @@
   background: $coconut;
   color: $accent-color-primary;
   font-size: $font-size-md;
-
-  &.disabled 
-  {
-    border: 1px solid $haze;
-    background: $mist;
-    color: $font-color-secondary;
-    cursor: not-allowed;
-  }
 }
 
 .decorative-stepper
@@ -61,4 +48,9 @@
   {
     transform: translateY(-2px);
   }
+}
+
+.decorative-tag
+{
+  padding: 5px 7px;
 }
