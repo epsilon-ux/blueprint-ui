@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { IconsComponent } from './icons.component';
+import { Routes, RouterModule } from '@angular/router';
+
+import { TableFiltersComponent } from './table-filters.component';
 import { OverviewComponent } from './overview/overview.component';
-import { IconLibraryComponent } from './icon-library/icon-library.component';
 import { UsageComponent } from './usage/usage.component';
 
 const routes: Routes = [
-  { path: '', component: IconsComponent, children: [
+  { path: '', component: TableFiltersComponent, children: [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
-    { path: 'icon-library', component: IconLibraryComponent, pathMatch: 'full' },
     { path: 'usage', component: UsageComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
   ]},
@@ -19,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class IconsRoutingModule { }
+export class TableFiltersRoutingModule { } 

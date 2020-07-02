@@ -80,8 +80,8 @@ const routes: Routes = [
     { path: 'object-page-header', loadChildren: () => import('./templates/object-page-header/object-page-header.module')
     .then(m => m.ObjectPageHeaderModule) },
 
-    { path: 'color', loadChildren: () => import('./foundations/color/color.module')
-    .then(m => m.ColorModule) },
+    { path: 'table-filters', loadChildren: () => import('./templates/table-filters/table-filters.module')
+    .then(m => m.TableFiltersModule) },
 
     { path: '**', redirectTo: 'introduction', pathMatch: 'full' } // TODO: create a componentNotFound page for this instance
   ]}

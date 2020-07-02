@@ -1,6 +1,6 @@
 <nav id="navSecondary" class="nav-secondary{{ isNavCollapsed ? ' collapsed' : '' }}">
   <div class="toggle-wrapper">
-    <button type="button" class="toggle" aria-controls="navSecondary" aria-label="Toggle secondary navigation" (click)="toggleNav()">
+    <button type="button" class="toggle" aria-controls="navSecondary" [attr.aria-label]="toggleAriaLabel" (click)="toggleNav()">
     </button>
   </div>
   <p *ngIf="title" class="title">{{ title }}</p>

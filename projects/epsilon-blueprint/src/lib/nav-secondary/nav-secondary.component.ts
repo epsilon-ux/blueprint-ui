@@ -21,6 +21,7 @@ export class NavSecondaryComponent implements OnInit {
   @Input() shouldRouteMatchExact = false;
   @Input() isNavCollapsed = false;
   @Input() areItemsExpanded = false;
+  @Input() toggleAriaLabel = 'Toggle secondary navigation';
 
   uuid = 'navDropdown' + generateUniqueId();
   activeItem: string;

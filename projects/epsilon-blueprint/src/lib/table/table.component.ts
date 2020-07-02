@@ -8,8 +8,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { Column, ColumnType } from './models/column';
-import Properties from './models/properties';
+import { Column, ColumnType, Properties } from '../../models/table-models';
 import { parseLookupString } from '../../helpers';
 
 @Component({
@@ -27,39 +26,6 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() action = new EventEmitter();
   @Output() onSort = new EventEmitter();
   @Output() rowSelected = new EventEmitter();
-
-  // Defaults
-  propertyDefaults = {
-    sort: {
-      defaultSortOrder: 'ascending'
-    },
-    hasSelectableRows: false,
-    hasColumnSelector: true,
-    hasDisplayDensity: true,
-    internationalization: {
-      'Select all rows': 'Select all rows',
-      'Actions': 'Actions',
-      'Expand/Collapse': 'Expand/Collapse',
-      'Loading data': 'Loading data',
-      'No data': 'No data available',
-      'Select Row': 'Select Row',
-      'Actions Menu': 'Actions Menu',
-      'Column Selector': 'Column Selector:',
-      'Default': '(Default)',
-      'Showing numVisible out of numTotal':
-        'Showing #{numVisible} out of #{numTotal}',
-      'Display Density': 'Display Density:',
-      'Display Density Options': {
-        'Comfortable': 'Comfortable',
-        'Compact': 'Compact'
-      }
-    }
-  };
-
-  columnDefaults = {
-    isColumnDisplayed: true,
-    isSortable: true
-  };
 
   // Data
   tableData = [];
@@ -92,13 +58,46 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+    // Defaults
+  const propertyDefaults = {
+    sort: {
+      defaultSortOrder: 'ascending'
+    },
+    hasSelectableRows: false,
+    hasColumnSelector: true,
+    hasDisplayDensity: true,
+    internationalization: {
+      'Select all rows': 'Select all rows',
+      'Actions': 'Actions',
+      'Expand/Collapse': 'Expand/Collapse',
+      'Loading data': 'Loading data',
+      'No data': 'No data available',
+      'Select Row': `Select Row #{${this.properties.rowId}}`,
+      'Toggle Row': `Toggle Row #{${this.properties.rowId}}`,
+      'Actions Menu': 'Actions Menu',
+      'Column Selector': 'Column Selector:',
+      'Default': '(Default)',
+      'Showing numVisible out of numTotal':
+        'Showing #{numVisible} out of #{numTotal}',
+      'Display Density': 'Display Density:',
+      'Display Density Options': {
+        'Comfortable': 'Comfortable',
+        'Compact': 'Compact'
+      }
+    }
+  };
+
+  const columnDefaults = {
+    isColumnDisplayed: true,
+    isSortable: true
+  };
     // Set defaults
     this.properties = Object.assign(
-      this.propertyDefaults,
+      propertyDefaults,
       this.properties
     );
     this.properties.columns = this.properties.columns.map(column =>
-      Object.assign({ ...this.columnDefaults }, column)
+      Object.assign({ ...columnDefaults }, column)
     );
 
     this.sortOrder = this.properties.sort.defaultSortOrder;

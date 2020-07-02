@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
-import { ColumnType } from '../models/column';
-import Properties from '../models/properties';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ColumnType, Properties } from 'epsilon-blueprint/models/table-models';
 
 import tableData from 'src/app/datasets/tableData.json';
 
@@ -31,7 +30,7 @@ export class OverviewComponent implements OnInit {
 
   constructor() {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.properties = {
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
@@ -193,7 +192,7 @@ export class OverviewComponent implements OnInit {
     );
   }
 
-  handleSelectedRowsAction(selectedRowIds: {
+  handleSelectedRows(selectedRowIds: {
     areAllSelected: boolean;
     selected: {[key: string]: any;}
   }) {
