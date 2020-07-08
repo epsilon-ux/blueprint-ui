@@ -26,6 +26,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() action = new EventEmitter();
   @Output() onSort = new EventEmitter();
   @Output() rowSelected = new EventEmitter();
+  @Output() viewChange = new EventEmitter();
 
   // Data
   tableData = [];
@@ -64,6 +65,7 @@ export class TableComponent implements OnInit, OnChanges {
       defaultSortOrder: 'ascending'
     },
     hasSelectableRows: false,
+    hasViewSelector: false,
     hasColumnSelector: true,
     hasDisplayDensity: true,
     internationalization: {
@@ -78,11 +80,16 @@ export class TableComponent implements OnInit, OnChanges {
       'Column Selector': 'Column Selector:',
       'Default': '(Default)',
       'Showing numVisible out of numTotal':
-        'Showing #{numVisible} out of #{numTotal}',
+      'Showing #{numVisible} out of #{numTotal}',
       'Display Density': 'Display Density:',
       'Display Density Options': {
         'Comfortable': 'Comfortable',
         'Compact': 'Compact'
+      },
+      'View': 'View:',
+      'View Options': {
+        'table': 'Table',
+        'list': 'List'
       }
     }
   };
@@ -276,6 +283,12 @@ export class TableComponent implements OnInit, OnChanges {
   setDisplayDensity(density) {
     this.densityClass = density === 'Comfortable' ? null : 'table-compact';
     localStorage.setItem('selectedDensity', density);
+  }
+
+  // --------------- View Selector ---------------
+
+  emitTableView(view) {
+    this.viewChange.emit(view);
   }
 
   // --------------- Actions ---------------

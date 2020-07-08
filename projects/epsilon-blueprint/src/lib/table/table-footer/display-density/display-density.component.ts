@@ -10,9 +10,6 @@ export class DisplayDensityComponent implements OnInit {
   displayDensityEmitter = new EventEmitter();
 
   @Input()
-  showDisplayDensity: boolean;
-
-  @Input()
   internationalization: any;
   
   displayDensity: string;

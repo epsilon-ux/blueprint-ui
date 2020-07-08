@@ -1,0 +1,18 @@
+<div class="table-footer-dropdown">
+  <label for="viewSelector" class="table-footer-dropdown-label">
+    {{ internationalization['View'] }}
+  </label>
+  <ng-select
+    #viewSelectorDropdown
+    class="select-display-density"
+    labelForId="viewSelector"
+    name="viewSelector"
+    (change)="emitTableView()"
+    [items]="displayOptions"
+    bindLabel="text"
+    bindValue="value"
+    [searchable]="false"
+    [clearable]="false"
+    [(ngModel)]="viewSelector"
+  ></ng-select>
+</div>

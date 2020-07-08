@@ -9,10 +9,13 @@ import { Column } from '../../../models/table-models';
 export class TableFooterComponent implements OnInit {
 
   @Input()
-  showDisplayDensity: boolean; 
+  hasViewSelector: boolean;
 
   @Input()
-  showColumnSelector = false;
+  hasDisplayDensity: boolean; 
+
+  @Input()
+  hasColumnSelector = false;
 
   @Input()
   columnInfo: Column[];
@@ -20,11 +23,14 @@ export class TableFooterComponent implements OnInit {
   @Input()
   defaultSortColumnName: string;
 
+  @Input()
+  internationalization: any;
+
   @Output()
   displayDensityEmitter = new EventEmitter();
 
-  @Input()
-  internationalization: any;
+  @Output()
+  viewSelectorEmitter = new EventEmitter();
   
   constructor() {}
 
@@ -32,5 +38,9 @@ export class TableFooterComponent implements OnInit {
 
   setDisplayDensity(event) {
     this.displayDensityEmitter.emit(event);
+  }
+
+  emitTableView(view) {
+    this.viewSelectorEmitter.emit(view);
   }
 }
