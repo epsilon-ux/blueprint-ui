@@ -36,6 +36,7 @@ export class TableComponent implements OnInit, OnChanges {
   // Select All Rows
   isSelectAllChecked = false;
   isSelectAllIndeterminate = false;
+  numRowsSelected = 0;
 
   // Sorting
   sortColumnKey: string;
@@ -233,11 +234,13 @@ export class TableComponent implements OnInit, OnChanges {
     const event = e.event;
     const selectedRow = e.row;
     if (event.target.checked) {
+      this.numRowsSelected++;
       this.selectedRows.add(selectedRow);
     } else {
+      this.numRowsSelected--;
       this.selectedRows.delete(selectedRow);
     }
-    if (this.selectedRows.size === this.dataLength) {
+    if (this.selectedRows.size === this.dataLength || this.numRowsSelected === this.dataLength) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
     } else if (
@@ -252,7 +255,8 @@ export class TableComponent implements OnInit, OnChanges {
     }
     this.rowSelected.emit({
       areAllSelected: this.isSelectAllChecked,
-      selected: selectedRow
+      selected: selectedRow,
+      numRowsSelected: this.numRowsSelected
     });
   }
 
@@ -261,13 +265,16 @@ export class TableComponent implements OnInit, OnChanges {
     this.isSelectAllChecked = !this.isSelectAllChecked;
     this.isSelectAllIndeterminate = false;
     if (this.isSelectAllChecked) {
+      this.numRowsSelected = this.dataLength;
       this.tableData.forEach(d => this.selectedRows.add(d));
     } else {
+      this.numRowsSelected = 0;
       this.tableData.forEach(d => this.selectedRows.delete(d));
     }
     this.rowSelected.emit({
       areAllSelected: this.isSelectAllChecked,
-      selected: null
+      selected: null,
+      numRowsSelected: this.numRowsSelected
     });
   }
 
