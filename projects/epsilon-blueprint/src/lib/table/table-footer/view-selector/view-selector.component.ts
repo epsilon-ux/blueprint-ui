@@ -26,7 +26,7 @@ export class ViewSelectorComponent implements OnInit {
       text: this.internationalization['View Options'][option],
       value: option
     }));
-    this.viewSelector = 'table'
+    this.viewSelector = 'Table';
   }
 
   emitTableView() {

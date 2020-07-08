@@ -79,8 +79,7 @@ export class TableComponent implements OnInit, OnChanges {
       'Actions Menu': 'Actions Menu',
       'Column Selector': 'Column Selector:',
       'Default': '(Default)',
-      'Showing numVisible out of numTotal':
-      'Showing #{numVisible} out of #{numTotal}',
+      'Showing numVisible out of numTotal': 'Showing #{numVisible} out of #{numTotal}',
       'Display Density': 'Display Density:',
       'Display Density Options': {
         'Comfortable': 'Comfortable',
@@ -88,8 +87,8 @@ export class TableComponent implements OnInit, OnChanges {
       },
       'View': 'View:',
       'View Options': {
-        'table': 'Table',
-        'list': 'List'
+        'Table': 'Table',
+        'List': 'List'
       }
     }
   };
