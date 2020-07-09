@@ -29,6 +29,7 @@ export interface Properties {
   expandableRowsTemplate?: TemplateRef<any>;
   hasSelectableRows?: boolean;
   actions?: Action[];
+  hasViewSelector?: boolean;
   hasColumnSelector?: boolean;
   hasDisplayDensity?: boolean;
 }

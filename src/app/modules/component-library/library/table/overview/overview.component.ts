@@ -146,6 +146,7 @@ export class OverviewComponent implements OnInit {
         }
       ],
       expandableRowsTemplate: this.expandableRowsTemplate,
+      hasViewSelector: true,
       hasColumnSelector: true,
       hasDisplayDensity: true
     };
@@ -155,6 +156,8 @@ export class OverviewComponent implements OnInit {
   handleAction(action: { action: string; id: string }) {
     // Use action from action buttons to trigger different events here
   }
+
+  handleViewChange(view) {}
 
   sortByKeyAsc(array, key) {
     if (key === 'templateCol') {
