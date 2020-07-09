@@ -88,7 +88,7 @@ export class TableComponent implements OnInit, OnChanges {
       'View': 'View:',
       'View Options': {
         'Table': 'Table',
-        'List': 'List'
+        'Alternate': 'List'
       }
     }
   };
