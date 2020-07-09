@@ -198,6 +198,7 @@ export class OverviewComponent implements OnInit {
   handleSelectedRows(selectedRowIds: {
     areAllSelected: boolean;
     selected: {[key: string]: any;}
+    numRowsSelected: number;
   }) {
     // Handle the selected rows here
   }
