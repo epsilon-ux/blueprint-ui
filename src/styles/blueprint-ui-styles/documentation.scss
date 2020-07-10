@@ -60,6 +60,19 @@ abbr[title]
   border-radius: 0;
   border-color: $border-color-secondary;
 
+  .card-header
+  {
+    border-bottom-color: $border-color-primary;
+    padding: 25px 20px;
+    background: $mist;
+    font-size: $font-size-xl;
+
+    &:first-child
+    {
+      border-radius: 0;
+    }
+  }
+
   &.component-wrap
   {
     overflow-y: hidden;
