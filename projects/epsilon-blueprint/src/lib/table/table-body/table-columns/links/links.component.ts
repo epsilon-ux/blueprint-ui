@@ -19,7 +19,8 @@ export class LinksComponent implements OnInit {
     ariaLabel: string;
     target?: string;
     action?: string;
-    path?: string;
+    path?: string; // Deprecated: Use bpRouterLink instead
+    bpRouterLink: string;
     href?: string;
   };
 
@@ -31,7 +32,16 @@ export class LinksComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    // This is for backwards compatibility. Remove when path is removed.
+    if (this.linkProperties.path) {
+      console.warn('Table link proeprty "path" is deprecated. Use bpRouterLink instead.');
+      if (!this.linkProperties.bpRouterLink) {
+        this.linkProperties.bpRouterLink = this.linkProperties.path;
+      }
+    }
+  }
 
   triggerAction(action): void {
     this.emitAction.emit(action);

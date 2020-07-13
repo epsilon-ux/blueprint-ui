@@ -17,7 +17,7 @@ export class LandingPageHeaderComponent implements OnInit {
   dropdownItems;
   
   @Input()
-  routerLink: string = undefined;
+  bpRouterLink: string = undefined;
 
   @Input()
   href: string = undefined;

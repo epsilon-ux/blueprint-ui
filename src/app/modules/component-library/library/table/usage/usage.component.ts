@@ -223,6 +223,7 @@ export class UsageComponent implements OnInit {
     selected: {[key: string]: any;}
   }) {
     // Handle the selected rows here
+    console.log(selectedRowIds);
   }
 
   handlePageChange(pageData) {

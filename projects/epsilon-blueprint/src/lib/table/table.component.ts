@@ -9,7 +9,7 @@ import {
   ElementRef
 } from '@angular/core';
 import { Column, ColumnType, Properties } from '../../models/table-models';
-import { parseLookupString } from '../../helpers';
+import { parseLookupString, generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-table',
@@ -45,6 +45,8 @@ export class TableComponent implements OnInit, OnChanges {
 
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
+
+  uuid = 'table' + generateUniqueId();
 
   // displayDensity
   densityClass: string;
@@ -141,10 +143,10 @@ export class TableComponent implements OnInit, OnChanges {
       if (
         col.link &&
         col.link.element === 'a' &&
-        !(col.link.path || col.link.href)
+        !(col.link.bpRouterLink || col.link.href)
       ) {
         let err = new Error(
-          `Link must have either href or path when element is 'a' in\n${JSON.stringify(
+          `Link must have either href or bpRouterLink when element is 'a' in\n${JSON.stringify(
             col
           )}`
         );

@@ -61,7 +61,7 @@ export class OverviewComponent implements OnInit {
             element: 'a',
             ariaLabel: 'go to Object #{id}',
             target: '',
-            path: 'object/#{id}'
+            bpRouterLink: 'object/#{id}'
           }
         },
         {
@@ -115,7 +115,7 @@ export class OverviewComponent implements OnInit {
           text: 'Edit',
           ariaLabel: 'Edit Object #{id}',
           class: 'btn-outline-primary',
-          routerLink: './'
+          bpRouterLink: './'
         },
         {
           element: 'button',
