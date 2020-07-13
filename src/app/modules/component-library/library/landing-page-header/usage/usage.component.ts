@@ -14,7 +14,7 @@ export class UsageComponent implements OnInit {
     },
     {
       text: 'Item 2',
-      routerLink: ''
+      bpRouterLink: ''
     }
   ];
 

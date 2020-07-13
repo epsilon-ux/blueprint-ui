@@ -16,7 +16,7 @@
           </th>
           <th *ngIf="properties.hasSelectableRows" class="th-selectable">
             <app-select-all-checkbox
-              id="selectAllRows"
+              [id]="uuid + '-selectAllRows'"
               [label]="properties.internationalization['Select all rows']"
               [visuallyHiddenLabel]="true"
               [isChecked]="isSelectAllChecked"
