@@ -36,7 +36,7 @@ export class ActionComponent implements OnInit {
   
   validation() {
     if(this.isDefined(this.href) && this.isDefined(this.bpRouterLink)) {
-      const err = new Error('Can not pass in both href and bpRouterLink.');
+      const err = new Error('Cannot pass in both href and bpRouterLink.');
       err.name = 'Invalid Input';
       throw err;
     }
@@ -46,7 +46,7 @@ export class ActionComponent implements OnInit {
       throw err;
     }
     if (this.isDefined(this.routerLink)) {
-      console.warn('bp-action Input routerLink is deprecaetd, please use bpRouterLink instead.');
+      console.warn('bp-action Input routerLink is deprecated, please use bpRouterLink instead.');
     }
   }
 
