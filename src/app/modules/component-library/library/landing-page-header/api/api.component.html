@@ -33,8 +33,7 @@
             <td>dropdownItems</td>
             <td>object[]</td>
             <td>An array of objects used to create the items in the dropdown.</td>
-            <!-- TODO: Finish when dropdown API is created -->
-            <td><!-- See <a routerLink="">Dropdowns API</a> for more information on what should be included in each object. --></td>
+            <td>See <a routerLink="/components/dropdown/api">Dropdowns API</a> for more information on what should be included in each object.</td>
           </tr>
           <tr>
             <td>routerLink</td>
@@ -68,45 +67,24 @@
       </table>
       <h2>Content Projection</h2>
       <p>
-        The dropdown-items and tab-items attributes are values for the optional ng-content directives' select attribute.
-      </p>
-      <h3>dropdown-items</h3>
-      <p>Dropdown menu items could be buttons, routerLinks, or links.</p>
-      <p>
-        <code>
-            code snippet coming soon
-            <!--
-              TODO: add ngx-markdown for the code snippet below
-              does button have onButtonClick()?
-
-              <div dropdown-items>
-                <a class="dropdown-item" routerLink="">Dropdown Item</a>
-                <a class="dropdown-item" href="">Dropdown Item</a>
-                <button class="dropdown-item">Dropdown Item</button>
-              </div>
-            -->
-        </code>
+        The optional ng-content directives' select attribute value is tab-items.
       </p>
       <h3>tab-items</h3>
-      <p>Tabbed navigation items should be routerLinks or links.</p>
+      <h4>Non-navigational tabs</h4>
+      <p>
+        Non-navigational tabs should use button elements supplemented by aria attributes in order to programmatically associate the tab with its corresponding tab pane.
+      </p>
+      <!-- TODO: add ngx-markdown for tab-tab tab-items -->
       <p>
         <code>
             code snippet coming soon
-            <!--
-              TODO: add ngx-markdown for the code snippet below
-
-              <div tab-items>
-                <div class="row">
-                  <div class="col">
-                    <a class="tab active" routerLink="">Tabbed Navigation Item</button>
-                    <a class="tab" routerLink="">Tabbed Navigation Item</button>
-                    <a class="tab" href="">Tabbed Navigation Item</button>
-                  </div>
-                </div>
-              </div>
-             -->
         </code>
       </p>
+      <h4>Navigational tabs</h4>
+      <p>
+        Navigational tabs should use anchor elements with routerLinks for internal links or hrefs for external links. The tabs should be wrapped in a nav element, and the nav element's aria-label value should reflect the level of the navigation in context, e.g.: secondary navigation, tertiary navigation, etc.
+      </p>
+      <markdown [data]="navTabItems" lineNumbers></markdown>
       <!-- TODO: add versions & features table -->
     </div>
   </div>
