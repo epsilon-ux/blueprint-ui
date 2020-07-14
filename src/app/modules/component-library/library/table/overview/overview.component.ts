@@ -61,7 +61,7 @@ export class OverviewComponent implements OnInit {
             element: 'a',
             ariaLabel: 'go to Object #{id}',
             target: '',
-            path: 'object/#{id}'
+            bpRouterLink: 'object/#{id}'
           }
         },
         {
@@ -115,7 +115,7 @@ export class OverviewComponent implements OnInit {
           text: 'Edit',
           ariaLabel: 'Edit Object #{id}',
           class: 'btn-outline-primary',
-          routerLink: './'
+          bpRouterLink: './'
         },
         {
           element: 'button',
@@ -146,6 +146,7 @@ export class OverviewComponent implements OnInit {
         }
       ],
       expandableRowsTemplate: this.expandableRowsTemplate,
+      hasViewSelector: true,
       hasColumnSelector: true,
       hasDisplayDensity: true
     };
@@ -155,6 +156,8 @@ export class OverviewComponent implements OnInit {
   handleAction(action: { action: string; id: string }) {
     // Use action from action buttons to trigger different events here
   }
+
+  handleViewChange(view) {}
 
   sortByKeyAsc(array, key) {
     if (key === 'templateCol') {
@@ -195,6 +198,7 @@ export class OverviewComponent implements OnInit {
   handleSelectedRows(selectedRowIds: {
     areAllSelected: boolean;
     selected: {[key: string]: any;}
+    numRowsSelected: number;
   }) {
     // Handle the selected rows here
   }

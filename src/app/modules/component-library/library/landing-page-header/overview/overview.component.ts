@@ -18,7 +18,7 @@ export class OverviewComponent implements OnInit {
     },
     {
       text: 'Item 2',
-      routerLink: ''
+      bpRouterLink: ''
     }
   ];
 

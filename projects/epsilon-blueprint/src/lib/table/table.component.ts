@@ -9,7 +9,7 @@ import {
   ElementRef
 } from '@angular/core';
 import { Column, ColumnType, Properties } from '../../models/table-models';
-import { parseLookupString } from '../../helpers';
+import { parseLookupString, generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-table',
@@ -26,6 +26,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() action = new EventEmitter();
   @Output() onSort = new EventEmitter();
   @Output() rowSelected = new EventEmitter();
+  @Output() viewChange = new EventEmitter();
 
   // Data
   tableData = [];
@@ -36,6 +37,7 @@ export class TableComponent implements OnInit, OnChanges {
   // Select All Rows
   isSelectAllChecked = false;
   isSelectAllIndeterminate = false;
+  numRowsSelected = 0;
 
   // Sorting
   sortColumnKey: string;
@@ -43,6 +45,8 @@ export class TableComponent implements OnInit, OnChanges {
 
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
+
+  uuid = 'table' + generateUniqueId();
 
   // displayDensity
   densityClass: string;
@@ -64,6 +68,7 @@ export class TableComponent implements OnInit, OnChanges {
       defaultSortOrder: 'ascending'
     },
     hasSelectableRows: false,
+    hasViewSelector: false,
     hasColumnSelector: true,
     hasDisplayDensity: true,
     internationalization: {
@@ -77,12 +82,16 @@ export class TableComponent implements OnInit, OnChanges {
       'Actions Menu': 'Actions Menu',
       'Column Selector': 'Column Selector:',
       'Default': '(Default)',
-      'Showing numVisible out of numTotal':
-        'Showing #{numVisible} out of #{numTotal}',
+      'Showing numVisible out of numTotal': 'Showing #{numVisible} out of #{numTotal}',
       'Display Density': 'Display Density:',
       'Display Density Options': {
         'Comfortable': 'Comfortable',
         'Compact': 'Compact'
+      },
+      'View': 'View:',
+      'View Options': {
+        'Table': 'Table',
+        'Alternate': 'List'
       }
     }
   };
@@ -134,10 +143,10 @@ export class TableComponent implements OnInit, OnChanges {
       if (
         col.link &&
         col.link.element === 'a' &&
-        !(col.link.path || col.link.href)
+        !(col.link.bpRouterLink || col.link.href)
       ) {
         let err = new Error(
-          `Link must have either href or path when element is 'a' in\n${JSON.stringify(
+          `Link must have either href or bpRouterLink when element is 'a' in\n${JSON.stringify(
             col
           )}`
         );
@@ -233,11 +242,13 @@ export class TableComponent implements OnInit, OnChanges {
     const event = e.event;
     const selectedRow = e.row;
     if (event.target.checked) {
+      this.numRowsSelected++;
       this.selectedRows.add(selectedRow);
     } else {
+      this.numRowsSelected--;
       this.selectedRows.delete(selectedRow);
     }
-    if (this.selectedRows.size === this.dataLength) {
+    if (this.selectedRows.size === this.dataLength || this.numRowsSelected === this.dataLength) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
     } else if (
@@ -252,7 +263,8 @@ export class TableComponent implements OnInit, OnChanges {
     }
     this.rowSelected.emit({
       areAllSelected: this.isSelectAllChecked,
-      selected: selectedRow
+      selected: selectedRow,
+      numRowsSelected: this.numRowsSelected
     });
   }
 
@@ -261,13 +273,16 @@ export class TableComponent implements OnInit, OnChanges {
     this.isSelectAllChecked = !this.isSelectAllChecked;
     this.isSelectAllIndeterminate = false;
     if (this.isSelectAllChecked) {
+      this.numRowsSelected = this.dataLength;
       this.tableData.forEach(d => this.selectedRows.add(d));
     } else {
+      this.numRowsSelected = 0;
       this.tableData.forEach(d => this.selectedRows.delete(d));
     }
     this.rowSelected.emit({
       areAllSelected: this.isSelectAllChecked,
-      selected: null
+      selected: null,
+      numRowsSelected: this.numRowsSelected
     });
   }
 
@@ -276,6 +291,12 @@ export class TableComponent implements OnInit, OnChanges {
   setDisplayDensity(density) {
     this.densityClass = density === 'Comfortable' ? null : 'table-compact';
     localStorage.setItem('selectedDensity', density);
+  }
+
+  // --------------- View Selector ---------------
+
+  emitTableView(view) {
+    this.viewChange.emit(view);
   }
 
   // --------------- Actions ---------------

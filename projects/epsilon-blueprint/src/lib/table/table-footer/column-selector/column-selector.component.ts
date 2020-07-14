@@ -7,10 +7,16 @@ import { parseLookupString } from '../../../../helpers';
   styleUrls: ['../table-footer.component.scss']
 })
 export class ColumnSelectorComponent implements OnInit {
-  @Input() columnInfo = [];
-  @Input() defaultSortColumnName: string;
-  @Input() showColumnSelector = false;
-  @Input() internationalization: any;
+  
+  @Input()
+  columnInfo = [];
+
+  @Input()
+  defaultSortColumnName: string;
+
+  @Input()
+  internationalization: any;
+  
   selectedColumns = [];
 
   parseLookupString = parseLookupString;

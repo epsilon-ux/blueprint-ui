@@ -16,7 +16,7 @@
           </th>
           <th *ngIf="properties.hasSelectableRows" class="th-selectable">
             <app-select-all-checkbox
-              id="selectAllRows"
+              [id]="uuid + '-selectAllRows'"
               [label]="properties.internationalization['Select all rows']"
               [visuallyHiddenLabel]="true"
               [isChecked]="isSelectAllChecked"
@@ -108,12 +108,14 @@
 <!-- Table Footer -->
 <app-table-footer
   class="row justify-content-center justify-content-xl-start align-items-center mb-3"
-  [showColumnSelector]="properties.hasColumnSelector"
   [columnInfo]="properties.columns"
   [defaultSortColumnName]="properties.sort.defaultSortedColumn"
-  (displayDensityEmitter)="setDisplayDensity($event)"
-  [showDisplayDensity]="properties.hasDisplayDensity"
+  [hasColumnSelector]="properties.hasColumnSelector"
+  [hasViewSelector]="properties.hasViewSelector"
+  [hasDisplayDensity]="properties.hasDisplayDensity"
   [internationalization]="properties.internationalization"
+  (viewSelectorEmitter)="emitTableView($event)"
+  (displayDensityEmitter)="setDisplayDensity($event)"
 >
   <ng-container pagination>
     <ng-content select="bp-pagination"></ng-content>

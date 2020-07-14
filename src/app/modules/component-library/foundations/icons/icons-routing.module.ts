@@ -10,8 +10,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
     { path: 'icon-library', component: IconLibraryComponent, pathMatch: 'full' },
-    // TODO: uncomment when usage is added
-    // { path: 'usage', component: UsageComponent, pathMatch: 'full' },
+    { path: 'usage', component: UsageComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
   ]},
 ];

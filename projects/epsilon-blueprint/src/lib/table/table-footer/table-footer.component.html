@@ -1,16 +1,23 @@
-<app-column-selector
+<app-view-selector
+  *ngIf="hasViewSelector"
   class="col-12 col-sm-auto d-flex justify-content-center mb-3 mb-xl-0"
-  [showColumnSelector]="showColumnSelector"
+  [internationalization]="internationalization"
+  (viewSelectorEmitter)="emitTableView($event)"
+></app-view-selector>
+
+<app-column-selector
+  *ngIf="hasColumnSelector"
+  class="col-12 col-sm-auto d-flex justify-content-center mb-3 mb-xl-0"
   [columnInfo]="columnInfo"
   [defaultSortColumnName]="defaultSortColumnName"
   [internationalization]="internationalization"
 ></app-column-selector>
 
 <app-display-density
+  *ngIf="hasDisplayDensity"
   class="col-12 col-sm-auto d-flex justify-content-center mb-3 mb-xl-0"
-  (displayDensityEmitter)="setDisplayDensity($event)"
-  [showDisplayDensity]="showDisplayDensity"
   [internationalization]="internationalization"
+  (displayDensityEmitter)="setDisplayDensity($event)"
 ></app-display-density>
 
 <div class="col-12 col-xl-auto ml-xl-auto">
