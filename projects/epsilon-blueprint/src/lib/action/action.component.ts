@@ -22,7 +22,7 @@ export class ActionComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validation();
 
     if (this.isDefined(this.routerLink) && !this.isDefined(this.bpRouterLink)) {

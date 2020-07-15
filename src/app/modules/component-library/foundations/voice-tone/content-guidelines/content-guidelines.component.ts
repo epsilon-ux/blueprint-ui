@@ -9,7 +9,7 @@ export class ContentGuidelinesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

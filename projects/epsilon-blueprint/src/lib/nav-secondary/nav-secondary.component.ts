@@ -31,7 +31,7 @@ export class NavSecondaryComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validate();
     setTimeout(() => {
       this.activeItem = this.linkRefs.toArray()

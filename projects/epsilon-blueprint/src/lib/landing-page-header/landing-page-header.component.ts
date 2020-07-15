@@ -27,7 +27,7 @@ export class LandingPageHeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validateInputs();
   }
 

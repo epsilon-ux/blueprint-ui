@@ -11,6 +11,6 @@ export class TableFiltersComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

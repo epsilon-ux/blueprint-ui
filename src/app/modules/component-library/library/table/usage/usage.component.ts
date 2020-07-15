@@ -34,7 +34,7 @@ export class UsageComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     // Properties
     this.standard = standard;
 

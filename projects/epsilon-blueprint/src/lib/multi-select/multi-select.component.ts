@@ -55,11 +55,11 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validate();
   }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes): void {
     if (changes.optionItems && Array.isArray(changes.optionItems.currentValue)) {
       this.isDataLoaded = true;
     }

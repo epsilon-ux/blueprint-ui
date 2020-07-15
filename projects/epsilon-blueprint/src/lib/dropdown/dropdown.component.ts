@@ -28,7 +28,7 @@ export class DropdownComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     // This is for backwards compatibility: remove when removing routerLink option
     this.dropdownItems.forEach(item => {
       if (item.routerLink && ! item.bpRouterLink) {

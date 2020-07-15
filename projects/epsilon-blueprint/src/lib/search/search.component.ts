@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   onClearSearch() {
     this.searchFilter = '';

@@ -31,7 +31,7 @@ export class ActionsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.classList.includes('dropdown-item')) {
       this.actionItems.forEach(action => {
         action.class = '';

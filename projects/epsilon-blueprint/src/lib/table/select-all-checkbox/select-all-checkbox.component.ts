@@ -19,12 +19,12 @@ export class SelectAllCheckboxComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validation();
     this.getState();
   }
 
-  ngOnChanges() {
+  ngOnChanges(): void {
     this.getState();
   }
 

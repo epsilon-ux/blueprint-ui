@@ -32,7 +32,7 @@ export class LinksComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     // This is for backwards compatibility. Remove when path is removed.
     if (this.linkProperties.path) {
       console.warn('Table link property "path" is deprecated. Use bpRouterLink instead.');

@@ -13,7 +13,7 @@ export class PanelComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validation();
   }
 

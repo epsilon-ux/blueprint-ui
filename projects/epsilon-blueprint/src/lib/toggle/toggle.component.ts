@@ -23,7 +23,7 @@ export class ToggleComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   emitChange(e) {
     e.stopPropagation();

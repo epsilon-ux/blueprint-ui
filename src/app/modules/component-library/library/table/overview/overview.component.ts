@@ -30,7 +30,7 @@ export class OverviewComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.properties = {
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',

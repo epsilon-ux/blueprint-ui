@@ -13,7 +13,7 @@ export class BadgeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validation();
   }
 

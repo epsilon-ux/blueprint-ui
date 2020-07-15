@@ -62,7 +62,7 @@ export class TableComponent implements OnInit, OnChanges {
     return ColumnType;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     // Defaults
     const propertyDefaults = {
       sort: {
@@ -179,7 +179,7 @@ export class TableComponent implements OnInit, OnChanges {
     } */
   }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes): void {
     if (
       (changes.isDataLoading
         && changes.isDataLoading.currentValue === false

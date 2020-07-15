@@ -12,6 +12,6 @@ export class RibbonComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

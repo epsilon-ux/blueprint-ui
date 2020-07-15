@@ -12,6 +12,6 @@ export class TypographyComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

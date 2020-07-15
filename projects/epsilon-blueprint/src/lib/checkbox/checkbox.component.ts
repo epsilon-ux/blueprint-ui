@@ -22,12 +22,12 @@ export class CheckboxComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.checked = this.isChecked;
     this.validation();
   }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes): void {
     if (changes.isChecked && !changes.isChecked.firstChange) {
       this.checked = changes.isChecked.currentValue;
     }

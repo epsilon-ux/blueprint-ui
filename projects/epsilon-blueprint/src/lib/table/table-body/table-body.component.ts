@@ -44,7 +44,7 @@ export class TableBodyComponent implements OnInit {
     return ColumnType;
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   // Statuses
   getStatusClass(value, mapping) {

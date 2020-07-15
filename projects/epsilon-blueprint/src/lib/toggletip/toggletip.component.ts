@@ -17,7 +17,7 @@ export class ToggletipComponent implements OnInit, OnDestroy {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.popover = $('[data-toggle="popover"]');
     this.popover.popover();
 

@@ -63,11 +63,11 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.numberOfRows = this.defaultNumberOfRows;
   }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes): void {
     // Select the first page when the data changes
     if (changes.dataLength) {
       this.paginate(1);

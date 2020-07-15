@@ -12,6 +12,6 @@ export class VoiceToneComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

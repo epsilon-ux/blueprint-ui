@@ -7,6 +7,6 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 export class TableComponent implements OnInit {
 
   constructor() {}
-  ngOnInit() {}
+  ngOnInit(): void {}
 
 }

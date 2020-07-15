@@ -9,7 +9,7 @@ export class DateTimePickerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

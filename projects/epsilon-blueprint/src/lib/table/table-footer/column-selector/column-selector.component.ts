@@ -23,7 +23,7 @@ export class ColumnSelectorComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.columnInfo.filter(
       d => d.key === this.defaultSortColumnName
     )[0].disabled = true;
