@@ -347,7 +347,7 @@
     "no-trailing-spaces": "error",
     // "no-underscore-dangle": "off",
     // "no-unneeded-ternary": "off",
-    // "no-whitespace-before-property": "off",
+    "no-whitespace-before-property": "error",
     // "nonblock-statement-body-position": "off",
     // "object-curly-newline": "off",
     "object-curly-spacing": ["error", "always"],
@@ -387,8 +387,11 @@
       }
     ],
     // "space-in-parens": "off",
-    // "space-infix-ops": "off",
-    // "space-unary-ops": "off",
+    "space-infix-ops": "error",
+    "space-unary-ops": ["error", {
+      "words": true,
+      "nonwords": false
+    }],
     "spaced-comment": ["warn", "always"],
     "switch-colon-spacing": "error",
     // "template-tag-spacing": "off",
