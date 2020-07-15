@@ -16,6 +16,7 @@ import { parseLookupString, generateUniqueId } from '../../helpers';
   templateUrl: './table.component.html'
 })
 export class TableComponent implements OnInit, OnChanges {
+
   @Input() data: {
     [key: string]: any;
   }[];
@@ -63,43 +64,43 @@ export class TableComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     // Defaults
-  const propertyDefaults = {
-    sort: {
-      defaultSortOrder: 'ascending'
-    },
-    hasSelectableRows: false,
-    hasViewSelector: false,
-    hasColumnSelector: true,
-    hasDisplayDensity: true,
-    internationalization: {
-      'Select all rows': 'Select all rows',
-      'Actions': 'Actions',
-      'Expand/Collapse': 'Expand/Collapse',
-      'Loading data': 'Loading data',
-      'No data': 'No data available',
-      'Select Row': `Select Row #{${this.properties.rowId}}`,
-      'Toggle Row': `Toggle Row #{${this.properties.rowId}}`,
-      'Actions Menu': 'Actions Menu',
-      'Column Selector': 'Column Selector:',
-      'Default': '(Default)',
-      'Showing numVisible out of numTotal': 'Showing #{numVisible} out of #{numTotal}',
-      'Display Density': 'Display Density:',
-      'Display Density Options': {
-        'Comfortable': 'Comfortable',
-        'Compact': 'Compact'
+    const propertyDefaults = {
+      sort: {
+        defaultSortOrder: 'ascending'
       },
-      'View': 'View:',
-      'View Options': {
-        'Table': 'Table',
-        'Alternate': 'List'
+      hasSelectableRows: false,
+      hasViewSelector: false,
+      hasColumnSelector: true,
+      hasDisplayDensity: true,
+      internationalization: {
+        'Select all rows': 'Select all rows',
+        'Actions': 'Actions',
+        'Expand/Collapse': 'Expand/Collapse',
+        'Loading data': 'Loading data',
+        'No data': 'No data available',
+        'Select Row': `Select Row #{${this.properties.rowId}}`,
+        'Toggle Row': `Toggle Row #{${this.properties.rowId}}`,
+        'Actions Menu': 'Actions Menu',
+        'Column Selector': 'Column Selector:',
+        'Default': '(Default)',
+        'Showing numVisible out of numTotal': 'Showing #{numVisible} out of #{numTotal}',
+        'Display Density': 'Display Density:',
+        'Display Density Options': {
+          'Comfortable': 'Comfortable',
+          'Compact': 'Compact'
+        },
+        'View': 'View:',
+        'View Options': {
+          'Table': 'Table',
+          'Alternate': 'List'
+        }
       }
-    }
-  };
+    };
 
-  const columnDefaults = {
-    isColumnDisplayed: true,
-    isSortable: true
-  };
+    const columnDefaults = {
+      isColumnDisplayed: true,
+      isSortable: true
+    };
     // Set defaults
     this.properties = Object.assign(
       propertyDefaults,
@@ -115,24 +116,24 @@ export class TableComponent implements OnInit, OnChanges {
     this.properties.columns.forEach((col, i) => col.columnIndex = i);
 
     // LocalStorage
-    const displayDensityName =
-      localStorage.getItem('selectedDensity') || 'Comfortable';
+    const displayDensityName
+      = localStorage.getItem('selectedDensity') || 'Comfortable';
     this.setDisplayDensity(displayDensityName);
 
     // Input Validations
     this.properties.columns.forEach(col => {
       if (!col.key && col.type !== ColumnType.TEMPLATE) {
-        let err = new Error(
+        const err = new Error(
           `Missing 'key' property in\n${JSON.stringify(col)}`
         );
         err.name = 'Missing Input';
         throw err;
       }
       if (
-        col.link &&
-        !(col.link.element === 'a' || col.link.element === 'button')
+        col.link
+        && !(col.link.element === 'a' || col.link.element === 'button')
       ) {
-        let err = new Error(
+        const err = new Error(
           `Link element must be either 'a' or 'button' in\n${JSON.stringify(
             col
           )}`
@@ -141,11 +142,11 @@ export class TableComponent implements OnInit, OnChanges {
         throw err;
       }
       if (
-        col.link &&
-        col.link.element === 'a' &&
-        !(col.link.bpRouterLink || col.link.href)
+        col.link
+        && col.link.element === 'a'
+        && !(col.link.bpRouterLink || col.link.href)
       ) {
-        let err = new Error(
+        const err = new Error(
           `Link must have either href or bpRouterLink when element is 'a' in\n${JSON.stringify(
             col
           )}`
@@ -154,7 +155,7 @@ export class TableComponent implements OnInit, OnChanges {
         throw err;
       }
       if (col.link && col.link.element === 'button' && !col.link.action) {
-        let err = new Error(
+        const err = new Error(
           `Link must have action when element is 'button' in\n${JSON.stringify(
             col
           )}`
@@ -163,8 +164,8 @@ export class TableComponent implements OnInit, OnChanges {
         throw err;
       }
       if (
-        col.icon &&
-        !(col.icon.color === 'warning' || col.icon.color === 'midnight')
+        col.icon
+        && !(col.icon.color === 'warning' || col.icon.color === 'midnight')
       ) {
         console.warn(
           `"${col.icon.color}" invalid value for bp-table icon column color: expects either "midnight" or "warning".`
@@ -180,10 +181,10 @@ export class TableComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes) {
     if (
-      (changes.isDataLoading &&
-        changes.isDataLoading.currentValue === false &&
-        this.tableData.length > 0) ||
-      (changes.data && !changes.data.firstChange)
+      (changes.isDataLoading
+        && changes.isDataLoading.currentValue === false
+        && this.tableData.length > 0)
+      || (changes.data && !changes.data.firstChange)
     ) {
       this.tableData = changes.data.currentValue;
       if (this.isSelectAllChecked) {
@@ -252,8 +253,8 @@ export class TableComponent implements OnInit, OnChanges {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
     } else if (
-      this.selectedRows.size > 0 &&
-      this.selectedRows.size < this.dataLength
+      this.selectedRows.size > 0
+      && this.selectedRows.size < this.dataLength
     ) {
       this.isSelectAllIndeterminate = true;
       this.isSelectAllChecked = false;
@@ -304,4 +305,5 @@ export class TableComponent implements OnInit, OnChanges {
   emitAction(action: string) {
     this.action.emit(action);
   }
+
 }

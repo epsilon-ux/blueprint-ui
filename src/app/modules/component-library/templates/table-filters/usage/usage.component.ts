@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../table-filters.component.scss']
 })
 export class UsageComponent implements OnInit {
+
   isSearching = false;
 
   // date range select options
@@ -164,12 +165,13 @@ export class UsageComponent implements OnInit {
   handleMulti(e) { }
 
   toggleView(e) {
-    if(e.target.value === 'list') {
+    if (e.target.value === 'list') {
       this.listView = true;
     } else {
       this.listView = false;
     }
   }
 
-  click = (e) => {};
+  click = e => {};
+
 }

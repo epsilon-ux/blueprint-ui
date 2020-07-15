@@ -22,4 +22,5 @@ export class BaseTemplateComponent implements OnInit {
     event.preventDefault();
     location.hash='mainContent';
   }
+
 }

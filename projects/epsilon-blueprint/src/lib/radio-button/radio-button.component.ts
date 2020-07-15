@@ -23,9 +23,10 @@ export class RadioButtonComponent implements OnInit {
 
   validation() {
     if (!this.label) {
-      let err = new Error('\'label\' is a required Input of bp-radio-button');
+      const err = new Error('\'label\' is a required Input of bp-radio-button');
       err.name = 'Missing Input';
       throw err;
     }
   }
+
 }

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
+
   optionItems = [
     {
       label: 'Option 1',
@@ -35,4 +36,5 @@ export class OverviewComponent implements OnInit {
   }
 
   handleMulti(e) { }
+
 }

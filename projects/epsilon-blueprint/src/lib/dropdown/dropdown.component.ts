@@ -8,7 +8,7 @@ import { generateUniqueId } from '../../helpers';
 export class DropdownComponent implements OnInit {
 
   @Input() triggerText: string;
-  @Input() triggerClasses = ''; 
+  @Input() triggerClasses = '';
   @Input() dropDirection: 'up' | 'down' | 'left' | 'right' = 'down';
   @Input() dropdownItems: {
     text: string;
@@ -32,9 +32,9 @@ export class DropdownComponent implements OnInit {
     // This is for backwards compatibility: remove when removing routerLink option
     this.dropdownItems.forEach(item => {
       if (item.routerLink && ! item.bpRouterLink) {
-        item.bpRouterLink = item.routerLink
+        item.bpRouterLink = item.routerLink;
       }
-    })
+    });
   }
 
   emitAction(e) {

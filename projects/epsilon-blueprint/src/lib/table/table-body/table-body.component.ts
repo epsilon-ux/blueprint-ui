@@ -16,6 +16,7 @@ import { parseLookupString } from '../../../helpers';
   templateUrl: './table-body.component.html'
 })
 export class TableBodyComponent implements OnInit {
+
   @Input() tableData: {
     [key: string]: any;
   }[];
@@ -32,7 +33,7 @@ export class TableBodyComponent implements OnInit {
 
   // displayDensity
   densityClass: string;
-  
+
   @ViewChild('selectAllRowsRef', { static: false })
   selectAllRowsRef: ElementRef;
 
@@ -53,13 +54,13 @@ export class TableBodyComponent implements OnInit {
   }
 
   selectRows(event, row) {
-    this.selectedRowsAction.emit({event, row});
+    this.selectedRowsAction.emit({ event, row });
   }
 
   toggleExpanded(row) {
     this.expandedRows.has(row)
-    ? this.expandedRows.delete(row)
-    : this.expandedRows.add(row);
+      ? this.expandedRows.delete(row)
+      : this.expandedRows.add(row);
   }
 
   emitAction(action: string, rowId: string) {
@@ -68,4 +69,5 @@ export class TableBodyComponent implements OnInit {
       rowId
     });
   }
+
 }

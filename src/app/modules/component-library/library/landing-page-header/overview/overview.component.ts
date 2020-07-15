@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
+
   headingText = 'Header Text';
   actionText = 'Action Text';
   hasAction = true;

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class IconsComponent implements OnInit {
 
-  headingText = "Icons";
+  headingText = 'Icons';
 
   constructor() { }
 

@@ -15,15 +15,15 @@ import { UsageComponent } from './usage/usage.component';
 
 @NgModule({
   declarations: [
-    ObjectPageHeaderComponent, 
-    OverviewComponent, 
+    ObjectPageHeaderComponent,
+    OverviewComponent,
     UsageComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule, 
-    NgSelectModule, 
+    FormsModule,
+    NgSelectModule,
     ObjectPageHeaderRoutingModule,
     LandingPageHeaderModule,
     ActionModule,

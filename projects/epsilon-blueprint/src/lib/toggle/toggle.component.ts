@@ -36,4 +36,5 @@ export class ToggleComponent implements OnInit {
     checkedToggle.isChecked = true;
     this.change.emit(e);
   }
+
 }

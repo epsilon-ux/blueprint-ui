@@ -12,7 +12,7 @@ export class ViewSelectorComponent implements OnInit {
 
   @Output()
   viewSelectorEmitter = new EventEmitter();
-  
+
   viewSelector: string;
   displayOptions: {
     text: string;
@@ -32,4 +32,5 @@ export class ViewSelectorComponent implements OnInit {
   emitTableView() {
     this.viewSelectorEmitter.emit(this.viewSelector);
   }
+
 }

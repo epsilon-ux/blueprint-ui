@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: 'icon-library', component: IconLibraryComponent, pathMatch: 'full' },
     { path: 'usage', component: UsageComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
-  ]},
+  ] }
 ];
 
 @NgModule({

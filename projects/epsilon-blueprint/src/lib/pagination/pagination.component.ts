@@ -15,9 +15,10 @@ import { parseLookupString } from '../../helpers';
   styleUrls: ['./pagination.component.scss']
 })
 
-// This component only handles the actual pagination part of the table,
-// the actual rows and rendering is handled by the table component
+/* This component only handles the actual pagination part of the table,
+   the actual rows and rendering is handled by the table component */
 export class PaginationComponent implements OnInit, OnChanges {
+
   parseLookupString = parseLookupString;
 
   @Input()
@@ -31,7 +32,7 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   @Input()
   pageNumber: number;
-  
+
   @Input()
   internationalization= {
     'numResults results': '#{numResults} result(s)',
@@ -74,9 +75,9 @@ export class PaginationComponent implements OnInit, OnChanges {
 
     // Handles when page needs to be changed from parent component
     if (
-      changes.pageNumber &&
-      changes.pageNumber.currentValue &&
-      changes.pageNumber.currentValue !== this.currentPage
+      changes.pageNumber
+      && changes.pageNumber.currentValue
+      && changes.pageNumber.currentValue !== this.currentPage
     ) {
       this.paginate(changes.pageNumber.currentValue);
     }
@@ -134,11 +135,12 @@ export class PaginationComponent implements OnInit, OnChanges {
     this.pageData.emit({
       currentPage: this.currentPage,
       rowsPerPage: this.numberOfRows,
-      indices: {...this.indices}
+      indices: { ...this.indices }
     });
   }
 
   getTotalPages() {
     return Math.ceil(this.dataLength / this.numberOfRows);
   }
+
 }

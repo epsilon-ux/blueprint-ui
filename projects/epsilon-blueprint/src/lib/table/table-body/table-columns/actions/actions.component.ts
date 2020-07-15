@@ -8,6 +8,7 @@ import { Action } from '../../../../../models/table-models';
   styleUrls: ['./actions.component.scss']
 })
 export class ActionsComponent implements OnInit {
+
   @Input()
   actionItems: Action[];
 
@@ -38,7 +39,7 @@ export class ActionsComponent implements OnInit {
     }
 
     // Determines which action items to show for this row
-    let filteredActions = [];
+    const filteredActions = [];
     this.actionItems.forEach(action => {
       if (action.conditions) {
         if (this.reduceConditions(action.conditions)) {
@@ -57,9 +58,9 @@ export class ActionsComponent implements OnInit {
     const logicalOperators = [];
     const conditions = [];
     actionConditions.forEach((condition, i) =>
-      i % 2 === 0
+      (i % 2 === 0
         ? conditions.push(condition)
-        : logicalOperators.push(condition)
+        : logicalOperators.push(condition))
     );
 
     // Gets array of booleans from evaulating individual conditions
@@ -118,4 +119,5 @@ export class ActionsComponent implements OnInit {
   triggerAction(action): void {
     this.emitAction.emit(action);
   }
+
 }

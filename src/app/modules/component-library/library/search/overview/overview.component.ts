@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
+
   isSearching = false;
 
   constructor() { }
@@ -15,4 +16,5 @@ export class OverviewComponent implements OnInit {
   handleSearch(e) { }
 
   handleClearSearch(e) { }
+
 }

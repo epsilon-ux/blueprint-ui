@@ -17,9 +17,10 @@ export class TileComponent implements OnInit {
 
   validation() {
     if (!this.titleText) {
-      let err = new Error('\'titleText\' is a required Input of bp-tile');
+      const err = new Error('\'titleText\' is a required Input of bp-tile');
       err.name = 'Missing Input';
       throw err;
     }
   }
+
 }

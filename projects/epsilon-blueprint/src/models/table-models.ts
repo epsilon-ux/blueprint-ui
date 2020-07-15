@@ -42,11 +42,11 @@ export interface Column {
   isSortable?: boolean;
   template?: TemplateRef<any>;
   icon?: {
-      color: string;
-      mapping: {
-        [key: string]: string;
-      }
+    color: string;
+    mapping: {
+      [key: string]: string;
     };
+  };
   link?: {
     element: string; // Expect 'a', or 'button'
     ariaLabel: string; // Can use #{key} syntax to insert values from the row corresponding to the given key

@@ -12,9 +12,9 @@ import { UtilitiesComponent } from './utilities/utilities.component';
 
 @NgModule({
   declarations: [
-    TypographyComponent, 
-    OverviewComponent, 
-    UsageComponent, 
+    TypographyComponent,
+    OverviewComponent,
+    UsageComponent,
     UtilitiesComponent
   ],
   imports: [

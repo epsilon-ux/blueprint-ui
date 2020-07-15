@@ -27,11 +27,12 @@ export class UsageComponent implements OnInit {
     }
   ];
 
-  click = (e) => { };
+  click = e => { };
 
-  handleSelectionChange = (event) => { }
+  handleSelectionChange = event => { };
 
   constructor() { }
 
   ngOnInit() { }
+
 }

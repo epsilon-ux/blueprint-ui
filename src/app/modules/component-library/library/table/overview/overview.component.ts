@@ -10,8 +10,8 @@ import tableData from 'src/app/datasets/tableData.json';
 })
 export class OverviewComponent implements OnInit {
 
-  @ViewChild('templateColumn', {static: true}) templateColumn;
-  @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
+  @ViewChild('templateColumn', { static: true }) templateColumn;
+  @ViewChild('expandableRowsTemplate', { static: true }) expandableRowsTemplate;
 
   set exampleData(json) {
     this.rawData = json.customerData.data;
@@ -161,7 +161,7 @@ export class OverviewComponent implements OnInit {
 
   sortByKeyAsc(array, key) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => a.id < b.id ? -1 : 1);
+      return array.sort((a, b) => (a.id < b.id ? -1 : 1));
     } else {
       return array.sort((a, b) => {
         const x = a[key];
@@ -173,7 +173,7 @@ export class OverviewComponent implements OnInit {
 
   sortByKeyDesc(array, key) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => b.id < a.id ? -1 : 1);
+      return array.sort((a, b) => (b.id < a.id ? -1 : 1));
     } else {
       return array.sort((a, b) => {
         const x = a[key];
@@ -182,7 +182,7 @@ export class OverviewComponent implements OnInit {
       });
     }
   }
-  
+
   handleSort(sort) {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(this.filteredData, sort.column);
@@ -197,17 +197,18 @@ export class OverviewComponent implements OnInit {
 
   handleSelectedRows(selectedRowIds: {
     areAllSelected: boolean;
-    selected: {[key: string]: any;}
+    selected: {[key: string]: any};
     numRowsSelected: number;
   }) {
     // Handle the selected rows here
   }
 
   handlePageChange(pageData) {
-    this.pageIndices = {...pageData.indices};
+    this.pageIndices = { ...pageData.indices };
     this.tableData = this.filteredData.slice(
       pageData.indices.start,
       pageData.indices.end
     );
   }
+
 }

@@ -33,14 +33,14 @@ export class ActionComponent implements OnInit {
   isDefined(variable) {
     return variable !== undefined && variable !== null;
   }
-  
+
   validation() {
-    if(this.isDefined(this.href) && this.isDefined(this.bpRouterLink)) {
+    if (this.isDefined(this.href) && this.isDefined(this.bpRouterLink)) {
       const err = new Error('Cannot pass in both href and bpRouterLink.');
       err.name = 'Invalid Input';
       throw err;
     }
-    if((this.isDefined(this.href) || this.isDefined(this.bpRouterLink)) && this.isDisabled) {
+    if ((this.isDefined(this.href) || this.isDefined(this.bpRouterLink)) && this.isDisabled) {
       const err = new Error('Action cannot be disabled when bpRouterLink or href is provided.');
       err.name = 'Invalid Input';
       throw err;

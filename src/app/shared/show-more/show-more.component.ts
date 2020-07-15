@@ -20,10 +20,11 @@ export class ShowMoreComponent implements OnInit {
     }
     this.summaryText = this.isOpen ? this.summaryOpen : this.summary;
   }
-  
+
   toggleDetails(e) {
     e.preventDefault();
     this.isOpen = !this.isOpen;
     this.summaryText = this.isOpen ? this.summaryOpen : this.summary;
   }
+
 }

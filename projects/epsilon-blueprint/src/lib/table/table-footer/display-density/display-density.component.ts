@@ -6,12 +6,13 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
   styleUrls: ['../table-footer.component.scss']
 })
 export class DisplayDensityComponent implements OnInit {
+
   @Output()
   displayDensityEmitter = new EventEmitter();
 
   @Input()
   internationalization: any;
-  
+
   displayDensity: string;
   displayOptions: {
     text: string;
@@ -33,4 +34,5 @@ export class DisplayDensityComponent implements OnInit {
   setDisplayDensity() {
     this.displayDensityEmitter.emit(this.displayDensity);
   }
+
 }

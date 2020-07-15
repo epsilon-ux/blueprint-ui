@@ -9,10 +9,10 @@ export class LinksComponent implements OnInit {
 
   @Input()
   rowData: {};
-  
+
   @Input()
   linkText: string;
-  
+
   @Input()
   linkProperties: {
     element: string;
@@ -45,4 +45,5 @@ export class LinksComponent implements OnInit {
   triggerAction(action): void {
     this.emitAction.emit(action);
   }
+
 }

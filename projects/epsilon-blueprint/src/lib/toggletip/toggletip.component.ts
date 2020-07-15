@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
-declare var $: any;
+declare let $: any;
 
 @Component({
   selector: 'bp-toggletip',
@@ -30,9 +30,10 @@ export class ToggletipComponent implements OnInit, OnDestroy {
 
   validation() {
     if (!this.content) {
-      let err = new Error('\'content\' is a required Input of bp-toggletip');
+      const err = new Error('\'content\' is a required Input of bp-toggletip');
       err.name = 'Missing Input';
       throw err;
     }
   }
+
 }
