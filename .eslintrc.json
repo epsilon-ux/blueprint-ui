@@ -50,6 +50,8 @@
     "@angular-eslint/no-outputs-metadata-property": "error",
     "@angular-eslint/use-lifecycle-interface": "error",
     "@angular-eslint/use-pipe-transform-interface": "error",
+
+    // TODO: These only work on ts inline templates. figure out if it's possible to lint the html.
     /* "@angular-eslint/template-accessibility-alt-text": "error",
     "@angular-eslint/template-accessibility-elements-content": "error",
     "@angular-eslint/template-accessibility-label-for": "error",
