@@ -23,7 +23,7 @@ export default {
       key: 'col4',
       headerText: 'Column Header',
       isColumnDisplayed: true
-    },
+    }
   ],
   sort: {
     defaultSortedColumn: 'col1',

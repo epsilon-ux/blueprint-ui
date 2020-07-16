@@ -11,11 +11,11 @@ const routes: Routes = [
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
     { path: 'usage', component: UsageComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
-  ]},
+  ] }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TableFiltersRoutingModule { } 
+export class TableFiltersRoutingModule { }

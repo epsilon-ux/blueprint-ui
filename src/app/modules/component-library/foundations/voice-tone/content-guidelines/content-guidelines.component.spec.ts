@@ -8,9 +8,9 @@ describe('ContentGuidelinesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentGuidelinesComponent ]
+      declarations: [ContentGuidelinesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

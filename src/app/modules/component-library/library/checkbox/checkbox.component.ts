@@ -9,7 +9,7 @@ export class CheckboxComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

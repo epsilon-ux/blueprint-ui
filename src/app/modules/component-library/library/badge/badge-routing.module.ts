@@ -15,7 +15,7 @@ const routes: Routes = [
     { path: 'playground', component: PlaygroundComponent, pathMatch: 'full' },
     { path: 'api', component: ApiComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
-  ]},
+  ] }
 ];
 
 @NgModule({

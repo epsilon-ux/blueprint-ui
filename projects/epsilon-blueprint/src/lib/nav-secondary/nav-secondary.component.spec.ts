@@ -8,9 +8,9 @@ describe('NavSecondaryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavSecondaryComponent ]
+      declarations: [NavSecondaryComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

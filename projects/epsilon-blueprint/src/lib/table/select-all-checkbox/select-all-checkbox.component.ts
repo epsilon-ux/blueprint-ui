@@ -16,21 +16,21 @@ export class SelectAllCheckboxComponent implements OnInit, OnChanges {
   @Output() change = new EventEmitter();
 
   checked;
-  
+
   constructor() { }
-  
-  ngOnInit() {
+
+  ngOnInit(): void {
     this.validation();
     this.getState();
   }
 
-  ngOnChanges() {
+  ngOnChanges(): void {
     this.getState();
   }
 
   validation() {
     if (!this.label) {
-      let err = new Error('\'label\' is a required Input of app-select-all-checkbox');
+      const err = new Error('\'label\' is a required Input of app-select-all-checkbox');
       err.name = 'Missing Input';
       throw err;
     }
@@ -52,4 +52,5 @@ export class SelectAllCheckboxComponent implements OnInit, OnChanges {
   emitEvent(e) {
     this.change.emit(e);
   }
+
 }

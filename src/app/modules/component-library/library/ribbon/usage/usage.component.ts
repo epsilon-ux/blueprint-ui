@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class UsageComponent implements OnInit {
-  click = (e) => {};
+
+  click = e => {};
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

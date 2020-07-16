@@ -8,9 +8,9 @@ describe('IconLibraryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IconLibraryComponent ]
+      declarations: [IconLibraryComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

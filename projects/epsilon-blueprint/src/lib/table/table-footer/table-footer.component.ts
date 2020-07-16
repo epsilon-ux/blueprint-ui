@@ -12,7 +12,7 @@ export class TableFooterComponent implements OnInit {
   hasViewSelector: boolean;
 
   @Input()
-  hasDisplayDensity: boolean; 
+  hasDisplayDensity: boolean;
 
   @Input()
   hasColumnSelector = false;
@@ -31,10 +31,10 @@ export class TableFooterComponent implements OnInit {
 
   @Output()
   viewSelectorEmitter = new EventEmitter();
-  
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   setDisplayDensity(event) {
     this.displayDensityEmitter.emit(event);
@@ -43,4 +43,5 @@ export class TableFooterComponent implements OnInit {
   emitTableView(view) {
     this.viewSelectorEmitter.emit(view);
   }
+
 }

@@ -4,13 +4,15 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-import { LandingPageHeaderModule } from 'epsilon-blueprint';
-import { SearchModule } from 'epsilon-blueprint';
-import { MultiselectModule } from 'epsilon-blueprint';
-import { CheckboxModule } from 'epsilon-blueprint';
-import { ActionModule } from 'epsilon-blueprint';
-import { ToggleModule } from 'epsilon-blueprint';
-import { RibbonModule } from 'epsilon-blueprint';
+import {
+  LandingPageHeaderModule,
+  SearchModule,
+  MultiselectModule,
+  CheckboxModule,
+  ActionModule,
+  ToggleModule,
+  RibbonModule
+} from 'epsilon-blueprint';
 import { TableFiltersRoutingModule } from './table-filters-routing.module';
 
 import { TableFiltersComponent } from './table-filters.component';
@@ -19,15 +21,15 @@ import { UsageComponent } from './usage/usage.component';
 
 @NgModule({
   declarations: [
-    TableFiltersComponent, 
-    OverviewComponent, 
+    TableFiltersComponent,
+    OverviewComponent,
     UsageComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule, 
-    NgSelectModule, 
+    FormsModule,
+    NgSelectModule,
     TableFiltersRoutingModule,
     LandingPageHeaderModule,
     SearchModule,

@@ -16,10 +16,11 @@ export class BaseTemplateComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   skipToMain() {
     event.preventDefault();
     location.hash='mainContent';
   }
+
 }

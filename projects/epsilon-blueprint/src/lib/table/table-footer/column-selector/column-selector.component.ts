@@ -7,7 +7,7 @@ import { parseLookupString } from '../../../../helpers';
   styleUrls: ['../table-footer.component.scss']
 })
 export class ColumnSelectorComponent implements OnInit {
-  
+
   @Input()
   columnInfo = [];
 
@@ -16,14 +16,14 @@ export class ColumnSelectorComponent implements OnInit {
 
   @Input()
   internationalization: any;
-  
+
   selectedColumns = [];
 
   parseLookupString = parseLookupString;
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.columnInfo.filter(
       d => d.key === this.defaultSortColumnName
     )[0].disabled = true;
@@ -42,10 +42,13 @@ export class ColumnSelectorComponent implements OnInit {
           ? true
           : false;
       });
-      // TODO: Figure out local storage issues
-      // 1. What if there are multiple tables in the application
-      // 2. How can we store only the information we need (visible columns)
-      //localStorage.setItem('columns', JSON.stringify(this.columnInfo));
+      /*
+        TODO: Figure out local storage issues
+        1. What if there are multiple tables in the application
+        2. How can we store only the information we need (visible columns)
+        localStorage.setItem('columns', JSON.stringify(this.columnInfo));
+      */
     }
   }
+
 }

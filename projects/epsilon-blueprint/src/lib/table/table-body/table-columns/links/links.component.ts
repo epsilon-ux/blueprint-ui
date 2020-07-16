@@ -9,10 +9,10 @@ export class LinksComponent implements OnInit {
 
   @Input()
   rowData: {};
-  
+
   @Input()
   linkText: string;
-  
+
   @Input()
   linkProperties: {
     element: string;
@@ -32,7 +32,7 @@ export class LinksComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     // This is for backwards compatibility. Remove when path is removed.
     if (this.linkProperties.path) {
       console.warn('Table link property "path" is deprecated. Use bpRouterLink instead.');
@@ -45,4 +45,5 @@ export class LinksComponent implements OnInit {
   triggerAction(action): void {
     this.emitAction.emit(action);
   }
+
 }

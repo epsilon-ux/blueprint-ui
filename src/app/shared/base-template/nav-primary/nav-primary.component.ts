@@ -8,7 +8,7 @@ export class NavPrimaryComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

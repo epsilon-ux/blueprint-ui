@@ -12,7 +12,7 @@ export class ViewSelectorComponent implements OnInit {
 
   @Output()
   viewSelectorEmitter = new EventEmitter();
-  
+
   viewSelector: string;
   displayOptions: {
     text: string;
@@ -21,7 +21,7 @@ export class ViewSelectorComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.displayOptions = Object.keys(this.internationalization['View Options']).map(option => ({
       text: this.internationalization['View Options'][option],
       value: option
@@ -32,4 +32,5 @@ export class ViewSelectorComponent implements OnInit {
   emitTableView() {
     this.viewSelectorEmitter.emit(this.viewSelector);
   }
+
 }

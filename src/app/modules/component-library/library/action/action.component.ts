@@ -8,5 +8,6 @@ export class ActionComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
+
 }
