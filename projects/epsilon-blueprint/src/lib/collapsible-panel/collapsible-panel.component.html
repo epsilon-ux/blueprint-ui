@@ -1,16 +1,10 @@
-<div class="panel">
-  <div class="panel-header">
-    <p class="text-style-2 mb-0">
-      {{ titleText }}
-    </p>
-    <ng-container *ngIf="panelHeaderLink">
-      <ng-content select="[panel-header-link]"></ng-content>
-    </ng-container>
+<nav id="panelCollapsible" class="panel-collapsible{{ isPanelCollapsed ? ' collapsed' : '' }}">
+  <div class="toggle-wrapper">
+    <button type="button" class="toggle" aria-controls="panelCollapsible" [attr.aria-label]="toggleAriaLabel" (click)="toggleNav()">
+    </button>
   </div>
-  <div class="panel-body">
-    <ng-content select="[panel-body]"></ng-content>
-  </div>
-  <div *ngIf="panelFooter" class="panel-footer">
-    <ng-content select="[panel-footer]"></ng-content>
-  </div>
-</div>
+  <ng-content>
+    <!--Content-->
+  </ng-content>
+  <ng-content select="[footer]"></ng-content>
+</nav>
