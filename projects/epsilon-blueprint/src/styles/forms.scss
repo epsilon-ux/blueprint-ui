@@ -72,3 +72,10 @@ label
   color: $feedback-color-warning;
   font-size: $font-size-md;
 }
+
+// vertically aligns checkbox/radio button with inline toggletip
+bp-checkbox + bp-toggletip,
+bp-radio-button + bp-toggletip
+{
+  transform: translateY(-3px);
+}

@@ -9,7 +9,7 @@ export class ColorCombinationsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

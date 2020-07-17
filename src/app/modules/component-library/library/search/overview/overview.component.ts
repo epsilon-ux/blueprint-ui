@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
+
   isSearching = false;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   handleSearch(e) { }
 
   handleClearSearch(e) { }
+
 }

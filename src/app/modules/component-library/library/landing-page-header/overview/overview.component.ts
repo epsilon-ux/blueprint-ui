@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
+
   headingText = 'Header Text';
   actionText = 'Action Text';
   hasAction = true;
@@ -18,13 +19,13 @@ export class OverviewComponent implements OnInit {
     },
     {
       text: 'Item 2',
-      routerLink: ''
+      bpRouterLink: ''
     }
   ];
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   handleAction(e) { }
 

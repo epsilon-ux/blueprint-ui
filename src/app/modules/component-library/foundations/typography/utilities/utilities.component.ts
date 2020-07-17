@@ -9,7 +9,7 @@ export class UtilitiesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

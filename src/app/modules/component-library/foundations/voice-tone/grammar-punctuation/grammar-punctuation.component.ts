@@ -9,7 +9,7 @@ export class GrammarPunctuationComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
-  click = (e) => {};
+
+  click = e => {};
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
+
 }

@@ -13,15 +13,16 @@ export class BadgeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validation();
   }
 
   validation() {
     if (!this.text) {
-      let err = new Error('\'text\' is a required Input of bp-badge');
+      const err = new Error('\'text\' is a required Input of bp-badge');
       err.name = 'Missing Input';
       throw err;
     }
   }
+
 }

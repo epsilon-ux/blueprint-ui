@@ -10,5 +10,6 @@ export class ComponentHeaderComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
+
 }
