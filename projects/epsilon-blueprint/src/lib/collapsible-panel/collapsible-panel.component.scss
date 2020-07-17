@@ -1,0 +1,44 @@
+@import '../../styles/global-variables';
+
+
+.panel
+{
+  box-shadow: $box-shadow-secondary;
+
+  .panel-header
+  {
+    padding: 10px 20px;
+    background: $ice;
+  }
+
+  .panel-body
+  {
+    padding: 20px;
+    background: $coconut;
+  }
+
+  .panel-footer
+  {
+    padding: 5px 20px;
+    background: $ice;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px)
+{
+  .panel
+  {
+    .panel-header
+    {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .panel-footer
+    {
+      text-align: right;
+    }
+  }
+}
