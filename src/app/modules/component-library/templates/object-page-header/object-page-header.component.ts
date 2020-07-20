@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class ObjectPageHeaderComponent implements OnInit {
 
-  headingText = "Object Page Header";
+  headingText = 'Object Page Header';
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

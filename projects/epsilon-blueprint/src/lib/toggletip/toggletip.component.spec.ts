@@ -8,9 +8,9 @@ describe('ToggletipComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToggletipComponent ]
+      declarations: [ToggletipComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

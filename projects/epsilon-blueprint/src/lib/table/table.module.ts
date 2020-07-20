@@ -12,6 +12,7 @@ import { TableBodyComponent } from './table-body/table-body.component';
 import { TableFooterComponent } from './table-footer/table-footer.component';
 import { ColumnSelectorComponent } from './table-footer/column-selector/column-selector.component';
 import { DisplayDensityComponent } from './table-footer/display-density/display-density.component';
+import { ViewSelectorComponent } from './table-footer/view-selector/view-selector.component';
 import { ActionsComponent } from './table-body/table-columns/actions/actions.component';
 import { LinksComponent } from './table-body/table-columns/links/links.component';
 import { SelectAllCheckboxComponent } from './select-all-checkbox/select-all-checkbox.component';
@@ -23,6 +24,7 @@ import { SelectAllCheckboxComponent } from './select-all-checkbox/select-all-che
     TableFooterComponent,
     DisplayDensityComponent,
     ColumnSelectorComponent,
+    ViewSelectorComponent,
     ActionsComponent,
     LinksComponent,
     SelectAllCheckboxComponent

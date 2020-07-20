@@ -8,5 +8,6 @@ export class MultiselectComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
+
 }

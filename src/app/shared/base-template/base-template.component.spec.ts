@@ -8,9 +8,9 @@ describe('BaseTemplateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BaseTemplateComponent ]
+      declarations: [BaseTemplateComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -517,7 +517,7 @@ export class IconLibraryComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

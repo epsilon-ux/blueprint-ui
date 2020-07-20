@@ -15,7 +15,7 @@ const routes: Routes = [
     { path: 'color-combinations', component: ColorCombinationsComponent, pathMatch: 'full' },
     { path: 'utilities', component: UtilitiesComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
-  ]},
+  ] }
 ];
 
 @NgModule({

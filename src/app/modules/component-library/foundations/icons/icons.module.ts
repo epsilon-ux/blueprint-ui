@@ -12,7 +12,7 @@ import { UsageComponent } from './usage/usage.component';
 
 @NgModule({
   declarations: [
-    IconsComponent, 
+    IconsComponent,
     OverviewComponent,
     IconLibraryComponent,
     UsageComponent

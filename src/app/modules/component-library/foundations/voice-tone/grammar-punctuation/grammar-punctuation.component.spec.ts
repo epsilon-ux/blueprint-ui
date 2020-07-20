@@ -8,9 +8,9 @@ describe('GrammarPunctuationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GrammarPunctuationComponent ]
+      declarations: [GrammarPunctuationComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

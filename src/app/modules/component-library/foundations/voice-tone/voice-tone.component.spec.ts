@@ -8,9 +8,9 @@ describe('VoiceToneComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VoiceToneComponent ]
+      declarations: [VoiceToneComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

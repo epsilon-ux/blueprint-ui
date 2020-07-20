@@ -7,9 +7,9 @@ describe('ColumnSelectorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ColumnSelectorComponent ]
+      declarations: [ColumnSelectorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

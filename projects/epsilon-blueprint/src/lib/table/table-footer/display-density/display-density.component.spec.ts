@@ -8,9 +8,9 @@ describe('DisplayDensityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayDensityComponent ]
+      declarations: [DisplayDensityComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

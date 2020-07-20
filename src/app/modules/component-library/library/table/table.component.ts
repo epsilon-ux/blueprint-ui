@@ -5,6 +5,8 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
   templateUrl: './table.component.html'
 })
 export class TableComponent implements OnInit {
-  constructor()  {}
-  ngOnInit() {}
+
+  constructor() {}
+  ngOnInit(): void {}
+
 }

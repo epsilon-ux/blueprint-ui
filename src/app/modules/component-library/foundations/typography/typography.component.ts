@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class TypographyComponent implements OnInit {
 
-  headingText = "Typography";
+  headingText = 'Typography';
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

@@ -9,7 +9,7 @@ export class RadioButtonComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

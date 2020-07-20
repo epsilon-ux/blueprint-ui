@@ -8,9 +8,9 @@ describe('AccessibilityInternationalizationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccessibilityInternationalizationComponent ]
+      declarations: [AccessibilityInternationalizationComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

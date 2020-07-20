@@ -8,10 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class VoiceToneComponent implements OnInit {
 
-  headingText = "Voice & Tone";
+  headingText = 'Voice & Tone';
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

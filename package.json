@@ -8,8 +8,8 @@
     "watch-blueprint": "ng build --watch epsilon-blueprint",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
     "stylelint": "stylelint '**/*.scss'",
+    "lint": "eslint \"src/app/**\" \"projects/epsilon-blueprint/src/lib/**\" \"projects/epsilon-blueprint/src/models/**\" --ext .ts",
     "e2e": "ng e2e",
     "prePublish": "ng build epsilon-blueprint && gulp copyStyles && gulp copyModels",
     "deploy": "ng build epsilon-blueprint && gulp copyStyles && gulp copyModels && npm run refresh-table-data 101 && ng build --prod",
@@ -37,14 +37,18 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.23",
     "@angular-devkit/build-ng-packagr": "~0.803.23",
+    "@angular-eslint/eslint-plugin": "0.0.1-alpha.32",
     "@angular/cli": "~8.3.23",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
     "codelyzer": "^5.0.0",
     "concurrently": "^5.1.0",
+    "eslint": "^7.4.0",
     "gulp": "^4.0.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -61,7 +65,7 @@
     "stylelint-scss": "^3.18.0",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
-    "tslint": "~5.15.0",
+    "tslint": "^5.18.0",
     "typescript": "~3.5.3"
   }
 }

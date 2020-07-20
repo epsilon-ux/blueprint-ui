@@ -14,7 +14,7 @@ const routes: Routes = [
     { path: 'content-guidelines', component: ContentGuidelinesComponent, pathMatch: 'full' },
     { path: 'grammar-punctuation', component: GrammarPunctuationComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
-  ]},
+  ] }
 ];
 
 @NgModule({

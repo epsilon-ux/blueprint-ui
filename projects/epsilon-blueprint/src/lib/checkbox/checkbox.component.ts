@@ -19,15 +19,15 @@ export class CheckboxComponent implements OnInit, OnChanges {
   @Output() change = new EventEmitter();
 
   checked;
-  
+
   constructor() { }
-  
-  ngOnInit() {
+
+  ngOnInit(): void {
     this.checked = this.isChecked;
     this.validation();
   }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes): void {
     if (changes.isChecked && !changes.isChecked.firstChange) {
       this.checked = changes.isChecked.currentValue;
     }
@@ -35,7 +35,7 @@ export class CheckboxComponent implements OnInit, OnChanges {
 
   validation() {
     if (!this.label) {
-      let err = new Error('\'label\' is a required Input of bp-checkbox');
+      const err = new Error('\'label\' is a required Input of bp-checkbox');
       err.name = 'Missing Input';
       throw err;
     }
@@ -45,4 +45,5 @@ export class CheckboxComponent implements OnInit, OnChanges {
     e.stopPropagation();
     this.change.emit(e);
   }
+
 }

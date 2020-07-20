@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableFiltersComponent implements OnInit {
 
-  headingText = "Table Filters";
+  headingText = 'Table Filters';
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

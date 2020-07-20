@@ -23,3 +23,56 @@
         font-weight: $font-weight-semi-bold;
     }
 }
+
+// TODO: copied from messaging - eventually move this into a component
+.nav-pills
+{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .nav-item
+  {
+    flex: 0 0 auto;
+
+    .nav-link
+    {
+      margin-right: 10px;
+      border-radius: 20px;
+      padding: 6px 20px 7px;
+      color: $font-color-primary;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-regular;
+
+      &.active
+      {
+        background: $ice;
+        color: $accent-color-primary;
+        font-weight: $font-weight-semi-bold;
+      }
+
+      &.disabled
+      {
+        color: $font-color-secondary;
+      }
+
+      &:hover:not(.active):not(.disabled)
+      {
+        font-weight: $font-weight-semi-bold;
+      }
+
+      &:focus:not(.disabled):not([disabled])
+      {
+        box-shadow: $box-shadow-focus-default-inset;
+      }
+    }
+
+    &:last-child
+    {
+      .nav-link
+      {
+        margin-right: 0;
+      }
+    }
+  }
+}

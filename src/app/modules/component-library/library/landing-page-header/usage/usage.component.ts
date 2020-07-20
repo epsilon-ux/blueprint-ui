@@ -14,13 +14,13 @@ export class UsageComponent implements OnInit {
     },
     {
       text: 'Item 2',
-      routerLink: ''
+      bpRouterLink: ''
     }
   ];
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   handleAction(e) { }
 

@@ -9,7 +9,7 @@ export class ToggletipComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
