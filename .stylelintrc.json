@@ -9,7 +9,8 @@
       "always",
       {
         "ignore": [
-          "after-comment"
+          "after-comment",
+          "blockless-after-same-name-blockless"
         ]
       }
     ],
@@ -361,9 +362,11 @@
     "selector-attribute-operator-space-after": "never",
     "selector-attribute-operator-space-before": "never",
     "selector-attribute-quotes": "always",
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
     "selector-descendant-combinator-no-non-space": true,
+    "selector-id-pattern": "^[a-z][a-zA-Z0-9]+$",
     "selector-list-comma-newline-after": "always",
     "selector-list-comma-space-before": "never",
     "selector-max-attribute": 2,
@@ -414,13 +417,14 @@
     "scss/dollar-variable-empty-line-after": [
       "always",
       {
-        "except": ["before-dollar-variable"]
+        "ignore": ["before-dollar-variable"]
       }
     ],
     "scss/dollar-variable-empty-line-before": [
       "always",
       {
-        "except": ["first-nested"]
+        "except": ["first-nested"],
+        "ignore": ["after-dollar-variable"]
       }
     ],
     "scss/dollar-variable-first-in-block": [
@@ -429,6 +433,7 @@
         "ignore": ["imports"]
       }
     ],
+    "scss/dollar-variable-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
     "scss/double-slash-comment-whitespace-inside": "always",
     "scss/function-quote-no-quoted-strings-inside": true,
     "scss/function-unquote-no-unquoted-strings-inside": true,
