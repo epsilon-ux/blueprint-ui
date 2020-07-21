@@ -76,16 +76,22 @@
             <td></td>
           </tr>
           <tr>
+            <td>action</td>
+            <td>string</td>
+            <td>A string to be emitted on click of the dropdown item.</td>
+            <td>Item can only have one of the following: bpRouterLink, href, or action.</td>
+          </tr>
+          <tr>
             <td>href</td>
             <td>string</td>
             <td>The value for the dropdown item's href attribute.</td>
-            <td>Item cannot have both href and bpRouterLink.</td>
+            <td>Item can only have one of the following: bpRouterLink, href, or action.</td>
           </tr>
           <tr>
             <td>bpRouterLink</td>
             <td>string</td>
             <td>The value for the dropdown item's routerLink attribute.</td>
-            <td>Item cannot have both href and bpRouterLink.</td>
+            <td>Item can only have one of the following: bpRouterLink, href, or action.</td>
           </tr>
           <tr>
             <td>target</td>
@@ -125,7 +131,7 @@
         <tbody>
           <tr>
             <td>click</td>
-            <td>Emits an event on click of the dropdown item, if it is a button.</td>
+            <td>Emits an event on click of the dropdown item, if it is a button. It will emit the string provided in that item's action property.</td>
           </tr>
         </tbody>
       </table>
