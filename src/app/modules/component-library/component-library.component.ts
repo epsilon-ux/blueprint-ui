@@ -105,6 +105,10 @@ export class ComponentLibraryComponent {
           {
             text: 'Secondary Navigation',
             route: './nav-secondary'
+          },
+          {
+            text: 'Collapsible Panel',
+            route: './collapsible-panel'
           }
         ]
       },

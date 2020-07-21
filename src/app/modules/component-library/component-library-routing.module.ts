@@ -72,6 +72,9 @@ const routes: Routes = [
     { path: 'nav-secondary', loadChildren: () => import('./library/nav-secondary/nav-secondary.module')
       .then(m => m.NavSecondaryLibraryModule) },
 
+    { path: 'collapsible-panel', loadChildren: () => import('./library/collapsible-panel/collapsible-panel.module')
+      .then(m => m.CollapsiblePanelLibraryModule) },
+
     // Large components
     { path: 'table', loadChildren: () => import('./library/table/table.module')
       .then(m => m.TableLibraryModule) },
