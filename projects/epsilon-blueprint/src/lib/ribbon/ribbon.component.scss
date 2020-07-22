@@ -7,16 +7,28 @@
   padding: 10px 15px;
   font-weight: $font-weight-semi-bold;
 
+  &.ribbon-info
+  {
+    border: 1px solid $accent-color-primary;
+    background: $ice;
+  }
+
+  &.ribbon-success
+  {
+    border: 1px solid $feedback-color-success;
+    background: rgba($feedback-color-success, 0.1);
+  }
+
   &.ribbon-alert
   {
     border: 1px solid $feedback-color-alert;
     background: rgba($feedback-color-alert, 0.2);
   }
 
-  &.ribbon-info
+  &.ribbon-warning
   {
-    border: 1px solid $accent-color-primary;
-    background: $ice;
+    border: 1px solid $feedback-color-warning;
+    background: rgba($feedback-color-warning, 0.1);
   }
 }
 
