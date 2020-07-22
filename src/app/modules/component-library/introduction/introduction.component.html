@@ -64,4 +64,53 @@
       </p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <h3>Automated code quality tooling</h3>
+      <h4>stylelint</h4>
+      <ol>
+        <li>
+          Run <code>npm install stylelint stylelint-config-standard --save-dev</code>
+        </li>
+        <li>
+          Run <code>npm install stylelint-order --save-dev</code>
+        </li>
+        <li>
+          Run <code>npm install stylelint-scss --save-dev</code>
+        </li>
+        <li>
+          Add the <a href="https://github.com/epsilon-ux/resources/blob/master/configs/.stylelintrc.json" target="_blank" class="link-primary">stylelint config</a> to the root of the project
+        </li>
+        <li>
+          In the application's package.json file, add the following script: <code>"stylelint": "stylelint '**/*.scss'"</code>
+        </li>
+      </ol>
+
+      <h4>ESLint</h4>
+      <ol class="mb-5">
+        <li>
+          Run <code>npm install eslint --save-dev</code>
+        </li>
+        <li>
+          Run <code>npm install @typescript-eslint/parser --save-dev</code>
+        </li>
+        <li>
+          Run <code>npm install @typescript-eslint/eslint-plugin --save-dev</code>
+        </li>
+        <li>
+          Run <code>npm install @angular-eslint/eslint-plugin --save-dev</code>
+        </li>
+        <li>
+          Add the <a href="https://github.com/epsilon-ux/resources/blob/master/configs/.eslintrc.json" target="_blank" class="link-primary">ESLint config</a> to the root of the project
+        </li>
+        <li>
+          Add the <a href="https://github.com/epsilon-ux/resources/blob/master/configs/.eslintignore" target="_blank" class="link-primary">ESLint ignore</a> to the root of the project
+        </li>
+        <li>
+          In the application's package.json file, add the following script: <code>"eslint": "eslint 'src/**/*.ts'"</code>
+        </li>
+      </ol>
+    </div>
+  </div>
 </section>
