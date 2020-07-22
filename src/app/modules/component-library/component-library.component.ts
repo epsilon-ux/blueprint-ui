@@ -50,6 +50,10 @@ export class ComponentLibraryComponent {
             route: './checkbox'
           },
           {
+            text: 'Collapsible Panel',
+            route: './collapsible-panel'
+          },
+          {
             text: 'Date & Time Picker',
             route: './date-time-picker'
           },
@@ -105,10 +109,6 @@ export class ComponentLibraryComponent {
           {
             text: 'Secondary Navigation',
             route: './nav-secondary'
-          },
-          {
-            text: 'Collapsible Panel',
-            route: './collapsible-panel'
           }
         ]
       },

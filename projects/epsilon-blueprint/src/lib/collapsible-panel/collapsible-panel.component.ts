@@ -7,17 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CollapsiblePanelComponent implements OnInit {
 
-  @Input() title: string;
   @Input() isPanelCollapsed = false;
   @Input() toggleAriaLabel = 'Toggle collapsible panel';
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.validation();
-  }
-
-  validation() { }
+  ngOnInit(): void { }
 
   togglePanel() {
     this.isPanelCollapsed = !this.isPanelCollapsed;
