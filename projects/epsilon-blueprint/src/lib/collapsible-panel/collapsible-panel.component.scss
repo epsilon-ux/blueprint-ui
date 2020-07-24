@@ -41,6 +41,12 @@
   }
 }
 
+.panel-collapsible.right
+{
+  border-right: 0px;
+  border-left: 1px solid $border-color-secondary;
+}
+
 /* collapsed */
 
 .panel-collapsible.collapsed

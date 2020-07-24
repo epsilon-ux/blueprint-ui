@@ -14,10 +14,17 @@
         </p>
       </div>
       <div class="col-12">
-        <div class="card mb-3 p-0">
-          <div class="card-body component-preview p-0">
-            <div class="demo-layout">
-              <bp-collapsible-panel></bp-collapsible-panel>
+        <div class="card mb-3">
+          <div class="card-body p-0">
+            <div class="demo-base-template">
+              <div class="demo-nav-primary display-2">Generic Primary Navigation</div>
+              <div class="demo-body">
+                <bp-collapsible-panel></bp-collapsible-panel>
+                <div class="demo-main">Main Content</div>
+                <bp-collapsible-panel
+                  [isRightPanel]="true"
+                ></bp-collapsible-panel>
+              </div>
             </div>
           </div>
         </div>
@@ -29,14 +36,21 @@
         </p>
       </div>
       <div class="col-12">
-        <div class="card mb-3 p-0">
-          <div class="card-body component-preview p-0">
-            <div class="demo-layout">
+        <div class="card mb-3">
+          <div class="card-body p-0">
+            <div class="demo-base-template">
+              <div class="demo-nav-primary display-2">Generic Primary Navigation</div>
               <bp-landing-page-header
-                  headingText="Generic Header"
-              >
-              </bp-landing-page-header>  
-              <bp-collapsible-panel></bp-collapsible-panel>
+                headingText="Generic Header"
+                [isMarginBottom]="false"
+              ></bp-landing-page-header>
+              <div class="demo-body">
+                <bp-collapsible-panel></bp-collapsible-panel>
+                <div class="demo-main">Main Content</div>
+                <bp-collapsible-panel
+                  [isRightPanel]="true"
+                ></bp-collapsible-panel>
+              </div>
             </div>
           </div>
         </div>
@@ -48,15 +62,23 @@
         </p>
       </div>
       <div class="col-12">
-        <div class="card mb-3 p-0">
-          <div class="card-body component-preview p-0">
-            <div class="demo-layout">
-              <bp-collapsible-panel></bp-collapsible-panel>
-              <bp-landing-page-header
-                headingText="Generic Header"
-              >
-              </bp-landing-page-header>
-              <bp-collapsible-panel></bp-collapsible-panel>
+        <div class="card mb-3">
+          <div class="card-body p-0">
+            <div class="demo-base-template">
+              <div class="demo-nav-primary display-2">Generic Primary Navigation</div>
+              <div class="demo-body">
+                <bp-collapsible-panel></bp-collapsible-panel>
+                <div class="demo-main-content">
+                  <bp-landing-page-header
+                    headingText="Generic Header"
+                    [isMarginBottom]="false"
+                  ></bp-landing-page-header>
+                  <div class="demo-body">
+                    <bp-collapsible-panel></bp-collapsible-panel>
+                    <div class="demo-main">Main Content</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
