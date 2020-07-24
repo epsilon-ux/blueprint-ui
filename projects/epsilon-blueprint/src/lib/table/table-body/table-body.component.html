@@ -41,7 +41,7 @@
           [text]="rowData[column.key]"
           classes="btn-text"
           [ariaLabel]="parseLookupString(column.link.ariaLabel, rowData)"
-          [bpRouterLink]="column.link.bpRouterLink ? parseLookupString(column.link.bpRouterLink, rowData)  : null"
+          [bpRouterLink]="column.link.bpRouterLink ? parseLookupString(column.link.bpRouterLink, rowData) : null"
           [href]="column.link.href ? parseLookupString(column.link.href, rowData) : null"
           (click)="column.link.action ? emitAction(column.link.action, rowData[properties.rowId]) : null"
         ></bp-action>
