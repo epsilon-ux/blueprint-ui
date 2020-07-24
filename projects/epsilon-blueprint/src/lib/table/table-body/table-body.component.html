@@ -37,12 +37,14 @@
     >
       <!-- Link Column -->
       <ng-container *ngSwitchCase="columnType.LINK">
-        <app-links
-          [rowData]="rowData"
-          [linkText]="rowData[column.key]"
-          [linkProperties]="column.link"
-          (emitAction)="emitAction($event, rowData[properties.rowId])"
-        ></app-links>
+        <bp-action
+          [text]="rowData[column.key]"
+          classes="btn-text"
+          [ariaLabel]="parseLookupString(column.link.ariaLabel, rowData)"
+          [bpRouterLink]="column.link.bpRouterLink ? parseLookupString(column.link.bpRouterLink, rowData)  : null"
+          [href]="column.link.href ? parseLookupString(column.link.href, rowData) : null"
+          (click)="column.link.action ? emitAction(column.link.action, rowData[properties.rowId]) : null"
+        ></bp-action>
       </ng-container>
       <!-- Icon Column -->
       <ng-container *ngSwitchCase="columnType.ICON">

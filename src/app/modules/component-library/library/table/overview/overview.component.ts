@@ -58,7 +58,6 @@ export class OverviewComponent implements OnInit {
           isColumnDisplayed: true,
           type: ColumnType.LINK,
           link: {
-            element: 'a',
             ariaLabel: 'go to Object #{id}',
             target: '',
             bpRouterLink: 'object/#{id}'
@@ -71,10 +70,8 @@ export class OverviewComponent implements OnInit {
           type: ColumnType.LINK,
           isSortable: false,
           link: {
-            element: 'a',
             ariaLabel: 'go to Object #{id}',
-            target: '_blank',
-            href: 'https://www.example.com'
+            action: 'testAction'
           }
         },
         {
@@ -105,7 +102,7 @@ export class OverviewComponent implements OnInit {
         }
       ],
       sort: {
-        defaultSortedColumn: 'phone',
+        defaultSortedColumn: 'amount',
         defaultSortOrder: 'ascending'
       },
       hasSelectableRows: true,

@@ -14,7 +14,6 @@ import { ColumnSelectorComponent } from './table-footer/column-selector/column-s
 import { DisplayDensityComponent } from './table-footer/display-density/display-density.component';
 import { ViewSelectorComponent } from './table-footer/view-selector/view-selector.component';
 import { ActionsComponent } from './table-body/table-columns/actions/actions.component';
-import { LinksComponent } from './table-body/table-columns/links/links.component';
 import { SelectAllCheckboxComponent } from './select-all-checkbox/select-all-checkbox.component';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { SelectAllCheckboxComponent } from './select-all-checkbox/select-all-che
     ColumnSelectorComponent,
     ViewSelectorComponent,
     ActionsComponent,
-    LinksComponent,
     SelectAllCheckboxComponent
   ],
   imports: [
