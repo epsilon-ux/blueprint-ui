@@ -1,13 +1,12 @@
-@import '../styles/global-variables';
+@import "../styles/global-variables";
 
 // The top utility class(es) in each pairing map(s) to Bootstrap's naming conventions
 // The bottom utility class(es) in each pairing map(s) to Blueprint's naming conventions
 
 // Bootstrap is using !important, so we need to use it in order to override Bootstrap until we remove Bootstrap
 
-//
 // text colors
-//
+// stylelint-disable declaration-no-important
 
 .text-body,
 .text-color-midnight,
@@ -45,9 +44,7 @@
   color: $feedback-color-warning !important;
 }
 
-//
 // icon colors
-//
 
 .icon-color-midnight
 {
@@ -64,9 +61,7 @@
   color: $feedback-color-warning !important;
 }
 
-//
 // border colors
-//
 
 .border-color-transparent
 {
@@ -85,9 +80,7 @@
   border-color: $border-color-secondary !important;
 }
 
-//
 // background colors
-//
 
 .bg-transparent
 {

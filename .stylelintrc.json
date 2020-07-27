@@ -417,20 +417,14 @@
     "scss/dollar-variable-empty-line-after": [
       "always",
       {
-        "ignore": ["before-dollar-variable"]
+        "except": ["before-dollar-variable"]
       }
     ],
     "scss/dollar-variable-empty-line-before": [
       "always",
       {
-        "except": ["first-nested"],
-        "ignore": ["after-dollar-variable"]
-      }
-    ],
-    "scss/dollar-variable-first-in-block": [
-      "always",
-      {
-        "ignore": ["imports"]
+        
+        "except": ["first-nested", "after-dollar-variable"]
       }
     ],
     "scss/dollar-variable-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",

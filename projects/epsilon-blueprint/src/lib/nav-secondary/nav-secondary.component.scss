@@ -1,14 +1,15 @@
-@import '../../styles/global-variables';
+@import "../../styles/global-variables";
+// stylelint-disable no-descending-specificity
 
 .nav-secondary
 {
+  z-index: 2;
   width: 200px;
   height: 100%;
+  overflow-y: auto;
   border-right: 1px solid $border-color-secondary;
   background: $coconut;
-  transition: width .25s ease-out;
-  z-index: 2;
-  overflow-y: auto;
+  transition: width 0.25s ease-out;
 
   .toggle-wrapper
   {
@@ -25,8 +26,8 @@
     padding: 0;
     background: $coconut;
     color: $accent-color-primary;
-    font-size: $font-size-lg;
     font-weight: $font-weight-semi-bold;
+    font-size: $font-size-lg;
 
     &:hover
     {
@@ -42,9 +43,9 @@
 
   .title
   {
-    margin: 0 20px 15px 20px;
-    font-size: $font-size-lg;
+    margin: 0 20px 15px;
     font-weight: $font-weight-regular;
+    font-size: $font-size-lg;
   }
 
   .nav-list
@@ -56,22 +57,22 @@
 
   .nav-item
   {
-    margin: 0 0 2px 0;
+    margin: 0 0 2px;
 
     .nav-link-parent
     {
-      border: none;
       width: 100%;
-      text-align: left;
+      border: 0;
       background: transparent;
+      text-align: left;
 
       &::after
       {
-        content: $icon-chevron-down;
         margin-left: 5px;
-        font-family: $font-family-icon;
+        content: $icon-chevron-down;
         font-weight: $font-weight-semi-bold;
         font-size: 0.875em;
+        font-family: $font-family-icon;
       }
 
       &.collapsed
@@ -94,10 +95,10 @@
     .nav-link-parent
     {
       border-left: 5px solid transparent;
-      padding: 8px 15px 9px 15px;
-      font-size: $font-size-md;
-      font-weight: $font-weight-regular;
+      padding: 8px 15px 9px;
       color: $font-color-primary;
+      font-weight: $font-weight-regular;
+      font-size: $font-size-md;
 
       &:hover
       {
@@ -120,63 +121,76 @@
     }
 
     // Nesting 1
-    > .nested-list > .nav-item
+    > .nested-list
     {
-      > .nav-link,
-      > .nav-link-parent
-      {
-        padding-left: 35px;
-      }
-
-      // Nesting 2
-      > .nested-list > .nav-item
+      & > .nav-item
       {
         > .nav-link,
         > .nav-link-parent
         {
-          padding-left: 55px;
+          padding-left: 35px;
         }
 
-        // Nesting 3
-        > .nested-list > .nav-item
+        // Nesting 2
+        > .nested-list
         {
-          > .nav-link,
-          > .nav-link-parent
+          & > .nav-item
           {
-            padding-left: 75px;
+            > .nav-link,
+            > .nav-link-parent
+            {
+              padding-left: 55px;
+            }
+
+            // Nesting 3
+            > .nested-list
+            {
+              & > .nav-item
+              {
+                > .nav-link,
+                > .nav-link-parent
+                {
+                  padding-left: 75px;
+                }
+              }
+            }
           }
         }
       }
     }
   }
-}
 
-/* collapsed */
 
-.nav-secondary.collapsed
-{
-  width: 30px;
+  /* collapsed */
 
-  .toggle
+  &.collapsed
   {
-    border-bottom: 1px solid $border-color-secondary;
-    background: $ice;
+    width: 30px;
 
-    &:hover
+    .toggle
     {
-      border: 0;
-      background: $accent-color-primary-hover;
-      color: $coconut;
+      border-bottom: 1px solid $border-color-secondary;
+      background: $ice;
+
+      &:hover
+      {
+        border: 0;
+        background: $accent-color-primary-hover;
+        color: $coconut;
+      }
+
+      &::after
+      {
+        content: $icon-menu;
+      }
     }
 
-    &::after
+    :not(.toggle-wrapper)
     {
-      content: $icon-menu;
+      &:not(.toggle)
+      {
+        display: none;
+      }
     }
-  }
-
-  :not(.toggle-wrapper):not(.toggle)
-  {
-    display: none;
   }
 }

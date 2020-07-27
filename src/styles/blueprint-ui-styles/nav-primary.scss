@@ -1,11 +1,11 @@
-@import '../../../dist/epsilon-blueprint/styles/global-variables';
+@import "../../../dist/epsilon-blueprint/styles/global-variables";
 
 .navbar
 {
+  z-index: 1001;
   box-shadow: $box-shadow-nav-primary;
   padding: 0;
   background: $coconut;
-  z-index: 1001;
 }
 
 .logo-link

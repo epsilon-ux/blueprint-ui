@@ -1,16 +1,16 @@
-@import '../../dist/epsilon-blueprint/styles/global-variables';
-
+@import "../../dist/epsilon-blueprint/styles/global-variables";
+// stylelint-disable selector-type-no-unknown
 .skip-link
 {
   position: absolute;
   top: -50px;
   left: 0;
+  z-index: 100;
   border: 0;
   padding: 5px 10px;
   background: $accent-color-primary;
   color: $coconut;
   transition: top 1s ease-out;
-  z-index: 100;
 
   &:hover
   {

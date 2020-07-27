@@ -1,46 +1,64 @@
-@import '../global-variables';
+@import "../global-variables";
 
 // cui notification = blueprint overlay message
+// stylelint-disable selector-class-pattern
 
-.Clr-PageNotification.Clr-PageNotification
+.Clr-PageNotification
 {
-  min-width: 420px;
-  margin: 15px 0;
-  border-radius: 0;
-  border-width: 5px 1px 1px;
-  border-style: solid;
-  border-color: $feedback-color-success;
-  padding: 15px;
-  background-color: $coconut;
-  color: $font-color-primary;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semi-bold;
-  text-align: center;
-
-  &.Clr-PageNotification--success.Clr-PageNotification--success
+  &.Clr-PageNotification
   {
+    min-width: 420px;
+    margin: 15px 0;
+    border-radius: 0;
+    border-width: 5px 1px 1px;
+    border-style: solid;
     border-color: $feedback-color-success;
+    padding: 15px;
     background-color: $coconut;
-  }
+    color: $font-color-primary;
+    font-weight: $font-weight-semi-bold;
+    font-size: $font-size-lg;
+    text-align: center;
 
-  &.Clr-PageNotification--warning.Clr-PageNotification--warning,
-  &.Clr-PageNotification--error.Clr-PageNotification--error
-  {
-    border-color: $feedback-color-warning;
-    background-color: $coconut;
+    &.Clr-PageNotification--success
+    {
+      &.Clr-PageNotification--success
+      {
+        border-color: $feedback-color-success;
+        background-color: $coconut;
+      }
+    }
+
+    &.Clr-PageNotification--warning &.Clr-PageNotification--warning
+    {
+      &.Clr-PageNotification--error
+      {
+        &.Clr-PageNotification--error
+        {
+          border-color: $feedback-color-warning;
+          background-color: $coconut;
+        }
+      }
+    }
   }
 }
 
 .Clr-Panel--Flash
 {
-  >.Clr-Panel-content.Clr-Panel-content
+  > .Clr-Panel-content
   {
-    top: 70px;
+    &.Clr-Panel-content
+    {
+      top: 70px;
+    }
   }
 
-  & .Clr-PageNotification.Clr-PageNotification
+  & .Clr-PageNotification
   {
-    box-shadow: $box-shadow-primary;
-    border-radius: 0;
+    &.Clr-PageNotification
+    {
+      box-shadow: $box-shadow-primary;
+      border-radius: 0;
+    }
   }
 }

@@ -1,41 +1,62 @@
-@import 'projects/epsilon-blueprint/src/styles/_global-variables';
+@import "projects/epsilon-blueprint/src/styles/_global-variables";
 
 .table-contrast
 {
   padding: 20px;
 
-  .table.table-bordered-rows
+  .table
   {
-    margin: 0;
-
-    &.light
+    &.table-bordered-rows
     {
-      th,
-      td
+      margin: 0;
+
+      &.light
       {
-        border-color: $coconut;
-        color: $coconut;
-      }
-    }
-
-    thead tr th
-    {
-      padding-top: 0;
-    }
-
-    tbody tr th,
-    tbody tr td
-    {
-      font-weight: $font-weight-regular;
-
-      &.text-color-shamrock
-      {
-        color: $shamrock;
+        th,
+        td
+        {
+          border-color: $coconut;
+          color: $coconut;
+        }
       }
 
-      &.text-color-clementine
+      thead
       {
-        color: $clementine;
+        &tr
+        {
+          &th
+          {
+            padding-top: 0;
+          }
+        }
+      }
+
+      tbody
+      {
+        &tr
+        {
+          &th,
+          tbody
+          {
+            &tr
+            {
+              &td
+              {
+                font-weight: $font-weight-regular;
+
+                &.text-color-shamrock
+                {
+                  color: $shamrock;
+                }
+
+                &.text-color-clementine
+                {
+                  color: $clementine;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

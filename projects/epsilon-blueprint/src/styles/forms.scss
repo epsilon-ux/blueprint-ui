@@ -1,3 +1,4 @@
+// stylelint-disable selector-type-no-unknown
 .form-group
 {
   margin-bottom: 20px;
@@ -21,8 +22,8 @@ label
 
   &::placeholder
   {
-    color: $font-color-secondary;
     opacity: 1;
+    color: $font-color-secondary;
   }
 
   &:focus
@@ -35,17 +36,17 @@ label
   &:disabled,
   &[readonly]
   {
+    opacity: 1;
     border-color: rgba($border-color-primary, 0.5);
     background-color: $coconut;
     color: $font-color-secondary;
-    opacity: 1;
     cursor: not-allowed;
 
     &::placeholder
     {
+      opacity: 1;
       // TODO: this is a temporary fix for minimum contrast, KL to work with CC on a longterm solution
       color: $font-color-secondary;
-      opacity: 1;
     }
   }
 
@@ -74,8 +75,14 @@ label
 }
 
 // vertically aligns checkbox/radio button with inline toggletip
-bp-checkbox + bp-toggletip,
-bp-radio-button + bp-toggletip
+bp-checkbox
 {
-  transform: translateY(-3px);
+  & + bp-toggletip,
+  bp-radio-button
+  {
+    & + bp-toggletip
+    {
+      transform: translateY(-3px);
+    }
+  }
 }

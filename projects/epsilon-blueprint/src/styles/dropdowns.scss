@@ -68,28 +68,34 @@
 
   &:disabled
   {
-    border: none;
+    border: 0;
     background: transparent;
     color: $font-color-secondary;
     pointer-events: initial;
     cursor: not-allowed;
   }
 
-  &.is-destructive:not(:disabled):not(.disabled)
+  &.is-destructive
   {
-    color: $feedback-color-warning;
-
-    &:hover,
-    &:focus
+    &:not(:disabled)
     {
-      border-color: transparent;
-      background: $feedback-color-warning;
-      color: $coconut;
-    }
+      &:not(.disabled)
+      {
+        color: $feedback-color-warning;
 
-    &:focus
-    {
-      box-shadow: $box-shadow-focus-warning;
+        &:hover,
+        &:focus
+        {
+          border-color: transparent;
+          background: $feedback-color-warning;
+          color: $coconut;
+        }
+
+        &:focus
+        {
+          box-shadow: $box-shadow-focus-warning;
+        }
+      }
     }
   }
 }

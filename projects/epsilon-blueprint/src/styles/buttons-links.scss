@@ -1,3 +1,4 @@
+// stylelint-disable no-descending-specificity
 a,
 .link-primary
 {
@@ -12,29 +13,59 @@ a,
   }
 }
 
-button.btn-text
+button
 {
-  outline: unset;
-  border: none;
-  padding: 0;
-  background: none;
-  color: $accent-color-primary;
-  font-weight: $font-weight-semi-bold;
-
-  &:not(:disabled):not(.disabled):hover
-  {
-    color: $accent-color-primary;
-    text-decoration: underline;
-  }
-
-  &:disabled
+  &.btn-text
   {
     outline: unset;
-    border: none;
+    border: 0;
     padding: 0;
     background: none;
-    color: $font-color-secondary;
-    font-weight: $font-weight-regular;
+    color: $accent-color-primary;
+    font-weight: $font-weight-semi-bold;
+
+    &:not(:disabled)
+    {
+      &:not(.disabled)
+      {
+        &:hover
+        {
+          color: $accent-color-primary;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &:disabled
+    {
+      outline: unset;
+      border: 0;
+      padding: 0;
+      background: none;
+      color: $font-color-secondary;
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  &:disabled,
+  button
+  {
+    &[disabled],
+    .btn
+    {
+      &:disabled,
+      .btn
+      {
+        &[disabled]
+        {
+          opacity: 1;
+          border: 1px solid $border-color-secondary;
+          background: $mist;
+          color: $font-color-secondary;
+          cursor: not-allowed;
+        }
+      }
+    }
   }
 }
 
@@ -45,12 +76,24 @@ button.btn-text
   font-size: $font-size-md;
   white-space: nowrap;
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active
+  &:not(:disabled)
   {
-    border-color: transparent;
-    background: $storm;
-    color: $coconut;
+    &:not(.disabled)
+    {
+      &:active,
+      &:not(:disabled)
+      {
+        &:not(.disabled)
+        {
+          &.active
+          {
+            border-color: transparent;
+            background: $storm;
+            color: $coconut;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -71,11 +114,17 @@ button.btn-text
 .btn-primary,
 .btn-outline-primary
 {
-  &:not(:disabled):not(.disabled):hover
+  &:not(:disabled)
   {
-    border-color: transparent;
-    background: $accent-color-primary-hover;
-    color: $coconut;
+    &:not(.disabled)
+    {
+      &:hover
+      {
+        border-color: transparent;
+        background: $accent-color-primary-hover;
+        color: $coconut;
+      }
+    }
   }
 }
 
@@ -96,23 +145,29 @@ button.btn-text
 .btn-danger,
 .btn-outline-danger
 {
-  &:not(:disabled):not(.disabled):hover
+  &:not(:disabled)
   {
-    border-color: transparent;
-    background: $feedback-color-warning-hover;
-    color: $coconut;
-  }
+    &:not(.disabled)
+    {
+      &:hover
+      {
+        border-color: transparent;
+        background: $feedback-color-warning-hover;
+        color: $coconut;
+      }
 
-  &:not(:disabled):not(.disabled):focus
-  {
-    box-shadow: $box-shadow-focus-warning;
+      &:focus
+      {
+        box-shadow: $box-shadow-focus-warning;
+      }
+    }
   }
 }
 
 .btn-sm
 {
-  min-width: 60px;
   height: 22px;
+  min-width: 60px;
   padding: 2px 6px;
 }
 
@@ -177,8 +232,8 @@ button.btn-text
 
   &.btn-input-addon-clear
   {
-    border-left: 0;
     border-color: $border-color-primary;
+    border-left: 0;
 
     &:hover
     {
@@ -188,11 +243,14 @@ button.btn-text
     }
   }
 
-  & i:nth-of-type(2n)
+  & i
   {
-    // for input addons with one button and two icons
-    // e.g.: date + time pickers with calendar and clock icons
-    padding-left: 8px;
+    &:nth-of-type(2n)
+    {
+      // for input addons with one button and two icons
+      // e.g.: date + time pickers with calendar and clock icons
+      padding-left: 8px;
+    }
   }
 }
 
@@ -201,6 +259,19 @@ button.btn-text
   width: 30px;
   height: 30px;
   padding: 5px;
+
+  &:disabled,
+  .btn-icon
+  {
+    &[disabled]
+    {
+      border: 1px solid $border-color-secondary;
+      background: $mist;
+      color: $font-color-secondary;
+      font-weight: $font-weight-regular;
+      cursor: not-allowed;
+    }
+  }
 }
 
 .btn-icon-inline
@@ -216,28 +287,6 @@ button.btn-text
   {
     color: $accent-color-primary-hover;
   }
-}
-
-.btn-icon:disabled,
-.btn-icon[disabled]
-{
-  border: 1px solid $border-color-secondary;
-  background: $mist;
-  color: $font-color-secondary;
-  font-weight: $font-weight-regular;
-  cursor: not-allowed;
-}
-
-button:disabled,
-button[disabled],
-.btn:disabled,
-.btn[disabled]
-{
-  border: 1px solid $border-color-secondary;
-  background: $mist;
-  color: $font-color-secondary;
-  opacity: 1;
-  cursor: not-allowed;
 }
 
 .icon-left

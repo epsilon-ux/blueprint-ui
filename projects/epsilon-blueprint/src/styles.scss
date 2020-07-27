@@ -29,15 +29,18 @@
 
 body
 {
-    color: $font-color-primary;
-    font-family: $font-family-default;
-    font-size: $font-size-body;
-    font-weight: $font-weight-regular;
+  color: $font-color-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-body;
+  font-family: $font-family-default;
 }
 
 :focus,
-button:focus
+button
 {
-    outline: none;
+  &:focus
+  {
     box-shadow: $box-shadow-focus-default;
+    outline: none;
+  }
 }

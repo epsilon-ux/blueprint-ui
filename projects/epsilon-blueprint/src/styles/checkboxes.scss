@@ -2,118 +2,122 @@
 
 // This stylesheet affects checkboxes and the select all checkbox
 
+// stylelint-disable no-descending-specificity
+
 .checkbox
 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .checkbox-input
 {
-    position: absolute;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    clip: rect(0,0,0,0);
-    overflow: hidden;
-    opacity: 0;
-    -webkit-appearance: none;
-    pointer-events: none;
+  position: absolute;
+  box-sizing: border-box;
+  clip-path: rect(0, 0, 0, 0);
+  overflow: hidden;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+  pointer-events: none;
 
+  + .checkbox-label
+    {
+    position: relative;
+    display: inline;
+    vertical-align: middle;
+    padding-left: 22px;
+    line-height: 17px;
+    cursor: pointer;
+
+    &::before
+        {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $border-color-primary;
+      background: $coconut;
+      content: "";
+    }
+  }
+
+  &:checked,
+  &[aria-checked="mixed"],
+  &[aria-checked="true"]
+    {
     + .checkbox-label
-    {
-        display: inline;
-        position: relative;
-        vertical-align: middle;
-        padding-left: 22px;
-        line-height: 17px;
-        cursor: pointer;
-
-        &::before
         {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 16px;
-            height: 16px;
-            border: 1px solid $border-color-primary;
-            background: $coconut;
-        }
-    }
-
-    &:checked,
-    &[aria-checked="mixed"],
-    &[aria-checked="true"]
-    {
-        + .checkbox-label
-        {
-            &::before
+      &::before
             {
-                border: transparent;
-                background: $accent-color-primary;
-            }
-        }
+        border: transparent;
+        background: $accent-color-primary;
+      }
     }
+  }
 
-    &:checked,
-    &[aria-checked="true"]
+  &:checked,
+  &[aria-checked="true"]
     {
-        + .checkbox-label // checkmark
+    + .checkbox-label // checkmark
         {
-            &::after
+      &::after
             {
-                content: $icon-checkmark;
-                position: absolute;
-                left: 0;
-                color: $coconut;
-                font-family: $font-family-icon;
-                font-weight: $font-weight-semi-bold;
-                font-size: 16px;
-                transform: scale(0.75);
-            }
-        }
+        position: absolute;
+        left: 0;
+        content: $icon-checkmark;
+        color: $coconut;
+        font-weight: $font-weight-semi-bold;
+        font-size: 16px;
+        font-family: $font-family-icon;
+        transform: scale(0.75);
+      }
     }
+  }
 
-    &[aria-checked="mixed"]
+  &[aria-checked="mixed"]
     {
-        + .checkbox-label // dash
+    + .checkbox-label // dash
         {
-            &::after
+      &::after
             {
-                content: $icon-dash;
-                position: absolute;
-                left: 1px;
-                color: $coconut;
-                font-family: $font-family-icon;
-                font-weight: $font-weight-semi-bold;
-                font-size: 16px;
-                transform: scale(0.75);
-            }
-        }
+        position: absolute;
+        left: 1px;
+        content: $icon-dash;
+        color: $coconut;
+        font-weight: $font-weight-semi-bold;
+        font-size: 16px;
+        font-family: $font-family-icon;
+        transform: scale(0.75);
+      }
     }
+  }
 
-    &:focus,
-    &:focus:checked
+  &:focus
+  {
+    &:checked
     {
-        + .checkbox-label
-        {
-            &::before
-            {
-                box-shadow: $box-shadow-focus-default;
-            }
-        }
-    }
-
-    &:disabled
-    {
-        + .checkbox-label
-        {
-          cursor: not-allowed;
-
-          &::before
+      + .checkbox-label
           {
-            opacity: 0.5;
-          }
+        &::before
+              {
+          box-shadow: $box-shadow-focus-default;
         }
+      }
     }
+  }
+
+  &:disabled
+    {
+    + .checkbox-label
+        {
+      cursor: not-allowed;
+
+      &::before
+          {
+        opacity: 0.5;
+      }
+    }
+  }
 }
