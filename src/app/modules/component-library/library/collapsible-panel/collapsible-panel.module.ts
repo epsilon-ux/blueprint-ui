@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CollapsiblePanelModule } from 'epsilon-blueprint';
 import { LandingPageHeaderModule } from 'epsilon-blueprint';
+import { ActionModule } from 'epsilon-blueprint';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
 import { CollapsiblePanelRoutingModule } from './collapsible-panel-routing.module';
@@ -27,7 +29,9 @@ import { UsageComponent } from './usage/usage.component';
     RouterModule,
     ComponentHeaderModule,
     CollapsiblePanelModule,
-    LandingPageHeaderModule
+    LandingPageHeaderModule,
+    ActionModule,
+    MarkdownModule
   ],
   providers: [],
   exports: [CollapsiblePanelComponent]

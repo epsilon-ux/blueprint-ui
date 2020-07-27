@@ -12,4 +12,6 @@ export class UsageComponent implements OnInit {
   ngOnInit() {
   }
 
+  click = e => {};
+
 }

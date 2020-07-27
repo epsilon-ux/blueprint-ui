@@ -1,82 +1,133 @@
 <section class="container-fluid">
-    <div class="row">
-      <div class="col-lg-8 col-xl-7">
-        <p class="component-description">
-          The collapsible panel appears either directly below the top navigation or the page header, depending on the panel’s content. The panel can show up on either the left or the right side of the page.
-        </p>
-        <p>
-            As a general rule, navigation, filters, and drag & drop functionality should appear on the left side of the page.
-        </p>
-        <h2>Variations</h2>
-        <h3>Collapsible panels under top navigation</h3>
-        <p>
-          The collapsible panels appear directly below the top navigation. This placement is generally used for filters and navigation.
-        </p>
-      </div>
-      <div class="col-12">
-        <div class="card mb-3">
-          <div class="card-body p-0">
-            <div class="demo-base-template">
-              <div class="demo-nav-primary display-2">Generic Primary Navigation</div>
-              <div class="demo-body">
-                <bp-collapsible-panel></bp-collapsible-panel>
-                <div class="demo-main">Main Content</div>
-                <bp-collapsible-panel
-                  [isRightPanel]="true"
-                ></bp-collapsible-panel>
-              </div>
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        The collapsible panel appears either directly below the top navigation or the page header, depending on the panel's content. The panel can show up on either the left or the right side of the page.
+      </p>
+      <p>
+        As a general rule, navigation, filters, and drag & drop functionality should appear on the left side of the page.
+      </p>
+      <h2>Variations</h2>
+      <h3>Collapsible panels under top navigation</h3>
+      <p>
+        The collapsible panels appear directly below the top navigation. This placement is generally used for filters and navigation.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <div class="demo-nav-primary display-2">Generic Primary Navigation</div>
+            <div class="demo-body">
+              <bp-collapsible-panel></bp-collapsible-panel>
+              <div class="demo-main">Main Content</div>
+              <bp-collapsible-panel
+                [isPanelRight]="true"
+                [isPanelCollapsed]="true"
+              ></bp-collapsible-panel>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-8 col-xl-7">
-        <h3>Collapsible panels under object page header</h3>
-        <p>
-          Collapsible panels that appear below the object page header generally contain tabs, filters, or static content.
-        </p>
-      </div>
-      <div class="col-12">
-        <div class="card mb-3">
-          <div class="card-body p-0">
-            <div class="demo-base-template">
-              <div class="demo-nav-primary display-2">Generic Primary Navigation</div>
-              <bp-landing-page-header
-                headingText="Generic Header"
-                [isMarginBottom]="false"
-              ></bp-landing-page-header>
-              <div class="demo-body">
-                <bp-collapsible-panel></bp-collapsible-panel>
-                <div class="demo-main">Main Content</div>
-                <bp-collapsible-panel
-                  [isRightPanel]="true"
-                ></bp-collapsible-panel>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Collapsible panels under object page header</h3>
+      <p>
+        Collapsible panels that appear below the object page header generally contain tabs, filters, or static content.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <div class="demo-nav-primary display-2">
+              Generic Primary Navigation
+            </div>
+            <div class="container-fluid object-page-header pt-4">
+              <div class="row mb-2">
+                <div class="col">
+                  <bp-action
+                    text="Back"
+                    classes="btn btn-text"
+                    iconLeft="fa-angle-left"
+                    (click)="click()"
+                  ></bp-action>
+                </div>
               </div>
+              <div class="row mb-4 mb-lg-0">
+                <div class="col-12 col-lg">
+                  <h1 class="mb-0">New Object</h1>
+                  <p class="my-2 mb-lg-4">Object Type</p>
+                </div>
+                <div class="col-12 col-md-auto mt-2 mt-lg-0">
+                  <bp-action
+                    text="Primary Action"
+                    classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                    (click)="click"
+                  ></bp-action>
+                </div>
+              </div>
+            </div>
+            <div class="demo-body">
+              <bp-collapsible-panel></bp-collapsible-panel>
+              <div class="demo-main">Main Content</div>
+              <bp-collapsible-panel
+                [isPanelRight]="true"
+                [isPanelCollapsed]="true"
+              ></bp-collapsible-panel>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-8 col-xl-7">
-        <h3>Collapsible panels with mixed placements</h3>
-        <p>
-          This is an example of a collapsible panel appearing below the top navigation and another panel appearing below the object page header. This combination is used for when there is navigation in the first panel and content in the second.
-        </p>
-      </div>
-      <div class="col-12">
-        <div class="card mb-3">
-          <div class="card-body p-0">
-            <div class="demo-base-template">
-              <div class="demo-nav-primary display-2">Generic Primary Navigation</div>
-              <div class="demo-body">
-                <bp-collapsible-panel></bp-collapsible-panel>
-                <div class="demo-main-content">
-                  <bp-landing-page-header
-                    headingText="Generic Header"
-                    [isMarginBottom]="false"
-                  ></bp-landing-page-header>
-                  <div class="demo-body">
-                    <bp-collapsible-panel></bp-collapsible-panel>
-                    <div class="demo-main">Main Content</div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Collapsible panels with mixed placements</h3>
+      <p>
+        This is an example of a collapsible panel appearing below the top navigation and another panel appearing below the object page header. This combination is used for when there is navigation in the first panel and content in the second.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <div class="demo-nav-primary display-2">
+              Generic Primary Navigation
+            </div>
+            <div class="demo-app-body">
+              <bp-collapsible-panel></bp-collapsible-panel>
+              <div class="demo-app-main">
+                <div class="container-fluid object-page-header pt-4">
+                  <div class="row mb-2">
+                    <div class="col">
+                      <bp-action
+                        text="Back"
+                        classes="btn btn-text"
+                        iconLeft="fa-angle-left"
+                        (click)="click()"
+                      ></bp-action>
+                    </div>
                   </div>
+                  <div class="row mb-4 mb-lg-0">
+                    <div class="col-12 col-lg">
+                      <h1 class="mb-0">New Object</h1>
+                      <p class="my-2 mb-lg-4">Object Type</p>
+                    </div>
+                    <div class="col-12 col-md-auto mt-2 mt-md-0">
+                      <bp-action
+                        text="Primary Action"
+                        classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                        (click)="click"
+                      ></bp-action>
+                    </div>
+                  </div>
+                </div>
+                <div class="demo-body">
+                  <bp-collapsible-panel></bp-collapsible-panel>
+                  <div class="demo-main">Main Content</div>
+                  <bp-collapsible-panel
+                    [isPanelRight]="true"
+                    [isPanelCollapsed]="true"
+                  ></bp-collapsible-panel>
                 </div>
               </div>
             </div>
@@ -84,4 +135,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
