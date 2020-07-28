@@ -11,6 +11,9 @@ export * from './lib/badge/badge.module';
 export * from './lib/checkbox/checkbox.component';
 export * from './lib/checkbox/checkbox.module';
 
+export * from './lib/collapsible-panel/collapsible-panel.component';
+export * from './lib/collapsible-panel/collapsible-panel.module';
+
 export * from './lib/dropdown/dropdown.component';
 export * from './lib/dropdown/dropdown.module';
 
