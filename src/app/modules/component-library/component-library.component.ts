@@ -49,6 +49,10 @@ export class ComponentLibraryComponent {
             route: './checkbox'
           },
           {
+            text: 'Collapsible Panel',
+            route: './collapsible-panel'
+          },
+          {
             text: 'Date & Time Picker',
             route: './date-time-picker'
           },

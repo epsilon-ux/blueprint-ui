@@ -130,46 +130,23 @@ export class TableComponent implements OnInit, OnChanges {
         throw err;
       }
       if (
-        col.link
-        && !(col.link.element === 'a' || col.link.element === 'button')
-      ) {
-        const err = new Error(
-          `Link element must be either 'a' or 'button' in\n${JSON.stringify(
-            col
-          )}`
-        );
-        err.name = 'Invalid Input';
-        throw err;
-      }
-      if (
-        col.link
-        && col.link.element === 'a'
-        && !(col.link.bpRouterLink || col.link.href)
-      ) {
-        const err = new Error(
-          `Link must have either href or bpRouterLink when element is 'a' in\n${JSON.stringify(
-            col
-          )}`
-        );
-        err.name = 'Missing Input';
-        throw err;
-      }
-      if (col.link && col.link.element === 'button' && !col.link.action) {
-        const err = new Error(
-          `Link must have action when element is 'button' in\n${JSON.stringify(
-            col
-          )}`
-        );
-        err.name = 'Missing Input';
-        throw err;
-      }
-      if (
         col.icon
         && !(col.icon.color === 'warning' || col.icon.color === 'midnight')
       ) {
         console.warn(
           `"${col.icon.color}" invalid value for bp-table icon column color: expects either "midnight" or "warning".`
         );
+      }
+      if (col.link) {
+        if (col.link.path) {
+          console.warn('Table link property "path" is deprecated. Use bpRouterLink instead.');
+          if (!col.link.bpRouterLink) {
+            col.link.bpRouterLink = col.link.path;
+          }
+        }
+        if (col.link.element) {
+          console.warn('Table link property "element" is deprecated. It is no longer needed.');
+        }
       }
     });
 

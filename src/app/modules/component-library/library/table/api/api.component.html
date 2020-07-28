@@ -398,24 +398,6 @@
           </thead>
           <tbody>
             <tr>
-              <td>element</td>
-              <td>string</td>
-              <td>The element used for the link.</td>
-              <td>
-                <p>
-                  Expects either "a" or "button".
-                </p>
-                <p>
-                  Use "a" when the link
-                  column should route to another part of the application.
-                </p>
-                <p>
-                  Use "button" when the link column should perform an
-                  action on the page, e.g. opens a modal.
-                </p>
-              </td>
-            </tr>
-            <tr>
               <td>ariaLabel</td>
               <td>string</td>
               <td>
@@ -447,7 +429,7 @@
                 The string to be used in the link's routerLink attribute.
               </td>
               <td>
-                One of either bpRouterLink or href is required when element = "a".
+                One of either bpRouterLink, href, or action is required.
               </td>
             </tr>
             <tr>
@@ -455,8 +437,7 @@
               <td>string</td>
               <td>The string to be used in the link's href attribute.</td>
               <td>
-                One of either
-                bpRouterLink or href is required when element = "a".
+                One of either bpRouterLink, href, or action is required.
               </td>
             </tr>
             <tr>
@@ -466,7 +447,8 @@
                 The string to be emitted when the button is clicked.
               </td>
               <td>
-                Required if element = "button". See <a routerLink="." fragment="outputs">Outputs</a> for more
+                One of either bpRouterLink, href, or action is required.
+                See <a routerLink="." fragment="outputs">Outputs</a> for more
                 information on what is emitted.
               </td>
             </tr>

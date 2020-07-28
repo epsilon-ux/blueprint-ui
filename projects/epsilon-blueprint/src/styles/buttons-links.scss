@@ -287,6 +287,21 @@ button
   {
     color: $accent-color-primary-hover;
   }
+
+  &.btn-icon-inline-secondary
+  {
+    color: $font-color-secondary;
+
+    &:hover
+    {
+      color: $font-color-primary;
+    }
+  }
+
+  &.btn-icon-inline-lg
+  {
+    font-size: $font-size-lg;
+  }
 }
 
 .icon-left
