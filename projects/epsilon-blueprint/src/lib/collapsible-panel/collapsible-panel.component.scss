@@ -1,0 +1,78 @@
+@import '../../styles/global-variables';
+
+.panel-collapsible
+{
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid $border-color-secondary;
+  background: $coconut;
+  transition: width .25s ease-out;
+  z-index: 2;
+  overflow-y: auto;
+
+  .toggle-wrapper
+  {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  .toggle
+  {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    background: $coconut;
+    color: $accent-color-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semi-bold;
+
+    &:hover
+    {
+      color: $accent-color-primary-hover;
+    }
+
+    &::after
+    {
+      content: $icon-close;
+      font-family: $font-family-icon;
+    }
+  }
+}
+
+.panel-collapsible.right
+{
+  border-right: 0;
+  border-left: 1px solid $border-color-secondary;
+}
+
+/* collapsed */
+
+.panel-collapsible.collapsed
+{
+  width: 30px;
+
+  .toggle
+  {
+    border-bottom: 1px solid $border-color-secondary;
+    background: $ice;
+
+    &:hover
+    {
+      border: 0;
+      background: $accent-color-primary-hover;
+      color: $coconut;
+    }
+
+    &::after
+    {
+      content: $icon-menu;
+    }
+  }
+
+  :not(.toggle-wrapper):not(.toggle)
+  {
+    display: none;
+  }
+}

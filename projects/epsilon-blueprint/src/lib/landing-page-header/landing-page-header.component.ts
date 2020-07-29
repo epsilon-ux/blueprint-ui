@@ -22,6 +22,9 @@ export class LandingPageHeaderComponent implements OnInit {
   @Input()
   href: string = undefined;
 
+  @Input()
+  isMarginBottom = true;
+
   @Output()
   actionClick = new EventEmitter();
 
