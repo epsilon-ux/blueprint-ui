@@ -1,15 +1,15 @@
 html
 {
-  font-family: $font-family-default;
-  font-size: $font-size-body;
-  font-weight: $font-weight-regular;
   color: $font-color-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-body;
+  font-family: $font-family-default;
 }
 
-body, 
-h1, 
-h2, 
-h3, 
+body,
+h1,
+h2,
+h3,
 h4
 {
   line-height: 1.5; // Do not modify. This is a requirement of WCAG 1.4.8.
@@ -18,30 +18,30 @@ h4
 h1
 {
   margin-bottom: $space-md;
-  font-size: $font-size-h1;
   font-weight: $font-weight-regular;
+  font-size: $font-size-h1;
 }
 
 h2
 {
   margin-bottom: $space-md;
-  font-size: $font-size-h2;
   font-weight: $font-weight-semi-bold;
+  font-size: $font-size-h2;
 }
 
 h3
 {
   margin-bottom: $space-sm;
-  font-size: $font-size-h3;
   font-weight: $font-weight-bold;
+  font-size: $font-size-h3;
 }
 
 h4
 {
   margin-bottom: $space-sm;
-  font-size: $font-size-h4;
-  font-weight: $font-weight-semi-bold;
   color: $font-color-secondary;
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-h4;
 }
 
 p
@@ -49,9 +49,7 @@ p
   margin: 0 0 $space-sm;
 }
 
-//
 // defaults for semantic elements that apply visual treatments
-//
 
 small
 {
@@ -83,9 +81,7 @@ code
   color: $font-color-code;
 }
 
-//
 // resetting styles of non-semantic elements to reinforce use of semantic html for content and css for presentation
-//
 
 i
 {

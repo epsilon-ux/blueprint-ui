@@ -21,14 +21,20 @@
     color: $accent-color-primary;
   }
 
-  & .fas.fa-circle
+  & .fas
   {
-    display: none;
+    &.fa-circle
+    {
+      display: none;
+    }
   }
 
-  & .far.fa-circle
+  & .far
   {
-    display: inline-block;
+    &.fa-circle
+    {
+      display: inline-block;
+    }
   }
 
   & .fa-question
@@ -39,14 +45,20 @@
   &:hover,
   &:focus
   {
-    & .fas.fa-circle
+    & .fas
     {
-      display: inline-block;
+      &.fa-circle
+      {
+        display: inline-block;
+      }
     }
 
-    & .far.fa-circle
+    & .far
     {
-      display: none;
+      &.fa-circle
+      {
+        display: none;
+      }
     }
 
     & .fa-question

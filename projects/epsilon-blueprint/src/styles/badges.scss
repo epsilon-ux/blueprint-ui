@@ -1,34 +1,34 @@
 .badge
 {
-    border-radius: 0;
-    border: 1px solid transparent;
-    padding: 4px 10px 5px;
-    font-size: $font-size-md;
-    font-weight: $font-weight-semi-bold;
+  border-radius: 0;
+  border: 1px solid transparent;
+  padding: 4px 10px 5px;
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-md;
 }
 
 .badge-primary
 {
-    background: $mist;
-    color: $font-color-secondary;
+  background: $mist;
+  color: $font-color-secondary;
 }
 
 .badge-secondary
 {
-    background: $blueberry;
-    color: $coconut;
+  background: $blueberry;
+  color: $coconut;
 }
 
 .badge-alert
 {
-    border-color: $feedback-color-alert;
-    background: rgba($feedback-color-alert, 0.2);
-    color: $font-color-primary;
+  border-color: $feedback-color-alert;
+  background: rgba($feedback-color-alert, 0.2);
+  color: $font-color-primary;
 }
 
 .badge-success
 {
-    border-color: $feedback-color-success;
-    background: rgba($feedback-color-success, 0.2);
-    color: $font-color-primary;
+  border-color: $feedback-color-success;
+  background: rgba($feedback-color-success, 0.2);
+  color: $font-color-primary;
 }

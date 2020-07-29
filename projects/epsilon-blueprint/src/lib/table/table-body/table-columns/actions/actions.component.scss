@@ -1,4 +1,7 @@
-.action-item:not(:last-child)
+.action-item
 {
-  margin-right: 6px;
+  &:not(:last-child)
+  {
+    margin-right: 6px;
+  }
 }
