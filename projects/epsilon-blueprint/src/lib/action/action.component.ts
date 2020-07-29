@@ -2,8 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'bp-action',
-  templateUrl: './action.component.html',
-  styleUrls: ['./action.component.scss']
+  templateUrl: './action.component.html'
 })
 export class ActionComponent implements OnInit {
 

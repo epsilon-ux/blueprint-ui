@@ -4,8 +4,7 @@ declare let $: any;
 
 @Component({
   selector: 'bp-toggletip',
-  templateUrl: './toggletip.component.html',
-  styleUrls: ['./toggletip.component.scss']
+  templateUrl: './toggletip.component.html'
 })
 
 export class ToggletipComponent implements OnInit, OnDestroy {
