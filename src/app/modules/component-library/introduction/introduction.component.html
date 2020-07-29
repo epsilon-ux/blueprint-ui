@@ -8,60 +8,93 @@
       <p>
         You can see in progress and upcoming work on our <a href="https://trello.com/b/AoJ0Tpd2/blueprint">Blueprint Trello board.</a>
       </p>
-
       <h3>Usage</h3>
       <p>
         <span class="font-weight-bold">Please do not override or customize Blueprint components.</span> If Blueprint components are overridden or customized in products, we will be unable to safely update the epsilon-blueprint component library without introducing breaking changes in the products. If you experience any issues integrating Blueprint components, please reach out to the UX team.
       </p>
-
-      <h3>Setup</h3>
-      <p>Reach out to the UX Team when setting up the application's base template and architecture to work best with Blueprint, align to other products, and ensure scalability.</p>
-      <p>This package has a few dependencies that are not included in the package itself. They are as follows:</p>
+      <h3>Project setup</h3>
+      <p>
+        Reach out to the UX Team when setting up the application's base template and architecture to work best with Blueprint, align to other products, and ensure scalability.
+      </p>
+      <h4>Dependencies</h4>
+      <p>
+        The epsilon-blueprint package has a few dependencies that are not included in the package itself. They are as follows:
+      </p>
       <ul>
         <li>Angular 8</li>
         <li>ng-select</li>
       </ul>
+      <h4>Imports</h4>
       <p class="mb-0">The package also relies on having the following imports in the application's index.html.</p>
     </div>
   </div>
-
   <div class="row">
     <div class="col">
-      <h4>Bootstrap v4</h4>
+      <h5 class="font-size-body mt-3">Bootstrap v4</h5>
       <markdown [data]="bootstrapImport" lineNumbers></markdown>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <h4>Font Awesome 5</h4>
+      <h5 class="font-size-body mt-3">Font Awesome 5</h5>
       <markdown [data]="fontawesomeImport" lineNumbers></markdown>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <h4>Open Sans</h4>
+      <h5 class="font-size-body mt-3">Open Sans</h5>
       <markdown [data]="fontImport" lineNumbers></markdown>
     </div>
   </div>
-
   <div class="row">
     <div class="col-lg-8 col-xl-7">
+      <h4>Automated code quality tools</h4>
+      <p>
+        All applications should use automated code quality tools to help avoid errors, provide real-time feedback, reduce the amount of human code review needed, allow code reviewers to focus on providing higher-level feedback, and enforce best practices and coding standards.
+      </p>
+      <h5 class="font-size-body mt-3">stylelint</h5>
+      <ol>
+        <li>Run <code>npm install stylelint stylelint-config-standard --save-dev</code></li>
+        <li>Run <code>npm install stylelint-order --save-dev</code></li>
+        <li>Run <code>npm install stylelint-scss --save-dev</code></li>
+        <li>
+          Add the <a href="https://github.com/epsilon-ux/resources/blob/master/configs/.stylelintrc.json" target="_blank" class="link-primary">stylelint config</a> to the root of the project
+        </li>
+        <li>
+          In the application's package.json file, add the following script: <code>"stylelint": "stylelint '**/*.scss'"</code>
+        </li>
+      </ol>
+      <h5 class="font-size-body mt-3">ESLint</h5>
+      <ol>
+        <li>Run <code>npm install eslint --save-dev</code></li>
+        <li>Run <code>npm install @typescript-eslint/parser --save-dev</code></li>
+        <li>Run <code>npm install @typescript-eslint/eslint-plugin --save-dev</code></li>
+        <li>Run <code>npm install @angular-eslint/eslint-plugin --save-dev</code></li>
+        <li>
+          Add the <a href="https://github.com/epsilon-ux/resources/blob/master/configs/.eslintrc.json" target="_blank" class="link-primary">ESLint config</a> to the root of the project
+        </li>
+        <li>
+          Add the <a href="https://github.com/epsilon-ux/resources/blob/master/configs/.eslintignore" target="_blank" class="link-primary">ESLint ignore</a> to the root of the project
+        </li>
+        <li>
+          In the application's package.json file, add the following script: <code>"eslint": "eslint 'src/**/*.ts'"</code>
+        </li>
+      </ol>
       <h3>Installation</h3>
       <p>
-        Once you have all these, run <code>npm install epsilon-blueprint</code> to install the package to node_modules. Once the package is installed, import the stylesheets from the package.
+        Once project setup is complete, install epsilon-blueprint.
       </p>
-      <p>
-        In the application's styles.scss file, add the following import statement.
-        <code class="d-block">
-          @import "~epsilon-blueprint/styles";
-        </code>
-      </p>
-      <p>
-        When global variables are needed in a scss file, add the following import statement.
-        <code class="d-block">
-          @import "~epsilon-blueprint/styles/global-variables";
-        </code>
-      </p>
+      <ol class="mb-5">
+        <li>Run <code>npm install epsilon-blueprint</code></li>
+        <li>
+          In the application's styles.scss file, add the following import statement: 
+          <code>@import "~epsilon-blueprint/styles";</code>
+        </li>
+        <li>
+          When global variables are needed in a scss file, add the following import statement: 
+          <code>@import "~epsilon-blueprint/styles/global-variables";</code>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
