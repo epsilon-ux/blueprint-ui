@@ -1,0 +1,9 @@
+<div id="panelCollapsible" class="panel-collapsible{{ isPanelCollapsed ? ' collapsed' : '' }}{{ isPanelRight ? ' right' : '' }}">
+  <div class="toggle-wrapper">
+    <button type="button" class="toggle" aria-controls="panelCollapsible" [attr.aria-label]="toggleAriaLabel" (click)="togglePanel()">
+    </button>
+  </div>
+  <ng-content select="[panel-content]">
+    <!--Content-->
+  </ng-content>
+</div>
