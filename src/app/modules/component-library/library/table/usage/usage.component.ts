@@ -6,8 +6,7 @@ import standard from './example-properties/standard';
 
 @Component({
   selector: 'app-usage',
-  templateUrl: './usage.component.html',
-  styleUrls: ['./usage.component.scss']
+  templateUrl: './usage.component.html'
 })
 export class UsageComponent implements OnInit {
 
