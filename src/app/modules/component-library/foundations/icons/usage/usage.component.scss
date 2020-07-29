@@ -1,11 +1,11 @@
-@import 'projects/epsilon-blueprint/src/styles/_global-variables';
+@import "projects/epsilon-blueprint/src/styles/_global-variables";
 
 .bg-shamrock
 {
   background-color: $shamrock;
 }
 
-.bg-tomato 
+.bg-tomato
 {
   background-color: $tomato;
 }
@@ -15,7 +15,7 @@
   color: $apricot;
 }
 
-.text-color-cobalt 
+.text-color-cobalt
 {
   color: $cobalt;
 }
@@ -25,7 +25,7 @@
   color: $cornflower;
 }
 
-.text-color-haze 
+.text-color-haze
 {
   color: $haze;
 }
@@ -54,14 +54,17 @@
 {
   flex-direction: column;
 
-  & i.fa-caret-up 
+  & i
   {
-    transform: translateY(2px);
-  }
+    &.fa-caret-up
+    {
+      transform: translateY(2px);
+    }
 
-  & i.fa-caret-down 
-  {
-    transform: translateY(-2px);
+    &.fa-caret-down
+    {
+      transform: translateY(-2px);
+    }
   }
 }
 

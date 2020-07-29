@@ -1,4 +1,4 @@
-@import '../../../../dist/epsilon-blueprint/styles/global-variables';
+@import "../../../../dist/epsilon-blueprint/styles/global-variables";
 
 details
 {
@@ -9,11 +9,11 @@ details
 
     &::after
     {
-      content: $icon-chevron-right;
       margin-left: 5px;
-      font-family: $font-family-icon;
+      content: $icon-chevron-right;
       font-weight: $font-weight-semi-bold;
       font-size: 0.875em;
+      font-family: $font-family-icon;
     }
 
     &::-webkit-details-marker
@@ -22,13 +22,16 @@ details
     }
   }
 
-  &[open] > summary
+  &[open]
   {
-    margin-bottom: 1rem;
-
-    &::after
+    & > summary
     {
-      content: $icon-chevron-down;
+      margin-bottom: 1rem;
+
+      &::after
+      {
+        content: $icon-chevron-down;
+      }
     }
   }
 }
