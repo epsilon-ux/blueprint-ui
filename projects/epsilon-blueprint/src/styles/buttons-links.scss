@@ -15,7 +15,7 @@ a,
 button.btn-text
 {
   outline: unset;
-  border: none;
+  border: 0;
   padding: 0;
   background: none;
   color: $accent-color-primary;
@@ -30,7 +30,7 @@ button.btn-text
   &:disabled
   {
     outline: unset;
-    border: none;
+    border: 0;
     padding: 0;
     background: none;
     color: $font-color-secondary;
@@ -111,8 +111,8 @@ button.btn-text
 
 .btn-sm
 {
-  min-width: 60px;
   height: 22px;
+  min-width: 60px;
   padding: 2px 6px;
 }
 
@@ -177,8 +177,8 @@ button.btn-text
 
   &.btn-input-addon-clear
   {
-    border-left: 0;
     border-color: $border-color-primary;
+    border-left: 0;
 
     &:hover
     {
@@ -248,10 +248,10 @@ button[disabled],
 .btn:disabled,
 .btn[disabled]
 {
+  opacity: 1;
   border: 1px solid $border-color-secondary;
   background: $mist;
   color: $font-color-secondary;
-  opacity: 1;
   cursor: not-allowed;
 }
 

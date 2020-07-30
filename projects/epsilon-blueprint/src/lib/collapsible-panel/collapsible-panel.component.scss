@@ -1,14 +1,14 @@
-@import '../../styles/global-variables';
+@import "../../styles/global-variables";
 
 .panel-collapsible
 {
+  z-index: 2;
   width: 200px;
   height: 100%;
+  overflow-y: auto;
   border-right: 1px solid $border-color-secondary;
   background: $coconut;
-  transition: width .25s ease-out;
-  z-index: 2;
-  overflow-y: auto;
+  transition: width 0.25s ease-out;
 
   .toggle-wrapper
   {
@@ -25,8 +25,8 @@
     padding: 0;
     background: $coconut;
     color: $accent-color-primary;
-    font-size: $font-size-lg;
     font-weight: $font-weight-semi-bold;
+    font-size: $font-size-lg;
 
     &:hover
     {

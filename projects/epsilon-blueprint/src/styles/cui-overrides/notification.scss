@@ -1,4 +1,6 @@
-@import '../global-variables';
+// stylelint-disable
+
+@import "../global-variables";
 
 // cui notification = blueprint overlay message
 
@@ -13,8 +15,8 @@
   padding: 15px;
   background-color: $coconut;
   color: $font-color-primary;
-  font-size: $font-size-lg;
   font-weight: $font-weight-semi-bold;
+  font-size: $font-size-lg;
   text-align: center;
 
   &.Clr-PageNotification--success.Clr-PageNotification--success
@@ -33,7 +35,7 @@
 
 .Clr-Panel--Flash
 {
-  >.Clr-Panel-content.Clr-Panel-content
+  > .Clr-Panel-content.Clr-Panel-content
   {
     top: 70px;
   }

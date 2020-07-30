@@ -1,43 +1,48 @@
-//
+// stylelint-disable color-no-hex
+
 // color palette
-//
 
 // primary colors
+
 $apricot: #fda94e;
 $ultramarine: #0f5ef0;
 $midnight: #221f4d;
 $coconut: #ffffff;
 
 // secondary blues
+
 $cobalt: #0b42a8;
 $blueberry: #0c4bc0;
 $cornflower: #b7cffa;
 $ice: #e7effd;
 
 // secondary greys
+
 $storm: #516f90;
 $haze: #cbd6e2;
 $mist: #eaf0f6;
 $cloud: #f5f8fa;
 
 // tertiary colors
+
 $shamrock: #05ae77;
 $clementine: #ff7b00;
 $tomato: #cf171a;
 $brick: #a11214;
 
 // chart colors
+
 $watermelon: #ff5c49;
 
-//
 // abstracted utility variables
-//
 
 // font families
-$font-family-default: 'Open Sans', sans-serif;
-$font-family-icon: 'Font Awesome 5 Free'; // only used for CSS pseudo elements
+
+$font-family-default: "Open Sans", sans-serif;
+$font-family-icon: "Font Awesome 5 Free"; // only used for CSS pseudo elements
 
 // font sizes
+
 $font-size-h1: 22px;
 $font-size-h2: 15px;
 $font-size-h3: 12px;
@@ -46,78 +51,98 @@ $font-size-body-lead: 15px;
 $font-size-body: 12px;
 
 // abstracted font sizes
+
 $font-size-sm: 10px; // previously $font-size-small
+
 $font-size-md: 12px; // previously $font-size-display3, $font-size-display4
+
 $font-size-lg: 15px; // previously $font-size-display2
+
 $font-size-xl: 22px; // previously $font-size-display1
 
 // font weights
+
 $font-weight-regular: 400;
 $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
 
 // font colors
+
 $font-color-primary: $midnight;
 $font-color-secondary: $storm;
 $font-color-code: #e1088a;
 
 // accent colors
+
 $accent-color-primary: $ultramarine;
 $accent-color-primary-hover: $blueberry;
 $accent-color-secondary: $apricot;
 
 // link colors
+
 $link-color-primary: $ultramarine;
 
 // border colors
+
 $border-color-primary: $storm;
 $border-color-secondary: $haze;
 
 // feedback colors
+
 $feedback-color-success: $shamrock;
 $feedback-color-alert: $clementine;
 $feedback-color-warning: $tomato;
 $feedback-color-warning-hover: $brick;
 
 // Font Awesome icons
-$icon-menu: '\f0c9';
-$icon-close: '\f00d';
-$icon-caret-up: '\f0d8';
-$icon-caret-right: '\f0da';
-$icon-caret-down: '\f0d7';
-$icon-caret-left: '\f0d9';
-$icon-chevron-right: '\f054';
-$icon-chevron-down: '\f078';
-$icon-first-page: '\f100';
-$icon-previous-page: '\f104';
-$icon-next-page: '\f105';
-$icon-last-page: '\f101';
-$icon-calendar: '\f073';
-$icon-clock: '\f017';
-$icon-check-circle: '\f058';
-$icon-checkmark: '\f00c';
-$icon-dash: '\f068';
-$icon-external-link: '\f35d';
-$icon-warning: '\f06a';
+
+$icon-menu: "\f0c9";
+$icon-close: "\f00d";
+$icon-caret-up: "\f0d8";
+$icon-caret-right: "\f0da";
+$icon-caret-down: "\f0d7";
+$icon-caret-left: "\f0d9";
+$icon-chevron-right: "\f054";
+$icon-chevron-down: "\f078";
+$icon-first-page: "\f100";
+$icon-previous-page: "\f104";
+$icon-next-page: "\f105";
+$icon-last-page: "\f101";
+$icon-calendar: "\f073";
+$icon-clock: "\f017";
+$icon-check-circle: "\f058";
+$icon-checkmark: "\f00c";
+$icon-dash: "\f068";
+$icon-external-link: "\f35d";
+$icon-warning: "\f06a";
 
 // shadows
+
 $box-shadow-primary: 0 1px 10px 0 rgba($midnight, 0.3); // used for modals, overlay messaging, and login screen form containers
+
 $box-shadow-secondary: 0 2px 8px 0 $haze; // used for tiles, and tooltips
+
 $box-shadow-tertiary: 1px 1px 3px 0 rgba($midnight, 0.2); // used for expanded dropdown menus and expanded date/time pickers
+
 $box-shadow-nav-primary: 0 0 7px 0 rgba($cobalt, 0.2); // used for the primary navigation
+
 $box-shadow-focus-default: 0 0 0 0.2rem rgba($cornflower, 1);
 $box-shadow-focus-default-inset: inset 0 0 0 0.2rem rgba($cornflower, 1); // used for tabs
+
 $box-shadow-focus-warning: 0 0 0 0.2rem rgba($feedback-color-warning, 0.25);
 $box-shadow-focus-readonly: 0 0 0 0.2rem rgba($storm, 0.3);
 
 // gradients
-$gradient-primary: linear-gradient(to right, #0095F6 -39%, #0312DD 100%);
+
+$gradient-primary: linear-gradient(to right, #0095f6 -39%, #0312dd 100%);
 $gradient-progress-bar: $gradient-primary;
 
 // transition
+
 $transition-primary: 0.05s ease-out;
 
 // space token variables
+
 $space-xs: 5px;
 $space-sm: 10px;
 $space-md: 20px;
