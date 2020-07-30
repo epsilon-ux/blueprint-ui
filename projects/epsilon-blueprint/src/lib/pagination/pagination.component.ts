@@ -19,8 +19,6 @@ import { parseLookupString } from '../../helpers';
    the actual rows and rendering is handled by the table component */
 export class PaginationComponent implements OnInit, OnChanges {
 
-  parseLookupString = parseLookupString;
-
   @Input()
   dataLength: number;
 
@@ -51,6 +49,8 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   @Output()
   pageData = new EventEmitter();
+
+  parseLookupString = parseLookupString;
 
   totalPages: number;
   currentPage = 1;
