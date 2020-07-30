@@ -31,7 +31,7 @@ export class UsageComponent implements OnInit {
   withLinks: Properties;
   withFooter: Properties;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     // Properties

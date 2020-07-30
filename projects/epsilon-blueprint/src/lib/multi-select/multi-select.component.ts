@@ -57,7 +57,7 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   isDataLoaded = false;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.validate();

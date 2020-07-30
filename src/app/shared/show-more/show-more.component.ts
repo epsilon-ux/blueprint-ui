@@ -12,7 +12,7 @@ export class ShowMoreComponent implements OnInit {
   @Input() isOpen?: boolean;
   summaryText: string;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     if (!this.summaryOpen) {

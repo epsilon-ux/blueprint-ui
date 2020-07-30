@@ -23,11 +23,11 @@ export class NavSecondaryComponent implements OnInit {
   @Input() areItemsExpanded = false;
   @Input() toggleAriaLabel = 'Toggle secondary navigation';
 
-  uuid = 'navDropdown' + generateUniqueId();
-  activeItem: string;
-
   @ViewChildren(RouterLinkActive, { read: ElementRef })
   linkRefs: QueryList<ElementRef>;
+
+  uuid = 'navDropdown' + generateUniqueId();
+  activeItem: string;
 
   constructor() { }
 

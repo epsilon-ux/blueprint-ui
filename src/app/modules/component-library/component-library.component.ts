@@ -136,6 +136,6 @@ export class ComponentLibraryComponent {
     ]
   };
 
-  constructor() {}
+  constructor() { }
 
 }

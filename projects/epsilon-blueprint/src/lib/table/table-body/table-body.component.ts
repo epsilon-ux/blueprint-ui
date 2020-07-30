@@ -25,6 +25,10 @@ export class TableBodyComponent implements OnInit {
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
+
+  @ViewChild('selectAllRowsRef', { static: false })
+  selectAllRowsRef: ElementRef;
+
   isRowExpanded = false;
 
   // Scopes imported function to the class
@@ -33,17 +37,14 @@ export class TableBodyComponent implements OnInit {
   // displayDensity
   densityClass: string;
 
-  @ViewChild('selectAllRowsRef', { static: false })
-  selectAllRowsRef: ElementRef;
-
-  constructor() {}
+  constructor() { }
 
   // column type
   get columnType() {
     return ColumnType;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   // Statuses
   getStatusClass(value, mapping) {

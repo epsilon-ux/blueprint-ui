@@ -16,7 +16,7 @@ export class ActionsComponent implements OnInit {
   rowId: string;
 
   @Input()
-  rowData: {};
+  rowData: { };
 
   @Input()
   classList: string;
@@ -29,7 +29,7 @@ export class ActionsComponent implements OnInit {
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     if (this.classList.includes('dropdown-item')) {

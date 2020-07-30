@@ -40,4 +40,4 @@ import { SelectAllCheckboxComponent } from './select-all-checkbox/select-all-che
   exports: [TableComponent],
   providers: []
 })
-export class TableModule {}
+export class TableModule { }

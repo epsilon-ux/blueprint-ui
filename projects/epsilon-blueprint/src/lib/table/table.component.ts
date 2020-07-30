@@ -29,6 +29,9 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() rowSelected = new EventEmitter();
   @Output() viewChange = new EventEmitter();
 
+  @ViewChild('selectAllRowsRef', { static: false })
+  selectAllRowsRef: ElementRef;
+
   // Data
   tableData = [];
 
@@ -52,10 +55,7 @@ export class TableComponent implements OnInit, OnChanges {
   // displayDensity
   densityClass: string;
 
-  @ViewChild('selectAllRowsRef', { static: false })
-  selectAllRowsRef: ElementRef;
-
-  constructor() {}
+  constructor() { }
 
   // column type
   get columnType() {

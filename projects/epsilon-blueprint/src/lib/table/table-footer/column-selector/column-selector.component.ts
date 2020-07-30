@@ -21,7 +21,7 @@ export class ColumnSelectorComponent implements OnInit {
 
   parseLookupString = parseLookupString;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.columnInfo.filter(

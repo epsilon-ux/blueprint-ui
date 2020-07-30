@@ -30,9 +30,9 @@ export class SearchComponent implements OnInit {
   public searchFilter = '';
   public showClearIcon = false;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onClearSearch() {
     this.searchFilter = '';
