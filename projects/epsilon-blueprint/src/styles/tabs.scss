@@ -1,27 +1,27 @@
 .tab
 {
-    display: inline-block;
-    margin-right: 20px;
-    border: 0;
-    padding: 10px;
-    background: transparent;
+  display: inline-block;
+  margin-right: 20px;
+  border: 0;
+  padding: 10px;
+  background: transparent;
+  color: $font-color-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-lg;
+
+  &:hover
+  {
     color: $font-color-primary;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-regular;
-    
-    &:hover
-    {
-        color: $font-color-primary;
-        font-weight: $font-weight-semi-bold;
-        text-decoration: none;
-    }
-    
-    &.active
-    {
-        border-bottom: 5px solid $accent-color-secondary;
-        color: $font-color-primary;
-        font-weight: $font-weight-semi-bold;
-    }
+    font-weight: $font-weight-semi-bold;
+    text-decoration: none;
+  }
+
+  &.active
+  {
+    border-bottom: 5px solid $accent-color-secondary;
+    color: $font-color-primary;
+    font-weight: $font-weight-semi-bold;
+  }
 }
 
 // TODO: copied from messaging - eventually move this into a component
@@ -41,8 +41,8 @@
       border-radius: 20px;
       padding: 6px 20px 7px;
       color: $font-color-primary;
-      font-size: $font-size-lg;
       font-weight: $font-weight-regular;
+      font-size: $font-size-lg;
 
       &.active
       {
