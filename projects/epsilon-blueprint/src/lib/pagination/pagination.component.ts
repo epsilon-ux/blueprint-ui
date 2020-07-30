@@ -61,7 +61,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     end: this.defaultNumberOfRows - 1
   };
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.numberOfRows = this.defaultNumberOfRows;

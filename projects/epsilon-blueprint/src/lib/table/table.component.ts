@@ -55,7 +55,7 @@ export class TableComponent implements OnInit, OnChanges {
   // displayDensity
   densityClass: string;
 
-  constructor() {}
+  constructor() { }
 
   // column type
   get columnType() {

@@ -37,14 +37,14 @@ export class TableBodyComponent implements OnInit {
   // displayDensity
   densityClass: string;
 
-  constructor() {}
+  constructor() { }
 
   // column type
   get columnType() {
     return ColumnType;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   // Statuses
   getStatusClass(value, mapping) {

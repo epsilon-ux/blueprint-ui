@@ -19,7 +19,7 @@ export class DisplayDensityComponent implements OnInit {
     value: string;
   }[];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.displayOptions = Object.keys(this.internationalization['Display Density Options']).map(option => ({

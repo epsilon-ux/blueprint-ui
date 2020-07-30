@@ -19,7 +19,7 @@ export class ViewSelectorComponent implements OnInit {
     value: string;
   }[];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.displayOptions = Object.keys(this.internationalization['View Options']).map(option => ({

@@ -11,4 +11,4 @@ import { SearchComponent } from './search.component';
   exports: [SearchComponent],
   providers: []
 })
-export class SearchModule {}
+export class SearchModule { }

@@ -27,7 +27,7 @@ export class OverviewComponent implements OnInit {
 
   properties: Properties;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.properties = {
@@ -153,7 +153,7 @@ export class OverviewComponent implements OnInit {
     // Use action from action buttons to trigger different events here
   }
 
-  handleViewChange() {}
+  handleViewChange() { }
 
   sortByKeyAsc(array, key) {
     if (key === 'templateCol') {

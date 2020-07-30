@@ -22,4 +22,4 @@ import { DropdownModule } from 'epsilon-blueprint';
   ],
   imports: [CommonModule, DropdownRoutingModule, ComponentHeaderModule, DropdownModule, MarkdownModule.forChild()]
 })
-export class DropdownLibraryModule {}
+export class DropdownLibraryModule { }
