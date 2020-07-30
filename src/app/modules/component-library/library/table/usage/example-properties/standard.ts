@@ -1,5 +1,3 @@
-import { ColumnType } from 'epsilon-blueprint/models/table-models';
-
 export default {
   caption: 'This is an example of a standard table.',
   rowId: 'id',

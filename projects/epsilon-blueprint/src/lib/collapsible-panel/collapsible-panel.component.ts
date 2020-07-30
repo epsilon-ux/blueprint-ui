@@ -18,4 +18,5 @@ export class CollapsiblePanelComponent implements OnInit {
   togglePanel() {
     this.isPanelCollapsed = !this.isPanelCollapsed;
   }
+  
 }

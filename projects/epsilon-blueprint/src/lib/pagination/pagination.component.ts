@@ -92,7 +92,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     return this.currentPage === selectedPage ? true : false;
   }
 
-  rowChangePage(page) {
+  rowChangePage() {
     this.currentPage = Math.floor(this.indices.start / this.numberOfRows) + 1 || 1;
     this.paginate(this.currentPage);
   }

@@ -26,9 +26,9 @@ export class UsageComponent implements OnInit {
     }
   ];
 
-  click = e => { };
+  click = () => { };
 
-  handleSelectionChange = event => { };
+  handleSelectionChange = () => { };
 
   constructor() { }
 

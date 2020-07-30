@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { CollapsiblePanelModule } from 'epsilon-blueprint';
-import { LandingPageHeaderModule } from 'epsilon-blueprint';
-import { ActionModule } from 'epsilon-blueprint';
+import { CollapsiblePanelModule, LandingPageHeaderModule, ActionModule } from 'epsilon-blueprint';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';

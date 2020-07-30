@@ -153,7 +153,7 @@ export class OverviewComponent implements OnInit {
     // Use action from action buttons to trigger different events here
   }
 
-  handleViewChange(view) {}
+  handleViewChange() {}
 
   sortByKeyAsc(array, key) {
     if (key === 'templateCol') {

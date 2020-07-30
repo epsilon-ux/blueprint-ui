@@ -21,7 +21,7 @@
               [visuallyHiddenLabel]="true"
               [isChecked]="isSelectAllChecked"
               [isMixed]="isSelectAllIndeterminate"
-              (change)="onSelectAllRows($event)"
+              (change)="onSelectAllRows()"
             ></app-select-all-checkbox>
           </th>
           <ng-container *ngFor="let column of properties.columns">

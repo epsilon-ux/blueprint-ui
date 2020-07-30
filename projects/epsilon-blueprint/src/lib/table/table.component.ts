@@ -8,7 +8,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { Column, ColumnType, Properties } from '../../models/table-models';
+import { ColumnType, Properties } from '../../models/table-models';
 import { parseLookupString, generateUniqueId } from '../../helpers';
 
 @Component({
@@ -246,7 +246,7 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   // To select/deselect all the rows
-  onSelectAllRows(event) {
+  onSelectAllRows() {
     this.isSelectAllChecked = !this.isSelectAllChecked;
     this.isSelectAllIndeterminate = false;
     if (this.isSelectAllChecked) {

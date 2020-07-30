@@ -12,8 +12,8 @@ export class UsageComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  handleSearch(e) { }
+  handleSearch() { }
 
-  handleClearSearch(e) { }
+  handleClearSearch() { }
 
 }

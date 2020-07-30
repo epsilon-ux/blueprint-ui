@@ -38,8 +38,8 @@
                     label="Search"
                     placeholder="Search"
                     [isSearching]="isSearching"
-                    (search)="handleSearch($event)"
-                    (clearSearch)="handleClearSearch($event)"
+                    (search)="handleSearch()"
+                    (clearSearch)="handleClearSearch()"
                   ></bp-search>
                 </div>
               </div>
@@ -80,8 +80,8 @@
                     label="Search"
                     placeholder="Search"
                     [isSearching]="isSearching"
-                    (search)="handleSearch($event)"
-                    (clearSearch)="handleClearSearch($event)"
+                    (search)="handleSearch()"
+                    (clearSearch)="handleClearSearch()"
                   ></bp-search>
                 </div>
                 <div class="col-12 col-lg-auto ml-lg-auto mb-4 mt-lg-4">
@@ -127,8 +127,8 @@
                     label="Search"
                     placeholder="Search"
                     [isSearching]="isSearching"
-                    (search)="handleSearch($event)"
-                    (clearSearch)="handleClearSearch($event)"
+                    (search)="handleSearch()"
+                    (clearSearch)="handleClearSearch()"
                   ></bp-search>
                 </div>
                 <div class="col-12 col-lg-auto ml-lg-auto mb-4 mt-lg-4">
@@ -173,8 +173,8 @@
                     label="Search"
                     placeholder="Search"
                     [isSearching]="isSearching"
-                    (search)="handleSearch($event)"
-                    (clearSearch)="handleClearSearch($event)"
+                    (search)="handleSearch()"
+                    (clearSearch)="handleClearSearch()"
                   ></bp-search>
                 </div>
                 <div class="col-12 col-lg-auto ml-lg-auto mb-4 mt-lg-4">
@@ -220,8 +220,8 @@
                         label="Search"
                         placeholder="Search"
                         [isSearching]="isSearching"
-                        (search)="handleSearch($event)"
-                        (clearSearch)="handleClearSearch($event)"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
                       ></bp-search>
                     </div>
                     <div class="col-sm-6 col-xl-3">
@@ -257,7 +257,7 @@
                           bindLabel="label"
                           bindValue="value"
                           placeholder="Select types"
-                          (change)="handleMulti($event)"
+                          (change)="handleMulti()"
                         ></bp-multi-select>
                       </div>
                     </div>
@@ -269,7 +269,7 @@
                           bindLabel="label"
                           bindValue="value"
                           placeholder="Select statuses"
-                          (change)="handleMulti($event)"
+                          (change)="handleMulti()"
                         >
                           <ng-template
                             ng-option-tmp
@@ -332,8 +332,8 @@
                         label="Search"
                         placeholder="Search"
                         [isSearching]="isSearching"
-                        (search)="handleSearch($event)"
-                        (clearSearch)="handleClearSearch($event)"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
                       ></bp-search>
                     </div>
                     <div class="col-auto align-self-center">
@@ -384,7 +384,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select types"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -396,7 +396,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select statuses"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           >
                             <ng-template
                               ng-option-tmp
@@ -418,7 +418,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select tags"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -507,8 +507,8 @@
                         label="Search"
                         placeholder="Search"
                         [isSearching]="isSearching"
-                        (search)="handleSearch($event)"
-                        (clearSearch)="handleClearSearch($event)"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
                       ></bp-search>
                     </div>
                     <div class="col-auto align-self-center">
@@ -547,7 +547,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select action destinations"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -559,7 +559,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select business units"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -571,7 +571,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select companies"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -583,7 +583,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select event source providers"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -636,8 +636,8 @@
                         label="Search"
                         placeholder="Search"
                         [isSearching]="isSearching"
-                        (search)="handleSearch($event)"
-                        (clearSearch)="handleClearSearch($event)"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
                       ></bp-search>
                     </div>
                     <div class="col-auto align-self-center">
@@ -663,7 +663,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select types"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -675,7 +675,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select statuses"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           >
                             <ng-template
                               ng-option-tmp
@@ -697,7 +697,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select channels"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -709,7 +709,7 @@
                             bindLabel="label"
                             bindValue="value"
                             placeholder="Select audiences"
-                            (change)="handleMulti($event)"
+                            (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
                       </div>
@@ -756,8 +756,8 @@
                         label="Search"
                         placeholder="Search"
                         [isSearching]="isSearching"
-                        (search)="handleSearch($event)"
-                        (clearSearch)="handleClearSearch($event)"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
                       ></bp-search>
                     </div>
                     <div class="col-sm-6 col-xl-3">
@@ -793,7 +793,7 @@
                           bindLabel="label"
                           bindValue="value"
                           placeholder="Select types"
-                          (change)="handleMulti($event)"
+                          (change)="handleMulti()"
                         ></bp-multi-select>
                       </div>
                     </div>
