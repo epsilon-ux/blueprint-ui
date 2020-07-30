@@ -8,9 +8,9 @@ describe('CollapsiblePanelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CollapsiblePanelComponent ]
+      declarations: [CollapsiblePanelComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

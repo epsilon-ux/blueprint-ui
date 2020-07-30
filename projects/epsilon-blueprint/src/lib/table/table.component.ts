@@ -187,9 +187,8 @@ export class TableComponent implements OnInit, OnChanges {
     // Set aria attributes before data is loaded, but after column headers have rendered
     if (this.isDataLoading && key === this.sortColumnKey) {
       return this.properties.sort.defaultSortOrder;
-    }
-    // Set aria attributes after data is loaded
-    else if (key === this.sortColumnKey) {
+    } else if (key === this.sortColumnKey) {
+      // Set aria attributes after data is loaded
       return this.sortOrder;
     } else {
       return null;
