@@ -20,7 +20,7 @@ export class BaseTemplateComponent implements OnInit {
 
   skipToMain() {
     event.preventDefault();
-    location.hash='mainContent';
+    location.hash = 'mainContent';
   }
 
 }

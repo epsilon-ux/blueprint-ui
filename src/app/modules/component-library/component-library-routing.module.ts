@@ -66,8 +66,9 @@ const routes: Routes = [
       .then(m => m.ToggletipLibraryModule) },
 
     // Medium components
-    { path: 'landing-page-header', loadChildren: () => import('./library/landing-page-header/landing-page-header.module')
-      .then(m => m.LandingPageHeaderLibraryModule) },
+    { path: 'landing-page-header',
+      loadChildren: () => import('./library/landing-page-header/landing-page-header.module')
+        .then(m => m.LandingPageHeaderLibraryModule) },
 
     { path: 'multi-select', loadChildren: () => import('./library/multi-select/multi-select.module')
       .then(m => m.MultiselectLibraryModule) },
@@ -86,7 +87,8 @@ const routes: Routes = [
     { path: 'table-filters', loadChildren: () => import('./templates/table-filters/table-filters.module')
       .then(m => m.TableFiltersModule) },
 
-    { path: '**', redirectTo: 'introduction', pathMatch: 'full' } // TODO: create a componentNotFound page for this instance
+    // TODO: create a componentNotFound page for this instance
+    { path: '**', redirectTo: 'introduction', pathMatch: 'full' }
   ] }
 ];
 

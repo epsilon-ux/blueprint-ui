@@ -122,6 +122,11 @@
       }
     ],
     "@typescript-eslint/unified-signatures": "error",
+    // TODO: Remove the following 4 line when ready to address the problems they flag
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     // The rules below were originally pulled from the google config and
     // rules that conflict with our style guide were overwritten.
     // The rules below are listed in the order they appear on the eslint

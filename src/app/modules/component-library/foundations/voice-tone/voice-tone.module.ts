@@ -9,7 +9,9 @@ import { VoiceToneComponent } from './voice-tone.component';
 import { OverviewComponent } from './overview/overview.component';
 import { GrammarPunctuationComponent } from './grammar-punctuation/grammar-punctuation.component';
 import { ContentGuidelinesComponent } from './content-guidelines/content-guidelines.component';
-import { AccessibilityInternationalizationComponent } from './accessibility-internationalization/accessibility-internationalization.component';
+import {
+  AccessibilityInternationalizationComponent
+} from './accessibility-internationalization/accessibility-internationalization.component';
 
 @NgModule({
   declarations: [
