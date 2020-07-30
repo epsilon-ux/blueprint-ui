@@ -87,8 +87,8 @@ const routes: Routes = [
     { path: 'table-filters', loadChildren: () => import('./templates/table-filters/table-filters.module')
       .then(m => m.TableFiltersModule) },
 
-    { path: '**', redirectTo: 'introduction', pathMatch: 'full' }
     // TODO: create a componentNotFound page for this instance
+    { path: '**', redirectTo: 'introduction', pathMatch: 'full' }
   ] }
 ];
 

@@ -71,8 +71,10 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   validate() {
     if (!this.label) {
-      const err = new Error('\'label\' is a required Input of bp-multi-select. \
-      The label can be visually hidden using the \'isLabelHidden\' property.');
+      const err = new Error(
+        '\'label\' is a required Input of bp-multi-select. '
+        + 'The label can be visually hidden using the \'isLabelHidden\' property.'
+      );
       err.name = 'Missing Input';
       throw err;
     }
