@@ -20,16 +20,16 @@ export class UsageComponent implements OnInit {
   usageDataShort = usageData.slice(0, 2);
 
   // Properties
-  standard;
-  withSelectable;
-  withActions;
-  withDropdown;
-  withIcons;
-  withStatus;
-  withExpandable;
-  withExpandableAndSelectable;
-  withLinks;
-  withFooter;
+  standard: Properties;
+  withSelectable: Properties;
+  withActions: Properties;
+  withDropdown: Properties;
+  withIcons: Properties;
+  withStatus: Properties;
+  withExpandable: Properties;
+  withExpandableAndSelectable: Properties;
+  withLinks: Properties;
+  withFooter: Properties;
 
   constructor() {}
 

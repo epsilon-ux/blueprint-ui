@@ -1,14 +1,13 @@
 import {
   Component,
   OnInit,
-  OnChanges,
   Input,
   Output,
   EventEmitter,
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { Column, ColumnType, Properties } from '../../../models/table-models';
+import { ColumnType, Properties } from '../../../models/table-models';
 import { parseLookupString } from '../../../helpers';
 
 @Component({
