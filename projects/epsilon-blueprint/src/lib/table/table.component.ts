@@ -186,13 +186,13 @@ export class TableComponent implements OnInit, OnChanges {
     }
   }
 
-  getColumn(key) {
+  getColumn(key): object {
     return this.properties.columns.filter(column => column.key === key)[0];
   }
 
   // --------------- Sorting ---------------
 
-  defaultSort() {
+  defaultSort(): void {
     this.sortOrder = this.properties.sort.defaultSortOrder;
     this.sortColumnKey = this.properties.sort.defaultSortedColumn;
   }
@@ -210,7 +210,7 @@ export class TableComponent implements OnInit, OnChanges {
     }
   }
 
-  sort(colHeader: string) {
+  sort(colHeader: string): void {
     if (colHeader === this.sortColumnKey) {
       if (this.sortOrder === '' || this.sortOrder === 'descending') {
         this.sortOrder = 'ascending';
@@ -250,7 +250,7 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   // To select/unselect one row at a time
-  onSelectRow(e) {
+  onSelectRow(e): void {
     const event = e.event;
     const selectedRow = e.row;
     if (event.target.checked) {
@@ -329,20 +329,20 @@ export class TableComponent implements OnInit, OnChanges {
 
   // --------------- DisplayDensity ---------------
 
-  setDisplayDensity(density) {
+  setDisplayDensity(density): void {
     this.densityClass = density === 'Comfortable' ? null : 'table-compact';
     localStorage.setItem('selectedDensity', density);
   }
 
   // --------------- View Selector ---------------
 
-  emitTableView(view) {
+  emitTableView(view): void {
     this.viewChange.emit(view);
   }
 
   // --------------- Actions ---------------
 
-  emitAction(action: string) {
+  emitAction(action: string): void {
     this.action.emit(action);
   }
 
