@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { parseLookupString } from '../../../../helpers';
+import { Column } from '../../../../models/table-models';
+
+interface ColumnOption extends Column {
+  disabled: boolean;
+}
 
 @Component({
   selector: 'app-column-selector',
@@ -9,7 +14,7 @@ import { parseLookupString } from '../../../../helpers';
 export class ColumnSelectorComponent implements OnInit {
 
   @Input()
-  columnInfo = [];
+  columnInfo: ColumnOption[];
 
   @Input()
   defaultSortColumnName: string;

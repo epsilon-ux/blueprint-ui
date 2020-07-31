@@ -43,7 +43,7 @@ export class NavSecondaryComponent implements OnInit {
     }, 0);
   }
 
-  findActive(node, parent) {
+  findActive(node: Item, parent: Item) {
     if (node.text === this.activeItem) {
       if (parent) {
         parent.isExpanded = true;

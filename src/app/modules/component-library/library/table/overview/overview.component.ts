@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ColumnType, Properties } from 'epsilon-blueprint/models/table-models';
 
+import { TableRow } from './tableData.interface';
 import tableData from 'src/app/datasets/tableData.json';
 
 @Component({
@@ -19,9 +20,9 @@ export class OverviewComponent implements OnInit {
     this.isDataLoading = false;
   }
 
-  rawData = [];
-  filteredData = [];
-  tableData = [];
+  rawData: TableRow[];
+  filteredData: TableRow[];
+  tableData: TableRow[];
   pageIndices;
   isDataLoading = true;
 
@@ -155,11 +156,11 @@ export class OverviewComponent implements OnInit {
 
   handleViewChange() { }
 
-  sortByKeyAsc(array, key) {
+  sortByKeyAsc(array: TableRow[], key: string) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => (a.id < b.id ? -1 : 1));
+      return array.sort((a: TableRow, b: TableRow) => (a.id < b.id ? -1 : 1));
     } else {
-      return array.sort((a, b) => {
+      return array.sort((a: TableRow, b: TableRow) => {
         const x = a[key];
         const y = b[key];
         return x < y ? -1 : 1;
@@ -167,11 +168,11 @@ export class OverviewComponent implements OnInit {
     }
   }
 
-  sortByKeyDesc(array, key) {
+  sortByKeyDesc(array: TableRow[], key: string) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => (b.id < a.id ? -1 : 1));
+      return array.sort((a: TableRow, b: TableRow) => (b.id < a.id ? -1 : 1));
     } else {
-      return array.sort((a, b) => {
+      return array.sort((a: TableRow, b: TableRow) => {
         const x = a[key];
         const y = b[key];
         return x > y ? -1 : 1;
