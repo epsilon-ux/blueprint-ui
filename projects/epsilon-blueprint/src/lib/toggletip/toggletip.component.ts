@@ -17,13 +17,16 @@ export class ToggletipComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
+    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
     this.popover = $('[data-toggle="popover"]');
+    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
     this.popover.popover();
 
     this.validation();
   }
 
   ngOnDestroy() {
+    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
     this.popover.popover('hide');
   }
 

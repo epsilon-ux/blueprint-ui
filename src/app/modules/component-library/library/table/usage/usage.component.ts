@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Properties, ColumnType } from 'epsilon-blueprint/models/table-models';
 
-import usageData from './tableUsageData';
+import { usageData, UsageRow } from './tableUsageData';
 import standard from './example-properties/standard';
 
 @Component({
@@ -16,8 +16,8 @@ export class UsageComponent implements OnInit {
   pageIndices;
   isDataLoading = true;
 
-  usageData = usageData;
-  usageDataShort = usageData.slice(0, 2);
+  usageData: UsageRow[] = usageData;
+  usageDataShort: UsageRow[] = usageData.slice(0, 2);
 
   // Properties
   standard: Properties;
@@ -179,11 +179,11 @@ export class UsageComponent implements OnInit {
     // Use action from action buttons to trigger different events here
   }
 
-  sortByKeyAsc(array, key) {
+  sortByKeyAsc(array: UsageRow[], key: string) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => (a.id < b.id ? -1 : 1));
+      return array.sort((a: UsageRow, b: UsageRow) => (a.id < b.id ? -1 : 1));
     } else {
-      return array.sort((a, b) => {
+      return array.sort((a: UsageRow, b: UsageRow) => {
         const x = a[key];
         const y = b[key];
         return x < y ? -1 : 1;
@@ -191,11 +191,11 @@ export class UsageComponent implements OnInit {
     }
   }
 
-  sortByKeyDesc(array, key) {
+  sortByKeyDesc(array: UsageRow[], key: string) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => (b.id < a.id ? -1 : 1));
+      return array.sort((a: UsageRow, b: UsageRow) => (b.id < a.id ? -1 : 1));
     } else {
-      return array.sort((a, b) => {
+      return array.sort((a: UsageRow, b: UsageRow) => {
         const x = a[key];
         const y = b[key];
         return x > y ? -1 : 1;
@@ -203,7 +203,7 @@ export class UsageComponent implements OnInit {
     }
   }
 
-  handleSort(sort, data, hasPagination) {
+  handleSort(sort, data: UsageRow[], hasPagination) {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(data, sort.column);
     } else {

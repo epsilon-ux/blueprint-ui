@@ -2,6 +2,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { parseLookupString } from '../../../../../helpers';
 import { Action } from '../../../../../models/table-models';
 
+interface Conditions {
+  column: string;
+  operator: string;
+  value: any;
+}
+
 @Component({
   selector: 'app-actions',
   templateUrl: './actions.component.html',
@@ -16,7 +22,7 @@ export class ActionsComponent implements OnInit {
   rowId: string;
 
   @Input()
-  rowData: { };
+  rowData: Record<string, unknown>;
 
   @Input()
   classList: string;
@@ -53,7 +59,7 @@ export class ActionsComponent implements OnInit {
   }
 
   // Takes in conditions array from an actionItem and evaluates whether the conditions are met
-  reduceConditions(actionConditions): boolean {
+  reduceConditions(actionConditions: (Conditions | string)[]): boolean {
     // Splits conditions array into condition and the logical operator arrays
     const logicalOperators = [];
     const conditions = [];
@@ -64,7 +70,7 @@ export class ActionsComponent implements OnInit {
     );
 
     // Gets array of booleans from evaulating individual conditions
-    const booleans = conditions.map(condition =>
+    const booleans = conditions.map((condition: Conditions) =>
       this.compare(condition.operator)(
         this.rowData[condition.column],
         condition.value
@@ -73,7 +79,7 @@ export class ActionsComponent implements OnInit {
 
     // Reduces conditions down to a single boolean based off the connecting logical operators
     if (booleans.length > 1) {
-      return booleans.reduce((acc, curr, i) => {
+      return booleans.reduce((acc: boolean, curr: boolean, i: number) => {
         if (i > 0) {
           switch (logicalOperators[i - 1]) {
             case '&&':
@@ -93,7 +99,7 @@ export class ActionsComponent implements OnInit {
   }
 
   // Returns a function that compares two arguments dependent on the operator
-  compare(operator: string): Function {
+  compare(operator: string): (a: any, b: any) => boolean {
     switch (operator) {
       case '>':
         return (a, b) => a > b;

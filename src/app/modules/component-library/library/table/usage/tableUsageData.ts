@@ -1,4 +1,4 @@
-export default [
+export const usageData = [
   {
     'id': 0,
     'link': 'Link Table Cell',
@@ -160,3 +160,14 @@ export default [
     'icon': false
   }
 ];
+
+export interface UsageRow {
+  id: number;
+  link: string;
+  col1: string;
+  col2: string;
+  col3: string;
+  col4: string;
+  status: string;
+  icon: boolean;
+}
