@@ -30,7 +30,6 @@ export class OverviewComponent implements OnInit {
 
   properties: Properties;
 
-
   constructor() {}
 
   ngOnInit() {
@@ -153,15 +152,6 @@ export class OverviewComponent implements OnInit {
       hasDisplayDensity: true
     };
     this.exampleData = tableData;
-    console.log(this.overviewTable);
-  }
-
-  selectAllRows(): void {
-    this.overviewTable.selectAllRows();
-  }
-
-  clearAllRows(): void {
-    this.overviewTable.clearAllRows();
   }
 
   handleAction(action: { action: string; id: string }) {
@@ -205,12 +195,21 @@ export class OverviewComponent implements OnInit {
   }
 
   handleSelectedRows(selectedRowIds: {
-    areAllSelected: boolean;
     selected: {[key: string]: any;}
+    unselected: {[key: string]: any;}
     numRowsSelected: number;
   }) {
     // Handle the selected rows here
-    console.log(selectedRowIds);
+  }
+
+  // This function could be used to select all rows in the dataset
+  selectAllRows(): void {
+    this.overviewTable.selectAllRows();
+  }
+
+  // This function could be used to unselect all rows in the dataset
+  clearAllRows(): void {
+    this.overviewTable.clearAllRows();
   }
 
   handlePageChange(pageData) {
