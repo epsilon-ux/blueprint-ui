@@ -1,11 +1,10 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
-declare var $: any;
+declare let $: any;
 
 @Component({
   selector: 'bp-toggletip',
-  templateUrl: './toggletip.component.html',
-  styleUrls: ['./toggletip.component.scss']
+  templateUrl: './toggletip.component.html'
 })
 
 export class ToggletipComponent implements OnInit, OnDestroy {
@@ -17,7 +16,7 @@ export class ToggletipComponent implements OnInit, OnDestroy {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.popover = $('[data-toggle="popover"]');
     this.popover.popover();
 
@@ -30,9 +29,10 @@ export class ToggletipComponent implements OnInit, OnDestroy {
 
   validation() {
     if (!this.content) {
-      let err = new Error('\'content\' is a required Input of bp-toggletip');
+      const err = new Error('\'content\' is a required Input of bp-toggletip');
       err.name = 'Missing Input';
       throw err;
     }
   }
+
 }

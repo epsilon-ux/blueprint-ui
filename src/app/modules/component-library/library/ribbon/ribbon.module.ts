@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { RibbonModule } from 'epsilon-blueprint';
-import { ActionModule } from 'epsilon-blueprint';
-import { CheckboxModule } from 'epsilon-blueprint';
+import { RibbonModule, ActionModule, CheckboxModule } from 'epsilon-blueprint';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';

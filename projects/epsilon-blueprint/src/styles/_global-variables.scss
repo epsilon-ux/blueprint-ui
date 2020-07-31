@@ -1,6 +1,8 @@
-//
+// stylelint-disable
+
+// TODO: figure out which rules specifically we should disable
+
 // color palette
-//
 
 // primary colors
 $apricot: #fda94e;
@@ -29,13 +31,11 @@ $brick: #a11214;
 // chart colors
 $watermelon: #ff5c49;
 
-//
 // abstracted utility variables
-//
 
 // font families
-$font-family-default: 'Open Sans', sans-serif;
-$font-family-icon: 'Font Awesome 5 Free'; // only used for CSS pseudo elements
+$font-family-default: "Open Sans", sans-serif;
+$font-family-icon: "Font Awesome 5 Free"; // only used for CSS pseudo elements
 
 // font sizes
 $font-size-h1: 22px;
@@ -80,25 +80,25 @@ $feedback-color-warning: $tomato;
 $feedback-color-warning-hover: $brick;
 
 // Font Awesome icons
-$icon-menu: '\f0c9';
-$icon-close: '\f00d';
-$icon-caret-up: '\f0d8';
-$icon-caret-right: '\f0da';
-$icon-caret-down: '\f0d7';
-$icon-caret-left: '\f0d9';
-$icon-chevron-right: '\f054';
-$icon-chevron-down: '\f078';
-$icon-first-page: '\f100';
-$icon-previous-page: '\f104';
-$icon-next-page: '\f105';
-$icon-last-page: '\f101';
-$icon-calendar: '\f073';
-$icon-clock: '\f017';
-$icon-check-circle: '\f058';
-$icon-checkmark: '\f00c';
-$icon-dash: '\f068';
-$icon-external-link: '\f35d';
-$icon-warning: '\f06a';
+$icon-menu: "\f0c9";
+$icon-close: "\f00d";
+$icon-caret-up: "\f0d8";
+$icon-caret-right: "\f0da";
+$icon-caret-down: "\f0d7";
+$icon-caret-left: "\f0d9";
+$icon-chevron-right: "\f054";
+$icon-chevron-down: "\f078";
+$icon-first-page: "\f100";
+$icon-previous-page: "\f104";
+$icon-next-page: "\f105";
+$icon-last-page: "\f101";
+$icon-calendar: "\f073";
+$icon-clock: "\f017";
+$icon-check-circle: "\f058";
+$icon-checkmark: "\f00c";
+$icon-dash: "\f068";
+$icon-external-link: "\f35d";
+$icon-warning: "\f06a";
 
 // shadows
 $box-shadow-primary: 0 1px 10px 0 rgba($midnight, 0.3); // used for modals, overlay messaging, and login screen form containers
@@ -111,7 +111,7 @@ $box-shadow-focus-warning: 0 0 0 0.2rem rgba($feedback-color-warning, 0.25);
 $box-shadow-focus-readonly: 0 0 0 0.2rem rgba($storm, 0.3);
 
 // gradients
-$gradient-primary: linear-gradient(to right, #0095F6 -39%, #0312DD 100%);
+$gradient-primary: linear-gradient(to right, #0095f6 -39%, #0312dd 100%);
 $gradient-progress-bar: $gradient-primary;
 
 // transition

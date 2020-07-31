@@ -1,17 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-voice-tone',
-  templateUrl: './voice-tone.component.html',
-  styleUrls: ['./voice-tone.component.scss']
+  templateUrl: './voice-tone.component.html'
 })
 
 export class VoiceToneComponent implements OnInit {
 
-  headingText = "Voice & Tone";
+  headingText = 'Voice & Tone';
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

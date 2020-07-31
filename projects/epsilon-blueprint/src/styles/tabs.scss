@@ -1,25 +1,78 @@
 .tab
 {
-    display: inline-block;
-    margin-right: 20px;
-    border: 0;
-    padding: 10px;
-    background: transparent;
+  display: inline-block;
+  margin-right: 20px;
+  border: 0;
+  padding: 10px;
+  background: transparent;
+  color: $font-color-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-lg;
+
+  &:hover
+  {
     color: $font-color-primary;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-regular;
-    
-    &:hover
+    font-weight: $font-weight-semi-bold;
+    text-decoration: none;
+  }
+
+  &.active
+  {
+    border-bottom: 5px solid $accent-color-secondary;
+    color: $font-color-primary;
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+// TODO: copied from messaging - eventually move this into a component
+.nav-pills
+{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .nav-item
+  {
+    flex: 0 0 auto;
+
+    .nav-link
     {
-        color: $font-color-primary;
+      margin-right: 10px;
+      border-radius: 20px;
+      padding: 6px 20px 7px;
+      color: $font-color-primary;
+      font-weight: $font-weight-regular;
+      font-size: $font-size-lg;
+
+      &.active
+      {
+        background: $ice;
+        color: $accent-color-primary;
         font-weight: $font-weight-semi-bold;
-        text-decoration: none;
+      }
+
+      &.disabled
+      {
+        color: $font-color-secondary;
+      }
+
+      &:hover:not(.active):not(.disabled)
+      {
+        font-weight: $font-weight-semi-bold;
+      }
+
+      &:focus:not(.disabled):not([disabled])
+      {
+        box-shadow: $box-shadow-focus-default-inset;
+      }
     }
-    
-    &.active
+
+    &:last-child
     {
-        border-bottom: 5px solid $accent-color-secondary;
-        color: $font-color-primary;
-        font-weight: $font-weight-semi-bold;
+      .nav-link
+      {
+        margin-right: 0;
+      }
     }
+  }
 }

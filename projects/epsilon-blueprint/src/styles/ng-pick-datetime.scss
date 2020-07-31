@@ -1,4 +1,5 @@
 // custom theming for owl-date-time
+// stylelint-disable
 
 .cdk-global-scrollblock
 {
@@ -15,11 +16,11 @@
 
 .owl-dt-container
 {
-  display: block;
-  font-size: 1.2rem;
-  background: $coconut;
-  pointer-events: auto;
   z-index: 1000;
+  display: block;
+  background: $coconut;
+  font-size: 1.2rem;
+  pointer-events: auto;
 }
 
 .owl-dt-container-row
@@ -43,21 +44,21 @@
 {
   display: flex;
   align-items: center;
-  font-size: 1em;
   width: 100%;
-  padding: .5em;
+  padding: 0.5em;
   color: $font-color-primary;
+  font-size: 1em;
 
   .owl-dt-calendar-control-content
   {
-    flex: 1 1 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1 1 auto;
 
     .owl-dt-calendar-control-button
     {
-      padding: 0 .8em;
+      padding: 0 0.8em;
 
       &:hover
       {
@@ -71,9 +72,9 @@
 {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
-  padding: 0 .5em .5em;
   outline: 0;
+  padding: 0 0.5em 0.5em;
+  flex: 1 1 auto;
 }
 
 .owl-dt-calendar-view
@@ -93,7 +94,7 @@
 
     .owl-dt-calendar-header th
     {
-      padding-bottom: .25em;
+      padding-bottom: 0.25em;
       font-weight: $font-weight-regular;
     }
   }
@@ -114,10 +115,10 @@
     {
       th
       {
-        font-size: $font-size-sm;
-        font-weight: 400;
-        text-align: center;
         padding-bottom: 1em;
+        font-weight: 400;
+        font-size: $font-size-sm;
+        text-align: center;
       }
     }
 
@@ -125,17 +126,17 @@
     {
       position: relative;
       height: 1px;
-      padding-bottom: .5em;
+      padding-bottom: 0.5em;
 
-      &:after
+      &::after
       {
-        content: '';
         position: absolute;
         top: 0;
-        left: -.5em;
-        right: -.5em;
+        right: -0.5em;
+        left: -0.5em;
         height: 1px;
         background: $border-color-primary;
+        content: "";
       }
     }
   }
@@ -144,11 +145,11 @@
   {
     position: relative;
     height: 0;
+    outline: 0;
+    color: $font-color-primary;
     line-height: 0;
     text-align: center;
-    outline: 0;
     cursor: pointer;
-    color: $font-color-primary;
   }
 
   .owl-dt-calendar-cell-content
@@ -157,17 +158,17 @@
     top: 0;
     left: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    font-size: .8em;
-    line-height: 1;
-    border: 1px solid transparent;
     border-radius: 0;
+    border: 1px solid transparent;
     color: $font-color-primary;
     font-weight: $font-weight-semi-bold;
+    font-size: 0.8em;
+    line-height: 1;
   }
 
   .owl-dt-calendar-cell-out
@@ -194,19 +195,22 @@
     }
   }
 
-  .owl-dt-calendar-cell-disabled {
-
-    & > .owl-dt-calendar-cell-content:not(.owl-dt-calendar-cell-selected) {
+  .owl-dt-calendar-cell-disabled
+  {
+    & > .owl-dt-calendar-cell-content:not(.owl-dt-calendar-cell-selected)
+    {
       color: $font-color-secondary;
       cursor: not-allowed;
     }
 
-    & > .owl-dt-calendar-cell-content.owl-dt-calendar-cell-selected {
+    & > .owl-dt-calendar-cell-content.owl-dt-calendar-cell-selected
+    {
       opacity: 1;
       cursor: not-allowed;
     }
 
-    & > .owl-dt-calendar-cell-today:not(.owl-dt-calendar-cell-selected) {
+    & > .owl-dt-calendar-cell-today:not(.owl-dt-calendar-cell-selected)
+    {
       border-color: $border-color-primary;
       cursor: not-allowed;
     }
@@ -245,8 +249,8 @@
   justify-content: center;
   width: 100%;
   height: 7em;
-  padding: .5em;
   outline: none;
+  padding: 0.5em;
 }
 
 .owl-dt-timer-box
@@ -266,50 +270,50 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: .2em 0;
+  margin: 0.2em 0;
 
   .owl-dt-timer-input
   {
     display: block;
     width: 2em;
-    text-align: center;
-    border: 1px solid $border-color-primary;
-    border-radius: 0;
     outline: medium none;
+    border-radius: 0;
+    border: 1px solid $border-color-primary;
+    padding: 0.2em;
     font-size: 1.2em;
-    padding: .2em;
+    text-align: center;
   }
 }
 
 .owl-dt-timer-divider
 {
+  position: absolute;
+  left: -0.3em;
   display: inline-block;
   align-self: flex-end;
-  position: absolute;
-  width: .6em;
+  width: 0.6em;
   height: 100%;
-  left: -.3em;
 
-  &:before,
-  &:after
+  &::before,
+  &::after
   {
-    content: '';
-    display: inline-block;
-    width: .35em;
-    height: .35em;
     position: absolute;
     left: 50%;
+    display: inline-block;
+    width: 0.35em;
+    height: 0.35em;
     border-radius: 100%;
-    transform: translateX(-50%);
     background-color: $font-color-primary;
+    content: "";
+    transform: translateX(-50%);
   }
 
-  &:before
+  &::before
   {
     top: 35%;
   }
 
-  &:after
+  &::after
   {
     bottom: 35%;
   }
@@ -322,19 +326,19 @@
 
 .owl-dt-control-button
 {
-  user-select: none;
-  cursor: pointer;
-  outline: none;
-  border: none;
   display: inline-block;
-  white-space: nowrap;
-  text-decoration: none;
   vertical-align: baseline;
   margin: 0;
+  outline: none;
+  border: none;
   padding: 0;
   background-color: transparent;
-  font-size: 1em;
   color: $font-color-primary;
+  font-size: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
 
   .owl-dt-control-button-content
   {
@@ -366,8 +370,8 @@
   .owl-dt-control-button-content
   {
     height: 1.5em;
-    padding: 0 .5em;
     border-radius: 0;
+    padding: 0 0.5em;
     transition: background-color 100ms linear;
   }
 
@@ -383,7 +387,7 @@
     align-items: center;
     width: 1em;
     height: 1em;
-    margin: .1em;
+    margin: 0.1em;
     transition: transform 200ms ease;
   }
 }
@@ -392,10 +396,10 @@
 {
   .owl-dt-control-button-content
   {
-    padding: 0;
-    border-radius: 0;
     width: 1.5em;
     height: 1.5em;
+    border-radius: 0;
+    padding: 0;
   }
 
   &[disabled]
@@ -500,15 +504,15 @@
 
 .owl-dt-container-control-button
 {
-  font-size: 1em;
   width: 50%;
   height: 100%;
   border-radius: 0;
+  font-size: 1em;
 
   .owl-dt-control-button-content
   {
-    height: 100%;
     width: 100%;
+    height: 100%;
     transition: background-color 100ms linear;
   }
 
@@ -523,7 +527,7 @@
 
 .owl-dt-container-info
 {
-  padding: 0 .5em;
+  padding: 0 0.5em;
   cursor: pointer;
 
   .owl-dt-container-range
@@ -543,10 +547,10 @@
 .owl-dt-container-disabled,
 .owl-dt-trigger-disabled
 {
+  opacity: 1;
   border: 1px solid rgba($border-color-primary, 0.5);
   background: $mist;
   color: $font-color-secondary;
-  opacity: 1;
   cursor: not-allowed;
 
   &:hover
@@ -567,8 +571,8 @@
 
   .owl-dt-timer-hour12-box
   {
-    border: 1px solid $accent-color-primary;
     border-radius: 0;
+    border: 1px solid $accent-color-primary;
     color: $accent-color-primary;
     font-weight: $font-weight-regular;
     transition: background 200ms ease;
@@ -577,10 +581,10 @@
     {
       width: 100%;
       height: 100%;
-      padding: .5em;
+      padding: 0.5em;
     }
 
-    &:focus, 
+    &:focus,
     &:hover
     {
       .owl-dt-control-button-content
@@ -595,12 +599,12 @@
 
 .owl-hidden-accessible
 {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
   position: absolute;
   width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
 }

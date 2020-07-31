@@ -9,6 +9,6 @@ import { SearchComponent } from './search.component';
   ],
   imports: [CommonModule, FormsModule],
   exports: [SearchComponent],
-  providers: [],
+  providers: []
 })
-export class SearchModule {}
+export class SearchModule { }

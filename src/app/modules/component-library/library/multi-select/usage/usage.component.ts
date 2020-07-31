@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-usage',
-  templateUrl: './usage.component.html',
-  styleUrls: ['./usage.component.scss']
+  templateUrl: './usage.component.html'
 })
 export class UsageComponent implements OnInit {
+
   optionItems = [
     {
       label: 'Option 1',
@@ -66,6 +66,6 @@ export class UsageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

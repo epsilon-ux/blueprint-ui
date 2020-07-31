@@ -14,17 +14,17 @@ import { ApiComponent } from './api/api.component';
 
 @NgModule({
   declarations: [
-    ToggletipComponent, 
-    OverviewComponent, 
-    ApiComponent, 
-    PlaygroundComponent, 
+    ToggletipComponent,
+    OverviewComponent,
+    ApiComponent,
+    PlaygroundComponent,
     UsageComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     ComponentHeaderModule,
-    ToggletipRoutingModule, 
+    ToggletipRoutingModule,
     ToggletipModule
   ],
   providers: [],

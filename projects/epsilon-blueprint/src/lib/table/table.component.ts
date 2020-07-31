@@ -8,7 +8,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { Column, ColumnType, Properties } from '../../models/table-models';
+import { ColumnType, Properties } from '../../models/table-models';
 import { parseLookupString, generateUniqueId } from '../../helpers';
 
 @Component({
@@ -28,6 +28,9 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() onSort = new EventEmitter();
   @Output() rowSelected = new EventEmitter();
   @Output() viewChange = new EventEmitter();
+
+  @ViewChild('selectAllRowsRef', { static: false })
+  selectAllRowsRef: ElementRef;
 
   // Data
   tableData = [];
@@ -53,9 +56,7 @@ export class TableComponent implements OnInit, OnChanges {
   // displayDensity
   densityClass: string;
 
-  @ViewChild('selectAllRowsRef', { static: false }) selectAllRowsRef: ElementRef;
-
-  constructor() {}
+  constructor() { }
 
   // column type
   get columnType() {
@@ -201,9 +202,8 @@ export class TableComponent implements OnInit, OnChanges {
     // Set aria attributes before data is loaded, but after column headers have rendered
     if (this.isDataLoading && key === this.sortColumnKey) {
       return this.properties.sort.defaultSortOrder;
-    }
-    // Set aria attributes after data is loaded
-    else if (key === this.sortColumnKey) {
+    } else if (key === this.sortColumnKey) {
+      // Set aria attributes after data is loaded
       return this.sortOrder;
     } else {
       return null;

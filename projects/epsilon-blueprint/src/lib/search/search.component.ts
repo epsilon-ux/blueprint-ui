@@ -6,6 +6,7 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+
   // Label for search field
   @Input()
   label = 'Search';
@@ -29,9 +30,9 @@ export class SearchComponent implements OnInit {
   public searchFilter = '';
   public showClearIcon = false;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit(): void { }
 
   onClearSearch() {
     this.searchFilter = '';
@@ -50,8 +51,8 @@ export class SearchComponent implements OnInit {
       this.showClearIcon = true;
       this.search.emit(this.searchFilter);
     } else if (
-      (event.key === 'Backspace' || event.key === 'Delete') &&
-      this.searchFilter.length === 0
+      (event.key === 'Backspace' || event.key === 'Delete')
+      && this.searchFilter.length === 0
     ) {
       this.showClearIcon = false;
       this.clearSearch.emit();
@@ -61,4 +62,5 @@ export class SearchComponent implements OnInit {
       this.showClearIcon = false;
     }
   }
+
 }

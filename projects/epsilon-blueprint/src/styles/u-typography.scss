@@ -1,97 +1,94 @@
-@import '../styles/global-variables';
+@import "../styles/global-variables";
 
 // The top utility class(es) in each pairing map(s) to Bootstrap's naming conventions
 // The bottom utility class(es) in each pairing map(s) to Blueprint's naming conventions
 
 // Bootstrap is using !important, so we need to use it in order to override Bootstrap until we remove Bootstrap
 
-//
 // text styles
-//
+// stylelint-disable declaration-no-important
 
 .h1
 {
   margin-bottom: $space-md !important;
-  font-size: $font-size-h1 !important;
   font-weight: $font-weight-regular !important;
+  font-size: $font-size-h1 !important;
 }
 
 .h2
 {
   margin-bottom: $space-md !important;
-  font-size: $font-size-h2 !important;
   font-weight: $font-weight-semi-bold !important;
+  font-size: $font-size-h2 !important;
 }
 
 .h3
 {
   margin-bottom: $space-sm !important;
-  font-size: $font-size-h3 !important;
   font-weight: $font-weight-bold !important;
+  font-size: $font-size-h3 !important;
 }
 
 .h4
 {
   margin-bottom: $space-sm !important;
-  font-size: $font-size-h4 !important;
-  font-weight: $font-weight-semi-bold !important;
   color: $font-color-secondary !important;
+  font-weight: $font-weight-semi-bold !important;
+  font-size: $font-size-h4 !important;
 }
 
 .display-1,
 .text-style-1
 {
-  font-size: $font-size-xl !important;
-  font-weight: $font-weight-regular !important;
   color: $font-color-primary !important;
+  font-weight: $font-weight-regular !important;
+  font-size: $font-size-xl !important;
 }
 
 .display-2,
 .text-style-2
 {
-  font-size: $font-size-lg !important;
-  font-weight: $font-weight-semi-bold !important;
   color: $font-color-primary !important;
+  font-weight: $font-weight-semi-bold !important;
+  font-size: $font-size-lg !important;
 }
 
 .display-3,
 .text-style-3
 {
-  font-size: $font-size-md !important;
-  font-weight: $font-weight-bold !important;
   color: $font-color-primary !important;
+  font-weight: $font-weight-bold !important;
+  font-size: $font-size-md !important;
 }
 
 .display-4,
 .text-style-4 // previously .text-secondary
 {
-  font-size: $font-size-md !important;
-  font-weight: $font-weight-semi-bold !important;
   color: $font-color-secondary !important;
+  font-weight: $font-weight-semi-bold !important;
+  font-size: $font-size-md !important;
 }
 
 .text-style-muted-1
 {
-  font-weight: $font-weight-regular !important;
   color: $font-color-secondary !important;
+  font-weight: $font-weight-regular !important;
 }
 
 .text-style-muted-2
 {
-  font-weight: $font-weight-regular !important;
-  font-style: italic !important;
   color: $font-color-secondary !important;
+  font-style: italic !important;
+  font-weight: $font-weight-regular !important;
 }
 
 .text-style-muted-3
 {
-  font-weight: $font-weight-semi-bold !important;
   color: $font-color-secondary !important;
+  font-weight: $font-weight-semi-bold !important;
 }
 
-//
 // font sizes
-//
 
 .font-size-xl
 {
@@ -124,9 +121,7 @@
   font-size: $font-size-body !important;
 }
 
-//
 // font weights
-//
 
 .font-weight-normal,
 .font-weight-regular
@@ -144,9 +139,7 @@
   font-weight: $font-weight-bold !important;
 }
 
-//
 // font styles
-//
 
 .font-style-normal
 {
@@ -158,9 +151,7 @@
   font-style: italic !important;
 }
 
-//
 // text transforms
-//
 
 .text-lowercase,
 .text-transform-lowercase
@@ -180,9 +171,7 @@
   text-transform: uppercase !important;
 }
 
-//
 // text decoration
-//
 
 .text-decoration-none
 {
@@ -194,9 +183,7 @@
   text-decoration: underline !important;
 }
 
-//
 // text alignment
-//
 
 .text-left,
 .text-align-left
@@ -216,9 +203,7 @@
   text-align: right !important;
 }
 
-//
 // text wrapping
-//
 
 .text-nowrap
 {
@@ -232,7 +217,10 @@
 
 .text-break
 {
-  word-break: break-all !important;
-  word-break: break-word !important;
+  // for inline elements
+  word-break: break-all !important; // Firefox, > Edge 18
+  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+  word-break: break-word !important; // IE, < Edge 18, Chrome
+  // for block elements
   overflow-wrap: break-word !important;
 }

@@ -6,12 +6,11 @@ import standard from './example-properties/standard';
 
 @Component({
   selector: 'app-usage',
-  templateUrl: './usage.component.html',
-  styleUrls: ['./usage.component.scss']
+  templateUrl: './usage.component.html'
 })
 export class UsageComponent implements OnInit {
 
-  @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
+  @ViewChild('expandableRowsTemplate', { static: true }) expandableRowsTemplate;
 
   usageDataPage = usageData.slice(0, 10);
   pageIndices;
@@ -21,20 +20,20 @@ export class UsageComponent implements OnInit {
   usageDataShort = usageData.slice(0, 2);
 
   // Properties
-  standard;
-  withSelectable;
-  withActions;
-  withDropdown;
-  withIcons;
-  withStatus;
-  withExpandable;
-  withExpandableAndSelectable;
-  withLinks;
-  withFooter;
+  standard: Properties;
+  withSelectable: Properties;
+  withActions: Properties;
+  withDropdown: Properties;
+  withIcons: Properties;
+  withStatus: Properties;
+  withExpandable: Properties;
+  withExpandableAndSelectable: Properties;
+  withLinks: Properties;
+  withFooter: Properties;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     // Properties
     this.standard = standard;
 
@@ -110,7 +109,7 @@ export class UsageComponent implements OnInit {
               false: ''
             }
           }
-        },
+        }
       ]
     };
 
@@ -131,7 +130,7 @@ export class UsageComponent implements OnInit {
             'warning': 'Warning',
             'complete': 'Complete'
           }
-        },
+        }
       ]
     };
 
@@ -182,7 +181,7 @@ export class UsageComponent implements OnInit {
 
   sortByKeyAsc(array, key) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => a.id < b.id ? -1 : 1);
+      return array.sort((a, b) => (a.id < b.id ? -1 : 1));
     } else {
       return array.sort((a, b) => {
         const x = a[key];
@@ -194,7 +193,7 @@ export class UsageComponent implements OnInit {
 
   sortByKeyDesc(array, key) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => b.id < a.id ? -1 : 1);
+      return array.sort((a, b) => (b.id < a.id ? -1 : 1));
     } else {
       return array.sort((a, b) => {
         const x = a[key];
@@ -203,7 +202,7 @@ export class UsageComponent implements OnInit {
       });
     }
   }
-  
+
   handleSort(sort, data, hasPagination) {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(data, sort.column);
@@ -211,7 +210,7 @@ export class UsageComponent implements OnInit {
       this.sortByKeyDesc(data, sort.column);
     }
     if (hasPagination) {
-        this.usageDataPage = data.slice(
+      this.usageDataPage = data.slice(
         this.pageIndices.start,
         this.pageIndices.end
       );
@@ -220,13 +219,13 @@ export class UsageComponent implements OnInit {
 
   handleSelectedRows(selectedRowIds: {
     areAllSelected: boolean;
-    selected: {[key: string]: any;}
+    selected: {[key: string]: any};
   }) {
     // Handle the selected rows here
   }
 
   handlePageChange(pageData) {
-    this.pageIndices = {...pageData.indices};
+    this.pageIndices = { ...pageData.indices };
     this.usageDataPage = this.usageData.slice(
       pageData.indices.start,
       pageData.indices.end

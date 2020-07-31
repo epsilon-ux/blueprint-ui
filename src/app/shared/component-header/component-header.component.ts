@@ -8,7 +8,8 @@ export class ComponentHeaderComponent implements OnInit {
 
   @Input() headingText: string;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit(): void { }
+
 }

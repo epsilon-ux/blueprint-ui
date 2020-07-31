@@ -6,8 +6,7 @@ import tableData from 'src/app/datasets/tableData.json';
 
 @Component({
   selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  templateUrl: './overview.component.html'
 })
 export class OverviewComponent implements OnInit {
 
@@ -30,9 +29,9 @@ export class OverviewComponent implements OnInit {
 
   properties: Properties;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.properties = {
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
@@ -60,10 +59,9 @@ export class OverviewComponent implements OnInit {
           isColumnDisplayed: true,
           type: ColumnType.LINK,
           link: {
-            element: 'a',
             ariaLabel: 'go to Object #{id}',
             target: '',
-            path: 'object/#{id}'
+            bpRouterLink: 'object/#{id}'
           }
         },
         {
@@ -73,10 +71,8 @@ export class OverviewComponent implements OnInit {
           type: ColumnType.LINK,
           isSortable: false,
           link: {
-            element: 'a',
             ariaLabel: 'go to Object #{id}',
-            target: '_blank',
-            href: 'https://www.example.com'
+            action: 'testAction'
           }
         },
         {
@@ -107,7 +103,7 @@ export class OverviewComponent implements OnInit {
         }
       ],
       sort: {
-        defaultSortedColumn: 'phone',
+        defaultSortedColumn: 'amount',
         defaultSortOrder: 'ascending'
       },
       hasSelectableRows: true,
@@ -117,7 +113,7 @@ export class OverviewComponent implements OnInit {
           text: 'Edit',
           ariaLabel: 'Edit Object #{id}',
           class: 'btn-outline-primary',
-          routerLink: './'
+          bpRouterLink: './'
         },
         {
           element: 'button',
@@ -148,6 +144,7 @@ export class OverviewComponent implements OnInit {
         }
       ],
       expandableRowsTemplate: this.expandableRowsTemplate,
+      hasViewSelector: true,
       hasColumnSelector: true,
       hasDisplayDensity: true
     };
@@ -158,9 +155,11 @@ export class OverviewComponent implements OnInit {
     // Use action from action buttons to trigger different events here
   }
 
+  handleViewChange() { }
+
   sortByKeyAsc(array, key) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => a.id < b.id ? -1 : 1);
+      return array.sort((a, b) => (a.id < b.id ? -1 : 1));
     } else {
       return array.sort((a, b) => {
         const x = a[key];
@@ -172,7 +171,7 @@ export class OverviewComponent implements OnInit {
 
   sortByKeyDesc(array, key) {
     if (key === 'templateCol') {
-      return array.sort((a, b) => b.id < a.id ? -1 : 1);
+      return array.sort((a, b) => (b.id < a.id ? -1 : 1));
     } else {
       return array.sort((a, b) => {
         const x = a[key];
@@ -213,10 +212,11 @@ export class OverviewComponent implements OnInit {
   }
 
   handlePageChange(pageData) {
-    this.pageIndices = {...pageData.indices};
+    this.pageIndices = { ...pageData.indices };
     this.tableData = this.filteredData.slice(
       pageData.indices.start,
       pageData.indices.end
     );
   }
+
 }

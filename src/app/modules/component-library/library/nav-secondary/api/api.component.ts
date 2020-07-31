@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-api',
-  templateUrl: './api.component.html',
-  styleUrls: ['./api.component.scss']
+  templateUrl: './api.component.html'
 })
 export class ApiComponent implements OnInit {
 
@@ -25,7 +24,7 @@ export class ApiComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

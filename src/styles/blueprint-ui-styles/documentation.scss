@@ -1,6 +1,8 @@
-@import '../../../dist/epsilon-blueprint/styles/global-variables';
+@import "../../../dist/epsilon-blueprint/styles/global-variables";
 
 // We add margin-top to headings for vertical spacing in our docs
+// stylelint-disable no-descending-specificity
+
 h2
 {
   margin-top: 40px;
@@ -16,9 +18,12 @@ h4
   margin-top: 20px;
 }
 
-abbr[title]
+abbr
 {
-  text-decoration: none;
+  &[title]
+  {
+    text-decoration: none;
+  }
 }
 
 .component-description
@@ -33,7 +38,7 @@ abbr[title]
 
 .inline-details
 {
-  dt, 
+  dt,
   dd
   {
     display: inline;
@@ -59,6 +64,19 @@ abbr[title]
 {
   border-radius: 0;
   border-color: $border-color-secondary;
+
+  .card-header
+  {
+    border-bottom-color: $border-color-primary;
+    padding: 25px 20px;
+    background: $mist;
+    font-size: $font-size-xl;
+
+    &:first-child
+    {
+      border-radius: 0;
+    }
+  }
 
   &.component-wrap
   {

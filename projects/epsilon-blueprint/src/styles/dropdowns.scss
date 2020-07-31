@@ -68,7 +68,7 @@
 
   &:disabled
   {
-    border: none;
+    border: 0;
     background: transparent;
     color: $font-color-secondary;
     pointer-events: initial;

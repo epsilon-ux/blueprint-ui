@@ -12,4 +12,4 @@ import { ActionModule } from '../action/action.module';
   exports: [LandingPageHeaderComponent],
   providers: []
 })
-export class LandingPageHeaderModule {}
+export class LandingPageHeaderModule { }

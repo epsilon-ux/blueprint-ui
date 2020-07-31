@@ -185,6 +185,15 @@
               </td>
             </tr>
             <tr>
+              <td>hasViewSelector</td>
+              <td>boolean</td>
+              <td>Enables the view selector feature.</td>
+              <td>
+                Use "true" to enable the view selector, and render the view
+                selector below the table.
+              </td>
+            </tr>
+            <tr>
               <td>hasColumnSelector</td>
               <td>boolean</td>
               <td>Enables the column selector feature.</td>
@@ -389,24 +398,6 @@
           </thead>
           <tbody>
             <tr>
-              <td>element</td>
-              <td>string</td>
-              <td>The element used for the link.</td>
-              <td>
-                <p>
-                  Expects either "a" or "button".
-                </p>
-                <p>
-                  Use "a" when the link
-                  column should route to another part of the application.
-                </p>
-                <p>
-                  Use "button" when the link column should perform an
-                  action on the page, e.g. opens a modal.
-                </p>
-              </td>
-            </tr>
-            <tr>
               <td>ariaLabel</td>
               <td>string</td>
               <td>
@@ -432,14 +423,13 @@
               </td>
             </tr>
             <tr>
-              <!-- TODO: Change path to routerLink -->
-              <td>path</td>
+              <td>bpRouterLink</td>
               <td>string</td>
               <td>
                 The string to be used in the link's routerLink attribute.
               </td>
               <td>
-                One of either path or href is required when element = "a".
+                One of either bpRouterLink, href, or action is required.
               </td>
             </tr>
             <tr>
@@ -447,9 +437,7 @@
               <td>string</td>
               <td>The string to be used in the link's href attribute.</td>
               <td>
-                One of either
-                <!-- TODO: Change path to routerLink -->
-                path or href is required when element = "a".
+                One of either bpRouterLink, href, or action is required.
               </td>
             </tr>
             <tr>
@@ -459,7 +447,8 @@
                 The string to be emitted when the button is clicked.
               </td>
               <td>
-                Required if element = "button". See <a routerLink="." fragment="outputs">Outputs</a> for more
+                One of either bpRouterLink, href, or action is required.
+                See <a routerLink="." fragment="outputs">Outputs</a> for more
                 information on what is emitted.
               </td>
             </tr>
@@ -689,12 +678,26 @@
               </td>
               <td></td>
             </tr>
+            <tr>
+              <td>'View'</td>
+              <td>string</td>
+              <td>The text used for the view selector's label.</td>
+              <td>Default is "View:".</td>
+            </tr>
+            <tr>
+              <td>'View Options'</td>
+              <td>object</td>
+              <td>
+                The object containing the options for the view selector.
+              </td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
 
-        <h4>Display density</h4>
+        <h4>Display density options</h4>
         <table class="table table-bordered-rows">
-          <caption class="sr-only">Display density properties</caption>
+          <caption class="sr-only">Display density option properties</caption>
           <thead>
             <tr>
               <th class="pt-0">Property</th>
@@ -721,6 +724,37 @@
                 density" select.
               </td>
               <td>Default is "Compact".</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h4>View options</h4>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">View option properties</caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>'Table'</td>
+              <td>string</td>
+              <td>
+                The text used for the table option in the view select.
+              </td>
+              <td>Default is "Table".</td>
+            </tr>
+            <tr>
+              <td>'Alternate'</td>
+              <td>string</td>
+              <td>
+                The text used for the alternate option in the view select.
+              </td>
+              <td>Default is "List".</td>
             </tr>
           </tbody>
         </table>
@@ -833,6 +867,9 @@
           </tr>
         </tbody>
       </table>
+      
+      <h3 id="actionOutput">viewChange</h3>
+      <p>The viewChange output emits the value of the view selector when it's value changes.</p>
 
       <h2>Pagination</h2>
       <p>Pagination can be added to a table by nesting the <a routerLink="/components/pagination/overview">bp-pagination component</a> in the table component.</p>
