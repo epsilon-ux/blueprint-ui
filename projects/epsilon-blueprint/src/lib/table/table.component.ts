@@ -256,9 +256,19 @@ export class TableComponent implements OnInit, OnChanges {
     if (event.target.checked) {
       this.numRowsSelected++;
       this.rowSelectionStates.set(selectedRow, true);
+      this.rowSelected.emit({
+        selected: [selectedRow],
+        unselected: [],
+        numRowsSelected: this.numRowsSelected
+      });
     } else {
       this.numRowsSelected--;
       this.rowSelectionStates.set(selectedRow, false);
+      this.rowSelected.emit({
+        selected: [],
+        unselected: [selectedRow],
+        numRowsSelected: this.numRowsSelected
+      });
     }
 
     if (this.getSelectionSize() === this.dataLength || this.numRowsSelected === this.dataLength) {
@@ -275,12 +285,6 @@ export class TableComponent implements OnInit, OnChanges {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = false;
     }
-
-    this.rowSelected.emit({
-      areAllSelected: this.isSelectAllChecked,
-      selected: selectedRow,
-      numRowsSelected: this.numRowsSelected
-    });
   }
 
   selectPage(): void {
@@ -289,17 +293,22 @@ export class TableComponent implements OnInit, OnChanges {
       this.numRowsSelected = this.rowSelectionStates.size;
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
+      this.rowSelected.emit({
+        selected: this.tableData,
+        unselected: [],
+        numRowsSelected: this.numRowsSelected
+      });
     } else if (this.isSelectAllChecked) {
       this.rowSelectionStates.clear();
       this.numRowsSelected = 0;
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = false;
+      this.rowSelected.emit({
+        selected: [],
+        unselected: this.tableData,
+        numRowsSelected: this.numRowsSelected
+      });
     }
-    this.rowSelected.emit({
-      areAllSelected: this.isSelectAllChecked,
-      selected: this.rowSelectionStates,
-      numRowsSelected: this.numRowsSelected
-    });
   }
 
   public selectAllRows(): void {
