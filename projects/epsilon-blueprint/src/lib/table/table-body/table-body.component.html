@@ -24,7 +24,7 @@
       <bp-checkbox
         [label]="parseLookupString(properties.internationalization['Select Row'], rowData)"
         [visuallyHiddenLabel]="true"
-        [isChecked]="selectedRows.has(rowData)"
+        [isChecked]="rowSelectionStates.get(rowData)"
         (change)="selectRows($event, rowData)"
       ></bp-checkbox>
     </td>

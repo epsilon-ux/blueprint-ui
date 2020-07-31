@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ColumnType, Properties } from 'epsilon-blueprint/models/table-models';
+import { TableComponent } from 'epsilon-blueprint';
 
 import tableData from 'src/app/datasets/tableData.json';
 
@@ -10,8 +11,9 @@ import tableData from 'src/app/datasets/tableData.json';
 })
 export class OverviewComponent implements OnInit {
 
-  @ViewChild('templateColumn', {static: true}) templateColumn;
-  @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
+  @ViewChild('overviewTable', { static: true }) overviewTable: TableComponent;
+  @ViewChild('templateColumn', { static: true }) templateColumn;
+  @ViewChild('expandableRowsTemplate', { static: true }) expandableRowsTemplate;
 
   set exampleData(json) {
     this.rawData = json.customerData.data;
@@ -27,6 +29,7 @@ export class OverviewComponent implements OnInit {
   isDataLoading = true;
 
   properties: Properties;
+
 
   constructor() {}
 
@@ -150,6 +153,15 @@ export class OverviewComponent implements OnInit {
       hasDisplayDensity: true
     };
     this.exampleData = tableData;
+    console.log(this.overviewTable);
+  }
+
+  selectAllRows(): void {
+    this.overviewTable.selectAllRows();
+  }
+
+  clearAllRows(): void {
+    this.overviewTable.clearAllRows();
   }
 
   handleAction(action: { action: string; id: string }) {
@@ -179,7 +191,7 @@ export class OverviewComponent implements OnInit {
       });
     }
   }
-  
+
   handleSort(sort) {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(this.filteredData, sort.column);
@@ -198,6 +210,7 @@ export class OverviewComponent implements OnInit {
     numRowsSelected: number;
   }) {
     // Handle the selected rows here
+    console.log(selectedRowIds);
   }
 
   handlePageChange(pageData) {

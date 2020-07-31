@@ -21,7 +21,7 @@
               [visuallyHiddenLabel]="true"
               [isChecked]="isSelectAllChecked"
               [isMixed]="isSelectAllIndeterminate"
-              (change)="onSelectAllRows($event)"
+              (change)="selectPage()"
             ></app-select-all-checkbox>
           </th>
           <ng-container *ngFor="let column of properties.columns">
@@ -85,7 +85,7 @@
         app-table-body
         [tableData]="data"
         [properties]="properties"
-        [selectedRows]="selectedRows"
+        [rowSelectionStates]="rowSelectionStates"
         [expandedRows]="expandedRows"
         (action)="emitAction($event)"
         (selectedRowsAction)="onSelectRow($event)"

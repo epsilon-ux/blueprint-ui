@@ -11,7 +11,10 @@
     <div class="col">
       <div class="card mb-3">
         <div class="card-body component-preview">
+          <button (click)="selectAllRows()">Select All Rows</button>
+          <button (click)="clearAllRows()">Clear All Rows</button>
           <bp-table
+            #overviewTable
             [isDataLoading]="isDataLoading"
             [data]="tableData"
             [dataLength]="filteredData.length"

@@ -69,7 +69,7 @@ export class ApiComponent implements OnInit {
     },...]
     \`\`\`
   `;
-  
+
   expandableRowsMD1 = `
     \`\`\`html
     <ng-template #expandableRow let-rowData>
