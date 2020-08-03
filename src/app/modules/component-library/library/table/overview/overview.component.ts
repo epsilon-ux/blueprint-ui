@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ColumnType, Properties } from 'epsilon-blueprint/models/table-models';
+import { TableComponent } from 'epsilon-blueprint';
 
 import { TableRow } from './tableData.interface';
 import tableData from 'src/app/datasets/tableData.json';
@@ -10,6 +11,7 @@ import tableData from 'src/app/datasets/tableData.json';
 })
 export class OverviewComponent implements OnInit {
 
+  @ViewChild('overviewTable', { static: true }) overviewTable: TableComponent;
   @ViewChild('templateColumn', { static: true }) templateColumn;
   @ViewChild('expandableRowsTemplate', { static: true }) expandableRowsTemplate;
 
@@ -193,11 +195,21 @@ export class OverviewComponent implements OnInit {
   }
 
   handleSelectedRows(selectedRowIds: {
-    areAllSelected: boolean;
-    selected: {[key: string]: any};
+    selected: {[key: string]: any;}
+    unselected: {[key: string]: any;}
     numRowsSelected: number;
   }) {
     // Handle the selected rows here
+  }
+
+  // This function could be used to select all rows in the dataset
+  selectAllRows(): void {
+    this.overviewTable.selectAllRows();
+  }
+
+  // This function could be used to unselect all rows in the dataset
+  clearAllRows(): void {
+    this.overviewTable.clearAllRows();
   }
 
   handlePageChange(pageData) {

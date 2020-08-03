@@ -35,13 +35,14 @@ export class TableComponent implements OnInit, OnChanges {
   // Data
   tableData = [];
 
-  selectedRows = new Set();
+  rowSelectionStates: Map<object, boolean> = new Map();
   expandedRows = new Set();
 
   // Select All Rows
   isSelectAllChecked = false;
   isSelectAllIndeterminate = false;
   numRowsSelected = 0;
+  areAllRowsSelected;
 
   // Sorting
   sortColumnKey: string;
@@ -50,7 +51,7 @@ export class TableComponent implements OnInit, OnChanges {
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
 
-  uuid = 'table' + generateUniqueId();
+  uuid = 'table' + String(generateUniqueId());
 
   // displayDensity
   densityClass: string;
@@ -164,21 +165,35 @@ export class TableComponent implements OnInit, OnChanges {
       || (changes.data && !changes.data.firstChange)
     ) {
       this.tableData = changes.data.currentValue;
-      if (this.isSelectAllChecked) {
-        this.tableData.forEach(row => this.selectedRows.add(row));
-      } else if (!this.isSelectAllChecked && !this.isSelectAllIndeterminate) {
-        this.tableData.forEach(row => this.selectedRows.delete(row));
+
+      if (this.areAllRowsSelected) {
+        this.tableData.forEach(d => {
+          if (!this.rowSelectionStates.has(d)) {
+            this.rowSelectionStates.set(d, true);
+          }
+        });
+      }
+
+      if (this.getPageSelectionSize() === 0) {
+        this.isSelectAllChecked = false;
+        this.isSelectAllIndeterminate = false;
+      } else if (this.getPageSelectionSize() > 0 && this.getPageSelectionSize() < this.tableData.length) {
+        this.isSelectAllChecked = false;
+        this.isSelectAllIndeterminate = true;
+      } else if (this.getPageSelectionSize() === this.tableData.length) {
+        this.isSelectAllChecked = true;
+        this.isSelectAllIndeterminate = false;
       }
     }
   }
 
-  getColumn(key) {
+  getColumn(key): object {
     return this.properties.columns.filter(column => column.key === key)[0];
   }
 
   // --------------- Sorting ---------------
 
-  defaultSort() {
+  defaultSort(): void {
     this.sortOrder = this.properties.sort.defaultSortOrder;
     this.sortColumnKey = this.properties.sort.defaultSortedColumn;
   }
@@ -195,7 +210,7 @@ export class TableComponent implements OnInit, OnChanges {
     }
   }
 
-  sort(colHeader: string) {
+  sort(colHeader: string): void {
     if (colHeader === this.sortColumnKey) {
       if (this.sortOrder === '' || this.sortOrder === 'descending') {
         this.sortOrder = 'ascending';
@@ -214,71 +229,120 @@ export class TableComponent implements OnInit, OnChanges {
 
   // --------------- Selectable Rows ---------------
 
+  getPageSelectionSize(): number {
+    let size = 0;
+    for (const row of this.tableData) {
+      if (this.rowSelectionStates.get(row)) {
+        size++;
+      }
+    }
+    return size;
+  }
+
+  getSelectionSize(): number {
+    let size = 0;
+    this.rowSelectionStates.forEach(value => {
+      if (value) {
+        size++;
+      }
+    });
+    return size;
+  }
+
   // To select/unselect one row at a time
-  onSelectRow(e) {
+  onSelectRow(e): void {
     const event = e.event;
     const selectedRow = e.row;
     if (event.target.checked) {
       this.numRowsSelected++;
-      this.selectedRows.add(selectedRow);
+      this.rowSelectionStates.set(selectedRow, true);
+      this.rowSelected.emit({
+        selected: [selectedRow],
+        unselected: [],
+        numRowsSelected: this.numRowsSelected
+      });
     } else {
       this.numRowsSelected--;
-      this.selectedRows.delete(selectedRow);
+      this.rowSelectionStates.set(selectedRow, false);
+      this.rowSelected.emit({
+        selected: [],
+        unselected: [selectedRow],
+        numRowsSelected: this.numRowsSelected
+      });
     }
-    if (this.selectedRows.size === this.dataLength || this.numRowsSelected === this.dataLength) {
+
+    if (this.getSelectionSize() === this.dataLength || this.numRowsSelected === this.dataLength) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = true;
+      this.areAllRowsSelected = true;
     } else if (
-      this.selectedRows.size > 0
-      && this.selectedRows.size < this.dataLength
+      this.getSelectionSize() > 0
+      && this.getSelectionSize() < this.dataLength
     ) {
       this.isSelectAllIndeterminate = true;
       this.isSelectAllChecked = false;
-    } else if (this.selectedRows.size === 0) {
+    } else if (this.getSelectionSize() === 0) {
       this.isSelectAllIndeterminate = false;
       this.isSelectAllChecked = false;
     }
-    this.rowSelected.emit({
-      areAllSelected: this.isSelectAllChecked,
-      selected: selectedRow,
-      numRowsSelected: this.numRowsSelected
-    });
   }
 
-  // To select/deselect all the rows
-  onSelectAllRows() {
-    this.isSelectAllChecked = !this.isSelectAllChecked;
-    this.isSelectAllIndeterminate = false;
-    if (this.isSelectAllChecked) {
-      this.numRowsSelected = this.dataLength;
-      this.tableData.forEach(d => this.selectedRows.add(d));
-    } else {
+  selectPage(): void {
+    if (!this.isSelectAllChecked) {
+      this.tableData.forEach(d => this.rowSelectionStates.set(d, true));
+      this.numRowsSelected = this.rowSelectionStates.size;
+      this.isSelectAllIndeterminate = false;
+      this.isSelectAllChecked = true;
+      this.rowSelected.emit({
+        selected: this.tableData,
+        unselected: [],
+        numRowsSelected: this.numRowsSelected
+      });
+    } else if (this.isSelectAllChecked) {
+      this.rowSelectionStates.clear();
       this.numRowsSelected = 0;
-      this.tableData.forEach(d => this.selectedRows.delete(d));
+      this.isSelectAllIndeterminate = false;
+      this.isSelectAllChecked = false;
+      this.rowSelected.emit({
+        selected: [],
+        unselected: this.tableData,
+        numRowsSelected: this.numRowsSelected
+      });
     }
-    this.rowSelected.emit({
-      areAllSelected: this.isSelectAllChecked,
-      selected: null,
-      numRowsSelected: this.numRowsSelected
-    });
+  }
+
+  public selectAllRows(): void {
+    this.isSelectAllChecked = true;
+    this.isSelectAllIndeterminate = false;
+    this.numRowsSelected = this.dataLength;
+    this.tableData.forEach(d => this.rowSelectionStates.set(d, true));
+    this.areAllRowsSelected = true;
+  }
+
+  public clearAllRows(): void {
+    this.isSelectAllChecked = false;
+    this.isSelectAllIndeterminate = false;
+    this.numRowsSelected = 0;
+    this.rowSelectionStates.clear();
+    this.areAllRowsSelected = false;
   }
 
   // --------------- DisplayDensity ---------------
 
-  setDisplayDensity(density) {
+  setDisplayDensity(density): void {
     this.densityClass = density === 'Comfortable' ? null : 'table-compact';
     localStorage.setItem('selectedDensity', density);
   }
 
   // --------------- View Selector ---------------
 
-  emitTableView(view) {
+  emitTableView(view): void {
     this.viewChange.emit(view);
   }
 
   // --------------- Actions ---------------
 
-  emitAction(action: string) {
+  emitAction(action: string): void {
     this.action.emit(action);
   }
 
