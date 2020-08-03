@@ -8,7 +8,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { ColumnType, Properties } from '../../models/table-models';
+import { ColumnType, Column, Properties } from '../../models/table-models';
 import { parseLookupString, generateUniqueId } from '../../helpers';
 
 @Component({
@@ -35,7 +35,7 @@ export class TableComponent implements OnInit, OnChanges {
   // Data
   tableData = [];
 
-  rowSelectionStates: Map<object, boolean> = new Map();
+  rowSelectionStates: Map<Record<string, unknown>, boolean> = new Map();
   expandedRows = new Set();
 
   // Select All Rows
@@ -187,7 +187,7 @@ export class TableComponent implements OnInit, OnChanges {
     }
   }
 
-  getColumn(key): object {
+  getColumn(key): Column {
     return this.properties.columns.filter(column => column.key === key)[0];
   }
 

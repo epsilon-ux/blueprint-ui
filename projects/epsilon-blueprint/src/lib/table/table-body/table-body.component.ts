@@ -20,7 +20,7 @@ export class TableBodyComponent implements OnInit {
     [key: string]: any;
   }[];
   @Input() properties: Properties;
-  @Input() rowSelectionStates: Map<object, boolean>;
+  @Input() rowSelectionStates: Map<Record<string, unknown>, boolean>;
   @Input() expandedRows: Set<any>;
 
   @Output() action = new EventEmitter();
