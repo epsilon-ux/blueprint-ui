@@ -179,11 +179,11 @@ export class UsageComponent implements OnInit {
     // Use action from action buttons to trigger different events here
   }
 
-  sortByKeyAsc(array: UsageRow[], key: string) {
+  sortByKeyAsc(array: UsageRow[], key: string): void {
     if (key === 'templateCol') {
-      return array.sort((a: UsageRow, b: UsageRow) => (a.id < b.id ? -1 : 1));
+      array.sort((a: UsageRow, b: UsageRow) => (a.id < b.id ? -1 : 1));
     } else {
-      return array.sort((a: UsageRow, b: UsageRow) => {
+      array.sort((a: UsageRow, b: UsageRow) => {
         const x = a[key];
         const y = b[key];
         return x < y ? -1 : 1;
@@ -191,11 +191,11 @@ export class UsageComponent implements OnInit {
     }
   }
 
-  sortByKeyDesc(array: UsageRow[], key: string) {
+  sortByKeyDesc(array: UsageRow[], key: string): void {
     if (key === 'templateCol') {
-      return array.sort((a: UsageRow, b: UsageRow) => (b.id < a.id ? -1 : 1));
+      array.sort((a: UsageRow, b: UsageRow) => (b.id < a.id ? -1 : 1));
     } else {
-      return array.sort((a: UsageRow, b: UsageRow) => {
+      array.sort((a: UsageRow, b: UsageRow) => {
         const x = a[key];
         const y = b[key];
         return x > y ? -1 : 1;
@@ -203,7 +203,7 @@ export class UsageComponent implements OnInit {
     }
   }
 
-  handleSort(sort, data: UsageRow[], hasPagination) {
+  handleSort(sort, data: UsageRow[], hasPagination): void {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(data, sort.column);
     } else {
@@ -218,8 +218,9 @@ export class UsageComponent implements OnInit {
   }
 
   handleSelectedRows(selectedRowIds: {
-    areAllSelected: boolean;
-    selected: {[key: string]: any};
+    selected: Record<string, unknown>;
+    unselected: Record<string, unknown>;
+    numRowsSelected: number;
   }) {
     // Handle the selected rows here
   }
