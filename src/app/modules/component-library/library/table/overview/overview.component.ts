@@ -158,11 +158,11 @@ export class OverviewComponent implements OnInit {
 
   handleViewChange() { }
 
-  sortByKeyAsc(array: TableRow[], key: string) {
+  sortByKeyAsc(array: TableRow[], key: string): void {
     if (key === 'templateCol') {
-      return array.sort((a: TableRow, b: TableRow) => (a.id < b.id ? -1 : 1));
+      array.sort((a: TableRow, b: TableRow) => (a.id < b.id ? -1 : 1));
     } else {
-      return array.sort((a: TableRow, b: TableRow) => {
+      array.sort((a: TableRow, b: TableRow) => {
         const x = a[key];
         const y = b[key];
         return x < y ? -1 : 1;
@@ -170,11 +170,11 @@ export class OverviewComponent implements OnInit {
     }
   }
 
-  sortByKeyDesc(array: TableRow[], key: string) {
+  sortByKeyDesc(array: TableRow[], key: string): void {
     if (key === 'templateCol') {
-      return array.sort((a: TableRow, b: TableRow) => (b.id < a.id ? -1 : 1));
+      array.sort((a: TableRow, b: TableRow) => (b.id < a.id ? -1 : 1));
     } else {
-      return array.sort((a: TableRow, b: TableRow) => {
+      array.sort((a: TableRow, b: TableRow) => {
         const x = a[key];
         const y = b[key];
         return x > y ? -1 : 1;
@@ -182,7 +182,7 @@ export class OverviewComponent implements OnInit {
     }
   }
 
-  handleSort(sort) {
+  handleSort(sort): void {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(this.filteredData, sort.column);
     } else {
@@ -195,8 +195,8 @@ export class OverviewComponent implements OnInit {
   }
 
   handleSelectedRows(selectedRowIds: {
-    selected: {[key: string]: any;}
-    unselected: {[key: string]: any;}
+    selected: Record<string, unknown>;
+    unselected: Record<string, unknown>;
     numRowsSelected: number;
   }) {
     // Handle the selected rows here
