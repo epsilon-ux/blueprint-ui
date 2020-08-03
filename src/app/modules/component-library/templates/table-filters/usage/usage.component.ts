@@ -106,7 +106,7 @@ export class UsageComponent implements OnInit {
       text: 'Status'
     }
   ];
-  selectedSortOption = this.sortByOptions[1];
+  selectedSortOption;
 
   // generic toggles
   toggleButtons = [
@@ -156,7 +156,9 @@ export class UsageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.selectedSortOption = this.sortByOptions[1];
+  }
 
   handleSearch() { }
 

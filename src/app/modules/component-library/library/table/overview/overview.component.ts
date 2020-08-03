@@ -195,8 +195,8 @@ export class OverviewComponent implements OnInit {
   }
 
   handleSelectedRows(selectedRowIds: {
-    selected: {[key: string]: any;}
-    unselected: {[key: string]: any;}
+    selected: {[key: string]: any};
+    unselected: {[key: string]: any};
     numRowsSelected: number;
   }) {
     // Handle the selected rows here
