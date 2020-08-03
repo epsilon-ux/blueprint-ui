@@ -39,7 +39,7 @@
       <ng-container *ngSwitchCase="columnType.LINK">
         <bp-action
           [text]="rowData[column.key]"
-          classes="btn-text"
+          classes="btn-text text-align-left"
           [ariaLabel]="parseLookupString(column.link.ariaLabel, rowData)"
           [bpRouterLink]="column.link.bpRouterLink ? parseLookupString(column.link.bpRouterLink, rowData) : null"
           [href]="column.link.href ? parseLookupString(column.link.href, rowData) : null"
