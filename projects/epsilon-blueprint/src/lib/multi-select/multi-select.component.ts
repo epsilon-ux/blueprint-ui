@@ -53,7 +53,7 @@ export class MultiselectComponent implements OnInit, OnChanges {
   @Output() change = new EventEmitter();
 
   parseLookupString = parseLookupString;
-  uuid = 'mutliselect' + generateUniqueId();
+  uuid = 'multiselect' + generateUniqueId().toString();
 
   isDataLoaded = false;
 

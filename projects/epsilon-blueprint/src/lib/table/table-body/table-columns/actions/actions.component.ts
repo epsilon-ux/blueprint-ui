@@ -112,10 +112,12 @@ export class ActionsComponent implements OnInit {
       case '===':
         return (a, b) => a === b;
       case '==':
+        // eslint-disable-next-line eqeqeq
         return (a, b) => a == b;
       case '!==':
         return (a, b) => a !== b;
       case '!=':
+        // eslint-disable-next-line eqeqeq
         return (a, b) => a != b;
       default:
         throw new Error('Invalid operator provided in action condition.');

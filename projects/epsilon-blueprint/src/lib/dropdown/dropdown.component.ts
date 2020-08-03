@@ -24,7 +24,7 @@ export class DropdownComponent implements OnInit {
 
   @Output() action = new EventEmitter();
 
-  uuid = 'dropdown' + generateUniqueId();
+  uuid = 'dropdown' + generateUniqueId().toString();
 
   constructor() { }
 

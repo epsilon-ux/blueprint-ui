@@ -32,7 +32,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   pageNumber: number;
 
   @Input()
-  internationalization= {
+  internationalization = {
     'numResults results': '#{numResults} result(s)',
     'Number of Rows': 'Number of Rows per Page',
     'First Page': 'First Page',
@@ -56,15 +56,17 @@ export class PaginationComponent implements OnInit, OnChanges {
   currentPage = 1;
   pageButtons = [];
   numberOfRows = 10;
-  indices = {
-    start: 0,
-    end: this.defaultNumberOfRows - 1
+  indices: {
+    start: number;
+    end: number;
   };
 
   constructor() { }
 
   ngOnInit(): void {
     this.numberOfRows = this.defaultNumberOfRows;
+    this.indices.start = 0;
+    this.indices.end = this.defaultNumberOfRows - 1;
   }
 
   ngOnChanges(changes): void {

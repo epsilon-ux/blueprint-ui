@@ -26,7 +26,7 @@ export class NavSecondaryComponent implements OnInit {
   @ViewChildren(RouterLinkActive, { read: ElementRef })
   linkRefs: QueryList<ElementRef>;
 
-  uuid = 'navDropdown' + generateUniqueId();
+  uuid = 'navDropdown' + generateUniqueId().toString();
   activeItem: string;
 
   constructor() { }
