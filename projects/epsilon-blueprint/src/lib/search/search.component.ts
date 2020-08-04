@@ -47,7 +47,6 @@ export class SearchComponent implements OnInit {
 
   onSearch(): void {
     if (this.searchQuery.length > 0) {
-      console.log(this.searchQuery);
       this.search.emit(this.searchQuery);
     }
   }
