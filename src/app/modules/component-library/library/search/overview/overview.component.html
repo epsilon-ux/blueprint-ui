@@ -18,6 +18,7 @@
                 [isSearching]="isSearching"
                 (search)="handleSearch()"
                 (clearSearch)="handleClearSearch()"
+                [(searchQuery)]="queryValue"
               ></bp-search>
             </div>
           </div>
@@ -25,4 +26,4 @@
       </div>
     </div>
   </div>
-</section> 
+</section>
