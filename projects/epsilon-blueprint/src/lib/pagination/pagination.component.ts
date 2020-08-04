@@ -88,7 +88,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     }
   }
 
-  paginate(page: number) {
+  paginate(page: number): void {
     this.totalPages = this.getTotalPages();
     this.changePage(page);
   }
@@ -97,7 +97,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     return this.currentPage === selectedPage ? true : false;
   }
 
-  rowChangePage() {
+  rowChangePage(): void {
     this.currentPage = Math.floor(this.indices.start / this.numberOfRows) + 1 || 1;
     this.paginate(this.currentPage);
   }
@@ -147,7 +147,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     });
   }
 
-  getTotalPages() {
+  getTotalPages(): number {
     return Math.ceil(this.dataLength / this.numberOfRows);
   }
 
