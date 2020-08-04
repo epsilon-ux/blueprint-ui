@@ -4,7 +4,8 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnChanges
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
 
 import { parseLookupString } from '../../helpers';
@@ -55,7 +56,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   totalPages: number;
   currentPage = 1;
   pageButtons = [];
-  numberOfRows = 10;
+  numberOfRows: number;
   indices: {
     start: number;
     end: number;
@@ -63,15 +64,17 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.numberOfRows = this.defaultNumberOfRows;
-    this.indices.start = 0;
-    this.indices.end = this.defaultNumberOfRows - 1;
-  }
+  ngOnInit(): void { }
 
-  ngOnChanges(changes): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.defaultNumberOfRows
+        && changes.defaultNumberOfRows.currentValue
+    ) {
+      this.numberOfRows = changes.defaultNumberOfRows.currentValue;
+    }
+
     // Select the first page when the data changes
-    if (changes.dataLength) {
+    if (changes.dataLength && !changes.pageNumber) {
       this.paginate(1);
     }
 
@@ -103,8 +106,11 @@ export class PaginationComponent implements OnInit, OnChanges {
   changePage(page: number): void {
     this.currentPage = page;
     this.pageButtons = [];
-    this.indices.start = (this.currentPage - 1) * this.numberOfRows;
-    this.indices.end = this.indices.start + this.numberOfRows;
+    const startIndex = (this.currentPage - 1) * this.numberOfRows;
+    this.indices = {
+      start: startIndex,
+      end: startIndex + this.numberOfRows
+    };
 
     if (this.currentPage - this.pageBuffer <= 1) {
       for (
