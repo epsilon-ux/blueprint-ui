@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  templateUrl: './overview.component.html'
 })
 export class OverviewComponent implements OnInit {
+
   isSearching = false;
+  queryValue: string;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
-  handleSearch(e) { }
+  handleSearch(): void { }
 
-  handleClearSearch(e) { }
+  handleClearSearch(): void { }
+
 }

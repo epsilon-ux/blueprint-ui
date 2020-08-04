@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-usage',
-  templateUrl: './usage.component.html',
-  styleUrls: ['./usage.component.scss']
+  templateUrl: './usage.component.html'
 })
 export class UsageComponent implements OnInit {
 
@@ -14,14 +13,14 @@ export class UsageComponent implements OnInit {
     },
     {
       text: 'Item 2',
-      routerLink: ''
+      bpRouterLink: ''
     }
   ];
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
-  handleAction(e) { }
+  handleAction() { }
 
 }

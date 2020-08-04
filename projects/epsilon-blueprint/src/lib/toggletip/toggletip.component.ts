@@ -1,37 +1,41 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
-declare var $: any;
+declare let $: any;
 
 @Component({
   selector: 'bp-toggletip',
-  templateUrl: './toggletip.component.html',
-  styleUrls: ['./toggletip.component.scss']
+  templateUrl: './toggletip.component.html'
 })
 
 export class ToggletipComponent implements OnInit, OnDestroy {
 
   @Input() content: string;
+  @Input() triggerAriaLabel = 'Toggle tooltip';
 
   popover;
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
     this.popover = $('[data-toggle="popover"]');
+    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
     this.popover.popover();
 
     this.validation();
   }
 
   ngOnDestroy() {
+    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
     this.popover.popover('hide');
   }
 
   validation() {
     if (!this.content) {
-      let err = new Error('\'content\' is a required Input of bp-toggletip');
+      const err = new Error('\'content\' is a required Input of bp-toggletip');
       err.name = 'Missing Input';
       throw err;
     }
   }
+
 }

@@ -5,46 +5,9 @@
         Ribbons provide important information to a user at a certain point of interaction. This information can appear depending on a user's actions, a system action, or the state of an item. Ribbons stay on the page until the user dismisses the message.
       </p>
       <p>
-        Ribbons are most commonly used above tables to give the user more information about the table items. The text content should be short, to the point, and not repetitive. Ribbons have a content area on the right side of the ribbon. This area can be used for adding different actions to the ribbon.
+        Ribbons are most commonly used above tables to give the user more information about the table items. The text content should be short, to the point, and not repetitive. Ribbons have a content area that can be used for adding custom content or different actions to the ribbon.
       </p>
       <h2>Variations</h2>
-      <h3>Alert ribbon</h3>
-      <p>
-        This variation should be used for telling the user urgent information or warning them that their action or inaction might have adverse effects.
-      </p>
-    </div>
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body component-preview">
-          <div class="row justify-content-center align-items-center">
-            <div class="col-12">
-              <bp-ribbon
-                class="d-block mb-3"
-                classes="ribbon ribbon-alert"
-                text="This is an alert ribbon"
-              ></bp-ribbon>
-            </div>
-            <div class="col-12">
-              <bp-ribbon
-                class="d-block mb-3"
-                classes="ribbon ribbon-alert"
-                text="This is an alert ribbon using content projection to add a related action"
-              >
-                <div ribbon-content class="mt-2 mt-md-0 ml-md-auto pl-md-3">
-                  <bp-action
-                    text="Related Action"
-                    classes="btn btn-sm btn-outline-primary"
-                    ariaLabel="Demo related action"
-                    (click)="click"
-                  ></bp-action>
-                </div>
-              </bp-ribbon>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-8 col-xl-7">
       <h3>Informational ribbon</h3>
       <p>
         Informational ribbons provide additional topical information to the user without disrupting their workflow. These ribbons should appear near the related elements on the page.
@@ -80,7 +43,187 @@
             <div class="col-12">
               <bp-ribbon classes="ribbon ribbon-info">
                 <div ribbon-content class="font-weight-regular mx-auto">
-                  This is an informational ribbon using content projection for custom content
+                  This is an informational ribbon using content projection to add custom styled content
+                </div>
+              </bp-ribbon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Success ribbon</h3>
+      <p>
+        This variation should be used for telling the user that their action was successful.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-ribbon
+                class="d-block mb-3"
+                classes="ribbon ribbon-success"
+                text="This is a success ribbon"
+              ></bp-ribbon>
+            </div>
+            <div class="col-12">
+              <bp-ribbon
+                class="d-block mb-3"
+                classes="ribbon ribbon-success"
+                text="This is a success ribbon using content projection to add a related action"
+              >
+                <div ribbon-content class="mt-2 mt-md-0 ml-md-auto pl-md-3">
+                  <bp-action
+                    text="Related Action"
+                    classes="btn btn-sm btn-outline-primary"
+                    ariaLabel="Demo related action"
+                    (click)="click"
+                  ></bp-action>
+                </div>
+              </bp-ribbon>
+            </div>
+            <div class="col-12">
+              <bp-ribbon classes="ribbon ribbon-success">
+                <div ribbon-content class="d-flex justify-content-between align-items-start w-100">
+                  <div class="d-flex flex-column flex-xl-row align-items-xl-center">
+                    <p class="mb-0 mr-2">
+                      This is a success ribbon using content projection to add custom styled content, a related action, and a close button
+                    </p>
+                    <bp-action
+                      text="Related Action"
+                      classes="btn btn-sm btn-outline-primary mt-2 mt-xl-0 ml-xl-auto"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <button 
+                    type="button" 
+                    class="btn-icon-inline btn-icon-inline-lg btn-icon-inline-secondary icon-right" 
+                    aria-label="Close"
+                  >
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </bp-ribbon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Alert ribbon</h3>
+      <p>
+        This variation should be used for telling the user urgent information or alerting them that their action or inaction might have adverse effects.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-ribbon
+                class="d-block mb-3"
+                classes="ribbon ribbon-alert"
+                text="This is an alert ribbon"
+              ></bp-ribbon>
+            </div>
+            <div class="col-12">
+              <bp-ribbon
+                class="d-block mb-3"
+                classes="ribbon ribbon-alert"
+                text="This is an alert ribbon using content projection to add a related action"
+              >
+                <div ribbon-content class="mt-2 mt-md-0 ml-md-auto pl-md-3">
+                  <bp-action
+                    text="Related Action"
+                    classes="btn btn-sm btn-outline-primary"
+                    ariaLabel="Demo related action"
+                    (click)="click"
+                  ></bp-action>
+                </div>
+              </bp-ribbon>
+            </div>
+            <div class="col-12">
+              <bp-ribbon classes="ribbon ribbon-alert">
+                <div ribbon-content class="d-flex justify-content-between align-items-start w-100">
+                  <div class="d-flex flex-column flex-xl-row align-items-xl-center">
+                    <p class="mb-0 mr-2">
+                      This is an alert ribbon using content projection to add custom styled content, a related action, and a close button
+                    </p>
+                    <bp-action
+                      text="Related Action"
+                      classes="btn btn-sm btn-outline-primary mt-2 mt-xl-0 ml-xl-auto"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <button 
+                    type="button" 
+                    class="btn-icon-inline btn-icon-inline-lg btn-icon-inline-secondary icon-right" 
+                    aria-label="Close"
+                  >
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </bp-ribbon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Warning ribbon</h3>
+      <p>
+        This variation should be used for telling the user urgent information or warning them that their action or inaction resulted in an error.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-ribbon
+                class="d-block mb-3"
+                classes="ribbon ribbon-warning"
+                text="This is a warning ribbon"
+              ></bp-ribbon>
+            </div>
+            <div class="col-12">
+              <bp-ribbon
+                class="d-block mb-3"
+                classes="ribbon ribbon-warning"
+                text="This is a warning ribbon using content projection to add a related action"
+              >
+                <div ribbon-content class="mt-2 mt-md-0 ml-md-auto pl-md-3">
+                  <bp-action
+                    text="Related Action"
+                    classes="btn btn-sm btn-outline-primary"
+                    ariaLabel="Demo related action"
+                    (click)="click"
+                  ></bp-action>
+                </div>
+              </bp-ribbon>
+            </div>
+            <div class="col-12">
+              <bp-ribbon classes="ribbon ribbon-warning">
+                <div ribbon-content class="d-flex justify-content-between align-items-start w-100">
+                  <div class="d-flex flex-column flex-xl-row align-items-xl-center">
+                    <p class="mb-0 mr-2">
+                      This is a warning ribbon using content projection to add custom styled content, a related action, and a close button
+                    </p>
+                    <bp-action
+                      text="Related Action"
+                      classes="btn btn-sm btn-outline-primary mt-2 mt-xl-0 ml-xl-auto"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                  <button 
+                    type="button" 
+                    class="btn-icon-inline btn-icon-inline-lg btn-icon-inline-secondary icon-right" 
+                    aria-label="Close"
+                  >
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                  </button>
                 </div>
               </bp-ribbon>
             </div>
@@ -108,6 +251,14 @@
           <tr>
             <td>Informational ribbon</td>
             <td>ribbon ribbon-info</td>
+          </tr>
+          <tr>
+            <td>Success ribbon</td>
+            <td>ribbon ribbon-success</td>
+          </tr>
+          <tr>
+            <td>Warning ribbon</td>
+            <td>ribbon ribbon-warning</td>
           </tr>
         </tbody>
       </table>

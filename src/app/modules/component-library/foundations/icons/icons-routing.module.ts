@@ -7,15 +7,12 @@ import { UsageComponent } from './usage/usage.component';
 
 const routes: Routes = [
   { path: '', component: IconsComponent, children: [
-    // TODO: swap icon-library to overview when overview is added
-    { path: '', redirectTo: 'icon-library', pathMatch: 'full' },
-    // TODO: uncomment when overview is added
-    // { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
+    { path: '', redirectTo: 'overview', pathMatch: 'full' },
+    { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
     { path: 'icon-library', component: IconLibraryComponent, pathMatch: 'full' },
-    // TODO: uncomment when usage is added
-    // { path: 'usage', component: UsageComponent, pathMatch: 'full' },
+    { path: 'usage', component: UsageComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
-  ]},
+  ] }
 ];
 
 @NgModule({

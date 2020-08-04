@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-typography',
-  templateUrl: './typography.component.html',
-  styleUrls: ['./typography.component.scss']
+  templateUrl: './typography.component.html'
 })
 
 export class TypographyComponent implements OnInit {
 
-  headingText = "Typography";
+  headingText = 'Typography';
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
 }

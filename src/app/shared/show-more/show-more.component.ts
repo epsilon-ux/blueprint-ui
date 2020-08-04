@@ -12,18 +12,19 @@ export class ShowMoreComponent implements OnInit {
   @Input() isOpen?: boolean;
   summaryText: string;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (!this.summaryOpen) {
       this.summaryOpen = this.summary;
     }
     this.summaryText = this.isOpen ? this.summaryOpen : this.summary;
   }
-  
-  toggleDetails(e) {
+
+  toggleDetails(e: {[key: string]: any}): void {
     e.preventDefault();
     this.isOpen = !this.isOpen;
     this.summaryText = this.isOpen ? this.summaryOpen : this.summary;
   }
+
 }

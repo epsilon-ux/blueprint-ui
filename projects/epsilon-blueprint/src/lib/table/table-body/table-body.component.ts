@@ -1,31 +1,34 @@
 import {
   Component,
   OnInit,
-  OnChanges,
   Input,
   Output,
   EventEmitter,
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { Column, ColumnType } from '../models/column';
+import { ColumnType, Properties } from '../../../models/table-models';
 import { parseLookupString } from '../../../helpers';
-import Properties from '../models/properties';
 
 @Component({
   selector: '[app-table-body]',
   templateUrl: './table-body.component.html'
 })
 export class TableBodyComponent implements OnInit {
+
   @Input() tableData: {
     [key: string]: any;
   }[];
   @Input() properties: Properties;
-  @Input() selectedRows: Set<any>;
+  @Input() rowSelectionStates: Map<Record<string, unknown>, boolean>;
   @Input() expandedRows: Set<any>;
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
+
+  @ViewChild('selectAllRowsRef', { static: false })
+  selectAllRowsRef: ElementRef;
+
   isRowExpanded = false;
 
   // Scopes imported function to the class
@@ -33,18 +36,15 @@ export class TableBodyComponent implements OnInit {
 
   // displayDensity
   densityClass: string;
-  
-  @ViewChild('selectAllRowsRef', { static: false })
-  selectAllRowsRef: ElementRef;
 
-  constructor() {}
+  constructor() { }
 
   // column type
   get columnType() {
     return ColumnType;
   }
 
-  ngOnInit() {}
+  ngOnInit(): void { }
 
   // Statuses
   getStatusClass(value, mapping) {
@@ -54,13 +54,13 @@ export class TableBodyComponent implements OnInit {
   }
 
   selectRows(event, row) {
-    this.selectedRowsAction.emit({event, row});
+    this.selectedRowsAction.emit({ event, row });
   }
 
   toggleExpanded(row) {
     this.expandedRows.has(row)
-    ? this.expandedRows.delete(row)
-    : this.expandedRows.add(row);
+      ? this.expandedRows.delete(row)
+      : this.expandedRows.add(row);
   }
 
   emitAction(action: string, rowId: string) {
@@ -69,4 +69,5 @@ export class TableBodyComponent implements OnInit {
       rowId
     });
   }
+
 }

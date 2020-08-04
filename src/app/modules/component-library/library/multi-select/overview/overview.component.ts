@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  templateUrl: './overview.component.html'
 })
 export class OverviewComponent implements OnInit {
+
   optionItems = [
     {
       label: 'Option 1',
@@ -30,9 +30,10 @@ export class OverviewComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.selectedOptions = ['option1'];
   }
 
-  handleMulti(e) { }
+  handleMulti() { }
+
 }

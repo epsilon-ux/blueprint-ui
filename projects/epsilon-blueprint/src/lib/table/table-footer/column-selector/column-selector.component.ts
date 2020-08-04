@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { parseLookupString } from '../../../../helpers';
+import { Column } from '../../../../models/table-models';
+
+interface ColumnOption extends Column {
+  disabled: boolean;
+}
 
 @Component({
   selector: 'app-column-selector',
@@ -7,17 +12,23 @@ import { parseLookupString } from '../../../../helpers';
   styleUrls: ['../table-footer.component.scss']
 })
 export class ColumnSelectorComponent implements OnInit {
-  @Input() columnInfo = [];
-  @Input() defaultSortColumnName: string;
-  @Input() showColumnSelector = false;
-  @Input() internationalization: any;
+
+  @Input()
+  columnInfo: ColumnOption[];
+
+  @Input()
+  defaultSortColumnName: string;
+
+  @Input()
+  internationalization: any;
+
   selectedColumns = [];
 
   parseLookupString = parseLookupString;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.columnInfo.filter(
       d => d.key === this.defaultSortColumnName
     )[0].disabled = true;
@@ -36,10 +47,13 @@ export class ColumnSelectorComponent implements OnInit {
           ? true
           : false;
       });
-      // TODO: Figure out local storage issues
-      // 1. What if there are multiple tables in the application
-      // 2. How can we store only the information we need (visible columns)
-      //localStorage.setItem('columns', JSON.stringify(this.columnInfo));
+      /*
+        TODO: Figure out local storage issues
+        1. What if there are multiple tables in the application
+        2. How can we store only the information we need (visible columns)
+        localStorage.setItem('columns', JSON.stringify(this.columnInfo));
+      */
     }
   }
+
 }

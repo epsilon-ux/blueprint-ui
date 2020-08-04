@@ -16,4 +16,4 @@ import { PaginationComponent } from './pagination.component';
   exports: [PaginationComponent],
   providers: []
 })
-export class PaginationModule {}
+export class PaginationModule { }

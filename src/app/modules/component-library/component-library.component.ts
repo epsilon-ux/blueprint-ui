@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-component-library',
-  templateUrl: './component-library.component.html',
-  styleUrls: ['./component-library.component.scss']
+  templateUrl: './component-library.component.html'
 })
 export class ComponentLibraryComponent {
 
@@ -48,6 +47,10 @@ export class ComponentLibraryComponent {
           {
             text: 'Checkbox',
             route: './checkbox'
+          },
+          {
+            text: 'Collapsible Panel',
+            route: './collapsible-panel'
           },
           {
             text: 'Date & Time Picker',
@@ -123,12 +126,16 @@ export class ComponentLibraryComponent {
           {
             text: 'Object Page Header',
             route: './object-page-header'
+          },
+          {
+            text: 'Table Filters',
+            route: './table-filters'
           }
         ]
       }
     ]
   };
 
-  constructor() {}
+  constructor() { }
 
 }

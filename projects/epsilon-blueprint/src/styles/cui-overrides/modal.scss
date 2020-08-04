@@ -1,15 +1,17 @@
-@import '../global-variables';
+// stylelint-disable
+
+@import "../global-variables";
 
 .Clr-Panel-overlay.active.is-transparent
 {
   // Can not figure out what is overriding this, come back to this to remove important if possible.
-  background-color: rgba($midnight, .5) !important;
+  background-color: rgba($midnight, 0.5) !important;
 }
 
 .Clr-Panel-content .Clr-Modal
 {
-  border-radius: 0;
   box-shadow: $box-shadow-primary;
+  border-radius: 0;
 
   .Clr-Modal-title
   {
@@ -52,4 +54,3 @@
     background: $cloud;
   }
 }
-

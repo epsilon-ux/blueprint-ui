@@ -16,8 +16,9 @@
                 label="Search"
                 placeholder="Search"
                 [isSearching]="isSearching"
-                (search)="handleSearch($event)"
-                (clearSearch)="handleClearSearch($event)"
+                (search)="handleSearch()"
+                (clearSearch)="handleClearSearch()"
+                [(searchQuery)]="queryValue"
               ></bp-search>
             </div>
           </div>
@@ -25,4 +26,4 @@
       </div>
     </div>
   </div>
-</section> 
+</section>

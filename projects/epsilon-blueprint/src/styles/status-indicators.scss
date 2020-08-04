@@ -1,49 +1,49 @@
 .status-indicator
 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    white-space: nowrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  white-space: nowrap;
 
-    .status-icon
-    {
-        margin-right: 5px;
-    }
+  .status-icon
+  {
+    margin-right: 5px;
+  }
 
-    .incomplete-primary,
-    .incomplete-secondary,
-    .complete
-    {
-        min-width: 8px;
-        min-height: 8px;
-        border-radius: 50%;
-    }
+  .incomplete-primary,
+  .incomplete-secondary,
+  .complete
+  {
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 50%;
+  }
 
-    .incomplete-primary
-    {
-        border: 1px solid $border-color-primary;
-    }
+  .incomplete-primary
+  {
+    border: 1px solid $border-color-primary;
+  }
 
-    .incomplete-secondary
-    {
-        background: $feedback-color-success;
-    }
+  .incomplete-secondary
+  {
+    background: $feedback-color-success;
+  }
 
-    .complete
-    {
-        background: $midnight;
-    }
+  .complete
+  {
+    background: $midnight;
+  }
 
-    .in-progress
-    {
-        margin-right: 5px;
-        color: $font-color-secondary;
-    }
+  .in-progress
+  {
+    margin-right: 5px;
+    color: $font-color-secondary;
+  }
 
-    .warning
-    {
-        border-right: 4px solid transparent;
-        border-bottom: 8px solid $feedback-color-warning;
-        border-left: 4px solid transparent;
-    }
+  .warning
+  {
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid $feedback-color-warning;
+    border-left: 4px solid transparent;
+  }
 }

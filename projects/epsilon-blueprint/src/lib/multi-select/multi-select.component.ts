@@ -1,14 +1,20 @@
-import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive, OnChanges } from '@angular/core';
+import {
+  Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive, OnChanges
+} from '@angular/core';
 import { generateUniqueId, parseLookupString } from '../../helpers';
 
 @Directive({ selector: '[ng-multi-label-tmp]' })
 export class NgMultiLabelTemplateDirective {
-    constructor(public template: TemplateRef<any>) { }
+
+  constructor(public template: TemplateRef<any>) { }
+
 }
 
 @Directive({ selector: '[ng-option-tmp]' })
 export class NgOptionTemplateDirective {
-    constructor(public template: TemplateRef<any>) { }
+
+  constructor(public template: TemplateRef<any>) { }
+
 }
 
 @Component({
@@ -17,11 +23,13 @@ export class NgOptionTemplateDirective {
   styleUrls: ['./multi-select.component.scss']
 })
 export class MultiselectComponent implements OnInit, OnChanges {
-  
-  @ContentChild(NgMultiLabelTemplateDirective, { read: TemplateRef, static: false }) multiLabelTemplate: TemplateRef<any>;
+
+  @ContentChild(NgMultiLabelTemplateDirective, {
+    read: TemplateRef, static: false
+  }) multiLabelTemplate: TemplateRef<any>;
 
   @ContentChild(NgOptionTemplateDirective, { read: TemplateRef, static: false }) optionTemplate: TemplateRef<any>;
-  
+
   @Input() label = '';
   @Input() isLabelHidden = false;
   @Input() isInline = false;
@@ -43,19 +51,19 @@ export class MultiselectComponent implements OnInit, OnChanges {
   @Input() ngModel: Array<any>;
   @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
-  
+
   parseLookupString = parseLookupString;
-  uuid = 'mutliselect' + generateUniqueId();
+  uuid = 'multiselect' + generateUniqueId().toString();
 
   isDataLoaded = false;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validate();
   }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes): void {
     if (changes.optionItems && Array.isArray(changes.optionItems.currentValue)) {
       this.isDataLoaded = true;
     }
@@ -63,7 +71,10 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   validate() {
     if (!this.label) {
-      let err = new Error('\'label\' is a required Input of bp-multi-select. The label can be visually hidden using the \'isLabelHidden\' property.');
+      const err = new Error(
+        '\'label\' is a required Input of bp-multi-select. '
+        + 'The label can be visually hidden using the \'isLabelHidden\' property.'
+      );
       err.name = 'Missing Input';
       throw err;
     }
@@ -72,4 +83,5 @@ export class MultiselectComponent implements OnInit, OnChanges {
   emitSelected() {
     this.change.emit(this.ngModel);
   }
+
 }

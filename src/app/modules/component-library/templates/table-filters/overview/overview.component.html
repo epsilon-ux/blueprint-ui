@@ -1,0 +1,42 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Table filters allow the user to view subsets of a larger data set. Filters allow users to narrow down results, 
+        view trends, and make connections. Table filters vary from product to product, and depend on the filterable 
+        data set. They appear below the page header and above the table.
+      </p>
+      <h2>Example</h2>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-12 col-lg">
+                  <div class="row">
+                    <div class="col-sm-6 col-xl-3">
+                      <bp-search
+                        label="Search"
+                        placeholder="Search"
+                        [isSearching]="isSearching"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
+                      ></bp-search>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

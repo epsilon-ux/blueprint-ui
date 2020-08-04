@@ -47,7 +47,7 @@
             headingText="Page Title"
             actionText="Create Item"
             [dropdownItems]="dropdownItems"
-            (actionClick)="handleAction($event)"
+            (actionClick)="handleAction()"
           >
             <div dropdown-items>
               <a class="dropdown-item" href="">Dropdown Item</a>
@@ -70,9 +70,9 @@
             <div tab-items>
               <div class="row">
                 <div class="col">
-                  <button class="tab active" href="">Active Tab</button>
-                  <button class="tab" href="">Tab</button>
-                  <button class="tab" href="">Tab</button>
+                  <a class="tab active" href="">Active Tab</a>
+                  <a class="tab" href="">Tab</a>
+                  <a class="tab" href="">Tab</a>
                 </div>
               </div>
             </div>
@@ -92,14 +92,14 @@
           <bp-landing-page-header
             headingText="Page Title"
             actionText="Create Item"
-            routerLink="./"
+            bpRouterLink="/components/table/overview"
           >
             <div tab-items>
               <div class="row">
                 <div class="col">
-                  <button class="tab active" href="">Active Tab</button>
-                  <button class="tab" href="">Tab</button>
-                  <button class="tab" href="">Tab</button>
+                  <button class="tab active">Active Tab</button>
+                  <button class="tab">Tab</button>
+                  <button class="tab">Tab</button>
                 </div>
               </div>
             </div>
@@ -122,9 +122,9 @@
             <div tab-items>
               <div class="row">
                 <div class="col">
-                  <button class="tab active" href="">Active Tab</button>
-                  <button class="tab" href="">Tab</button>
-                  <button class="tab" href="">Tab</button>
+                  <a class="tab active" href="">Active Tab</a>
+                  <a class="tab" href="">Tab</a>
+                  <a class="tab" href="">Tab</a>
                 </div>
               </div>
             </div>

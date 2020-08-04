@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-accessibility-internationalization',
-  templateUrl: './accessibility-internationalization.component.html',
-  styleUrls: ['./accessibility-internationalization.component.scss']
+  templateUrl: './accessibility-internationalization.component.html'
 })
 export class AccessibilityInternationalizationComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

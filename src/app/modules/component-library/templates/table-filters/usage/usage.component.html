@@ -1,0 +1,872 @@
+<!-- TODO: 'last 90 days' date range and all multiselect options should be selected on load -->
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Filters vary depending on the complexity of the data set. Table filters could be a single search field or 
+        could contain up to five separate filtering options.
+      </p>
+      <p>
+        Note that the width of the filters will depend on the amount and size of the items on the right side of the 
+        table. For the most part, filters options should be selected on page load.
+      </p>
+      <h2 class="mb-0">Variations</h2>
+      <h3>Standard</h3>
+      <p>
+        This is our simplest table filter. The user can search the table using a keyword. Whenever possible, the user 
+        should be able to search the entire table, not just a single column.
+      </p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard.html" 
+          target="_blank" 
+          class="link-primary"
+        >
+          Standard template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                  <bp-search
+                    label="Search"
+                    placeholder="Search"
+                    [isSearching]="isSearching"
+                    (search)="handleSearch()"
+                    (clearSearch)="handleClearSearch()"
+                  ></bp-search>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard with text</h3>
+      <p>
+        Use this variation if the data set shown is not complete or the user needs more information on when this data 
+        was collected. One common use case for this variation is showing when the data was last updated.
+      </p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard-with-text.html" 
+          target="_blank" 
+          class="link-primary"
+        >
+          Standard with text template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                  <bp-search
+                    label="Search"
+                    placeholder="Search"
+                    [isSearching]="isSearching"
+                    (search)="handleSearch()"
+                    (clearSearch)="handleClearSearch()"
+                  ></bp-search>
+                </div>
+                <div class="col-12 col-lg-auto ml-lg-auto mb-4 mt-lg-4">
+                  <p class="mb-0 text-style-muted-2">
+                    Showing data as of <span class="font-weight-semi-bold">current date</span>
+                  </p>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard with button</h3>
+      <p>
+        Use this variation if the user can take an action that is related to the data shown in the table. The button 
+        can be primary, secondary, default, or large, depending on the importance of the action.
+      </p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard-with-button.html" 
+          target="_blank" 
+          class="link-primary"
+        >
+          Standard with button template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                  <bp-search
+                    label="Search"
+                    placeholder="Search"
+                    [isSearching]="isSearching"
+                    (search)="handleSearch()"
+                    (clearSearch)="handleClearSearch()"
+                  ></bp-search>
+                </div>
+                <div class="col-12 col-lg-auto ml-lg-auto mb-4 mt-lg-4">
+                  <bp-action
+                    text="Button"
+                    classes="btn btn-outline-primary btn"
+                    (click)="(click)"
+                  ></bp-action>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard with toggle</h3>
+      <p>Use this variation if the user can have two or three preset filters of the same data set.</p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard-with-toggle.html" 
+          target="_blank" 
+          lass="link-primary"
+        >
+          Standard with toggle template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                  <bp-search
+                    label="Search"
+                    placeholder="Search"
+                    [isSearching]="isSearching"
+                    (search)="handleSearch()"
+                    (clearSearch)="handleClearSearch()"
+                  ></bp-search>
+                </div>
+                <div class="col-12 col-lg-auto ml-lg-auto mb-4 mt-lg-4">
+                  <bp-toggle
+                    toggleGroupName="toggle-buttons"
+                    [toggles]="toggleButtons"
+                  ></bp-toggle>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard with four filters and a toggle</h3>
+      <p>This variation shows our limit of four filters that can appear above the table before collapsing.</p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/standard-loaded.html" 
+          target="_blank" 
+          class="link-primary"
+        >
+          Fully loaded standard template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-12 col-lg">
+                  <div class="row">
+                    <div class="col-sm-6 col-xl-3">
+                      <bp-search
+                        label="Search"
+                        placeholder="Search"
+                        [isSearching]="isSearching"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
+                      ></bp-search>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                      <div class="form-group">
+                        <label id="dateFilter0">Date Range</label>
+                        <ng-select
+                          labelForId="dateFilter0"
+                          [items]="dateOptions"
+                          bindLabel="text"
+                          placeholder="Select date range"
+                          [clearable]="false"
+                          [searchable]="false"
+                        >
+                          <ng-template
+                            ng-option-tmp
+                            let-item="item"
+                            let-item$="item$"
+                            let-index="index"
+                          >
+                            {{ item.text }}
+                            <div class="option-text-secondary">
+                              {{ item.range }}
+                            </div>
+                          </ng-template>
+                        </ng-select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                      <div class="form-group">
+                        <bp-multi-select
+                          label="Filter by Type"
+                          [optionItems]="optionItems"
+                          bindLabel="label"
+                          bindValue="value"
+                          placeholder="Select types"
+                          (change)="handleMulti()"
+                        ></bp-multi-select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                      <div class="form-group">
+                        <bp-multi-select
+                          label="Filter by Status"
+                          [optionItems]="optionStatuses"
+                          bindLabel="label"
+                          bindValue="value"
+                          placeholder="Select statuses"
+                          (change)="handleMulti()"
+                        >
+                          <ng-template
+                            ng-option-tmp
+                            let-item="item"
+                          >
+                            <div class="status-indicator text-wrap">
+                              <span class="status-icon {{ item.value }}"></span>
+                              {{ item.label }}
+                            </div>
+                          </ng-template>
+                        </bp-multi-select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto ml-lg-auto mb-4 mt-lg-4">
+                  <bp-toggle
+                    toggleGroupName="toggle-buttons"
+                    [toggles]="toggleButtons"
+                  ></bp-toggle>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Collapsible filters and actions ribbon</h3>
+      <p>
+        If there are more than four filters, they will collapse into a separate filter section. This allows the user 
+        to focus on the data set, rather than on filters. The bulk actions ribbon is shown to illustrate how filters 
+        will show and hide above the table.
+      </p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/collapsible-with-ribbon.html" 
+          target="_blank" 
+          class="link-primary"
+        >
+          Collapsible filters and actions ribbon template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-12 col-lg">
+                  <div class="row">
+                    <div class="col col-sm-6 col-xl-3">
+                      <bp-search
+                        label="Search"
+                        placeholder="Search"
+                        [isSearching]="isSearching"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
+                      ></bp-search>
+                    </div>
+                    <div class="col-auto align-self-center">
+                      <button 
+                        type="button" 
+                        class="btn btn-text" 
+                        data-toggle="collapse" 
+                        data-target="#collapseEventsProgramsListView" 
+                        aria-expanded="true" 
+                        aria-controls="collapseEventsProgramsListView"
+                      >
+                        <i class="fas fa-filter icon-left" aria-hidden="true"></i>Filter
+                      </button>
+                    </div>
+                  </div>
+                  <div class="collapse show" id="collapseEventsProgramsListView">
+                    <div class="row">
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <label id="dateFilter1">Date Range</label>
+                          <ng-select
+                            labelForId="dateFilter1"
+                            [items]="dateOptions"
+                            bindLabel="text"
+                            placeholder="Select date range"
+                            [clearable]="false"
+                            [searchable]="false"
+                          >
+                            <ng-template
+                              ng-option-tmp
+                              let-item="item"
+                              let-item$="item$"
+                              let-index="index"
+                            >
+                              {{ item.text }}
+                              <div class="option-text-secondary">
+                                {{ item.range }}
+                              </div>
+                            </ng-template>
+                          </ng-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Type"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select types"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Status"
+                            [optionItems]="optionStatuses"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select statuses"
+                            (change)="handleMulti()"
+                          >
+                            <ng-template
+                              ng-option-tmp
+                              let-item="item"
+                            >
+                              <div class="status-indicator text-wrap">
+                                <span class="status-icon {{ item.value }}"></span>
+                                {{ item.label }}
+                              </div>
+                            </ng-template>
+                          </bp-multi-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Tag"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select tags"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto ml-lg-auto mb-4 mt-lg-4">
+                  <bp-toggle
+                    toggleGroupName="toggle-buttons"
+                    [toggles]="toggleButtons"
+                  ></bp-toggle>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <bp-ribbon
+                    class="d-block mb-3 mt-xl-0"
+                    classes="ribbon ribbon-info"
+                    text="# items selected"
+                  >
+                    <div ribbon-content class="ml-md-auto pl-md-3">
+                      <div class="row">
+                        <div class="col-auto mt-2 mt-md-0">
+                          <bp-action
+                            text="Edit"
+                            classes="btn btn-sm btn-outline-primary"
+                            ariaLabel="Edit selected items"
+                            (click)="click"
+                          ></bp-action>
+                        </div>
+                        <div class="col-auto mt-2 mt-md-0 pl-0">
+                          <bp-action
+                            text="Delete"
+                            classes="btn btn-sm btn-outline-primary"
+                            ariaLabel="Delete selected items"
+                            (click)="click"
+                          ></bp-action>
+                        </div>
+                      </div>
+                    </div>
+                  </bp-ribbon>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2>Product-specific Table Filters</h2>
+      <p>
+        Below are products that have a specific set of filters either due to the data set, how the data is viewed, or 
+        what the user needs to filter on.
+      </p>
+      <h3>Events — Programs</h3>
+      <p>
+        For the Programs data set, the user can toggle between views, either table or list. Sorting appears in the 
+        filters section when the user is on the list view. This is because the user can't sort through a column header 
+        on the list view.
+      </p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/events-programs.html" 
+          target="_blank" 
+          class="link-primary"
+        >
+          Events Programs template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-12 col-lg">
+                  <div class="row">
+                    <div class="col col-sm-6 col-xl-3">
+                      <bp-search
+                        label="Search"
+                        placeholder="Search"
+                        [isSearching]="isSearching"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
+                      ></bp-search>
+                    </div>
+                    <div class="col-auto align-self-center">
+                      <button 
+                        type="button" 
+                        class="btn btn-text" 
+                        data-toggle="collapse" 
+                        data-target="#collapseEventsProgramsListView" 
+                        aria-expanded="true" 
+                        aria-controls="collapseEventsProgramsListView"
+                      >
+                        <i class="fas fa-filter icon-left" aria-hidden="true"></i>Filter
+                      </button>
+                    </div>
+                  </div>
+                  <div class="collapse show" id="collapseEventsProgramsListView">
+                    <div class="row">
+                      <div *ngIf="listView" class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <label id="sortBy">Sort by</label>
+                          <ng-select
+                            labelForId="sortBy"
+                            [items]="sortByOptions"
+                            bindLabel="text"
+                            [clearable]="false"
+                            [searchable]="false"
+                            [(ngModel)]="selectedSortOption"
+                          ></ng-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Action Destination"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select action destinations"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Business Unit"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select business units"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Company"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select companies"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Event Source Provider"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select event source providers"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto ml-lg-auto mb-4 mt-lg-4">
+                  <bp-toggle
+                    toggleGroupName="toggle-view"
+                    [toggles]="viewToggles"
+                    (change)="toggleView($event)"
+                  ></bp-toggle>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Marketing — Promotions</h3>
+      <p>
+        The Promotions table has five filters, but no right side content or actions.
+      </p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/marketing-promotions.html" 
+          target="_blank" 
+          class="link-primary"
+        >
+          Marketing Promotions template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-12 col-lg">
+                  <div class="row">
+                    <div class="col col-sm-6 col-xl-3">
+                      <bp-search
+                        label="Search"
+                        placeholder="Search"
+                        [isSearching]="isSearching"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
+                      ></bp-search>
+                    </div>
+                    <div class="col-auto align-self-center">
+                      <button 
+                        type="button" 
+                        class="btn btn-text" 
+                        data-toggle="collapse" 
+                        data-target="#collapsePromotionsFilters" 
+                        aria-expanded="true" 
+                        aria-controls="collapsePromotionsFilters"
+                      >
+                        <i class="fas fa-filter icon-left" aria-hidden="true"></i>Filter
+                      </button>
+                    </div>
+                  </div>
+                  <div class="collapse show" id="collapsePromotionsFilters">
+                    <div class="row">
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Type"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select types"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Status"
+                            [optionItems]="optionStatuses"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select statuses"
+                            (change)="handleMulti()"
+                          >
+                            <ng-template
+                              ng-option-tmp
+                              let-item="item"
+                            >
+                              <div class="status-indicator text-wrap">
+                                <span class="status-icon {{ item.value }}"></span>
+                                {{ item.label }}
+                              </div>
+                            </ng-template>
+                          </bp-multi-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Channel"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select channels"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xl-3">
+                        <div class="form-group">
+                          <bp-multi-select
+                            label="Filter by Audience"
+                            [optionItems]="optionItems"
+                            bindLabel="label"
+                            bindValue="value"
+                            placeholder="Select audiences"
+                            (change)="handleMulti()"
+                          ></bp-multi-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Messaging — Data</h3>
+      <p>
+        The Data table has a one-off filter for 'Auto-Refresh Segments.' The filtered data appears in a modal, instead 
+        of the table below. This design is under review, do not use this pattern for anything else.
+      </p>
+      <p>
+        <a 
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/table-filters/messaging-data.html" 
+          target="_blank" 
+          class="link-primary"
+        >
+          Messaging Data template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- TF template starts here -->
+              <div class="row">
+                <div class="col-12 col-lg">
+                  <div class="row">
+                    <div class="col-sm-6 col-xl-3">
+                      <bp-search
+                        label="Search"
+                        placeholder="Search"
+                        [isSearching]="isSearching"
+                        (search)="handleSearch()"
+                        (clearSearch)="handleClearSearch()"
+                      ></bp-search>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                      <div class="form-group">
+                        <label id="dateFilter2">Date Range</label>
+                        <ng-select
+                          labelForId="dateFilter2"
+                          [items]="dateOptions"
+                          bindLabel="text"
+                          placeholder="Select date range"
+                          [clearable]="false"
+                          [searchable]="false"
+                        >
+                          <ng-template
+                            ng-option-tmp
+                            let-item="item"
+                            let-item$="item$"
+                            let-index="index"
+                          >
+                            {{ item.text }}
+                            <div class="option-text-secondary">
+                              {{ item.range }}
+                            </div>
+                          </ng-template>
+                        </ng-select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                      <div class="form-group">
+                        <bp-multi-select
+                          label="Filter by Type"
+                          [optionItems]="optionItems"
+                          bindLabel="label"
+                          bindValue="value"
+                          placeholder="Select types"
+                          (change)="handleMulti()"
+                        ></bp-multi-select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-auto align-self-center">
+                      <bp-action
+                        text="View Auto-Refresh Segments"
+                        classes="btn btn-text mb-3 my-md-2"
+                        (click)="(click)"
+                      ></bp-action>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto ml-lg-auto mb-4 mt-lg-4">
+                  <bp-toggle
+                    toggleGroupName="toggle-current-archive"
+                    [toggles]="currentArchiveToggles"
+                  ></bp-toggle>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <bp-ribbon
+                    class="d-block my-3 mt-xl-0"
+                    classes="ribbon ribbon-info"
+                    text="# items selected"
+                  >
+                    <div ribbon-content class="ml-md-auto pl-md-3">
+                      <div class="row">
+                        <div class="col-auto mt-2 mt-md-0">
+                          <bp-action
+                            text="Copy"
+                            classes="btn btn-sm btn-outline-primary"
+                            ariaLabel="Copy selected items"
+                            (click)="click"
+                          ></bp-action>
+                        </div>
+                        <div class="col-auto mt-2 mt-md-0 pl-0">
+                          <bp-action
+                            text="Move"
+                            classes="btn btn-sm btn-outline-primary"
+                            ariaLabel="Move selected items"
+                            (click)="click"
+                          ></bp-action>
+                        </div>
+                        <div class="col-auto mt-2 mt-md-0 pl-0">
+                          <bp-action
+                            text="Archive"
+                            classes="btn btn-sm btn-outline-primary"
+                            ariaLabel="Archive selected items"
+                            (click)="click"
+                          ></bp-action>
+                        </div>
+                        <div class="col-auto mt-2 mt-md-0 pl-sm-0">
+                          <bp-action
+                            text="Trash"
+                            classes="btn btn-sm btn-outline-primary"
+                            ariaLabel="Move selected items to trash"
+                            (click)="click"
+                          ></bp-action>
+                        </div>
+                      </div>
+                    </div>
+                  </bp-ribbon>
+                </div>
+              </div>
+              <!-- TF template ends here -->
+              <div class="demo-body">
+                Table
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

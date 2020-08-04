@@ -23,7 +23,7 @@ export class ToggleComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   emitChange(e) {
     e.stopPropagation();
@@ -36,4 +36,5 @@ export class ToggleComponent implements OnInit {
     checkedToggle.isChecked = true;
     this.change.emit(e);
   }
+
 }

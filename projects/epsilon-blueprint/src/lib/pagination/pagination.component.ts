@@ -4,7 +4,8 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnChanges
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
 
 import { parseLookupString } from '../../helpers';
@@ -15,10 +16,9 @@ import { parseLookupString } from '../../helpers';
   styleUrls: ['./pagination.component.scss']
 })
 
-// This component only handles the actual pagination part of the table,
-// the actual rows and rendering is handled by the table component
+/* This component only handles the actual pagination part of the table,
+   the actual rows and rendering is handled by the table component */
 export class PaginationComponent implements OnInit, OnChanges {
-  parseLookupString = parseLookupString;
 
   @Input()
   dataLength: number;
@@ -31,9 +31,9 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   @Input()
   pageNumber: number;
-  
+
   @Input()
-  internationalization= {
+  internationalization = {
     'numResults results': '#{numResults} result(s)',
     'Number of Rows': 'Number of Rows per Page',
     'First Page': 'First Page',
@@ -51,38 +51,44 @@ export class PaginationComponent implements OnInit, OnChanges {
   @Output()
   pageData = new EventEmitter();
 
+  parseLookupString = parseLookupString;
+
   totalPages: number;
   currentPage = 1;
   pageButtons = [];
-  numberOfRows = 10;
-  indices = {
-    start: 0,
-    end: this.defaultNumberOfRows - 1
+  numberOfRows: number;
+  indices: {
+    start: number;
+    end: number;
   };
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
-    this.numberOfRows = this.defaultNumberOfRows;
-  }
+  ngOnInit(): void { }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.defaultNumberOfRows
+        && changes.defaultNumberOfRows.currentValue
+    ) {
+      this.numberOfRows = changes.defaultNumberOfRows.currentValue;
+    }
+
     // Select the first page when the data changes
-    if (changes.dataLength) {
+    if (changes.dataLength && !changes.pageNumber) {
       this.paginate(1);
     }
 
     // Handles when page needs to be changed from parent component
     if (
-      changes.pageNumber &&
-      changes.pageNumber.currentValue &&
-      changes.pageNumber.currentValue !== this.currentPage
+      changes.pageNumber
+      && changes.pageNumber.currentValue
+      && changes.pageNumber.currentValue !== this.currentPage
     ) {
       this.paginate(changes.pageNumber.currentValue);
     }
   }
 
-  paginate(page: number) {
+  paginate(page: number): void {
     this.totalPages = this.getTotalPages();
     this.changePage(page);
   }
@@ -91,7 +97,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     return this.currentPage === selectedPage ? true : false;
   }
 
-  rowChangePage(page) {
+  rowChangePage(): void {
     this.currentPage = Math.floor(this.indices.start / this.numberOfRows) + 1 || 1;
     this.paginate(this.currentPage);
   }
@@ -100,8 +106,11 @@ export class PaginationComponent implements OnInit, OnChanges {
   changePage(page: number): void {
     this.currentPage = page;
     this.pageButtons = [];
-    this.indices.start = (this.currentPage - 1) * this.numberOfRows;
-    this.indices.end = this.indices.start + this.numberOfRows;
+    const startIndex = (this.currentPage - 1) * this.numberOfRows;
+    this.indices = {
+      start: startIndex,
+      end: startIndex + this.numberOfRows
+    };
 
     if (this.currentPage - this.pageBuffer <= 1) {
       for (
@@ -134,11 +143,12 @@ export class PaginationComponent implements OnInit, OnChanges {
     this.pageData.emit({
       currentPage: this.currentPage,
       rowsPerPage: this.numberOfRows,
-      indices: {...this.indices}
+      indices: { ...this.indices }
     });
   }
 
-  getTotalPages() {
+  getTotalPages(): number {
     return Math.ceil(this.dataLength / this.numberOfRows);
   }
+
 }

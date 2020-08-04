@@ -11,16 +11,16 @@ const routes: Routes = [
 
     // Foundations
     { path: 'voice-tone', loadChildren: () => import('./foundations/voice-tone/voice-tone.module')
-    .then(m => m.VoiceToneModule) },
+      .then(m => m.VoiceToneModule) },
 
     { path: 'color', loadChildren: () => import('./foundations/color/color.module')
-    .then(m => m.ColorModule) },
+      .then(m => m.ColorModule) },
 
     { path: 'typography', loadChildren: () => import('./foundations/typography/typography.module')
-    .then(m => m.TypographyModule) },
+      .then(m => m.TypographyModule) },
 
     { path: 'icons', loadChildren: () => import('./foundations/icons/icons.module')
-    .then(m => m.IconsModule) },
+      .then(m => m.IconsModule) },
 
     // Small components
     { path: 'badge', loadChildren: () => import('./library/badge/badge.module')
@@ -31,12 +31,15 @@ const routes: Routes = [
 
     { path: 'checkbox', loadChildren: () => import('./library/checkbox/checkbox.module')
       .then(m => m.CheckboxLibraryModule) },
-    
+
+    { path: 'collapsible-panel', loadChildren: () => import('./library/collapsible-panel/collapsible-panel.module')
+      .then(m => m.CollapsiblePanelLibraryModule) },
+
     { path: 'date-time-picker', loadChildren: () => import('./library/date-time-picker/date-time-picker.module')
-    .then(m => m.DateTimePickerLibraryModule) },
-    
+      .then(m => m.DateTimePickerLibraryModule) },
+
     { path: 'dropdown', loadChildren: () => import('./library/dropdown/dropdown.module')
-    .then(m => m.DropdownLibraryModule) },
+      .then(m => m.DropdownLibraryModule) },
 
     { path: 'pagination', loadChildren: () => import('./library/pagination/pagination.module')
       .then(m => m.PaginationLibraryModule) },
@@ -63,8 +66,9 @@ const routes: Routes = [
       .then(m => m.ToggletipLibraryModule) },
 
     // Medium components
-    { path: 'landing-page-header', loadChildren: () => import('./library/landing-page-header/landing-page-header.module')
-    .then(m => m.LandingPageHeaderLibraryModule) },
+    { path: 'landing-page-header',
+      loadChildren: () => import('./library/landing-page-header/landing-page-header.module')
+        .then(m => m.LandingPageHeaderLibraryModule) },
 
     { path: 'multi-select', loadChildren: () => import('./library/multi-select/multi-select.module')
       .then(m => m.MultiselectLibraryModule) },
@@ -74,17 +78,18 @@ const routes: Routes = [
 
     // Large components
     { path: 'table', loadChildren: () => import('./library/table/table.module')
-    .then(m => m.TableLibraryModule) },
+      .then(m => m.TableLibraryModule) },
 
     // Templates
     { path: 'object-page-header', loadChildren: () => import('./templates/object-page-header/object-page-header.module')
-    .then(m => m.ObjectPageHeaderModule) },
+      .then(m => m.ObjectPageHeaderModule) },
 
-    { path: 'color', loadChildren: () => import('./foundations/color/color.module')
-    .then(m => m.ColorModule) },
+    { path: 'table-filters', loadChildren: () => import('./templates/table-filters/table-filters.module')
+      .then(m => m.TableFiltersModule) },
 
-    { path: '**', redirectTo: 'introduction', pathMatch: 'full' } // TODO: create a componentNotFound page for this instance
-  ]}
+    // TODO: create a componentNotFound page for this instance
+    { path: '**', redirectTo: 'introduction', pathMatch: 'full' }
+  ] }
 ];
 
 @NgModule({

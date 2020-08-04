@@ -1,10 +1,10 @@
 <ng-container [ngSwitch]="true">
   <a
-    *ngSwitchCase="isDefined(routerLink)"
+    *ngSwitchCase="isDefined(bpRouterLink)"
     [ngClass]="classes"
     [attr.aria-label]="ariaLabel"
-    [routerLink]="routerLink"
-    [target]="target ? target: null"
+    [routerLink]="bpRouterLink"
+    [attr.target]="target ? target: null"
   >
     <ng-container *ngTemplateOutlet="actionContent"></ng-container>
   </a>
@@ -13,7 +13,7 @@
     [ngClass]="classes"
     [attr.aria-label]="ariaLabel"
     [attr.href]="href"
-    [target]="target ? target: null"
+    [attr.target]="target ? target: null"
   >
     <ng-container *ngTemplateOutlet="actionContent"></ng-container>
   </a>

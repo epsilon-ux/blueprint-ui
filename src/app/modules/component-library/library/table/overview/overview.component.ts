@@ -1,18 +1,19 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
-import { ColumnType } from '../models/column';
-import Properties from '../models/properties';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ColumnType, Properties } from 'epsilon-blueprint/models/table-models';
+import { TableComponent } from 'epsilon-blueprint';
 
+import { TableRow } from './tableData.interface';
 import tableData from 'src/app/datasets/tableData.json';
 
 @Component({
   selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  templateUrl: './overview.component.html'
 })
 export class OverviewComponent implements OnInit {
 
-  @ViewChild('templateColumn', {static: true}) templateColumn;
-  @ViewChild('expandableRowsTemplate', {static: true}) expandableRowsTemplate;
+  @ViewChild('overviewTable', { static: true }) overviewTable: TableComponent;
+  @ViewChild('templateColumn', { static: true }) templateColumn;
+  @ViewChild('expandableRowsTemplate', { static: true }) expandableRowsTemplate;
 
   set exampleData(json) {
     this.rawData = json.customerData.data;
@@ -21,17 +22,17 @@ export class OverviewComponent implements OnInit {
     this.isDataLoading = false;
   }
 
-  rawData = [];
-  filteredData = [];
-  tableData = [];
+  rawData: TableRow[];
+  filteredData: TableRow[];
+  tableData: TableRow[];
   pageIndices;
   isDataLoading = true;
 
   properties: Properties;
 
-  constructor() {}
+  constructor() { }
 
-  async ngOnInit() {
+  ngOnInit(): void {
     this.properties = {
       caption: 'This is an example of a table with all available table features turned on.',
       rowId: 'id',
@@ -59,10 +60,9 @@ export class OverviewComponent implements OnInit {
           isColumnDisplayed: true,
           type: ColumnType.LINK,
           link: {
-            element: 'a',
             ariaLabel: 'go to Object #{id}',
             target: '',
-            path: 'object/#{id}'
+            bpRouterLink: 'object/#{id}'
           }
         },
         {
@@ -72,10 +72,8 @@ export class OverviewComponent implements OnInit {
           type: ColumnType.LINK,
           isSortable: false,
           link: {
-            element: 'a',
             ariaLabel: 'go to Object #{id}',
-            target: '_blank',
-            href: 'https://www.example.com'
+            action: 'testAction'
           }
         },
         {
@@ -106,7 +104,7 @@ export class OverviewComponent implements OnInit {
         }
       ],
       sort: {
-        defaultSortedColumn: 'phone',
+        defaultSortedColumn: 'amount',
         defaultSortOrder: 'ascending'
       },
       hasSelectableRows: true,
@@ -116,7 +114,7 @@ export class OverviewComponent implements OnInit {
           text: 'Edit',
           ariaLabel: 'Edit Object #{id}',
           class: 'btn-outline-primary',
-          routerLink: './'
+          bpRouterLink: './'
         },
         {
           element: 'button',
@@ -147,6 +145,7 @@ export class OverviewComponent implements OnInit {
         }
       ],
       expandableRowsTemplate: this.expandableRowsTemplate,
+      hasViewSelector: true,
       hasColumnSelector: true,
       hasDisplayDensity: true
     };
@@ -157,11 +156,13 @@ export class OverviewComponent implements OnInit {
     // Use action from action buttons to trigger different events here
   }
 
-  sortByKeyAsc(array, key) {
+  handleViewChange() { }
+
+  sortByKeyAsc(array: TableRow[], key: string): void {
     if (key === 'templateCol') {
-      return array.sort((a, b) => a.id < b.id ? -1 : 1);
+      array.sort((a: TableRow, b: TableRow) => (a.id < b.id ? -1 : 1));
     } else {
-      return array.sort((a, b) => {
+      array.sort((a: TableRow, b: TableRow) => {
         const x = a[key];
         const y = b[key];
         return x < y ? -1 : 1;
@@ -169,19 +170,19 @@ export class OverviewComponent implements OnInit {
     }
   }
 
-  sortByKeyDesc(array, key) {
+  sortByKeyDesc(array: TableRow[], key: string): void {
     if (key === 'templateCol') {
-      return array.sort((a, b) => b.id < a.id ? -1 : 1);
+      array.sort((a: TableRow, b: TableRow) => (b.id < a.id ? -1 : 1));
     } else {
-      return array.sort((a, b) => {
+      array.sort((a: TableRow, b: TableRow) => {
         const x = a[key];
         const y = b[key];
         return x > y ? -1 : 1;
       });
     }
   }
-  
-  handleSort(sort) {
+
+  handleSort(sort): void {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(this.filteredData, sort.column);
     } else {
@@ -194,17 +195,29 @@ export class OverviewComponent implements OnInit {
   }
 
   handleSelectedRows(selectedRowIds: {
-    areAllSelected: boolean;
-    selected: {[key: string]: any;}
+    selected: Record<string, unknown>;
+    unselected: Record<string, unknown>;
+    numRowsSelected: number;
   }) {
     // Handle the selected rows here
   }
 
+  // This function could be used to select all rows in the dataset
+  selectAllRows(): void {
+    this.overviewTable.selectAllRows();
+  }
+
+  // This function could be used to unselect all rows in the dataset
+  clearAllRows(): void {
+    this.overviewTable.clearAllRows();
+  }
+
   handlePageChange(pageData) {
-    this.pageIndices = {...pageData.indices};
+    this.pageIndices = { ...pageData.indices };
     this.tableData = this.filteredData.slice(
       pageData.indices.start,
       pageData.indices.end
     );
   }
+
 }

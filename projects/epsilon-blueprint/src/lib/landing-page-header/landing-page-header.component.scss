@@ -1,19 +1,19 @@
-@import '../../styles/global-variables';
+@import "../../styles/global-variables";
 
 .landing-page-header
 {
-    margin-bottom: 20px;
-    border-bottom: 1px solid $border-color-primary;
-    padding-top: 25px;
-    background: $cloud;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $border-color-primary;
+  padding-top: 25px;
+  background: $cloud;
 }
 
 .landing-page-heading
 {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .object-dropdown
 {
-    min-width: 150px;
+  min-width: 150px;
 }

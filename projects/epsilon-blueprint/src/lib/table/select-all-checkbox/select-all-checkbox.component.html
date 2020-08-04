@@ -2,6 +2,7 @@
   role="checkbox"
   class="checkbox-input"
   [attr.aria-checked]="checked"
+  [attr.aria-labelledby]="id"
   tabindex="0"
   (keyup.space)="emitEvent($event)"
 ></span>

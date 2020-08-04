@@ -6,6 +6,7 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+
   // Label for search field
   @Input()
   label = 'Search';
@@ -18,6 +19,12 @@ export class SearchComponent implements OnInit {
   @Input()
   isSearching = false;
 
+  @Input()
+  searchQuery = '';
+
+  @Output()
+  searchQueryChange = new EventEmitter<string>();
+
   // Emit the search query string
   @Output()
   search = new EventEmitter<string>();
@@ -26,39 +33,40 @@ export class SearchComponent implements OnInit {
   @Output()
   clearSearch = new EventEmitter();
 
-  public searchFilter = '';
-  public showClearIcon = false;
+  showClearIcon = false;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit(): void { }
 
-  onClearSearch() {
-    this.searchFilter = '';
+  onClearSearch(): void {
+    this.searchQuery = '';
     this.showClearIcon = false;
     this.clearSearch.emit();
   }
 
-  onSearch() {
-    if (this.searchFilter.length > 0) {
-      this.search.emit(this.searchFilter);
+  onSearch(): void {
+    if (this.searchQuery.length > 0) {
+      this.search.emit(this.searchQuery);
     }
   }
 
-  inputController(event) {
-    if (event.key === 'Enter' && this.searchFilter.length > 0) {
+  inputController(event): void {
+    this.searchQueryChange.emit(this.searchQuery);
+    if (event.key === 'Enter' && this.searchQuery.length > 0) {
       this.showClearIcon = true;
-      this.search.emit(this.searchFilter);
+      this.search.emit(this.searchQuery);
     } else if (
-      (event.key === 'Backspace' || event.key === 'Delete') &&
-      this.searchFilter.length === 0
+      (event.key === 'Backspace' || event.key === 'Delete')
+      && this.searchQuery.length === 0
     ) {
       this.showClearIcon = false;
       this.clearSearch.emit();
-    } else if (this.searchFilter.length > 0) {
+    } else if (this.searchQuery.length > 0) {
       this.showClearIcon = true;
     } else {
       this.showClearIcon = false;
     }
   }
+
 }

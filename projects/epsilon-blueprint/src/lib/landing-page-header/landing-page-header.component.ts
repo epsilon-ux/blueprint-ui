@@ -15,25 +15,28 @@ export class LandingPageHeaderComponent implements OnInit {
 
   @Input()
   dropdownItems;
-  
+
   @Input()
-  routerLink: string = undefined;
+  bpRouterLink: string = undefined;
 
   @Input()
   href: string = undefined;
+
+  @Input()
+  isMarginBottom = true;
 
   @Output()
   actionClick = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
-    this.validateInputs()
+  ngOnInit(): void {
+    this.validateInputs();
   }
 
   validateInputs() {
     if (!this.headingText) {
-      let err = new Error('headingText is a required Input of bp-landing-page-header');
+      const err = new Error('headingText is a required Input of bp-landing-page-header');
       err.name = 'Missing Input';
       throw err;
     }
@@ -42,4 +45,5 @@ export class LandingPageHeaderComponent implements OnInit {
   onActionClick(e) {
     this.actionClick.emit(e);
   }
+
 }

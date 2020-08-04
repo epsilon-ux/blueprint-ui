@@ -1,6 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { parseLookupString } from '../../../../../helpers';
-import { Action } from '../../../models/action';
+import { Action } from '../../../../../models/table-models';
+
+interface Conditions {
+  column: string;
+  operator: string;
+  value: any;
+}
 
 @Component({
   selector: 'app-actions',
@@ -8,6 +14,7 @@ import { Action } from '../../../models/action';
   styleUrls: ['./actions.component.scss']
 })
 export class ActionsComponent implements OnInit {
+
   @Input()
   actionItems: Action[];
 
@@ -15,7 +22,7 @@ export class ActionsComponent implements OnInit {
   rowId: string;
 
   @Input()
-  rowData: {};
+  rowData: Record<string, unknown>;
 
   @Input()
   classList: string;
@@ -28,9 +35,9 @@ export class ActionsComponent implements OnInit {
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.classList.includes('dropdown-item')) {
       this.actionItems.forEach(action => {
         action.class = '';
@@ -38,7 +45,7 @@ export class ActionsComponent implements OnInit {
     }
 
     // Determines which action items to show for this row
-    let filteredActions = [];
+    const filteredActions = [];
     this.actionItems.forEach(action => {
       if (action.conditions) {
         if (this.reduceConditions(action.conditions)) {
@@ -52,18 +59,18 @@ export class ActionsComponent implements OnInit {
   }
 
   // Takes in conditions array from an actionItem and evaluates whether the conditions are met
-  reduceConditions(actionConditions): boolean {
+  reduceConditions(actionConditions: (Conditions | string)[]): boolean {
     // Splits conditions array into condition and the logical operator arrays
     const logicalOperators = [];
     const conditions = [];
     actionConditions.forEach((condition, i) =>
-      i % 2 === 0
+      (i % 2 === 0
         ? conditions.push(condition)
-        : logicalOperators.push(condition)
+        : logicalOperators.push(condition))
     );
 
     // Gets array of booleans from evaulating individual conditions
-    const booleans = conditions.map(condition =>
+    const booleans = conditions.map((condition: Conditions) =>
       this.compare(condition.operator)(
         this.rowData[condition.column],
         condition.value
@@ -72,7 +79,7 @@ export class ActionsComponent implements OnInit {
 
     // Reduces conditions down to a single boolean based off the connecting logical operators
     if (booleans.length > 1) {
-      return booleans.reduce((acc, curr, i) => {
+      return booleans.reduce((acc: boolean, curr: boolean, i: number) => {
         if (i > 0) {
           switch (logicalOperators[i - 1]) {
             case '&&':
@@ -92,7 +99,7 @@ export class ActionsComponent implements OnInit {
   }
 
   // Returns a function that compares two arguments dependent on the operator
-  compare(operator: string): Function {
+  compare(operator: string): (a: any, b: any) => boolean {
     switch (operator) {
       case '>':
         return (a, b) => a > b;
@@ -105,10 +112,12 @@ export class ActionsComponent implements OnInit {
       case '===':
         return (a, b) => a === b;
       case '==':
+        // eslint-disable-next-line eqeqeq
         return (a, b) => a == b;
       case '!==':
         return (a, b) => a !== b;
       case '!=':
+        // eslint-disable-next-line eqeqeq
         return (a, b) => a != b;
       default:
         throw new Error('Invalid operator provided in action condition.');
@@ -118,4 +127,5 @@ export class ActionsComponent implements OnInit {
   triggerAction(action): void {
     this.emitAction.emit(action);
   }
+
 }

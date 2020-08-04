@@ -6,24 +6,22 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
   styleUrls: ['../table-footer.component.scss']
 })
 export class DisplayDensityComponent implements OnInit {
+
   @Output()
   displayDensityEmitter = new EventEmitter();
 
   @Input()
-  showDisplayDensity: boolean;
-
-  @Input()
   internationalization: any;
-  
+
   displayDensity: string;
   displayOptions: {
     text: string;
     value: string;
   }[];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.displayOptions = Object.keys(this.internationalization['Display Density Options']).map(option => ({
       text: this.internationalization['Display Density Options'][option],
       value: option
@@ -36,4 +34,5 @@ export class DisplayDensityComponent implements OnInit {
   setDisplayDensity() {
     this.displayDensityEmitter.emit(this.displayDensity);
   }
+
 }
