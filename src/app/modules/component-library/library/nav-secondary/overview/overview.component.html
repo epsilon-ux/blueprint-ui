@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
-        The secondary navigation component navigates users between pages within a primary navigation item. The secondary navigation is part of Blueprint's page structure. It can contain a title, navigation links, and groups of navigation links.
+        The secondary navigation component navigates users between pages within a primary navigation item. The secondary navigation is always nested inside of a collapsible panel component. It can contain a title, navigation links, and groups of navigation links.
       </p>
       <h2>Example</h2>
     </div>
@@ -10,11 +10,14 @@
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="demo-layout">
-            <bp-nav-secondary
-              title="Title"
-              [items]="navItems"
-              [shouldRouteMatchExact]="true"
-            ></bp-nav-secondary>
+            <bp-collapsible-panel>
+              <bp-nav-secondary 
+                panel-content
+                title="Title"
+                [items]="navItems"
+                [shouldRouteMatchExact]="true"
+              ></bp-nav-secondary>
+            </bp-collapsible-panel>
             <div class="demo-main">Main Content</div>
           </div>
         </div>

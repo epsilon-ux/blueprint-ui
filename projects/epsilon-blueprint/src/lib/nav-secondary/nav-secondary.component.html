@@ -1,14 +1,8 @@
-<nav id="navSecondary" class="nav-secondary{{ isNavCollapsed ? ' collapsed' : '' }}">
-  <div class="toggle-wrapper">
-    <button type="button" class="toggle" aria-controls="navSecondary" [attr.aria-label]="toggleAriaLabel" (click)="toggleNav()">
-    </button>
-  </div>
+<nav class="nav-secondary">
   <p *ngIf="title" class="title">{{ title }}</p>
-  <ng-content select="[search]"></ng-content>
   <ul class="nav-list">
     <ng-container *ngTemplateOutlet="lists; context:{$implicit: items}"></ng-container>
   </ul>
-  <ng-content select="[footer]"></ng-content>
 </nav>
 
 <ng-template #lists let-navItems>

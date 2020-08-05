@@ -19,9 +19,7 @@ export class NavSecondaryComponent implements OnInit {
   @Input() title: string;
   @Input() items: Item[];
   @Input() shouldRouteMatchExact = false;
-  @Input() isNavCollapsed = false;
   @Input() areItemsExpanded = false;
-  @Input() toggleAriaLabel = 'Toggle secondary navigation';
 
   @ViewChildren(RouterLinkActive, { read: ElementRef })
   linkRefs: QueryList<ElementRef>;
@@ -74,10 +72,6 @@ export class NavSecondaryComponent implements OnInit {
         throw err;
       }
     });
-  }
-
-  toggleNav() {
-    this.isNavCollapsed = !this.isNavCollapsed;
   }
 
 }

@@ -41,15 +41,6 @@
             </td>
           </tr>
           <tr>
-            <td>isNavCollapsed</td>
-            <td>boolean</td>
-            <td>Determines if the secondary navigation should be expanded or collapsed.</td>
-            <td>
-              <p>Default is "false".</p>
-              <p>When "true" the nav is collapsed.</p>
-            </td>
-          </tr>
-          <tr>
             <td>areItemsExpanded</td>
             <td>boolean</td>
             <td>Determines if the nested navigation items should be expanded or collapsed.</td>
@@ -57,12 +48,6 @@
               <p>Default is "false".</p>
               <p>When "true" the nested navigation items are all expanded.</p>
             </td>
-          </tr>
-          <tr>
-            <td>toggleAriaLabel</td>
-            <td>string</td>
-            <td>The open/close button's aria label.</td>
-            <td>Default is "Toggle secondary navigation".</td>
           </tr>
         </tbody>
       </table>
@@ -121,21 +106,6 @@
         </tbody>
       </table>
       <!-- TODO: add versions & features table -->
-    </div>
-
-    <div class="col-lg-8 col-xl-7">
-      <h2>Content Projection</h2>
-      <p>
-        The search and footer attributes are the values for the optional ng-content directives' select attributes.
-      </p>
-    </div>
-    <div class="col-12">
-      <markdown
-        [data]="contentProjection"
-        lineNumbers
-        lineHighlight
-        [line]="'5-10'"
-      ></markdown>
     </div>
   </div>
 </section>
