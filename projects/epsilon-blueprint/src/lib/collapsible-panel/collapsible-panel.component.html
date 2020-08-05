@@ -3,7 +3,12 @@
     <button type="button" class="toggle" aria-controls="panelCollapsible" [attr.aria-label]="toggleAriaLabel" (click)="togglePanel()">
     </button>
   </div>
-  <ng-content select="[panel-content]">
-    <!--Content-->
-  </ng-content>
+  <nav class="nav-secondary">
+    <p *ngIf="title" class="title">{{ title }}</p>
+    <ng-content select="[search]"></ng-content>
+    <ng-content select="[panel-content]">
+      <!--Content-->
+    </ng-content>
+    <ng-content select="[footer]"></ng-content>
+  </nav>
 </div>

@@ -8,33 +8,45 @@
   background: $coconut;
   transition: width 0.25s ease-out;
 
+  .nav-secondary
+  {
+    width: 100%;
+  
+    .title
+    {
+      margin: 0 20px 15px 20px;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-regular;
+    }
+  }
+
   .toggle-wrapper
   {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
-  }
 
-  .toggle
-  {
-    width: 30px;
-    height: 30px;
-    border: 0;
-    padding: 0;
-    background: $coconut;
-    color: $accent-color-primary;
-    font-weight: $font-weight-semi-bold;
-    font-size: $font-size-lg;
-
-    &:hover
+    .toggle
     {
-      color: $accent-color-primary-hover;
-    }
+      width: 30px;
+      height: 30px;
+      border: 0;
+      padding: 0;
+      background: $coconut;
+      color: $accent-color-primary;
+      font-weight: $font-weight-semi-bold;
+      font-size: $font-size-lg;
 
-    &::after
-    {
-      content: $icon-close;
-      font-family: $font-family-icon;
+      &:hover
+      {
+        color: $accent-color-primary-hover;
+      }
+
+      &::after
+      {
+        content: $icon-close;
+        font-family: $font-family-icon;
+      }
     }
   }
 
