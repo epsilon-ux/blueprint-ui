@@ -8,18 +8,6 @@
   background: $coconut;
   transition: width 0.25s ease-out;
 
-  .nav-secondary
-  {
-    width: 100%;
-  
-    .title
-    {
-      margin: 0 20px 15px 20px;
-      font-size: $font-size-lg;
-      font-weight: $font-weight-regular;
-    }
-  }
-
   .toggle-wrapper
   {
     display: flex;

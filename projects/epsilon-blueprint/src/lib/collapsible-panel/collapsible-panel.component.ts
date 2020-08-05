@@ -9,7 +9,6 @@ export class CollapsiblePanelComponent implements OnInit {
   @Input() isPanelCollapsed = false;
   @Input() toggleAriaLabel = 'Toggle collapsible panel';
   @Input() isPanelRight = false;
-  @Input() title: string;
 
   constructor() { }
 

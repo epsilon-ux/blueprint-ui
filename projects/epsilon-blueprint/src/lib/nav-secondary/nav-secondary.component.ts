@@ -16,6 +16,7 @@ interface Item {
 })
 export class NavSecondaryComponent implements OnInit {
 
+  @Input() title: string;
   @Input() items: Item[];
   @Input() shouldRouteMatchExact = false;
   @Input() areItemsExpanded = false;
