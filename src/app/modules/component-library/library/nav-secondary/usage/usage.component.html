@@ -15,7 +15,8 @@
         <div class="card-body component-preview">
           <div class="demo-layout">
             <bp-collapsible-panel>
-            <bp-nav-secondary panel-content
+              <bp-nav-secondary 
+                panel-content
                 [items]="standard"
                 [shouldRouteMatchExact]="true"
               ></bp-nav-secondary>
@@ -35,9 +36,11 @@
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="demo-layout">
-            <bp-collapsible-panel>
-              <bp-nav-secondary panel-content
-                title="Title"
+            <bp-collapsible-panel
+              title="Title"
+            >
+              <bp-nav-secondary 
+                panel-content
                 [items]="title"
                 [shouldRouteMatchExact]="true"
               ></bp-nav-secondary>
@@ -58,7 +61,8 @@
         <div class="card-body component-preview">
           <div class="demo-layout">
             <bp-collapsible-panel>
-              <bp-nav-secondary panel-content
+              <bp-nav-secondary 
+                panel-content
                 [items]="groups"
                 [shouldRouteMatchExact]="true"
               ></bp-nav-secondary>
@@ -82,13 +86,6 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Title</td>
-            <td>Categorizes the collection of navigation items.</td>
-            <td>
-              Use when the navigation items don't belong to one object, but are still related and belong in the same category.
-            </td>
-          </tr>
           <tr>
             <td>Page groups</td>
             <td>Nests child pages within parent groups.</td>

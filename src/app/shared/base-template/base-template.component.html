@@ -3,9 +3,10 @@
 </a>
 <app-nav-primary></app-nav-primary>
 <div class="app-body">
-  <bp-collapsible-panel>
+  <bp-collapsible-panel
+    [title]="navSecondary.title"
+  >
     <bp-nav-secondary panel-content
-      [title]="navSecondary.title"
       [items]="navSecondary.items"
     ></bp-nav-secondary>
   </bp-collapsible-panel>

@@ -8,69 +8,78 @@
   background: $coconut;
   transition: width 0.25s ease-out;
 
+  .nav-secondary
+  {
+    width: 100%;
+  
+    .title
+    {
+      margin: 0 20px 15px 20px;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-regular;
+    }
+  }
+
   .toggle-wrapper
   {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
+
+    .toggle
+    {
+      width: 30px;
+      height: 30px;
+      border: 0;
+      padding: 0;
+      background: $coconut;
+      color: $accent-color-primary;
+      font-weight: $font-weight-semi-bold;
+      font-size: $font-size-lg;
+
+      &:hover
+      {
+        color: $accent-color-primary-hover;
+      }
+
+      &::after
+      {
+        content: $icon-close;
+        font-family: $font-family-icon;
+      }
+    }
   }
 
-  .toggle
+  &.right
+  {
+    border-right: 0;
+    border-left: 1px solid $border-color-secondary;
+  }
+  &.panel-collapsible.collapsed
   {
     width: 30px;
-    height: 30px;
-    border: 0;
-    padding: 0;
-    background: $coconut;
-    color: $accent-color-primary;
-    font-weight: $font-weight-semi-bold;
-    font-size: $font-size-lg;
 
-    &:hover
+    .toggle
     {
-      color: $accent-color-primary-hover;
+      border-bottom: 1px solid $border-color-secondary;
+      background: $ice;
+
+      &:hover
+      {
+        border: 0;
+        background: $accent-color-primary-hover;
+        color: $coconut;
+      }
+
+      &::after
+      {
+        content: $icon-menu;
+      }
     }
 
-    &::after
+    :not(.toggle-wrapper):not(.toggle)
     {
-      content: $icon-close;
-      font-family: $font-family-icon;
+      display: none;
     }
-  }
-}
-
-.panel-collapsible.right
-{
-  border-right: 0;
-  border-left: 1px solid $border-color-secondary;
-}
-
-/* collapsed */
-
-.panel-collapsible.collapsed
-{
-  width: 30px;
-
-  .toggle
-  {
-    border-bottom: 1px solid $border-color-secondary;
-    background: $ice;
-
-    &:hover
-    {
-      border: 0;
-      background: $accent-color-primary-hover;
-      color: $coconut;
-    }
-
-    &::after
-    {
-      content: $icon-menu;
-    }
-  }
-
-  :not(.toggle-wrapper):not(.toggle)
-  {
-    display: none;
   }
 }

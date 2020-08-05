@@ -10,9 +10,11 @@
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="demo-layout">
-            <bp-collapsible-panel>
-              <bp-nav-secondary panel-content
-                title="Title"
+            <bp-collapsible-panel
+              title="Title"
+            >
+              <bp-nav-secondary 
+                panel-content
                 [items]="navItems"
                 [shouldRouteMatchExact]="true"
               ></bp-nav-secondary>

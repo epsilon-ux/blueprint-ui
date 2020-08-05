@@ -1,11 +1,6 @@
-  <nav class="nav-secondary">
-    <p *ngIf="title" class="title">{{ title }}</p>
-    <ng-content select="[search]"></ng-content>
-    <ul class="nav-list">
-      <ng-container *ngTemplateOutlet="lists; context:{$implicit: items}"></ng-container>
-    </ul>
-    <ng-content select="[footer]"></ng-content>
-  </nav>
+<ul class="nav-list">
+  <ng-container *ngTemplateOutlet="lists; context:{$implicit: items}"></ng-container>
+</ul>
 
 <ng-template #lists let-navItems>
   <li *ngFor="let item of navItems; let index = index" class="nav-item">
