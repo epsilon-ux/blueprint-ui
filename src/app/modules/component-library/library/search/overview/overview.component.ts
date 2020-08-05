@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 export class OverviewComponent implements OnInit {
 
   isSearching = false;
+  queryValue: string;
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  handleSearch() { }
+  handleSearch(): void { }
 
-  handleClearSearch() { }
+  handleClearSearch(): void { }
 
 }

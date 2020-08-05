@@ -6,9 +6,9 @@
       id="search"
       class="form-control"
       [placeholder]="placeholder"
-      [attr.value]="searchFilter ? searchFilter : null"
+      [attr.value]="searchQuery ? searchQuery : null"
       (keyup)="inputController($event)"
-      [(ngModel)]="searchFilter"
+      [(ngModel)]="searchQuery"
     />
     <div class="input-group-append">
       <button
