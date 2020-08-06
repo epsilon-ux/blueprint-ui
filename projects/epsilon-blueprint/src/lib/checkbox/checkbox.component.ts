@@ -31,7 +31,14 @@ export class CheckboxComponent implements OnInit, OnChanges {
     this.validation();
 
     if(!this.bpID) {
-      this.uuid = 'checkbox' + generateUniqueId().toString();
+      if(!this.id) {
+        this.uuid = 'checkbox' + generateUniqueId().toString();
+      } else {
+        this.uuid = this.id;
+        const err = new Error('Input id is deprecated.  Please use Input bpID instead.');
+        err.name = 'Input Deprecated';
+        throw err;
+      }
     } else {
       this.uuid = this.bpID;
     }

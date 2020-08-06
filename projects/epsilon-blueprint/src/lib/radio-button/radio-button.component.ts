@@ -24,7 +24,14 @@ export class RadioButtonComponent implements OnInit {
   ngOnInit(): void {
     this.validation();
     if(!this.bpID) {
-      this.uuid = 'radio-button' + generateUniqueId().toString();
+      if(!this.id) {
+        this.uuid = 'radio-button' + generateUniqueId().toString();
+      } else {
+        this.uuid = this.id;
+        const err = new Error('Input id is deprecated.  Please use Input bpID instead.');
+        err.name = 'Input Deprecated';
+        throw err;
+      }
     } else {
       this.uuid = this.bpID;
     }
