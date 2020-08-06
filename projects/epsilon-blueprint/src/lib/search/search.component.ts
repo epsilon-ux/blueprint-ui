@@ -1,4 +1,5 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-search',
@@ -22,6 +23,9 @@ export class SearchComponent implements OnInit {
   @Input()
   searchQuery = '';
 
+  @Input()
+  bpID: string;
+
   @Output()
   searchQueryChange = new EventEmitter<string>();
 
@@ -34,10 +38,17 @@ export class SearchComponent implements OnInit {
   clearSearch = new EventEmitter();
 
   showClearIcon = false;
+  uuid: string;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if(!this.bpID) {
+      this.uuid = 'search' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
+  }
 
   onClearSearch(): void {
     this.searchQuery = '';

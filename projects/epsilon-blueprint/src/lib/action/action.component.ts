@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-action',
@@ -16,8 +17,11 @@ export class ActionComponent implements OnInit {
   @Input() isDisabled = false;
   @Input() iconLeft: string;
   @Input() iconRight: string;
+  @Input() bpID: string;
 
   @Output() click = new EventEmitter();
+
+  uuid: string;
 
   constructor() { }
 
@@ -26,6 +30,12 @@ export class ActionComponent implements OnInit {
 
     if (this.isDefined(this.routerLink) && !this.isDefined(this.bpRouterLink)) {
       this.bpRouterLink = this.routerLink;
+    }
+
+    if(!this.bpID) {
+      this.uuid = 'action' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
     }
   }
 

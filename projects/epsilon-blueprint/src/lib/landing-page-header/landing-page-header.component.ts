@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-landing-page-header',
@@ -25,13 +26,23 @@ export class LandingPageHeaderComponent implements OnInit {
   @Input()
   isMarginBottom = true;
 
+  @Input()
+  bpID: string;
+
   @Output()
   actionClick = new EventEmitter();
+
+  uuid: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.validateInputs();
+    if(!this.bpID) {
+      this.uuid = 'landing-page-header' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   validateInputs() {
