@@ -49,11 +49,12 @@ export class MultiselectComponent implements OnInit, OnChanges {
     'numSelected out of numTotal selected': '#{numSelected} out of #{numTotal} selected'
   };
   @Input() ngModel: Array<any>;
+  @Input() bpID: string;
   @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
 
   parseLookupString = parseLookupString;
-  uuid = 'multiselect' + generateUniqueId().toString();
+  uuid: string;
 
   isDataLoaded = false;
 
@@ -61,6 +62,11 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.validate();
+    if(typeof this.bpID === 'undefined') {
+      this.uuid = 'multiselect' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   ngOnChanges(changes): void {
