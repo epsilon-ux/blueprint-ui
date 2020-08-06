@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { parseLookupString } from '../../../../../helpers';
-import { Action } from '../../../../../models/table-models';
+import { TableActionInterface } from '../../../table.interface';
 
 interface Conditions {
   column: string;
@@ -16,7 +16,7 @@ interface Conditions {
 export class ActionsComponent implements OnInit {
 
   @Input()
-  actionItems: Action[];
+  actionItems: TableActionInterface[];
 
   @Input()
   rowId: string;

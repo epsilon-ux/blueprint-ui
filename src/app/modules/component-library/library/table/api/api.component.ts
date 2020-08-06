@@ -62,7 +62,7 @@ export class ApiComponent implements OnInit {
     columns = [{
       headerText: 'Template Column',
       isColumnDisplayed: true,
-      type: ColumnType.TEMPLATE,
+      type: TableColumnType.TEMPLATE,
       template: this.templateColumn,
       isSortable: false
     },...]
@@ -85,7 +85,7 @@ export class ApiComponent implements OnInit {
 
   expandableRowsMD3 = `
     \`\`\`typescript
-    properties: Properties = {
+    properties: TablePropertiesInterface = {
       ...
       expandableRowsTemplate: expandableRowTemplate
       ...

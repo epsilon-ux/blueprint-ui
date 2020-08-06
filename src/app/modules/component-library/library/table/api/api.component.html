@@ -6,10 +6,10 @@
         <dd>bp-table</dd>
       </dl>
 
-      <h2>Models</h2>
-      <p>You can import the following models from <code>~epsilon-blueprint/models/table-models</code>.</p>
+      <h2>Interfaces</h2>
+      <p>You can import the following interfaces from <code>epsilon-blueprint</code> to properly type your inputs.</p>
       <table class="table table-bordered-rows">
-        <caption class="sr-only">Model imports</caption>
+        <caption class="sr-only">Interface imports</caption>
         <thead>
           <th class="pt-0">Input</th>
           <th class="pt-0">Type</th>
@@ -17,24 +17,24 @@
         </thead>
         <tbody>
           <tr>
-            <td>Properties</td>
+            <td>TablePropertiesInterface</td>
             <td>interface</td>
             <td>See <a routerLink="." fragment="properties">properties</a>.</td>
           </tr>
           <tr>
-            <td>Column</td>
+            <td>TableColumnInterface</td>
             <td>interface</td>
             <td>See <a routerLink="." fragment="columns">columns</a>.</td>
           </tr>
           <tr>
-            <td>Action</td>
+            <td>TableActionInterface</td>
             <td>interface</td>
             <td>See <a routerLink="." fragment="actions">actions</a>.</td>
           </tr>
           <tr>
-            <td>ColumnType</td>
+            <td>TableColumnType</td>
             <td>enum</td>
-            <td>See <a routerLink="." fragment="columnTypes">column types</a>.</td>
+            <td>See <a routerLink="." fragment="tableColumnTypes">column types</a>.</td>
           </tr>
         </tbody>
       </table>
@@ -292,10 +292,10 @@
               </td>
               <td>When "true" the column is displayed by default.</td>
             </tr>
-            <tr id="columnTypes">
+            <tr id="tableColumnTypes">
               <td>type</td>
               <td>
-                enum ColumnType &#123;<br>
+                enum TableColumnType &#123;<br>
                 ICON,<br>
                 LINK,<br>
                 STATUS,<br>

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Properties, ColumnType } from 'epsilon-blueprint/models/table-models';
+import { TablePropertiesInterface, TableColumnType } from 'epsilon-blueprint';
 
 import { usageData, UsageRow } from './tableUsageData';
 import standard from './example-properties/standard';
@@ -20,16 +20,16 @@ export class UsageComponent implements OnInit {
   usageDataShort: UsageRow[] = usageData.slice(0, 2);
 
   // Properties
-  standard: Properties;
-  withSelectable: Properties;
-  withActions: Properties;
-  withDropdown: Properties;
-  withIcons: Properties;
-  withStatus: Properties;
-  withExpandable: Properties;
-  withExpandableAndSelectable: Properties;
-  withLinks: Properties;
-  withFooter: Properties;
+  standard: TablePropertiesInterface;
+  withSelectable: TablePropertiesInterface;
+  withActions: TablePropertiesInterface;
+  withDropdown: TablePropertiesInterface;
+  withIcons: TablePropertiesInterface;
+  withStatus: TablePropertiesInterface;
+  withExpandable: TablePropertiesInterface;
+  withExpandableAndSelectable: TablePropertiesInterface;
+  withLinks: TablePropertiesInterface;
+  withFooter: TablePropertiesInterface;
 
   constructor() { }
 
@@ -101,7 +101,7 @@ export class UsageComponent implements OnInit {
           key: 'icon',
           headerText: 'Icon Column',
           isColumnDisplayed: true,
-          type: ColumnType.ICON,
+          type: TableColumnType.ICON,
           icon: {
             color: 'midnight',
             mapping: {
@@ -122,7 +122,7 @@ export class UsageComponent implements OnInit {
           key: 'status',
           headerText: 'Status Column',
           isColumnDisplayed: true,
-          type: ColumnType.STATUS,
+          type: TableColumnType.STATUS,
           statusIndicatorMapping: {
             'incomplete-primary': 'Incomplete Primary',
             'incomplete-secondary': 'Incomplete Secondary',
@@ -156,7 +156,7 @@ export class UsageComponent implements OnInit {
           key: 'link',
           headerText: 'Link Column',
           isColumnDisplayed: true,
-          type: ColumnType.LINK,
+          type: TableColumnType.LINK,
           link: {
             element: 'a',
             ariaLabel: 'go to Object #{id}',
