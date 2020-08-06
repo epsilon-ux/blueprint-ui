@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { parseLookupString } from '../../../../helpers';
-import { Column } from '../../../../models/table-models';
+import { TableColumnInterface } from '../../table.interface';
 
-interface ColumnOption extends Column {
+interface ColumnOption extends TableColumnInterface {
   disabled: boolean;
 }
 

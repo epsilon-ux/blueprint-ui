@@ -36,7 +36,7 @@
       [ngSwitch]="column.type"
     >
       <!-- Link Column -->
-      <ng-container *ngSwitchCase="columnType.LINK">
+      <ng-container *ngSwitchCase="TableColumnType.LINK">
         <bp-action
           [text]="rowData[column.key]"
           classes="btn-text text-align-left"
@@ -47,7 +47,7 @@
         ></bp-action>
       </ng-container>
       <!-- Icon Column -->
-      <ng-container *ngSwitchCase="columnType.ICON">
+      <ng-container *ngSwitchCase="TableColumnType.ICON">
         <i
           class="fas"
           [ngClass]="[
@@ -58,7 +58,7 @@
         ></i>
       </ng-container>
       <!-- Status Indicator Column -->
-      <span *ngSwitchCase="columnType.STATUS" class="status-indicator">
+      <span *ngSwitchCase="TableColumnType.STATUS" class="status-indicator">
         <div
           *ngIf="
             column.statusIndicatorMapping['in-progress'] !== rowData[column.key]
@@ -79,7 +79,7 @@
         {{ rowData[column.key] }}
       </span>
       <!-- Template Column -->
-      <ng-container *ngSwitchCase="columnType.TEMPLATE">
+      <ng-container *ngSwitchCase="TableColumnType.TEMPLATE">
         <ng-container
           *ngTemplateOutlet="column.template; context: { $implicit: rowData }"
         ></ng-container>

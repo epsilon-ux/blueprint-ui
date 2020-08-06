@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ColumnType, Properties } from 'epsilon-blueprint/models/table-models';
-import { TableComponent } from 'epsilon-blueprint';
+import { TableComponent, TableColumnType, TablePropertiesInterface } from 'epsilon-blueprint';
 
 import { TableRow } from './tableData.interface';
 import tableData from 'src/app/datasets/tableData.json';
@@ -28,7 +27,7 @@ export class OverviewComponent implements OnInit {
   pageIndices;
   isDataLoading = true;
 
-  properties: Properties;
+  properties: TablePropertiesInterface;
 
   constructor() { }
 
@@ -51,14 +50,14 @@ export class OverviewComponent implements OnInit {
           key: 'templateCol',
           headerText: 'Template',
           isColumnDisplayed: true,
-          type: ColumnType.TEMPLATE,
+          type: TableColumnType.TEMPLATE,
           template: this.templateColumn
         },
         {
           key: 'phone',
           headerText: 'Phone',
           isColumnDisplayed: true,
-          type: ColumnType.LINK,
+          type: TableColumnType.LINK,
           link: {
             ariaLabel: 'go to Object #{id}',
             target: '',
@@ -69,7 +68,7 @@ export class OverviewComponent implements OnInit {
           key: 'description',
           headerText: 'Description',
           isColumnDisplayed: true,
-          type: ColumnType.LINK,
+          type: TableColumnType.LINK,
           isSortable: false,
           link: {
             ariaLabel: 'go to Object #{id}',
@@ -80,7 +79,7 @@ export class OverviewComponent implements OnInit {
           key: 'alert',
           headerText: 'Alert',
           isColumnDisplayed: true,
-          type: ColumnType.ICON,
+          type: TableColumnType.ICON,
           icon: {
             color: 'midnight',
             mapping: {
@@ -93,7 +92,7 @@ export class OverviewComponent implements OnInit {
           key: 'status',
           headerText: 'Status',
           isColumnDisplayed: true,
-          type: ColumnType.STATUS,
+          type: TableColumnType.STATUS,
           statusIndicatorMapping: {
             'incomplete-primary': 'Not Deployed',
             'incomplete-secondary': 'New Updates Not Deployed',
