@@ -9,9 +9,7 @@
           [bpRouterLink]="crumb.bpRouterLink || null"
         ></bp-action>
       </li>
-      <li *ngIf="isLast" class="breadcrumb-item active" attr.aria-current="page">
-        {{ crumb.text }}
-      </li>
+      <li *ngIf="isLast" class="breadcrumb-item active" attr.aria-current="page">{{ crumb.text }}</li>
     </ng-container>
   </ol>
 </nav>

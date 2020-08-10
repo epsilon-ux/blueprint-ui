@@ -10,15 +10,15 @@ export class OverviewComponent implements OnInit {
 
   crumbs: BreadcrumbInterface[] = [
     {
-      text: 'Path',
-      bpRouterLink: '/components/buttons-links/overview'
+      text: 'First Page',
+      bpRouterLink: '.'
     },
     {
-      text: 'to',
-      bpRouterLink: '/components/buttons-links/usage'
+      text: 'Previous Page',
+      bpRouterLink: '.'
     },
     {
-      text: 'Current Location'
+      text: 'Current Page'
     }
   ];
 
