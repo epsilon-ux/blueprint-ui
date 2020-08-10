@@ -1,4 +1,4 @@
-<nav class="nav-secondary">
+<nav [id]="uuid + 'NavSecondary'" class="nav-secondary">
   <p *ngIf="title" class="title">{{ title }}</p>
   <ul class="nav-list">
     <ng-container *ngTemplateOutlet="lists; context:{$implicit: items}"></ng-container>

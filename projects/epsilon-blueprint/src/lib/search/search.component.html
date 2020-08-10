@@ -1,9 +1,9 @@
 <div class="form-group">
-  <label for="search">{{ label }}</label>
+  <label for="uuid + 'Search'">{{ label }}</label>
   <div class="input-group">
     <input
       type="search"
-      id="search"
+      [id]="uuid + 'Search'"
       class="form-control"
       [placeholder]="placeholder"
       [attr.value]="searchQuery ? searchQuery : null"
@@ -12,6 +12,7 @@
     />
     <div class="input-group-append">
       <button
+        [id]="uuid + 'SearchButton'"
         [hidden]="!showClearIcon"
         type="button"
         class="btn btn-icon btn-input-addon btn-input-addon-clear"

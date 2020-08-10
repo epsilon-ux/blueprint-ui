@@ -51,6 +51,7 @@
             <td>
               <p>bpIDs must only be used once per page.</p>
               <p>bpIDs should be camelCase, e.g.: #myId.</p>
+              <p>See <a routerLink="." fragment="ids">identifiers</a>.</p>
             </td>
           </tr>
         </tbody>
@@ -150,6 +151,28 @@
         [data]="codeExample"
         lineNumbers
       ></markdown>
+       
+      <h2 id="ids">Identifiers</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Identifiers</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">ID</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bpID + 'Dropdown'</code></td>
+            <td>The unique identifier for the dropdown component.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'DropdownToggle'</code></td>
+            <td>The unique identifier for the dropdown toggle.</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </section>

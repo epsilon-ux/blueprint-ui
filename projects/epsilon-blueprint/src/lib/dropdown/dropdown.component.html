@@ -1,8 +1,8 @@
-<div [ngClass]="['dropdown', dropDirection !== 'down' ? 'drop' + dropDirection : '']">
+<div [attr.id]="uuid + 'Dropdown'" [ngClass]="['dropdown', dropDirection !== 'down' ? 'drop' + dropDirection : '']">
   <button
     dropdownToggle
     type="button"
-    [id]="uuid"
+    [id]="uuid + 'DropdownToggle'"
     [ngClass]="['btn dropdown-toggle', triggerClasses]"
     data-toggle="dropdown"
     aria-haspopup="true"
@@ -12,7 +12,7 @@
   </button>
   <div
     class="dropdown-menu"
-    [attr.aria-labelledby]="uuid"
+    [attr.aria-labelledby]="uuid + 'DropdownToggle'"
   >
     <bp-action
       *ngFor="let dropdownItem of dropdownItems"

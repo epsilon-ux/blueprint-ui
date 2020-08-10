@@ -60,6 +60,7 @@
             <td>
               <p>bpIDs must only be used once per page.</p>
               <p>bpIDs should be camelCase, e.g.: #myId.</p>
+              <p>See <a routerLink="." fragment="ids">identifiers</a>.</p>
             </td>
           </tr>
         </tbody>
@@ -144,6 +145,47 @@
           <tr>
             <td>indices</td>
             <td>An object containing <code>start</code> and <code>end</code> keys whose values correspond to the start and end indices of the data based on the current page and number of rows option selected.</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h2 id="ids">Identifiers</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Identifiers</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">ID</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bpID + 'Results'</code></td>
+            <td>The unique identifier for the number of results indicator.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'NumberOfRows'</code></td>
+            <td>The unique identifier for the number of rows.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'FirstPage'</code></td>
+            <td>The unique identifier for the first page.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'PreviousPage'</code></td>
+            <td>The unique identifier for the previous page.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Page' + page</code></td>
+            <td>The unique identifier for the page number.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'NextPage'</code></td>
+            <td>The unique identifier for the next page.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'LastPage'</code></td>
+            <td>The unique identifier for the last page.</td>
           </tr>
         </tbody>
       </table>

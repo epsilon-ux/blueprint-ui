@@ -1,5 +1,6 @@
 <div class="table-responsive">
   <table
+    [attr.id]="uuid + 'Table'"
     class="table"
     [ngClass]="densityClass"
     [class.table-selectable-rows]="properties.hasSelectableRows"

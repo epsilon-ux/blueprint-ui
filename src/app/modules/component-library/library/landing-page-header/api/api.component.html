@@ -65,6 +65,7 @@
             <td>
               <p>bpIDs must only be used once per page.</p>
               <p>bpIDs should be camelCase, e.g.: #myId.</p>
+              <p>See <a routerLink="." fragment="ids">identifiers</a>.</p>
             </td>
           </tr>
         </tbody>
@@ -105,6 +106,36 @@
         Navigational tabs should use anchor elements with routerLinks for internal links or hrefs for external links. The tabs should be wrapped in a nav element, and the nav element's aria-label value should reflect the level of the navigation in context, e.g.: secondary navigation, tertiary navigation, etc.
       </p>
       <markdown [data]="navTabItems" lineNumbers></markdown>
+     
+      <h2 id="ids">Identifiers</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Identifiers</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">ID</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bpID + 'LandingPageHeader'</code></td>
+            <td>The unique identifier for the landing page header component.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Header'</code></td>
+            <td>The unique identifier for the header.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Dropdown'</code></td>
+            <td>The unique identifier for the dropdown component.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Action'</code></td>
+            <td>The unique identifier for the action component.</td>
+          </tr>
+        </tbody>
+      </table>
+
       <!-- TODO: add versions & features table -->
     </div>
   </div>

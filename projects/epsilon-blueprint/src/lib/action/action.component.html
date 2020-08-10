@@ -1,6 +1,7 @@
 <ng-container [ngSwitch]="true">
   <a
     *ngSwitchCase="isDefined(bpRouterLink)"
+    [attr.id]="uuid + 'Switch'"
     [ngClass]="classes"
     [attr.aria-label]="ariaLabel"
     [routerLink]="bpRouterLink"
