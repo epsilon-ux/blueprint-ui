@@ -1,20 +1,17 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li
-      *ngFor="let crumb of crumbs; last as isLast"
-      class="breadcrumb-item active"
-      [attr.aria-current]="isLast ? 'page' : false"
-    >
-      <bp-action
-        *ngIf="!isLast"
-        [text]="crumb.text"
-        [target]="crumb.target || null"
-        [href]="crumb.href || null"
-        [bpRouterLink]="crumb.bpRouterLink || null"
-      ></bp-action>
-      <ng-container *ngIf="isLast">
+    <ng-container *ngFor="let crumb of crumbs; last as isLast">
+      <li *ngIf="!isLast" class="breadcrumb-item">
+        <bp-action
+          [text]="crumb.text"
+          [target]="crumb.target || null"
+          [href]="crumb.href || null"
+          [bpRouterLink]="crumb.bpRouterLink || null"
+        ></bp-action>
+      </li>
+      <li *ngIf="isLast" class="breadcrumb-item active" attr.aria-current="page">
         {{ crumb.text }}
-      </ng-container>
-    </li>
+      </li>
+    </ng-container>
   </ol>
 </nav>
