@@ -49,7 +49,7 @@ export class ActionComponent implements OnInit {
     }
   }
 
-  emitClick(e) {
+  emitClick(e: MouseEvent) {
     e.stopPropagation();
     this.click.emit(e);
   }

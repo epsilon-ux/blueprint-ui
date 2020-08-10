@@ -26,6 +26,9 @@ const routes: Routes = [
     { path: 'badge', loadChildren: () => import('./library/badge/badge.module')
       .then(m => m.BadgeLibraryModule) },
 
+    { path: 'breadcrumbs', loadChildren: () => import('./library/breadcrumbs/breadcrumbs.module')
+      .then(m => m.BreadcrumbsLibraryModule) },
+
     { path: 'buttons-links', loadChildren: () => import('./library/action/action.module')
       .then(m => m.ActionLibraryModule) },
 

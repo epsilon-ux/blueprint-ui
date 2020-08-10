@@ -1,0 +1,79 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <dl class="inline-details font-size-lg">
+        <dt>Selector</dt>
+        <dd>bp-breadcrumbs</dd>
+      </dl>
+      <h2>Interfaces</h2>
+      <p>You can import the following interfaces from <code>epsilon-blueprint</code> to properly type your inputs.</p>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">Interface imports</caption>
+        <thead>
+          <th class="pt-0">Input</th>
+          <th class="pt-0">Type</th>
+          <th class="pt-0">Notes</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BreadcrumbInterface</td>
+            <td>interface</td>
+            <td>
+              <p>Interface for typing a crumb object.</p>
+              <p>See <a routerLink="." fragment="crumbs">crumbs</a>.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Inputs</h2>
+      <h3 id="crumbs">Crumbs</h3>
+      <p>The Input <code>crumbs</code> is an array of objects typed as <code>BreadcrumbInterface[]</code>. It is the only input on bp-breadcrumbs. The keys/values are below.</p>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Breadcrumbs inputs</caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Input</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>text</td>
+              <td>string</td>
+              <td>The text used for the crumb's text.</td>
+              <td>
+                <p>Required on all crumbs.</p>
+                <p>The last crumb can only have text.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>bpRouterLink</td>
+              <td>string</td>
+              <td>The crumb's routerLink value.</td>
+              <td>
+                <p>Either bpRouterLink or href is required for all but the last crumb.</p>
+                <p>Invalid for the last crumb.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>href</td>
+              <td>string</td>
+              <td>The crumb's href value.</td>
+              <td>
+                <p>Either bpRouterLink or href is required for all but the last crumb.</p>
+                <p>Invalid for the last crumb.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>target</td>
+              <td>string</td>
+              <td>The crumb's target value.</td>
+              <td>Invalid for the last crumb.</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</section>

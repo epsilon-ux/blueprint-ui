@@ -8,6 +8,10 @@ export * from './lib/action/action.module';
 export * from './lib/badge/badge.component';
 export * from './lib/badge/badge.module';
 
+export * from './lib/breadcrumbs/breadcrumbs.component';
+export * from './lib/breadcrumbs/breadcrumbs.module';
+export * from './lib/breadcrumbs/breadcrumbs.interface';
+
 export * from './lib/checkbox/checkbox.component';
 export * from './lib/checkbox/checkbox.module';
 

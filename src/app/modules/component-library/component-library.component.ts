@@ -41,6 +41,10 @@ export class ComponentLibraryComponent {
             route: './badge'
           },
           {
+            text: 'Breadcrumbs',
+            route: './breadcrumbs'
+          },
+          {
             text: 'Buttons & Links',
             route: './buttons-links'
           },
