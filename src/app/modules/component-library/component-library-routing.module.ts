@@ -47,6 +47,9 @@ const routes: Routes = [
     { path: 'panel', loadChildren: () => import('./library/panel/panel.module')
       .then(m => m.PanelLibraryModule) },
 
+    { path: 'progress-bar', loadChildren: () => import('./library/progress-bar/progress-bar.module')
+      .then(m => m.ProgressBarLibraryModule) },
+
     { path: 'radio-button', loadChildren: () => import('./library/radio-button/radio-button.module')
       .then(m => m.RadioButtonLibraryModule) },
 

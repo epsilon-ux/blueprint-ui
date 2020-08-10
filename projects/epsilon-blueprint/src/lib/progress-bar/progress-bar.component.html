@@ -1,0 +1,13 @@
+<div class="progress" [ngClass]="classes">
+  <div 
+    role="progressbar"
+    [attr.aria-valuemin]="ariaValueMin"
+    [attr.aria-valuemax]="ariaValueMax"
+    [attr.aria-valuenow]="ariaValueNow"
+    style="width: 50%"
+    class="progress-bar"
+  ></div>
+</div>
+<p *ngIf="hasProgressText" class="mt-xs mb-0" aria-hidden="true">
+  {{ariaValueNow}}% complete
+</p>
