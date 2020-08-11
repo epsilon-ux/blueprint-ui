@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { parseLookupString } from '../../helpers';
+import { parseLookupString, isDefined } from '../../helpers';
 
 @Component({
   selector: 'bp-progress-bar',
@@ -27,17 +27,17 @@ export class ProgressBarComponent implements OnInit {
   }
 
   validate(): void {
-    if (!this.min) {
+    if (!isDefined(this.min)) {
       const err = new Error('\'min\' is a required Input of bp-progress');
       err.name = 'Missing Input';
       throw err;
     }
-    if (!this.max) {
+    if (!isDefined(this.max)) {
       const err = new Error('\'max\' is a required Input of bp-progress');
       err.name = 'Missing Input';
       throw err;
     }
-    if (!this.value) {
+    if (!isDefined(this.value)) {
       const err = new Error('\'value\' is a required Input of bp-progress');
       err.name = 'Missing Input';
       throw err;
