@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BreadcrumbInterface } from 'epsilon-blueprint';
 
 @Component({
   selector: 'app-usage',
-  templateUrl: './usage.component.html',
-  styleUrls: ['./usage.component.scss']
+  templateUrl: './usage.component.html'
 })
-export class UsageComponent implements OnInit {
+export class UsageComponent {
 
   crumbs: BreadcrumbInterface[] = [
     {
@@ -23,8 +22,5 @@ export class UsageComponent implements OnInit {
   ];
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

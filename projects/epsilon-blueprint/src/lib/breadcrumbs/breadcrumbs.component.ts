@@ -13,11 +13,11 @@ export class BreadcrumbsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validate();
   }
 
-  validate() {
+  validate(): void {
     if (!this.crumbs) {
       const err = new Error('\'crumbs\' is a required Input of bp-breadcrumbs');
       err.name = 'Missing Input';
