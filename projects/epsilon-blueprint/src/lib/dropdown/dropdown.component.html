@@ -16,7 +16,7 @@
   >
     <bp-action
       *ngFor="let dropdownItem of dropdownItems"
-      [attr.id]="uuid + dropdown-item"
+      [attr.id]="uuid"
       classes="dropdown-item{{ dropdownItem.isDestructive ? ' is-destructive' : '' }}"
       [text]="dropdownItem.text"
       [ariaLabel]="dropdownItem.ariaLabel"

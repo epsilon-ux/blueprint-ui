@@ -27,7 +27,7 @@
           <ng-container *ngFor="let column of properties.columns">
             <th
               *ngIf="column.isSortable; else columnNotSortable"
-              [id]="uuid + Column"
+              [id]="uuid + 'Column'"
               class="th-sortable"
               scope="col"
               [hidden]="!column.isColumnDisplayed"
