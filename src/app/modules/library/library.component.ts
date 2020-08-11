@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-component-library',
-  templateUrl: './component-library.component.html'
+  selector: 'app-library',
+  templateUrl: './library.component.html'
 })
-export class ComponentLibraryComponent {
+export class LibraryComponent {
 
   components = {
     items: [
@@ -17,114 +17,104 @@ export class ComponentLibraryComponent {
         children: [
           {
             text: 'Voice & Tone',
-            route: './voice-tone'
+            route: './foundations/voice-tone'
           },
           {
             text: 'Color',
-            route: './color'
+            route: './foundations/color'
           },
           {
             text: 'Typography',
-            route: './typography'
+            route: './foundations/typography'
           },
           {
             text: 'Icons',
-            route: './icons'
+            route: './foundations/icons'
           }
         ]
       },
       {
-        text: 'Small Components',
+        text: 'Components',
         children: [
           {
             text: 'Badge',
-            route: './badge'
+            route: './components/badge'
           },
           {
             text: 'Breadcrumbs',
-            route: './breadcrumbs'
+            route: './components/breadcrumbs'
           },
           {
             text: 'Buttons & Links',
-            route: './buttons-links'
+            route: './components/buttons-links'
           },
           {
             text: 'Checkbox',
-            route: './checkbox'
+            route: './components/checkbox'
           },
           {
             text: 'Collapsible Panel',
-            route: './collapsible-panel'
+            route: './components/collapsible-panel'
           },
           {
             text: 'Date & Time Picker',
-            route: './date-time-picker'
+            route: './components/date-time-picker'
           },
           {
             text: 'Dropdown',
-            route: './dropdown'
+            route: './components/dropdown'
+          },
+          {
+            text: 'Landing Page Header',
+            route: './components/landing-page-header'
           },
           {
             text: 'Multi-select',
-            route: './multi-select'
+            route: './components/multi-select'
           },
           {
             text: 'Pagination',
-            route: './pagination'
+            route: './components/pagination'
           },
           {
             text: 'Panel',
-            route: './panel'
+            route: './components/panel'
           },
           {
             text: 'Progress Bar',
-            route: './progress-bar'
+            route: './components/progress-bar'
           },
           {
             text: 'Radio Button',
-            route: './radio-button'
+            route: './components/radio-button'
           },
           {
             text: 'Ribbon',
-            route: './ribbon'
+            route: './components/ribbon'
           },
           {
             text: 'Search',
-            route: './search'
-          },
-          {
-            text: 'Tile',
-            route: './tile'
-          },
-          {
-            text: 'Toggle',
-            route: './toggle'
-          },
-          {
-            text: 'Toggletip',
-            route: './toggletip'
-          }
-        ]
-      },
-      {
-        text: 'Medium Components',
-        children: [
-          {
-            text: 'Landing Page Header',
-            route: './landing-page-header'
+            route: './components/search'
           },
           {
             text: 'Secondary Navigation',
-            route: './nav-secondary'
-          }
-        ]
-      },
-      {
-        text: 'Large Components',
-        children: [
+            route: './components/nav-secondary'
+          },
           {
             text: 'Table',
-            route: './table'
+            route: './components/table'
+          },
+          {
+            text: 'Tile',
+            route: './components/tile'
+          },
+          {
+            text: 'Toggle',
+            route: './components/toggle'
+          },
+          {
+            text: 'Toggletip',
+            route: './components/toggletip'
           }
         ]
       },
@@ -133,11 +123,11 @@ export class ComponentLibraryComponent {
         children: [
           {
             text: 'Object Page Header',
-            route: './object-page-header'
+            route: './templates/object-page-header'
           },
           {
             text: 'Table Filters',
-            route: './table-filters'
+            route: './templates/table-filters'
           }
         ]
       }
