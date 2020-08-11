@@ -1,7 +1,7 @@
-<div [attr.id]="uuid + 'CollapsiblePanel'" class="panel-collapsible{{ isPanelCollapsed ? ' collapsed' : '' }}{{ isPanelRight ? ' right' : '' }}">
+<div [attr.id]="uuid" class="panel-collapsible{{ isPanelCollapsed ? ' collapsed' : '' }}{{ isPanelRight ? ' right' : '' }}">
   <div class="toggle-wrapper">
     <button 
-      [attr.id]="uuid + 'Button'"
+      [attr.id]="uuid + 'Toggle'"
       type="button" 
       class="toggle" 
       [attr.aria-controls]="uuid" 

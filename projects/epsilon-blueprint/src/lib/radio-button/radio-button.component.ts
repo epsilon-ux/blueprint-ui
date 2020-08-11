@@ -25,10 +25,10 @@ export class RadioButtonComponent implements OnInit {
     this.validation();
     if(!this.bpID) {
       if(!this.id) {
-        this.uuid = 'radio-button' + generateUniqueId().toString();
+        this.uuid = 'radioButton' + generateUniqueId().toString();
       } else {
         this.uuid = this.id;
-        const err = new Error('Input id is deprecated.  Please use Input bpID instead.');
+        const err = new Error('Input id is deprecated. Please use Input bpID instead.');
         err.name = 'Input Deprecated';
         throw err;
       }

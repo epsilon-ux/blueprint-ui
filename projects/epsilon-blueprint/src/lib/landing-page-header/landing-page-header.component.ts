@@ -39,7 +39,7 @@ export class LandingPageHeaderComponent implements OnInit {
   ngOnInit(): void {
     this.validateInputs();
     if(!this.bpID) {
-      this.uuid = 'landing-page-header' + generateUniqueId().toString();
+      this.uuid = 'landingPageHeader' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }

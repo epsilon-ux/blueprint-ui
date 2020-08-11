@@ -1,6 +1,5 @@
 <div class="table-responsive">
   <table
-    [attr.id]="uuid + 'Table'"
     class="table"
     [ngClass]="densityClass"
     [class.table-selectable-rows]="properties.hasSelectableRows"
@@ -17,7 +16,7 @@
           </th>
           <th *ngIf="properties.hasSelectableRows" class="th-selectable">
             <app-select-all-checkbox
-              [id]="uuid + '-selectAllRows'"
+              [id]="uuid + 'SelectAllRows'"
               [label]="properties.internationalization['Select all rows']"
               [visuallyHiddenLabel]="true"
               [isChecked]="isSelectAllChecked"
@@ -28,6 +27,7 @@
           <ng-container *ngFor="let column of properties.columns">
             <th
               *ngIf="column.isSortable; else columnNotSortable"
+              [id]="uuid + Column"
               class="th-sortable"
               scope="col"
               [hidden]="!column.isColumnDisplayed"

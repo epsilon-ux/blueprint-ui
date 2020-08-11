@@ -18,7 +18,7 @@ export class CollapsiblePanelComponent implements OnInit {
 
   ngOnInit(): void {
     if(!this.bpID) {
-      this.uuid = 'collapsible-panel' + generateUniqueId().toString();
+      this.uuid = 'collapsiblePanel' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }

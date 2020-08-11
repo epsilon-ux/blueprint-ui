@@ -1,4 +1,4 @@
-<div [attr.id]="uuid + 'Dropdown'" [ngClass]="['dropdown', dropDirection !== 'down' ? 'drop' + dropDirection : '']">
+<div [attr.id]="uuid" [ngClass]="['dropdown', dropDirection !== 'down' ? 'drop' + dropDirection : '']">
   <button
     dropdownToggle
     type="button"
@@ -16,6 +16,7 @@
   >
     <bp-action
       *ngFor="let dropdownItem of dropdownItems"
+      [attr.id]="uuid + dropdown-item"
       classes="dropdown-item{{ dropdownItem.isDestructive ? ' is-destructive' : '' }}"
       [text]="dropdownItem.text"
       [ariaLabel]="dropdownItem.ariaLabel"

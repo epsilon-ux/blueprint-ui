@@ -37,10 +37,10 @@
           <tr>
             <td>bpID</td>
             <td>string</td>
-            <td>The value for the toggle's bpID attribute.</td>
+            <td>The value for the toggle's id attribute.</td>
             <td>
-              <p>bpIDs must only be used once per page.</p>
-              <p>bpIDs should be camelCase, e.g.: #myId.</p>
+              <p>Ids must only be used once per page.</p>
+              <p>Ids should be camelCase, e.g.: #myId.</p>
               <p>See <a routerLink="." fragment="ids">identifiers</a>.</p>
             </td>
           </tr>
@@ -146,8 +146,8 @@
         </thead>
         <tbody>
           <tr>
-            <td><code>bpID + 'Toggle'</code></td>
-            <td>The unique identifier for the toggle component.</td>
+            <td><code>bpID + 'Toggle' + index</code></td>
+            <td>The unique identifier for each toggle in a group of toggles.</td>
           </tr>
         </tbody>
       </table>
