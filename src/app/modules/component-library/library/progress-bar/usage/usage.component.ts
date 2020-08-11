@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-usage',
   templateUrl: './usage.component.html'
 })
-export class UsageComponent implements OnInit {
+export class UsageComponent {
 
   constructor() { }
-
-  ngOnInit() { }
 
 }
