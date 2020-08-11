@@ -12,7 +12,7 @@ export class ProgressBarComponent implements OnInit {
   @Input() min: string;
   @Input() max: string;
   @Input() value: string;
-  @Input() classes = 'progress';
+  @Input() classes: string;
   @Input() hasProgressText?: boolean;
   @Input() internationalization = {
     '% complete': '#{value}% complete'
@@ -22,11 +22,11 @@ export class ProgressBarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.validate();
   }
 
-  validate() {
+  validate(): void {
     if (!this.min) {
       const err = new Error('\'min\' is a required Input of bp-progress');
       err.name = 'Missing Input';

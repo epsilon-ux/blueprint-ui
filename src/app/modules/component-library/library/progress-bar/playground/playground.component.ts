@@ -9,7 +9,6 @@ export class PlaygroundComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
