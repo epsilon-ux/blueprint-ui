@@ -36,6 +36,9 @@ export * from './lib/pagination/pagination.module';
 export * from './lib/panel/panel.component';
 export * from './lib/panel/panel.module';
 
+export * from './lib/progress-bar/progress-bar.component';
+export * from './lib/progress-bar/progress-bar.module';
+
 export * from './lib/radio-button/radio-button.component';
 export * from './lib/radio-button/radio-button.module';
 

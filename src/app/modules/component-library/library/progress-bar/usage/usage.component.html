@@ -1,0 +1,117 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Progress bars are used to visualize the progression of a task or operation. Progress bars are often accompanied by a textual representation of the progress in a percent format.
+      </p>
+      <h2>Variations</h2>
+      <h3>Standard progress bar</h3>
+      <p>The standard progress bar is used on dashboards and data visualization pages.</p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-progress-bar
+                [min]="0"
+                [max]="100"
+                [value]="50"
+              ></bp-progress-bar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Slim progress bar</h3>
+      <p>The slim variation should be used when vertical space is limited, like in table cells.</p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-progress-bar
+                classes="progress-slim"
+                [min]="0"
+                [max]="100"
+                [value]="70"
+              ></bp-progress-bar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Success progress bar</h3>
+      <p>
+        This is used for any positive progression that calls for a different style than the standard progress bar.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-progress-bar
+                classes="progress-success"
+                [min]="0"
+                [max]="100"
+                [value]="30"
+              ></bp-progress-bar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Slim success progress bar with progress text</h3>
+      <p>
+        This is used for any positive progression that calls for a different style than the standard progress bar when vertical space is limited, like in table cells, and when the progress bar should be accompanied by a textual representation of the progress.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-progress-bar
+                classes="progress-slim progress-success"
+                [min]="0"
+                [max]="100"
+                [value]="90"
+                [hasProgressText]="true"
+              ></bp-progress-bar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2>Configurations</h2>
+    </div>
+    <div class="col-12">
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Progress bar configurations</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">Element</th>
+            <th class="pt-0">Classes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Slim progress bar</td>
+            <td>progress-slim</td>
+          </tr>
+          <tr>
+            <td>Success progress bar</td>
+            <td>progress-success</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- TODO: add related components -->
+</section>

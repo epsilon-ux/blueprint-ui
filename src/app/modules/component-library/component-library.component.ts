@@ -77,6 +77,10 @@ export class ComponentLibraryComponent {
             route: './panel'
           },
           {
+            text: 'Progress Bar',
+            route: './progress-bar'
+          },
+          {
             text: 'Radio Button',
             route: './radio-button'
           },
