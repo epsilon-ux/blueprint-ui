@@ -13,7 +13,11 @@
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
             <div class="col-12">
-              <bp-progress-bar></bp-progress-bar>
+              <bp-progress-bar
+                [min]="0"
+                [max]="100"
+                [value]="50"
+              ></bp-progress-bar>
             </div>
           </div>
         </div>
@@ -28,8 +32,11 @@
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
             <div class="col-12">
-              <bp-progress-bar 
+              <bp-progress-bar
                 classes="progress-slim"
+                [min]="0"
+                [max]="100"
+                [value]="70"
               ></bp-progress-bar>
             </div>
           </div>
@@ -47,8 +54,11 @@
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
             <div class="col-12">
-              <bp-progress-bar 
+              <bp-progress-bar
                 classes="progress-success"
+                [min]="0"
+                [max]="100"
+                [value]="30"
               ></bp-progress-bar>
             </div>
           </div>
@@ -66,11 +76,11 @@
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
             <div class="col-12">
-              <bp-progress-bar 
+              <bp-progress-bar
                 classes="progress-slim progress-success"
-                [ariaValueMin]="0"
-                [ariaValueMin]="0"
-                [ariaValueNow]="40"
+                [min]="0"
+                [max]="100"
+                [value]="90"
                 [hasProgressText]="true"
               ></bp-progress-bar>
             </div>

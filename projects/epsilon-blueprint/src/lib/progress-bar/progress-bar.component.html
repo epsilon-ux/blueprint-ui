@@ -1,19 +1,13 @@
-<!-- 
-  TODO: 
-  ngStyle
-  validation
-  internationalization
--->
 <div class="progress" [ngClass]="classes">
-  <div 
+  <div
     role="progressbar"
     [attr.aria-valuemin]="min"
     [attr.aria-valuemax]="max"
     [attr.aria-valuenow]="value"
-    [ngStyle]="width: {{value}}%"
     class="progress-bar"
+    [ngStyle]="{'width.%': value}"
   ></div>
 </div>
 <p *ngIf="hasProgressText" class="mt-xs mb-0" aria-hidden="true">
-  {{value}}% complete
+  {{ parseLookupString(internationalization['% complete'], { value: value }) }}
 </p>

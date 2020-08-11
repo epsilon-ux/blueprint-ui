@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { parseLookupString } from '../../helpers';
 
 @Component({
   selector: 'bp-progress-bar',
@@ -13,9 +14,34 @@ export class ProgressBarComponent implements OnInit {
   @Input() value: string;
   @Input() classes = 'progress';
   @Input() hasProgressText?: boolean;
+  @Input() internationalization = {
+    '% complete': '#{value}% complete'
+  };
+
+  parseLookupString = parseLookupString;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.validate();
+  }
+
+  validate() {
+    if (!this.min) {
+      const err = new Error('\'min\' is a required Input of bp-progress');
+      err.name = 'Missing Input';
+      throw err;
+    }
+    if (!this.max) {
+      const err = new Error('\'max\' is a required Input of bp-progress');
+      err.name = 'Missing Input';
+      throw err;
+    }
+    if (!this.value) {
+      const err = new Error('\'value\' is a required Input of bp-progress');
+      err.name = 'Missing Input';
+      throw err;
+    }
+  }
 
 }
