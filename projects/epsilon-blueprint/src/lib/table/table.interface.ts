@@ -89,4 +89,5 @@ export interface TableActionInterface {
     operator: string;
     value: any;
   } | string)[];
+  isDestructive?: boolean;
 }

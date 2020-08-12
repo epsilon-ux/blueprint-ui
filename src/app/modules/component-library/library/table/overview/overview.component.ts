@@ -140,7 +140,8 @@ export class OverviewComponent implements OnInit {
           text: 'Delete',
           ariaLabel: 'Delete Object #{id}',
           class: 'btn-outline-danger',
-          action: 'delete'
+          action: 'delete',
+          isDestructive: true
         }
       ],
       expandableRowsTemplate: this.expandableRowsTemplate,
