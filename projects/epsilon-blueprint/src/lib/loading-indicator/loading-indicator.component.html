@@ -1,20 +1,16 @@
-<ng-container *ngIf="inline">
-  <span role="status" aria-busy="true">
-    <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
-    <span class="ml-xs">{{ text }}</span>
+<ng-container [ngSwitch]="kind">
+  <span *ngSwitchCase="'inline'" role="status" attr.aria-busy="true">
+    <i class="fa fa-spinner fa-spin" [attr.aria-hidden]="isTruthy(text)" [attr.aria-label]="ariaLabel"></i>
+    <span *ngIf="text" class="ml-xs">{{ text }}</span>
   </span>
-</ng-container>
 
-<ng-container *ngIf="inPage">
-  <div role="status" aria-busy="true" class="text-center">
-    <i class="fa fa-spinner fa-spin font-size-xl" aria-hidden="true"></i>
-    <div class="mt-sm">{{ text }}</div>
+  <div *ngSwitchCase="'inPage'" role="status" attr.aria-busy="true" class="text-center">
+    <i class="fa fa-spinner fa-spin font-size-xl" [attr.aria-hidden]="isTruthy(text)" [attr.aria-label]="ariaLabel"></i>
+    <div *ngIf="text" class="mt-sm">{{ text }}</div>
   </div>
-</ng-container>
 
-<ng-container *ngIf="overPage">
-  <div class="loading-indicator">
-    <i class="fa fa-spinner fa-spin font-size-xl" aria-hidden="true"></i>
-    <div class="mt-sm">{{ text }}</div>
+  <div *ngSwitchCase="'overPage'" class="loading-indicator">
+    <i class="fa fa-spinner fa-spin font-size-xl" [attr.aria-hidden]="isTruthy(text)" [attr.aria-label]="ariaLabel"></i>
+    <div *ngIf="text" class="mt-sm">{{ text }}</div>
   </div>
 </ng-container>

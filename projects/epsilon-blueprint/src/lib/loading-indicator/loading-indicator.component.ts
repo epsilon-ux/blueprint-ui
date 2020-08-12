@@ -9,12 +9,32 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LoadingIndicatorComponent implements OnInit {
 
   @Input() text: string;
-  @Input() inline?: boolean;
-  @Input() inPage?: boolean;
-  @Input() overPage?: boolean;
+  @Input() ariaLabel: string;
+  @Input() kind: 'inline' | 'inPage' | 'overPage';
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void {
+    this.validate();
+  }
+
+  isTruthy(value): boolean {
+    return value ? true : false;
+  }
+
+  validate(): void {
+    if (!this.text && !this.ariaLabel) {
+      const err = new Error('bp-loading-indicator: Must provide either \'text\' Input or \'ariaLabel\' Input.');
+      err.name = 'Missing Input';
+      throw err;
+    }
+    if (!(this.kind === 'inline' || this.kind === 'inPage' || this.kind === 'overPage')) {
+      const err = new Error(
+        'bp-loading-indicator: Input \'kind\' can be either \'inline\', \'inPage\', or \'overPage\'.'
+      );
+      err.name = 'Invalid Input';
+      throw err;
+    }
+  }
 
 }

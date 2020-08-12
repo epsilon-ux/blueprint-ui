@@ -15,7 +15,7 @@
         <div class="card-body component-preview">
           <bp-loading-indicator
             text="Loading data"
-            [inline]="true"
+            kind="inline"
           ></bp-loading-indicator>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="card-body component-preview">
           <bp-loading-indicator
             text="Loading [objects]"
-            [inPage]="true"
+            kind="inPage"
           ></bp-loading-indicator>
         </div>
       </div>
@@ -46,9 +46,11 @@
       <div class="card">
         <div class="card-body component-preview">
           <!-- Use bp-action to trigger over-page demo for 1-2 seconds -->
+          <button class="btn btn-primary" (click)="runDemo()">See Demo</button>
           <bp-loading-indicator
+            *ngIf="isDemoRunning"
             text="Loading"
-            [overPage]="true"
+            kind="overPage"
           ></bp-loading-indicator>
         </div>
       </div>

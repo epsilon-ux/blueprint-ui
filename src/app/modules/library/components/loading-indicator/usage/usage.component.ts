@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
 })
 export class UsageComponent {
 
+  isDemoRunning = false;
+
   constructor() { }
+
+  runDemo() {
+    this.isDemoRunning = true;
+    setTimeout(() => this.isDemoRunning = false, 3000);
+  }
 
 }
