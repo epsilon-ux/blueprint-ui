@@ -1,0 +1,57 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Loading indicators.
+      </p>
+      <h2>Variations</h2>
+      <h3>Inline loading indicator</h3>
+      <p>
+        Appears in the body of the table component.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-loading-indicator
+            text="Loading data"
+            [inline]="true"
+          ></bp-loading-indicator>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>In-page loading indicator</h3>
+      <p>
+        Appears in a page.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <bp-loading-indicator
+            text="Loading [objects]"
+            [inPage]="true"
+          ></bp-loading-indicator>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Over-page loading indicator</h3>
+      <p>
+        Blocks UI.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <!-- Use bp-action to trigger over-page demo for 1-2 seconds -->
+          <bp-loading-indicator
+            text="Loading"
+            [overPage]="true"
+          ></bp-loading-indicator>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

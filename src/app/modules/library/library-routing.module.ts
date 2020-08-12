@@ -51,6 +51,10 @@ const routes: Routes = [
         loadChildren: () => import('./components/landing-page-header/landing-page-header.module')
           .then(m => m.LandingPageHeaderLibraryModule) },
 
+      { path: 'loading-indicator',
+        loadChildren: () => import('./components/loading-indicator/loading-indicator.module')
+          .then(m => m.LoadingIndicatorLibraryModule) },
+
       { path: 'multi-select', loadChildren: () => import('./components/multi-select/multi-select.module')
         .then(m => m.MultiselectLibraryModule) },
 
