@@ -2,7 +2,7 @@
   <bp-action
     [ngClass]="{ 'action-item': actionItems.length < 3 }"
     [text]="actionItem.text"
-    [classes]="[actionItem.class, classList]"
+    [classes]="[actionItem.class, classList, actionItem.isDestructive ? ' is-destructive' : '']"
     [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"
     [target]="actionItem.target"
     [bpRouterLink]="actionItem.bpRouterLink ? parseLookupString(actionItem.bpRouterLink, rowData) : null"
