@@ -4,27 +4,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
 import { LandingPageHeaderModule } from 'epsilon-blueprint';
 
-import { ComponentsRoutingModule } from './component-library-routing.module';
+import { LibraryRoutingModule } from './library-routing.module';
 import { BaseTemplateModule } from 'src/app/shared/base-template/base-template.module';
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
 
-import { ComponentLibraryComponent } from './component-library.component';
+import { LibraryComponent } from './library.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 
 @NgModule({
   declarations: [
-    ComponentLibraryComponent,
+    LibraryComponent,
     IntroductionComponent
   ],
   imports: [
     CommonModule,
     BaseTemplateModule,
     ComponentHeaderModule,
-    ComponentsRoutingModule,
+    LibraryRoutingModule,
     LandingPageHeaderModule,
     MarkdownModule.forChild()
   ],
   providers: [HttpClientModule],
-  exports: [ComponentLibraryComponent]
+  exports: [LibraryComponent]
 })
-export class ComponentLibraryModule { }
+export class LibraryModule { }
