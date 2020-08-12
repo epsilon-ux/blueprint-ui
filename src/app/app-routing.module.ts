@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LibraryComponent } from './modules/library/library.component';
 
 const routes: Routes = [
   { path: 'library', loadChildren: () => import('./modules/library/library.module')
     .then(m => m.LibraryModule) },
   { path: '', pathMatch: 'full', redirectTo: 'library' },
-  { path: '**', component: LibraryComponent } // TODO: create a pageNotFound page for this instance
+  { path: '**', redirectTo: 'library' } // TODO: create a pageNotFound page for this instance
 ];
 
 @NgModule({

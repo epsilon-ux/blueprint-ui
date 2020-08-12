@@ -99,7 +99,7 @@ const routes: Routes = [
     ] },
 
     // TODO: create a componentNotFound page for this instance
-    { path: '**', redirectTo: 'introduction', pathMatch: 'full' }
+    { path: '**', redirectTo: 'introduction' }
   ] }
 ];
 
