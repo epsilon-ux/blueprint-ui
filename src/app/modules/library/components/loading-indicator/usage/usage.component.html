@@ -2,16 +2,16 @@
   <div class="row">
     <div class="col-lg-8 col-xl-7">
       <p class="component-description">
-        Loading indicators.
+        Loading indicators inform users that a loading action is in progress. They can be rendered inline, in-page, or over-page.
       </p>
       <h2>Variations</h2>
       <h3>Inline loading indicator</h3>
       <p>
-        Appears in the body of the table component.
+        The inline loading indicator is used in the body of the table component when the table data is loading.
       </p>
     </div>
     <div class="col-12">
-      <div class="card">
+      <div class="card mb-3">
         <div class="card-body component-preview">
           <bp-loading-indicator
             text="Loading data"
@@ -23,11 +23,11 @@
     <div class="col-lg-8 col-xl-7">
       <h3>In-page loading indicator</h3>
       <p>
-        Appears in a page.
+        The in-page loading indicator is used when loading large sections of page content.
       </p>
     </div>
     <div class="col-12">
-      <div class="card">
+      <div class="card mb-3">
         <div class="card-body component-preview">
           <bp-loading-indicator
             text="Loading [objects]"
@@ -39,14 +39,13 @@
     <div class="col-lg-8 col-xl-7">
       <h3>Over-page loading indicator</h3>
       <p>
-        Blocks UI.
+        The over-page loading indicator is used when loading entire pages. It renders on top of the application's user interface for the duration of the loading action, and prevents the user from interacting with the application until the loading action is complete.
       </p>
     </div>
     <div class="col-12">
-      <div class="card">
+      <div class="card mb-3">
         <div class="card-body component-preview">
-          <!-- Use bp-action to trigger over-page demo for 1-2 seconds -->
-          <button class="btn btn-primary" (click)="runDemo()">See Demo</button>
+          <button class="btn btn-outline-primary btn-md" (click)="runDemo()">Launch Over-Page Demo</button>
           <bp-loading-indicator
             *ngIf="isDemoRunning"
             text="Loading"
