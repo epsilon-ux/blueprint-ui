@@ -11,6 +11,7 @@ export class LoadingIndicatorComponent implements OnInit {
   @Input() text: string;
   @Input() ariaLabel: string;
   @Input() kind: 'inline' | 'inPage' | 'overPage';
+  @Input() bpID: string;
 
   constructor() { }
 
