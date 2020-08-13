@@ -64,15 +64,13 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.validate();
-<<<<<<< HEAD
     if(!this.bpID) {
       this.uuid = 'multiSelect' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
-=======
+    }
     if (this.notFoundText) {
       this.internationalization['No items found'] = this.notFoundText;
->>>>>>> dev
     }
   }
 

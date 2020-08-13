@@ -1,9 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-<<<<<<< HEAD
 import { generateUniqueId } from '../../helpers';
-=======
 import { isDefined } from '../../helpers';
->>>>>>> dev
 
 @Component({
   selector: 'bp-action',
@@ -25,11 +22,8 @@ export class ActionComponent implements OnInit {
 
   @Output() click = new EventEmitter();
 
-<<<<<<< HEAD
   uuid: string;
-=======
   isDefined = isDefined;
->>>>>>> dev
 
   constructor() { }
 
