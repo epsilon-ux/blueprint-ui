@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'bp-loading-indicator',
@@ -13,6 +13,13 @@ export class LoadingIndicatorComponent implements OnInit {
   @Input() kind: 'inline' | 'inPage' | 'overPage';
 
   constructor() { }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if (this.kind === 'overPage' && event.key === 'Tab') {
+      event.preventDefault();
+    }
+  }
 
   ngOnInit(): void {
     this.validate();
