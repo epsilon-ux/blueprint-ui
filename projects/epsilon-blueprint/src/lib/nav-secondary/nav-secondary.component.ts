@@ -42,7 +42,7 @@ export class NavSecondaryComponent implements OnInit {
     }, 0);
 
     if(!this.bpID) {
-      this.uuid = 'nav-secondary' + generateUniqueId().toString();
+      this.uuid = 'navSecondary' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }

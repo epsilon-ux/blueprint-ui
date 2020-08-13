@@ -1,4 +1,4 @@
-<nav [id]="uuid + 'NavSecondary'" class="nav-secondary">
+<nav [id]="uuid" class="nav-secondary">
   <p *ngIf="title" class="title">{{ title }}</p>
   <ul class="nav-list">
     <ng-container *ngTemplateOutlet="lists; context:{$implicit: items}"></ng-container>
@@ -27,6 +27,7 @@
   <!-- Nav link -->
   <a
     *ngIf="item.route !== undefined"
+    [attr.id]="uuid + 'Action' + index"
     routerLink="{{ item.route }}"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
@@ -38,6 +39,7 @@
   <button
     *ngIf="item.children"
     type="button"
+    [attr.id]="uuid + 'Action' + index"
     [ngClass]="{'nav-link-parent': true, 'collapsed': !(item.isExpanded || areItemsExpanded)}"
     data-toggle="collapse"
     attr.data-target="#nestedList{{ uuid }}-{{ index }}"

@@ -5,16 +5,16 @@
     </div>
     <div *ngIf="href || bpRouterLink !== undefined || dropdownItems || actionText" class="col-auto">
       <bp-dropdown
-        [id]="uuid + 'Dropdown'"
         *ngIf="dropdownItems"
+        [bpID]="uuid + 'Dropdown'"
         [triggerText]="actionText"
         [dropdownItems]="dropdownItems"
         triggerClasses="btn-primary btn-lg"
         (action)="onActionClick($event)"
       ></bp-dropdown>
       <bp-action
-        [id]="uuid + 'Action'"
         *ngIf="!dropdownItems"
+        [bpID]="uuid + 'Action'"
         classes="btn btn-primary btn-lg"
         [text]="actionText"
         [href]="href"

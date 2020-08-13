@@ -13,6 +13,9 @@ export class DisplayDensityComponent implements OnInit {
   @Input()
   internationalization: any;
 
+  @Input()
+  bpID: string;
+
   displayDensity: string;
   displayOptions: {
     text: string;

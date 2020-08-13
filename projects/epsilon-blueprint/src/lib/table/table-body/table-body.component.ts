@@ -22,6 +22,7 @@ export class TableBodyComponent implements OnInit {
   @Input() properties: Properties;
   @Input() rowSelectionStates: Map<Record<string, unknown>, boolean>;
   @Input() expandedRows: Set<any>;
+  @Input() bpID: string;
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();

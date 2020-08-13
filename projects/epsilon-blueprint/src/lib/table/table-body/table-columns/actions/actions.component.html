@@ -3,6 +3,7 @@
     [ngClass]="{ 'action-item': actionItems.length < 3 }"
     [text]="actionItem.text"
     [classes]="[actionItem.class, classList]"
+    [bpID]="bpID"
     [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"
     [target]="actionItem.target"
     [bpRouterLink]="actionItem.bpRouterLink ? parseLookupString(actionItem.bpRouterLink, rowData) : null"

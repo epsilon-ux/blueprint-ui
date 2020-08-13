@@ -15,8 +15,8 @@
     [attr.aria-labelledby]="uuid + 'DropdownToggle'"
   >
     <bp-action
-      *ngFor="let dropdownItem of dropdownItems"
-      [attr.id]="uuid"
+      *ngFor="let dropdownItem of dropdownItems; index as i"
+      [bpID]="uuid + 'item' + i"
       classes="dropdown-item{{ dropdownItem.isDestructive ? ' is-destructive' : '' }}"
       [text]="dropdownItem.text"
       [ariaLabel]="dropdownItem.ariaLabel"

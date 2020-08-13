@@ -1,5 +1,6 @@
 <div class="table-responsive">
   <table
+    [attr.id]="uuid"
     class="table"
     [ngClass]="densityClass"
     [class.table-selectable-rows]="properties.hasSelectableRows"
@@ -16,7 +17,7 @@
           </th>
           <th *ngIf="properties.hasSelectableRows" class="th-selectable">
             <app-select-all-checkbox
-              [id]="uuid + 'SelectAllRows'"
+              [bpID]="uuid + 'SelectAllRows'"
               [label]="properties.internationalization['Select all rows']"
               [visuallyHiddenLabel]="true"
               [isChecked]="isSelectAllChecked"
@@ -24,10 +25,10 @@
               (change)="selectPage()"
             ></app-select-all-checkbox>
           </th>
-          <ng-container *ngFor="let column of properties.columns">
+          <ng-container *ngFor="let column of properties.columns; index as i">
             <th
               *ngIf="column.isSortable; else columnNotSortable"
-              [id]="uuid + 'Column'"
+              [id]="uuid + 'Column' + i"
               class="th-sortable"
               scope="col"
               [hidden]="!column.isColumnDisplayed"
@@ -84,6 +85,7 @@
       <tbody
         *ngIf="data.length > 0; else noColumnData"
         app-table-body
+        [bpID]="uuid"
         [tableData]="data"
         [properties]="properties"
         [rowSelectionStates]="rowSelectionStates"
@@ -109,6 +111,7 @@
 <!-- Table Footer -->
 <app-table-footer
   class="row justify-content-center justify-content-xl-start align-items-center mb-3"
+  [bpID]="uuid"
   [columnInfo]="properties.columns"
   [defaultSortColumnName]="properties.sort.defaultSortedColumn"
   [hasColumnSelector]="properties.hasColumnSelector"

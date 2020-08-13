@@ -10,6 +10,9 @@ export class ViewSelectorComponent implements OnInit {
   @Input()
   internationalization: any;
 
+  @Input()
+  bpID: string;
+
   @Output()
   viewSelectorEmitter = new EventEmitter();
 

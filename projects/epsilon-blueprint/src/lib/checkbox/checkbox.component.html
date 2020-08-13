@@ -1,23 +1,23 @@
 <label class="checkbox">
-    <input 
-        type="checkbox"
-        [attr.id]="uuid" 
-        class="checkbox-input"
-        [attr.name]="name ? name : null"
-        [attr.value]="value ? value : null"
-        [checked]="isChecked"
-        [attr.aria-checked]="checked"
-        [attr.disabled]="isDisabled ? isDisabled : null"
-        [attr.required]="isRequired ? isRequired : null"
-        (change)="emitChange($event)"
-        [(ngModel)]="checked"
+  <input
+    type="checkbox"
+    [attr.id]="uuid"
+    class="checkbox-input"
+    [attr.name]="name ? name : null"
+    [attr.value]="value ? value : null"
+    [checked]="isChecked"
+    [attr.aria-checked]="checked"
+    [attr.disabled]="isDisabled ? isDisabled : null"
+    [attr.required]="isRequired ? isRequired : null"
+    (change)="emitChange($event)"
+    [(ngModel)]="checked"
     >
-    <span class="checkbox-label">
-        <span *ngIf="visuallyHiddenLabel; else visibleLabel" class="sr-only">
-            {{ label }}
-        </span>
-        <ng-template #visibleLabel>
-            {{ label }}
-        </ng-template>
+  <span class="checkbox-label">
+    <span *ngIf="visuallyHiddenLabel; else visibleLabel" class="sr-only">
+      {{ label }}
     </span>
+    <ng-template #visibleLabel>
+      {{ label }}
+    </ng-template>
+  </span>
 </label>
