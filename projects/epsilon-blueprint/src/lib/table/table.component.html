@@ -41,6 +41,7 @@
             <ng-template #columnNotSortable>
               <th
                 scope="col"
+                [id]="uuid + 'Column' + i"
                 class="th-not-sortable"
                 [hidden]="!column.isColumnDisplayed"
               >

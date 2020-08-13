@@ -40,7 +40,7 @@
       <!-- Link Column -->
       <ng-container *ngSwitchCase="TableColumnType.LINK">
         <bp-action
-          [bpID]="bpID + 'Link' + rowData[properties.rowId] + 'Col' + i"
+          [bpID]="bpID + 'LinkRow' + rowData[properties.rowId] + 'Col' + i"
           [text]="rowData[column.key]"
           classes="btn-text text-align-left"
           [ariaLabel]="parseLookupString(column.link.ariaLabel, rowData)"
@@ -122,7 +122,7 @@
           <app-actions
             class="dropdown-menu dropdown-menu-right"
             [bpID]="bpID + 'Action' + rowData[properties.rowId]"
-            attr.aria-labelledby="moreActions{{ rowData[properties.rowId] }}"
+            attr.aria-labelledby="bpID + 'ActionsDropdown' + rowData[properties.rowId]"
             [actionItems]="properties.actions"
             [rowId]="properties.rowId"
             [rowData]="rowData"
@@ -140,7 +140,7 @@
     class="tr-expandable {{
       index % 2 === 0 ? 'tr-stripe-even' : 'tr-stripe-odd'
     }}"
-    id="expandable{{ rowData[properties.rowId] }}"
+    [id]="bpID + 'Expandable' + rowData[properties.rowId] + 'Row'"
   >
     <td colspan="100%">
       <ng-container

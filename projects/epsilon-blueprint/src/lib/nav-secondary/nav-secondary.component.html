@@ -23,11 +23,11 @@
   </li>
 </ng-template>
 
-<ng-template #navItem let-item let-index="index">
+<ng-template #navItem let-item let-i="index">
   <!-- Nav link -->
   <a
     *ngIf="item.route !== undefined"
-    [attr.id]="uuid + 'Action' + index"
+    [attr.id]="uuid + 'Action' + i"
     routerLink="{{ item.route }}"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
@@ -39,12 +39,12 @@
   <button
     *ngIf="item.children"
     type="button"
-    [attr.id]="uuid + 'Action' + index"
+    [attr.id]="uuid + 'Action' + i"
     [ngClass]="{'nav-link-parent': true, 'collapsed': !(item.isExpanded || areItemsExpanded)}"
     data-toggle="collapse"
-    attr.data-target="#nestedList{{ uuid }}-{{ index }}"
+    attr.data-target="#nestedList{{ uuid }}-{{ i }}"
     attr.aria-expanded="{{ item.isExpanded || areItemsExpanded }}"
-    attr.aria-controls="nestedList{{ uuid }}-{{ index }}"
+    attr.aria-controls="nestedList{{ uuid }}-{{ i }}"
   >
     {{ item.text }}
   </button>

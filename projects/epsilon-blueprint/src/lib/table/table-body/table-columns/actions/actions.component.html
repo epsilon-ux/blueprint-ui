@@ -1,9 +1,9 @@
-<ng-container *ngFor="let actionItem of renderedActions">
+<ng-container *ngFor="let actionItem of renderedActions; index as i">
   <bp-action
     [ngClass]="{ 'action-item': actionItems.length < 3 }"
     [text]="actionItem.text"
     [classes]="[actionItem.class, classList, actionItem.isDestructive ? ' is-destructive' : '']"
-    [bpID]="bpID"
+    [bpID]="bpID + i"
     [attr.aria-label]="parseLookupString(actionItem.ariaLabel, rowData)"
     [target]="actionItem.target"
     [bpRouterLink]="actionItem.bpRouterLink ? parseLookupString(actionItem.bpRouterLink, rowData) : null"
