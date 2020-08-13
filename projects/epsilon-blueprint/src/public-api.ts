@@ -1,12 +1,16 @@
 /*
- * Public API Surface of epsilon-blueprint
- */
+  Public API Surface of epsilon-blueprint
+*/
 
 export * from './lib/action/action.component';
 export * from './lib/action/action.module';
 
 export * from './lib/badge/badge.component';
 export * from './lib/badge/badge.module';
+
+export * from './lib/breadcrumbs/breadcrumbs.component';
+export * from './lib/breadcrumbs/breadcrumbs.module';
+export * from './lib/breadcrumbs/breadcrumbs.interface';
 
 export * from './lib/checkbox/checkbox.component';
 export * from './lib/checkbox/checkbox.module';
@@ -32,6 +36,9 @@ export * from './lib/pagination/pagination.module';
 export * from './lib/panel/panel.component';
 export * from './lib/panel/panel.module';
 
+export * from './lib/progress-bar/progress-bar.component';
+export * from './lib/progress-bar/progress-bar.module';
+
 export * from './lib/radio-button/radio-button.component';
 export * from './lib/radio-button/radio-button.module';
 
@@ -43,6 +50,7 @@ export * from './lib/search/search.module';
 
 export * from './lib/table/table.component';
 export * from './lib/table/table.module';
+export * from './lib/table/table.interface';
 
 export * from './lib/tile/tile.component';
 export * from './lib/tile/tile.module';

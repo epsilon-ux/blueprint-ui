@@ -40,13 +40,14 @@ export class MultiselectComponent implements OnInit, OnChanges {
   @Input() bindValue: string = null;
   @Input() bindLabel: string = null;
   @Input() maxSelectedItems: number;
-  @Input() notFoundText: string = null;
+  @Input() notFoundText: string = null; // Deprecated: Use intl input
   @Input() isDisabled = false;
   @Input() isReadonly = false;
   @Input() inputAttrs: {[key: string]: string};
   @Input() internationalization = {
     '+ additional more': '+ #{additional} more',
-    'numSelected out of numTotal selected': '#{numSelected} out of #{numTotal} selected'
+    'numSelected out of numTotal selected': '#{numSelected} out of #{numTotal} selected',
+    'No items found': 'No items found'
   };
   @Input() ngModel: Array<any>;
   @Input() bpID: string;
@@ -57,15 +58,21 @@ export class MultiselectComponent implements OnInit, OnChanges {
   uuid: string;
 
   isDataLoaded = false;
+  isSearching = false;
 
   constructor() { }
 
   ngOnInit(): void {
     this.validate();
+<<<<<<< HEAD
     if(!this.bpID) {
       this.uuid = 'multiSelect' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
+=======
+    if (this.notFoundText) {
+      this.internationalization['No items found'] = this.notFoundText;
+>>>>>>> dev
     }
   }
 
@@ -84,6 +91,15 @@ export class MultiselectComponent implements OnInit, OnChanges {
       err.name = 'Missing Input';
       throw err;
     }
+    if (this.notFoundText) {
+      console.warn(
+        'bp-multi-select\'s input \'notFoundText\' is deprecated. Use the internationalization input instead.'
+      );
+    }
+  }
+
+  handleSearch(e) {
+    this.isSearching = e.term.length > 0;
   }
 
   emitSelected() {

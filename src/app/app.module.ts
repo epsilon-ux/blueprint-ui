@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { ComponentLibraryModule } from './modules/component-library/component-library.module';
+import { LibraryModule } from './modules/library/library.module';
 import { AppComponent } from './app.component';
 
 
@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
-    ComponentLibraryModule
+    LibraryModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
