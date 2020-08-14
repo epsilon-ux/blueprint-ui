@@ -8,7 +8,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { ColumnType, Column, Properties } from '../../models/table-models';
+import { TableColumnType, TableColumnInterface, TablePropertiesInterface } from './table.interface';
 import { parseLookupString, generateUniqueId } from '../../helpers';
 
 @Component({
@@ -22,7 +22,8 @@ export class TableComponent implements OnInit, OnChanges {
   }[];
   @Input() dataLength: number;
   @Input() isDataLoading: boolean;
-  @Input() properties: Properties;
+  @Input() properties: TablePropertiesInterface;
+  @Input() bpID: string;
 
   @Output() action = new EventEmitter();
   @Output() onSort = new EventEmitter();
@@ -51,17 +52,12 @@ export class TableComponent implements OnInit, OnChanges {
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
 
-  uuid = 'table' + String(generateUniqueId());
+  uuid: string;
 
   // displayDensity
   densityClass: string;
 
   constructor() { }
-
-  // column type
-  get columnType() {
-    return ColumnType;
-  }
 
   ngOnInit(): void {
     // Defaults
@@ -123,7 +119,7 @@ export class TableComponent implements OnInit, OnChanges {
 
     // Input Validations
     this.properties.columns.forEach(col => {
-      if (!col.key && col.type !== ColumnType.TEMPLATE) {
+      if (!col.key && col.type !== TableColumnType.TEMPLATE) {
         const err = new Error(
           `Missing 'key' property in\n${JSON.stringify(col)}`
         );
@@ -150,6 +146,12 @@ export class TableComponent implements OnInit, OnChanges {
         }
       }
     });
+
+    if(!this.bpID) {
+      this.uuid = 'table' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
 
     // TODO: Figure out local storage issues
     /* if (localStorage.getItem('columns')) {
@@ -187,7 +189,7 @@ export class TableComponent implements OnInit, OnChanges {
     }
   }
 
-  getColumn(key): Column {
+  getColumn(key): TableColumnInterface {
     return this.properties.columns.filter(column => column.key === key)[0];
   }
 

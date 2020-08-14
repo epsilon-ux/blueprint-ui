@@ -1,38 +1,33 @@
-<nav id="navSecondary" class="nav-secondary{{ isNavCollapsed ? ' collapsed' : '' }}">
-  <div class="toggle-wrapper">
-    <button type="button" class="toggle" aria-controls="navSecondary" [attr.aria-label]="toggleAriaLabel" (click)="toggleNav()">
-    </button>
-  </div>
+<nav [id]="uuid" class="nav-secondary">
   <p *ngIf="title" class="title">{{ title }}</p>
-  <ng-content select="[search]"></ng-content>
   <ul class="nav-list">
-    <ng-container *ngTemplateOutlet="lists; context:{$implicit: items}"></ng-container>
+    <ng-container *ngTemplateOutlet="lists; context:{$implicit: items, parentIndex: 0}"></ng-container>
   </ul>
-  <ng-content select="[footer]"></ng-content>
 </nav>
 
-<ng-template #lists let-navItems>
+<ng-template #lists let-navItems let-parentIndex="parentIndex">
   <li *ngFor="let item of navItems; let index = index" class="nav-item">
     <!-- Current node has children -->
     <ng-container *ngIf="item.children; else noChildren">
       <!-- Expand Collapse button -->
-      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index}"></ng-container>
+      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index, parentIndex: parentIndex}"></ng-container>
       <!-- Node's children in list -->
-      <ul [ngClass]="{'collapse nested-list': true, 'show': item.isExpanded || areItemsExpanded}" id="nestedList{{ uuid }}-{{ index }}">
-        <ng-container *ngTemplateOutlet="lists; context:{$implicit: item.children}"></ng-container>
+      <ul [ngClass]="{'collapse nested-list': true, 'show': item.isExpanded || areItemsExpanded}" [id]="uuid + 'NestedList' + index">
+        <ng-container *ngTemplateOutlet="lists; context:{$implicit: item.children, parentIndex: index}"></ng-container>
       </ul>
     </ng-container>
     <!-- Current node has no children -->
     <ng-template #noChildren>
-      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index}"></ng-container>
+      <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index, parentIndex: parentIndex}"></ng-container>
     </ng-template>
   </li>
 </ng-template>
 
-<ng-template #navItem let-item let-index="index">
+<ng-template #navItem let-item let-i="index" let-parentIndex="parentIndex">
   <!-- Nav link -->
   <a
     *ngIf="item.route !== undefined"
+    [attr.id]="uuid + 'Action' + i + 'ListIndex' + parentIndex"
     routerLink="{{ item.route }}"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{exact: shouldRouteMatchExact}"
@@ -44,11 +39,12 @@
   <button
     *ngIf="item.children"
     type="button"
+    [attr.id]="uuid + 'Action' + i + 'ListIndex' + parentIndex"
     [ngClass]="{'nav-link-parent': true, 'collapsed': !(item.isExpanded || areItemsExpanded)}"
     data-toggle="collapse"
-    attr.data-target="#nestedList{{ uuid }}-{{ index }}"
+    [attr.data-target]="'#' + uuid + 'NestedList' + i"
     attr.aria-expanded="{{ item.isExpanded || areItemsExpanded }}"
-    attr.aria-controls="nestedList{{ uuid }}-{{ index }}"
+    [attr.aria-controls]="uuid + 'NestedList' + i"
   >
     {{ item.text }}
   </button>

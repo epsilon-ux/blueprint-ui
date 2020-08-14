@@ -1,11 +1,11 @@
 <div class="table-footer-dropdown">
-  <label for="viewSelector" class="table-footer-dropdown-label">
+  <label for="{{ bpID }}ViewSelector" class="table-footer-dropdown-label">
     {{ internationalization['View'] }}
   </label>
   <ng-select
     #viewSelectorDropdown
     class="select-min-width"
-    labelForId="viewSelector"
+    [labelForId]="bpID + 'ViewSelector'"
     name="viewSelector"
     (change)="emitTableView()"
     [items]="displayOptions"

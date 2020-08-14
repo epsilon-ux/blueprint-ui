@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Column } from '../../../models/table-models';
+import { TableColumnInterface } from '../table.interface';
 
 @Component({
   selector: 'app-table-footer',
@@ -18,13 +18,16 @@ export class TableFooterComponent implements OnInit {
   hasColumnSelector = false;
 
   @Input()
-  columnInfo: Column[];
+  columnInfo: TableColumnInterface[];
 
   @Input()
   defaultSortColumnName: string;
 
   @Input()
   internationalization: any;
+
+  @Input()
+  bpID: string;
 
   @Output()
   displayDensityEmitter = new EventEmitter();

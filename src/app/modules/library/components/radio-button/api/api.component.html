@@ -1,0 +1,113 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <dl class="inline-details font-size-lg">
+        <dt>Selector</dt>
+        <dd>bp-radio-button</dd>
+      </dl>
+      <h2>Inputs</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Radio button inputs</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">Input</th>
+            <th class="pt-0">Type</th>
+            <th class="pt-0">Description</th>
+            <th class="pt-0">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>label</td>
+            <td>string</td>
+            <td>The radio button's label.</td>
+            <td>Required.</td>
+          </tr>
+          <tr>
+            <td>bpID</td>
+            <td>string</td>
+            <td>The value for the radio button's id attribute.</td>
+            <td>
+              <p>Ids must only be used once per page.</p>
+              <p>Ids should be camelCase, e.g.: #myId.</p>
+              <p>See <a routerLink="." fragment="ids">identifiers</a>.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>The value for the radio button's name attribute.</td>
+            <td>
+              <p>
+                When a form is submitted, the name attribute's value is the reported name of the radio button if the radio button is checked and enabled.
+              </p>
+              <p>For a group of radio buttons, the name attributes' values should be the same.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>value</td>
+            <td>string</td>
+            <td>The value for the radio button's value attribute.</td>
+            <td>
+              <p>Default is "on".</p>
+              <p>
+                When a form is submitted, the value attribute's value is the reported value of the radio button if the radio button is checked and enabled.
+              </p>
+              <p>For a group of radio buttons, the value attributes' values should be unique.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>isChecked</td>
+            <td>boolean</td>
+            <td>Determines if the radio button is checked or unchecked.</td>
+            <td>
+              <p>Default is "false".</p>
+              <p>When "true" the radio button is checked.</p>
+              <p>
+                When a form is submitted, a radio button's value is only included in the submitted data if the radio button is checked and enabled.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>isDisabled</td>
+            <td>boolean</td>
+            <td>Determines if the radio button is disabled or enabled.</td>
+            <td>
+              <p>Default is "false".</p>
+              <p>When "true" the radio button is disabled.</p>
+              <p>
+                When a form is submitted, a radio button's value is only included in the submitted data if the radio button is checked and enabled.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>isRequired</td>
+            <td>boolean</td>
+            <td>Determines if the radio button is required or optional.</td>
+            <td>
+              <p>Default is "false".</p>
+              <p>When "true" the radio button is required.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="ids">Identifiers</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Identifiers</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">ID</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bpID</code></td>
+            <td>The unique identifier for the radio button component.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

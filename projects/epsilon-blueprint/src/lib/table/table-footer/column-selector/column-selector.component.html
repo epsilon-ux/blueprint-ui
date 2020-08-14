@@ -1,6 +1,7 @@
 <div class="table-footer-dropdown column-selector">
   <bp-multi-select
     #columnSelectorDropdown
+    [bpID]="bpID + 'ColumnSelector'"
     [label]="internationalization['Column Selector']"
     [isInline]="true"
     [optionItems]="columnInfo"

@@ -1,0 +1,45 @@
+<ng-container [ngSwitch]="kind">
+  <span
+    *ngSwitchCase="'inline'"
+    role="status"
+    [attr.id]="bpID"
+    aria-busy="true"
+    aria-live="polite"
+  >
+    <i
+      class="fa fa-spinner fa-spin"
+      [attr.aria-hidden]="isTruthy(text)"
+      [attr.aria-label]="ariaLabel"
+    ></i>
+    <span *ngIf="text" class="ml-xs">{{ text }}</span>
+  </span>
+
+  <div
+    *ngSwitchCase="'inPage'"
+    role="status"
+    [attr.id]="bpID"
+    attr.aria-busy="true"
+    aria-live="polite"
+    class="text-center"
+  >
+    <i
+      class="fa fa-spinner fa-spin font-size-xl"
+      [attr.aria-hidden]="isTruthy(text)"
+      [attr.aria-label]="ariaLabel"
+    ></i>
+    <div *ngIf="text" class="mt-sm">{{ text }}</div>
+  </div>
+
+  <div
+    *ngSwitchCase="'overPage'"
+    [attr.id]="bpID"
+    class="loading-indicator"
+  >
+    <i
+      class="fa fa-spinner fa-spin font-size-xl"
+      [attr.aria-hidden]="isTruthy(text)"
+      [attr.aria-label]="ariaLabel"
+    ></i>
+    <div *ngIf="text" class="mt-sm">{{ text }}</div>
+  </div>
+</ng-container>

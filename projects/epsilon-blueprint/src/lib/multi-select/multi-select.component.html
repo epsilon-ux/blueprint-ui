@@ -1,10 +1,9 @@
-<div class="multi-select{{ isInline ? ' inline' : '' }}">
-  <label [for]="uuid" [ngClass]="{ 'sr-only': isLabelHidden }">
+<div [id]="uuid" class="multi-select{{ isInline ? ' inline' : '' }}">
+  <label [for]="uuid + 'Select'" [ngClass]="{ 'sr-only': isLabelHidden }">
     {{ label }}
   </label>
   <ng-select
-    #columnSelectorDropdown
-    [labelForId]="uuid"
+    [labelForId]="uuid + 'Select'"
     [multiple]="true"
     [items]="isDataLoaded ? optionItems : []"
     [bindValue]="bindValue"
@@ -15,12 +14,13 @@
     [closeOnSelect]="false"
     [maxSelectedItems]="maxSelectedItems"
     [loading]="!isDataLoaded"
-    [notFoundText]="notFoundText"
+    [notFoundText]="internationalization['No items found']"
     [inputAttrs]="inputAttrs"
     [disabled]="isDisabled"
     [readonly]="isReadonly"
     [(ngModel)]="ngModel"
     (change)="emitSelected()"
+    (search)="handleSearch($event)"
   >
     <!-- Custom Placeholder Template -->
     <ng-template
@@ -38,7 +38,7 @@
         </div>
       </div>
     </ng-template>
-    
+
     <!-- Default Placeholder Template -->
     <ng-template
       *ngIf="!multiLabelTemplate && !hasTags"
@@ -46,7 +46,7 @@
       let-items="items"
       let-clear="clear"
     >
-      <div class="ng-value ng-value-custom">
+      <div *ngIf="!isSearching" class="ng-value ng-value-custom">
         <div class="ng-value-label">
           {{
             parseLookupString(

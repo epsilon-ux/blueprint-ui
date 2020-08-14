@@ -1,11 +1,11 @@
 <div class="pagination-wrapper flex-column flex-sm-row">
   <div class="d-flex align-items-center mb-3 mb-sm-0">
-    <span class="pagination-records">
+    <span [id]="uuid + 'Results'" class="pagination-records">
       {{ parseLookupString(internationalization['numResults results'], {numResults: dataLength}) }}
     </span>
-    <label for="numberOfRows" class="sr-only">{{ internationalization['Number of Rows'] }}</label>
+    <label [attr.for]="uuid + 'NumberOfRows'" class="sr-only">{{ internationalization['Number of Rows'] }}</label>
     <ng-select
-      labelForId="numberOfRows"
+      [labelForId]="uuid + 'NumberOfRows'"
       name="numberOfRows"
       [items]="internationalization['Number Of Rows Options']"
       bindLabel="optionText"
@@ -18,6 +18,7 @@
   </div>
   <div class="pagination-buttons">
     <button
+      [id]="uuid + 'FirstPage'"
       class="btn-pager btn-pager-icon"
       [attr.aria-label]="internationalization['First Page']"
       [disabled]="isStepperDisabled(1)"
@@ -26,6 +27,7 @@
       <i class="fa fa-angle-double-left" aria-hidden="true"></i>
     </button>
     <button
+      [id]="uuid + 'PreviousPage'"
       class="btn-pager btn-pager-icon"
       [attr.aria-label]="internationalization['Previous Page']"
       [disabled]="isStepperDisabled(1)"
@@ -35,6 +37,7 @@
     </button>
     <button
       *ngFor="let page of pageButtons"
+      [id]="uuid + 'Page' + page"
       class="btn-pager btn-pager-number"
       [class.active]="page === currentPage"
       [attr.aria-label]="'Page ' + page"
@@ -43,6 +46,7 @@
       {{ page }}
     </button>
     <button
+      [id]="uuid + 'NextPage'"
       class="btn-pager btn-pager-icon"
       [attr.aria-label]="internationalization['Next Page']"
       [disabled]="isStepperDisabled(totalPages)"
@@ -51,6 +55,7 @@
       <i class="fa fa-angle-right" aria-hidden="true"></i>
     </button>
     <button
+      [id]="uuid + 'LastPage'"
       class="btn-pager btn-pager-icon"
       [attr.aria-label]="internationalization['Last Page']"
       [disabled]="isStepperDisabled(totalPages)"

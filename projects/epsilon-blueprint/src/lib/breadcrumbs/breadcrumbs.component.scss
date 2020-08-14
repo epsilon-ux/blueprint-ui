@@ -1,0 +1,32 @@
+@import "../../styles/global-variables";
+
+.breadcrumb
+{
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+}
+
+.breadcrumb-item
+{
+  & + .breadcrumb-item
+  {
+    padding-left: 5px;
+
+    &::before
+    {
+      padding-right: 5px;
+      content: $icon-chevron-right;
+      color: $font-color-secondary;
+      font-weight: $font-weight-semi-bold;
+      font-size: $font-size-sm;
+      font-family: $font-family-icon;
+    }
+  }
+
+  &.active
+  {
+    color: $font-color-secondary;
+  }
+}

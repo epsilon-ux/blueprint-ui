@@ -7,7 +7,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { ColumnType, Properties } from '../../../models/table-models';
+import { TableColumnType, TablePropertiesInterface } from '../table.interface';
 import { parseLookupString } from '../../../helpers';
 
 @Component({
@@ -19,9 +19,10 @@ export class TableBodyComponent implements OnInit {
   @Input() tableData: {
     [key: string]: any;
   }[];
-  @Input() properties: Properties;
+  @Input() properties: TablePropertiesInterface;
   @Input() rowSelectionStates: Map<Record<string, unknown>, boolean>;
   @Input() expandedRows: Set<any>;
+  @Input() bpID: string;
 
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
@@ -40,8 +41,8 @@ export class TableBodyComponent implements OnInit {
   constructor() { }
 
   // column type
-  get columnType() {
-    return ColumnType;
+  get TableColumnType() {
+    return TableColumnType;
   }
 
   ngOnInit(): void { }

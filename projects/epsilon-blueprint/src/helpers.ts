@@ -1,4 +1,4 @@
-export function generateUniqueId() {
+export function generateUniqueId(): number {
   return Math.floor(Math.random() * 1000);
 }
 
@@ -13,3 +13,7 @@ export const parseLookupString = (str, obj) => {
       ]
   );
 };
+
+export function isDefined(variable): boolean {
+  return variable !== undefined && variable !== null;
+}

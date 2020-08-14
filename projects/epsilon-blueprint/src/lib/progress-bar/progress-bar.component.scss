@@ -1,0 +1,28 @@
+@import "../../styles/global-variables";
+
+.progress
+{
+  height: 15px;
+  box-shadow: inset 0 1px 3px 0 $haze;
+  border-radius: 0;
+  background: $mist;
+
+  .progress-bar
+  {
+    background: $accent-color-primary;
+    background-image: $gradient-progress-bar;
+  }
+
+  &.progress-success
+  {
+    .progress-bar
+    {
+      background: $feedback-color-success;
+    }
+  }
+
+  &.progress-slim
+  {
+    height: 10px;
+  }
+}

@@ -2,11 +2,11 @@
   role="checkbox"
   class="checkbox-input"
   [attr.aria-checked]="checked"
-  [attr.aria-labelledby]="id"
+  [attr.aria-labelledby]="bpID"
   tabindex="0"
   (keyup.space)="emitEvent($event)"
 ></span>
-<label class="checkbox-label" [id]="id" (click)="emitEvent($event)">
+<label class="checkbox-label" [attr.id]="bpID" (click)="emitEvent($event)">
   <span *ngIf="visuallyHiddenLabel; else visibleLabel" class="sr-only">
       {{ label }}
   </span>

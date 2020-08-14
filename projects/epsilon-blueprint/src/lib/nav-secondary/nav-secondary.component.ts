@@ -19,14 +19,13 @@ export class NavSecondaryComponent implements OnInit {
   @Input() title: string;
   @Input() items: Item[];
   @Input() shouldRouteMatchExact = false;
-  @Input() isNavCollapsed = false;
   @Input() areItemsExpanded = false;
-  @Input() toggleAriaLabel = 'Toggle secondary navigation';
+  @Input() bpID: string;
 
   @ViewChildren(RouterLinkActive, { read: ElementRef })
   linkRefs: QueryList<ElementRef>;
 
-  uuid = 'navDropdown' + generateUniqueId().toString();
+  uuid: string;
   activeItem: string;
 
   constructor() { }
@@ -41,6 +40,12 @@ export class NavSecondaryComponent implements OnInit {
         this.findActive(item, null);
       }
     }, 0);
+
+    if(!this.bpID) {
+      this.uuid = 'navSecondary' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   findActive(node: Item, parent: Item) {
@@ -74,10 +79,6 @@ export class NavSecondaryComponent implements OnInit {
         throw err;
       }
     });
-  }
-
-  toggleNav() {
-    this.isNavCollapsed = !this.isNavCollapsed;
   }
 
 }

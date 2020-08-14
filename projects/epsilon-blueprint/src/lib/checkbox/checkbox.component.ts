@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-checkbox',
@@ -12,6 +13,7 @@ export class CheckboxComponent implements OnInit, OnChanges {
   @Input() isChecked = false;
   @Input() isDisabled = false;
   @Input() isRequired = false;
+  @Input() bpID: string;
 
   @Input() label: string;
   @Input() visuallyHiddenLabel?: boolean;
@@ -20,11 +22,24 @@ export class CheckboxComponent implements OnInit, OnChanges {
 
   checked;
 
+  uuid: string;
+
   constructor() { }
 
   ngOnInit(): void {
     this.checked = this.isChecked;
     this.validation();
+
+    if(!this.bpID) {
+      if(!this.id) {
+        this.uuid = 'checkbox' + generateUniqueId().toString();
+      } else {
+        this.uuid = this.id;
+        console.warn('Input id is deprecated. Please use Input bpID instead.');
+      }
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   ngOnChanges(changes): void {

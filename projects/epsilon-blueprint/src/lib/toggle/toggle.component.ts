@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-toggle',
@@ -18,12 +19,21 @@ export class ToggleComponent implements OnInit {
       isDisabled: boolean;
     }
   ];
+  @Input() bpID: string;
 
   @Output() change = new EventEmitter();
 
+  uuid: string;
+
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if(!this.bpID) {
+      this.uuid = 'toggle' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
+  }
 
   emitChange(e) {
     e.stopPropagation();

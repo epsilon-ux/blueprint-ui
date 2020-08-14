@@ -21,10 +21,11 @@ export class DropdownComponent implements OnInit {
     isDisabled?: boolean;
     isDestructive?: boolean;
   }[];
+  @Input() bpID: string;
 
   @Output() action = new EventEmitter();
 
-  uuid = 'dropdown' + generateUniqueId().toString();
+  uuid: string;
 
   constructor() { }
 
@@ -35,6 +36,12 @@ export class DropdownComponent implements OnInit {
         item.bpRouterLink = item.routerLink;
       }
     });
+
+    if(!this.bpID) {
+      this.uuid = 'dropdown' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   emitAction(e) {

@@ -1,0 +1,1020 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <dl class="inline-details font-size-lg">
+        <dt>Selector</dt>
+        <dd>bp-table</dd>
+      </dl>
+
+      <h2>Interfaces</h2>
+      <p>You can import the following interfaces from <code>epsilon-blueprint</code> to properly type your inputs.</p>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">Interface imports</caption>
+        <thead>
+          <th class="pt-0">Input</th>
+          <th class="pt-0">Type</th>
+          <th class="pt-0">Notes</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TablePropertiesInterface</td>
+            <td>interface</td>
+            <td>See <a routerLink="." fragment="properties">properties</a>.</td>
+          </tr>
+          <tr>
+            <td>TableColumnInterface</td>
+            <td>interface</td>
+            <td>See <a routerLink="." fragment="columns">columns</a>.</td>
+          </tr>
+          <tr>
+            <td>TableActionInterface</td>
+            <td>interface</td>
+            <td>See <a routerLink="." fragment="actions">actions</a>.</td>
+          </tr>
+          <tr>
+            <td>TableColumnType</td>
+            <td>enum</td>
+            <td>See <a routerLink="." fragment="tableColumnTypes">column types</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="inputs">Inputs</h2>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          Table inputs
+        </caption>
+        <thead>
+          <tr>
+            <th class="pt-0">Input</th>
+            <th class="pt-0">Type</th>
+            <th class="pt-0">Description</th>
+            <th class="pt-0">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data</td>
+            <td>object[]</td>
+            <td>
+              An array of objects where each object represents a row in the
+              table.
+            </td>
+            <td>Required.</td>
+          </tr>
+          <tr>
+            <td>dataLength</td>
+            <td>number</td>
+            <td>
+              The total number of rows in the entire dataset the table can paginate through.
+            </td>
+            <td>Required.</td>
+          </tr>
+          <tr>
+            <td>isDataLoading</td>
+            <td>boolean</td>
+            <td>Indicates if the table data is loading.</td>
+            <td>
+              <p>
+                If "true", the loading icon and "Loading data" message renders
+                in the table.
+              </p>
+              <p>
+                If "false" and there is no data, the "No data available" message
+                renders in the table.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>properties</td>
+            <td>object</td>
+            <td>
+              An object used to configure an instance of the table component.
+            </td>
+            <td>
+              <p>
+                Use the properties object to enable or disable configurable
+                features.
+              </p>
+              <p>See the Properties table for more information.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>bpID</td>
+            <td>string</td>
+            <td>The value for the table's id attribute.</td>
+            <td>
+              <p>Ids must only be used once per page.</p>
+              <p>Ids should be camelCase, e.g.: #myId.</p>
+              <p>See <a routerLink="." fragment="ids">identifiers</a>.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 id="properties">Properties</h3>
+      <app-show-more summary="Show properties details" summaryOpen="Hide properties details" [isOpen]="true">
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">
+            Table properties
+          </caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>caption</td>
+              <td>string</td>
+              <td>
+                A sentence used for explaining the table to people using a screen
+                reader. The text is only visible to screen readers.
+              </td>
+              <td>Required.</td>
+            </tr>
+            <tr>
+              <td>rowId</td>
+              <td>string</td>
+              <td>The key from the data to use as the identifier.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>columns</td>
+              <td><a routerLink="." fragment="columns">Column</a>[]</td>
+              <td>
+                An array of objects that define the columns in the table. Columns
+                will render in the table in the same order as in this array.
+              </td>
+              <td>Required.</td>
+            </tr>
+            <tr>
+              <td>sort.defaultSortedColumn</td>
+              <td>string</td>
+              <td>
+                The key from the data that represents the column that is sorted by
+                default / on page load.
+              </td>
+              <td>
+                The column that is sorted by default cannot be hidden with the
+                column selector.
+              </td>
+            </tr>
+            <tr>
+              <td>sort.defaultSortOrder</td>
+              <td>string</td>
+              <td>
+                Determines if the default sorted column should be sorted in ascending or descending order.
+              </td>
+              <td>
+                <p>Default is "ascending".</p>
+                <p>Expects either "ascending" or "descending".</p>
+              </td>
+            </tr>
+            <tr>
+              <td>expandableRowsTemplate</td>
+              <td>TemplateRef</td>
+              <td>Template for the content of the expandable row.</td>
+              <td>
+                <p>Expandable rows feature is enabled when a template is passed in.</p>
+                <p>See <a routerlink="." fragment="expandable-rows">Expandable Rows</a> </p>
+              </td>
+            </tr>
+            <tr>
+              <td>hasSelectableRows</td>
+              <td>boolean</td>
+              <td>Enables the selectable rows feature.</td>
+              <td>
+                Use "true" to enable the selectable rows feature, and render
+                checkboxes in the first column of each table row.
+              </td>
+            </tr>
+            <tr>
+              <td>actions</td>
+              <td><a routerLink="." fragment="actions">Action</a>[]</td>
+              <td>
+                An array of objects where each object represents a button in the
+                actions column.
+              </td>
+              <td>
+                When there are more than 3 actions, the individual buttons
+                collapse into a dropdown.
+              </td>
+            </tr>
+            <tr>
+              <td>hasViewSelector</td>
+              <td>boolean</td>
+              <td>Enables the view selector feature.</td>
+              <td>
+                Use "true" to enable the view selector, and render the view
+                selector below the table.
+              </td>
+            </tr>
+            <tr>
+              <td>hasColumnSelector</td>
+              <td>boolean</td>
+              <td>Enables the column selector feature.</td>
+              <td>
+                Use "true" to enable the column selector, and render the column
+                selector below the table.
+              </td>
+            </tr>
+            <tr>
+              <td>hasDisplayDensity</td>
+              <td>boolean</td>
+              <td>Enables the display density feature.</td>
+              <td>
+                <p>
+                  Use "true" to enable the display density feature, and render the
+                  display density selector below the table.
+                </p>
+                <p>The default display density is "comfortable."</p>
+                <p>
+                  The user can select "compact" to decrease the padding of the
+                  table's rows.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>internationalization</td>
+              <td>object</td>
+              <td>
+                Contains all the strings of text used in the table component.
+              </td>
+              <td>
+                See
+                <a
+                  routerLink="."
+                  fragment="internationalization"
+                >
+                  internationalization
+                </a>
+                for more details.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </app-show-more>
+
+      <h3 id="columns">Columns</h3>
+      <app-show-more summary="Show columns details" summaryOpen="Hide column details" [isOpen]="true">
+        <p>
+          Columns is an object that is part of the
+          <a routerLink="." fragment="properties">properties</a> Input.
+        </p>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">
+            Column properties
+          </caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>key</td>
+              <td>string</td>
+              <td>
+                The key from the inputted data to use for data in the
+                corresponding column.
+              </td>
+              <td>Required.</td>
+            </tr>
+            <tr>
+              <td>headerText</td>
+              <td>string</td>
+              <td>The text to display in the corresponding column header.</td>
+              <td>Required.</td>
+            </tr>
+            <tr>
+              <td>isColumnDisplayed</td>
+              <td>boolean</td>
+              <td>
+                Indicates whether or not the column should be displayed by
+                default.
+              </td>
+              <td>When "true" the column is displayed by default.</td>
+            </tr>
+            <tr id="tableColumnTypes">
+              <td>type</td>
+              <td>
+                enum TableColumnType &#123;<br>
+                ICON,<br>
+                LINK,<br>
+                STATUS,<br>
+                TEMPLATE<br>
+                &#125;
+              </td>
+              <td>The type of the column.</td>
+              <td>This determines how to handle the content.</td>
+            </tr>
+            <tr>
+              <td>isSortable</td>
+              <td>boolean</td>
+              <td>Indicates if the column is sortable.</td>
+              <td>
+                <p>Default is "true".</p>
+                <p>When "true" the column is sortable.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>template</td>
+              <td>TemplateRef</td>
+              <td>
+                Pass in an ng-template that will be used for the content in this
+                column.
+              </td>
+              <td>Required when column type is TEMPLATE.</td>
+            </tr>
+            <tr>
+              <td>icon</td>
+              <td>object</td>
+              <td>
+                An object containing information for when and how to render icons
+                in an icon column.
+              </td>
+              <td>
+                <p>Required when column type is ICON.</p>
+                <p>See <a routerLink="." fragment="icons">Icons</a> for more details.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>link</td>
+              <td>object</td>
+              <td>An object containing the link details.</td>
+              <td>
+                <p>Required when column type is LINK.</p>
+                <p>See <a routerLink="." fragment="links">Links</a> for more details.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>statusIndicatorMapping</td>
+              <td>object</td>
+              <td>
+                Maps the standardized class names for status indicators to the
+                product specific text.
+              </td>
+              <td>
+                Required when column type is STATUS. The available classes for
+                mapping are incomplete-primary, incomplete-secondary, in-progress,
+                warning, complete. For more information on status indicators see
+                <a href="https://zpl.io/anLnePv" class="link-primary">Zeplin</a>.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 id="icons">Icons</h4>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">
+            Icon properties
+          </caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>color</td>
+              <td>string</td>
+              <td>The color of the icon.</td>
+              <td>Expects either "midnight" or "warning".</td>
+            </tr>
+            <tr>
+              <td>mapping</td>
+              <td>object</td>
+              <td>Maps icons to text.</td>
+              <td>
+                The key is the text that represents the icon, the value is
+                the class name for the Font Awesome icon.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 id="links">Links</h4>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">
+            Link properties
+          </caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ariaLabel</td>
+              <td>string</td>
+              <td>
+                The format of the aria-label to be used for the link.
+              </td>
+              <td>
+                To use values from the row, insert #&#123;key&#125;
+                anywhere into the string where "key" is the name of the
+                data property to insert into the label, e.g. "Open row
+                #&#123;id&#125;" NOTE: These are still regular strings,
+                not javascript template strings, so use single/double
+                quotes.
+              </td>
+            </tr>
+            <tr>
+              <td>target</td>
+              <td>string</td>
+              <td>
+                The string to be used in the link's target attribute.
+              </td>
+              <td>
+                Required when element = "a". "_blank" opens in a new tab.
+              </td>
+            </tr>
+            <tr>
+              <td>bpRouterLink</td>
+              <td>string</td>
+              <td>
+                The string to be used in the link's routerLink attribute.
+              </td>
+              <td>
+                One of either bpRouterLink, href, or action is required.
+              </td>
+            </tr>
+            <tr>
+              <td>href</td>
+              <td>string</td>
+              <td>The string to be used in the link's href attribute.</td>
+              <td>
+                One of either bpRouterLink, href, or action is required.
+              </td>
+            </tr>
+            <tr>
+              <td>action</td>
+              <td>string</td>
+              <td>
+                The string to be emitted when the button is clicked.
+              </td>
+              <td>
+                One of either bpRouterLink, href, or action is required.
+                See <a routerLink="." fragment="outputs">Outputs</a> for more
+                information on what is emitted.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </app-show-more>
+
+      <h3 id="actions">Actions</h3>
+      <app-show-more summary="Show action details" summaryOpen="Hide action details" [isOpen]="true">
+        <p>
+          Actions is an object that is part of the
+          <a routerLink="." fragment="properties">properties</a> Input.
+        </p>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">
+            Action properties
+          </caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>element</td>
+              <td>string</td>
+              <td>The element used for the action.</td>
+              <td>
+                <p>Expects either a or button.</p>
+                <p>
+                  Use a when the action should route to another part of the
+                  application.
+                </p>
+                <p>
+                  Use button when the action should perform an action on the page,
+                  e.g. opens a modal.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>text</td>
+              <td>string</td>
+              <td>The text to be used in the action button/link.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>ariaLabel</td>
+              <td>string</td>
+              <td>
+                The format of the aria-label to be used for the button/link.
+              </td>
+              <td>
+                To use values from the row, insert #&#123;key&#125; anywhere into
+                the string where "key" is the name of the data property to insert
+                into the label, e.g. "Open row #&#123;id&#125;" NOTE: These are
+                still regular strings, not javascript template strings, so use
+                single/double quotes.
+              </td>
+            </tr>
+            <tr>
+              <td>class</td>
+              <td>string</td>
+              <td>The class(es) to be used on the action button/link</td>
+              <td>
+                <p>E.g. btn-outline-primary</p>
+                <p>If element = "button", .btn will be included by default.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>target</td>
+              <td>string</td>
+              <td>The string to be used in the link's target attribute</td>
+              <td>
+                Required when element = "a". E.g. "_blank" opens in a new tab.
+              </td>
+            </tr>
+            <tr>
+              <td>routerLink</td>
+              <td>string</td>
+              <td>The string to be used in the link's routerLink attribute.</td>
+              <td>One of either path or href is required when element = "a".</td>
+            </tr>
+            <tr>
+              <td>href</td>
+              <td>string</td>
+              <td>The string to be used in the link's href attribute.</td>
+              <td>One of either path or href is required when element = "a".</td>
+            </tr>
+            <tr>
+              <td>action</td>
+              <td>string</td>
+              <td>The string to be emitted when the button is clicked.</td>
+              <td>
+                Required if element = "button". See outputs for more information
+                on what is emitted.
+              </td>
+            </tr>
+            <tr>
+              <td>conditions</td>
+              <td>(object | string)[]</td>
+              <td>The conditions used to determine if the action will render.</td>
+              <td>
+                Conditions is an array containing objects and strings. The
+                condition objects have compare operator strings between them.<!-- TODO: Link to feature section describing this feature in more detail -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </app-show-more>
+
+      <h3 id="internationalization">Internationalization</h3>
+      <app-show-more summary="Show internationalization details" summaryOpen="Hide internationalization details" [isOpen]="true">
+        <p>
+          Internationalization is an object that is part of the
+          <a routerLink="." fragment="properties">properties</a> Input.
+        </p>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">
+            Internationalization properties
+          </caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>'Select all rows'</td>
+              <td>string</td>
+              <td>
+                The screen reader only text for the "select all rows" checkbox in
+                the table header.
+              </td>
+              <td>Default is "Select all rows".</td>
+            </tr>
+            <tr>
+              <td>'Actions'</td>
+              <td>string</td>
+              <td>The text used for the action column header.</td>
+              <td>Default is "Actions".</td>
+            </tr>
+            <tr>
+              <td>'Loading data'</td>
+              <td>string</td>
+              <td>
+                The text that displays in the table while the data is loading.
+              </td>
+              <td>Default is "Loading data".</td>
+            </tr>
+            <tr>
+              <td>'No data'</td>
+              <td>string</td>
+              <td>The text that displays in the table when there is no data.</td>
+              <td>Default is "No data available".</td>
+            </tr>
+            <tr>
+              <td>'Select row'</td>
+              <td>string</td>
+              <td>
+                The text used for the screen reader only label added to each
+                selectable row checkbox.
+              </td>
+              <td>Default is "Select Row #&#123;rowId&#125;" where "rowId" is whatever was set in the rowId property.</td>
+            </tr>
+            <tr>
+              <td>'Toggle row'</td>
+              <td>string</td>
+              <td>
+                The text used for the screen reader only label added to each
+                expandable row icon button.
+              </td>
+              <td>Default is "Toggle Row #&#123;rowId&#125;" where "rowId" is whatever was set in the rowId property.</td>
+            </tr>
+            <tr>
+              <td>'Actions Menu'</td>
+              <td>string</td>
+              <td>
+                The text used for the aria-label of the more actions menu
+                dropdown.
+              </td>
+              <td>Default is "Actions Menu".</td>
+            </tr>
+            <tr>
+              <td>'Column Selector'</td>
+              <td>string</td>
+              <td>The text used for the column selector’s label.</td>
+              <td>Default is "Column Selector:".</td>
+            </tr>
+            <tr>
+              <td>'Default'</td>
+              <td>string</td>
+              <td>
+                The text used to indicate the default column that cannot be
+                deselected.
+              </td>
+              <td>Default is "(Default)".</td>
+            </tr>
+            <tr>
+              <td>'Showing numVisible out of numTotal'</td>
+              <td>string</td>
+              <td>
+                The text used for the column selector's placeholder.
+              </td>
+              <td>
+                Default is "Showing #&#123;numVisible&#125; out of
+                #&#123;numTotal&#125;".
+              </td>
+            </tr>
+            <tr>
+              <td>'Display Density'</td>
+              <td>string</td>
+              <td>The text used for the display density label.</td>
+              <td>Default is "Display Density:".</td>
+            </tr>
+            <tr>
+              <td>'Display Density Options'</td>
+              <td>object</td>
+              <td>
+                The object containing the options for the "display density"
+                selector.
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>'View'</td>
+              <td>string</td>
+              <td>The text used for the view selector's label.</td>
+              <td>Default is "View:".</td>
+            </tr>
+            <tr>
+              <td>'View Options'</td>
+              <td>object</td>
+              <td>
+                The object containing the options for the view selector.
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Display density options</h4>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">Display density option properties</caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>'Comfortable'</td>
+              <td>string</td>
+              <td>
+                The text used for the "comfortable" option in the "display
+                density" select.
+              </td>
+              <td>Default is "Comfortable".</td>
+            </tr>
+            <tr>
+              <td>'Compact'</td>
+              <td>string</td>
+              <td>
+                The text used for the "compact" option in the "display
+                density" select.
+              </td>
+              <td>Default is "Compact".</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>View options</h4>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">View option properties</caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>'Table'</td>
+              <td>string</td>
+              <td>
+                The text used for the table option in the view select.
+              </td>
+              <td>Default is "Table".</td>
+            </tr>
+            <tr>
+              <td>'Alternate'</td>
+              <td>string</td>
+              <td>
+                The text used for the alternate option in the view select.
+              </td>
+              <td>Default is "List".</td>
+            </tr>
+          </tbody>
+        </table>
+      </app-show-more>
+
+      <!--
+        TODO: features
+          - column types
+          - tempalate columns
+          - actions
+          - search
+          - pagination
+          - column selector
+          - selectable rows
+          - link columns
+      -->
+
+      <h2 id="outputs">Outputs</h2>
+
+      <h3 id="actionOutput">action</h3>
+      <p>The action output is emitted on click of a button in the actions column.</p>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          Action properties
+        </caption>
+        <thead>
+          <tr>
+            <th class="w-25 pt-0">Output</th>
+            <th class="w-25 pt-0">Type</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>action</td>
+            <td>string</td>
+            <td>
+              A string used to know what action occurred. This is
+              specified in the <a routerLink="." fragment="inputs">Inputs</a> (see Inputs & Properties).
+            </td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>string</td>
+            <td>The id of the row to which the action applies.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 id="actionOutput">onSort</h3>
+      <p>The onSort output is emitted on click of a sortable column header or sort icon.</p>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          onSort properties
+        </caption>
+        <thead>
+          <tr>
+            <th class="w-25 pt-0">Output</th>
+            <th class="w-25 pt-0">Type</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>column</td>
+            <td>string</td>
+            <td>The key of the sorted column. The key is determined by what was provided for the <a routerLink="." fragment="columns">key property</a> of the corresponding column object.</td>
+          </tr>
+          <tr>
+            <td>order</td>
+            <td>string</td>
+            <td>Will be either "ascending" (smallest to largest) or "descending" (largest to smallest).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 id="actionOutput">rowSelected</h3>
+      <p>The rowSelected output is emitted on click of the select all checkbox or a selectable row's checkbox.</p>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">
+          rowSelected properties
+        </caption>
+        <thead>
+          <tr>
+            <th class="w-25 pt-0">Output</th>
+            <th class="w-25 pt-0">Type</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>selected</td>
+            <td>object[]</td>
+            <td>An array of the rows that were selected. Each row is an object.</td>
+          </tr>
+          <tr>
+            <td>unselected</td>
+            <td>object[]</td>
+            <td>An array of the rows that were unselected. Each row is an object.</td>
+          </tr>
+          <tr>
+            <td>numRowsSelected</td>
+            <td>number</td>
+            <td>
+              <p>The total number of currently selected rows.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 id="actionOutput">viewChange</h3>
+      <p>The viewChange output emits the value of the view selector when it's value changes.</p>
+
+      <h2>Pagination</h2>
+      <p>Pagination can be added to a table by nesting the <a routerLink="/library/components/pagination/overview">bp-pagination component</a> in the table component.</p>
+      <markdown
+        [data]="paginationMD"
+        lineNumbers
+        lineHighlight
+        [line]="'10-15'"
+      ></markdown>
+      <p>
+        You can also provide a custom pagination component if needed by adding a <code>pagination</code> attribute to the nested component, e.g.: <code>&lt;myPagination pagination&gt;&lt;/myPagination&gt;</code>
+      </p>
+
+      <h2>Template Columns</h2>
+      <p>Templates can be provided to specified columns to allow custom columns.</p>
+      <ol>
+        <li>
+          Create a template in the component. This should either be a sibling or a child of the table component.
+          <markdown
+            [data]="templateColsMD1"
+            lineNumbers
+          ></markdown>
+        </li>
+        <li>
+          Select the template in the component typescript.
+          <markdown
+            [data]="templateColsMD2"
+            lineNumbers
+          ></markdown>
+        </li>
+        <li>
+          Pass the template into a <a routerLink="." fragment="columns">column object</a> of type "TEMPLATE".
+          <markdown
+            [data]="templateColsMD3"
+            lineNumbers
+            lineHighlight
+            [line]="'4-5'"
+          ></markdown>
+        </li>
+      </ol>
+
+      <h2>Expandable Rows</h2>
+      <p>When enabled, each row has an expandable row using a template passed in from the properties object.</p>
+      <ol>
+        <li>
+          Create a template in the component. This should either be a sibling or a child of the table component.
+          <markdown
+            [data]="expandableRowsMD1"
+            lineNumbers
+          ></markdown>
+        </li>
+        <li>
+          Select the template in the component typescript.
+          <markdown
+            [data]="expandableRowsMD2"
+            lineNumbers
+          ></markdown>
+        </li>
+        <li>
+          Pass the template into the <code>expandableRowsTemplate</code> via the properties Input object.
+          <markdown
+            [data]="expandableRowsMD3"
+            lineNumbers
+          ></markdown>
+        </li>
+      </ol>
+
+      <h2 id="ids">Identifiers</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Identifiers</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">ID</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bpID + 'Column' + i</code></td>
+            <td>The unique identifiers for the table columns.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'MoreActions'</code></td>
+            <td>The unique identifier for the more actions list.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'SelectAllRows'</code></td>
+            <td>The unique identifier for the select all rows button.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Expandable' + rowID</code></td>
+            <td>The unique identifier for the expand row button.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Expandable' + rowID + 'Row'</code></td>
+            <td>The unique identifier for the expandable row.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'RowSelect' + rowID</code></td>
+            <td>The unique identifier for the select row checkbox.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'LinkRow' + rowID + 'Column' + i</code></td>
+            <td>The unique identifier for the link in a row's column i.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Action' + rowID + i</code></td>
+            <td>The unique identifier for the row's actions.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'ActionsDropdown' + rowData</code></td>
+            <td>The unique identifier for the row's actions dropdown.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'ColumnSelector'</code></td>
+            <td>The unique identifier for the table footer's column selector.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'ViewSelector'</code></td>
+            <td>The unique identifier for the table footer's view selector.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'DisplayDensity'</code></td>
+            <td>The unique identifier for the table footer's display density.</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- TODO: add versions & features table -->
+    </div>
+  </div>
+</section>

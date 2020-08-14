@@ -1,0 +1,41 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <!-- TODO: standardize vertical space for descriptions with sub descriptions. Add .mb-5 here? -->
+      <p class="component-description">
+        Checkboxes are used for lists of two or more options that aren’t exclusive of each other. Users can select all, none, or multiple checkbox options within a list.
+      </p>
+      <p>
+        An unchecked checkbox represents a negative selection and a checked checkbox represents a positive selection. If there is a large number of options or not enough space, consider using a multi-select dropdown.
+      </p>
+      <!-- TODO: link to multi-select dropdown after component is built -->
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <!-- TODO: update examples when we add inline checkboxes -->
+              <bp-checkbox
+                bpID="checked"
+                label="Selected Option"
+                value="option"
+                isChecked="checked"
+              ></bp-checkbox>
+              <bp-checkbox
+                bpID="default"
+                name="unchecked example"
+                label="Unselected Option"
+              ></bp-checkbox>
+              <bp-checkbox
+                bpID="disabled"
+                label="Disabled Option"
+                isDisabled="disabled"
+              ></bp-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
