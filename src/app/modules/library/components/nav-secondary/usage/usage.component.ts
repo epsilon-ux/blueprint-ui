@@ -10,7 +10,7 @@ export class UsageComponent implements OnInit {
   standard = [
     {
       text: 'Active Page',
-      route: '/components/nav-secondary/usage'
+      route: '/library/components/nav-secondary/usage'
     },
     {
       text: 'Page',
@@ -29,7 +29,7 @@ export class UsageComponent implements OnInit {
   title = [
     {
       text: 'Active Page',
-      route: '/components/nav-secondary/usage'
+      route: '/library/components/nav-secondary/usage'
     },
     {
       text: 'Page',
@@ -48,7 +48,7 @@ export class UsageComponent implements OnInit {
   groups = [
     {
       text: 'Active Page',
-      route: '/components/nav-secondary/usage'
+      route: '/library/components/nav-secondary/usage'
     },
     {
       text: 'Page',
