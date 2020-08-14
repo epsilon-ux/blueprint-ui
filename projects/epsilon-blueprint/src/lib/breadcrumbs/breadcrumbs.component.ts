@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BreadcrumbInterface } from './breadcrumbs.interface';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-breadcrumbs',
@@ -10,11 +11,20 @@ export class BreadcrumbsComponent implements OnInit {
 
   @Input()
   crumbs: BreadcrumbInterface[];
+  @Input()
+  bpID: string;
+
+  uuid: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.validate();
+    if(!this.bpID) {
+      this.uuid = 'breadcrumbs' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   validate(): void {

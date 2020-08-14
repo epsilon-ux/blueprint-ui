@@ -1,5 +1,6 @@
 <div class="progress" [ngClass]="classes">
   <div
+    [id]="uuid"
     role="progressbar"
     [attr.aria-valuemin]="min"
     [attr.aria-valuemax]="max"
@@ -8,6 +9,6 @@
     [ngStyle]="{'width.%': value}"
   ></div>
 </div>
-<p *ngIf="hasProgressText" class="mt-xs mb-0" aria-hidden="true">
+<p *ngIf="hasProgressText" [id]="uuid + 'Progress'" class="mt-xs mb-0" aria-hidden="true">
   {{ parseLookupString(internationalization['% complete'], { value: value }) }}
 </p>

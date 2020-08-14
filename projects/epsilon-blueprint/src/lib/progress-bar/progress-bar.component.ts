@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { parseLookupString, isDefined } from '../../helpers';
+import { parseLookupString, isDefined, generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-progress-bar',
@@ -17,13 +17,21 @@ export class ProgressBarComponent implements OnInit {
   @Input() internationalization = {
     '% complete': '#{value}% complete'
   };
+  @Input() bpID: string;
 
   parseLookupString = parseLookupString;
+
+  uuid: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.validate();
+    if(!this.bpID) {
+      this.uuid = 'progressBar' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   validate(): void {
