@@ -122,7 +122,7 @@
           <app-actions
             class="dropdown-menu dropdown-menu-right"
             [bpID]="bpID + 'Action' + rowData[properties.rowId]"
-            attr.aria-labelledby="bpID + 'ActionsDropdown' + rowData[properties.rowId]"
+            [attr.aria-labelledby]="bpID + 'ActionsDropdown' + rowData[properties.rowId]"
             [actionItems]="properties.actions"
             [rowId]="properties.rowId"
             [rowData]="rowData"

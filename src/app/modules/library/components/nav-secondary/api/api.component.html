@@ -131,8 +131,15 @@
             <td>The unique identifier for the secondary navigation component.</td>
           </tr>
           <tr>
-            <td><code>bpID + 'Action' + i</code></td>
-            <td>The unique identifier for each action.</td>
+            <td><code>bpID + 'Action' + i + 'ListIndex' + parentIndex</code></td>
+            <td>
+              <p>The unique identifier for each action.</p>
+              <p>The parent index increments from inside out starting at 1 where the root/outer list parent index is 0.</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>uuid + 'NestedList' + index</code></td>
+            <td>The unique identifier for each nested list.</td>
           </tr>
         </tbody>
       </table>

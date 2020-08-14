@@ -53,6 +53,7 @@
             <th
               *ngIf="properties.actions.length < 3"
               scope="col"
+              [id]="uuid + 'MoreActions'"
               class="th-not-sortable"
             >
               {{ properties.internationalization['Actions'] }}
@@ -60,6 +61,7 @@
             <th
               *ngIf="properties.actions.length >= 3"
               scope="col"
+              [id]="uuid + 'MoreActions'"
               class="th-not-sortable more-actions"
             >
               <span class="sr-only">
