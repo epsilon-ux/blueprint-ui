@@ -20,11 +20,12 @@ export class NavSecondaryComponent implements OnInit {
   @Input() items: Item[];
   @Input() shouldRouteMatchExact = false;
   @Input() areItemsExpanded = false;
+  @Input() bpID: string;
 
   @ViewChildren(RouterLinkActive, { read: ElementRef })
   linkRefs: QueryList<ElementRef>;
 
-  uuid = 'navDropdown' + generateUniqueId().toString();
+  uuid: string;
   activeItem: string;
 
   constructor() { }
@@ -39,6 +40,12 @@ export class NavSecondaryComponent implements OnInit {
         this.findActive(item, null);
       }
     }, 0);
+
+    if(!this.bpID) {
+      this.uuid = 'navSecondary' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   findActive(node: Item, parent: Item) {

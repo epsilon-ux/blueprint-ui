@@ -4,6 +4,7 @@
     <td *ngIf="properties.expandableRowsTemplate" class="td-expandable">
       <button
         class="btn-icon-inline"
+        [attr.id]="bpID + 'Expandable' + rowData[properties.rowId]"
         [attr.aria-expanded]="expandedRows.has(rowData[properties.rowId])"
         attr.aria-controls="expandable{{ rowData[properties.rowId] }}"
         (click)="toggleExpanded(rowData[properties.rowId])"
@@ -22,6 +23,7 @@
     <!-- Selectable Row Checkboxes -->
     <td *ngIf="properties.hasSelectableRows" class="td-selectable">
       <bp-checkbox
+        [bpID]="bpID + 'RowSelect' + rowData[properties.rowId]"
         [label]="parseLookupString(properties.internationalization['Select Row'], rowData)"
         [visuallyHiddenLabel]="true"
         [isChecked]="rowSelectionStates.get(rowData)"
@@ -31,13 +33,14 @@
 
     <!-- Table Data Columns/Cells -->
     <td
-      *ngFor="let column of properties.columns"
+      *ngFor="let column of properties.columns; index as i"
       [hidden]="!column.isColumnDisplayed"
       [ngSwitch]="column.type"
     >
       <!-- Link Column -->
       <ng-container *ngSwitchCase="TableColumnType.LINK">
         <bp-action
+          [bpID]="bpID + 'LinkRow' + rowData[properties.rowId] + 'Col' + i"
           [text]="rowData[column.key]"
           classes="btn-text text-align-left"
           [ariaLabel]="parseLookupString(column.link.ariaLabel, rowData)"
@@ -97,6 +100,7 @@
       <app-actions
         *ngIf="properties.actions.length < 3; else moreActions"
         class="action-items"
+        [bpID]="bpID + 'Action' + rowData[properties.rowId]"
         [actionItems]="properties.actions"
         [rowId]="properties.rowId"
         [rowData]="rowData"
@@ -106,7 +110,7 @@
       <ng-template #moreActions>
         <div class="dropdown">
           <button
-            id="moreActions{{ rowData[properties.rowId] }}"
+            [attr.id]="bpID + 'ActionsDropdown' + rowData[properties.rowId]"
             class="btn-icon-inline more-actions-toggle"
             data-toggle="dropdown"
             [attr.aria-label]="properties.internationalization['Actions Menu']"
@@ -117,7 +121,8 @@
           </button>
           <app-actions
             class="dropdown-menu dropdown-menu-right"
-            attr.aria-labelledby="moreActions{{ rowData[properties.rowId] }}"
+            [bpID]="bpID + 'Action' + rowData[properties.rowId]"
+            [attr.aria-labelledby]="bpID + 'ActionsDropdown' + rowData[properties.rowId]"
             [actionItems]="properties.actions"
             [rowId]="properties.rowId"
             [rowData]="rowData"
@@ -135,7 +140,7 @@
     class="tr-expandable {{
       index % 2 === 0 ? 'tr-stripe-even' : 'tr-stripe-odd'
     }}"
-    id="expandable{{ rowData[properties.rowId] }}"
+    [id]="bpID + 'Expandable' + rowData[properties.rowId] + 'Row'"
   >
     <td colspan="100%">
       <ng-container

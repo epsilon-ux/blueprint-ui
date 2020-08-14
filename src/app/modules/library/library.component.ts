@@ -69,6 +69,10 @@ export class LibraryComponent {
             route: './components/landing-page-header'
           },
           {
+            text: 'Loading Indicator',
+            route: './components/loading-indicator'
+          },
+          {
             text: 'Multi-select',
             route: './components/multi-select'
           },

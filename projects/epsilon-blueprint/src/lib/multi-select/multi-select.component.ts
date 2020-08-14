@@ -50,11 +50,12 @@ export class MultiselectComponent implements OnInit, OnChanges {
     'No items found': 'No items found'
   };
   @Input() ngModel: Array<any>;
+  @Input() bpID: string;
   @Output() ngModelChange = new EventEmitter();
   @Output() change = new EventEmitter();
 
   parseLookupString = parseLookupString;
-  uuid = 'multiselect' + generateUniqueId().toString();
+  uuid: string;
 
   isDataLoaded = false;
   isSearching = false;
@@ -63,6 +64,11 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.validate();
+    if(!this.bpID) {
+      this.uuid = 'multiSelect' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
     if (this.notFoundText) {
       this.internationalization['No items found'] = this.notFoundText;
     }

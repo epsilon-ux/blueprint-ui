@@ -1,10 +1,9 @@
-<div class="multi-select{{ isInline ? ' inline' : '' }}">
-  <label [for]="uuid" [ngClass]="{ 'sr-only': isLabelHidden }">
+<div [id]="uuid" class="multi-select{{ isInline ? ' inline' : '' }}">
+  <label [for]="uuid + 'Select'" [ngClass]="{ 'sr-only': isLabelHidden }">
     {{ label }}
   </label>
   <ng-select
-    #columnSelectorDropdown
-    [labelForId]="uuid"
+    [labelForId]="uuid + 'Select'"
     [multiple]="true"
     [items]="isDataLoaded ? optionItems : []"
     [bindValue]="bindValue"

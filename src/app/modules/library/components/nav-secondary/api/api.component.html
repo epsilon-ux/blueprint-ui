@@ -49,6 +49,16 @@
               <p>When "true" the nested navigation items are all expanded.</p>
             </td>
           </tr>
+          <tr>
+            <td>bpID</td>
+            <td>string</td>
+            <td>The value for the secondary navigation's id attribute.</td>
+            <td>
+              <p>Ids must only be used once per page.</p>
+              <p>Ids should be camelCase, e.g.: #myId.</p>
+              <p>See <a routerLink="." fragment="ids">identifiers</a>.</p>
+            </td>
+          </tr>
         </tbody>
       </table>
       <h2 id="navItemDocs">NavItem</h2>
@@ -102,6 +112,34 @@
             <td>text</td>
             <td>string</td>
             <td>The text used for the collapsible NavItem.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="ids">Identifiers</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Identifiers</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">ID</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bpID</code></td>
+            <td>The unique identifier for the secondary navigation component.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Action' + i + 'ListIndex' + parentIndex</code></td>
+            <td>
+              <p>The unique identifier for each action.</p>
+              <p>The parent index increments from inside out starting at 1 where the root/outer list parent index is 0.</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>uuid + 'NestedList' + index</code></td>
+            <td>The unique identifier for each nested list.</td>
           </tr>
         </tbody>
       </table>

@@ -27,6 +27,9 @@ export class ActionsComponent implements OnInit {
   @Input()
   classList: string;
 
+  @Input()
+  bpID: string;
+
   @Output()
   emitAction = new EventEmitter();
 

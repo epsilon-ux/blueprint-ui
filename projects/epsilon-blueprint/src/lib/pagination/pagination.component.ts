@@ -8,7 +8,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 
-import { parseLookupString } from '../../helpers';
+import { generateUniqueId, parseLookupString } from '../../helpers';
 
 @Component({
   selector: 'bp-pagination',
@@ -48,6 +48,9 @@ export class PaginationComponent implements OnInit, OnChanges {
     ]
   };
 
+  @Input()
+  bpID: string;
+
   @Output()
   pageData = new EventEmitter();
 
@@ -61,10 +64,17 @@ export class PaginationComponent implements OnInit, OnChanges {
     start: number;
     end: number;
   };
+  uuid: string;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if(!this.bpID) {
+      this.uuid = 'pagination' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.defaultNumberOfRows

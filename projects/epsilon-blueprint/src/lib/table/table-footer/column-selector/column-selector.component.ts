@@ -22,6 +22,9 @@ export class ColumnSelectorComponent implements OnInit {
   @Input()
   internationalization: any;
 
+  @Input()
+  bpID: string;
+
   selectedColumns = [];
 
   parseLookupString = parseLookupString;
