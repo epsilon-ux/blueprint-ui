@@ -23,6 +23,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Input() dataLength: number;
   @Input() isDataLoading: boolean;
   @Input() properties: TablePropertiesInterface;
+  @Input() bpID: string;
 
   @Output() action = new EventEmitter();
   @Output() onSort = new EventEmitter();
@@ -51,7 +52,7 @@ export class TableComponent implements OnInit, OnChanges {
   // Scopes imported function to the class
   parseLookupString = parseLookupString;
 
-  uuid = 'table' + String(generateUniqueId());
+  uuid: string;
 
   // displayDensity
   densityClass: string;
@@ -145,6 +146,12 @@ export class TableComponent implements OnInit, OnChanges {
         }
       }
     });
+
+    if(!this.bpID) {
+      this.uuid = 'table' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
 
     // TODO: Figure out local storage issues
     /* if (localStorage.getItem('columns')) {

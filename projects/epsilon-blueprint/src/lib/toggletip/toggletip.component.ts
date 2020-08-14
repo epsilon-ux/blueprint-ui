@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 declare let $: any;
 
@@ -11,8 +12,11 @@ export class ToggletipComponent implements OnInit, OnDestroy {
 
   @Input() content: string;
   @Input() triggerAriaLabel = 'Toggle tooltip';
+  @Input() bpID: string;
 
   popover;
+
+  uuid: string;
 
   constructor() { }
 
@@ -23,6 +27,12 @@ export class ToggletipComponent implements OnInit, OnDestroy {
     this.popover.popover();
 
     this.validation();
+
+    if(!this.bpID) {
+      this.uuid = 'toggleTip' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   ngOnDestroy() {

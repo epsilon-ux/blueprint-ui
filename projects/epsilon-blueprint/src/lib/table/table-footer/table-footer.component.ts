@@ -26,6 +26,9 @@ export class TableFooterComponent implements OnInit {
   @Input()
   internationalization: any;
 
+  @Input()
+  bpID: string;
+
   @Output()
   displayDensityEmitter = new EventEmitter();
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 import { isDefined } from '../../helpers';
 
 @Component({
@@ -17,9 +18,11 @@ export class ActionComponent implements OnInit {
   @Input() isDisabled = false;
   @Input() iconLeft: string;
   @Input() iconRight: string;
+  @Input() bpID: string;
 
   @Output() click = new EventEmitter();
 
+  uuid: string;
   isDefined = isDefined;
 
   constructor() { }
@@ -29,6 +32,12 @@ export class ActionComponent implements OnInit {
 
     if (isDefined(this.routerLink) && !isDefined(this.bpRouterLink)) {
       this.bpRouterLink = this.routerLink;
+    }
+
+    if(!this.bpID) {
+      this.uuid = 'action' + generateUniqueId().toString();
+    } else {
+      this.uuid = this.bpID;
     }
   }
 

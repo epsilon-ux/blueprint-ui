@@ -1,11 +1,11 @@
 <div class="table-footer-dropdown">
-  <label for="displayDensity" class="table-footer-dropdown-label">
+  <label for="{{ bpID }}DisplayDensity" class="table-footer-dropdown-label">
     {{ internationalization['Display Density'] }}
   </label>
   <ng-select
     #displayDensityDropdown
     class="select-min-width"
-    labelForId="displayDensity"
+    [labelForId]="bpID + 'DisplayDensity'"
     name="displayDensity"
     (change)="setDisplayDensity()"
     [items]="displayOptions"

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { generateUniqueId } from '../../helpers';
 
 @Component({
   selector: 'bp-radio-button',
@@ -14,11 +15,24 @@ export class RadioButtonComponent implements OnInit {
   @Input() isDisabled = false;
   @Input() isRequired = false;
   @Input() label: string;
+  @Input() bpID: string;
+
+  uuid: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.validation();
+    if(!this.bpID) {
+      if(!this.id) {
+        this.uuid = 'radioButton' + generateUniqueId().toString();
+      } else {
+        this.uuid = this.id;
+        console.warn('Input id is deprecated. Please use Input bpID instead.');
+      }
+    } else {
+      this.uuid = this.bpID;
+    }
   }
 
   validation() {

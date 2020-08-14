@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angu
 })
 export class SelectAllCheckboxComponent implements OnInit, OnChanges {
 
-  @Input() id: string;
+  @Input() bpID: string;
   @Input() isChecked = false;
   @Input() isMixed = false;
 
