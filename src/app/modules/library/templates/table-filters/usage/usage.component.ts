@@ -160,13 +160,13 @@ export class UsageComponent implements OnInit {
     this.selectedSortOption = this.sortByOptions[1];
   }
 
-  handleSearch() { }
+  handleSearch(): void { }
 
-  handleClearSearch() { }
+  handleClearSearch(): void { }
 
-  handleMulti() { }
+  handleMulti(): void { }
 
-  toggleView(e) {
+  toggleView(e: StorageEvent): void {
     if (e.target.value === 'list') {
       this.listView = true;
     } else {
@@ -174,6 +174,6 @@ export class UsageComponent implements OnInit {
     }
   }
 
-  click = () => { };
+  click = (): void => { };
 
 }

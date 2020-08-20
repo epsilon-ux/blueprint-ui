@@ -28,14 +28,14 @@ export class ToggleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'toggle' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  emitChange(e) {
+  emitChange(e: StorageEvent): void {
     e.stopPropagation();
     this.toggles.forEach(toggle => {
       toggle.isChecked = false;

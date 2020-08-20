@@ -34,6 +34,6 @@ export class OverviewComponent implements OnInit {
     this.selectedOptions = ['option1'];
   }
 
-  handleMulti() { }
+  handleMulti(): void { }
 
 }

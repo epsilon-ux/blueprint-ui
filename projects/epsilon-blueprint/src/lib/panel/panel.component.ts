@@ -17,7 +17,7 @@ export class PanelComponent implements OnInit {
     this.validation();
   }
 
-  validation() {
+  validation(): void {
     if (!this.titleText) {
       const err = new Error('\'titleText\' is a required Input of bp-panel');
       err.name = 'Missing Input';

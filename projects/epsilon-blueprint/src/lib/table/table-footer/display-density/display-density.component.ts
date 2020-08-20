@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { TableIntlInterface } from '../../table.interface';
 
 @Component({
   selector: 'app-display-density',
@@ -11,7 +12,7 @@ export class DisplayDensityComponent implements OnInit {
   displayDensityEmitter = new EventEmitter();
 
   @Input()
-  internationalization: any;
+  internationalization: TableIntlInterface;
 
   @Input()
   bpID: string;
@@ -34,7 +35,7 @@ export class DisplayDensityComponent implements OnInit {
       : localStorage.getItem('selectedDensity');
   }
 
-  setDisplayDensity() {
+  setDisplayDensity(): void {
     this.displayDensityEmitter.emit(this.displayDensity);
   }
 

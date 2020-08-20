@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { TableIntlInterface } from '../../table.interface';
 
 @Component({
   selector: 'app-view-selector',
@@ -8,7 +9,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 export class ViewSelectorComponent implements OnInit {
 
   @Input()
-  internationalization: any;
+  internationalization: TableIntlInterface;
 
   @Input()
   bpID: string;
@@ -32,7 +33,7 @@ export class ViewSelectorComponent implements OnInit {
     this.viewSelector = 'Table';
   }
 
-  emitTableView() {
+  emitTableView(): void {
     this.viewSelectorEmitter.emit(this.viewSelector);
   }
 

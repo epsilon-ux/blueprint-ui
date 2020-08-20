@@ -38,14 +38,14 @@ export class LandingPageHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.validateInputs();
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'landingPageHeader' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  validateInputs() {
+  validateInputs(): void {
     if (!this.headingText) {
       const err = new Error('headingText is a required Input of bp-landing-page-header');
       err.name = 'Missing Input';
@@ -53,7 +53,7 @@ export class LandingPageHeaderComponent implements OnInit {
     }
   }
 
-  onActionClick(e) {
+  onActionClick(e: string): void {
     this.actionClick.emit(e);
   }
 

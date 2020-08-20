@@ -28,7 +28,7 @@ export class SelectAllCheckboxComponent implements OnInit, OnChanges {
     this.getState();
   }
 
-  validation() {
+  validation(): void {
     if (!this.label) {
       const err = new Error('\'label\' is a required Input of app-select-all-checkbox');
       err.name = 'Missing Input';
@@ -36,7 +36,7 @@ export class SelectAllCheckboxComponent implements OnInit, OnChanges {
     }
   }
 
-  getState() {
+  getState(): void {
     switch (true) {
       case this.isMixed:
         this.checked = 'mixed';
@@ -49,7 +49,7 @@ export class SelectAllCheckboxComponent implements OnInit, OnChanges {
     }
   }
 
-  emitEvent(e) {
+  emitEvent(e: KeyboardEvent | MouseEvent): void {
     this.change.emit(e);
   }
 

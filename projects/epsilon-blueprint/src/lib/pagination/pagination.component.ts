@@ -69,7 +69,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'pagination' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { generateUniqueId } from '../../helpers';
-import { isDefined } from '../../helpers';
+import { generateUniqueId, isDefined } from '../../helpers';
 
 @Component({
   selector: 'bp-action',
@@ -34,14 +33,14 @@ export class ActionComponent implements OnInit {
       this.bpRouterLink = this.routerLink;
     }
 
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'action' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  validation() {
+  validation(): void {
     if (isDefined(this.href) && isDefined(this.bpRouterLink)) {
       const err = new Error('Cannot pass in both href and bpRouterLink.');
       err.name = 'Invalid Input';
@@ -57,7 +56,7 @@ export class ActionComponent implements OnInit {
     }
   }
 
-  emitClick(e: MouseEvent) {
+  emitClick(e: MouseEvent): void {
     e.stopPropagation();
     this.click.emit(e);
   }
