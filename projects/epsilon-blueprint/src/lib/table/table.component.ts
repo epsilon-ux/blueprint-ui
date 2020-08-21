@@ -253,9 +253,12 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   // To select/unselect one row at a time
-  onSelectRow(e: { event: StorageEvent; row }): void {
+
+  // TODO: Find a way to type 'e' so that line 261 works properly
+  onSelectRow(e: { event; row }): void {
     const event = e.event;
     const selectedRow = e.row;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (event.target.checked) {
       this.numRowsSelected++;
       this.rowSelectionStates.set(selectedRow, true);

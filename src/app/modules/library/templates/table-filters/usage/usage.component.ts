@@ -166,7 +166,10 @@ export class UsageComponent implements OnInit {
 
   handleMulti(): void { }
 
-  toggleView(e: StorageEvent): void {
+  // TODO: Find a way to type 'e' so that line 173 works properly
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  toggleView(e): void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (e.target.value === 'list') {
       this.listView = true;
     } else {
