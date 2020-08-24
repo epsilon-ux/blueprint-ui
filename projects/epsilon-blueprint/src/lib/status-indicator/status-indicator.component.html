@@ -1,13 +1,13 @@
 <span class="status-indicator">
   <div
-    *ngIf="!isInProgress"
-    class="status-icon incomplete-primary"
+    *ngIf="status !== 'in-progress'"
+    [ngClass]="['status-icon', status]"
     aria-hidden="true"
   ></div>
   <i
-    *ngIf="isInProgress"
+    *ngIf="status === 'in-progress'"
     class="fa fa-spinner fa-spin in-progress"
     aria-hidden="true"
   ></i>
-  {{ status }}
+  {{ statusText }}
 </span>

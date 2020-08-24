@@ -6,11 +6,26 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StatusIndicatorComponent implements OnInit {
 
-  @Input() isInProgress = false;
-  @Input() status: string;
+  @Input() status: 'in-progress' | 'incomplete-primary' | 'incomplete-secondary' | 'complete' | 'warning';
+  @Input() statusText: string;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.validate();
+  }
+
+  validate(): void {
+    if (!this.status) {
+      const err = new Error('\'status\' is a required Input of bp-status-indicator');
+      err.name = 'Missing Input';
+      throw err;
+    }
+    if (!this.statusText) {
+      const err = new Error('\'statusText\' is a required Input of bp-status-indicator');
+      err.name = 'Missing Input';
+      throw err;
+    }
+  }
 
 }
