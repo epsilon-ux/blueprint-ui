@@ -160,13 +160,16 @@ export class UsageComponent implements OnInit {
     this.selectedSortOption = this.sortByOptions[1];
   }
 
-  handleSearch() { }
+  handleSearch(): void { }
 
-  handleClearSearch() { }
+  handleClearSearch(): void { }
 
-  handleMulti() { }
+  handleMulti(): void { }
 
-  toggleView(e) {
+  // TODO: Find a way to type 'e' so that line 173 works properly
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  toggleView(e): void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (e.target.value === 'list') {
       this.listView = true;
     } else {
@@ -174,6 +177,6 @@ export class UsageComponent implements OnInit {
     }
   }
 
-  click = () => { };
+  click = (): void => { };
 
 }

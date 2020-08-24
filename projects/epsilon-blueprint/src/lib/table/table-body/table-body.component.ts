@@ -7,7 +7,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
-import { TableColumnType, TablePropertiesInterface } from '../table.interface';
+import { TableColumnType, TablePropertiesInterface, TableStatusInterface } from '../table.interface';
 import { parseLookupString } from '../../../helpers';
 
 @Component({
@@ -41,30 +41,30 @@ export class TableBodyComponent implements OnInit {
   constructor() { }
 
   // column type
-  get TableColumnType() {
+  get TableColumnType(): any {
     return TableColumnType;
   }
 
   ngOnInit(): void { }
 
   // Statuses
-  getStatusClass(value, mapping) {
+  getStatusClass(value: string, mapping: TableStatusInterface): string {
     return Object.keys(mapping).find(
       key => mapping[key] === value
     );
   }
 
-  selectRows(event, row) {
+  selectRows(event: MouseEvent, row: Record<string, unknown>): void {
     this.selectedRowsAction.emit({ event, row });
   }
 
-  toggleExpanded(row) {
+  toggleExpanded(row: Record<string, unknown>): void {
     this.expandedRows.has(row)
       ? this.expandedRows.delete(row)
       : this.expandedRows.add(row);
   }
 
-  emitAction(action: string, rowId: string) {
+  emitAction(action: string, rowId: string): void {
     this.action.emit({
       action,
       rowId

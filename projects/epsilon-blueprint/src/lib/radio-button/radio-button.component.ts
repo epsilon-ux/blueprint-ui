@@ -23,8 +23,8 @@ export class RadioButtonComponent implements OnInit {
 
   ngOnInit(): void {
     this.validation();
-    if(!this.bpID) {
-      if(!this.id) {
+    if (!this.bpID) {
+      if (!this.id) {
         this.uuid = 'radioButton' + generateUniqueId().toString();
       } else {
         this.uuid = this.id;
@@ -35,7 +35,7 @@ export class RadioButtonComponent implements OnInit {
     }
   }
 
-  validation() {
+  validation(): void {
     if (!this.label) {
       const err = new Error('\'label\' is a required Input of bp-radio-button');
       err.name = 'Missing Input';

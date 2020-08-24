@@ -6,7 +6,8 @@ import {
   Output,
   EventEmitter,
   ViewChild,
-  ElementRef
+  ElementRef,
+  SimpleChanges
 } from '@angular/core';
 import { TableColumnType, TableColumnInterface, TablePropertiesInterface } from './table.interface';
 import { parseLookupString, generateUniqueId } from '../../helpers';
@@ -147,7 +148,7 @@ export class TableComponent implements OnInit, OnChanges {
       }
     });
 
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'table' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
@@ -159,7 +160,7 @@ export class TableComponent implements OnInit, OnChanges {
     } */
   }
 
-  ngOnChanges(changes): void {
+  ngOnChanges(changes: SimpleChanges): void {
     if (
       (changes.isDataLoading
         && changes.isDataLoading.currentValue === false
@@ -189,7 +190,7 @@ export class TableComponent implements OnInit, OnChanges {
     }
   }
 
-  getColumn(key): TableColumnInterface {
+  getColumn(key: string): TableColumnInterface {
     return this.properties.columns.filter(column => column.key === key)[0];
   }
 
@@ -252,9 +253,12 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   // To select/unselect one row at a time
-  onSelectRow(e): void {
+
+  // TODO: Find a way to type 'e' so that line 261 works properly
+  onSelectRow(e: { event; row }): void {
     const event = e.event;
     const selectedRow = e.row;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (event.target.checked) {
       this.numRowsSelected++;
       this.rowSelectionStates.set(selectedRow, true);
@@ -331,14 +335,14 @@ export class TableComponent implements OnInit, OnChanges {
 
   // --------------- DisplayDensity ---------------
 
-  setDisplayDensity(density): void {
+  setDisplayDensity(density: string): void {
     this.densityClass = density === 'Comfortable' ? null : 'table-compact';
     localStorage.setItem('selectedDensity', density);
   }
 
   // --------------- View Selector ---------------
 
-  emitTableView(view): void {
+  emitTableView(view: string): void {
     this.viewChange.emit(view);
   }
 

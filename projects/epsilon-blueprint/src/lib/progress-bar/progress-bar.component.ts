@@ -27,7 +27,7 @@ export class ProgressBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.validate();
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'progressBar' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;

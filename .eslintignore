@@ -2,3 +2,4 @@
 *.scss
 *.html
 *.json
+*.spec.ts

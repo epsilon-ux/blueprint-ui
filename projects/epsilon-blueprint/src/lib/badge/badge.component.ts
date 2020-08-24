@@ -16,7 +16,7 @@ export class BadgeComponent implements OnInit {
     this.validation();
   }
 
-  validation() {
+  validation(): void {
     if (!this.text) {
       const err = new Error('\'text\' is a required Input of bp-badge');
       err.name = 'Missing Input';

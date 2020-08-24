@@ -127,7 +127,7 @@ export class ActionsComponent implements OnInit {
     }
   }
 
-  triggerAction(action): void {
+  triggerAction(action: string): void {
     this.emitAction.emit(action);
   }
 

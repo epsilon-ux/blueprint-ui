@@ -28,9 +28,9 @@ export class UsageComponent implements OnInit {
 
   constructor() { }
 
-  click = () => { };
+  click = (): void => { };
 
-  handleSelectionChange = () => { };
+  handleSelectionChange = (): void => { };
 
   ngOnInit(): void { }
 

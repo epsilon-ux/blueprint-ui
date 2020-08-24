@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'search' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
@@ -62,7 +62,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  inputController(event): void {
+  inputController(event: KeyboardEvent): void {
     this.searchQueryChange.emit(this.searchQuery);
     if (event.key === 'Enter' && this.searchQuery.length > 0) {
       this.showClearIcon = true;

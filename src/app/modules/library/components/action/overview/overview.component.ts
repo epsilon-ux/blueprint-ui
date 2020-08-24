@@ -10,6 +10,6 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  click = () => { };
+  click = (): void => { };
 
 }

@@ -21,7 +21,7 @@ export class ShowMoreComponent implements OnInit {
     this.summaryText = this.isOpen ? this.summaryOpen : this.summary;
   }
 
-  toggleDetails(e: {[key: string]: any}): void {
+  toggleDetails(e: MouseEvent): void {
     e.preventDefault();
     this.isOpen = !this.isOpen;
     this.summaryText = this.isOpen ? this.summaryOpen : this.summary;

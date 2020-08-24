@@ -28,19 +28,23 @@ export class ToggleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'toggle' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  emitChange(e) {
+  // TODO: Find a way to type 'e' so that line 41 and line 47 work properly
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  emitChange(e): void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     e.stopPropagation();
     this.toggles.forEach(toggle => {
       toggle.isChecked = false;
     });
     const checkedToggle = this.toggles.find(toggle => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       return toggle.id === e.target.id;
     });
     checkedToggle.isChecked = true;

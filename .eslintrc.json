@@ -108,6 +108,7 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-use-before-define": "warn",
     "@typescript-eslint/no-var-requires": "warn",
@@ -122,11 +123,6 @@
       }
     ],
     "@typescript-eslint/unified-signatures": "error",
-    // TODO: Remove the following 4 line when ready to address the problems they flag
-    "@typescript-eslint/no-floating-promises": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
     // The rules below were originally pulled from the google config and
     // rules that conflict with our style guide were overwritten.
     // The rules below are listed in the order they appear on the eslint

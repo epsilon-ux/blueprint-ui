@@ -10,6 +10,6 @@ export class UsageComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  click = () => { };
+  click = (): void => { };
 
 }

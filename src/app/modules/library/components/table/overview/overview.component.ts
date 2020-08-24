@@ -4,6 +4,11 @@ import { TableComponent, TableColumnType, TablePropertiesInterface } from 'epsil
 import { TableRow } from './tableData.interface';
 import tableData from 'src/app/datasets/tableData.json';
 
+interface IndicesInterface {
+  start: number;
+  end: number;
+}
+
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html'
@@ -14,7 +19,7 @@ export class OverviewComponent implements OnInit {
   @ViewChild('templateColumn', { static: true }) templateColumn;
   @ViewChild('expandableRowsTemplate', { static: true }) expandableRowsTemplate;
 
-  set exampleData(json) {
+  set exampleData(json: { customerData: { data } }) {
     this.rawData = json.customerData.data;
     this.filteredData = json.customerData.data;
     this.tableData = this.filteredData.slice(0, 10);
@@ -24,7 +29,7 @@ export class OverviewComponent implements OnInit {
   rawData: TableRow[];
   filteredData: TableRow[];
   tableData: TableRow[];
-  pageIndices;
+  pageIndices: IndicesInterface;
   isDataLoading = true;
 
   properties: TablePropertiesInterface;
@@ -152,11 +157,12 @@ export class OverviewComponent implements OnInit {
     this.exampleData = tableData;
   }
 
-  handleAction(action: { action: string; id: string }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  handleAction(action: { action: string; id: string }): void {
     // Use action from action buttons to trigger different events here
   }
 
-  handleViewChange() { }
+  handleViewChange(): void { }
 
   sortByKeyAsc(array: TableRow[], key: string): void {
     if (key === 'templateCol') {
@@ -182,7 +188,7 @@ export class OverviewComponent implements OnInit {
     }
   }
 
-  handleSort(sort): void {
+  handleSort(sort: {order: string; column: string}): void {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(this.filteredData, sort.column);
     } else {
@@ -194,11 +200,12 @@ export class OverviewComponent implements OnInit {
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   handleSelectedRows(selectedRowIds: {
     selected: Record<string, unknown>;
     unselected: Record<string, unknown>;
     numRowsSelected: number;
-  }) {
+  }): void {
     // Handle the selected rows here
   }
 
@@ -212,7 +219,7 @@ export class OverviewComponent implements OnInit {
     this.overviewTable.clearAllRows();
   }
 
-  handlePageChange(pageData) {
+  handlePageChange(pageData: {indices: IndicesInterface}): void {
     this.pageIndices = { ...pageData.indices };
     this.tableData = this.filteredData.slice(
       pageData.indices.start,

@@ -10,7 +10,7 @@ export class UsageComponent {
 
   constructor() { }
 
-  runDemo() {
+  runDemo(): void {
     this.isDemoRunning = true;
     setTimeout(() => this.isDemoRunning = false, 3000);
   }

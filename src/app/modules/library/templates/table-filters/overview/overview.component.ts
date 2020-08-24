@@ -13,10 +13,10 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  handleSearch() { }
+  handleSearch(): void { }
 
-  handleClearSearch() { }
+  handleClearSearch(): void { }
 
-  handleMulti() { }
+  handleMulti(): void { }
 
 }

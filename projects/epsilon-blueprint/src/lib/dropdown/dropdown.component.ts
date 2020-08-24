@@ -37,14 +37,14 @@ export class DropdownComponent implements OnInit {
       }
     });
 
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'dropdown' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  emitAction(e) {
+  emitAction(e: string): void {
     this.action.emit(e);
   }
 
