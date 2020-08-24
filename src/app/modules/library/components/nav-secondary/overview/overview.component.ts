@@ -10,29 +10,29 @@ export class OverviewComponent implements OnInit {
   navItems = [
     {
       text: 'Active Page',
-      route: '/library/components/nav-secondary/overview'
+      route: './'
     },
     {
       text: 'Page',
-      route: ''
+      route: './demo'
     },
     {
       text: 'Page Group',
       children: [
         {
           text: 'Child Page',
-          route: ''
+          route: './demo'
         },
         {
           text: 'Nested Page Group',
           children: [
             {
               text: 'Nested Child Page',
-              route: ''
+              route: './demo'
             },
             {
               text: 'Nested Child Page',
-              route: ''
+              route: './demo'
             }
           ]
         }
@@ -40,7 +40,7 @@ export class OverviewComponent implements OnInit {
     },
     {
       text: 'Page',
-      route: ''
+      route: './demo'
     }
   ];
 
