@@ -48,14 +48,12 @@ export class UsageComponent implements OnInit {
       caption: 'This is an example of a table with actions.',
       actions: [
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action1 for #{id}',
           class: 'btn-outline-primary',
           action: 'action1'
         },
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action2 for #{id}',
           class: 'btn-outline-primary',
@@ -69,21 +67,18 @@ export class UsageComponent implements OnInit {
       caption: 'This is an example of a table with an actions dropdown.',
       actions: [
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action1 for #{id}',
           class: 'btn-outline-primary',
           action: 'action1'
         },
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action1 for #{id}',
           class: 'btn-outline-primary',
           action: 'action1'
         },
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action3 for #{id}',
           class: 'btn-outline-primary',
@@ -158,7 +153,6 @@ export class UsageComponent implements OnInit {
           isColumnDisplayed: true,
           type: TableColumnType.LINK,
           link: {
-            element: 'a',
             ariaLabel: 'go to Object #{id}',
             href: 'https://www.example.com',
             target: null
