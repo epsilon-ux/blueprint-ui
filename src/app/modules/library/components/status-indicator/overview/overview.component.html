@@ -1,0 +1,31 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Status indicators are color coded icons that allow the user to quickly see the state of an item. While the wording of these statuses may vary, we follow specific rules for the color and shape of the status indicator. Status indicators must always have a label for accessibility purposes.
+      </p>
+      <h2>Example</h2>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <bp-status-indicator
+                [isInProgress]="true"
+                status="In Progress">
+              </bp-status-indicator>
+            </div>
+            <div class="col-12">
+              <bp-status-indicator
+                [isInProgress]="false"
+                status="Incomplete Primary">
+              </bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TODO: add related components -->
+</section>
