@@ -1,0 +1,621 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Status indicators often appear in tables and object page headers, but can also appear in other contexts, like an object's status page. While the wording of these statuses may vary, we follow specific rules for the color and shape of the status indicator.
+      </p>
+      <p>
+        Status indicators must always be accompanied by status text for accessibility purposes. The status text should be title case when it is shorter than three words or sentence case when it is longer than three words.
+      </p>
+      <h2>Variations</h2>
+      <h3>Incomplete primary status indicator</h3>
+      <p>
+        The incomplete primary status indicator represents that an action is not done and the user needs to take an action.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="incomplete-primary"
+                statusText="Incomplete Primary"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Incomplete secondary status indicator</h3>
+      <p>
+        The incomplete secondary status indicator represents that an action is not done and the user needs to take an action. This status should only be used if the 'incomplete primary' status has already been used to indicate a different status.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="incomplete-secondary"
+                statusText="Incomplete Secondary"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>In progress status indicator</h3>
+      <p>
+        The in progress status indicator represents that an action is in progress. The spinner icon is always animated.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="in-progress"
+                statusText="In Progress"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Complete status indicator</h3>
+      <p>
+        The complete status indicator represents that an action is done and there is no further action needed.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="complete"
+                statusText="Complete"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Warning status indicator</h3>
+      <p>
+        The warning status indicator represents that an action resulted in an error.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="warning"
+                statusText="Warning"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <h2>Statuses by Product</h2>
+      <h3>Customer</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Customer</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Entities</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Draft"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td>
+                <p>
+                  <bp-status-indicator
+                    status="in-progress"
+                    statusText="Deleting"
+                  ></bp-status-indicator>
+                </p>
+                <p>
+                  <bp-status-indicator
+                    status="in-progress"
+                    statusText="Deploying"
+                  ></bp-status-indicator>
+                </p>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Deployment Error"
+                ></bp-status-indicator>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Entity Components</th>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Deploying"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Ready"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Deployment Error"
+                ></bp-status-indicator>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Packages</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Not Deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="New updates not deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Deploying"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Deployment Error"
+                ></bp-status-indicator>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Data Hub</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Data Hub</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Feeds</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Disabled"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Enabled"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Jobs</th>
+              <td>
+                <p>
+                  <bp-status-indicator
+                    status="incomplete-primary"
+                    statusText="Paused"
+                  ></bp-status-indicator>
+                </p>
+                <p>
+                  <bp-status-indicator
+                    status="incomplete-primary"
+                    statusText="Stopped"
+                  ></bp-status-indicator>
+                </p>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="Not Started"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Running"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Complete"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Failed"
+                ></bp-status-indicator>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Workflows</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Disabled"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Enabled"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Workflow Activity</th>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Running"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Not Running"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Events</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Events</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Actions</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Inactive"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Active"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Programs</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Inactive"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="Test"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Active"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>IQ</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in IQ</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Choices</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Inactive"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Active"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Messaging</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Messaging</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Campaign Approvals</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Unapproved"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="Approved"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Approval Pending"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Rejected"
+                ></bp-status-indicator>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Monitoring Jobs</th>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="In Progress"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Complete"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Failed"
+                ></bp-status-indicator>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Offers</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Inactive"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Active"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Sequences</th>
+              <td>
+                <p>
+                  <bp-status-indicator
+                    status="incomplete-primary"
+                    statusText="Draft"
+                  ></bp-status-indicator>
+                </p>
+                <p>
+                  <bp-status-indicator
+                    status="incomplete-primary"
+                    statusText="Ready"
+                  ></bp-status-indicator>
+                </p>
+              </td>
+              <td>
+                <p>
+                  <bp-status-indicator
+                    status="incomplete-secondary"
+                    statusText="Approved"
+                  ></bp-status-indicator>
+                </p>
+              </td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Released"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Tracked attributes</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Inactive"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Active"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Promotions</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Promotions</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Offers</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Draft"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="Approved"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Deploying"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Deployment Error"
+                ></bp-status-indicator>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

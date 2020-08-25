@@ -51,6 +51,9 @@ export * from './lib/ribbon/ribbon.module';
 export * from './lib/search/search.component';
 export * from './lib/search/search.module';
 
+export * from './lib/status-indicator/status-indicator.component';
+export * from './lib/status-indicator/status-indicator.module';
+
 export * from './lib/table/table.component';
 export * from './lib/table/table.module';
 export * from './lib/table/table.interface';
