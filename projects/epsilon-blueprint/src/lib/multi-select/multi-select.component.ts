@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive, OnChanges
+  Component, OnInit, Input, Output, EventEmitter, TemplateRef, ContentChild, Directive, OnChanges, SimpleChanges
 } from '@angular/core';
 import { generateUniqueId, parseLookupString } from '../../helpers';
 
@@ -64,7 +64,7 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.validate();
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'multiSelect' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
@@ -74,13 +74,13 @@ export class MultiselectComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnChanges(changes): void {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes.optionItems && Array.isArray(changes.optionItems.currentValue)) {
       this.isDataLoaded = true;
     }
   }
 
-  validate() {
+  validate(): void {
     if (!this.label) {
       const err = new Error(
         '\'label\' is a required Input of bp-multi-select. '
@@ -96,11 +96,11 @@ export class MultiselectComponent implements OnInit, OnChanges {
     }
   }
 
-  handleSearch(e) {
+  handleSearch(e: { term: string }): void {
     this.isSearching = e.term.length > 0;
   }
 
-  emitSelected() {
+  emitSelected(): void {
     this.change.emit(this.ngModel);
   }
 

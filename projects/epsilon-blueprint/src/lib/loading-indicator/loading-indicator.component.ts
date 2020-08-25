@@ -16,7 +16,7 @@ export class LoadingIndicatorComponent implements OnInit {
   constructor() { }
 
   @HostListener('window:keydown', ['$event'])
-  handleKeyDown(event: KeyboardEvent) {
+  handleKeyDown(event: KeyboardEvent): void {
     if (this.kind === 'overPage' && event.key === 'Tab') {
       event.preventDefault();
     }
@@ -26,7 +26,8 @@ export class LoadingIndicatorComponent implements OnInit {
     this.validate();
   }
 
-  isTruthy(value): boolean {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  isTruthy(value: any): boolean {
     return value ? true : false;
   }
 

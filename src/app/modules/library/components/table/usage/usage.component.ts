@@ -4,6 +4,11 @@ import { TablePropertiesInterface, TableColumnType } from 'epsilon-blueprint';
 import { usageData, UsageRow } from './tableUsageData';
 import standard from './example-properties/standard';
 
+interface IndicesInterface {
+  start: number;
+  end: number;
+}
+
 @Component({
   selector: 'app-usage',
   templateUrl: './usage.component.html'
@@ -13,7 +18,7 @@ export class UsageComponent implements OnInit {
   @ViewChild('expandableRowsTemplate', { static: true }) expandableRowsTemplate;
 
   usageDataPage = usageData.slice(0, 10);
-  pageIndices;
+  pageIndices: IndicesInterface;
   isDataLoading = true;
 
   usageData: UsageRow[] = usageData;
@@ -48,14 +53,12 @@ export class UsageComponent implements OnInit {
       caption: 'This is an example of a table with actions.',
       actions: [
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action1 for #{id}',
           class: 'btn-outline-primary',
           action: 'action1'
         },
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action2 for #{id}',
           class: 'btn-outline-primary',
@@ -69,21 +72,18 @@ export class UsageComponent implements OnInit {
       caption: 'This is an example of a table with an actions dropdown.',
       actions: [
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action1 for #{id}',
           class: 'btn-outline-primary',
           action: 'action1'
         },
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action1 for #{id}',
           class: 'btn-outline-primary',
           action: 'action1'
         },
         {
-          element: 'button',
           text: 'Action',
           ariaLabel: 'action3 for #{id}',
           class: 'btn-outline-primary',
@@ -158,7 +158,6 @@ export class UsageComponent implements OnInit {
           isColumnDisplayed: true,
           type: TableColumnType.LINK,
           link: {
-            element: 'a',
             ariaLabel: 'go to Object #{id}',
             href: 'https://www.example.com',
             target: null
@@ -175,7 +174,8 @@ export class UsageComponent implements OnInit {
     };
   }
 
-  handleAction(action: { action: string; id: string }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  handleAction(action: { action: string; id: string }): void {
     // Use action from action buttons to trigger different events here
   }
 
@@ -203,7 +203,7 @@ export class UsageComponent implements OnInit {
     }
   }
 
-  handleSort(sort, data: UsageRow[], hasPagination): void {
+  handleSort(sort: {order: string; column: string}, data: UsageRow[], hasPagination: boolean): void {
     if (sort.order === 'ascending') {
       this.sortByKeyAsc(data, sort.column);
     } else {
@@ -217,15 +217,16 @@ export class UsageComponent implements OnInit {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   handleSelectedRows(selectedRowIds: {
     selected: Record<string, unknown>;
     unselected: Record<string, unknown>;
     numRowsSelected: number;
-  }) {
+  }): void {
     // Handle the selected rows here
   }
 
-  handlePageChange(pageData) {
+  handlePageChange(pageData: { indices: IndicesInterface }): void {
     this.pageIndices = { ...pageData.indices };
     this.usageDataPage = this.usageData.slice(
       pageData.indices.start,

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html'
 })
-export class OverviewComponent implements OnInit {
+export class OverviewComponent {
 
   exampleTwoToggleButtons = [
     {
@@ -14,7 +14,6 @@ export class OverviewComponent implements OnInit {
       isChecked: true
     },
     {
-      id: 'ex1-Opt2',
       text: 'Option 2',
       value: 'option2'
     }
@@ -41,7 +40,5 @@ export class OverviewComponent implements OnInit {
   ];
 
   constructor() { }
-
-  ngOnInit(): void { }
 
 }

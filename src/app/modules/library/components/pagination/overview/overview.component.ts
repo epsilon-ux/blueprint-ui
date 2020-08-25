@@ -10,6 +10,6 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  handlePageChange() { }
+  handlePageChange(): void { }
 
 }

@@ -1,0 +1,13 @@
+<span class="status-indicator">
+  <div
+    *ngIf="status !== 'in-progress'"
+    [ngClass]="['status-icon', status]"
+    aria-hidden="true"
+  ></div>
+  <i
+    *ngIf="status === 'in-progress'"
+    class="fa fa-spinner fa-spin in-progress"
+    aria-hidden="true"
+  ></i>
+  {{ statusText }}
+</span>

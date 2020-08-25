@@ -18,7 +18,7 @@ export class BaseTemplateComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  skipToMain() {
+  skipToMain(): void {
     event.preventDefault();
     location.hash = 'mainContent';
   }

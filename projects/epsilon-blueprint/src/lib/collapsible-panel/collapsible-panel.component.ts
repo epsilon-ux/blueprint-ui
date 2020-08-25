@@ -17,14 +17,14 @@ export class CollapsiblePanelComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'collapsiblePanel' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  togglePanel() {
+  togglePanel(): void {
     this.isPanelCollapsed = !this.isPanelCollapsed;
   }
 

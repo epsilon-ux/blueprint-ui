@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { generateUniqueId } from '../../helpers';
 
 @Component({
@@ -30,8 +30,8 @@ export class CheckboxComponent implements OnInit, OnChanges {
     this.checked = this.isChecked;
     this.validation();
 
-    if(!this.bpID) {
-      if(!this.id) {
+    if (!this.bpID) {
+      if (!this.id) {
         this.uuid = 'checkbox' + generateUniqueId().toString();
       } else {
         this.uuid = this.id;
@@ -42,13 +42,13 @@ export class CheckboxComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnChanges(changes): void {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes.isChecked && !changes.isChecked.firstChange) {
       this.checked = changes.isChecked.currentValue;
     }
   }
 
-  validation() {
+  validation(): void {
     if (!this.label) {
       const err = new Error('\'label\' is a required Input of bp-checkbox');
       err.name = 'Missing Input';
@@ -56,7 +56,7 @@ export class CheckboxComponent implements OnInit, OnChanges {
     }
   }
 
-  emitChange(e) {
+  emitChange(e: StorageEvent): void {
     e.stopPropagation();
     this.change.emit(e);
   }

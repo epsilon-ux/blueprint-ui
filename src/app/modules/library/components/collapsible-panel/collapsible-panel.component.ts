@@ -9,7 +9,6 @@ export class CollapsiblePanelComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit(): void { }
 
 }

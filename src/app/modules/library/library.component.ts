@@ -105,6 +105,10 @@ export class LibraryComponent {
             route: './components/nav-secondary'
           },
           {
+            text: 'Status Indicator',
+            route: './components/status-indicator'
+          },
+          {
             text: 'Table',
             route: './components/table'
           },

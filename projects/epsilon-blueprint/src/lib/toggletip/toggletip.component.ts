@@ -21,26 +21,26 @@ export class ToggletipComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     this.popover = $('[data-toggle="popover"]');
-    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     this.popover.popover();
 
     this.validation();
 
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'toggleTip' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  ngOnDestroy() {
-    // eslint-disabled-next-line typescript-eslint/no-unsafe-call
+  ngOnDestroy(): void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     this.popover.popover('hide');
   }
 
-  validation() {
+  validation(): void {
     if (!this.content) {
       const err = new Error('\'content\' is a required Input of bp-toggletip');
       err.name = 'Missing Input';

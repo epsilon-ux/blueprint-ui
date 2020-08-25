@@ -12,6 +12,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
     { path: 'usage', component: UsageComponent, pathMatch: 'full' },
+    { path: 'usage/demo', redirectTo: 'usage', pathMatch: 'full' },
     { path: 'playground', component: PlaygroundComponent, pathMatch: 'full' },
     { path: 'api', component: ApiComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }

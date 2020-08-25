@@ -39,11 +39,11 @@ export class TableFooterComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  setDisplayDensity(event) {
+  setDisplayDensity(event: string): void {
     this.displayDensityEmitter.emit(event);
   }
 
-  emitTableView(view) {
+  emitTableView(view: string): void {
     this.viewSelectorEmitter.emit(view);
   }
 

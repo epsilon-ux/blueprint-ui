@@ -26,6 +26,6 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  handleAction() { }
+  handleAction(): void { }
 
 }

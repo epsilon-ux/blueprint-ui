@@ -41,14 +41,14 @@ export class NavSecondaryComponent implements OnInit {
       }
     }, 0);
 
-    if(!this.bpID) {
+    if (!this.bpID) {
       this.uuid = 'navSecondary' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  findActive(node: Item, parent: Item) {
+  findActive(node: Item, parent: Item): Item {
     if (node.text === this.activeItem) {
       if (parent) {
         parent.isExpanded = true;
@@ -61,7 +61,7 @@ export class NavSecondaryComponent implements OnInit {
     }
   }
 
-  validate() {
+  validate(): void {
     this.items.forEach(item => {
       if (!item.text) {
         const err = new Error(`Missing text in ${JSON.stringify(item)}`);

@@ -10,38 +10,19 @@ export class UsageComponent implements OnInit {
   standard = [
     {
       text: 'Active Page',
-      route: '/library/components/nav-secondary/usage'
+      route: './'
     },
     {
       text: 'Page',
-      route: ''
+      route: './demo'
     },
     {
       text: 'Page',
-      route: ''
+      route: './demo'
     },
     {
       text: 'Page',
-      route: ''
-    }
-  ];
-
-  title = [
-    {
-      text: 'Active Page',
-      route: '/library/components/nav-secondary/usage'
-    },
-    {
-      text: 'Page',
-      route: ''
-    },
-    {
-      text: 'Page',
-      route: ''
-    },
-    {
-      text: 'Page',
-      route: ''
+      route: './demo'
     }
   ];
 

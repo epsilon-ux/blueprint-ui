@@ -21,6 +21,6 @@ export class UsageComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  handleAction() { }
+  handleAction(): void { }
 
 }

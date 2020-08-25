@@ -57,14 +57,16 @@ export interface TableColumnInterface {
     bpRouterLink?: string; // Required if element = 'a' and you need to use routerLink
     href?: string; // Required if element = 'a' and you need to use an external link
   };
-  statusIndicatorMapping?: {
-    'incomplete-primary'?: string;
-    'incomplete-secondary'?: string;
-    'in-progress'?: string;
-    'warning'?: string;
-    'complete'?: string;
-  };
+  statusIndicatorMapping?: TableStatusInterface;
   columnIndex?: number; // This is set internally in the component and should not be provided by the user
+}
+
+export interface TableStatusInterface {
+  'incomplete-primary'?: string;
+  'incomplete-secondary'?: string;
+  'in-progress'?: string;
+  'warning'?: string;
+  'complete'?: string;
 }
 
 export enum TableColumnType {
