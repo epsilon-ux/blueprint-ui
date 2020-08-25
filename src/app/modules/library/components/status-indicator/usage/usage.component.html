@@ -104,16 +104,15 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-8 col-xl-7">
-      <h2>Statuses by Product</h2>
-    </div>
     <div class="col-12">
+      <h2>Statuses by Product</h2>
+      <h3>Customer</h3>
       <div class="table-responsive">
         <table class="table table-bordered-rows mb-5">
-          <caption class="sr-only">Mappings of status indicator statuses and status text for products</caption>
+          <caption class="sr-only">Status mappings in Customer</caption>
           <thead>
             <tr>
-              <th scope="col">Product</th>
+              <th scope="col">Object Type</th>
               <th scope="col">Incomplete Primary</th>
               <th scope="col">Incomplete Secondary</th>
               <th scope="col">In Progress</th>
@@ -123,7 +122,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>Customer entities</td>
+              <td>Entities</td>
               <td>Draft</td>
               <td></td>
               <td></td>
@@ -131,23 +130,33 @@
               <td></td>
             </tr>
             <tr>
-              <td>Customer package repository</td>
+              <td>Packages</td>
               <td>Not deployed</td>
               <td>New updates not deployed</td>
               <td>Deploying</td>
               <td>Deployed</td>
               <td>Deployment error</td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Data Hub</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Data Hub</caption>
+          <thead>
             <tr>
-              <td>Promotions</td>
-              <td>Draft</td>
-              <td>Approved</td>
-              <td>Deploying</td>
-              <td>Deployed</td>
-              <td>Deployment error</td>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
-              <td>Data Hub feeds</td>
+              <td>Feeds</td>
               <td>Disabled</td>
               <td></td>
               <td></td>
@@ -155,39 +164,59 @@
               <td></td>
             </tr>
             <tr>
-              <td>Data Hub workflows</td>
+              <td>Workflows</td>
               <td>Not running</td>
               <td></td>
               <td>Running</td>
               <td></td>
               <td></td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Events</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Events</caption>
+          <thead>
             <tr>
-              <td>Events</td>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Programs</td>
               <td>Inactive</td>
               <td></td>
               <td>Active</td>
               <td></td>
               <td></td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Messaging</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Messaging</caption>
+          <thead>
             <tr>
-              <td>Messaging offer types</td>
-              <td>Inactive</td>
-              <td></td>
-              <td>Active</td>
-              <td></td>
-              <td></td>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
-              <td>Messaging sequences</td>
-              <td>Draft</td>
-              <td>Approved</td>
-              <td></td>
-              <td>Relapsed</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Messaging monitoring jobs</td>
+              <td>Monitoring jobs</td>
               <td></td>
               <td></td>
               <td>In progress</td>
@@ -195,12 +224,54 @@
               <td>Failed</td>
             </tr>
             <tr>
-              <td>Messaging tracked attributes</td>
+              <td>Offers</td>
               <td>Inactive</td>
               <td></td>
               <td>Active</td>
               <td></td>
               <td></td>
+            </tr>
+            <tr>
+              <td>Sequences</td>
+              <td>Draft</td>
+              <td>Approved</td>
+              <td></td>
+              <td>Relapsed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Tracked attributes</td>
+              <td>Inactive</td>
+              <td></td>
+              <td>Active</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Promotions</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in Promotions</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Offers</td>
+              <td>Draft</td>
+              <td>Approved</td>
+              <td>Deploying</td>
+              <td>Deployed</td>
+              <td>Deployment error</td>
             </tr>
           </tbody>
         </table>
