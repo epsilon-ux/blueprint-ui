@@ -1,1 +1,210 @@
-<p>usage works!</p>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Status indicators often appear in tables and object page headers, but can also appear in other contexts, like an object's status page. While the wording of these statuses may vary, we follow specific rules for the color and shape of the status indicator. Status indicators must always have a label for accessibility purposes.
+      </p>
+      <h2>Variations</h2>
+      <h3>Incomplete primary status indicator</h3>
+      <p>
+        The incomplete primary status indicator represents that an action is not done and the user needs to take an action.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="incomplete-primary"
+                statusText="Incomplete Primary"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Incomplete secondary status indicator</h3>
+      <p>
+        The incomplete secondary status indicator represents that an action is not done and the user needs to take an action. This status should only be used if the 'incomplete primary' status has already been used to indicate a different status.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="incomplete-secondary"
+                statusText="Incomplete Secondary"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>In progress status indicator</h3>
+      <p>
+        The in progress status indicator represents that an action is in progress. The spinner icon is always animated.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="in-progress"
+                statusText="In Progress"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Complete status indicator</h3>
+      <p>
+        The complete status indicator represents that an action is done and there is no further action needed.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="complete"
+                statusText="Complete"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Warning status indicator</h3>
+      <p>
+        The warning status indicator represents that an action resulted in an error.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-auto">
+              <bp-status-indicator
+                status="warning"
+                statusText="Warning"
+              ></bp-status-indicator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2>Statuses by Product</h2>
+    </div>
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Mappings of status indicator statuses and status text for products</caption>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Customer entities</td>
+              <td>Draft</td>
+              <td></td>
+              <td></td>
+              <td>Deployed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Customer package repository</td>
+              <td>Not deployed</td>
+              <td>New updates not deployed</td>
+              <td>Deploying</td>
+              <td>Deployed</td>
+              <td>Deployment error</td>
+            </tr>
+            <tr>
+              <td>Promotions</td>
+              <td>Draft</td>
+              <td>Approved</td>
+              <td>Deploying</td>
+              <td>Deployed</td>
+              <td>Deployment error</td>
+            </tr>
+            <tr>
+              <td>Data Hub feeds</td>
+              <td>Disabled</td>
+              <td></td>
+              <td></td>
+              <td>Enabled</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Data Hub workflows</td>
+              <td>Not running</td>
+              <td></td>
+              <td>Running</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Events</td>
+              <td>Inactive</td>
+              <td></td>
+              <td>Active</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Messaging offer types</td>
+              <td>Inactive</td>
+              <td></td>
+              <td>Active</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Messaging sequences</td>
+              <td>Draft</td>
+              <td>Approved</td>
+              <td></td>
+              <td>Relapsed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Messaging monitoring jobs</td>
+              <td></td>
+              <td></td>
+              <td>In progress</td>
+              <td>Completed</td>
+              <td>Failed</td>
+            </tr>
+            <tr>
+              <td>Messaging tracked attributes</td>
+              <td>Inactive</td>
+              <td></td>
+              <td>Active</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
