@@ -1,3 +1,9 @@
+<!-- 
+  TODO:
+  QA statuses across products
+  should status text be sentence/title case?
+  should status tense be present/past/etc?
+-->
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
@@ -122,20 +128,73 @@
           </thead>
           <tbody>
             <tr>
-              <td>Entities</td>
-              <td>Draft</td>
+              <th scope="row">Entities</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Draft"
+                ></bp-status-indicator>
+              </td>
               <td></td>
-              <td></td>
-              <td>Deployed</td>
-              <td></td>
+              <td>
+                <p>
+                  <bp-status-indicator
+                    status="in-progress"
+                    statusText="Deleting"
+                  ></bp-status-indicator>
+                </p>
+                <p>
+                  <bp-status-indicator
+                    status="in-progress"
+                    statusText="Deploying"
+                  ></bp-status-indicator>
+                </p>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Deployment Error"
+                ></bp-status-indicator>
+              </td>
             </tr>
             <tr>
-              <td>Packages</td>
-              <td>Not deployed</td>
-              <td>New updates not deployed</td>
-              <td>Deploying</td>
-              <td>Deployed</td>
-              <td>Deployment error</td>
+              <th scope="row">Packages</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Not deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="New updates not deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Deploying"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Deployment Error"
+                ></bp-status-indicator>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -156,18 +215,38 @@
           </thead>
           <tbody>
             <tr>
-              <td>Feeds</td>
-              <td>Disabled</td>
+              <th scope="row">Feeds</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Disabled"
+                ></bp-status-indicator>
+              </td>
               <td></td>
               <td></td>
-              <td>Enabled</td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Enabled"
+                ></bp-status-indicator>
+              </td>
               <td></td>
             </tr>
             <tr>
-              <td>Workflows</td>
-              <td>Not running</td>
+              <th scope="row">Workflows</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Not running"
+                ></bp-status-indicator>
+              </td>
               <td></td>
-              <td>Running</td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Running"
+                ></bp-status-indicator>
+              </td>
               <td></td>
               <td></td>
             </tr>
@@ -190,11 +269,80 @@
           </thead>
           <tbody>
             <tr>
-              <td>Programs</td>
-              <td>Inactive</td>
+              <th scope="row">Actions</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Inactive"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="Active"
+                ></bp-status-indicator>
+              </td>
               <td></td>
-              <td>Active</td>
               <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Programs</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Inactive"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="Test"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Active"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>IQ</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered-rows mb-5">
+          <caption class="sr-only">Status mappings in IQ</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object Type</th>
+              <th scope="col">Incomplete Primary</th>
+              <th scope="col">Incomplete Secondary</th>
+              <th scope="col">In Progress</th>
+              <th scope="col">Complete</th>
+              <th scope="col">Warning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Choices</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Inactive"
+                ></bp-status-indicator>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Active"
+                ></bp-status-indicator>
+              </td>
               <td></td>
             </tr>
           </tbody>
@@ -216,15 +364,30 @@
           </thead>
           <tbody>
             <tr>
-              <td>Monitoring jobs</td>
+              <th scope="row">Monitoring jobs</th>
               <td></td>
               <td></td>
-              <td>In progress</td>
-              <td>Completed</td>
-              <td>Failed</td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="In progress"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Completed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Failed"
+                ></bp-status-indicator>
+              </td>
             </tr>
             <tr>
-              <td>Offers</td>
+              <th scope="row">Offers</th>
               <td>Inactive</td>
               <td></td>
               <td>Active</td>
@@ -232,7 +395,7 @@
               <td></td>
             </tr>
             <tr>
-              <td>Sequences</td>
+              <th scope="row">Sequences</th>
               <td>Draft</td>
               <td>Approved</td>
               <td></td>
@@ -240,7 +403,7 @@
               <td></td>
             </tr>
             <tr>
-              <td>Tracked attributes</td>
+              <th scope="row">Tracked attributes</th>
               <td>Inactive</td>
               <td></td>
               <td>Active</td>
@@ -266,12 +429,37 @@
           </thead>
           <tbody>
             <tr>
-              <td>Offers</td>
-              <td>Draft</td>
-              <td>Approved</td>
-              <td>Deploying</td>
-              <td>Deployed</td>
-              <td>Deployment error</td>
+              <th scope="row">Offers</th>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-primary"
+                  statusText="Draft"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="incomplete-secondary"
+                  statusText="Approved"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="in-progress"
+                  statusText="Deploying"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="complete"
+                  statusText="Deployed"
+                ></bp-status-indicator>
+              </td>
+              <td>
+                <bp-status-indicator
+                  status="warning"
+                  statusText="Deployment error"
+                ></bp-status-indicator>
+              </td>
             </tr>
           </tbody>
         </table>
