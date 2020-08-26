@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
@@ -23,6 +25,8 @@ import { ApiComponent } from './api/api.component';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    NgSelectModule,
     ComponentHeaderModule,
     SelectRoutingModule,
     MarkdownModule
