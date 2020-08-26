@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { StatusIndicatorModule } from 'epsilon-blueprint';
+import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
-import { StatusIndicatorRoutingModule } from './status-indicator-routing.module';
+import { SelectRoutingModule } from './select-routing.module';
 
-import { StatusIndicatorComponent } from './status-indicator.component';
+import { SelectComponent } from './select.component';
 import { OverviewComponent } from './overview/overview.component';
-import { ApiComponent } from './api/api.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { UsageComponent } from './usage/usage.component';
+import { PlaygroundComponent } from './playground/playground.component';
+import { ApiComponent } from './api/api.component';
 
 @NgModule({
   declarations: [
-    StatusIndicatorComponent,
+    SelectComponent,
     OverviewComponent,
     UsageComponent,
     PlaygroundComponent,
@@ -23,11 +25,13 @@ import { UsageComponent } from './usage/usage.component';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    NgSelectModule,
     ComponentHeaderModule,
-    StatusIndicatorRoutingModule,
-    StatusIndicatorModule
+    SelectRoutingModule,
+    MarkdownModule
   ],
   providers: [],
-  exports: [StatusIndicatorComponent]
+  exports: [SelectComponent]
 })
-export class StatusIndicatorLibraryModule { }
+export class SelectLibraryModule { }

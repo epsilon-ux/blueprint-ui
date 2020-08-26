@@ -105,6 +105,10 @@ export class LibraryComponent {
             route: './components/nav-secondary'
           },
           {
+            text: 'Select',
+            route: './components/select'
+          },
+          {
             text: 'Status Indicator',
             route: './components/status-indicator'
           },
