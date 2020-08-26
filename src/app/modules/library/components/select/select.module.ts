@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { MarkdownModule } from 'ngx-markdown';
-import { MultiselectModule, StatusIndicatorModule } from 'epsilon-blueprint';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
-import { MultiselectRoutingModule } from './multi-select-routing.module';
+import { SelectRoutingModule } from './select-routing.module';
 
+import { SelectComponent } from './select.component';
 import { OverviewComponent } from './overview/overview.component';
-import { MultiselectComponent } from './multi-select.component';
 import { UsageComponent } from './usage/usage.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
   declarations: [
-    MultiselectComponent,
+    SelectComponent,
     OverviewComponent,
     UsageComponent,
     PlaygroundComponent,
@@ -24,13 +25,13 @@ import { ApiComponent } from './api/api.component';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    NgSelectModule,
     ComponentHeaderModule,
-    MultiselectRoutingModule,
-    MultiselectModule,
-    StatusIndicatorModule,
-    MarkdownModule.forChild()
+    SelectRoutingModule,
+    MarkdownModule
   ],
   providers: [],
-  exports: [MultiselectComponent]
+  exports: [SelectComponent]
 })
-export class MultiselectLibraryModule { }
+export class SelectLibraryModule { }

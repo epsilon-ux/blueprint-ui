@@ -8,6 +8,7 @@ export class StatusIndicatorComponent implements OnInit {
 
   @Input() status: 'in-progress' | 'incomplete-primary' | 'incomplete-secondary' | 'complete' | 'warning';
   @Input() statusText: string;
+  @Input() shouldWrap = false;
 
   constructor() { }
 

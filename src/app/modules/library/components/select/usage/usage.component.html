@@ -1,0 +1,193 @@
+<section class="container-fluid">
+  <div class="row mb-5">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Selects are used in forms for large lists of options, and when the user can only select one option within the list. If the list is small, consider using a radio group, depending on space and the purpose of the select. Selects are also used as filters for large data sets.
+      </p>
+      <p>
+        Selects should always have a label for accessibility purposes, as well as placeholder text. Ideally the placeholder text should reflect the action the user should take and what type of options live in that select, e.g.: Select a list, Select a category, or Select an option (if the item type cannot be described in one word).
+      </p>
+      <h2>Variations</h2>
+      <h3>Standard select</h3>
+      <p>
+        Use a select when a user can select one option.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <label id="select">Label Text</label>
+              <ng-select
+                labelForId="select"
+                placeholder="Select an option"
+                [items]="selectOptions"
+                bindLabel="text"
+                [clearable]="false"
+                [searchable]="false"
+                [(ngModel)]="selectedOption"
+              ></ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard select with search</h3>
+      <p>
+        A searchable select allows the user to filter the list of options. Use this when the user has to select from a very long list of options.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <label id="searchableSelect">Label Text</label>
+              <ng-select
+                labelForId="searchableSelect"
+                placeholder="Select an option"
+                [items]="selectOptions"
+                bindLabel="text"
+                [clearable]="false"
+                [searchable]="true"
+                [(ngModel)]="selectedOption"
+              ></ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h3>Standard select with disabled options</h3>
+      <p>
+        Use this variation when a user cannot select or deselect a certain option or options.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <label id="disabledOptions">Label Text</label>
+              <ng-select
+                labelForId="disabledOptions"
+                placeholder="Select an option"
+                bindLabel="text"
+                [clearable]="false"
+                [searchable]="false"
+                [(ngModel)]="disabledOption"
+              >
+
+                <ng-option
+                  *ngFor="let option of optionItemsWithDisabled"
+                  [value]="option.id"
+                  [disabled]="option.disabled"
+                >
+                  {{ option.label }}
+                </ng-option>
+              </ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h3>Disabled select</h3>
+      <p>
+        This variation does not allow the user to change the value of the select. The select’s value will not be submitted when in a form.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <label id="disabledSelect">Label Text</label>
+              <ng-select
+                labelForId="disabledSelect"
+                placeholder="Select an option"
+                [items]="selectOptions"
+                bindLabel="text"
+                [clearable]="false"
+                [searchable]="false"
+                [disabled]="true"
+                [(ngModel)]="selectedOption"
+              ></ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h3>Readonly select</h3>
+      <p>
+        This variation does not allow the user to change the value of the select. The select’s value will be submitted when in a form.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <label id="readonlySelect">Label Text</label>
+              <ng-select
+                labelForId="readonlySelect"
+                placeholder="Select an option"
+                [items]="selectOptions"
+                bindLabel="text"
+                [clearable]="false"
+                [searchable]="false"
+                [readonly]="true"
+                [(ngModel)]="selectedOption"
+              ></ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
+      <h3>Select with custom options</h3>
+      <p>
+        This variation shows custom options. This variation should be used if additional content is needed in each option. An example of this would be a status filter where the status icon is shown with the option text. Custom options can be used with custom placeholder.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <label id="customOptions">Date Range</label>
+              <ng-select
+                labelForId="customOptions"
+                [items]="dateOptions"
+                bindLabel="text"
+                placeholder="Select a date range"
+                [clearable]="false"
+                [searchable]="false"
+              >
+                <ng-template
+                  ng-option-tmp
+                  let-item="item"
+                  let-item$="item$"
+                  let-index="index"
+                >
+                  {{ item.text }}
+                  <div class="option-text-secondary">
+                    {{ item.range }}
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

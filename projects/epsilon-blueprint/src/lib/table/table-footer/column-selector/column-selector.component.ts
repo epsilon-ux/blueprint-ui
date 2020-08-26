@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { parseLookupString } from '../../../../helpers';
 import { TableColumnInterface } from '../../table.interface';
-import { Column } from 'projects/epsilon-blueprint/src/models/table-models';
 
 interface ColumnOption extends TableColumnInterface {
   disabled: boolean;
@@ -43,7 +42,7 @@ export class ColumnSelectorComponent implements OnInit {
     this.updateSelected(this.selectedColumns);
   }
 
-  updateSelected(e: Column[]): void {
+  updateSelected(e: TableColumnInterface[]): void {
     this.selectedColumns = e;
     if (Array.isArray(e)) {
       this.columnInfo.forEach(column => {

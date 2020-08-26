@@ -61,26 +61,11 @@
         ></i>
       </ng-container>
       <!-- Status Indicator Column -->
-      <span *ngSwitchCase="TableColumnType.STATUS" class="status-indicator">
-        <div
-          *ngIf="
-            column.statusIndicatorMapping['in-progress'] !== rowData[column.key]
-          "
-          class="status-icon"
-          [ngClass]="
-            getStatusClass(rowData[column.key], column.statusIndicatorMapping)
-          "
-          aria-hidden="true"
-        ></div>
-        <i
-          *ngIf="
-            column.statusIndicatorMapping['in-progress'] === rowData[column.key]
-          "
-          class="fa fa-spinner fa-spin in-progress"
-          aria-hidden="true"
-        ></i>
-        {{ rowData[column.key] }}
-      </span>
+      <bp-status-indicator
+        *ngSwitchCase="TableColumnType.STATUS"
+        [status]="getStatusClass(rowData[column.key], column.statusIndicatorMapping)"
+        [statusText]="rowData[column.key]"
+      ></bp-status-indicator>
       <!-- Template Column -->
       <ng-container *ngSwitchCase="TableColumnType.TEMPLATE">
         <ng-container

@@ -1,0 +1,38 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Selects allow the user to select one option from an expandable list of options.
+      </p>
+      <p>
+        If the user should be able to select multiple options, the <a routerLink="/library/components/multi-select/overview">Multi-select</a> component should be used instead.
+      </p>
+      <p>
+        If the options are actions or change the content of the page, the <a routerLink="/library/components/dropdown/overview">Dropdown</a> component should be used instead.
+      </p>
+      <p>
+        This component is built on top of <a href="https://github.com/ng-select/ng-select">ng-select</a>.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3">
+              <label id="select">Label Text</label>
+              <ng-select
+                labelForId="select"
+                placeholder="Select an option"
+                [items]="selectOptions"
+                bindLabel="text"
+                [clearable]="false"
+                [searchable]="false"
+                [(ngModel)]="selectedOption"
+              ></ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
