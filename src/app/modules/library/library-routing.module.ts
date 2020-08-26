@@ -79,6 +79,9 @@ const routes: Routes = [
       { path: 'search', loadChildren: () => import('./components/search/search.module')
         .then(m => m.SearchLibraryModule) },
 
+      { path: 'select', loadChildren: () => import('./components/select/select.module')
+        .then(m => m.SelectLibraryModule) },
+
       { path: 'status-indicator', loadChildren: () => import('./components/status-indicator/status-indicator.module')
         .then(m => m.StatusIndicatorLibraryModule) },
 
