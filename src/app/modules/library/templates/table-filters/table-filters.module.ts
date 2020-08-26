@@ -11,7 +11,8 @@ import {
   CheckboxModule,
   ActionModule,
   ToggleModule,
-  RibbonModule
+  RibbonModule,
+  StatusIndicatorModule
 } from 'epsilon-blueprint';
 import { TableFiltersRoutingModule } from './table-filters-routing.module';
 
@@ -37,7 +38,8 @@ import { UsageComponent } from './usage/usage.component';
     CheckboxModule,
     ActionModule,
     ToggleModule,
-    RibbonModule
+    RibbonModule,
+    StatusIndicatorModule
   ],
   providers: [],
   exports: [TableFiltersComponent]

@@ -142,7 +142,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="col-lg-8 col-xl-7">
       <h3>Multi-select with tags</h3>
       <p>
@@ -206,7 +206,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="col-lg-8 col-xl-7">
       <h3>Multi-select with custom options</h3>
       <p>
@@ -233,10 +233,11 @@
                   ng-option-tmp
                   let-item="item"
                 >
-                  <div class="status-indicator text-wrap">
-                    <span class="status-icon {{ item.value }}"></span>
-                    {{ item.label }}
-                  </div>
+                  <bp-status-indicator
+                    [status]="item.value"
+                    [shouldWrap]="true"
+                    [statusText]="item.label"
+                  ></bp-status-indicator>
                 </ng-template>
               </bp-multi-select>
             </div>
@@ -244,6 +245,6 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </section>

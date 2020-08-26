@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
-import { MultiselectModule } from 'epsilon-blueprint';
+import { MultiselectModule, StatusIndicatorModule } from 'epsilon-blueprint';
 
 import { ComponentHeaderModule } from 'src/app/shared/component-header/component-header.module';
 import { MultiselectRoutingModule } from './multi-select-routing.module';
@@ -27,6 +27,7 @@ import { ApiComponent } from './api/api.component';
     ComponentHeaderModule,
     MultiselectRoutingModule,
     MultiselectModule,
+    StatusIndicatorModule,
     MarkdownModule.forChild()
   ],
   providers: [],
