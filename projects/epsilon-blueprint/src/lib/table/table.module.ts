@@ -7,6 +7,7 @@ import { SearchModule } from '../search/search.module';
 import { ActionModule } from '../action/action.module';
 import { CheckboxModule } from '../checkbox/checkbox.module';
 import { MultiselectModule } from '../multi-select/multi-select.module';
+import { StatusIndicatorModule } from '../status-indicator/status-indicator.module';
 import { TableComponent } from './table.component';
 import { TableBodyComponent } from './table-body/table-body.component';
 import { TableFooterComponent } from './table-footer/table-footer.component';
@@ -35,6 +36,7 @@ import { SelectAllCheckboxComponent } from './select-all-checkbox/select-all-che
     ActionModule,
     CheckboxModule,
     MultiselectModule,
+    StatusIndicatorModule,
     RouterModule.forChild([])
   ],
   exports: [TableComponent],
