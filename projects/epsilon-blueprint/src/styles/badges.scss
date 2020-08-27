@@ -10,9 +10,10 @@
   border-radius: 0;
   border-width: 1px;
   border-style: solid;
-  padding: 4px 10px 5px;
+  padding: 2px 10px;
   font-weight: $font-weight-semi-bold;
   font-size: $font-size-md;
+  line-height: 1;
 
   &-primary
   {
