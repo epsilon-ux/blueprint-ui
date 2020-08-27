@@ -1,42 +1,47 @@
 @import "../../styles/global-variables";
 
+@mixin ribbon-variant($border-color, $background-color)
+{
+  border-color: $border-color;
+  background: $background-color;
+}
+
 .ribbon
 {
   display: flex;
   flex-direction: column;
+  border-width: 1px;
+  border-style: solid;
   padding: 10px 15px;
   font-weight: $font-weight-semi-bold;
 
-  &.ribbon-info
-  {
-    border: 1px solid $accent-color-primary;
-    background: $ice;
-  }
-
-  &.ribbon-success
-  {
-    border: 1px solid $feedback-color-success;
-    background: rgba($feedback-color-success, 0.1);
-  }
-
-  &.ribbon-alert
-  {
-    border: 1px solid $feedback-color-alert;
-    background: rgba($feedback-color-alert, 0.2);
-  }
-
-  &.ribbon-warning
-  {
-    border: 1px solid $feedback-color-warning;
-    background: rgba($feedback-color-warning, 0.1);
-  }
-}
-
-@media (min-width: 768px)
-{
-  .ribbon
+  @media (min-width: 768px)
   {
     flex-direction: row;
     align-items: center;
+  }
+
+  &-info
+  {
+    @extend .ribbon;
+    @include ribbon-variant($accent-color-primary, $ice);
+  }
+
+  &-success
+  {
+    @extend .ribbon;
+    @include ribbon-variant($feedback-color-success, rgba($feedback-color-success, 0.1));
+  }
+
+  &-alert
+  {
+    @extend .ribbon;
+    @include ribbon-variant($feedback-color-alert, rgba($feedback-color-alert, 0.2));
+  }
+
+  &-warning
+  {
+    @extend .ribbon;
+    @include ribbon-variant($feedback-color-warning, rgba($feedback-color-warning, 0.1));
   }
 }
