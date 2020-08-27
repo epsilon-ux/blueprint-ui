@@ -61,11 +61,17 @@
         ></i>
       </ng-container>
       <!-- Status Indicator Column -->
-      <bp-status-indicator
-        *ngSwitchCase="TableColumnType.STATUS"
-        [status]="getStatusClass(rowData[column.key], column.statusIndicatorMapping)"
-        [statusText]="rowData[column.key]"
-      ></bp-status-indicator>
+      <ng-container *ngSwitchCase="TableColumnType.STATUS">
+        <ng-container *ngIf="!getStatusClass(rowData[column.key], column.statusIndicatorMapping); else statusIndicator">
+          {{ rowData[column.key] }}
+        </ng-container>
+        <ng-template #statusIndicator>
+          <bp-status-indicator
+            [status]="getStatusClass(rowData[column.key], column.statusIndicatorMapping)"
+            [statusText]="rowData[column.key]"
+          ></bp-status-indicator>
+        </ng-template>
+      </ng-container>
       <!-- Template Column -->
       <ng-container *ngSwitchCase="TableColumnType.TEMPLATE">
         <ng-container
