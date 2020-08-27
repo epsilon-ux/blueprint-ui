@@ -1,34 +1,40 @@
+@mixin badge-variant($border-color, $background-color, $text-color)
+{
+  border-color: $border-color;
+  background: $background-color;
+  color: $text-color;
+}
+
 .badge
 {
   border-radius: 0;
-  border: 1px solid transparent;
+  border-width: 1px;
+  border-style: solid;
   padding: 4px 10px 5px;
   font-weight: $font-weight-semi-bold;
   font-size: $font-size-md;
-}
 
-.badge-primary
-{
-  background: $mist;
-  color: $font-color-secondary;
-}
+  &-primary
+  {
+    @extend .badge;
+    @include badge-variant(transparent, $mist, $font-color-secondary);
+  }
 
-.badge-secondary
-{
-  background: $blueberry;
-  color: $coconut;
-}
+  &-secondary
+  {
+    @extend .badge;
+    @include badge-variant(transparent, $blueberry, $coconut);
+  }
 
-.badge-alert
-{
-  border-color: $feedback-color-alert;
-  background: rgba($feedback-color-alert, 0.2);
-  color: $font-color-primary;
-}
+  &-success
+  {
+    @extend .badge;
+    @include badge-variant($feedback-color-success, rgba($feedback-color-success, 0.2), $font-color-primary);
+  }
 
-.badge-success
-{
-  border-color: $feedback-color-success;
-  background: rgba($feedback-color-success, 0.2);
-  color: $font-color-primary;
+  &-alert
+  {
+    @extend .badge;
+    @include badge-variant($feedback-color-alert, rgba($feedback-color-alert, 0.2), $font-color-primary);
+  }
 }
