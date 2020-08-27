@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RibbonComponent implements OnInit {
 
-  @Input() classes = 'ribbon ribbon-info';
+  @Input() classes = 'ribbon-info';
   @Input() text: string;
 
   constructor() { }
