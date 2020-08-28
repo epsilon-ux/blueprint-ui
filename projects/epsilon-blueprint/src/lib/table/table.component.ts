@@ -161,14 +161,15 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    if (changes.data && changes.data.currentValue) {
+      this.tableData = changes.data.currentValue;
+    }
     if (
       (changes.isDataLoading
         && changes.isDataLoading.currentValue === false
         && this.tableData.length > 0)
       || (changes.data && !changes.data.firstChange)
     ) {
-      this.tableData = changes.data.currentValue;
-
       if (this.areAllRowsSelected) {
         this.tableData.forEach(d => {
           if (!this.rowSelectionStates.has(d)) {
