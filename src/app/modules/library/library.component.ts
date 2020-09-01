@@ -65,6 +65,10 @@ export class LibraryComponent {
             route: './components/dropdown'
           },
           {
+            text: 'Header',
+            route: './components/header'
+          },
+          {
             text: 'Landing Page Header',
             route: './components/landing-page-header'
           },

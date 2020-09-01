@@ -1,0 +1,20 @@
+bp-header
+{
+  z-index: 1001;
+}
+
+header
+{
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  min-height: 50px;
+  box-shadow: $box-shadow-nav-primary;
+  padding: 0 16px;
+  background: $coconut;
+}
+
+.logo
+{
+  max-height: 26px;
+}

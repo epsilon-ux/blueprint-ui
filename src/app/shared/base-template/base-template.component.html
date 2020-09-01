@@ -1,7 +1,10 @@
 <a href="./#mainContent" class="skip-link" (click)="skipToMain()">
   Skip to main content
 </a>
-<app-nav-primary></app-nav-primary>
+<bp-header
+  logoSrc="{{logoSrc}}"
+  logoAlt="{{logoAlt}}"
+></bp-header>
 <div class="app-body">
   <bp-collapsible-panel>
     <bp-nav-secondary 

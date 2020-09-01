@@ -1,0 +1,37 @@
+<header class="justify-content-between justify-content-lg-start">
+  <!--
+    TODO:
+    - hook up isLogoLink, hasCollapsibleMenu, hasContextSelector, and hasNavigation
+    - brainstorm appropriate aria label for menu button
+    - consider internationalization
+    - add bp-action and bp-dropdown styling overrides in the context of bp-header
+    - handle responsive behavior
+  -->
+  <img
+    [attr.src]="logoSrc"
+    [attr.alt]="logoAlt"
+    class="logo"
+  />
+  <ng-container *ngIf="hasCollapsibleMenu">
+    <button
+      type="button"
+      class="navbar-toggler d-lg-none"
+      data-toggle="collapse"
+      data-target="#collapsibleMenu"
+      aria-controls="collapsibleMenu"
+      aria-expanded="false"
+      aria-label="Toggle primary navigation"
+    >
+      Menu
+    </button>
+    <div id="collapsibleMenu" class="collapse navbar-collapse">
+      <ng-container *ngIf="hasContextSelector">
+        <ng-content select="[context-selector]"></ng-content>
+      </ng-container>
+      <ng-container *ngIf="hasNavigation">
+        <ng-content select="[nav-major]"></ng-content>
+        <ng-content select="[nav-minor]"></ng-content>
+      </ng-container>
+    </div>
+  </ng-container>
+</header>

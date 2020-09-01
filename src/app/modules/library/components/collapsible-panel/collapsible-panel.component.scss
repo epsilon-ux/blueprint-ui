@@ -12,6 +12,10 @@
   display: flex;
   flex-direction: column;
   height: 500px;
+
+  // TODO: refactor scattered demo-[element] styles into a shared stylesheet
+  // this hides bp-header's box shadow in the context of an example
+  overflow: hidden;
 }
 
 .demo-nav-primary

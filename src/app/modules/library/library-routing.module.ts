@@ -47,6 +47,9 @@ const routes: Routes = [
       { path: 'dropdown', loadChildren: () => import('./components/dropdown/dropdown.module')
         .then(m => m.DropdownLibraryModule) },
 
+      { path: 'header', loadChildren: () => import('./components/header/header.module')
+        .then(m => m.HeaderLibraryModule) },
+
       { path: 'landing-page-header',
         loadChildren: () => import('./components/landing-page-header/landing-page-header.module')
           .then(m => m.LandingPageHeaderLibraryModule) },

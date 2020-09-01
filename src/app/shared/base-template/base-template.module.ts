@@ -2,20 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BaseTemplateComponent } from './base-template.component';
-import { NavPrimaryComponent } from './nav-primary/nav-primary.component';
-import { NavSecondaryModule, CollapsiblePanelModule } from 'epsilon-blueprint';
-
+import { HeaderModule, CollapsiblePanelModule, NavSecondaryModule } from 'epsilon-blueprint';
 
 @NgModule({
   declarations: [
-    BaseTemplateComponent,
-    NavPrimaryComponent
+    BaseTemplateComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    NavSecondaryModule,
-    CollapsiblePanelModule
+    HeaderModule,
+    CollapsiblePanelModule,
+    NavSecondaryModule
   ],
   exports: [BaseTemplateComponent]
 })
