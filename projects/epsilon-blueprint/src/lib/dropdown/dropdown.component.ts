@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { generateUniqueId } from '../../helpers';
+import { DropdownItemInterface } from './dropdown.interface';
 
 @Component({
   selector: 'bp-dropdown',
@@ -10,17 +11,7 @@ export class DropdownComponent implements OnInit {
   @Input() triggerText: string;
   @Input() triggerClasses = '';
   @Input() dropDirection: 'up' | 'down' | 'left' | 'right' = 'down';
-  @Input() dropdownItems: {
-    text: string;
-    ariaLabel?: string;
-    action?: string;
-    href?: string;
-    routerLink?: string; // Deprecated: Use bpRouterLink instead.
-    bpRouterLink?: string;
-    target?: string;
-    isDisabled?: boolean;
-    isDestructive?: boolean;
-  }[];
+  @Input() dropdownItems: DropdownItemInterface[];
   @Input() bpID: string;
 
   @Output() action = new EventEmitter();
@@ -42,6 +33,17 @@ export class DropdownComponent implements OnInit {
     } else {
       this.uuid = this.bpID;
     }
+  }
+
+  getClasses(item: DropdownItemInterface): string {
+    let classes = 'dropdown-item';
+    if (item.isDestructive) {
+      classes += ' is-destructive';
+    }
+    if (item.isActive) {
+      classes += ' is-active';
+    }
+    return classes;
   }
 
   emitAction(e: string): void {

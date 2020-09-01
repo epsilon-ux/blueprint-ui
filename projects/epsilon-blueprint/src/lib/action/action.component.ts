@@ -17,6 +17,7 @@ export class ActionComponent implements OnInit {
   @Input() isDisabled = false;
   @Input() iconLeft: string;
   @Input() iconRight: string;
+  @Input() lang: string = null;
   @Input() bpID: string;
 
   @Output() click = new EventEmitter();

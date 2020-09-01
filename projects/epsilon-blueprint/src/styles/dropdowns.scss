@@ -60,7 +60,8 @@
   }
 
   &:hover,
-  &:focus
+  &:focus,
+  &.is-active
   {
     background: $accent-color-primary;
     color: $coconut;
