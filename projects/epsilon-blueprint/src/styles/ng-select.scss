@@ -479,6 +479,12 @@
 .ng-select.ng-select-multiple.ng-select-disabled .ng-select-container .ng-value-container .ng-value
 {
   background-color: $storm;
+
+  &.ng-value-custom
+  {
+    background-color: transparent;
+    border: 0;
+  }
 }
 
 // Fake checkbox for multi-select
