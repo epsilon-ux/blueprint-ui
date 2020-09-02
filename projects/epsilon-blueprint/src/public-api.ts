@@ -20,6 +20,7 @@ export * from './lib/collapsible-panel/collapsible-panel.module';
 
 export * from './lib/dropdown/dropdown.component';
 export * from './lib/dropdown/dropdown.module';
+export * from './lib/dropdown/dropdown.interface';
 
 export * from './lib/landing-page-header/landing-page-header.component';
 export * from './lib/landing-page-header/landing-page-header.module';

@@ -17,13 +17,16 @@
     <bp-action
       *ngFor="let dropdownItem of dropdownItems; index as i"
       [bpID]="uuid + 'item' + i"
-      classes="dropdown-item{{ dropdownItem.isDestructive ? ' is-destructive' : '' }}"
+      [classes]="getClasses(dropdownItem)"
       [text]="dropdownItem.text"
       [ariaLabel]="dropdownItem.ariaLabel"
       [href]="dropdownItem.href"
       [bpRouterLink]="dropdownItem.bpRouterLink"
       [target]="dropdownItem.target"
       [isDisabled]="dropdownItem.isDisabled"
+      [iconLeft]="dropdownItem.iconLeft"
+      [iconRight]="dropdownItem.iconRight"
+      [lang]="dropdownItem.lang"
       (click)="emitAction(dropdownItem.action)"
     ></bp-action>
   </div>
