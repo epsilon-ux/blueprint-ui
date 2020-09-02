@@ -1,21 +1,26 @@
-<header class="justify-content-between justify-content-lg-start">
+<header class="navbar navbar-expand-lg sticky-top">
   <!--
     TODO:
     - hook up isLogoLink, hasCollapsibleMenu, hasContextSelector, and hasNavigation
     - brainstorm appropriate aria label for menu button
     - consider internationalization
+    - add identifiers
     - add bp-action and bp-dropdown styling overrides in the context of bp-header
     - handle responsive behavior
+    - consider creating an input for navbar-expand-{{breakpoint}}
+    - should product switcher be a separate content area in the component, part of the templates, or a component?
   -->
-  <img
-    [attr.src]="logoSrc"
-    [attr.alt]="logoAlt"
-    class="logo"
-  />
+  <a href="" class="navbar-brand">
+    <img
+      [attr.src]="logoSrc"
+      [attr.alt]="logoAlt"
+      class="logo"
+    />
+  </a>
   <ng-container *ngIf="hasCollapsibleMenu">
     <button
       type="button"
-      class="navbar-toggler d-lg-none"
+      class="navbar-toggler"
       data-toggle="collapse"
       data-target="#collapsibleMenu"
       aria-controls="collapsibleMenu"
@@ -26,7 +31,9 @@
     </button>
     <div id="collapsibleMenu" class="collapse navbar-collapse">
       <ng-container *ngIf="hasContextSelector">
-        <ng-content select="[context-selector]"></ng-content>
+        <div class="nav-select">
+          <ng-content select="[context-selector]"></ng-content>
+        </div>
       </ng-container>
       <ng-container *ngIf="hasNavigation">
         <ng-content select="[nav-major]"></ng-content>

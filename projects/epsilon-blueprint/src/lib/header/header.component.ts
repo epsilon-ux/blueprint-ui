@@ -8,9 +8,9 @@ export class HeaderComponent implements OnInit {
 
   @Input() logoSrc: string;
   @Input() logoAlt: string;
-  @Input() hasCollapsibleMenu?: boolean;
-  @Input() hasContextSelector?: boolean;
-  @Input() hasNavigation?: boolean;
+  @Input() hasCollapsibleMenu?: boolean = true;
+  @Input() hasContextSelector?: boolean = true;
+  @Input() hasNavigation?: boolean = true;
 
   constructor() { }
 
