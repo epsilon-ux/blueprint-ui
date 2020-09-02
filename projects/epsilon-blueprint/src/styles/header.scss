@@ -1,3 +1,4 @@
+// stylelint-disable selector-type-no-unknown
 bp-header
 {
   z-index: 1001;
@@ -29,8 +30,8 @@ bp-header
     border: 0;
     padding: 19px 10px;
     color: $accent-color-primary;
-    font-size: $font-size-md;
     font-weight: $font-weight-semi-bold;
+    font-size: $font-size-md;
 
     &:hover,
     &[aria-expanded="true"]
@@ -56,15 +57,15 @@ bp-header
 
       &::after
       {
-        content: $icon-caret-down;
         vertical-align: 0;
         margin-left: 5px;
         border-top: 0;
         border-right: 0;
         border-bottom: 0;
         border-left: 0;
-        font-family: $font-family-icon;
+        content: $icon-caret-down;
         font-weight: $font-weight-semi-bold;
+        font-family: $font-family-icon;
         transform: translateY(1px);
       }
     }

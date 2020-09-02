@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  logoSrc = "https://epsilon-ux.github.io/blueprint-primary-navigation/assets/logo.svg";
+  logoSrc = 'https://epsilon-ux.github.io/blueprint-primary-navigation/assets/logo.svg';
   logoAlt = 'PeopleCloud Product';
 
   constructor() { }

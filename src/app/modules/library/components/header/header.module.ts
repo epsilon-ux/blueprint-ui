@@ -27,7 +27,7 @@ import { UsageComponent } from './usage/usage.component';
     HeaderRoutingModule,
     HeaderModule
   ],
-    providers: [],
-    exports: [HeaderComponent]
+  providers: [],
+  exports: [HeaderComponent]
 })
 export class HeaderLibraryModule { }

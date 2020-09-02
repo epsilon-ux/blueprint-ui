@@ -6,9 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BaseTemplateComponent implements OnInit {
 
-  logoSrc = 'assets/logo.svg';
-  logoAlt = 'Epsilon Blueprint';
-
   @Input() navSecondary: {
     title: string;
     items: {
@@ -16,6 +13,9 @@ export class BaseTemplateComponent implements OnInit {
       text: string;
     }[];
   };
+
+  logoSrc = 'assets/logo.svg';
+  logoAlt = 'Epsilon Blueprint';
 
   constructor() { }
 
