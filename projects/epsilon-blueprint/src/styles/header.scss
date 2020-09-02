@@ -1,0 +1,110 @@
+// stylelint-disable selector-type-no-unknown
+bp-header
+{
+  z-index: 1001;
+}
+
+.navbar
+{
+  min-height: 50px;
+  box-shadow: $box-shadow-nav-primary;
+  padding: 0;
+  background: $coconut;
+
+  .navbar-brand
+  {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .logo
+  {
+    height: 26px;
+  }
+
+  .navbar-toggler
+  {
+    border-radius: 0;
+    border: 0;
+    padding: 19px 10px;
+    color: $accent-color-primary;
+    font-weight: $font-weight-semi-bold;
+    font-size: $font-size-md;
+
+    &:hover,
+    &[aria-expanded="true"]
+    {
+      background: $accent-color-primary;
+      color: $coconut;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .navbar-collapse
+  {
+    border-top: 1px solid $border-color-secondary;
+
+    .nav-select
+    {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 20px;
+      padding: 6px 10px;
+      background: $mist;
+      font-weight: $font-weight-semi-bold;
+
+      &::after
+      {
+        vertical-align: 0;
+        margin-left: 5px;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
+        content: $icon-caret-down;
+        font-weight: $font-weight-semi-bold;
+        font-family: $font-family-icon;
+        transform: translateY(1px);
+      }
+    }
+
+    // TODO: delete, temp code
+    .nav-major,
+    .nav-minor
+    {
+      margin: 15px 20px;
+    }
+  }
+
+  // TODO: added this breakpoint because the nav breaks down on xs in the example on the overview page
+  // we need to decide how to handle responsive when the logo and menu button don't fit on one horizontal line
+  @media (min-width: 576px)
+  {
+    .navbar-toggler
+    {
+      padding: 17px 20px 18px;
+      font-size: $font-size-lg;
+    }
+  }
+
+  @media (min-width: 992px)
+  {
+    .navbar-collapse
+    {
+      border-top: 0;
+
+      .nav-select
+      {
+        margin: 0;
+      }
+
+      .nav-major,
+      .nav-minor
+      {
+        margin: 0 20px;
+      }
+    }
+  }
+}

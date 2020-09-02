@@ -14,6 +14,9 @@ export class BaseTemplateComponent implements OnInit {
     }[];
   };
 
+  logoSrc = 'assets/logo.svg';
+  logoAlt = 'Epsilon Blueprint';
+
   constructor() { }
 
   ngOnInit(): void { }
