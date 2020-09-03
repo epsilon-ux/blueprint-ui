@@ -343,6 +343,13 @@
   background-color: $accent-color-primary;
 }
 
+.ng-select.is-grouped .ng-dropdown-panel .ng-dropdown-panel-items .ng-option:not(.ng-option-child),
+.ng-select.is-grouped .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup:not(:first-of-type)
+{
+  border-top: 1px solid $border-color-secondary;
+  font-weight: $font-weight-semi-bold;
+}
+
 .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-selected.ng-option-marked
 {
   background-color: $accent-color-primary;

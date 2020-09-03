@@ -3,6 +3,7 @@
     {{ label }}
   </label>
   <ng-select
+    [ngClass]="{ 'is-grouped': groupBy }"
     [labelForId]="uuid + 'Select'"
     [multiple]="true"
     [items]="isDataLoaded ? optionItems : []"
