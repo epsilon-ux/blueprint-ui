@@ -1,0 +1,118 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Primary navigation varies from product to product. The primary navigation appears within the sticky header.
+      </p>
+      <h2>Example</h2>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <!-- TODO: investigate why logoSrc and logoAlt throw errors with []="" syntax -->
+            <bp-header
+              logoSrc="{{logoSrc}}"
+              logoAlt="{{logoAlt}}"
+            >
+              <div context-selector>CONTEXT SELECTOR</div>
+              <nav nav-major class="nav-major">
+                <ul class="navbar-nav major">
+                  <li class="nav-item">
+                    <a href="" class="nav-link active">
+                      Lorem
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      Ipsum
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      External Link
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <bp-dropdown
+                      triggerText="Dropdown"
+                      [dropdownItems]="navMenuItems"
+                      triggerClasses="nav-link dropdown-toggle"
+                    ></bp-dropdown>
+                  </li>
+                </ul>
+              </nav>
+              <nav nav-minor class="nav-minor">
+                <ul class="navbar-nav minor">
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      In-App Link
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      External Link
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <bp-dropdown
+                      triggerText="Dropdown"
+                      [dropdownItems]="navMenuItems"
+                      triggerClasses="nav-link dropdown-toggle"
+                    ></bp-dropdown>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <button type="button" id="navPrimaryProductSwitcher" class="nav-link dropdown-toggle product-switcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="product-switcher-text" aria-hidden="true">
+                        Product Switcher
+                      </span>
+                      <span class="sr-only">
+                        Product Switcher
+                      </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navPrimaryProductSwitcher">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Admin
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Customer
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Hub
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Events
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        FRMS
+                      </a>
+                      <p class="dropdown-text">
+                        Loyalty
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Messaging
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-header">
+                        External Products
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Business Insights
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Visualization
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </bp-header>
+            <div class="demo-body">
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

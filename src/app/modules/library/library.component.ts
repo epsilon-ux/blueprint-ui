@@ -142,6 +142,10 @@ export class LibraryComponent {
             route: './templates/object-page-header'
           },
           {
+            text: 'Primary Navigation',
+            route: './templates/nav-primary'
+          },
+          {
             text: 'Table Filters',
             route: './templates/table-filters'
           }
