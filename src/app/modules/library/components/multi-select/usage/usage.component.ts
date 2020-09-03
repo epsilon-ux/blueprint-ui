@@ -24,6 +24,30 @@ export class UsageComponent implements OnInit {
       value: 'option4'
     }
   ];
+
+  optionItemsWithGroups = [
+    {
+      label: 'Option 1',
+      value: 'option1',
+      group: 'Group 1'
+    },
+    {
+      label: 'Option 2',
+      value: 'option2',
+      group: 'Group 1'
+    },
+    {
+      label: 'Option 3',
+      value: 'option3',
+      group: 'Group 2'
+    },
+    {
+      label: 'Option 4',
+      value: 'option4',
+      group: 'Group 2'
+    }
+  ];
+
   optionStatuses = [
     {
       label: 'Deployed',
