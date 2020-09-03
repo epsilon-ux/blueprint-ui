@@ -66,6 +66,33 @@
     </div>
 
     <div class="col-lg-8 col-xl-7">
+      <h3>Standard multi-select with option groups</h3>
+      <p>
+        A multi-select with groups allows the user to select subsets of options by a grouping variable.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body component-preview">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+              <bp-multi-select
+                label="Label Text"
+                [optionItems]="optionItemsWithGroups"
+                bindLabel="label"
+                bindValue="value"
+                placeholder="Select items"
+                groupBy="group"
+                [selectableGroup]="true"
+                [selectableGroupAsModel]="false"
+              ></bp-multi-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-xl-7">
       <h3>Standard multi-select with disabled options</h3>
       <p>
         Use this variation when a user cannot select or deselect a certain

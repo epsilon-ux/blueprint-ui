@@ -39,6 +39,9 @@ export class MultiselectComponent implements OnInit, OnChanges {
   @Input() placeholder = '';
   @Input() bindValue: string = null;
   @Input() bindLabel: string = null;
+  @Input() groupBy: string = null;
+  @Input() selectableGroup = true;
+  @Input() selectableGroupAsModel = false;
   @Input() maxSelectedItems: number;
   @Input() notFoundText: string = null; // Deprecated: Use intl input
   @Input() isDisabled = false;
