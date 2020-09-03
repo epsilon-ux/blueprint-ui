@@ -12,6 +12,9 @@
     [searchable]="isSearchable"
     [clearable]="false"
     [closeOnSelect]="false"
+    [groupBy]="groupBy"
+    [selectableGroup]="selectableGroup"
+    [selectableGroupAsModel]="selectableGroupAsModel"
     [maxSelectedItems]="maxSelectedItems"
     [loading]="!isDataLoaded"
     [notFoundText]="internationalization['No items found']"
@@ -110,6 +113,25 @@
         <ng-container *ngIf="!optionTemplate">
           {{ bindLabel ? item[bindLabel] : item }}
         </ng-container>
+      </div>
+    </ng-template>
+
+    <!-- Option Group Template -->
+    <ng-template
+      ng-optgroup-tmp
+      let-item="item"
+      let-item$="item$"
+      let-index="index"
+    >
+      <div class="decorative-checkbox-container">
+        <span
+          [ngClass]="{
+            'decorative-checkbox': true,
+            'is-checked': item$.selected,
+            'is-disabled': item.disabled
+          }"
+        ></span>
+          {{ item[groupBy] }}
       </div>
     </ng-template>
 
