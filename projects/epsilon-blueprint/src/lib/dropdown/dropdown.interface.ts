@@ -13,3 +13,9 @@ export interface DropdownItemInterface {
   iconLeft?: string;
   iconRight?: string;
 }
+
+export interface DropdownExtrasInterface {
+  heading: string;
+  plainText: string;
+  isDivider: boolean;
+}
