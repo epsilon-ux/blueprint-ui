@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  logoSrc = 'https://epsilon-ux.github.io/blueprint-primary-navigation/assets/logo.svg';
-  logoAlt = 'PeopleCloud Product';
-
   navMenuItems = [
     {
       text: 'Dropdown Header',
