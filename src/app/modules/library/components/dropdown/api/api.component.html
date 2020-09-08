@@ -65,7 +65,7 @@
         The dropdown item will render either an anchor or a button depending on the properties. If either an href or bpRouterLink is provided, the action will be an anchor. If neither are provided, the action will be a button.
       </p>
       <p>
-        Headings, dividers and plain text can also be added by providing the either heading, isDivider, or plainText key/value pairs. Items render in the same order as in the dropdown items array.
+        Headings, dividers and plain text can also be added by providing the either heading, isDivider, or plainText key:value pairs. Items render in the same order as in the dropdown items array.
       </p>
     </div>
     <div class="col-12">
@@ -165,19 +165,25 @@
             <td>heading</td>
             <td>string</td>
             <td>Adds a heading item to the dropdown where the value is the heading text.</td>
-            <td>Should be the only property in the object.</td>
+            <td>Should be the only property in the object aside from bpID.</td>
           </tr>
           <tr>
             <td>plainText</td>
             <td>string</td>
             <td>Adds a plain text item to the dropdown where the value is the text.</td>
-            <td>Should be the only property in the object.</td>
+            <td>Should be the only property in the object aside from bpID.</td>
           </tr>
           <tr>
             <td>isDivider</td>
             <td>boolean</td>
             <td>Adds a divider to the dropdown.</td>
-            <td>Should be the only property in the object.</td>
+            <td>Should be the only property in the object aside from bpID.</td>
+          </tr>
+          <tr>
+            <td>bpID</td>
+            <td>string</td>
+            <td>The value of the dropdown items id.</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

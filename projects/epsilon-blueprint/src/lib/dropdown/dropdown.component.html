@@ -15,12 +15,12 @@
     [attr.aria-labelledby]="uuid + 'DropdownToggle'"
   >
     <ng-container *ngFor="let dropdownItem of dropdownItems; index as i" [ngSwitch]="getType(dropdownItem)">
-      <p *ngSwitchCase="'heading'" class="dropdown-header">
+      <p *ngSwitchCase="'heading'" [id]="dropdownItem.bpID" class="dropdown-header">
         {{ dropdownItem.heading }}
       </p>
       <bp-action
         *ngSwitchCase="'item'"
-        [bpID]="uuid + 'item' + i"
+        [bpID]="dropdownItem.bpID || uuid + 'item' + i"
         [classes]="getClasses(dropdownItem)"
         [text]="dropdownItem.text"
         [ariaLabel]="dropdownItem.ariaLabel"
@@ -34,7 +34,7 @@
         (click)="emitAction(dropdownItem.action)"
       ></bp-action>
       <div *ngSwitchCase="'divider'" class="dropdown-divider"></div>
-      <p *ngSwitchCase="'text'" class="dropdown-text">
+      <p *ngSwitchCase="'text'" [id]="dropdownItem.bpID" class="dropdown-text">
         {{ dropdownItem.plainText }}
       </p>
     </ng-container>
