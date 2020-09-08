@@ -128,18 +128,23 @@ bp-header
         }
       }
 
-      .dropdown-toggle::after
+      .dropdown-toggle
       {
-        content: $icon-caret-down;
-        vertical-align: 0;
-        margin-left: 2px;
-        border-top: 0;
-        border-right: 0;
-        border-bottom: 0;
-        border-left: 0;
-        font-family: $font-family-icon;
-        font-weight: $font-weight-semi-bold;
-        transform: translateY(1px);
+        justify-content: flex-start;
+
+        &::after
+        {
+          content: $icon-caret-down;
+          vertical-align: 0;
+          margin-left: 2px;
+          border-top: 0;
+          border-right: 0;
+          border-bottom: 0;
+          border-left: 0;
+          font-family: $font-family-icon;
+          font-weight: $font-weight-semi-bold;
+          transform: translateY(1px);
+        }
       }
 
       .dropdown-menu
@@ -233,7 +238,7 @@ bp-header
         width: 16px;
         height: 16px;
         // TODO: should we ship logos and prod switcher icon with pkg?
-        // background: url(../assets/icon-product-switcher.svg);
+        background: url(https://epsilon-ux.github.io/blueprint-primary-navigation/assets/icon-product-switcher.svg);
         transform: translateY(1px);
       }
 
@@ -262,7 +267,7 @@ bp-header
 
       .nav-link
       {
-        padding: 14px 15px;
+        padding: 11px 15px 12px;
         font-size: $font-size-lg;
       }
     }
@@ -353,6 +358,11 @@ bp-header
               font-weight: $font-weight-semi-bold;
             }
           }
+
+          .product-switcher-text
+          {
+            display: none;
+          }
         }
 
         .major
@@ -374,11 +384,6 @@ bp-header
             font-size: $font-size-md;
           }
         }
-      }
-
-      .product-switcher-text
-      {
-        display: none;
       }
     }
   }
