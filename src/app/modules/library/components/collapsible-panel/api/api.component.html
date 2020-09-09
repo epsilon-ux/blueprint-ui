@@ -55,16 +55,6 @@
         </tbody>
       </table>
 
-      <h2>Content Projection</h2>
-      <p>
-        The optional ng-content directives' select attribute value is panel-content.
-      </p>
-      <h3>panel-content</h3>
-      <p>
-        A content area in the collapsible panel used for filters, secondary navigation, tabs, or static content.
-      </p>
-      <markdown [data]="panelContent" lineNumbers></markdown>
-
       <h2>Outputs</h2>
       <table class="table table-bordered-rows mb-5">
         <caption class="sr-only">Collapsible panel outputs</caption>
@@ -81,6 +71,16 @@
           </tr>
         </tbody>
       </table>
+
+      <h2>Content Projection</h2>
+      <p>
+        The optional ng-content directives' select attribute value is panel-content.
+      </p>
+      <h3>panel-content</h3>
+      <p>
+        A content area in the collapsible panel used for filters, secondary navigation, tabs, or static content.
+      </p>
+      <markdown [data]="panelContent" lineNumbers></markdown>
 
       <h2 id="ids">Identifiers</h2>
       <table class="table table-bordered-rows mb-5">
