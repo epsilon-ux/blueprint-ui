@@ -48,26 +48,7 @@ bp-header
 
     .nav-select
     {
-      display: flex;
-      justify-content: space-between;
       margin: 15px 20px;
-      padding: 6px 10px;
-      background: $mist;
-      font-weight: $font-weight-semi-bold;
-
-      &::after
-      {
-        vertical-align: 0;
-        margin-left: 5px;
-        border-top: 0;
-        border-right: 0;
-        border-bottom: 0;
-        border-left: 0;
-        content: $icon-caret-down;
-        font-weight: $font-weight-semi-bold;
-        font-family: $font-family-icon;
-        transform: translateY(1px);
-      }
     }
 
     .navbar-nav

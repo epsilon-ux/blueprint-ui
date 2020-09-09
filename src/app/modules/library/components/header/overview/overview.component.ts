@@ -7,8 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  logoSrc = 'https://epsilon-ux.github.io/blueprint-primary-navigation/assets/logo.svg';
-  logoAlt = 'PeopleCloud Product';
+  selectOptions = [
+    {
+      text: 'Option 1'
+    },
+    {
+      text: 'Option 2 has very very long text'
+    },
+    {
+      text: 'Option 3'
+    },
+    {
+      text: 'Option 4'
+    }
+  ];
+  selectedOption;
 
   constructor() { }
 

@@ -9,6 +9,7 @@
     - handle responsive behavior
     - consider creating an input for navbar-expand-{{breakpoint}}
     - should product switcher be a separate content area in the component, part of the templates, or a component?
+    - style ng-select in the context of the nav context selector
   -->
   <a href="" class="navbar-brand">
     <img
@@ -31,9 +32,7 @@
     </button>
     <div id="collapsibleMenu" class="collapse navbar-collapse">
       <ng-container *ngIf="hasContextSelector">
-        <div class="nav-select">
-          <ng-content select="[context-selector]"></ng-content>
-        </div>
+        <ng-content select="[context-selector]"></ng-content>
       </ng-container>
       <ng-container *ngIf="hasNavigation">
         <ng-content select="[nav-major]"></ng-content>

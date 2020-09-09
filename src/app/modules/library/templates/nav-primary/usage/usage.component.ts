@@ -7,8 +7,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsageComponent implements OnInit {
 
-  logoSrc = 'https://epsilon-ux.github.io/blueprint-primary-navigation/assets/logo.svg';
-  logoAlt = 'PeopleCloud Product';
+  businessUnits = [
+    {
+      text: 'Business Unit 1'
+    },
+    {
+      text: 'Business Unit 2'
+    },
+    {
+      text: 'Business Unit 3'
+    }
+  ];
+  selectedBusinessUnit;
+
+  parents = [
+    {
+      text: 'Parent 1'
+    },
+    {
+      text: 'Parent 2'
+    },
+    {
+      text: 'Parent 3'
+    }
+  ];
+  selectedParent;
+
+  tenants = [
+    {
+      text: 'Tenant 1'
+    },
+    {
+      text: 'Tenant 2'
+    },
+    {
+      text: 'Tenant 3'
+    }
+  ];
+  selectedTenant;
 
   programSetupNavItems = [
     {

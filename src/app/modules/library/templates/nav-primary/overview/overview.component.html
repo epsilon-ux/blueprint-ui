@@ -11,10 +11,22 @@
         <div class="card-body p-0">
           <div class="demo-base-template">
             <bp-header
-              logoSrc="assets/logos/logo-generic.svg"
+              logoSrc="assets/logos/logo-product.svg"
               logoAlt="Epsilon PeopleCloud Product"
             >
-              <div context-selector>CONTEXT SELECTOR</div>
+              <div context-selector>
+                <label id="select" class="sr-only">Context</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a context"
+                  [items]="contexts"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedContext"
+                ></ng-select>
+              </div>
               <nav nav-major class="nav-major">
                 <ul class="navbar-nav major">
                   <li class="nav-item">

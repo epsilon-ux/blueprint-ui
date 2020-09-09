@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
+  contexts = [
+    {
+      text: 'Business Unit'
+    },
+    {
+      text: 'Parent'
+    },
+    {
+      text: 'Tenant'
+    }
+  ];
+  selectedContext;
+
   navMenuItems = [
     {
       text: 'Dropdown Header',

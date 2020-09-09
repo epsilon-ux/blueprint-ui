@@ -20,7 +20,6 @@
       <div class="card mb-3">
         <div class="card-body p-0">
           <div class="demo-base-template">
-            <!-- TODO: investigate why logoSrc and logoAlt throw errors with []="" syntax -->
             <bp-header
               logoSrc="assets/logos/logo-customer.svg"
               logoAlt="Epsilon PeopleCloud Customer"
@@ -44,14 +43,14 @@
                   </li>
                   <li class="nav-item">
                     <bp-action
-                      text="Glossary"
+                      text="Data Sets"
                       classes="nav-link"
                       routerLink="./demo"
                     ></bp-action>
                   </li>
                   <li class="nav-item">
                     <bp-action
-                      text="Data Sets"
+                      text="Feeds"
                       classes="nav-link"
                       routerLink="./demo"
                     ></bp-action>
@@ -89,8 +88,9 @@
                       </p>
                     </div>
                   </li>
+                  <!--
+                  TODO: confirm if this should be deleted
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
                     <button
                       type="button"
                       id="customerAccountDropdown"
@@ -110,6 +110,7 @@
                       </a>
                     </div>
                   </li>
+                  -->
                   <li class="nav-item">
                     <bp-action
                       text="Settings"
@@ -135,23 +136,17 @@
                       </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customerProductSwitcher">
+                      <p class="dropdown-header">
+                        Agility Products
+                      </p>
                       <a href="" target="_blank" class="dropdown-item">
-                        Admin
+                        Bridge
                       </a>
                       <p class="dropdown-text">
                         Customer
                       </p>
                       <a href="" target="_blank" class="dropdown-item">
-                        Data Hub
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
-                        Events
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
                         FRMS
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
-                        Loyalty
                       </a>
                       <a href="" target="_blank" class="dropdown-item">
                         Messaging
@@ -170,13 +165,7 @@
                         Data Visualization
                       </a>
                       <a href="" target="_blank" class="dropdown-item">
-                        Jupyter Analytics
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
                         Kibana
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
-                        RStudio Analytics
                       </a>
                     </div>
                   </li>
@@ -206,25 +195,29 @@
       <div class="card mb-3">
         <div class="card-body p-0">
           <div class="demo-base-template">
-            <!-- TODO: investigate why logoSrc and logoAlt throw errors with []="" syntax -->
             <bp-header
               logoSrc="assets/logos/logo-data-hub.svg"
               logoAlt="Epsilon Data Hub"
             >
-              <div context-selector>CONTEXT SELECTOR</div>
+              <div context-selector>
+                <label id="select" class="sr-only">Tenant</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a tenant"
+                  [items]="tenants"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedTenant"
+                ></ng-select>
+              </div>
               <nav nav-major class="nav-major">
                 <ul class="navbar-nav major">
                   <li class="nav-item">
                     <bp-action
-                      text="Dashboard"
-                      classes="nav-link active"
-                      routerLink="./demo"
-                    ></bp-action>
-                  </li>
-                  <li class="nav-item">
-                    <bp-action
                       text="Monitoring"
-                      classes="nav-link"
+                      classes="nav-link active"
                       routerLink="./demo"
                     ></bp-action>
                   </li>
@@ -376,12 +369,23 @@
       <div class="card mb-3">
         <div class="card-body p-0">
           <div class="demo-base-template">
-            <!-- TODO: investigate why logoSrc and logoAlt throw errors with []="" syntax -->
             <bp-header
               logoSrc="assets/logos/logo-events.svg"
               logoAlt="Epsilon Events"
             >
-              <div context-selector>CONTEXT SELECTOR</div>
+              <div context-selector>
+                <label id="select" class="sr-only">Parent</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a parent"
+                  [items]="parents"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedParent"
+                ></ng-select>
+              </div>
               <nav nav-major class="nav-major">
                 <ul class="navbar-nav major">
                   <li class="nav-item">
@@ -552,32 +556,29 @@
       <div class="card mb-3">
         <div class="card-body p-0">
           <div class="demo-base-template">
-            <!-- TODO: investigate why logoSrc and logoAlt throw errors with []="" syntax -->
             <bp-header
               logoSrc="assets/logos/logo-iq.svg"
               logoAlt="Epsilon IQ"
             >
-              <div context-selector>CONTEXT SELECTOR</div>
+              <div context-selector>
+                <label id="select" class="sr-only">Tenant</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a tenant"
+                  [items]="tenants"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedTenant"
+                ></ng-select>
+              </div>
               <nav nav-major class="nav-major">
                 <ul class="navbar-nav major">
                   <li class="nav-item">
                     <bp-action
-                      text="Projects"
-                      classes="nav-link active"
-                      routerLink="./demo"
-                    ></bp-action>
-                  </li>
-                  <li class="nav-item">
-                    <bp-action
                       text="Choice Management"
-                      classes="nav-link"
-                      routerLink="./demo"
-                    ></bp-action>
-                  </li>
-                  <li class="nav-item">
-                    <bp-action
-                      text="Reports"
-                      classes="nav-link"
+                      classes="nav-link active"
                       routerLink="./demo"
                     ></bp-action>
                   </li>
@@ -585,8 +586,9 @@
               </nav>
               <nav nav-minor class="nav-minor">
                 <ul class="navbar-nav minor">
+                  <!--
+                  TODO: confirm if this should be deleted
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
                     <button
                       type="button"
                       id="iqHelpDropdown"
@@ -610,6 +612,7 @@
                       </p>
                     </div>
                   </li>
+                  -->
                   <li class="nav-item dropdown">
                     <!-- TODO: update to bp-dropdown -->
                     <button
@@ -638,8 +641,9 @@
                       routerLink="./demo"
                     ></bp-action>
                   </li>
+                  <!--
+                  TODO: confirm if this should be deleted
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
                     <button
                       type="button"
                       id="iqProductSwitcher"
@@ -701,6 +705,7 @@
                       </a>
                     </div>
                   </li>
+                  -->
                 </ul>
               </nav>
             </bp-header>
@@ -727,7 +732,6 @@
       <div class="card mb-3">
         <div class="card-body p-0">
           <div class="demo-base-template">
-            <!-- TODO: investigate why logoSrc and logoAlt throw errors with []="" syntax -->
             <bp-header
               logoSrc="assets/logos/logo-loyalty.svg"
               logoAlt="Epsilon PeopleCloud Loyalty"
@@ -939,12 +943,23 @@
       <div class="card mb-3">
         <div class="card-body p-0">
           <div class="demo-base-template">
-            <!-- TODO: investigate why logoSrc and logoAlt throw errors with []="" syntax -->
             <bp-header
               logoSrc="assets/logos/logo-messaging.svg"
               logoAlt="Epsilon PeopleCloud Messaging"
             >
-              <div context-selector>CONTEXT SELECTOR</div>
+              <div context-selector>
+                <label id="select" class="sr-only">Business Unit</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a business unit"
+                  [items]="businessUnits"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedBusinessUnit"
+                ></ng-select>
+              </div>
               <nav nav-major class="nav-major">
                 <ul class="navbar-nav major">
                   <li class="nav-item">
