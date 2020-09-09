@@ -3,25 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['../../collapsible-panel/collapsible-panel.component.scss']
+  styleUrls: ['./overview.component.scss', '../../collapsible-panel/collapsible-panel.component.scss']
 })
 export class OverviewComponent implements OnInit {
-
-  selectOptions = [
-    {
-      text: 'Option 1'
-    },
-    {
-      text: 'Option 2 has very very long text'
-    },
-    {
-      text: 'Option 3'
-    },
-    {
-      text: 'Option 4'
-    }
-  ];
-  selectedOption;
 
   constructor() { }
 
