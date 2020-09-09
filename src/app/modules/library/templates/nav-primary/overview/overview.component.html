@@ -48,13 +48,6 @@
                       routerLink="./demo"
                     ></bp-action>
                   </li>
-                  <li class="nav-item dropdown">
-                    <bp-dropdown
-                      triggerText="Dropdown"
-                      triggerClasses="nav-link dropdown-toggle"
-                      [dropdownItems]="navDropdownItems"
-                    ></bp-dropdown>
-                  </li>
                   <li class="nav-item">
                     <bp-action
                       text="External Link"
@@ -64,13 +57,20 @@
                       iconRight="fa-external-link-alt"
                     ></bp-action>
                   </li>
+                  <li class="nav-item dropdown">
+                    <bp-dropdown
+                      triggerText="Dropdown"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="navDropdownItems"
+                    ></bp-dropdown>
+                  </li>
                 </ul>
               </nav>
               <nav nav-minor class="nav-minor">
                 <ul class="navbar-nav minor">
                   <li class="nav-item">
                     <bp-action
-                      text="In-App Link"
+                      text="Link"
                       classes="nav-link"
                       routerLink="./demo"
                     ></bp-action>
@@ -81,6 +81,7 @@
                       classes="nav-link"
                       href="#"
                       target="_blank"
+                      iconRight="fa-external-link-alt"
                     ></bp-action>
                   </li>
                   <li class="nav-item dropdown">
