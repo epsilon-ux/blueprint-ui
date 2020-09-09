@@ -47,12 +47,17 @@
   font-size: $font-size-md;
 }
 
-.dropdown-item
+.dropdown-item,
+.dropdown-header,
+.dropdown-text
 {
   margin-bottom: 2px;
   padding: 5px 10px;
   white-space: initial;
+}
 
+.dropdown-item
+{
   &:first-child,
   &:last-child
   {
@@ -93,4 +98,21 @@
       box-shadow: $box-shadow-focus-warning;
     }
   }
+}
+
+.dropdown-header
+{
+  color: $font-color-primary;
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-md;
+}
+
+.dropdown-text
+{
+  color: $font-color-secondary;
+}
+
+.dropdown-divider
+{
+  border-color: $border-color-secondary;
 }

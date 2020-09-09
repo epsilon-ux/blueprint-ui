@@ -14,20 +14,29 @@
     class="dropdown-menu"
     [attr.aria-labelledby]="uuid + 'DropdownToggle'"
   >
-    <bp-action
-      *ngFor="let dropdownItem of dropdownItems; index as i"
-      [bpID]="uuid + 'item' + i"
-      [classes]="getClasses(dropdownItem)"
-      [text]="dropdownItem.text"
-      [ariaLabel]="dropdownItem.ariaLabel"
-      [href]="dropdownItem.href"
-      [bpRouterLink]="dropdownItem.bpRouterLink"
-      [target]="dropdownItem.target"
-      [isDisabled]="dropdownItem.isDisabled"
-      [iconLeft]="dropdownItem.iconLeft"
-      [iconRight]="dropdownItem.iconRight"
-      [lang]="dropdownItem.lang"
-      (click)="emitAction(dropdownItem.action)"
-    ></bp-action>
+    <ng-container *ngFor="let dropdownItem of dropdownItems; index as i" [ngSwitch]="getType(dropdownItem)">
+      <p *ngSwitchCase="'heading'" [id]="dropdownItem.bpID" class="dropdown-header">
+        {{ dropdownItem.heading }}
+      </p>
+      <bp-action
+        *ngSwitchCase="'item'"
+        [bpID]="dropdownItem.bpID || uuid + 'item' + i"
+        [classes]="getClasses(dropdownItem)"
+        [text]="dropdownItem.text"
+        [ariaLabel]="dropdownItem.ariaLabel"
+        [href]="dropdownItem.href"
+        [bpRouterLink]="dropdownItem.bpRouterLink"
+        [target]="dropdownItem.target"
+        [isDisabled]="dropdownItem.isDisabled"
+        [iconLeft]="dropdownItem.iconLeft"
+        [iconRight]="dropdownItem.iconRight"
+        [lang]="dropdownItem.lang"
+        (click)="emitAction(dropdownItem.action)"
+      ></bp-action>
+      <div *ngSwitchCase="'divider'" class="dropdown-divider"></div>
+      <p *ngSwitchCase="'text'" [id]="dropdownItem.bpID" class="dropdown-text">
+        {{ dropdownItem.plainText }}
+      </p>
+    </ng-container>
   </div>
 </div>

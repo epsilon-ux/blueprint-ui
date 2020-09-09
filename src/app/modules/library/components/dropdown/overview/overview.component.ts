@@ -8,6 +8,9 @@ export class OverviewComponent implements OnInit {
 
   exampleItems = [
     {
+      heading: 'Heading Text'
+    },
+    {
       text: 'Dropdown Item',
       action: 'item1'
     },
@@ -20,6 +23,12 @@ export class OverviewComponent implements OnInit {
       text: 'Dropdown Item',
       action: 'item3',
       isDestructive: true
+    },
+    {
+      isDivider: true
+    },
+    {
+      plainText: 'Dropdown Text'
     }
   ];
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { generateUniqueId } from '../../helpers';
-import { DropdownItemInterface } from './dropdown.interface';
+import { DropdownItemInterface, DropdownExtrasInterface } from './dropdown.interface';
 
 @Component({
   selector: 'bp-dropdown',
@@ -11,7 +11,7 @@ export class DropdownComponent implements OnInit {
   @Input() triggerText: string;
   @Input() triggerClasses = '';
   @Input() dropDirection: 'up' | 'down' | 'left' | 'right' = 'down';
-  @Input() dropdownItems: DropdownItemInterface[];
+  @Input() dropdownItems: DropdownItemInterface[] | DropdownExtrasInterface[];
   @Input() bpID: string;
 
   @Output() action = new EventEmitter();
@@ -44,6 +44,18 @@ export class DropdownComponent implements OnInit {
       classes += ' is-active';
     }
     return classes;
+  }
+
+  getType(obj: DropdownExtrasInterface): string {
+    if (obj.plainText) {
+      return 'text';
+    } else if (obj.heading) {
+      return 'heading';
+    } else if (obj.isDivider) {
+      return 'divider';
+    } else {
+      return 'item';
+    }
   }
 
   emitAction(e: string): void {
