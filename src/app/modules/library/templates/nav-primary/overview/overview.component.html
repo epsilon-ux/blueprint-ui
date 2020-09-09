@@ -48,6 +48,13 @@
                       routerLink="./demo"
                     ></bp-action>
                   </li>
+                  <li class="nav-item dropdown">
+                    <bp-dropdown
+                      triggerText="Dropdown"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="navDropdownItems"
+                    ></bp-dropdown>
+                  </li>
                   <li class="nav-item">
                     <bp-action
                       text="External Link"
@@ -56,13 +63,6 @@
                       target="_blank"
                       iconRight="fa-external-link-alt"
                     ></bp-action>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <bp-dropdown
-                      triggerText="Dropdown"
-                      triggerClasses="nav-link dropdown-toggle"
-                      [dropdownItems]="navDropdownItems"
-                    ></bp-dropdown>
                   </li>
                 </ul>
               </nav>
