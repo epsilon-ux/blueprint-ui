@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { generateUniqueId } from '../../helpers';
 
 @Component({
@@ -11,6 +11,8 @@ export class CollapsiblePanelComponent implements OnInit {
   @Input() toggleAriaLabel = 'Toggle collapsible panel';
   @Input() isPanelRight = false;
   @Input() bpID: string;
+
+  @Output() click = new EventEmitter();
 
   uuid: string;
 
@@ -26,6 +28,7 @@ export class CollapsiblePanelComponent implements OnInit {
 
   togglePanel(): void {
     this.isPanelCollapsed = !this.isPanelCollapsed;
+    this.click.emit();
   }
 
 }
