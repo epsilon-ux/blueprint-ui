@@ -1,0 +1,24 @@
+@import "projects/epsilon-blueprint/src/styles/_global-variables";
+
+.demo-nav-select,
+.demo-nav-major,
+.demo-nav-minor
+{
+  margin: 15px 20px;
+  padding: 6px 10px;
+  background: $mist;
+}
+
+@media (min-width: 992px)
+{
+  .demo-nav-select
+  {
+    margin: 0;
+  }
+
+  .demo-nav-major,
+  .demo-nav-minor
+  {
+    margin: 0 20px;
+  }
+}

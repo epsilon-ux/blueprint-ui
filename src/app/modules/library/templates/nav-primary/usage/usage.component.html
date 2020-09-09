@@ -1,0 +1,1159 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Add content here.
+      </p>
+      <h2 class="mb-0">Variations</h2>
+      <h3>Customer</h3>
+      <p>
+        <a
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/nav-primary/customer.html"
+          target="_blank"
+          class="link-primary"
+        >
+          Customer template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <bp-header
+              logoSrc="assets/logos/logo-customer.svg"
+              logoAlt="Epsilon PeopleCloud Customer"
+              [hasContextSelector]="false"
+            >
+              <nav nav-major class="nav-major">
+                <ul class="navbar-nav major">
+                  <li class="nav-item">
+                    <bp-action
+                      text="Dashboard"
+                      classes="nav-link active"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Customers"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Data Sets"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Feeds"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Processes"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                </ul>
+              </nav>
+              <nav nav-minor class="nav-minor">
+                <ul class="navbar-nav minor">
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="customerHelpDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Help
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customerHelpDropdown">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Documentation
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-text">
+                        Version 00.00.01
+                      </p>
+                    </div>
+                  </li>
+                  <!--
+                  TODO: confirm if this should be deleted
+                  <li class="nav-item dropdown">
+                    <button
+                      type="button"
+                      id="customerAccountDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Account
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customerAccountDropdown">
+                      <p class="dropdown-text">
+                        Username
+                      </p>
+                      <a href="" class="dropdown-item">
+                        Log Out
+                      </a>
+                    </div>
+                  </li>
+                  -->
+                  <li class="nav-item">
+                    <bp-action
+                      text="Settings"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="customerProductSwitcher"
+                      class="nav-link dropdown-toggle product-switcher"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <span class="product-switcher-text" aria-hidden="true">
+                        Product Switcher
+                      </span>
+                      <span class="sr-only">
+                        Product Switcher
+                      </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customerProductSwitcher">
+                      <p class="dropdown-header">
+                        Agility Products
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Bridge
+                      </a>
+                      <p class="dropdown-text">
+                        Customer
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        FRMS
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Messaging
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-header">
+                        External Products
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Business Insights
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Campaign Management
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Visualization
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Kibana
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </bp-header>
+            <div class="demo-body">
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Data Hub</h3>
+      <p>
+        <a
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/nav-primary/data-hub.html"
+          target="_blank"
+          class="link-primary"
+        >
+          Data Hub template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <bp-header
+              logoSrc="assets/logos/logo-data-hub.svg"
+              logoAlt="Epsilon Data Hub"
+            >
+              <div context-selector>
+                <label id="select" class="sr-only">Tenant</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a tenant"
+                  [items]="tenants"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedTenant"
+                ></ng-select>
+              </div>
+              <nav nav-major class="nav-major">
+                <ul class="navbar-nav major">
+                  <li class="nav-item">
+                    <bp-action
+                      text="Monitoring"
+                      classes="nav-link active"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Workflows"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Feeds"
+                      classes="nav-link"
+                      href="#"
+                    ></bp-action>
+                  </li>
+                </ul>
+              </nav>
+              <nav nav-minor class="nav-minor">
+                <ul class="navbar-nav minor">
+                  <li class="nav-item">
+                    <bp-action
+                      text="Alerts"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="dataHubHelpDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Help
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dataHubHelpDropdown">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Help on this page
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Documentation
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-text">
+                        Version 00.00.01
+                      </p>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="dataHubAccountDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Account
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dataHubAccountDropdown">
+                      <p class="dropdown-text">
+                        Username
+                      </p>
+                      <button type="button" class="dropdown-item">
+                        Change Password
+                      </button>
+                      <button type="button" class="dropdown-item">
+                        Log Out
+                      </button>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="dataHubProductSwitcher"
+                      class="nav-link dropdown-toggle product-switcher"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <span class="product-switcher-text" aria-hidden="true">
+                        Product Switcher
+                      </span>
+                      <span class="sr-only">
+                        Product Switcher
+                      </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dataHubProductSwitcher">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Admin
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Customer
+                      </a>
+                      <p class="dropdown-text">
+                        Data Hub
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Events
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Loyalty
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Messaging
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-header">
+                        External Products
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Business Insights
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Kibana
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </bp-header>
+            <div class="demo-body">
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Events</h3>
+      <p>
+        <a
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/nav-primary/events.html"
+          target="_blank"
+          class="link-primary"
+        >
+          Events template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <bp-header
+              logoSrc="assets/logos/logo-events.svg"
+              logoAlt="Epsilon Events"
+            >
+              <div context-selector>
+                <label id="select" class="sr-only">Parent</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a parent"
+                  [items]="parents"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedParent"
+                ></ng-select>
+              </div>
+              <nav nav-major class="nav-major">
+                <ul class="navbar-nav major">
+                  <li class="nav-item">
+                    <bp-action
+                      text="Programs"
+                      classes="nav-link active"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Events"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Actions"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Rules"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                </ul>
+              </nav>
+              <nav nav-minor class="nav-minor">
+                <ul class="navbar-nav minor">
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="eventsHelpDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Help
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsHelpDropdown">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Help on this page
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Documentation
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-text">
+                        Version 00.00.01
+                      </p>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="eventsAccountDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Account
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsAccountDropdown">
+                      <p class="dropdown-text">
+                        Username
+                      </p>
+                      <button type="button" class="dropdown-item">
+                        Log Out
+                      </button>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Settings"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="eventsProductSwitcher"
+                      class="nav-link dropdown-toggle product-switcher"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <span class="product-switcher-text" aria-hidden="true">
+                        Product Switcher
+                      </span>
+                      <span class="sr-only">
+                        Product Switcher
+                      </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsProductSwitcher">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Admin
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Customer
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Hub
+                      </a>
+                      <p class="dropdown-text">
+                        Events
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        FRMS
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Loyalty
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Messaging
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-header">
+                        External Products
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Business Insights
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Campaign Management
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Visualization
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Kibana
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </bp-header>
+            <div class="demo-body">
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>IQ</h3>
+      <p>
+        <a
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/nav-primary/iq.html"
+          target="_blank"
+          class="link-primary"
+        >
+          IQ template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <bp-header
+              logoSrc="assets/logos/logo-iq.svg"
+              logoAlt="Epsilon IQ"
+            >
+              <div context-selector>
+                <label id="select" class="sr-only">Tenant</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a tenant"
+                  [items]="tenants"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedTenant"
+                ></ng-select>
+              </div>
+              <nav nav-major class="nav-major">
+                <ul class="navbar-nav major">
+                  <li class="nav-item">
+                    <bp-action
+                      text="Choice Management"
+                      classes="nav-link active"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                </ul>
+              </nav>
+              <nav nav-minor class="nav-minor">
+                <ul class="navbar-nav minor">
+                  <!--
+                  TODO: confirm if this should be deleted
+                  <li class="nav-item dropdown">
+                    <button
+                      type="button"
+                      id="iqHelpDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Help
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="iqHelpDropdown">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Help on this page
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Documentation
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-text">
+                        Version 00.00.01
+                      </p>
+                    </div>
+                  </li>
+                  -->
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="iqAccountDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Account
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="iqAccountDropdown">
+                      <p class="dropdown-text">
+                        Username
+                      </p>
+                      <a href="" class="dropdown-item">
+                        Log Out
+                      </a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Settings"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <!--
+                  TODO: confirm if this should be deleted
+                  <li class="nav-item dropdown">
+                    <button
+                      type="button"
+                      id="iqProductSwitcher"
+                      class="nav-link dropdown-toggle product-switcher"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <span class="product-switcher-text" aria-hidden="true">
+                        Product Switcher
+                      </span>
+                      <span class="sr-only">
+                        Product Switcher
+                      </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="iqProductSwitcher">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Admin
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Customer
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Hub
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Events
+                      </a>
+                      <p class="dropdown-text">
+                        IQ
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Loyalty
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Messaging
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-header">
+                        External Products
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Business Insights
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Campaign Management
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Visualization
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Jupyter Analytics
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Kibana
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        RStudio Analytics
+                      </a>
+                    </div>
+                  </li>
+                  -->
+                </ul>
+              </nav>
+            </bp-header>
+            <div class="demo-body">
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Loyalty</h3>
+      <p>
+        <a
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/nav-primary/loyalty.html"
+          target="_blank"
+          lass="link-primary"
+        >
+          Loyalty template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <bp-header
+              logoSrc="assets/logos/logo-loyalty.svg"
+              logoAlt="Epsilon PeopleCloud Loyalty"
+              [hasContextSelector]="false"
+            >
+              <nav nav-major class="nav-major">
+                <ul class="navbar-nav major">
+                  <li class="nav-item">
+                    <bp-action
+                      text="Insights"
+                      classes="nav-link active"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Offers"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Customers"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update dropdown items -->
+                    <bp-dropdown
+                      triggerText="Program Setup"
+                      [dropdownItems]="programSetupNavItems"
+                      triggerClasses="nav-link dropdown-toggle"
+                    ></bp-dropdown>
+                  </li>
+                </ul>
+              </nav>
+              <nav nav-minor class="nav-minor">
+                <ul class="navbar-nav minor">
+                  <li class="nav-item dropdown">
+                    <!--
+                      TODO:
+                      update to bp-dropdown
+                      confirm if country names should be spelled out or abbreviated
+                    -->
+                    <button
+                      type="button"
+                      lang="en-us"
+                      id="loyaltyLanguageDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      English (US)
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loyaltyLanguageDropdown">
+                      <button type="button" lang="en-gb" id="langEnGb" class="dropdown-item">
+                        English (UK)
+                      </button>
+                      <button type="button" lang="en-us" id="langEnUs" class="dropdown-item">
+                        English (US)
+                      </button>
+                      <button type="button" lang="fr-ca" id="langFrCa" class="dropdown-item">
+                        Français (CA)
+                      </button>
+                      <button type="button" lang="fr-fr" id="langFrFr" class="dropdown-item">
+                        Français (FR)
+                      </button>
+                      <button type="button" lang="de-de" id="langDeDe" class="dropdown-item">
+                        Deutsche (DE)
+                      </button>
+                      <button type="button" lang="pt-pt" id="langPtPt" class="dropdown-item">
+                        Português (PT)
+                      </button>
+                      <button type="button" lang="es-es" id="langEsEs" class="dropdown-item">
+                        Español (ES)
+                      </button>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="loyaltyHelpDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Help
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loyaltyHelpDropdown">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Documentation
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-text">
+                        Version 00.00.01
+                      </p>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="loyaltyAccountDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Account
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loyaltyAccountDropdown">
+                      <p class="dropdown-text">
+                        Username
+                      </p>
+                      <button type="button" class="dropdown-item">
+                        Change Password
+                      </button>
+                      <a href="" class="dropdown-item">
+                        Log Out
+                      </a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Settings"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="loyaltyProductSwitcher"
+                      class="nav-link dropdown-toggle product-switcher"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <span class="product-switcher-text" aria-hidden="true">
+                        Product Switcher
+                      </span>
+                      <span class="sr-only">
+                        Product Switcher
+                      </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loyaltyProductSwitcher">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Admin
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Customer
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Hub
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Events
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        FRMS
+                      </a>
+                      <p class="dropdown-text">
+                        Loyalty
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Messaging
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-header">
+                        External Products
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Business Insights
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Visualization
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </bp-header>
+            <div class="demo-body">
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h3>Messaging</h3>
+      <p>
+        <a
+          href="https://github.com/epsilon-ux/resources/blob/master/templates/nav-primary/messaging.html"
+          target="_blank"
+          class="link-primary"
+        >
+          Messaging template code
+        </a>
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <bp-header
+              logoSrc="assets/logos/logo-messaging.svg"
+              logoAlt="Epsilon PeopleCloud Messaging"
+            >
+              <div context-selector>
+                <label id="select" class="sr-only">Business Unit</label>
+                <ng-select
+                  labelForId="select"
+                  class="nav-select"
+                  placeholder="Select a business unit"
+                  [items]="businessUnits"
+                  bindLabel="text"
+                  [clearable]="false"
+                  [searchable]="false"
+                  [(ngModel)]="selectedBusinessUnit"
+                ></ng-select>
+              </div>
+              <nav nav-major class="nav-major">
+                <ul class="navbar-nav major">
+                  <li class="nav-item">
+                    <bp-action
+                      text="Dashboard"
+                      classes="nav-link active"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Data"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Content"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Campaigns"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Reports"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item">
+                    <bp-action
+                      text="Monitoring"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                </ul>
+              </nav>
+              <nav nav-minor class="nav-minor">
+                <ul class="navbar-nav minor">
+                  <li class="nav-item">
+                    <bp-action
+                      text="Customers"
+                      classes="nav-link"
+                      routerLink="./demo"
+                    ></bp-action>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="messagingHelpDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Help
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagingHelpDropdown">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Help on this page
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Documentation
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-text">
+                        Version 00.00.01
+                      </p>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="messagingAccountDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Account
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagingAccountDropdown">
+                      <p class="dropdown-text">
+                        Username
+                      </p>
+                      <button type="button" class="dropdown-item">
+                        Change Password
+                      </button>
+                      <button type="button" class="dropdown-item">
+                        Log Out
+                      </button>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="messagingSettingsDropdown"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Settings
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagingSettingsDropdown">
+                      <a href="" class="dropdown-item">
+                        Business Unit Settings
+                      </a>
+                      <a href="" class="dropdown-item">
+                        Folder Management
+                      </a>
+                      <a href="" class="dropdown-item">
+                        Service Level Agreements (SLA) Dashboard
+                      </a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!-- TODO: update to bp-dropdown -->
+                    <button
+                      type="button"
+                      id="messagingProductSwitcher"
+                      class="nav-link dropdown-toggle product-switcher"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <span class="product-switcher-text" aria-hidden="true">
+                        Product Switcher
+                      </span>
+                      <span class="sr-only">
+                        Product Switcher
+                      </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagingProductSwitcher">
+                      <a href="" target="_blank" class="dropdown-item">
+                        Admin
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Customer
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Hub
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Events
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        FRMS
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Loyalty
+                      </a>
+                      <p class="dropdown-text">
+                        Messaging
+                      </p>
+                      <div class="dropdown-divider"></div>
+                      <p class="dropdown-header">
+                        External Products
+                      </p>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Business Insights
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Campaign Management
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Data Visualization
+                      </a>
+                      <a href="" target="_blank" class="dropdown-item">
+                        Kibana
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </bp-header>
+            <div class="demo-body">
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

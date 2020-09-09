@@ -48,33 +48,218 @@ bp-header
 
     .nav-select
     {
-      display: flex;
-      justify-content: space-between;
       margin: 15px 20px;
-      padding: 6px 10px;
-      background: $mist;
-      font-weight: $font-weight-semi-bold;
+    }
 
-      &::after
+    .navbar-nav
+    {
+      padding: 7px 0;
+    }
+
+    .nav-item
+    {
+      margin-bottom: 2px;
+
+      &:last-of-type
       {
-        vertical-align: 0;
-        margin-left: 5px;
+        margin-bottom: 0;
+      }
+
+      button.nav-link
+      {
+        width: 100%;
         border-top: 0;
         border-right: 0;
         border-bottom: 0;
-        border-left: 0;
-        content: $icon-caret-down;
+        border-left: 5px solid transparent;
+        background: transparent;
+        text-align: left;
+      }
+
+      .nav-link
+      {
+        border-left: 5px solid transparent;
+        color: $font-color-primary;
+        font-weight: $font-weight-regular;
+
+        &:hover
+        {
+          background: $mist;
+          color: $font-color-primary;
+          font-weight: $font-weight-semi-bold;
+        }
+
+        &.active
+        {
+          border-color: $accent-color-secondary;
+          background: $mist;
+          font-weight: $font-weight-semi-bold;
+        }
+
+        &[aria-expanded="true"]
+        {
+          font-weight: $font-weight-semi-bold;
+        }
+
+        i.fa-external-link-alt
+        {
+          margin-left: 5px;
+          font-size: $font-size-sm;
+          transform: translateY(-1px);
+        }
+      }
+
+      .dropdown-toggle
+      {
+        justify-content: flex-start;
+
+        &::after
+        {
+          content: $icon-caret-down;
+          vertical-align: 0;
+          margin-left: 2px;
+          border-top: 0;
+          border-right: 0;
+          border-bottom: 0;
+          border-left: 0;
+          font-family: $font-family-icon;
+          font-weight: $font-weight-semi-bold;
+          transform: translateY(1px);
+        }
+      }
+
+      .dropdown-menu
+      {
+        min-width: 150px;
+        margin: 0;
+        border-radius: 0;
+        border: 0;
+        padding: 4px 0;
+        background: $cloud;
+      }
+
+      .dropdown-item
+      {
+        margin: 0 0 2px;
+        padding: 6px 40px;
+        font-size: $font-size-md;
+        white-space: normal;
+
+        &:hover,
+        &:focus
+        {
+          background: $accent-color-primary;
+          color: $coconut;
+          font-weight: $font-weight-semi-bold;
+        }
+
+        &[target="_blank"]
+        {
+          &:hover,
+          &:focus
+          {
+            &::after
+            {
+              content: "\f35d";
+              display: inline-block;
+              margin-left: 5px;
+              font-family: $font-family-icon;
+              font-size: $font-size-sm;
+              transform: translateY(-1px);
+            }
+          }
+        }
+      }
+
+      .dropdown-header
+      {
+        margin: 0 0 2px;
+        padding: 6px 40px;
+        font-size: $font-size-md;
         font-weight: $font-weight-semi-bold;
-        font-family: $font-family-icon;
+        color: $font-color-primary;
+        cursor: default;
+      }
+
+      .dropdown-text
+      {
+        margin: 0 0 2px;
+        padding: 6px 40px;
+        font-size: $font-size-md;
+        color: $font-color-secondary;
+        cursor: default;
+      }
+
+      .dropdown-item,
+      .dropdown-header,
+      .dropdown-text
+      {
+        &:last-child
+        {
+          margin-bottom: 0;
+        }
+      }
+
+      .dropdown-divider
+      {
+        margin: 4px 0;
+        border-color: $border-color-secondary;
+      }
+      
+      // TODO: product switcher
+      .product-switcher
+      {
+        height: 40px;
+      }
+
+      .product-switcher::before
+      {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        // TODO: should we ship logos and prod switcher icon with pkg?
+        background: url(https://epsilon-ux.github.io/blueprint-primary-navigation/assets/icon-product-switcher.svg);
         transform: translateY(1px);
+      }
+
+      .navbar-nav .nav-item .dropdown-toggle.product-switcher::after
+      {
+        transform: translateY(-2px);
+      }
+
+      .product-switcher-text
+      {
+        display: inline-block;
+        margin-left: 5px;
+        transform: translateY(-2px);
       }
     }
 
-    // TODO: delete, temp code
-    .nav-major,
+    .nav-major
+    {
+      margin-right: auto;
+
+      .navbar-nav
+      {
+        border-top: 1px solid $border-color-secondary;
+        border-bottom: 1px solid $border-color-secondary;
+      }
+
+      .nav-link
+      {
+        padding: 11px 15px 12px;
+        font-size: $font-size-lg;
+      }
+    }
+
     .nav-minor
     {
-      margin: 15px 20px;
+      .nav-link
+      {
+        padding: 11px 15px;
+        font-size: $font-size-md;
+      }
     }
   }
 
@@ -97,13 +282,109 @@ bp-header
 
       .nav-select
       {
-        margin: 0;
+        width: 200px;
+        margin: 0 20px 0 0;
       }
 
-      .nav-major,
-      .nav-minor
+      .nav-major
       {
-        margin: 0 20px;
+        .navbar-nav
+        {
+          border-top: 0;
+          border-bottom: 0;
+        }
+      }
+
+      .navbar-nav
+      {
+        padding: 0;
+
+        .nav-item
+        {
+          margin-bottom: 0;
+
+          button.nav-link,
+          .nav-link
+          {
+            border-bottom: 5px solid transparent;
+            border-left: 0;
+  
+            &.active
+            {
+              border-color: $accent-color-secondary;
+            }
+          }
+
+          .dropdown-menu
+          {
+            max-width: 200px;
+            border: 1px solid $border-color-primary;
+            background: $coconut;
+          }
+
+          .dropdown-header,
+          .dropdown-text,
+          .dropdown-item
+          {
+            padding: 8px 10px;
+          }
+
+          .dropdown-item
+          {
+            &:hover,
+            &:focus
+            {
+              background: $accent-color-primary;
+              color: $coconut;
+              font-weight: $font-weight-semi-bold;
+            }
+          }
+
+          .product-switcher-text
+          {
+            display: none;
+          }
+        }
+
+        .major
+        {
+          .nav-link
+          {
+            padding: 16px 10px 11px;
+            font-size: $font-size-md;
+          }
+        }
+
+        .minor
+        {
+          margin-right: 20px;
+
+          .nav-link
+          {
+            padding: 16px 10px 11px;
+            font-size: $font-size-md;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px)
+  {
+    .major
+    {
+      .nav-link
+      {
+        padding: 14px 20px 9px;
+        font-size: var(--font-size-display2);
+      }
+    }
+
+    .minor
+    {
+      .nav-link
+      {
+        padding: 16px 10px 11px;
       }
     }
   }

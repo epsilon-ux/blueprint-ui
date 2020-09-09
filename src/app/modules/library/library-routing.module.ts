@@ -107,6 +107,9 @@ const routes: Routes = [
         loadChildren: () => import('./templates/object-page-header/object-page-header.module')
           .then(m => m.ObjectPageHeaderModule) },
 
+      { path: 'nav-primary', loadChildren: () => import('./templates/nav-primary/nav-primary.module')
+        .then(m => m.NavPrimaryModule) },
+
       { path: 'table-filters', loadChildren: () => import('./templates/table-filters/table-filters.module')
         .then(m => m.TableFiltersModule) }
     ] },

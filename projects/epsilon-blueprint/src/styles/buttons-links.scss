@@ -46,7 +46,7 @@ button.btn-text
   white-space: nowrap;
 
   &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active
+  &:not(:disabled):not(.disabled):not(.nav-link).active
   {
     border-color: transparent;
     background: $storm;
