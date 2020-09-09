@@ -1,3 +1,9 @@
+<!--
+  TODO:
+  - add dropdown menu right alignment for nav minor dropdown menus
+  - update dropdown triggerText on click of menu item if lang attr is present
+  - decide what to do with product switchers
+-->
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
@@ -67,50 +73,12 @@
               <nav nav-minor class="nav-minor">
                 <ul class="navbar-nav minor">
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="customerHelpDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Help
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customerHelpDropdown">
-                      <a href="" target="_blank" class="dropdown-item">
-                        Documentation
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <p class="dropdown-text">
-                        Version 00.00.01
-                      </p>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Help"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="customerHelpDropdownItems"
+                    ></bp-dropdown>
                   </li>
-                  <!--
-                  TODO: confirm if this should be deleted
-                  <li class="nav-item dropdown">
-                    <button
-                      type="button"
-                      id="customerAccountDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Account
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customerAccountDropdown">
-                      <p class="dropdown-text">
-                        Username
-                      </p>
-                      <a href="" class="dropdown-item">
-                        Log Out
-                      </a>
-                    </div>
-                  </li>
-                  -->
                   <li class="nav-item">
                     <bp-action
                       text="Settings"
@@ -119,7 +87,6 @@
                     ></bp-action>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
                     <button
                       type="button"
                       id="customerProductSwitcher"
@@ -241,62 +208,21 @@
                 <ul class="navbar-nav minor">
                   <li class="nav-item">
                     <bp-action
-                      text="Alerts"
+                      text="Help"
                       classes="nav-link"
-                      routerLink="./demo"
+                      href="#"
+                      target="_blank"
+                      iconRight="fa-external-link-alt"
                     ></bp-action>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="dataHubHelpDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Help
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dataHubHelpDropdown">
-                      <a href="" target="_blank" class="dropdown-item">
-                        Help on this page
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
-                        Documentation
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <p class="dropdown-text">
-                        Version 00.00.01
-                      </p>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Account"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="dataHubAccountDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="dataHubAccountDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Account
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dataHubAccountDropdown">
-                      <p class="dropdown-text">
-                        Username
-                      </p>
-                      <button type="button" class="dropdown-item">
-                        Change Password
-                      </button>
-                      <button type="button" class="dropdown-item">
-                        Log Out
-                      </button>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
                     <button
                       type="button"
                       id="dataHubProductSwitcher"
@@ -421,50 +347,18 @@
               <nav nav-minor class="nav-minor">
                 <ul class="navbar-nav minor">
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="eventsHelpDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Help
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsHelpDropdown">
-                      <a href="" target="_blank" class="dropdown-item">
-                        Help on this page
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
-                        Documentation
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <p class="dropdown-text">
-                        Version 00.00.01
-                      </p>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Help"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="eventsHelpDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="eventsAccountDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Account
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsAccountDropdown">
-                      <p class="dropdown-text">
-                        Username
-                      </p>
-                      <button type="button" class="dropdown-item">
-                        Log Out
-                      </button>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Account"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="eventsAccountDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item">
                     <bp-action
@@ -474,7 +368,6 @@
                     ></bp-action>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
                     <button
                       type="button"
                       id="eventsProductSwitcher"
@@ -586,53 +479,12 @@
               </nav>
               <nav nav-minor class="nav-minor">
                 <ul class="navbar-nav minor">
-                  <!--
-                  TODO: confirm if this should be deleted
                   <li class="nav-item dropdown">
-                    <button
-                      type="button"
-                      id="iqHelpDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Help
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="iqHelpDropdown">
-                      <a href="" target="_blank" class="dropdown-item">
-                        Help on this page
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
-                        Documentation
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <p class="dropdown-text">
-                        Version 00.00.01
-                      </p>
-                    </div>
-                  </li>
-                  -->
-                  <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="iqAccountDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Account
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="iqAccountDropdown">
-                      <p class="dropdown-text">
-                        Username
-                      </p>
-                      <a href="" class="dropdown-item">
-                        Log Out
-                      </a>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Account"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="iqAccountDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item">
                     <bp-action
@@ -641,12 +493,10 @@
                       routerLink="./demo"
                     ></bp-action>
                   </li>
-                  <!--
-                  TODO: confirm if this should be deleted
                   <li class="nav-item dropdown">
                     <button
                       type="button"
-                      id="iqProductSwitcher"
+                      id="eventsProductSwitcher"
                       class="nav-link dropdown-toggle product-switcher"
                       data-toggle="dropdown"
                       aria-haspopup="true"
@@ -659,7 +509,7 @@
                         Product Switcher
                       </span>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="iqProductSwitcher">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsProductSwitcher">
                       <a href="" target="_blank" class="dropdown-item">
                         Admin
                       </a>
@@ -695,17 +545,10 @@
                         Data Visualization
                       </a>
                       <a href="" target="_blank" class="dropdown-item">
-                        Jupyter Analytics
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
                         Kibana
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
-                        RStudio Analytics
                       </a>
                     </div>
                   </li>
-                  -->
                 </ul>
               </nav>
             </bp-header>
@@ -761,11 +604,10 @@
                     ></bp-action>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update dropdown items -->
                     <bp-dropdown
                       triggerText="Program Setup"
-                      [dropdownItems]="programSetupNavItems"
                       triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="loyaltyProgramSetupDropdownItems"
                     ></bp-dropdown>
                   </li>
                 </ul>
@@ -773,91 +615,25 @@
               <nav nav-minor class="nav-minor">
                 <ul class="navbar-nav minor">
                   <li class="nav-item dropdown">
-                    <!--
-                      TODO:
-                      update to bp-dropdown
-                      confirm if country names should be spelled out or abbreviated
-                    -->
-                    <button
-                      type="button"
-                      lang="en-us"
-                      id="loyaltyLanguageDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      English (US)
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loyaltyLanguageDropdown">
-                      <button type="button" lang="en-gb" id="langEnGb" class="dropdown-item">
-                        English (UK)
-                      </button>
-                      <button type="button" lang="en-us" id="langEnUs" class="dropdown-item">
-                        English (US)
-                      </button>
-                      <button type="button" lang="fr-ca" id="langFrCa" class="dropdown-item">
-                        Français (CA)
-                      </button>
-                      <button type="button" lang="fr-fr" id="langFrFr" class="dropdown-item">
-                        Français (FR)
-                      </button>
-                      <button type="button" lang="de-de" id="langDeDe" class="dropdown-item">
-                        Deutsche (DE)
-                      </button>
-                      <button type="button" lang="pt-pt" id="langPtPt" class="dropdown-item">
-                        Português (PT)
-                      </button>
-                      <button type="button" lang="es-es" id="langEsEs" class="dropdown-item">
-                        Español (ES)
-                      </button>
-                    </div>
+                    <bp-dropdown
+                      triggerText="English (US)"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="loyaltyLangDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="loyaltyHelpDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Help
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loyaltyHelpDropdown">
-                      <a href="" target="_blank" class="dropdown-item">
-                        Documentation
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <p class="dropdown-text">
-                        Version 00.00.01
-                      </p>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Help"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="loyaltyHelpDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="loyaltyAccountDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Account
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loyaltyAccountDropdown">
-                      <p class="dropdown-text">
-                        Username
-                      </p>
-                      <button type="button" class="dropdown-item">
-                        Change Password
-                      </button>
-                      <a href="" class="dropdown-item">
-                        Log Out
-                      </a>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Account"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="loyaltyAccountDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item">
                     <bp-action
@@ -867,7 +643,6 @@
                     ></bp-action>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
                     <button
                       type="button"
                       id="loyaltyProductSwitcher"
@@ -1008,88 +783,35 @@
               </nav>
               <nav nav-minor class="nav-minor">
                 <ul class="navbar-nav minor">
-                  <li class="nav-item">
-                    <bp-action
-                      text="Customers"
-                      classes="nav-link"
-                      routerLink="./demo"
-                    ></bp-action>
+                  <li class="nav-item dropdown">
+                    <bp-dropdown
+                      triggerText="Customers"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="messagingCustomersDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="messagingHelpDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Help
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagingHelpDropdown">
-                      <a href="" target="_blank" class="dropdown-item">
-                        Help on this page
-                      </a>
-                      <a href="" target="_blank" class="dropdown-item">
-                        Documentation
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <p class="dropdown-text">
-                        Version 00.00.01
-                      </p>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Help"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="messagingHelpDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="messagingAccountDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Account
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagingAccountDropdown">
-                      <p class="dropdown-text">
-                        Username
-                      </p>
-                      <button type="button" class="dropdown-item">
-                        Change Password
-                      </button>
-                      <button type="button" class="dropdown-item">
-                        Log Out
-                      </button>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Account"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="messagingAccountDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
-                    <button
-                      type="button"
-                      id="messagingSettingsDropdown"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Settings
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagingSettingsDropdown">
-                      <a href="" class="dropdown-item">
-                        Business Unit Settings
-                      </a>
-                      <a href="" class="dropdown-item">
-                        Folder Management
-                      </a>
-                      <a href="" class="dropdown-item">
-                        Service Level Agreements (SLA) Dashboard
-                      </a>
-                    </div>
+                    <bp-dropdown
+                      triggerText="Settings"
+                      triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="messagingSettingsDropdownItems"
+                    ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update to bp-dropdown -->
                     <button
                       type="button"
                       id="messagingProductSwitcher"

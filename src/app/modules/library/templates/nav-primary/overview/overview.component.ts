@@ -20,30 +20,28 @@ export class OverviewComponent implements OnInit {
   ];
   selectedContext;
 
-  navMenuItems = [
+  navDropdownItems = [
     {
-      text: 'Dropdown Header',
-      action: 'none',
-    },
-    {
-      text: 'External Link',
-      action: 'ext'
-    },
-    {
-      text: 'In-App Link',
-      action: 'int'
+      heading: 'Dropdown Header'
     },
     {
       text: 'Button',
-      action: 'btn'
+      action: 'click'
     },
     {
-      text: 'Dropdown Divider',
-      action: 'none',
+      text: 'In-App Link',
+      bpRouterLink: './demo'
     },
     {
-      text: 'Dropdown Text',
-      action: 'none',
+      text: 'External Link',
+      href: '#',
+      target: '_blank'
+    },
+    {
+      isDivider: true
+    },
+    {
+      plainText: 'Dropdown Text'
     }
   ];
 

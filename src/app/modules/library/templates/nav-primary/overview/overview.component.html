@@ -1,3 +1,8 @@
+<!--
+  TODO:
+  - add dropdown menu right alignment for nav minor dropdown menus
+  - decide what to do with product switcher
+-->
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
@@ -53,11 +58,10 @@
                     ></bp-action>
                   </li>
                   <li class="nav-item dropdown">
-                    <!-- TODO: update bp-dropdown to show header, text, button, routerLink, and external link -->
                     <bp-dropdown
                       triggerText="Dropdown"
-                      [dropdownItems]="navMenuItems"
                       triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="navDropdownItems"
                     ></bp-dropdown>
                   </li>
                 </ul>
@@ -82,8 +86,8 @@
                   <li class="nav-item dropdown">
                     <bp-dropdown
                       triggerText="Dropdown"
-                      [dropdownItems]="navMenuItems"
                       triggerClasses="nav-link dropdown-toggle"
+                      [dropdownItems]="navDropdownItems"
                     ></bp-dropdown>
                   </li>
                   <li class="nav-item dropdown">
@@ -103,7 +107,6 @@
                       </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navPrimaryProductSwitcher">
-                      <!-- TODO: update product switcher items when converting to bp-dropdown -->
                       <p class="dropdown-text">
                         Current Product
                       </p>

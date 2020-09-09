@@ -46,20 +46,207 @@ export class UsageComponent implements OnInit {
   ];
   selectedTenant;
 
-  programSetupNavItems = [
+  customerHelpDropdownItems = [
+    {
+      text: 'Documentation',
+      href: '#',
+      target: '_blank'
+    },
+    {
+      isDivider: true
+    },
+    {
+      plainText: 'Version 00.00.01'
+    }
+  ]
+
+  dataHubAccountDropdownItems = [
+    {
+      plainText: 'Username'
+    },
+    {
+      text: 'Change Password',
+      action: 'click'
+    },
+    {
+      text: 'Log Out',
+      action: 'click'
+    }
+  ]
+
+  eventsHelpDropdownItems = [
+    {
+      text: 'Documentation',
+      href: '#',
+      target: '_blank'
+    },
+    {
+      isDivider: true
+    },
+    {
+      plainText: 'Version 00.00.01'
+    }
+  ]
+
+  eventsAccountDropdownItems = [
+    {
+      plainText: 'Username'
+    },
+    {
+      text: 'Log Out',
+      action: 'click'
+    }
+  ]
+
+  iqAccountDropdownItems = [
+    {
+      plainText: 'Username'
+    },
+    {
+      text: 'Log Out',
+      action: 'click'
+    }
+  ]
+
+  loyaltyProgramSetupDropdownItems = [
     {
       text: 'Batch',
-      action: 'batch'
+      bpRouterLink: './demo'
     },
     {
       text: 'Momentum',
-      action: 'momentum'
+      bpRouterLink: './demo'
     },
     {
       text: 'Program Management',
-      action: 'programManagement'
+      bpRouterLink: './demo'
     }
   ];
+
+  loyaltyLangDropdownItems = [
+    {
+      text: 'English (UK)',
+      action: 'click',
+      lang: 'en-gb'
+    },
+    {
+      text: 'English (US)',
+      action: 'click',
+      lang: 'en-us'
+    },
+    {
+      text: 'Français (CA)',
+      action: 'click',
+      lang: 'fr-ca'
+    },
+    {
+      text: 'Français (FR)',
+      action: 'click',
+      lang: 'fr-fr'
+    },
+    {
+      text: 'Deutsche (DE)',
+      action: 'click',
+      lang: 'de-de'
+    },
+    {
+      text: 'Português (PT)',
+      action: 'click',
+      lang: 'pt-pt'
+    },
+    {
+      text: 'Español (ES)',
+      action: 'click',
+      lang: 'es-es'
+    }
+  ]
+
+  loyaltyHelpDropdownItems = [
+    {
+      text: 'Documentation',
+      href: '#',
+      target: '_blank'
+    },
+    {
+      isDivider: true
+    },
+    {
+      plainText: 'Version 00.00.01'
+    }
+  ]
+
+  loyaltyAccountDropdownItems = [
+    {
+      plainText: 'Username'
+    },
+    {
+      text: 'Change Password',
+      action: 'click'
+    },
+    {
+      text: 'Log Out',
+      action: 'click'
+    }
+  ]
+
+  messagingCustomersDropdownItems =
+  [
+    {
+      text: 'Customer Profile Table',
+      bpRouterLink: './demo'
+    },
+    {
+      isDivider: true
+    },
+    {
+      text: 'Customer History',
+      bpRouterLink: './demo'
+    }
+  ]
+
+  messagingHelpDropdownItems = [
+    {
+      text: 'Documentation',
+      href: '#',
+      target: '_blank'
+    },
+    {
+      isDivider: true
+    },
+    {
+      plainText: 'Version 00.00.01'
+    }
+  ]
+
+  messagingAccountDropdownItems = [
+    {
+      plainText: 'Username'
+    },
+    {
+      text: 'Change Password',
+      action: 'click'
+    },
+    {
+      text: 'Log Out',
+      action: 'click'
+    }
+  ]
+
+  messagingSettingsDropdownItems =
+  [
+    {
+      text: 'Business Unit Settings',
+      bpRouterLink: './demo'
+    },
+    {
+      text: 'Folder Management',
+      bpRouterLink: './demo'
+    },
+    {
+      text: 'Service Level Agreements (SLA) Dashboard',
+      bpRouterLink: './demo'
+    }
+  ]
 
   constructor() { }
 
