@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { generateUniqueId } from '../../helpers';
-import { isLoweredSymbol } from '@angular/compiler';
 
 @Component({
   selector: 'bp-toggle',
@@ -16,8 +15,9 @@ export class ToggleComponent implements OnInit {
     id?: string; // Deprecated: Use bpID instead
     bpID?: string;
     value?: string;
-    isChecked: boolean;
     isDisabled: boolean;
+    isChecked: boolean; // For internal use
+    isFocused: boolean; // For internal use
   }[];
 
   @Output() change = new EventEmitter();
@@ -42,16 +42,26 @@ export class ToggleComponent implements OnInit {
     });
 
     if (!this.checkedToggle) {
-      this.checkedToggle = this.toggles[0].bpID;
+      for (const toggle of this.toggles) {
+        if (!toggle.isDisabled) {
+          this.checkedToggle = toggle.bpID;
+          break;
+        }
+      }
     }
 
     this.setCheckedToggle(this.checkedToggle);
   }
 
   setCheckedToggle(checkedToggleID: string): void {
-    this.toggles.forEach(toggle => {
-      toggle.isChecked = toggle.bpID === checkedToggleID;
-    });
+    this.toggles.forEach(toggle => toggle.isChecked = toggle.bpID === checkedToggleID);
+  }
+
+  focusLabel(i: number): void {
+    this.toggles.forEach(toggle => toggle.isFocused = false);
+    if (i !== null) {
+      this.toggles[i].isFocused = true;
+    }
   }
 
   // TODO: Find a way to type 'e' so that all eslint disabled lines below work properly

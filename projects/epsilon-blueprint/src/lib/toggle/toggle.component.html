@@ -2,7 +2,7 @@
   <label
     *ngFor="let toggle of toggles; index as i"
     class="btn btn-toggle"
-    [ngClass]="{ checked: toggle.isChecked, disabled: toggle.isDisabled }"
+    [ngClass]="{ checked: toggle.isChecked, disabled: toggle.isDisabled, focus: toggle.isFocused }"
     (change)="emitChange($event)"
   >
     <input
@@ -12,6 +12,8 @@
       [value]="toggle.value ? toggle.value : null"
       [checked]="toggle.isChecked"
       [disabled]="toggle.isDisabled"
+      (focus)="focusLabel(i)"
+      (focusout)="focusLabel(null)"
     >
     {{ toggle.text }}
   </label>
