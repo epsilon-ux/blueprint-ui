@@ -1,17 +1,29 @@
 <div [attr.id]="uuid" [ngClass]="['dropdown', dropDirection !== 'down' ? 'drop' + dropDirection : '']">
   <button
-    dropdownToggle
+    *ngIf="!iconTrigger"
     type="button"
     [id]="uuid + 'DropdownToggle'"
-    [ngClass]="['btn dropdown-toggle', triggerClasses]"
+    [ngClass]="['btn dropdown-toggle', hasCaret ? '' : 'no-caret', triggerClasses]"
     data-toggle="dropdown"
     aria-haspopup="true"
     aria-expanded="false"
   >
     {{ triggerText }}
   </button>
+  <button
+    *ngIf="iconTrigger"
+    type="button"
+    [id]="uuid + 'DropdownToggle'"
+    [ngClass]="['btn dropdown-toggle', hasCaret ? '' : 'no-caret', triggerClasses]"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <i [ngClass]="['fas', iconTrigger]"></i>
+    <span class="sr-only">{{ triggerText }}</span>
+  </button>
   <div
-    class="dropdown-menu"
+    [ngClass]="['dropdown-menu', menuClasses]"
     [attr.aria-labelledby]="uuid + 'DropdownToggle'"
   >
     <ng-container *ngFor="let dropdownItem of dropdownItems; index as i" [ngSwitch]="getType(dropdownItem)">

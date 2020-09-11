@@ -21,6 +21,11 @@
     margin-left: 5px;
     font-size: $font-size-lg;
   }
+
+  &.no-caret::after
+  {
+    display: none;
+  }
 }
 
 .show
