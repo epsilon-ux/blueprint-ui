@@ -20,7 +20,6 @@ export class DropdownComponent implements OnInit {
   @Output() action = new EventEmitter();
 
   uuid: string;
-  alignmentClass: string;
 
   constructor() { }
 
