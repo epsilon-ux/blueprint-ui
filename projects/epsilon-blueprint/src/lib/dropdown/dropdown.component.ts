@@ -10,9 +10,12 @@ export class DropdownComponent implements OnInit {
 
   @Input() triggerText: string;
   @Input() triggerClasses = '';
+  @Input() menuClasses = '';
   @Input() dropDirection: 'up' | 'down' | 'left' | 'right' = 'down';
   @Input() dropdownItems: DropdownItemInterface[] | DropdownExtrasInterface[];
   @Input() bpID: string;
+  @Input() hasCaret = true;
+  @Input() iconTrigger: string;
 
   @Output() action = new EventEmitter();
 
