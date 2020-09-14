@@ -60,6 +60,7 @@
   background: $mist;
 }
 
+
 @media (min-width: 992px)
 {
   .demo-nav-select
@@ -70,6 +71,12 @@
 
   .demo-navbar-nav
   {
-    margin: 0 20px;
+    display: inline-flex;
+    margin: 0;
+
+    &.demo-nav-major
+    {
+      margin-right: auto;
+    }
   }
 }
