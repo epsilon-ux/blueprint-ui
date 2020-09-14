@@ -1,3 +1,4 @@
+<!-- TODO: get nav minor to stick to the right on lg viewports -->
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
@@ -14,15 +15,11 @@
               logoSrc="assets/logos/logo-product.svg"
               logoAlt="Epsilon PeopleCloud Product"
             >
-              <div context-selector>
+              <ng-container context-selector>
                 <div class="demo-nav-select">Context Selector</div>
-              </div>
-              <nav nav-major class="nav-major mr-lg-auto">
-                <div class="demo-nav-major">Nav Major</div>
-              </nav>
-              <nav nav-minor class="nav-minor">
-                <div class="demo-nav-minor">Nav Minor</div>
-              </nav>
+              </ng-container>
+              <div nav-major class="demo-navbar-nav demo-nav-major d-inline-flex">Nav Major</div>
+              <div nav-minor class="demo-navbar-nav d-inline-flex">Nav Minor</div>
             </bp-header>
             <div class="demo-body">
               <div class="demo-main">Main Content</div>
