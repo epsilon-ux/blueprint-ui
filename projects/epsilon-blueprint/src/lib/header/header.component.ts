@@ -16,13 +16,13 @@ export class HeaderComponent implements OnInit {
   @Input() hasNavigation?: boolean = true;
   @Input() expandBreakpoint?: 'sm' | 'md' | 'lg' | 'xl' = 'lg';
   @Input() bpID: string;
-  @Input() internationalization: {
-    'Menu': string;
-    'MenuAriaLabel': string;
-    'navAriaLabel': string;
+  @Input() internationalization = {
+    'Menu': '',
+    'MenuAriaLabel': '',
+    'NavAriaLabel': ''
   };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     if (!this.bpID) {
@@ -32,9 +32,14 @@ export class HeaderComponent implements OnInit {
     const intlDefaults = {
       'Menu': 'Menu',
       'MenuAriaLabel': 'Toggle primary navigation',
-      'navAriaLabel': 'Primary Navigation'
+      'NavAriaLabel': 'Primary Navigation'
     };
-    Object.assign(intlDefaults, this.internationalization);
+
+    Object.keys(intlDefaults).forEach(intl => {
+      if (!this.internationalization[intl]) {
+        this.internationalization[intl] = intlDefaults[intl];
+      }
+    });
   }
 
   isLogoLink(): boolean {

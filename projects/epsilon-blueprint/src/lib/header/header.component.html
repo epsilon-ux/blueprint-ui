@@ -40,7 +40,7 @@
       <ng-container *ngIf="hasContextSelector" class="context-selector">
         <ng-content select="[context-selector]"></ng-content>
       </ng-container>
-      <nav *ngIf="hasNavigation" [attr.aria-label]="internationalization['navAriaLabel']">
+      <nav *ngIf="hasNavigation" [attr.aria-label]="internationalization['NavAriaLabel']">
         <ng-content select="[nav-major]"></ng-content>
         <ng-content select="[nav-minor]"></ng-content>
       </nav>
