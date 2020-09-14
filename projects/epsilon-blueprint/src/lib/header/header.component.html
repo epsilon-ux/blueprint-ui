@@ -2,7 +2,7 @@
   <!--
     TODO:
     - hook up isLogoLink, hasCollapsibleMenu, hasContextSelector, and hasNavigation
-    - brainstorm appropriate aria label for menu button
+    - brainstorm appropriate aria label for menu button and primary nav
     - consider internationalization
     - add identifiers
     - add bp-action and bp-dropdown styling overrides in the context of bp-header
@@ -34,10 +34,10 @@
       <ng-container *ngIf="hasContextSelector">
         <ng-content select="[context-selector]"></ng-content>
       </ng-container>
-      <ng-container *ngIf="hasNavigation">
+      <nav *ngIf="hasNavigation" aria-label="Primary Navigation">
         <ng-content select="[nav-major]"></ng-content>
         <ng-content select="[nav-minor]"></ng-content>
-      </ng-container>
+      </nav>
     </div>
   </ng-container>
 </header>
