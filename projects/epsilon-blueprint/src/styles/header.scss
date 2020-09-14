@@ -46,14 +46,24 @@ bp-header
   {
     border-top: 1px solid $border-color-secondary;
 
-    .nav-select
+    .context-selector
     {
-      margin: 15px 20px;
+      border-bottom: 1px solid $border-color-secondary;
+
+      .nav-select
+      {
+        margin: 15px 20px;
+      }
     }
 
     .navbar-nav
     {
       padding: 7px 0;
+
+      &:not(:last-of-type)
+      {
+        border-bottom: 1px solid $border-color-secondary;
+      }
     }
 
     .nav-item
@@ -79,9 +89,11 @@ bp-header
       .nav-link
       {
         border-left: 5px solid transparent;
+        padding: 11px 15px;
         color: $font-color-primary;
         font-weight: $font-weight-regular;
-
+        font-size: $font-size-md;
+        
         &:hover
         {
           background: $mist;
@@ -252,15 +264,6 @@ bp-header
         font-size: $font-size-lg;
       }
     }
-
-    .nav-minor
-    {
-      .nav-link
-      {
-        padding: 11px 15px;
-        font-size: $font-size-md;
-      }
-    }
   }
 
   // TODO: added this breakpoint because the nav breaks down on xs in the example on the overview page
@@ -280,38 +283,49 @@ bp-header
     {
       border-top: 0;
 
-      .nav-select
+      .context-selector
       {
-        width: 200px;
-        margin: 0 20px 0 0;
+        border-bottom: 0;
+
+        .nav-select
+        {
+          width: 200px;
+          margin: 0 20px 0 0;
+        }
       }
 
-      .nav-major
+      // TODO: add a class for this?
+      nav
       {
-        .navbar-nav
-        {
-          border-top: 0;
-          border-bottom: 0;
-        }
+        display: flex;
+        width: 100%;
+        margin: 0 20px;
       }
 
       .navbar-nav
       {
+        border-top: 0;
         padding: 0;
 
         .nav-item
         {
           margin-bottom: 0;
 
-          button.nav-link,
           .nav-link
           {
             border-bottom: 5px solid transparent;
             border-left: 0;
+            padding: 17px 10px 10px;
+            font-size: $font-size-md;
   
             &.active
             {
               border-color: $accent-color-secondary;
+            }
+
+            &.dropdown-toggle
+            {
+              padding: 15px 10px 8px;
             }
           }
 
@@ -346,18 +360,11 @@ bp-header
           }
         }
 
-        .major
+        &.nav-major
         {
-          .nav-link
-          {
-            padding: 16px 10px 11px;
-            font-size: $font-size-md;
-          }
-        }
-
-        .minor
-        {
-          margin-right: 20px;
+          margin-right: auto;
+          border-top: 0;
+          border-bottom: 0;
 
           .nav-link
           {
@@ -371,20 +378,18 @@ bp-header
 
   @media (min-width: 1200px)
   {
-    .major
+    .navbar-collapse
     {
-      .nav-link
+      .navbar-nav
       {
-        padding: 14px 20px 9px;
-        font-size: var(--font-size-display2);
-      }
-    }
-
-    .minor
-    {
-      .nav-link
-      {
-        padding: 16px 10px 11px;
+        &.nav-major
+        {
+          .nav-link
+          {
+            padding: 14px 20px 9px;
+            font-size: $font-size-lg;
+          }
+        }
       }
     }
   }
