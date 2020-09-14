@@ -1,37 +1,45 @@
-<header class="navbar navbar-expand-lg sticky-top">
+<header class="navbar navbar-expand-{{ expandBreakpoint }} sticky-top">
   <!--
     TODO:
-    - hook up isLogoLink, hasCollapsibleMenu, hasContextSelector, and hasNavigation
     - brainstorm appropriate aria label for menu button and primary nav
-    - consider internationalization
-    - add identifiers
     - add bp-action and bp-dropdown styling overrides in the context of bp-header
     - handle responsive behavior
-    - consider creating an input for navbar-expand-{{breakpoint}}
     - should product switcher be a separate content area in the component, part of the templates, or a component?
     - style ng-select in the context of the nav context selector
   -->
-  <a href="" class="navbar-brand">
+  <bp-action
+    *ngIf="isLogoLink()"
+    class="navbar-brand"
+    [bpRouterLink]="logoRouterLink"
+    [href]="logoHref"
+  >
     <img
       [attr.src]="logoSrc"
       [attr.alt]="logoAlt"
       class="logo"
     />
-  </a>
+  </bp-action>
+  <div *ngIf="!isLogoLink()" class="navbar-brand">
+    <img
+      [attr.src]="logoSrc"
+      [attr.alt]="logoAlt"
+      class="logo"
+    />
+  </div>
   <ng-container *ngIf="hasCollapsibleMenu">
     <button
       type="button"
       class="navbar-toggler"
       data-toggle="collapse"
-      data-target="#collapsibleMenu"
-      aria-controls="collapsibleMenu"
+      [attr.data-target]="'#' + bpID"
+      [attr.aria-controls]="bpID"
       aria-expanded="false"
       aria-label="Toggle primary navigation"
     >
       Menu
     </button>
-    <div id="collapsibleMenu" class="collapse navbar-collapse">
-      <ng-container *ngIf="hasContextSelector">
+    <div [id]="bpID" class="collapse navbar-collapse">
+      <ng-container *ngIf="hasContextSelector" class="context-selector">
         <ng-content select="[context-selector]"></ng-content>
       </ng-container>
       <nav *ngIf="hasNavigation" aria-label="Primary Navigation">
