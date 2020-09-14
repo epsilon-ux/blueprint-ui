@@ -2,8 +2,6 @@
   <!--
     TODO:
     - brainstorm appropriate aria label for menu button and primary nav
-    - add bp-action and bp-dropdown styling overrides in the context of bp-header
-    - handle responsive behavior
     - should product switcher be a separate content area in the component, part of the templates, or a component?
     - style ng-select in the context of the nav context selector
   -->
@@ -34,15 +32,15 @@
       [attr.data-target]="'#' + bpID"
       [attr.aria-controls]="bpID"
       aria-expanded="false"
-      aria-label="Toggle primary navigation"
+      [attr.aria-label]="internationalization['menuAriaLabel']"
     >
-      Menu
+      {{ internationalization['Menu'] }}
     </button>
     <div [id]="bpID" class="collapse navbar-collapse">
       <ng-container *ngIf="hasContextSelector" class="context-selector">
         <ng-content select="[context-selector]"></ng-content>
       </ng-container>
-      <nav *ngIf="hasNavigation" aria-label="Primary Navigation">
+      <nav *ngIf="hasNavigation" [attr.aria-label]="internationalization['navAriaLabel']">
         <ng-content select="[nav-major]"></ng-content>
         <ng-content select="[nav-minor]"></ng-content>
       </nav>

@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   @Input() internationalization: {
     'Menu': string;
     'MenuAriaLabel': string;
+    'navAriaLabel': string;
   };
 
   constructor() { }
@@ -30,7 +31,8 @@ export class HeaderComponent implements OnInit {
 
     const intlDefaults = {
       'Menu': 'Menu',
-      'MenuAriaLabel': 'Toggle primary navigation'
+      'MenuAriaLabel': 'Toggle primary navigation',
+      'navAriaLabel': 'Primary Navigation'
     };
     Object.assign(intlDefaults, this.internationalization);
   }
