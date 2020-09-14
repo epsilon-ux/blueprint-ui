@@ -37,9 +37,9 @@
       {{ internationalization['Menu'] }}
     </button>
     <div [id]="bpID" class="collapse navbar-collapse">
-      <ng-container *ngIf="hasContextSelector" class="context-selector">
+      <div *ngIf="hasContextSelector" class="context-selector">
         <ng-content select="[context-selector]"></ng-content>
-      </ng-container>
+      </div>
       <nav *ngIf="hasNavigation" [attr.aria-label]="internationalization['NavAriaLabel']">
         <ng-content select="[nav-major]"></ng-content>
         <ng-content select="[nav-minor]"></ng-content>
