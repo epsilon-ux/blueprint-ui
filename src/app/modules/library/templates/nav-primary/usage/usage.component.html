@@ -1,8 +1,4 @@
-<!--
-  TODO:
-  - add dropdown menu right alignment for nav minor dropdown menus
-  - decide what to do with product switchers
--->
+<!-- TODO: decide what to do with product switchers -->
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
@@ -72,6 +68,7 @@
                   <bp-dropdown
                     triggerText="Help"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="customerHelpDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -99,9 +96,6 @@
                     </span>
                   </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customerProductSwitcher">
-                    <p class="dropdown-header">
-                      Agility Products
-                    </p>
                     <a href="" target="_blank" class="dropdown-item">
                       Bridge
                     </a>
@@ -112,23 +106,23 @@
                       FRMS
                     </a>
                     <a href="" target="_blank" class="dropdown-item">
+                      Loyalty
+                    </a>
+                    <a href="" target="_blank" class="dropdown-item">
                       Messaging
                     </a>
                     <div class="dropdown-divider"></div>
-                    <p class="dropdown-header">
-                      External Products
-                    </p>
                     <a href="" target="_blank" class="dropdown-item">
-                      Business Insights
+                      Interactive Reports
+                    </a>
+                    <a href="" target="_blank" class="dropdown-item">
+                      Operational Reports
+                    </a>
+                    <a href="" target="_blank" class="dropdown-item">
+                      Scheduled Reports
                     </a>
                     <a href="" target="_blank" class="dropdown-item">
                       Campaign Management
-                    </a>
-                    <a href="" target="_blank" class="dropdown-item">
-                      Data Visualization
-                    </a>
-                    <a href="" target="_blank" class="dropdown-item">
-                      Kibana
                     </a>
                   </div>
                 </li>
@@ -211,6 +205,7 @@
                   <bp-dropdown
                     triggerText="Account"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="dataHubAccountDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -250,11 +245,14 @@
                       Messaging
                     </a>
                     <div class="dropdown-divider"></div>
-                    <p class="dropdown-header">
-                      External Products
-                    </p>
                     <a href="" target="_blank" class="dropdown-item">
                       Business Insights
+                    </a>
+                    <a href="" target="_blank" class="dropdown-item">
+                      Campaign Management
+                    </a>
+                    <a href="" target="_blank" class="dropdown-item">
+                      Data Visualization
                     </a>
                     <a href="" target="_blank" class="dropdown-item">
                       Kibana
@@ -338,6 +336,7 @@
                   <bp-dropdown
                     triggerText="Help"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="eventsHelpDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -345,6 +344,7 @@
                   <bp-dropdown
                     triggerText="Account"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="eventsAccountDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -394,9 +394,6 @@
                       Messaging
                     </a>
                     <div class="dropdown-divider"></div>
-                    <p class="dropdown-header">
-                      External Products
-                    </p>
                     <a href="" target="_blank" class="dropdown-item">
                       Business Insights
                     </a>
@@ -467,6 +464,7 @@
                   <bp-dropdown
                     triggerText="Account"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="iqAccountDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -516,9 +514,6 @@
                       Messaging
                     </a>
                     <div class="dropdown-divider"></div>
-                    <p class="dropdown-header">
-                      External Products
-                    </p>
                     <a href="" target="_blank" class="dropdown-item">
                       Business Insights
                     </a>
@@ -598,6 +593,7 @@
                   <bp-dropdown
                     triggerText="English (US)"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="loyaltyLangDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -605,6 +601,7 @@
                   <bp-dropdown
                     triggerText="Help"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="loyaltyHelpDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -612,6 +609,7 @@
                   <bp-dropdown
                     triggerText="Account"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="loyaltyAccountDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -661,14 +659,17 @@
                       Messaging
                     </a>
                     <div class="dropdown-divider"></div>
-                    <p class="dropdown-header">
-                      External Products
-                    </p>
                     <a href="" target="_blank" class="dropdown-item">
                       Business Insights
                     </a>
                     <a href="" target="_blank" class="dropdown-item">
+                      Campaign Management
+                    </a>
+                    <a href="" target="_blank" class="dropdown-item">
                       Data Visualization
+                    </a>
+                    <a href="" target="_blank" class="dropdown-item">
+                      Kibana
                     </a>
                   </div>
                 </li>
@@ -763,6 +764,7 @@
                   <bp-dropdown
                     triggerText="Customers"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="messagingCustomersDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -770,6 +772,7 @@
                   <bp-dropdown
                     triggerText="Help"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="messagingHelpDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -777,6 +780,7 @@
                   <bp-dropdown
                     triggerText="Account"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="messagingAccountDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -784,6 +788,7 @@
                   <bp-dropdown
                     triggerText="Settings"
                     triggerClasses="nav-link dropdown-toggle"
+                    menuClasses="dropdown-menu-right"
                     [dropdownItems]="messagingSettingsDropdownItems"
                   ></bp-dropdown>
                 </li>
@@ -826,9 +831,6 @@
                       Messaging
                     </p>
                     <div class="dropdown-divider"></div>
-                    <p class="dropdown-header">
-                      External Products
-                    </p>
                     <a href="" target="_blank" class="dropdown-item">
                       Business Insights
                     </a>
