@@ -11,18 +11,10 @@
     [bpRouterLink]="logoRouterLink"
     [href]="logoHref"
   >
-    <img
-      [attr.src]="logoSrc"
-      [attr.alt]="logoAlt"
-      class="logo"
-    />
+    <bp-logo bpClass="logo" [product]="product" [logoTitle]="logoTitle"></bp-logo>
   </bp-action>
   <div *ngIf="!isLogoLink()" class="navbar-brand">
-    <img
-      [attr.src]="logoSrc"
-      [attr.alt]="logoAlt"
-      class="logo"
-    />
+    <bp-logo bpClass="logo" [product]="product" [logoTitle]="logoTitle"></bp-logo>
   </div>
   <ng-container *ngIf="hasCollapsibleMenu">
     <button

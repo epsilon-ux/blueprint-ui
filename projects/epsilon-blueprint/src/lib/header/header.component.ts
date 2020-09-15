@@ -7,8 +7,8 @@ import { generateUniqueId, isDefined } from '../../helpers';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() logoSrc: string;
-  @Input() logoAlt: string;
+  @Input() product: string;
+  @Input() logoTitle: string;
   @Input() logoHref?: string;
   @Input() logoRouterLink?: string;
   @Input() hasCollapsibleMenu?: boolean = true;
