@@ -77,6 +77,10 @@ export class LibraryComponent {
             route: './components/loading-indicator'
           },
           {
+            text: 'Logo',
+            route: './components/logo'
+          },
+          {
             text: 'Multi-select',
             route: './components/multi-select'
           },

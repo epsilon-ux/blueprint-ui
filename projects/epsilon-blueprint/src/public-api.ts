@@ -31,6 +31,9 @@ export * from './lib/landing-page-header/landing-page-header.module';
 export * from './lib/loading-indicator/loading-indicator.component';
 export * from './lib/loading-indicator/loading-indicator.module';
 
+export * from './lib/logo/logo.component';
+export * from './lib/logo/logo.module';
+
 export * from './lib/multi-select/multi-select.component';
 export * from './lib/multi-select/multi-select.module';
 
