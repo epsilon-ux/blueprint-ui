@@ -13,8 +13,8 @@
     "eslint": "eslint \"src/app/**\" \"projects/epsilon-blueprint/src/lib/**\" \"projects/epsilon-blueprint/src/models/**\" --ext .ts",
     "eslint-fix": "eslint \"src/app/**\" \"projects/epsilon-blueprint/src/lib/**\" \"projects/epsilon-blueprint/src/models/**\" --ext .ts --fix",
     "e2e": "ng e2e",
-    "prePublish": "ng build epsilon-blueprint && gulp copyStyles && gulp copyModels && gulp copyAssets",
-    "deploy": "ng build epsilon-blueprint && gulp copyStyles && gulp copyModels && gulp copyAssets && npm run refresh-table-data 101 && ng build --prod",
+    "prePublish": "ng build epsilon-blueprint && gulp copyStyles && gulp copyModels",
+    "deploy": "ng build epsilon-blueprint && gulp copyStyles && gulp copyModels && npm run refresh-table-data 101 && ng build --prod",
     "refresh-table-data": "node scripts/refresh-table-data.js",
     "generate-data": "npm run refresh-table-data 101"
   },

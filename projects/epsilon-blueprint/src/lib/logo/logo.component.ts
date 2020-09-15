@@ -6,26 +6,28 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LogoComponent implements OnInit {
 
-  @Input() product: (
-    'product'
-    | 'blueprint'
-    | 'customer'
-    | 'data-hub'
-    | 'events'
-    | 'iq'
-    | 'loyalty'
-    | 'messaging'
-  ) = 'product';
-
-  @Input() logoSrc?: string;
-  @Input() logoAlt?: string;
+  @Input() product = 'product';
+  @Input() logoTitle?: string;
   @Input() bpClass?: string;
+
+  defaultTitles = {
+    'product': 'Epsilon PeopleCloud Product',
+    'blueprint': 'Epsilon Blueprint',
+    'customer': 'Epsilon PeopleCloud Customer',
+    'data-hub': 'Epsilon Data Hub',
+    'events': 'Epsilon Events',
+    'iq': 'Epsilon IQ',
+    'loyalty': 'Epsilon PeopleCloud Loyalty',
+    'messaging': 'Epsilon PeopleCloud Messaging'
+  };
 
   constructor() { }
 
   ngOnInit(): void {
-    this.logoSrc = `assets/logos/logo-${this.product.toLowerCase()}.svg`;
-    this.logoAlt = `Epsilon PeopleCloud ${this.product}`;
+    this.product = this.product.toLowerCase();
+    if (!this.logoTitle) {
+      this.logoTitle = this.defaultTitles[this.product];
+    }
   }
 
 }
