@@ -188,8 +188,14 @@ export class UsageComponent implements OnInit {
     }
   ]
 
-  messagingCustomersDropdownItems =
-  [
+  messagingMegaDropdownItems = [
+    {
+      heading: 'Customers'
+    },
+    {
+      text: 'Customer History',
+      bpRouterLink: './demo'
+    },
     {
       text: 'Customer Profile Table',
       bpRouterLink: './demo'
@@ -198,26 +204,8 @@ export class UsageComponent implements OnInit {
       isDivider: true
     },
     {
-      text: 'Customer History',
-      bpRouterLink: './demo'
-    }
-  ]
-
-  messagingHelpDropdownItems = [
-    {
-      text: 'Documentation',
-      href: '#',
-      target: '_blank'
+      heading: 'Account'
     },
-    {
-      isDivider: true
-    },
-    {
-      plainText: 'Version 00.00.01'
-    }
-  ]
-
-  messagingAccountDropdownItems = [
     {
       plainText: 'Username'
     },
@@ -228,11 +216,13 @@ export class UsageComponent implements OnInit {
     {
       text: 'Log Out',
       action: 'click'
-    }
-  ]
-
-  messagingSettingsDropdownItems =
-  [
+    },
+    {
+      isDivider: true
+    },
+    {
+      heading: 'Settings'
+    },
     {
       text: 'Business Unit Settings',
       bpRouterLink: './demo'
@@ -244,7 +234,29 @@ export class UsageComponent implements OnInit {
     {
       text: 'Service Level Agreements (SLA) Dashboard',
       bpRouterLink: './demo'
-    }
+    },
+    {
+      isDivider: true
+    },
+    {
+      heading: 'Help'
+    },
+    {
+      text: 'Help on this page',
+      href: '#',
+      target: '_blank'
+    },
+    {
+      text: 'Documentation',
+      href: '#',
+      target: '_blank'
+    },
+    {
+      isDivider: true
+    },
+    {
+      plainText: 'Version 00.00.01'
+    },
   ]
 
   constructor() { }
