@@ -157,6 +157,7 @@ export class UsageComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedSortOption = this.sortByOptions[1];
+    this.selectedDateRange = this.dateOptions[7];
   }
 
   handleSearch(): void { }

@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-import { LandingPageHeaderModule, ActionModule, DropdownModule } from 'epsilon-blueprint';
+import { LandingPageHeaderModule, ActionModule, BreadcrumbsModule, DropdownModule, StatusIndicatorModule } from 'epsilon-blueprint';
 import { ObjectPageHeaderRoutingModule } from './object-page-header-routing.module';
 
 import { ObjectPageHeaderComponent } from './object-page-header.component';
@@ -25,7 +25,9 @@ import { UsageComponent } from './usage/usage.component';
     ObjectPageHeaderRoutingModule,
     LandingPageHeaderModule,
     ActionModule,
-    DropdownModule
+    BreadcrumbsModule,
+    DropdownModule,
+    StatusIndicatorModule
   ],
   providers: [],
   exports: [ObjectPageHeaderComponent]
