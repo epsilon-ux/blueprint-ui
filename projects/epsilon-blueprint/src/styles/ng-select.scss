@@ -137,6 +137,13 @@
   background-color: $accent-color-primary;
   color: $coconut;
   font-size: 0.9em;
+
+  &.ng-value-custom
+  {
+    background-color: transparent;
+    color: $font-color-primary;
+    font-size: 1rem;
+  }
 }
 
 [dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value
@@ -475,13 +482,6 @@
     .ng-value-label
     {
       padding: 0 5px;
-    }
-
-    &.ng-value-custom
-    {
-      background: transparent;
-      color: $font-color-primary;
-      font-size: $font-size-md;
     }
   }
 }
