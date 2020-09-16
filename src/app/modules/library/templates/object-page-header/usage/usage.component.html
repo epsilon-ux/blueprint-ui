@@ -13,7 +13,6 @@
       </p>
       <h4>Standard readonly</h4>
     </div>
-
     <div class="col-12">
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -50,9 +49,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Standard editable</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -95,9 +91,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Standard editable with inline error message</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -143,9 +136,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Standard editable with dynamic button</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -192,9 +182,82 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12">
+      <h3>With breadcrumbs</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/breadcrumbs.html" target="_blank" class="link-primary">
+          Breadcrumbs template code
+        </a>
+      </p>
+      <h4>Readonly with breadcrumbs</h4>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-breadcrumbs [crumbs]="crumbs"></bp-breadcrumbs>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <p class="text-style-1">Object Name</p>
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4>Editable with breadcrumbs</h4>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-breadcrumbs [crumbs]="crumbs"></bp-breadcrumbs>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label for="objectName4" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName4" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4">Object Type</p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h3>With dropdown</h3>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/dropdown.html" target="_blank" class="link-primary">
@@ -244,9 +307,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Editable with dropdown</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -266,10 +326,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label for="objectName4" class="sr-only">Object Name</label>
+                    <label for="objectName5" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName4" 
+                      id="objectName5" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -296,9 +356,7 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12">
       <h3>With select</h3>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/select.html" target="_blank" class="link-primary">
@@ -356,9 +414,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Editable with select</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -378,20 +433,20 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label for="objectName5" class="sr-only">Object Name</label>
+                    <label for="objectName6" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName5" 
+                      id="objectName6" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
                     <p class="my-2 mb-lg-4">Object Type</p>
                   </div>
                   <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
-                    <label for="objectPageHeaderSelector2" class="sr-only">Version</label>
+                    <label for="objectPageHeaderSelector1" class="sr-only">Version</label>
                     <ng-select
                       class="btn-object-page-header"
-                      labelForId="objectPageHeaderSelector2"
+                      labelForId="objectPageHeaderSelector1"
                       [items]="selectorOptions"
                       bindValue="value"
                       bindValue="text"
@@ -416,9 +471,106 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12">
+      <h3>With status indicator</h3>
+      <p>
+        <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/status-indicator.html" target="_blank" class="link-primary">
+          Status indicator template code
+        </a>
+      </p>
+      <h4>Readonly with status indicator</h4>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <p class="text-style-1">Object Name</p>
+                    <p class="my-2 mb-lg-4 d-flex">
+                      Object Type
+                      <bp-status-indicator
+                        class="d-inline ml-sm border-left border-color-primary pl-sm"
+                        status="incomplete-primary"
+                        statusText="Incomplete Primary"
+                      ></bp-status-indicator>
+                    </p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Primary"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4>Editable with status indicator</h4>
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+              <!-- OPH template starts here -->
+              <div class="container-fluid object-page-header pt-4">
+                <div class="row mb-2">
+                  <div class="col">
+                    <bp-action
+                      text="Back to Landing Page"
+                      classes="btn btn-text"
+                      iconLeft="fa-angle-left"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+                <div class="row mb-4 mb-lg-0">
+                  <div class="col-12 col-lg">
+                    <label for="objectName1" class="sr-only">Object Name</label>
+                    <input 
+                      type="text" 
+                      id="objectName1" 
+                      class="form-control object-page-header-input" 
+                      placeholder="Object Name" 
+                    />
+                    <p class="my-2 mb-lg-4 d-flex">
+                      Object Type
+                      <bp-status-indicator
+                        class="d-inline ml-sm border-left border-color-primary pl-sm"
+                        status="incomplete-primary"
+                        statusText="Incomplete Primary"
+                      ></bp-status-indicator>
+                    </p>
+                  </div>
+                  <div class="col-12 col-sm col-lg-auto mt-2 mt-lg-0">
+                    <bp-action
+                      text="Save"
+                      classes="btn btn-primary btn-block btn-md btn-object-page-header"
+                      (click)="click"
+                    ></bp-action>
+                  </div>
+                </div>
+              </div>
+              <!-- OPH template ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h3>With tabs</h3>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/tabs.html" target="_blank" class="link-primary">
@@ -430,7 +582,6 @@
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
             <div class="col-12">
-
               <!-- OPH template starts here -->
               <div class="container-fluid object-page-header pt-4">
                 <div class="row mb-2">
@@ -465,14 +616,10 @@
                 </div>
               </div>
               <!-- OPH template ends here -->
-
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Editable with tabs</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -492,10 +639,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label for="objectName6" class="sr-only">Object Name</label>
+                    <label for="objectName7" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName6" 
+                      id="objectName7" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -522,9 +669,7 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12">
       <h3>With multiple actions</h3>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/multiple-actions.html" target="_blank" class="link-primary">
@@ -581,9 +726,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Editable with multiple actions</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -603,10 +745,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label for="objectName7" class="sr-only">Object Name</label>
+                    <label for="objectName8" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName7" 
+                      id="objectName8" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -640,9 +782,7 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12">
       <h3>With select and multiple actions</h3>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/multiple-actions-select.html" target="_blank" class="link-primary">
@@ -707,9 +847,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Editable with select and multiple actions</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -729,10 +866,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label for="objectName8" class="sr-only">Object Name</label>
+                    <label for="objectName9" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName8" 
+                      id="objectName9" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -774,9 +911,7 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12">
       <h3>With multiple actions and tabs</h3>
       <p>
         <a href="https://github.com/epsilon-ux/resources/blob/master/templates/object-page-header/multiple-actions-tabs.html" target="_blank" class="link-primary">
@@ -840,9 +975,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12">
       <h4>Editable with multiple actions and tabs</h4>
       <div class="card mb-3">
         <div class="card-body component-preview">
@@ -862,10 +994,10 @@
                 </div>
                 <div class="row mb-4 mb-lg-0">
                   <div class="col-12 col-lg">
-                    <label for="objectName9" class="sr-only">Object Name</label>
+                    <label for="objectName10" class="sr-only">Object Name</label>
                     <input 
                       type="text" 
-                      id="objectName9" 
+                      id="objectName10" 
                       class="form-control object-page-header-input" 
                       placeholder="Object Name" 
                     />
@@ -907,6 +1039,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
