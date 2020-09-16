@@ -5,7 +5,7 @@
     - should product switcher be a separate content area in the component, part of the templates, or a component?
     - style ng-select in the context of the nav context selector
   -->
-  <div *ngIf="!isLogoLink()" class="navbar-brand">
+  <div class="navbar-brand">
     <bp-logo [id]="bpID + 'Logo'" bpClass="logo" [product]="product" [logoTitle]="logoTitle"></bp-logo>
   </div>
   <ng-container *ngIf="hasCollapsibleMenu">
