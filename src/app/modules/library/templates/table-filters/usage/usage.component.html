@@ -1,4 +1,3 @@
-<!-- TODO: 'last 90 days' date range and all multiselect options should be selected on load -->
 <section class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-xl-7">
@@ -7,8 +6,21 @@
         could contain up to five separate filtering options.
       </p>
       <p>
+        When there are more than four filters, all filters, except for Search, should render in a collapsible filter drawer.
+      </p>
+      <p>
+        On page load, filter drawers should be collapsed, single-select filters should have a default option selected, and multi-select filters should have a default state of "0 out of &#123;total&#125; selected". In most cases, Date Range filters should default to the longest date range option.
+      </p>
+      <p>
+        When there are two or more multi-select filters, a "Clear Filters" button should render on click of any filter option. On click of "Clear Filters", filters should reset to their default options and the "Clear Filters" button should disappear.
+      </p>
+      <p>
+        Filters should persist when a user remains in the context of a Business Unit, Parent, Program, or Tenant. On change of the Business Unit, Parent, Program, or Tenant, filters should reset to their default options.
+      </p>
+      <p>Table filters function as "or" operators, and multi-select filter options function as "and" operators.</p>
+      <p>
         Note that the width of the filters will depend on the amount and size of the items on the right side of the
-        table. For the most part, filters options should be selected on page load.
+        table.
       </p>
       <h2 class="mb-0">Variations</h2>
       <h3>Standard</h3>
@@ -234,6 +246,7 @@
                           placeholder="Select date range"
                           [clearable]="false"
                           [searchable]="false"
+                          [(ngModel)]="selectedDateRange"
                         >
                           <ng-template
                             ng-option-tmp
@@ -283,6 +296,16 @@
                           </ng-template>
                         </bp-multi-select>
                       </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto">
+                      <bp-action
+                        text="Clear Filters"
+                        classes="btn btn-text mb-md"
+                        iconLeft="fas fa-times"
+                        (click)="(click)"
+                      ></bp-action>
                     </div>
                   </div>
                 </div>
@@ -362,6 +385,7 @@
                             placeholder="Select date range"
                             [clearable]="false"
                             [searchable]="false"
+                            [(ngModel)]="selectedDateRange"
                           >
                             <ng-template
                               ng-option-tmp
@@ -423,6 +447,16 @@
                             (change)="handleMulti()"
                           ></bp-multi-select>
                         </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-auto">
+                        <bp-action
+                          text="Clear Filters"
+                          classes="btn btn-text mb-md"
+                          iconLeft="fas fa-times"
+                          (click)="(click)"
+                        ></bp-action>
                       </div>
                     </div>
                   </div>
@@ -590,6 +624,16 @@
                         </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-auto">
+                        <bp-action
+                          text="Clear Filters"
+                          classes="btn btn-text mb-md"
+                          iconLeft="fas fa-times"
+                          (click)="(click)"
+                        ></bp-action>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-auto ml-lg-auto mb-4 mt-lg-4">
@@ -717,6 +761,16 @@
                         </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-auto">
+                        <bp-action
+                          text="Clear Filters"
+                          classes="btn btn-text mb-md"
+                          iconLeft="fas fa-times"
+                          (click)="(click)"
+                        ></bp-action>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -773,6 +827,7 @@
                           placeholder="Select date range"
                           [clearable]="false"
                           [searchable]="false"
+                          [(ngModel)]="selectedDateRange"
                         >
                           <ng-template
                             ng-option-tmp
