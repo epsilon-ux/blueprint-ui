@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "dev": "concurrently -k \"gulp watchAssets\" \"ng serve\"",
+    "dev": "concurrently -k \"gulp watch\" \"ng serve\"",
     "watch-blueprint": "ng build --watch epsilon-blueprint",
     "build": "ng build",
     "test": "ng test",

@@ -1,5 +1,10 @@
 @import "../../../dist/epsilon-blueprint/styles/global-variables";
 
+// --------------------------------------------------------------------------------------
+// DO NOT COPY THIS STYLESHEET INTO PRODUCTS.
+// It contains styles used for component demonstrations specifically within Blueprint UI.
+// --------------------------------------------------------------------------------------
+
 .demo-base-template
 {
   display: flex;
@@ -79,4 +84,10 @@
       margin-left: 20px;
     }
   }
+}
+
+.demo-logo
+{
+  width: auto;
+  height: 26px;
 }

@@ -7,10 +7,8 @@ import { generateUniqueId, isDefined } from '../../helpers';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() logoSrc: string;
-  @Input() logoAlt: string;
-  @Input() logoHref?: string;
-  @Input() logoRouterLink?: string;
+  @Input() product: string;
+  @Input() logoTitle: string;
   @Input() hasCollapsibleMenu?: boolean = true;
   @Input() hasContextSelector?: boolean = true;
   @Input() hasNavigation?: boolean = true;
@@ -26,7 +24,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.bpID) {
-      this.bpID = 'collapsibleMenu' + String(generateUniqueId());
+      this.bpID = 'header' + String(generateUniqueId());
     }
 
     const intlDefaults = {
@@ -40,10 +38,6 @@ export class HeaderComponent implements OnInit {
         this.internationalization[intl] = intlDefaults[intl];
       }
     });
-  }
-
-  isLogoLink(): boolean {
-    return isDefined(this.logoHref) || isDefined(this.logoRouterLink);
   }
 
 }

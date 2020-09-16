@@ -58,6 +58,9 @@ const routes: Routes = [
         loadChildren: () => import('./components/loading-indicator/loading-indicator.module')
           .then(m => m.LoadingIndicatorLibraryModule) },
 
+      { path: 'logo', loadChildren: () => import('./components/logo/logo.module')
+        .then(m => m.LogoLibraryModule) },
+
       { path: 'multi-select', loadChildren: () => import('./components/multi-select/multi-select.module')
         .then(m => m.MultiselectLibraryModule) },
 
