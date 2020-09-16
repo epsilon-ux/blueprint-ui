@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.bpID) {
-      this.bpID = 'collapsibleMenu' + String(generateUniqueId());
+      this.bpID = 'header' + String(generateUniqueId());
     }
 
     const intlDefaults = {

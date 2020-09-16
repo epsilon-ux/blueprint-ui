@@ -11,28 +11,33 @@
     [bpRouterLink]="logoRouterLink"
     [href]="logoHref"
   >
-    <bp-logo bpClass="logo" [product]="product" [logoTitle]="logoTitle"></bp-logo>
+    <bp-logo [id]="bpID + 'Logo'" bpClass="logo" [product]="product" [logoTitle]="logoTitle"></bp-logo>
   </bp-action>
   <div *ngIf="!isLogoLink()" class="navbar-brand">
-    <bp-logo bpClass="logo" [product]="product" [logoTitle]="logoTitle"></bp-logo>
+    <bp-logo [id]="bpID + 'Logo'" bpClass="logo" [product]="product" [logoTitle]="logoTitle"></bp-logo>
   </div>
   <ng-container *ngIf="hasCollapsibleMenu">
     <button
       type="button"
+      [id]="bpID + 'MenuTrigger'"
       class="navbar-toggler"
       data-toggle="collapse"
-      [attr.data-target]="'#' + bpID"
-      [attr.aria-controls]="bpID"
+      [attr.data-target]="'#' + bpID + 'Menu'"
+      [attr.aria-controls]="bpID + 'Menu'"
       aria-expanded="false"
       [attr.aria-label]="internationalization['menuAriaLabel']"
     >
       {{ internationalization['Menu'] }}
     </button>
-    <div [id]="bpID" class="collapse navbar-collapse">
+    <div [id]="bpID + 'Menu'" class="collapse navbar-collapse">
       <div *ngIf="hasContextSelector" class="context-selector">
         <ng-content select="[context-selector]"></ng-content>
       </div>
-      <nav *ngIf="hasNavigation" [attr.aria-label]="internationalization['NavAriaLabel']">
+      <nav
+        *ngIf="hasNavigation"
+        [attr.aria-label]="internationalization['NavAriaLabel']"
+        [id]="bpID + 'Nav'"
+      >
         <ng-content select="[nav-major]"></ng-content>
         <ng-content select="[nav-minor]"></ng-content>
       </nav>
