@@ -47,6 +47,9 @@ const routes: Routes = [
       { path: 'dropdown', loadChildren: () => import('./components/dropdown/dropdown.module')
         .then(m => m.DropdownLibraryModule) },
 
+      { path: 'header', loadChildren: () => import('./components/header/header.module')
+        .then(m => m.HeaderLibraryModule) },
+
       { path: 'landing-page-header',
         loadChildren: () => import('./components/landing-page-header/landing-page-header.module')
           .then(m => m.LandingPageHeaderLibraryModule) },
@@ -54,6 +57,9 @@ const routes: Routes = [
       { path: 'loading-indicator',
         loadChildren: () => import('./components/loading-indicator/loading-indicator.module')
           .then(m => m.LoadingIndicatorLibraryModule) },
+
+      { path: 'logo', loadChildren: () => import('./components/logo/logo.module')
+        .then(m => m.LogoLibraryModule) },
 
       { path: 'multi-select', loadChildren: () => import('./components/multi-select/multi-select.module')
         .then(m => m.MultiselectLibraryModule) },
@@ -103,6 +109,9 @@ const routes: Routes = [
       { path: 'object-page-header',
         loadChildren: () => import('./templates/object-page-header/object-page-header.module')
           .then(m => m.ObjectPageHeaderModule) },
+
+      { path: 'nav-primary', loadChildren: () => import('./templates/nav-primary/nav-primary.module')
+        .then(m => m.NavPrimaryModule) },
 
       { path: 'table-filters', loadChildren: () => import('./templates/table-filters/table-filters.module')
         .then(m => m.TableFiltersModule) }

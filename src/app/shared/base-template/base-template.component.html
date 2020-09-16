@@ -1,10 +1,15 @@
 <a href="./#mainContent" class="skip-link" (click)="skipToMain()">
   Skip to main content
 </a>
-<app-nav-primary></app-nav-primary>
+<bp-header
+  product="blueprint"
+  [hasCollapsibleMenu]="false"
+  [hasContextSelector]="false"
+  [hasNavigation]="false"
+></bp-header>
 <div class="app-body">
   <bp-collapsible-panel>
-    <bp-nav-secondary 
+    <bp-nav-secondary
       panel-content
       [title]="navSecondary.title"
       [items]="navSecondary.items"

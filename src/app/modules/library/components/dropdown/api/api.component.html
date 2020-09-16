@@ -5,6 +5,7 @@
         <dt>Selector</dt>
         <dd>bp-dropdown</dd>
       </dl>
+
       <h2>Inputs</h2>
       <table class="table table-bordered-rows">
         <caption class="sr-only">Dropdown inputs</caption>
@@ -30,6 +31,21 @@
             <td></td>
           </tr>
           <tr>
+            <td>menuClasses</td>
+            <td>string</td>
+            <td>The classes used on the dropdown menu.</td>
+            <td>Often used to set menu alignment, e.g. "dropdown-menu-right"</td>
+          </tr>
+          <tr>
+            <td>hasCaret</td>
+            <td>boolean</td>
+            <td>Determines if the dropdown trigger has the caret.</td>
+            <td>
+              <p>Default is "true".</p>
+              <p>When "true", the dropdown trigger has the caret.</p>
+            </td>
+          </tr>
+          <tr>
             <td>dropDirection</td>
             <td>string</td>
             <td>The direction in which the menu should open.</td>
@@ -37,6 +53,12 @@
               <p>Expects either "up", "down", "left", or "right".</p>
               <p>Default is "down".</p>
             </td>
+          </tr>
+          <tr>
+            <td>iconTrigger</td>
+            <td>string</td>
+            <td>The font awesome icon class used to create an icon trigger.</td>
+            <td>When using iconTrigger, triggerText is visually hidden and used for screen readers.</td>
           </tr>
           <tr>
             <td>dropdownItems</td>
@@ -57,9 +79,15 @@
         </tbody>
       </table>
     </div>
+
     <div class="col-lg-8 col-xl-7">
       <h3>Dropdown Items</h3>
-      <p>The dropdown item will render either an anchor or a button depending on the properties. If either an href or bpRouterLink is provided, the action will be an anchor. If neither are provided, the action will be a button.</p>
+      <p>
+        The dropdown item will render either an anchor or a button depending on the properties. If either an href or bpRouterLink is provided, the action will be an anchor. If neither are provided, the action will be a button.
+      </p>
+      <p>
+        Headings, dividers and plain text can also be added by providing the either heading, isDivider, or plainText key:value pairs. Items render in the same order as in the dropdown items array.
+      </p>
     </div>
     <div class="col-12">
       <table class="table table-bordered-rows">
@@ -127,8 +155,60 @@
               <p>When "true" the dropdown item is destructive.</p>
             </td>
           </tr>
+          <tr>
+            <td>isActive</td>
+            <td>boolean</td>
+            <td>Determines if the dropdown item is active. This is used within the primary navigation for marking the active route.</td>
+            <td>
+              <p>Default is "false".</p>
+              <p>When "true" the dropdown item is active.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>lang</td>
+            <td>string</td>
+            <td>Specifies the value of the lang attribute on the dropdown item. This is primarily used in the language dropdown.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>iconLeft</td>
+            <td>string</td>
+            <td>The Font Awesome icon class for an icon on the left of the dropdown item.</td>
+            <td>For example, "fa-external-link-alt" for an external link icon.</td>
+          </tr>
+          <tr>
+            <td>iconRight</td>
+            <td>string</td>
+            <td>The Font Awesome icon class for an icon on the right of the dropdown item.</td>
+            <td>For example, "fa-chevron-left" for a left facing chevron icon i.e. back link.</td>
+          </tr>
+          <tr>
+            <td>heading</td>
+            <td>string</td>
+            <td>Adds a heading item to the dropdown where the value is the heading text.</td>
+            <td>Should be the only property in the object aside from bpID.</td>
+          </tr>
+          <tr>
+            <td>plainText</td>
+            <td>string</td>
+            <td>Adds a plain text item to the dropdown where the value is the text.</td>
+            <td>Should be the only property in the object aside from bpID.</td>
+          </tr>
+          <tr>
+            <td>isDivider</td>
+            <td>boolean</td>
+            <td>Adds a divider to the dropdown.</td>
+            <td>Should be the only property in the object aside from bpID.</td>
+          </tr>
+          <tr>
+            <td>bpID</td>
+            <td>string</td>
+            <td>The value of the dropdown items id.</td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
+
       <h2>Outputs</h2>
       <table class="table table-bordered-rows">
         <caption class="sr-only">Dropdown outputs</caption>
@@ -151,7 +231,7 @@
         [data]="codeExample"
         lineNumbers
       ></markdown>
-       
+
       <h2 id="ids">Identifiers</h2>
       <table class="table table-bordered-rows mb-5">
         <caption class="sr-only">Identifiers</caption>
@@ -169,6 +249,10 @@
           <tr>
             <td><code>bpID + 'DropdownToggle'</code></td>
             <td>The unique identifier for the dropdown toggle.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Item' + #</code></td>
+            <td>The unique identifier for the dropdown items. This can be overridden by providing a bpID to individual items object.</td>
           </tr>
         </tbody>
       </table>

@@ -1,0 +1,299 @@
+// stylelint-disable selector-type-no-unknown
+bp-header
+{
+  z-index: 1001;
+}
+
+.navbar
+{
+  min-height: 50px;
+  box-shadow: $box-shadow-nav-primary;
+  padding: 0;
+  background: $coconut;
+
+  .navbar-brand // TODO: figure out what happens here if the logo isn't a link
+  {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .logo // TODO: figure out what happens here if the logo isn't a link
+  {
+    height: 26px;
+  }
+
+  .navbar-toggler
+  {
+    border-radius: 0;
+    border: 0;
+    padding: 19px 10px;
+    color: $accent-color-primary;
+    font-weight: $font-weight-semi-bold;
+    font-size: $font-size-md;
+
+    &:hover,
+    &[aria-expanded="true"]
+    {
+      background: $accent-color-primary;
+      color: $coconut;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .navbar-collapse
+  {
+    .context-selector
+    {
+      border-top: 1px solid $border-color-secondary;
+
+      .nav-select
+      {
+        margin: 15px 20px;
+      }
+    }
+
+    nav // TODO: add a class for this
+    {
+      .navbar-nav
+      {
+        border-top: 1px solid $border-color-secondary;
+        padding: 7px 0;
+
+        .nav-item
+        {
+          margin-bottom: 2px;
+
+          &:last-of-type
+          {
+            margin-bottom: 0;
+          }
+
+          .nav-link
+          {
+            width: 100%;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 0;
+            border-left: 5px solid transparent;
+            padding: 11px 15px;
+            background: transparent;
+            color: $font-color-primary;
+            font-weight: $font-weight-regular;
+
+            &:hover
+            {
+              background: $mist;
+              color: $font-color-primary;
+              font-weight: $font-weight-semi-bold;
+            }
+
+            &.active
+            {
+              border-color: $accent-color-secondary;
+              background: $mist;
+              font-weight: $font-weight-semi-bold;
+            }
+
+            &.dropdown-toggle
+            {
+              justify-content: flex-start;
+
+              &[aria-expanded="true"]
+              {
+                font-weight: $font-weight-semi-bold;
+              }
+            }
+
+            & i.fa-external-link-alt
+            {
+              font-size: $font-size-sm;
+              transform: translateY(-1px);
+            }
+          }
+
+          .dropdown-menu
+          {
+            min-width: 150px;
+            border: 0;
+            background: $cloud;
+
+            .dropdown-item,
+            .dropdown-header,
+            .dropdown-text
+            {
+              padding: 5px 40px;
+            }
+
+            .dropdown-item[target="_blank"]
+            {
+              &:hover,
+              &:focus
+              {
+                &::after
+                {
+                  content: "\f35d";
+                  display: inline-block;
+                  margin-left: 5px;
+                  color: $coconut;
+                  font-weight: $font-weight-semi-bold;
+                  font-family: $font-family-icon;
+                  font-size: $font-size-sm;
+                  transform: translateY(-1px);
+                }
+              }
+            }
+          }
+
+          .product-switcher
+          {
+            &::before
+            {
+              content: "";
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              // TODO: ship prod switcher icon with pkg
+              background: url(https://epsilon-ux.github.io/blueprint-primary-navigation/assets/icon-product-switcher.svg);
+            }
+
+            .product-switcher-text
+            {
+              display: inline-block;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        &.nav-major
+        {
+          .nav-link
+          {
+            padding: 11px 15px 12px;
+            font-size: $font-size-lg;
+          }
+        }
+      }
+    }
+  }
+
+  // TODO: added this breakpoint because the nav breaks down on xs in the example on the overview page
+  // We also need to decide how to handle responsive when the logo and menu button don't fit on one horizontal line
+  @media (min-width: 576px)
+  {
+    .navbar-toggler
+    {
+      padding: 17px 20px 18px;
+      font-size: $font-size-lg;
+    }
+  }
+
+  @media (min-width: 992px)
+  {
+    .navbar-collapse
+    {
+      .context-selector
+      {
+        border-top: 0;
+
+        .nav-select
+        {
+          width: 200px;
+          margin: 0 20px 0 0;
+        }
+      }
+
+      nav // TODO: add a class for this
+      {
+        display: flex;
+        width: 100%;
+        margin: 0 20px 0 0;
+
+        .navbar-nav
+        {
+          border-top: 0;
+          padding: 0;
+
+          &:first-of-type
+          {
+            margin-right: auto;
+          }
+
+          .nav-item
+          {
+            margin-bottom: 0;
+
+            .nav-link
+            {
+              border-bottom: 5px solid transparent;
+              border-left: 0;
+              padding: 17px 10px 10px;
+              font-size: $font-size-md;
+
+              &.active
+              {
+                border-color: $accent-color-secondary;
+              }
+
+              .product-switcher-text
+              {
+                display: none;
+              }
+            }
+
+            .dropdown-menu
+            {
+              max-width: 200px;
+              border: 1px solid $border-color-primary;
+              background: $coconut;
+
+              .dropdown-header,
+              .dropdown-text,
+              .dropdown-item
+              {
+                padding: 5px 10px;
+              }
+            }
+          }
+
+          &.nav-major
+          {
+            .nav-item
+            {
+              .nav-link
+              {
+                padding: 16px 10px 11px;
+                font-size: $font-size-md;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px)
+  {
+    .navbar-collapse
+    {
+      nav // TODO: add a class for this
+      {
+        .navbar-nav
+        {
+          &.nav-major
+          {
+            .nav-item
+            {
+              .nav-link
+              {
+                padding: 14px 20px 9px;
+                font-size: $font-size-lg;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

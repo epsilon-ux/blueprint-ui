@@ -8,20 +8,33 @@
     </div>
     <div class="col-12">
       <div class="card mb-3">
-        <div class="card-body component-preview">
-          <div class="demo-layout">
-            <bp-collapsible-panel>
-              <bp-nav-secondary 
-                panel-content
-                title="Title"
-                [items]="navItems"
-                [shouldRouteMatchExact]="true"
-              ></bp-nav-secondary>
-            </bp-collapsible-panel>
-            <div class="demo-main">Main Content</div>
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <div class="demo-body">
+              <bp-collapsible-panel>
+                <bp-nav-secondary 
+                  panel-content
+                  title="Title"
+                  [items]="navItems"
+                  [shouldRouteMatchExact]="true"
+                ></bp-nav-secondary>
+              </bp-collapsible-panel>
+              <div class="demo-main">Main Content</div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
+      <h2>Related Components & Templates</h2>
+      <ul>
+        <li>
+          <a routerLink="/library/components/collapsible-panel">Collapsible Panel</a>
+        </li>
+        <li>
+          <a routerLink="/library/templates/nav-primary">Primary Navigation</a>
+        </li>
+      </ul>
     </div>
   </div>
 </section>

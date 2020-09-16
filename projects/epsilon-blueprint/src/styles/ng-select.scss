@@ -137,6 +137,13 @@
   background-color: $accent-color-primary;
   color: $coconut;
   font-size: 0.9em;
+
+  &.ng-value-custom
+  {
+    background-color: transparent;
+    color: $font-color-primary;
+    font-size: 1rem;
+  }
 }
 
 [dir="rtl"] .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value
@@ -343,7 +350,13 @@
   background-color: $accent-color-primary;
 }
 
-.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-selected,
+.ng-select.is-grouped .ng-dropdown-panel .ng-dropdown-panel-items .ng-option:not(.ng-option-child),
+.ng-select.is-grouped .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup:not(:first-of-type)
+{
+  border-top: 1px solid $border-color-secondary;
+  font-weight: $font-weight-semi-bold;
+}
+
 .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-selected.ng-option-marked
 {
   background-color: $accent-color-primary;
@@ -439,46 +452,49 @@
   text-align: right;
 }
 
-.ng-select-multiple .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected
+.ng-select-multiple .ng-dropdown-panel .ng-dropdown-panel-items .ng-option
 {
-  background-color: transparent;
-  color: $font-color-primary;
-
-  &.ng-option-disabled
+  &.ng-option-selected,
+  &.ng-option-selected.ng-optgroup
   {
-    color: $font-color-secondary;
-  }
-}
-
-.ng-select.ng-select-multiple > .ng-select-container > .ng-value-container .ng-value
-{
-  &.ng-value-additional
-  {
-    background: transparent;
+    background-color: transparent;
     color: $font-color-primary;
 
-    .ng-value-label
+    &.ng-option-disabled
     {
-      padding: 0;
+      color: $font-color-secondary;
     }
   }
 
-  .ng-value-label
+  .ng-select.ng-select-multiple > .ng-select-container > .ng-value-container .ng-value
   {
-    padding: 0 5px;
-  }
+    &.ng-value-additional
+    {
+      background: transparent;
+      color: $font-color-primary;
 
-  &.ng-value-custom
-  {
-    background: transparent;
-    color: $font-color-primary;
-    font-size: $font-size-md;
+      .ng-value-label
+      {
+        padding: 0;
+      }
+    }
+
+    .ng-value-label
+    {
+      padding: 0 5px;
+    }
   }
 }
 
 .ng-select.ng-select-multiple.ng-select-disabled .ng-select-container .ng-value-container .ng-value
 {
   background-color: $storm;
+
+  &.ng-value-custom
+  {
+    background-color: transparent;
+    border: 0;
+  }
 }
 
 // Fake checkbox for multi-select

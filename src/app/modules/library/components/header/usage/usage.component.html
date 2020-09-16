@@ -1,0 +1,31 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        The header component is a sticky header that renders at the very top of the viewport. On narrow viewports or when zoomed in, the context selector, primary navigation, and product switcher are nested in a menu. The menu expands on wide viewports or when zoomed out.
+      </p>
+      <h2>Example</h2>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <bp-header
+              logoSrc="assets/logos/logo-product.svg"
+              logoAlt="Epsilon PeopleCloud Product"
+            >
+              <ng-container context-selector>
+                <div class="demo-nav-select">Context Selector</div>
+              </ng-container>
+              <div nav-major class="demo-navbar-nav demo-nav-major">Nav Major</div>
+              <div nav-minor class="demo-navbar-nav">Nav Minor</div>
+            </bp-header>
+            <div class="demo-body">
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

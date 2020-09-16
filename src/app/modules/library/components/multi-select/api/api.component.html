@@ -97,6 +97,31 @@
             <td></td>
           </tr>
           <tr>
+            <td>groupBy</td>
+            <td>string | Function</td>
+            <td>Groups the options by a key or a function expression.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>selectableGroup</td>
+            <td>boolean</td>
+            <td>Determines if the group is selectable when groupBy is used.</td>
+            <td>
+              <p>Default is "true".</p>
+              <p>When "true" the group is selectable.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>selectableGroupAsModel</td>
+            <td>boolean</td>
+            <td>Determines if selecting all the children or the group itself.</td>
+            <td>
+              <p>Default is "false".</p>
+              <p>When "true" the group itself is selected.</p>
+              <p>When "false" the group children are selected.</p>
+            </td>
+          </tr>
+          <tr>
             <td>isDisabled</td>
             <td>boolean</td>
             <td>Determines if the multi-select is disabled.</td>
@@ -211,7 +236,7 @@
         Used to create a custom placeholder that can utilize the selected items array and clear function.
       </p>
     </div>
-    <div class="col">
+    <div class="col-12">
       <markdown
         [data]="codeExample"
         lineNumbers
@@ -226,7 +251,7 @@
         Used to create a custom template for options. An example use case would be adding icons to statuses. The template replaces content to the right of the checkbox. The option item and index are exposed and can be used.
       </p>
     </div>
-    <div class="col">
+    <div class="col-12">
       <markdown
         [data]="optionTmpExample"
         lineNumbers

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-usage',
-  templateUrl: './usage.component.html',
-  styleUrls: ['../table-filters.component.scss']
+  templateUrl: './usage.component.html'
 })
 export class UsageComponent implements OnInit {
 
@@ -158,6 +157,7 @@ export class UsageComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedSortOption = this.sortByOptions[1];
+    this.selectedDateRange = this.dateOptions[7];
   }
 
   handleSearch(): void { }

@@ -46,7 +46,7 @@ button.btn-text
   white-space: nowrap;
 
   &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active
+  &:not(:disabled):not(.disabled):not(.nav-link).active
   {
     border-color: transparent;
     background: $storm;
@@ -253,16 +253,6 @@ button[disabled],
   background: $mist;
   color: $font-color-secondary;
   cursor: not-allowed;
-}
-
-.icon-left
-{
-  margin-right: 5px;
-}
-
-.icon-right
-{
-  margin-left: 5px;
 }
 
 .btn-object-page-header

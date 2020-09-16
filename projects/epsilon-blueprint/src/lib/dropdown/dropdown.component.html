@@ -1,30 +1,54 @@
 <div [attr.id]="uuid" [ngClass]="['dropdown', dropDirection !== 'down' ? 'drop' + dropDirection : '']">
   <button
-    dropdownToggle
+    *ngIf="!iconTrigger"
     type="button"
     [id]="uuid + 'DropdownToggle'"
-    [ngClass]="['btn dropdown-toggle', triggerClasses]"
+    [ngClass]="['btn dropdown-toggle', hasCaret ? '' : 'no-caret', triggerClasses]"
     data-toggle="dropdown"
     aria-haspopup="true"
     aria-expanded="false"
   >
     {{ triggerText }}
   </button>
+  <button
+    *ngIf="iconTrigger"
+    type="button"
+    [id]="uuid + 'DropdownToggle'"
+    [ngClass]="['btn dropdown-toggle', hasCaret ? '' : 'no-caret', triggerClasses]"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <i [ngClass]="['fas', iconTrigger]"></i>
+    <span class="sr-only">{{ triggerText }}</span>
+  </button>
   <div
-    class="dropdown-menu"
+    [ngClass]="['dropdown-menu', menuClasses]"
     [attr.aria-labelledby]="uuid + 'DropdownToggle'"
   >
-    <bp-action
-      *ngFor="let dropdownItem of dropdownItems; index as i"
-      [bpID]="uuid + 'item' + i"
-      classes="dropdown-item{{ dropdownItem.isDestructive ? ' is-destructive' : '' }}"
-      [text]="dropdownItem.text"
-      [ariaLabel]="dropdownItem.ariaLabel"
-      [href]="dropdownItem.href"
-      [bpRouterLink]="dropdownItem.bpRouterLink"
-      [target]="dropdownItem.target"
-      [isDisabled]="dropdownItem.isDisabled"
-      (click)="emitAction(dropdownItem.action)"
-    ></bp-action>
+    <ng-container *ngFor="let dropdownItem of dropdownItems; index as i" [ngSwitch]="getType(dropdownItem)">
+      <p *ngSwitchCase="'heading'" [id]="dropdownItem.bpID" class="dropdown-header">
+        {{ dropdownItem.heading }}
+      </p>
+      <bp-action
+        *ngSwitchCase="'item'"
+        [bpID]="dropdownItem.bpID || uuid + 'item' + i"
+        [classes]="getClasses(dropdownItem)"
+        [text]="dropdownItem.text"
+        [ariaLabel]="dropdownItem.ariaLabel"
+        [href]="dropdownItem.href"
+        [bpRouterLink]="dropdownItem.bpRouterLink"
+        [target]="dropdownItem.target"
+        [isDisabled]="dropdownItem.isDisabled"
+        [iconLeft]="dropdownItem.iconLeft"
+        [iconRight]="dropdownItem.iconRight"
+        [lang]="dropdownItem.lang"
+        (click)="emitAction(dropdownItem.action)"
+      ></bp-action>
+      <div *ngSwitchCase="'divider'" class="dropdown-divider"></div>
+      <p *ngSwitchCase="'text'" [id]="dropdownItem.bpID" class="dropdown-text">
+        {{ dropdownItem.plainText }}
+      </p>
+    </ng-container>
   </div>
 </div>

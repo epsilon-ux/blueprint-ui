@@ -1,0 +1,38 @@
+<header class="navbar navbar-expand-{{ expandBreakpoint }} sticky-top">
+  <!--
+    TODO:
+    - brainstorm appropriate aria label for menu button and primary nav
+    - should product switcher be a separate content area in the component, part of the templates, or a component?
+    - style ng-select in the context of the nav context selector
+  -->
+  <div class="navbar-brand">
+    <bp-logo [id]="bpID + 'Logo'" bpClass="logo" [product]="product" [logoTitle]="logoTitle"></bp-logo>
+  </div>
+  <ng-container *ngIf="hasCollapsibleMenu">
+    <button
+      type="button"
+      [id]="bpID + 'MenuTrigger'"
+      class="navbar-toggler"
+      data-toggle="collapse"
+      [attr.data-target]="'#' + bpID + 'Menu'"
+      [attr.aria-controls]="bpID + 'Menu'"
+      aria-expanded="false"
+      [attr.aria-label]="internationalization['menuAriaLabel']"
+    >
+      {{ internationalization['Menu'] }}
+    </button>
+    <div [id]="bpID + 'Menu'" class="collapse navbar-collapse">
+      <div *ngIf="hasContextSelector" class="context-selector">
+        <ng-content select="[context-selector]"></ng-content>
+      </div>
+      <nav
+        *ngIf="hasNavigation"
+        [attr.aria-label]="internationalization['NavAriaLabel']"
+        [id]="bpID + 'Nav'"
+      >
+        <ng-content select="[nav-major]"></ng-content>
+        <ng-content select="[nav-minor]"></ng-content>
+      </nav>
+    </div>
+  </ng-container>
+</header>

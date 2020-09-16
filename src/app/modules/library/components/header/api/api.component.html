@@ -1,0 +1,154 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <dl class="inline-details font-size-lg">
+        <dt>Selector</dt>
+        <dd>bp-header</dd>
+      </dl>
+      <h2>Inputs</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Header inputs</caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Input</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>product</td>
+              <td>string</td>
+              <td>The product using the header. Used to determine the logo.</td>
+              <td>
+                <p>Default is "product".</p>
+                <p>
+                  Can be one of the following: "product", "blueprint", "customer", "data-hub", "events", "iq", "loyalty", "messaging".
+                </p>
+                <p>
+                  The logo's title will be set based on the product specified.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>logoTitle</td>
+              <td>string</td>
+              <td>Overrides the default title determined by the product Input.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>hasCollapsibleMenu</td>
+              <td>boolean</td>
+              <td>Determines if the header has a collapsible menu. The collapsible menu contains everything but the logo and becomes collapsible at certain breakpoints.</td>
+              <td>
+                <p>Default is "true".</p>
+                <p>When "true" there is a collapsible menu.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>hasContextSelecotr</td>
+              <td>boolean</td>
+              <td>Determines if the header has a context selector.</td>
+              <td>
+                <p>Default is "true".</p>
+                <p>When "true" the header has a context selector.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>hasNavigation</td>
+              <td>boolean</td>
+              <td>Determines if the header has navigation. Navigation includes a major and minor section.</td>
+              <td>
+                <p>Default is "true".</p>
+                <p>When "true" the header has navigation.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>expandableBreakpoint</td>
+              <td>string</td>
+              <td>The breakpoint at which the collapsibled menu becomes non-collapsible.</td>
+              <td>
+                <p>Default is "lg".</p>
+                <p>Uses Bootstrap's breakpoints.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>bpID</td>
+              <td>string</td>
+              <td>Override the default base id.</td>
+              <td>See <a routerLink="." fragment="identifiers">identifiers</a>.</td>
+            </tr>
+            <tr>
+              <td>internationalization</td>
+              <td>object</td>
+              <td>Allows any user facing text to be changed.</td>
+              <td>See <a routerLink="." fragment="internationalization">internationalization</a>.</td>
+            </tr>
+          </tbody>
+      </table>
+      <h3 id="ids">Internationalization</h3>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Internationalization inputs</caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Input</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+              <th class="pt-0">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>'Menu'</td>
+              <td>string</td>
+              <td>The text used in the collapsible menu trigger.</td>
+              <td>Default is "Menu".</td>
+            </tr>
+            <tr>
+              <td>'MenuAriaLabel'</td>
+              <td>string</td>
+              <td>The text used for the collapsible menu trigger's aria-label.</td>
+              <td>Default is "Toggle primary navigation".</td>
+            </tr>
+            <tr>
+              <td>'NavAriaLabel'</td>
+              <td>string</td>
+              <td>The text used for the nav's aria-label.</td>
+              <td>Default is "Primary Navigation".</td>
+            </tr>
+          </tbody>
+      </table>
+
+      <h2 id="ids">Identifiers</h2>
+      <table class="table table-bordered-rows mb-5">
+        <caption class="sr-only">Identifiers</caption>
+        <thead>
+          <tr>
+            <th class="pt-0">ID</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bpID + 'Logo'</code></td>
+            <td>The unique identifier for the logo.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Menu'</code></td>
+            <td>The unique identifier for the collapsible menu.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'MenuTrigger'</code></td>
+            <td>The unique identifier for the collapsible menu's trigger.</td>
+          </tr>
+          <tr>
+            <td><code>bpID + 'Nav'</code></td>
+            <td>The unique identifier for the nav.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>

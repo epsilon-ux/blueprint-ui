@@ -65,12 +65,20 @@ export class LibraryComponent {
             route: './components/dropdown'
           },
           {
+            text: 'Header',
+            route: './components/header'
+          },
+          {
             text: 'Landing Page Header',
             route: './components/landing-page-header'
           },
           {
             text: 'Loading Indicator',
             route: './components/loading-indicator'
+          },
+          {
+            text: 'Logo',
+            route: './components/logo'
           },
           {
             text: 'Multi-select',
@@ -136,6 +144,10 @@ export class LibraryComponent {
           {
             text: 'Object Page Header',
             route: './templates/object-page-header'
+          },
+          {
+            text: 'Primary Navigation',
+            route: './templates/nav-primary'
           },
           {
             text: 'Table Filters',

@@ -11,9 +11,10 @@ export class OverviewComponent {
       id: 'ex1-Opt1',
       text: 'Option 1',
       value: 'option1',
-      isChecked: true
+      isDisabled: true
     },
     {
+      id: 'ex1-Opt2',
       text: 'Option 2',
       value: 'option2'
     }
@@ -23,8 +24,7 @@ export class OverviewComponent {
     {
       id: 'ex2-Opt1',
       text: 'Option 1',
-      value: 'option1',
-      isChecked: true
+      value: 'option1'
     },
     {
       id: 'ex2-Opt2',

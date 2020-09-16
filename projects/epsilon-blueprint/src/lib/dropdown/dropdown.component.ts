@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { generateUniqueId } from '../../helpers';
+import { DropdownItemInterface, DropdownExtrasInterface } from './dropdown.interface';
 
 @Component({
   selector: 'bp-dropdown',
@@ -9,19 +10,12 @@ export class DropdownComponent implements OnInit {
 
   @Input() triggerText: string;
   @Input() triggerClasses = '';
+  @Input() menuClasses = '';
   @Input() dropDirection: 'up' | 'down' | 'left' | 'right' = 'down';
-  @Input() dropdownItems: {
-    text: string;
-    ariaLabel?: string;
-    action?: string;
-    href?: string;
-    routerLink?: string; // Deprecated: Use bpRouterLink instead.
-    bpRouterLink?: string;
-    target?: string;
-    isDisabled?: boolean;
-    isDestructive?: boolean;
-  }[];
+  @Input() dropdownItems: DropdownItemInterface[] | DropdownExtrasInterface[];
   @Input() bpID: string;
+  @Input() hasCaret = true;
+  @Input() iconTrigger: string;
 
   @Output() action = new EventEmitter();
 
@@ -41,6 +35,29 @@ export class DropdownComponent implements OnInit {
       this.uuid = 'dropdown' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
+    }
+  }
+
+  getClasses(item: DropdownItemInterface): string {
+    let classes = 'dropdown-item';
+    if (item.isDestructive) {
+      classes += ' is-destructive';
+    }
+    if (item.isActive) {
+      classes += ' is-active';
+    }
+    return classes;
+  }
+
+  getType(obj: DropdownExtrasInterface): string {
+    if (obj.plainText) {
+      return 'text';
+    } else if (obj.heading) {
+      return 'heading';
+    } else if (obj.isDivider) {
+      return 'divider';
+    } else {
+      return 'item';
     }
   }
 
