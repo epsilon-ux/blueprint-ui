@@ -9,8 +9,6 @@ export class HeaderComponent implements OnInit {
 
   @Input() product: string;
   @Input() logoTitle: string;
-  @Input() logoHref?: string;
-  @Input() logoRouterLink?: string;
   @Input() hasCollapsibleMenu?: boolean = true;
   @Input() hasContextSelector?: boolean = true;
   @Input() hasNavigation?: boolean = true;
@@ -40,10 +38,6 @@ export class HeaderComponent implements OnInit {
         this.internationalization[intl] = intlDefaults[intl];
       }
     });
-  }
-
-  isLogoLink(): boolean {
-    return isDefined(this.logoHref) || isDefined(this.logoRouterLink);
   }
 
 }
