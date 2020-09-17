@@ -31,7 +31,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() rowSelected = new EventEmitter();
   @Output() viewChange = new EventEmitter();
 
-  @ViewChild('selectAllRowsRef', { static: false })
+  @ViewChild('selectAllRowsRef')
   selectAllRowsRef: ElementRef;
 
   // Data

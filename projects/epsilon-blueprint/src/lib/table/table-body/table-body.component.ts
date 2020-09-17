@@ -27,7 +27,7 @@ export class TableBodyComponent implements OnInit {
   @Output() action = new EventEmitter();
   @Output() selectedRowsAction = new EventEmitter();
 
-  @ViewChild('selectAllRowsRef', { static: false })
+  @ViewChild('selectAllRowsRef')
   selectAllRowsRef: ElementRef;
 
   isRowExpanded = false;
