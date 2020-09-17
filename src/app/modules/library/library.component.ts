@@ -121,6 +121,10 @@ export class LibraryComponent {
             route: './components/status-indicator'
           },
           {
+            text: 'Sticky Footer',
+            route: './components/sticky-footer'
+          },
+          {
             text: 'Table',
             route: './components/table'
           },

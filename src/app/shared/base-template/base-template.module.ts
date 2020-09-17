@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BaseTemplateComponent } from './base-template.component';
-import { HeaderModule, CollapsiblePanelModule, NavSecondaryModule } from 'epsilon-blueprint';
+import { HeaderModule, CollapsiblePanelModule, NavSecondaryModule, StickyFooterModule } from 'epsilon-blueprint';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { HeaderModule, CollapsiblePanelModule, NavSecondaryModule } from 'epsilo
     RouterModule,
     HeaderModule,
     CollapsiblePanelModule,
-    NavSecondaryModule
+    NavSecondaryModule,
+    StickyFooterModule
   ],
   exports: [BaseTemplateComponent]
 })

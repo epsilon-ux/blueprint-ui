@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-base-template',
@@ -13,6 +13,7 @@ export class BaseTemplateComponent implements OnInit {
       text: string;
     }[];
   };
+  @Input() footerTemplate: TemplateRef<any>;
 
   constructor() { }
 

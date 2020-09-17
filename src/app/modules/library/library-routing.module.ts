@@ -91,6 +91,9 @@ const routes: Routes = [
       { path: 'status-indicator', loadChildren: () => import('./components/status-indicator/status-indicator.module')
         .then(m => m.StatusIndicatorLibraryModule) },
 
+      { path: 'sticky-footer', loadChildren: () => import('./components/sticky-footer/sticky-footer.module')
+        .then(m => m.StickyFooterLibraryModule) },
+
       { path: 'table', loadChildren: () => import('./components/table/table.module')
         .then(m => m.TableLibraryModule) },
 
