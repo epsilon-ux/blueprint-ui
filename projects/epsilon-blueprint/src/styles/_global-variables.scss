@@ -36,6 +36,7 @@ $watermelon: #ff5c49;
 // font families
 $font-family-default: "Open Sans", sans-serif;
 $font-family-icon: "Font Awesome 5 Free"; // only used for CSS pseudo elements
+$font-family-code: "IBM Plex Mono", monospace; // only used for styling code within a UI
 
 // font sizes
 $font-size-h1: 22px;
@@ -59,7 +60,7 @@ $font-weight-bold: 700;
 // font colors
 $font-color-primary: $midnight;
 $font-color-secondary: $storm;
-$font-color-code: #e1088a;
+$font-color-code: $font-color-primary;
 
 // accent colors
 $accent-color-primary: $ultramarine;
