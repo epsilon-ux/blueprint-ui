@@ -9,7 +9,6 @@ import { RadioButtonRoutingModule } from './radio-button-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { RadioButtonComponent } from './radio-button.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { ApiComponent } from './api/api.component';
     RadioButtonComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [

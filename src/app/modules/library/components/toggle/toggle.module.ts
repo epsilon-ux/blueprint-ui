@@ -9,7 +9,6 @@ import { ToggleRoutingModule } from './toggle-routing.module';
 import { ToggleComponent } from './toggle.component';
 import { OverviewComponent } from './overview/overview.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { ApiComponent } from './api/api.component';
     ToggleComponent,
     OverviewComponent,
     ApiComponent,
-    PlaygroundComponent,
     UsageComponent
   ],
   imports: [

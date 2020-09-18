@@ -10,7 +10,6 @@ import { RibbonRoutingModule } from './ribbon-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { RibbonComponent } from './ribbon.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { ApiComponent } from './api/api.component';
     RibbonComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [

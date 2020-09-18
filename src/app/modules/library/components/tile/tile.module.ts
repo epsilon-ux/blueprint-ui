@@ -10,7 +10,6 @@ import { TileRoutingModule } from './tile-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { TileComponent } from './tile.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { ApiComponent } from './api/api.component';
     TileComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [

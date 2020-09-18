@@ -11,7 +11,6 @@ import { SelectRoutingModule } from './select-routing.module';
 import { SelectComponent } from './select.component';
 import { OverviewComponent } from './overview/overview.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { ApiComponent } from './api/api.component';
     SelectComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [

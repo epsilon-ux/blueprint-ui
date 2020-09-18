@@ -9,7 +9,6 @@ import { HeaderRoutingModule } from './header-routing.module';
 import { HeaderComponent } from './header.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ApiComponent } from './api/api.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { UsageComponent } from './usage/usage.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { UsageComponent } from './usage/usage.component';
     HeaderComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [

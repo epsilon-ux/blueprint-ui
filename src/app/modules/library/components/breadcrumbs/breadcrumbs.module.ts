@@ -9,7 +9,6 @@ import { BreadcrumbsRoutingModule } from './breadcrumbs-routing.module';
 import { BreadcrumbsComponent } from './breadcrumbs.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ApiComponent } from './api/api.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { UsageComponent } from './usage/usage.component';
 
 
@@ -18,7 +17,6 @@ import { UsageComponent } from './usage/usage.component';
     BreadcrumbsComponent,
     OverviewComponent,
     ApiComponent,
-    PlaygroundComponent,
     UsageComponent
   ],
   imports: [

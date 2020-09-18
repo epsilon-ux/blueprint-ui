@@ -10,7 +10,6 @@ import { LandingPageHeaderRoutingModule } from './landing-page-header-routing.mo
 import { OverviewComponent } from './overview/overview.component';
 import { LandingPageHeaderComponent } from './landing-page-header.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { ApiComponent } from './api/api.component';
     LandingPageHeaderComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [
