@@ -9,7 +9,6 @@ import { StatusIndicatorRoutingModule } from './status-indicator-routing.module'
 import { StatusIndicatorComponent } from './status-indicator.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ApiComponent } from './api/api.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { UsageComponent } from './usage/usage.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { UsageComponent } from './usage/usage.component';
     StatusIndicatorComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [

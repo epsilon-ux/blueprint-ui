@@ -9,7 +9,6 @@ import { CheckboxRoutingModule } from './checkbox-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { CheckboxComponent } from './checkbox.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { ApiComponent } from './api/api.component';
     CheckboxComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [
