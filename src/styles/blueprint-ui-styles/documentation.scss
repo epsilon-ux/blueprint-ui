@@ -8,6 +8,8 @@
 // We add margin-top to headings for vertical spacing in our docs
 // stylelint-disable no-descending-specificity
 
+$font-color-code: #e1088a; // only used in Blueprint UI
+
 h2
 {
   margin-top: 40px;
@@ -21,6 +23,13 @@ h3
 h4
 {
   margin-top: 20px;
+}
+
+code,
+pre,
+pre > code
+{
+  color: $font-color-code;
 }
 
 abbr
