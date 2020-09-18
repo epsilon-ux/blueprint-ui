@@ -4,10 +4,12 @@
       <li *ngIf="!isLast" class="breadcrumb-item">
         <bp-action
           [bpID]="uuid + 'Crumb' + i"
+          classes="btn-text"
           [text]="crumb.text"
           [target]="crumb.target || null"
           [href]="crumb.href || null"
           [bpRouterLink]="crumb.bpRouterLink || null"
+          (click)="handleClick(crumb)"
         ></bp-action>
       </li>
       <li *ngIf="isLast" [id]="uuid + 'Crumb' + i" class="breadcrumb-item active" aria-current="page">{{ crumb.text }}</li>
