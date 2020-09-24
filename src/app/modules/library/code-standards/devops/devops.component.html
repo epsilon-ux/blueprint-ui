@@ -1,0 +1,188 @@
+<bp-landing-page-header [headingText]="headingText"></bp-landing-page-header>
+<div class="container-fluid">
+  <div class="row mb-5">
+    <div class="col-lg-8 col-xl-7">
+
+      <h2 class="mt-0">Development Practices</h2>
+      <ul>
+        <li>Perform peer code reviews on the latest pull requests/changesets</li>
+        <li>
+          Pull/get the latest code
+          <ul>
+            <li>
+              When resolving merge conflicts and checking in new code:
+              <ul>
+                <li>Do not rely on auto-merge features</li>
+                <li>Carefully compare diffs of individual files to the latest version</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Address code review feedback</li>
+        <li>Finish work in progress</li>
+        <li>Work on assigned items</li>
+      </ul>
+
+      <h2>Definition of Done</h2>
+      <ul>
+        <li>
+          Feature complete
+          <ul>
+            <li>Matches mockups</li>
+            <li>Has accessibility attributes</li>
+            <li>Is responsive</li>
+            <li>Has input validation, e.g.: required</li>
+            <li>Has error handling (error states & messages)</li>
+            <li>Any tech debt is marked with // TODO: comment</li>
+          </ul>
+        </li>
+        <li>Code meets code standards</li>
+        <li>Code is formatted consistently and cleanly</li>
+        <li>Code has been linted</li>
+        <li>Code has been reviewed</li>
+        <li>Code review feedback has been remediated</li>
+        <li>
+          Passes accessibility testing
+          <ul>
+            <li>Keyboard</li>
+            <li>Screen reader</li>
+            <li>Browser extensions</li>
+          </ul>
+        </li>
+        <li>Passes cross-browser testing</li>
+        <li>Passes automated testing, e.g.: Selenium, GitHub, Netlify, Sonar, etc.</li>
+        <li>Application does not have console errors</li>
+        <li>Documentation is complete</li>
+      </ul>
+
+      <h2>Acceptance Criteria</h2>
+      <p>We recommend the follow acceptance criteria for front-end development:</p>
+      <ul>
+        <li>Show that code is reusable and uses global components</li>
+        <li>Show that code does not contain custom CSS</li>
+        <li>Show that code was tested across browsers and operating systems, and with assistive technology, and the UI looks and functions as intended based on the tier</li>
+      </ul>
+
+      <h2>Browser Support</h2>
+      <p class="font-style-italic">This list will evolve as we receive more data. We recommend all products use Google Analytics. Contact Jamie Connor for more details.</p>
+      <p class="font-weight-semi-bold">Please note: All products should be tested across browsers and operating systems, and with assistive technology (e.g.: screen readers).</p>
+
+      <h3>Tier 1</h3>
+      <p class="font-style-italic">Looks and functions as intended in the mockups</p>
+      <ul>
+        <li>Chrome</li>
+        <li>Firefox</li>
+      </ul>
+
+      <h3>Tier 2</h3>
+      <p class="font-style-italic">Doesn’t need to look perfect, but should function as intended</p>
+      <ul>
+        <li>Edge</li>
+        <li>Safari</li>
+        <li>Opera</li>
+        <li>Recent versions of Chrome, Firefox, Safari, Edge</li>
+      </ul>
+
+      <h3>Unsupported</h3>
+      <ul>
+        <li>
+          Internet Explorer
+          <ul>
+            <li>Microsoft says: <span class="font-style-italic">Internet Explorer is a compatibility solution. We’re not supporting new web standards for it. ... If we continued our previous approach, you would end up in a scenario where, by optimizing for the things you have, you end up not being able to use new apps as they come out. As new apps are coming out with greater frequency, what we want to help you do is avoid having to miss out on a progressively larger portion of the web!</span></li>
+            <li>Epsilon sent out an email January 23, 2020: <span class="font-style-italic">Microsoft has announced a vulnerability that impacts users who browse the internet using Internet Explorer... Use another supported browser, such as Chrome, Firefox, or Safari.</span></li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Analytics data</h4>
+      <p>Harmony browser data as of January 2019:</p>
+      <table class="table table-bordered-rows">
+        <thead>
+          <th>Browser</th>
+          <th>Number of Users</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chrome</td>
+            <td>4,128 <span class="font-weight-regular">(92.66%)</span></td>
+          </tr>
+          <tr>
+            <td>Internet Explorer</td>
+            <td>142 <span class="font-weight-regular">(3.19%)</span></td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td>137 <span class="font-weight-regular">(3.08%)</span></td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td>35 <span class="font-weight-regular">(0.79%)</span></td>
+          </tr>
+          <tr>
+            <td>Edge</td>
+            <td>13 <span class="font-weight-regular">(0.29%)</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Automated Code Quality Tooling</h2>
+      <p><span class="font-weight-semi-bold">Automated code quality tools are not a replacement for human code review or manual testing, but they are a great supplement!</span> Below is a list of automated code quality tools that we use and/or recommend.</p>
+
+      <h3>Linters</h3>
+      <p>We use ESLint and stylelint across our product suite. See <a routerLink="/library/introduction/introduction">Introduction</a> for instructions on installing ESLint and stylelint, and using the custom configurations that aligns with our front-end code standards.</p>
+
+      <h4>Benefits</h4>
+      <p>Linters:</p>
+      <ul>
+        <li>provide real-time feedback</li>
+        <li>automate code quality control</li>
+        <li>reduce the amount of human code review needed, and allow code reviewers to focus on providing higher-level feedback</li>
+        <li>help avoid errors</li>
+        <li>enforce best practices and coding standards</li>
+      </ul>
+
+      <h4>ESLint</h4>
+      <p><a href="https://eslint.org/" target="_blank">ESLint</a> is a linter for JavaScript and JSX.</p>
+
+      <h4>Stylelint</h4>
+      <p><a href="https://stylelint.io/" target="_blank">Stylelint</a> is a linter for css and scss syntax.</p>
+      <p>There are stylelint extensions available for <a href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint" target="_blank">VS Code</a>.</p>
+
+      <h3>More automated code quality tools</h3>
+
+      <h4>pa11y</h4>
+      <p><a href="https://pa11y.org/" target="_blank">Pa11y</a> runs automated accessibility tests.</p>
+      <p>Note: pa11y is not designed to be a complete replacement for regular accessibility testing. Think of it as being complementary to your existing workflow (which should include testing with actual users).</p>
+
+      <h4>tota11y</h4>
+      <p><a href="https://khan.github.io/tota11y/" target="_blank">tota11y</a> is an accessibility visualization toolkit.</p>
+
+      <h4>Deque</h4>
+      <p><a href="https://www.deque.com/" target="_blank">Deque's</a> mission, vision, and passion is "digital equality." They offer several tools, trainings, and services to find and fix accessibility problems.</p>
+
+      <h5>WorldSpace Attest</h5>
+      <p><a href="https://www.deque.com/tools/worldspace-attest/" target="_blank">WorldSpace Attest</a> incorporates automated accessibility testing into the development and implementation phase of web and native mobile development processes.</p>
+
+      <h5>WorldSpace Assure</h5>
+      <p><a href="https://www.deque.com/tools/worldspace-assure/" target="_blank">WorldSpace Assure</a> is step-by-step manual accessibility testing and reporting tool that enables functional testers with minimal accessibility knowledge to create precise, comprehensive, and consistent accessibility issue reports for developers.</p>
+
+      <h5>WorldSpace Comply</h5>
+      <p><a href="https://www.deque.com/tools/worldspace-comply/" target="_blank">WorldSpace Comply</a> helps ensure large websites become and remain accessible. It's used to dynamically scan, monitor, and report on the accessibility status of a site across business and development teams.</p>
+
+      <h5>axe</h5>
+      <p><a href="https://www.deque.com/axe/" target="_blank">axe</a> is a free browser extension for automated accessibility testing.</p>
+
+      <h5>axe for Web</h5>
+      <p><a href="https://www.deque.com/axe/axe-for-web/" target="_blank">axe for Web</a> is an open source accessibility rules library for automated testing. It can be customized to include custom rules and to integrate with all modern browsers and testing frameworks.</p>
+
+      <h5>ngA11y</h5>
+      <p><a href="https://github.com/dequelabs/ngA11y" target="_blank">ngA11y</a> is an Angular accessibility module.</p>
+
+      <h4>SonarLint</h4>
+      <p><a href="https://www.sonarlint.org/" target="_blank">SonarLint</a> is an IDE extension that detects issues in HTML, JavaScript, TypeScript, and other languages.</p>
+
+      <h4>SonarQube</h4>
+      <p><a href="https://www.sonarqube.org/" target="_blank">SonarQube</a> is an automatic code review tool to detect bugs, vulnerabilities, and code smells in your code.</p>
+    </div>
+  </div>
+</div>

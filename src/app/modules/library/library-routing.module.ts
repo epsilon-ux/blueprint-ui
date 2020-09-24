@@ -3,6 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LibraryComponent } from './library.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { GeneralComponent } from './code-standards/general/general.component';
+import { HtmlComponent } from './code-standards/html/html.component';
+import { CssComponent } from './code-standards/css/css.component';
+import { JavascriptComponent } from './code-standards/javascript/javascript.component';
+import { AngularComponent } from './code-standards/angular/angular.component';
+import { DevopsComponent } from './code-standards/devops/devops.component';
 
 const routes: Routes = [
   { path: '', component: LibraryComponent, children: [
@@ -22,6 +28,16 @@ const routes: Routes = [
 
       { path: 'icons', loadChildren: () => import('./foundations/icons/icons.module')
         .then(m => m.IconsModule) }
+    ] },
+
+    // Code Standards
+    { path: 'code-standards', children: [
+      { path: 'general', component: GeneralComponent, pathMatch: 'full' },
+      { path: 'html', component: HtmlComponent, pathMatch: 'full' },
+      { path: 'css', component: CssComponent, pathMatch: 'full' },
+      { path: 'javascript', component: JavascriptComponent, pathMatch: 'full' },
+      { path: 'angular', component: AngularComponent, pathMatch: 'full' },
+      { path: 'devops', component: DevopsComponent, pathMatch: 'full' },
     ] },
 
     // Components

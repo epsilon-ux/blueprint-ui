@@ -10,11 +10,23 @@ import { ComponentHeaderModule } from 'src/app/shared/component-header/component
 
 import { LibraryComponent } from './library.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { GeneralComponent } from './code-standards/general/general.component';
+import { HtmlComponent } from './code-standards/html/html.component';
+import { CssComponent } from './code-standards/css/css.component';
+import { JavascriptComponent } from './code-standards/javascript/javascript.component';
+import { AngularComponent } from './code-standards/angular/angular.component';
+import { DevopsComponent } from './code-standards/devops/devops.component';
 
 @NgModule({
   declarations: [
     LibraryComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    GeneralComponent,
+    HtmlComponent,
+    CssComponent,
+    JavascriptComponent,
+    AngularComponent,
+    DevopsComponent
   ],
   imports: [
     CommonModule,

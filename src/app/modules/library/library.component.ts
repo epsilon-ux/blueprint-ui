@@ -34,6 +34,35 @@ export class LibraryComponent {
         ]
       },
       {
+        text: 'Code Standards',
+        children: [
+          {
+            text: 'General',
+            route: './code-standards/general'
+          },
+          {
+            text: 'HTML',
+            route: './code-standards/html'
+          },
+          {
+            text: 'CSS',
+            route: './code-standards/css'
+          },
+          {
+            text: 'JavaScript',
+            route: './code-standards/javascript'
+          },
+          {
+            text: 'Angular',
+            route: './code-standards/angular'
+          },
+          {
+            text: 'DevOps',
+            route: './code-standards/devops'
+          }
+        ]
+      },
+      {
         text: 'Components',
         children: [
           {

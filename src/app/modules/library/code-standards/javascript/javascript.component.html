@@ -1,0 +1,107 @@
+<bp-landing-page-header [headingText]="headingText"></bp-landing-page-header>
+<div class="container-fluid">
+  <div class="row mb-5">
+    <div class="col-lg-8 col-xl-7">
+      <p>JavaScript defines the behavior and interaction of the application.</p>
+      <p>JavaScript should be used sparingly. Any and all JavaScript code should be included if, and only if, it is needed for the page to achieve the desired ends, e.g.: when a behavior or interaction cannot be achieved with HTML or CSS alone.</p>
+      <ul>
+        <li>
+          JavaScript should be valid
+          <ul>
+            <li>
+              No console errors
+            </li>
+          </ul>
+        </li>
+        <li>
+          JavaScript should be DRY
+          <ul>
+            <li>
+              Be re-usable whenever possible
+            </li>
+          </ul>
+        </li>
+        <li>
+          JavaScript should be unobtrusive, fast, efficient, and performant
+          <ul>
+            <li>
+              Included after careful consideration
+            </li>
+            <li>
+              Executed only when necessary
+            </li>
+            <li>
+              Evaluated for performance overhead, file size, and maintainability
+            </li>
+            <li>
+              Performs only the necessary tasks without needless overhead
+            </li>
+            <li>
+              Does not contain HTML, CSS, or hard-coded text content
+              <ul>
+                <li>
+                  Writing markup (HTML) in a JavaScript file makes the content harder to find, harder to edit, and less performant
+                </li>
+                <li>
+                  Keep text content external for translations and content management
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          JavaScript should be scoped appropriately
+          <ul>
+            <li>
+              Minimize the use of globally scoped variables
+            </li>
+            <li>
+              Use const and let when declaring variables for better scoping and error messaging
+            </li>
+            <li>
+              Use closures or object literals to avoid global scope
+            </li>
+          </ul>
+        </li>
+        <li>
+          JavaScript should have the absence or failure of the code carefully considered
+          <ul>
+            <li>
+              What happens if for some reason this code is missing or does not run?
+            </li>
+            <li>
+              What happens if the code triggers an error?
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Naming Conventions</h2>
+      <ul>
+        <li>Function and variable names should be descriptive of what they do or represent</li>
+        <li>Boolean values should be prefixed with "is" whenever possible</li>
+      </ul>
+
+      <h2>Formatting</h2>
+      <p>In order to increase readability, please adhere to the following formatting standards.</p>
+
+      <h3>Comments</h3>
+      <ul>
+        <li>Write self-explanatory or "self-commenting" code supplemented by code comments</li>
+        <li>Explain what a JavaScript file does at the top of the file</li>
+        <li>Explain what a function does, and make note of required parameters and their types</li>
+        <li>Explain any segments of code that could come across as confusing</li>
+        <li>Mark TODOs and action items with a TODO comment</li>
+      </ul>
+
+      <h3>Casing</h3>
+      <ul>
+        <li>Variable names should be camelCase</li>
+        <li>Objects, classes, and namespaces should be TitleCase</li>
+      </ul>
+
+      <h2>Organization</h2>
+      <p>JavaScript should exist in its own file and imported into the document via <code>&lt;script&gt;</code> tag at the bottom of the body. Some cases may require it to be imported in the head instead.</p>
+    </div>
+  </div>
+</div>
