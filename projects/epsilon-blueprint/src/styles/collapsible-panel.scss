@@ -38,7 +38,7 @@
     }
   }
 
-  &.right 
+  &.right
   {
     border-right: 0;
     border-left: 1px solid $border-color-secondary;
@@ -63,6 +63,11 @@
       &::after
       {
         content: $icon-menu;
+      }
+
+      &.icon-search::after
+      {
+        content: $icon-search;
       }
     }
 
