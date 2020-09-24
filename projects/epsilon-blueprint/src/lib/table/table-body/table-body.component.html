@@ -3,6 +3,7 @@
     <!-- Expandable Rows Icon -->
     <td *ngIf="properties.expandableRowsTemplate" class="td-expandable">
       <button
+        type="button"
         class="btn-icon-inline"
         [attr.id]="bpID + 'Expandable' + rowData[properties.rowId]"
         [attr.aria-expanded]="expandedRows.has(rowData[properties.rowId])"
@@ -40,6 +41,7 @@
       <!-- Link Column -->
       <ng-container *ngSwitchCase="TableColumnType.LINK">
         <bp-action
+          bpType="button"
           [bpID]="bpID + 'LinkRow' + rowData[properties.rowId] + 'Col' + i"
           [text]="rowData[column.key]"
           classes="btn-text text-align-left"
@@ -101,6 +103,7 @@
       <ng-template #moreActions>
         <div class="dropdown">
           <button
+            type="button"
             [attr.id]="bpID + 'ActionsDropdown' + rowData[properties.rowId]"
             class="btn-icon-inline more-actions-toggle"
             data-toggle="dropdown"

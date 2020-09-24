@@ -1,0 +1,280 @@
+<bp-landing-page-header [headingText]="headingText"></bp-landing-page-header>
+<div class="container-fluid">
+  <div class="row mb-5">
+    <div class="col-lg-8 col-xl-7">
+      <p>HTML defines the structure and meaning of web content.</p>
+      <p>By nature, HTML is a forgiving language that allows poorly written code to execute and render with varying levels of accuracy. That said, just because code visually renders does not mean that code is semantically correct or standards compliant.</p>
+      <ul>
+        <li>
+          HTML should be valid
+          <ul>
+            <li>No deprecated or non-standard code</li>
+            <li>Elements that are no longer part of the <a href="https://www.w3.org/TR/html53/" target="_blank" class="link-primary">HTML specification</a> should be avoided</li>
+            <li><a href="https://validator.w3.org/" target="_blank" class="link-primary">W3C's HTML validator</a></li>
+          </ul>
+        </li>
+        <li>
+          HTML should be standards-compliant
+          <ul>
+            <li>Controls the structure</li>
+            <li>Does not impact the presentation</li>
+            <li>Remains fully functional without CSS</li>
+            <li>Does not contain inline or internal styling or scripting</li>
+          </ul>
+        </li>
+        <li>
+          HTML should be semantic and accessible
+          <ul>
+            <li>Choose HTML elements based on the content structure</li>
+            <li>Use sectioning elements, heading elements, and content elements accordingly</li>
+            <li>Use ARIA to supplement markup so that interactions and widgets commonly used in applications can be passed to assistive technologies when there is not otherwise a mechanism &mdash; do not use ARIA as a replacement for semantic markup</li>
+            <li>Never use the HTML table element for presentation &mdash; the table element should only be used for tabular data</li>
+            <li>Always use the HTML form element for sections requiring user input</li>
+          </ul>
+        </li>
+        <li>
+          HTML should be as meaningful and minimal as possible
+          <ul>
+            <li>Avoid superfluous parent elements, e.g.:
+              <span class="code-do"><i class="fas fa-check-circle icon-left"></i>Do
+                <code>
+                  &lt;img src="..." class="logo" /&gt;
+                </code>
+              </span>
+              <span class="code-dont"><i class="fas fa-times-circle icon-left"></i>Don't
+                <code>
+                  &lt;span class="logo"&gt;
+                    &lt;img src="..." /&gt;
+                  &lt;/span&gt;
+                </code>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Semantics</h2>
+      <p>HTML provides a number of semantic constructs that allow automated tools like search engines and screen readers to make sense of the document and to understand relationships between pieces of content. Use semantic markup whenever possible &mdash; that is to say use elements with specific meanings for specific purposes to convey the spirit of the markup.</p>
+
+      <h3>Semantic elements</h3>
+      <ul>
+        <li>
+          The <code>&lt;header&gt;</code> element represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements, like a h1-h6, a logo, a search bar, etc.
+        </li>
+        <li>
+          The <code>&lt;footer&gt;</code> element typically contains information about the author of the section, copyright data or links to related documents
+        </li>
+        <li>
+          The <code>&lt;nav&gt;</code> element represents a section of a page whose purpose is to provide navigational links, either within the current document or to other documents
+          <ul>
+            <li>A document may have several nav elements, for example, one for primary site navigation and one for secondary intra-page navigation</li>
+            <li>It's not necessary for all links to be contained in a nav element. The nav element is intended only for major block of navigation links. For example, a footer will typically contain a list of links that don't actually need to be in a nav element</li>
+            <li>Using the nav element provides screen reader users with a shortcut key to jump to the navigation</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;main&gt;</code> element represents the dominant content of the body of a document
+          <ul>
+            <li>There should only be one main element per document</li>
+            <li>Content that is repeated across a set of documents or document sections, such as the site or application's logo, navigation links, sidebar, etc. should not be nested in the main element</li>
+            <li>Adding an id attribute to the main element allows it to be the target of a skip navigation link. Skipnav is a technique that allows an assistive technology user to skip large sections of repeated content like the navigation, without having to tab through it or listen to it, and jump directly to the main content of the page</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;article&gt;</code> element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable
+          <ul>
+            <li>A document can have multiple article elements in it</li>
+            <li>Each article should contain a nested heading element. For example, on an infinitely scrolling blog, each post would be contained in an article element</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;aside&gt;</code> element is for content that's only indirectly related to the main content. Asides are frequently used for sidebars or call-out boxes
+        </li>
+        <li>
+          The <code>&lt;section&gt;</code> element represents a standalone section that doesn't have a more specific semantic element to represent it
+          <ul>
+            <li>Typically, but not always, each section should contain a nested heading element</li>
+            <li>The section element is not a generic container element. When an element is needed purely for styling or scripting, you should use the div element instead. A general rule of thumb is that the section element is appropriate if the element's contents should logically appear in the outline of a document</li>
+          </ul>
+        </li>
+        <li>
+          Heading elements represent six levels of section headings
+          <ul>
+            <li><code>&lt;h1&gt;</code> is the highest section level and <code>&lt;h6&gt;</code> is the lowest</li>
+            <li>There must be one, and only one, h1 per page</li>
+            <li>The h1 must be subject of the page</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;p&gt;</code> element represents a paragraph. That said, HTML paragraphs can be any structural grouping of related content
+          <ul>
+            <li>Breaking up content into paragraphs helps make a page more accessible</li>
+            <li>Assistive technologies provide shortcuts that allow users to skip to the previous or next paragraphs</li>
+            <li>Using empty paragraph elements to add white space is problematic for people who navigate the web with assistive technology because a screen reader may announce the paragraph, but not any content...because there is none, which can confuse and frustrate the user</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;dl&gt;</code> element represents a description list
+          <ul>
+            <li>The element encloses a list of groups of terms (specified using the <code>&lt;dt&gt;</code> element) and descriptions (provided by <code>&lt;dd&gt;</code> elements)</li>
+            <li>Common uses for this element are to implement a glossary or to display metadata as a list of key-value/name-value pairs, e.g.: a contact card</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;small&gt;</code> element represents side-comments such as small print, independent of styled presentation
+          <ul>
+            <li>Common uses for this element are: copyright information, disclaimers, caveats, legal restrictions, or licensing requirements</li>
+            <li>Do not use the small element to control font size. Use a semantic element and style it with CSS instead</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;a&gt;</code> element creates a link to other web pages, files, locations within the same page, email addresses, or any other URL
+          <ul>
+            <li>Anchor elements are often abused with onclick events to create pseudo-buttons by setting the href attribute to "#" or the JavaScript void operator in order to prevent the page from refreshing. These values cause unexpected behavior when copying/dragging links, opening links in a new tab/window, bookmarking, and when JavaScript is still downloading, errors out, or is disabled. This also conveys incorrect semantics to assistive technologies. In these cases, it is recommended to use a button element instead</li>
+            <li>In general, links should take the user to another place (another page, another place on the same page, a new tab, etc.) and buttons should perform an action (open a menu, open a modal, manipulate content on a page, submit form data)</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;button&gt;</code> element represents a clickable button which can be used in forms or anywhere in a document that needs simple, standard button functionality
+          <ul>
+            <li>The button element is described as a button by assistive technologies, and it has built-in keyboard controls like tab to focus and return/enter to "click"</li>
+            <li>Technically speaking, you can create pseudo buttons by using the input element with a type of "button" (<code>&lt;input type="button"&gt;</code>), but the button element is the recommended way to create buttons</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;form&gt;</code> element represents a document section that contains interactive controls for submitting information to a web server. Many assistive technologies and browser plugins recognize form elements and implement special hooks to make them easier to use
+        </li>
+        <li>
+          The <code>&lt;label&gt;</code> element provides identification for a specific form control based on the matching values of the form control's id attribute and the label's for attribute
+          <ul>
+            <li>The label element is the most important element if you want to build accessible forms</li>
+            <li>When implemented properly, assistive technologies will announce a form element's label along with any related instructions, and the form element will receive focus when a user clicks on the label</li>
+            <li>Input elements with a type of "button" should not be associated with a label element. Adding a label to an input element with a type of "button" could interfere with how assistive technology parses the button input</li>
+            <li>Do not use the label element for strings of text. Use paragraph or heading elements instead</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;input&gt;</code> element is used to create interactive form controls
+          <ul>
+            <li>How an input works depends on the value of its type attribute</li>
+            <li>All input fields (except for input elements with a type of "button") should be associated with a label element</li>
+            <li>The value of the label's for attribute must contain the value of the corresponding input's id attribute. Keep in mind that ids are unique and can only be used once per page</li>
+            <li>When implemented properly, the input field will receive focus when a user clicks on the label, and assistive technologies will announce a form element's label along with any related instructions</li>
+            <li>Input elements with a type of "button" should not be associated with a label element. Adding a label to an input element with a type of "button" could interfere with how assistive technology parses the button input</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;select&gt;</code> element represents a control that provides a menu of options
+        </li>
+        <li>
+          The <code>&lt;textarea&gt;</code> element represents a multi-line plain-text form control where users can type free-form text
+        </li>
+        <li>
+          The <code>&lt;table&gt;</code> element represents tabular data
+          <ul>
+            <li>Tables provide important semantic association between row and column headers and data</li>
+            <li>Do not use the table element unless the data is actually tabular</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;img&gt;</code> element embeds an image into a document
+          <ul>
+            <li>The <code>alt</code> attribute defines an alternative text description (alt text) for the image</li>
+            <li>Alt text is displayed on the page if the image can't be loaded for some reason, e.g.: network errors, content blocking, etc.</li>
+            <li>Alt text is read aloud by screen readers in order to provide context for non-text content</li>
+            <li>When an image contains words that are important to understanding the content, the alt text should include those words. Note: it does not necessarily describe the visual characteristics of the image itself, but it must convey the same meaning as the image</li>
+            <li>If the image doesn’t contain anything of relevance, the alt attribute should still be included and the value should be an empty string so screen readers will ignore it rather than read the name of the image file</li>
+            <li>Setting the alt attribute to an empty string indicates that non-visual browsers may omit it from rendering. Visual browsers will also hide the broken image icon if the alt is empty and the image failed to display</li>
+            <li>If an image doesn’t have a meaningful value, consider using a CSS background image instead of an inline image element</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Non-semantic elements</h3>
+      <p>There are a number of HTML elements that are often misused for presentation.</p>
+      <ul>
+        <li>
+          The <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements are a simple, generic containers
+          <ul>
+            <li>They do not inherently represent anything</li>
+            <li>They have no effect on the content or layout until styled using CSS</li>
+            <li>They should be viewed as a last resort, and used only when no other semantic element is appropriate</li>
+            <li>The div element should be used with grid systems for grid classes (containers, rows, and columns)</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;br&gt;</code> element produces a line break in text
+          <ul>
+            <li>The line break element should only be used for line breaks that are actually part of the content and the division of lines is significant, like in addresses and poems</li>
+            <li>Using the line break element to create white space is not only bad practice, it is also problematic for users who navigate the web with assistive technologies</li>
+            <li>Do not use the line break element to create white space, separate paragraphs, or separate lines of text. Use paragraph elements with proper opening and closing tags instead</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&amp;nbsp;</code> character entity prevents text wrapping
+          <ul>
+            <li>Do not use the non-breaking space character entity. Use the CSS <code>white-space</code> property with a value of <code>nowrap</code> instead</li>
+          </ul>
+        </li>
+        <li>
+          The <code>&lt;hr&gt;</code> element represents a thematic break between paragraph-level elements, e.g.: a scene change in a story, or a transition to another topic within a section of a reference book. Historically, it's been used as a horizontal rule or line. While it may still be displayed as a horizontal rule in visual browsers, this element is now defined in semantic terms, rather than presentational terms.
+        </li>
+        <li>
+          In earlier versions of the HTML spec, the <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> elements were simply presentational elements used to display bold and italicized text. This is no longer true, and these elements now have semantic meaning. Read the <a href="https://www.w3.org/TR/html53/" target="_blank" class="link-primary">HTML spec</a> to determine if a semantic HTML element or CSS is the best solution
+        </li>
+      </ul>
+
+      <h2>Formatting</h2>
+      <p>In order to increase readability, please adhere to the following formatting standards.</p>
+      <ul>
+        <li>Use a new line for opening and closing tags</li>
+        <li>Use one level of indentation (2 spaces) for nested elements</li>
+        <li>Elements, attributes, and attribute values should be lowercase</li>
+        <li>Do not omit optional end tags</li>
+        <li>Do not omit trailing slashes for void elements</li>
+        <li>Use one space before the trailing slashes for void elements</li>
+        <li>Use a standard attribute order</li>
+        <li>Use double quotes to surround attribute values</li>
+        <li>Omit values for boolean attributes</li>
+        <li>Mark TODOs and action items with a TODO comment</li>
+        <li>
+          Examples:
+          <ul>
+            <li><code>&lt;/body&gt;</code></li>
+            <li><code>&lt;/li&gt;</code></li>
+            <li><code>&lt;input type="text" id="myInput" class="form-control" required /&gt;</code></li>
+            <li><code>&lt;img src="logo.svg" alt="Logo" /&gt;</code></li>
+            <li><code>&lt;!-- TODO: HTML action item --&gt;</code></li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Organization</h2>
+      <ul>
+        <li>
+          The order of the content in the source code should match the visual presentation of the content
+          <ul>
+            <li>
+              Do not use tabindex as a way to make up for disorganized source code
+            </li>
+          </ul>
+        </li>
+        <li>HTML attributes should be written in a consistent order to reduce the risk of human error and increase the readability of code</li>
+      </ul>
+
+      <h3>Attribute order</h3>
+      <p>HTML attributes should come in this particular order for easier reading of code. Classes make for great reusable components, so they come first. Ids are more specific and should be used sparingly (e.g., for in-page bookmarks), so they come second.</p>
+      <ul>
+        <li>type</li>
+        <li>id</li>
+        <li>for, href, src</li>
+        <li>title, alt</li>
+        <li>class</li>
+        <li>name</li>
+        <li>value</li>
+        <li>role, aria-*, data-*</li>
+        <li>miscellaneous framework-specific attributes and/or inputs</li>
+      </ul>
+    </div>
+  </div>
+</div>

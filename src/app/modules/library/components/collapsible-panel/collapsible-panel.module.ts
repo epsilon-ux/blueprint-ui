@@ -10,7 +10,6 @@ import { CollapsiblePanelRoutingModule } from './collapsible-panel-routing.modul
 import { CollapsiblePanelComponent } from './collapsible-panel.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ApiComponent } from './api/api.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { UsageComponent } from './usage/usage.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { UsageComponent } from './usage/usage.component';
     CollapsiblePanelComponent,
     OverviewComponent,
     ApiComponent,
-    PlaygroundComponent,
     UsageComponent
   ],
   imports: [

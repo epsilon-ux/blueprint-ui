@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './header.component';
 import { OverviewComponent } from './overview/overview.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 const routes: Routes = [
@@ -12,7 +11,6 @@ const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
     { path: 'overview', component: OverviewComponent, pathMatch: 'full' },
     { path: 'usage', component: UsageComponent, pathMatch: 'full' },
-    { path: 'playground', component: PlaygroundComponent, pathMatch: 'full' },
     { path: 'api', component: ApiComponent, pathMatch: 'full' },
     { path: '**', redirectTo: 'overview', pathMatch: 'full' }
   ] }

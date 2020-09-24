@@ -1,0 +1,63 @@
+<bp-landing-page-header [headingText]="headingText"></bp-landing-page-header>
+<div class="container-fluid">
+  <div class="row mb-5">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">This section contains the guidelines and best practices for front-end web development at Epsilon.</p>
+      <ul>
+        <li>
+          Front-end code should be valid and compliant with <a href="https://www.w3.org/standards/" target="_blank" class="link-primary">W3C</a> and <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" class="link-primary">WCAG</a> standards, as well as Epsilon's standards outlined in this document
+          <ul>
+            <li>No deprecated or non-standard code</li>
+            <li>No console errors</li>
+            <li>All front-end code should be tested across supported browsers and operating systems, and with assistive technology, e.g.: screen readers</li>
+          </ul>
+        </li>
+        <li>
+          Front-end code should maintain a separation of concerns
+          <ul>
+            <li>Semantic HyperText Markup Language (HTML) for structure</li>
+            <li>Cascading Style Sheets (CSS) for presentation</li>
+            <li>JavaScript (JS) for behavior and interaction</li>
+          </ul>
+        </li>
+        <li>
+          Front-end code should be as simple, as clear, and as clean as possible
+          <ul>
+            <li>Clever code does not mean good code; readability is critical</li>
+            <li>All code in any codebase should look like a single person typed it, even when many people are contributing to it. Conventions for whitespace, indentation, nesting, capitalization, quote styles, etc. should be established at the start of a project or during major cleanup/refactoring efforts, and enforced by automation, e.g.: code editor settings, linters, etc. Please refer to the various sections of these standards for more information about language-specific formatting</li>
+            <li>Maintain an organized and logical structure in the file system</li>
+            <li>Leave the code a little better than you found it</li>
+            <li>Address tech debt</li>
+            <li>Delete legacy files and dead code</li>
+            <li>Delete commented out code</li>
+            <li>Avoid code comments. Code never lies; comments do. Writing self-explanatory code is a better use of time</li>
+            <li>Use automated code quality tools, e.g.: linters, browser extensions, etc., to provide real-time feedback, automate code quality control, reduce the amount of human code review needed, and enforce best practices and coding standards</li>
+            <li>Configure editor’s formatting settings to align with front-end code standards and linter rules in order to avoid common code inconsistencies and dirty diffs</li>
+            <li>Configure editor to “show invisibles” in order to make white space changes more visible</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Accessibility</h2>
+      <p>Accessibility is not a feature &mdash; it is a requirement. All new or updated code must conform to <a href="https://www.w3.org/TR/WCAG20/" target="_blank" class="link-primary">WCAG 2.0 (AA)</a>. Wherever possible, code should conform to <a href="https://www.w3.org/TR/WCAG21/" target="_blank" class="link-primary">WCAG 2.1 (AAA)</a>.</p>
+      <!-- TODO: add examples of what to look out for, consider adding DoD-style ACs -->
+
+      <h2>Responsive</h2>
+      <p>Responsive means the layout is flexible, fluid, and device agnostic, and the content reflows and adapts to almost any screen.</p>
+      <p>Since screen dimensions and width in CSS pixels vary widely between devices, and how people interact with the web across screens continues to evolve rapidly, content should not rely on a particular device type, screen size, viewport width, resolution, orientation, etc. to render well. Instead of thinking about specific devices and dimensions, think about sizes conceptually, e.g.: small, medium, large, extra-large, and focus on creating flexible, fluid, device-agnostic layouts that adapt to almost any screen.</p>
+      <ul>
+        <li>Use a responsive layout grid and media queries</li>
+        <li>Take a device-agnostic approach to responsive</li>
+        <li>Start with the smallest breakpoint and work upwards</li>
+        <li>Never hide content</li>
+        <li>Avoid setting fixed dimensions</li>
+        <li>Test on real hardware</li>
+      </ul>
+
+      <h2>Third-Party Libraries</h2>
+      <p>The selection of third-party libraries should be carefully considered and verified with the project team as the appropriate solution to a given problem. "Adding another plug-in" is not always the best solution.</p>
+      <p>In general, third-party libraries should be open source, lightweight libraries with no dependencies. The feature set should be understood and appropriate. For Angular apps, third-party libraries should be built using TypeScript. Whenever possible, the same third-party library should be used across the product suite to keep the UX consistent and speed up development.</p>
+      <p>Adding multiple front-end frameworks, e.g.: Bootstrap and Material UI, in the same application is not recommended. Having multiple frameworks that solve the same problem exponentially increases the size of the application and introduces inconsistent interactions, animations, styles, etc. that are difficult to reconcile and maintain.</p>
+    </div>
+  </div>
+</div>

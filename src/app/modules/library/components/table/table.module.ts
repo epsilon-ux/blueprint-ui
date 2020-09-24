@@ -11,7 +11,6 @@ import { TableRoutingModule } from './table-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { TableComponent } from './table.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { ApiComponent } from './api/api.component';
     TableComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [

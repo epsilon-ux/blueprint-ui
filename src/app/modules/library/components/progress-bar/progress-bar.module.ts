@@ -9,7 +9,6 @@ import { ProgressBarRoutingModule } from './progress-bar-routing.module';
 import { ProgressBarComponent } from './progress-bar.component';
 import { OverviewComponent } from './overview/overview.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { ApiComponent } from './api/api.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { ApiComponent } from './api/api.component';
     ProgressBarComponent,
     OverviewComponent,
     UsageComponent,
-    PlaygroundComponent,
     ApiComponent
   ],
   imports: [

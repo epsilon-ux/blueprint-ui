@@ -148,14 +148,11 @@ bp-header
 
           .product-switcher
           {
-            &::before
+            & svg
             {
-              content: "";
               display: inline-block;
               width: 18px;
               height: 18px;
-              // TODO: ship prod switcher icon with pkg
-              background: url(https://epsilon-ux.github.io/blueprint-primary-navigation/assets/icon-product-switcher.svg);
             }
 
             .product-switcher-text

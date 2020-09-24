@@ -9,7 +9,6 @@ import { DropdownComponent } from './dropdown.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ApiComponent } from './api/api.component';
 import { UsageComponent } from './usage/usage.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { DropdownModule } from 'epsilon-blueprint';
 
 @NgModule({
@@ -17,8 +16,7 @@ import { DropdownModule } from 'epsilon-blueprint';
     DropdownComponent,
     OverviewComponent,
     ApiComponent,
-    UsageComponent,
-    PlaygroundComponent
+    UsageComponent
   ],
   imports: [CommonModule, DropdownRoutingModule, ComponentHeaderModule, DropdownModule, MarkdownModule.forChild()]
 })

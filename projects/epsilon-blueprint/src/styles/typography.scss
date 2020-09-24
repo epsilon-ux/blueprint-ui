@@ -76,9 +76,28 @@ dd
   font-weight: $font-weight-semi-bold;
 }
 
-code
+code,
+pre
 {
   color: $font-color-code;
+  font-size: $font-size-body;
+  font-family: $font-family-code;
+}
+
+code
+{
+  word-break: break-word;
+}
+
+pre
+{
+  display: block;
+  margin: 0 0 $space-sm;
+
+  & code
+  {
+    word-break: normal;
+  }
 }
 
 // resetting styles of non-semantic elements to reinforce use of semantic html for content and css for presentation

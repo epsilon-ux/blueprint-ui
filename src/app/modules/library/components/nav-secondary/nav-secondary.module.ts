@@ -9,7 +9,6 @@ import { ComponentHeaderModule } from 'src/app/shared/component-header/component
 import { NavSecondaryComponent } from './nav-secondary.component';
 import { UsageComponent } from './usage/usage.component';
 import { ApiComponent } from './api/api.component';
-import { PlaygroundComponent } from './playground/playground.component';
 import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { OverviewComponent } from './overview/overview.component';
     NavSecondaryComponent,
     UsageComponent,
     ApiComponent,
-    PlaygroundComponent,
     OverviewComponent
   ],
   imports: [

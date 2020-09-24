@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BreadcrumbInterface } from './breadcrumbs.interface';
 import { generateUniqueId } from '../../helpers';
 
@@ -14,6 +14,9 @@ export class BreadcrumbsComponent implements OnInit {
   @Input()
   bpID: string;
 
+  @Output()
+  clickCrumb: EventEmitter<BreadcrumbInterface> = new EventEmitter();
+
   uuid: string;
 
   constructor() { }
@@ -24,6 +27,12 @@ export class BreadcrumbsComponent implements OnInit {
       this.uuid = 'breadcrumbs' + generateUniqueId().toString();
     } else {
       this.uuid = this.bpID;
+    }
+  }
+
+  handleClick(crumb: BreadcrumbInterface): void {
+    if (!crumb.bpRouterLink && !crumb.href) {
+      this.clickCrumb.emit(crumb);
     }
   }
 
@@ -38,21 +47,6 @@ export class BreadcrumbsComponent implements OnInit {
         const err = new Error('Text is a required property of bp-breadcrumbs \'crumbs\' Input');
         err.name = 'Missing Input';
         throw err;
-      }
-      if (i !== this.crumbs.length - 1) {
-        if (!crumb.bpRouterLink && !crumb.href) {
-          // eslint-disable-next-line
-          const err = new Error('Must provide either \'bpRouterLink\' or \'href\' for each crumb of bp-breadcrumbs \'crumbs\' Input, except in the last crumb.');
-          err.name = 'Missing Input';
-          throw err;
-        }
-      } else {
-        if (crumb.bpRouterLink || crumb.href || crumb.target) {
-          // eslint-disable-next-line
-          const err = new Error('The last crumb of the \'crumbs\' Input in bp-breadcrumbs can only have a text property.');
-          err.name = 'Invalid Input';
-          throw err;
-        }
       }
     });
   }

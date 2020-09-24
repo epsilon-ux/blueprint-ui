@@ -8,6 +8,8 @@
 // We add margin-top to headings for vertical spacing in our docs
 // stylelint-disable no-descending-specificity
 
+$font-color-code: #e1088a; // only used in Blueprint UI
+
 h2
 {
   margin-top: 40px;
@@ -21,6 +23,39 @@ h3
 h4
 {
   margin-top: 20px;
+}
+
+h5
+{
+  margin: 20px 0 10px;
+  color: $font-color-secondary;
+  font-size: $font-size-body;
+}
+
+code,
+pre,
+pre > code
+{
+  color: $font-color-code;
+  text-transform: initial;
+}
+
+.code-do,
+.code-dont
+{
+  display: block;
+  font-weight: $font-weight-semi-bold;
+  text-transform: uppercase;
+}
+
+.code-do i
+{
+  color: $feedback-color-success;
+}
+
+.code-dont i
+{
+  color: $feedback-color-warning;
 }
 
 abbr
@@ -39,6 +74,12 @@ abbr
   {
     margin-bottom: 3rem; // maps to Bootstrap's .mb-5 spacing utility
   }
+}
+
+ul > li,
+ul > li > ul > li
+{
+  margin-top: 5px;
 }
 
 .inline-details

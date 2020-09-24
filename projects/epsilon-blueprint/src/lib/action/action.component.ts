@@ -9,6 +9,7 @@ export class ActionComponent implements OnInit {
 
   @Input() text: string;
   @Input() classes = '';
+  @Input() bpType = 'submit';
   @Input() ariaLabel: string;
   @Input() href: string = undefined;
   @Input() routerLink: string = undefined; // Deprecated: Use bpRouterLink instead.

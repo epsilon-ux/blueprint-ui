@@ -1,0 +1,45 @@
+<bp-landing-page-header [headingText]="headingText"></bp-landing-page-header>
+<div class="container-fluid">
+  <div class="row mb-5">
+    <div class="col-lg-8 col-xl-7">
+      <p>All new or updated code must adhere to the <a href="https://angular.io/guide/styleguide" target="_blank" class="link-primary">Angular Style Guide</a>, the <a href="https://www.typescriptlang.org/docs/home.html" target="_blank" class="link-primary">TypeScript documentation</a>, and the following best practices:</p>
+      <ul>
+        <li>Lazy-load modules</li>
+        <li>Always unsubscribe; avoid memory leaks</li>
+        <li>Avoid nested subscriptions</li>
+        <li>Avoid using type any; type everything</li>
+        <li>Avoid adding unnecessary wrappers (e.g.: <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>) for logic; use <code>&lt;ng-container&gt;</code> instead</li>
+        <li>Avoid inline conditionals</li>
+        <li>Don’t use jQuery</li>
+        <li>Don’t use <code>/deep/</code>, <code>>>></code>, or <code>::ng-deep</code></li>
+        <li>Use Prettier and TSLint/ESLint</li>
+      </ul>
+
+      <h2>Naming Conventions</h2>
+      <ul>
+        <li>Components, Enums, and Interfaces should be PascalCase</li>
+        <li>
+          Components should have a suffix of Component
+          <ul>
+            <li>&#123;ComponentName&#125;Component</li>
+            <li>TableComponent</li>
+          </ul>
+        </li>
+        <li>
+          Enums should have a suffix of Type
+          <ul>
+            <li>&#123;ComponentName&#125;&#123;EnumName&#125;Type</li>
+            <li>TableColumnType</li>
+          </ul>
+        </li>
+        <li>
+          Interfaces should have a suffix of Interface
+          <ul>
+            <li>&#123;ComponentName&#125;&#123;InterfaceName&#125;Interface</li>
+            <li>TablePropertiesInterface</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
