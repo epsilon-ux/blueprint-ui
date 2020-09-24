@@ -5,22 +5,32 @@
 
       <h2 class="mt-0">Development Practices</h2>
       <ul>
-        <li>Perform peer code reviews on the latest pull requests/changesets</li>
+        <li>Break down work into the smallest incremental change possible</li>
+        <li>Limit work in progress to 2-3 items per person</li>
         <li>
-          Pull/get the latest code
+          Pull/get the latest code every day and before starting new development
           <ul>
             <li>
               When resolving merge conflicts and checking in new code:
               <ul>
                 <li>Do not rely on auto-merge features</li>
                 <li>Carefully compare diffs of individual files to the latest version</li>
+                <li>Ensure any unintended changes are not included</li>
               </ul>
             </li>
           </ul>
         </li>
+        <li>
+          Continually test changes throughout the development cycle
+          <ul>
+            <li>Testing is not a single step that happens after 'dev complete'</li>
+            <li>Testing should happen through the entire development cycle: dev testing, QA testing, automated testing, accessibility testing, usability testing, performance testing, etc.</li>
+          </ul>
+        </li>
+        <li>Create frequent, small pull requests/changesets that touch as few files as possible</li>
+        <li>Submit pull requests/changesets for code review</li>
         <li>Address code review feedback</li>
-        <li>Finish work in progress</li>
-        <li>Work on assigned items</li>
+        <li>Perform peer code reviews on the latest pull requests/changesets</li>
       </ul>
 
       <h2>Definition of Done</h2>
@@ -68,14 +78,14 @@
       <p class="font-weight-semi-bold">Please note: All products should be tested across browsers and operating systems, and with assistive technology (e.g.: screen readers).</p>
 
       <h3>Tier 1</h3>
-      <p class="font-style-italic">Looks and functions as intended in the mockups</p>
+      <p class="font-style-italic">The interface looks and functions as intended in the mockups.</p>
       <ul>
         <li>Chrome</li>
         <li>Firefox</li>
       </ul>
 
       <h3>Tier 2</h3>
-      <p class="font-style-italic">Doesn’t need to look perfect, but should function as intended</p>
+      <p class="font-style-italic">The interface doesn’t need to look perfect, but should function as intended. It must be readable and usable, and it should degrade gracefully.</p>
       <ul>
         <li>Edge</li>
         <li>Safari</li>

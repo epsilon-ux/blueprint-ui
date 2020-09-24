@@ -55,7 +55,19 @@
         <li>
           CSS should be maintainable
           <ul>
-            <li>When it makes sense, use variables to semantically abstract styles in order to make future rebrand efforts easier and seamless</li>
+            <li>
+              When it makes sense, use variables to semantically abstract styles in order to make future rebrand efforts easier and seamless, e.g.:
+              <span class="code-do"><i class="fas fa-check-circle icon-left"></i>Do
+                <code>
+                  color: $font-color-primary;
+                </code>
+              </span>
+              <span class="code-dont"><i class="fas fa-times-circle icon-left"></i>Don't
+                <code>
+                  color: #221f4d;
+                </code>
+              </span>
+            </li>
             <li>Add space to the bottom of elements, rather than the top, in order to keep vertical spacing predictable while writing modular, component-based CSS</li>
             <li>Avoid setting fixed heights and widths</li>
             <li>When debugging, start by attempting to delete code before adding more</li>
