@@ -3,7 +3,7 @@
     <button
       type="button"
       [attr.id]="uuid + 'Toggle'"
-      [ngClass]="{'toggle': true, 'icon-search' : hasSearchToggle}"
+      [ngClass]="{'toggle': true, 'icon-search': hasSearchToggle}"
       [attr.aria-controls]="uuid"
       [attr.aria-label]="toggleAriaLabel"
       (click)="togglePanel()"
