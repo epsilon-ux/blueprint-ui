@@ -2,55 +2,41 @@
   headingText="Blueprint Component Library"
 ></bp-landing-page-header>
 <section class="container-fluid">
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-lg-8 col-xl-7">
       <h2 class="mt-0">Epsilon Blueprint</h2>
-      <p>
-        You can see in progress and upcoming work on our <a href="https://trello.com/b/AoJ0Tpd2/blueprint">Blueprint Trello board.</a>
-      </p>
-      <h3>Usage</h3>
-      <p>
-        <span class="font-weight-bold">Please do not override or customize Blueprint components.</span> If Blueprint components are overridden or customized in products, we will be unable to safely update the epsilon-blueprint component library without introducing breaking changes in the products. If you experience any issues integrating Blueprint components, please reach out to the UX team.
+      <p>Blueprint is the component library and design system used across Epsilon products. See <a href="https://trello.com/b/AoJ0Tpd2/blueprint">Trello</a> for an update on in progress and upcoming work.
       </p>
       <h3>Project setup</h3>
       <p>
-        Reach out to the UX Team when setting up the application's base template and architecture to work best with Blueprint, align to other products, and ensure scalability.
+        Please reach out to the UX team before getting started!
+      </p>
+      <h4>Architecture and base template</h4>
+      <p>
+        All Epsilon products use the same application architecture to ensure scalability, reusability, and code cleanliness. The UX team works closely with product teams in the setup of the application architecture as well as the implementation of the base template. The base template is used to create the page structure. See the <a href="https://github.com/epsilon-ux/demo-skeleton-ui">Skeleton UI</a> for an example of the standard project architecture and base template implementation.
       </p>
       <h4>Dependencies</h4>
       <p>
-        The epsilon-blueprint package has a few dependencies that are not included in the package itself. They are as follows:
+        The epsilon-blueprint package has two dependencies that are not included in the package:
       </p>
       <ul>
         <li>Angular 8</li>
         <li>ng-select</li>
       </ul>
       <h4>Imports</h4>
-      <p class="mb-0">The package also relies on having the following imports in the application's index.html.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h5 class="font-size-body mt-3">Bootstrap v4</h5>
-      <markdown [data]="bootstrapImport" lineNumbers></markdown>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h5 class="font-size-body mt-3">Font Awesome 5</h5>
-      <markdown [data]="fontawesomeImport" lineNumbers></markdown>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h5 class="font-size-body mt-3">Open Sans</h5>
-      <markdown [data]="fontImport" lineNumbers></markdown>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-8 col-xl-7">
+      <p>
+        All applications should have the below imports in the index. The latest versions can be copied from the <a href="https://github.com/epsilon-ux/blueprint-ui/blob/dev/src/index.html">Skeleton UI index.</a>
+      </p>
+      <ul>
+        <li>Bootstrap v4</li>
+        <li>Open Sans</li>
+        <li>Font Awesome 5</li>
+        <li>IBM Plex Mono</li>
+        <li>Google Analytics</li>
+      </ul>
       <h4>Automated code quality tools</h4>
       <p>
-        All applications should use automated code quality tools to help avoid errors, provide real-time feedback, reduce the amount of human code review needed, allow code reviewers to focus on providing higher-level feedback, and enforce best practices and coding standards.
+        All applications should use automated code quality tools to help avoid errors, provide real-time feedback, reduce the amount of human code review needed, allow code reviewers to focus on providing higher-level feedback, and enforce best practices and coding standards. See <a routerLink="/library/code-standards/general">Code Standards</a> for more information on front-end code standards, and <a routerLink="/library/code-standards/devops">DevOps</a> for more information on automated code quality tools.
       </p>
       <h5 class="font-size-body mt-3">stylelint</h5>
       <ol>
@@ -95,6 +81,26 @@
           <code>@import "~epsilon-blueprint/styles/global-variables";</code>
         </li>
       </ol>
+      <h3>Usage</h3>
+      <p>
+        <span class="font-weight-bold">Please do not override or customize Blueprint components.</span> If Blueprint components are overridden or customized in products, we will be unable to safely update the epsilon-blueprint component library without introducing breaking changes in the products. If you experience any issues using Blueprint components, please reach out to the UX team.
+      </p>
+      <h3>Process</h3>
+      <h4>Collaboration</h4>
+      <p>
+        The collaboration process between the UX team and product teams varies slightly from product to product. However, the UX team should have read and write access to all product repositories. The UX team will share all available resources with product teams including the epsilon-blueprint component library, mockups, and training resources.
+      </p>
+      <h4>Code review</h4>
+      <p>
+        The UX team reviews all front-end pull requests. Code review is an important part of development: it helps developers learn, offers different perspectives, and ensures quality. See <a routerLink="/library/code-standards/devops">DevOps</a> for more information on development practices.
+      </p>
+      <h3>Resources</h3>
+      <ul>
+        <li><a routerLink="/library/code-standards/general">Code Standards</a></li>
+        <li><a routerLink="/library/code-standards/devops">DevOps</a></li>
+        <li><a href="https://github.com/epsilon-ux/demo-skeleton-ui" target="_blank">Skeleton UI</a></li>
+        <li><a href="https://github.com/epsilon-ux/resources" target="_blank">Resources repository</a></li>
+      </ul>
     </div>
   </div>
 </section>
