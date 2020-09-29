@@ -52,10 +52,10 @@ export interface TableColumnInterface {
     element?: string; // Deprecated, this is no longer needed
     ariaLabel: string; // Can use #{key} syntax to insert values from the row corresponding to the given key
     target?: string; // The target of the link i.e. "_blank" to open in a new tab
-    action?: string; // Required if element = 'button'
+    action?: string; // Required if button
     path?: string; // Deprecated: Use bpRouterLink instead
-    bpRouterLink?: string; // Required if element = 'a' and you need to use routerLink
-    href?: string; // Required if element = 'a' and you need to use an external link
+    bpRouterLink?: string; // Required if link and you need to use routerLink
+    href?: string; // Required if link and you need to use an external link
   };
   statusIndicatorMapping?: TableStatusInterface;
   columnIndex?: number; // This is set internally in the component and should not be provided by the user
