@@ -145,7 +145,7 @@
               <td>rowId</td>
               <td>string</td>
               <td>The key from the data to use as the identifier.</td>
-              <td></td>
+              <td>Required.</td>
             </tr>
             <tr>
               <td>columns</td>
@@ -164,8 +164,11 @@
                 default / on page load.
               </td>
               <td>
-                The column that is sorted by default cannot be hidden with the
-                column selector.
+                <p>Required.</p>
+                <p>
+                  The column that is sorted by default cannot be hidden with the
+                  column selector.
+                </p>
               </td>
             </tr>
             <tr>
@@ -501,22 +504,6 @@
           </thead>
           <tbody>
             <tr>
-              <td>element</td>
-              <td>string</td>
-              <td>The element used for the action.</td>
-              <td>
-                <p>Expects either a or button.</p>
-                <p>
-                  Use a when the action should route to another part of the
-                  application.
-                </p>
-                <p>
-                  Use button when the action should perform an action on the page,
-                  e.g. opens a modal.
-                </p>
-              </td>
-            </tr>
-            <tr>
               <td>text</td>
               <td>string</td>
               <td>The text to be used in the action button/link.</td>
@@ -542,7 +529,7 @@
               <td>The class(es) to be used on the action button/link</td>
               <td>
                 <p>E.g. btn-outline-primary</p>
-                <p>If element = "button", .btn will be included by default.</p>
+                <p>If action is a button, .btn will be included by default.</p>
               </td>
             </tr>
             <tr>
@@ -550,20 +537,20 @@
               <td>string</td>
               <td>The string to be used in the link's target attribute</td>
               <td>
-                Required when element = "a". E.g. "_blank" opens in a new tab.
+                E.g. "_blank" opens in a new tab.
               </td>
             </tr>
             <tr>
-              <td>routerLink</td>
+              <td>bpRouterLink</td>
               <td>string</td>
               <td>The string to be used in the link's routerLink attribute.</td>
-              <td>One of either path or href is required when element = "a".</td>
+              <td>One of either bpRouterLink or href is required when action links.</td>
             </tr>
             <tr>
               <td>href</td>
               <td>string</td>
               <td>The string to be used in the link's href attribute.</td>
-              <td>One of either path or href is required when element = "a".</td>
+              <td>One of either bpRouterLink or href is required when element = "a".</td>
             </tr>
             <tr>
               <td>action</td>
@@ -576,12 +563,44 @@
             </tr>
             <tr>
               <td>conditions</td>
-              <td>(object | string)[]</td>
+              <td>(<a routerLink="." fragment="conditions">Condition</a> | string)[]</td>
               <td>The conditions used to determine if the action will render.</td>
               <td>
                 Conditions is an array containing objects and strings. The
                 condition objects have compare operator strings between them.<!-- TODO: Link to feature section describing this feature in more detail -->
               </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 id="conditions">Conditions</h4>
+        <p>Condition objects can be chained together with boolean operators. The conditions array would alternate between condition objects and boolean operators.</p>
+        <table class="table table-bordered-rows">
+          <caption class="sr-only">
+            Conditions properties
+          </caption>
+          <thead>
+            <tr>
+              <th class="pt-0">Property</th>
+              <th class="pt-0">Type</th>
+              <th class="pt-0">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>column</td>
+              <td>string</td>
+              <td>The column data to compare.</td>
+            </tr>
+            <tr>
+              <td>operator</td>
+              <td>string</td>
+              <td>A compare operator e.g. '===', '&lt;', '&gt;'.</td>
+            </tr>
+            <tr>
+              <td>value</td>
+              <td>string</td>
+              <td>The value to compare the column data to.</td>
             </tr>
           </tbody>
         </table>
