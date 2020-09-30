@@ -23,8 +23,7 @@ export class ToggletipComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     this.popover = $('[data-toggle="popover"]');
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    this.popover.popover();
+    this.show();
 
     this.validation();
 
@@ -35,9 +34,18 @@ export class ToggletipComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
+  public show(): void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    this.popover.popover();
+  }
+
+  public hide(): void {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     this.popover.popover('hide');
+  }
+
+  ngOnDestroy(): void {
+    this.hide();
   }
 
   validation(): void {
