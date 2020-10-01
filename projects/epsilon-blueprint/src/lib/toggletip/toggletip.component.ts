@@ -36,7 +36,7 @@ export class ToggletipComponent implements OnInit, OnDestroy {
 
   public show(): void {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    this.popover.popover();
+    this.popover.popover('show');
   }
 
   public hide(): void {
