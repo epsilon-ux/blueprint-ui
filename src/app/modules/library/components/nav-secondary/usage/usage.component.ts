@@ -62,9 +62,29 @@ export class UsageComponent implements OnInit {
     }
   ];
 
+  actions = [
+    {
+      text: 'Action',
+      isActive: true
+    },
+    {
+      text: 'Action'
+    },
+    {
+      text: 'Action'
+    },
+    {
+      text: 'Action'
+    }
+  ];
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  handleAction(item): void {
+    this.actions.forEach(action => action.isActive = false)
+    item.isActive = true;
   }
 
 }

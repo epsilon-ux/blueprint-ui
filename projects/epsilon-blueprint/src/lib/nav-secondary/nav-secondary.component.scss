@@ -3,7 +3,7 @@
 .nav-secondary
 {
   width: 100%;
-  
+
   .title
   {
     margin: 0 20px 15px 20px;
@@ -74,6 +74,14 @@
         background: $mist;
         font-weight: $font-weight-semi-bold;
       }
+    }
+
+    button.nav-link
+    {
+      border-width: 0 0 0 5px;
+      width: 100%;
+      text-align: left;
+      background: transparent;
     }
 
     .nested-list
