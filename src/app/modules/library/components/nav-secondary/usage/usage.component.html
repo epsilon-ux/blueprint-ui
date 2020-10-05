@@ -78,6 +78,31 @@
       </div>
     </div>
     <div class="col-lg-8 col-xl-7">
+      <h3>Secondary navigation with actions</h3>
+      <p>
+        Use page groups when you need to nest pages within a parent category. This cuts down on the number of pages shown and organizes the navigation items into an scannable list. Single pages and page groups can exist in the same nav.
+      </p>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body p-0">
+          <div class="demo-base-template">
+            <div class="demo-body">
+              <bp-collapsible-panel>
+                <bp-nav-secondary
+                  panel-content
+                  [items]="actions"
+                  [isNavigational]="false"
+                  (action)="handleAction($event)"
+                ></bp-nav-secondary>
+              </bp-collapsible-panel>
+              <div class="demo-main">Main Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-xl-7">
       <h2>Configurations</h2>
     </div>
     <div class="col-12">
@@ -102,6 +127,14 @@
             <td>Page groups</td>
             <td>Nests child pages within parent groups.</td>
             <td>Use when navigation items should appear in a single group or belong within the same category.</td>
+          </tr>
+          <tr>
+            <td>Actions</td>
+            <td>Categorizes the collection of action items.</td>
+            <td>
+              <p>Use when action items should appear in a single group or belong within the same category.</p>
+              <p>Use when actions are not navigational e.g. filters.</p>
+            </td>
           </tr>
         </tbody>
       </table>
