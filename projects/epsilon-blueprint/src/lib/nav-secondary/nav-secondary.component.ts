@@ -1,12 +1,16 @@
-import { Component, OnInit, Input, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, QueryList, ViewChildren, Output , EventEmitter} from '@angular/core';
 import { generateUniqueId } from '../../helpers';
 import { RouterLinkActive } from '@angular/router';
 
-interface Item {
+interface ItemInterface {
   text: string;
   route?: string;
-  children?: Item[];
+  children?: ItemInterface[];
   isExpanded?: boolean;
+
+  // isNavigational = false
+  value?: string;
+  isActive?: boolean;
 }[];
 
 @Component({
@@ -17,10 +21,13 @@ interface Item {
 export class NavSecondaryComponent implements OnInit {
 
   @Input() title: string;
-  @Input() items: Item[];
+  @Input() items: ItemInterface[];
   @Input() shouldRouteMatchExact = false;
   @Input() areItemsExpanded = false;
+  @Input() isNavigational = true;
   @Input() bpID: string;
+
+  @Output() action: EventEmitter<ItemInterface> = new EventEmitter<ItemInterface>();
 
   @ViewChildren(RouterLinkActive, { read: ElementRef })
   linkRefs: QueryList<ElementRef>;
@@ -32,14 +39,17 @@ export class NavSecondaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.validate();
-    setTimeout(() => {
-      this.activeItem = this.linkRefs.toArray()
-        .find(link => link.nativeElement.classList.contains('active'))
-        .nativeElement.textContent.trim();
-      for (const item of this.items) {
-        this.findActive(item, null);
-      }
-    }, 0);
+
+    if (this.isNavigational) {
+      setTimeout(() => {
+        this.activeItem = this.linkRefs.toArray()
+          .find(link => link.nativeElement.classList.contains('active'))
+          .nativeElement.textContent.trim();
+        for (const item of this.items) {
+          this.findActive(item, null);
+        }
+      }, 0);
+    }
 
     if (!this.bpID) {
       this.uuid = 'navSecondary' + generateUniqueId().toString();
@@ -48,7 +58,7 @@ export class NavSecondaryComponent implements OnInit {
     }
   }
 
-  findActive(node: Item, parent: Item): Item {
+  findActive(node: ItemInterface, parent: ItemInterface): ItemInterface {
     if (node.text === this.activeItem) {
       if (parent) {
         parent.isExpanded = true;
@@ -61,6 +71,10 @@ export class NavSecondaryComponent implements OnInit {
     }
   }
 
+  emitAction(item: ItemInterface): void {
+    this.action.emit(item);
+  }
+
   validate(): void {
     this.items.forEach(item => {
       if (!item.text) {
@@ -68,15 +82,22 @@ export class NavSecondaryComponent implements OnInit {
         err.name = 'Missing Input';
         throw err;
       }
-      if (item.route === undefined && !item.children) {
-        const err = new Error(`Nav item needs either a route or children in ${JSON.stringify(item)}`);
-        err.name = 'Missing Input';
-        throw err;
-      }
-      if (item.route !== undefined && item.children) {
-        const err = new Error(`Nav item can't have both a route and children in ${JSON.stringify(item)}`);
-        err.name = 'Invalid Input';
-        throw err;
+      if (this.isNavigational) {
+        if (item.isActive) {
+          const err = new Error(`isActive is only a valid property when isNavigational = false. In ${JSON.stringify(item)}`);
+          err.name = 'Invalid Input';
+          throw err;
+        }
+        if (item.route === undefined && !item.children) {
+          const err = new Error(`Nav item needs either a route or children in ${JSON.stringify(item)}`);
+          err.name = 'Missing Input';
+          throw err;
+        }
+        if (item.route !== undefined && item.children) {
+          const err = new Error(`Nav item can't have both a route and children in ${JSON.stringify(item)}`);
+          err.name = 'Invalid Input';
+          throw err;
+        }
       }
     });
   }

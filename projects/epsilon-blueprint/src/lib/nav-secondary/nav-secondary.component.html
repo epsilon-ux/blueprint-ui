@@ -26,7 +26,7 @@
 <ng-template #navItem let-item let-i="index" let-parentIndex="parentIndex">
   <!-- Nav link -->
   <a
-    *ngIf="item.route !== undefined"
+    *ngIf="!item.children && isNavigational"
     [attr.id]="uuid + 'Action' + i + 'ListIndex' + parentIndex"
     routerLink="{{ item.route }}"
     routerLinkActive="active"
@@ -35,6 +35,14 @@
   >
     {{ item.text }}
   </a>
+  <button
+    *ngIf="!item.children && !isNavigational"
+    [attr.id]="uuid + 'Action' + i + 'ListIndex' + parentIndex"
+    [ngClass]="{'nav-link': true, 'active': item.isActive}"
+    (click)="emitAction(item)"
+  >
+    {{ item.text }}
+  </button>
   <!-- Expand/Collapse button -->
   <button
     *ngIf="item.children"
