@@ -50,6 +50,17 @@
             </td>
           </tr>
           <tr>
+          <tr>
+            <td>isNavigational</td>
+            <td>boolean</td>
+            <td>Determines if the secondary nav is navigational.</td>
+            <td>
+              <p>Default is "true".</p>
+              <p>When "true" the nav is navigational and nav items are links.</p>
+              <p>When "false" the nav is not navigational and nav items are buttons.</p>
+            </td>
+          </tr>
+          <tr>
             <td>bpID</td>
             <td>string</td>
             <td>The value for the secondary navigation's id attribute.</td>
@@ -63,12 +74,12 @@
       </table>
       <h2 id="navItemDocs">NavItem</h2>
       <p>There are two kinds of NavItems that are determiend by what properties are defined.</p>
-      <h3>Routing Node</h3>
+      <h3>Standard Node</h3>
       <p>
-        The routing node represents a link to another page in the application. This node is defined by providing the following properties to a NavItem object.
+        The standard node represents a link to another page in the application, or an action. This node is defined by providing the following properties to a NavItem object.
       </p>
       <table class="table table-bordered-rows mb-5">
-        <caption class="sr-only">NavItem routing node properties</caption>
+        <caption class="sr-only">NavItem standard node properties</caption>
         <thead>
           <tr>
             <th class="pt-0">Property</th>
@@ -80,7 +91,7 @@
           <tr>
             <td>route</td>
             <td>string</td>
-            <td>The route used for the NavItem.</td>
+            <td>The route used for the NavItem. This is not required when isNavigational = "false"</td>
           </tr>
           <tr>
             <td>text</td>
@@ -91,7 +102,7 @@
       </table>
       <h3>Parent Node</h3>
       <p>
-        The parent node has children that are routing nodes, and represents a grouping of NavItems. This node is defined by providing the following properties to a NavItem object.
+        The parent node has children that are standard nodes, and represents a grouping of NavItems. This node is defined by providing the following properties to a NavItem object.
       </p>
       <table class="table table-bordered-rows mb-5">
         <caption class="sr-only">NavItem parent node properties</caption>
@@ -112,6 +123,23 @@
             <td>text</td>
             <td>string</td>
             <td>The text used for the collapsible NavItem.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Outputs</h2>
+      <table class="table table-bordered-rows">
+        <caption class="sr-only">Secondary navigation outputs</caption>
+        <thead>
+          <tr>
+            <th class="w-25 pt-0">Property</th>
+            <th class="pt-0">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>action</td>
+            <td>When isNavigational = "false", action is emitted on click of a nav item. The emitted object is the corresponding object from the items Input.</td>
           </tr>
         </tbody>
       </table>
