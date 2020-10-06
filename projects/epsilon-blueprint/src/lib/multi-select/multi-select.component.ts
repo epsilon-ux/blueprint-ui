@@ -25,10 +25,10 @@ export class NgOptionTemplateDirective {
 export class MultiselectComponent implements OnInit, OnChanges {
 
   @ContentChild(NgMultiLabelTemplateDirective, {
-    read: TemplateRef, static: false
+    read: TemplateRef
   }) multiLabelTemplate: TemplateRef<any>;
 
-  @ContentChild(NgOptionTemplateDirective, { read: TemplateRef, static: false }) optionTemplate: TemplateRef<any>;
+  @ContentChild(NgOptionTemplateDirective, { read: TemplateRef }) optionTemplate: TemplateRef<any>;
 
   @Input() label = '';
   @Input() isLabelHidden = false;
