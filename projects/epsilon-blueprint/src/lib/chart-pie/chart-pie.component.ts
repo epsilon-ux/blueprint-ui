@@ -137,7 +137,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
     staticArcs
       .enter()
       .append('path')
-      .attr('class', 'arc-static clickable')
+      .attr('class', 'arc-static cursor-pointer')
       .attr('d', this.arc)
       .attr('fill', d => this.color(d.data[this.key]))
       .on('click', (d, a) => this.focusArc(a.index));
