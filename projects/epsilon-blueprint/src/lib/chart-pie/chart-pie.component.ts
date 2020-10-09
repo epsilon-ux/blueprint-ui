@@ -70,7 +70,6 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data?.currentValue && !changes.data?.firstChange) {
       this.arcs = this.pie(changes.data.currentValue);
-      console.log(this.arcs);
       if (this.focusedArcIndex > this.arcs.length - 1) {
         this.focusArc(this.arcs.length - 1);
       }
@@ -109,7 +108,6 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
 
     this.pie = d3.pie().sort(null).value(d => d[this.value]);
     this.arcs = this.pie(this.data);
-    console.log(this.arcs);
   }
 
   ngAfterViewInit(): void {
