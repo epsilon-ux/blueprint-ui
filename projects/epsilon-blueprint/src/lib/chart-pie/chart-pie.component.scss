@@ -1,0 +1,55 @@
+@import "../../styles/global-variables";
+
+.arc-selected
+{
+  opacity: 0.5;
+}
+
+.fill-secondary
+{
+  fill: $font-color-secondary;
+}
+
+.legend
+{
+  text-align: center;
+
+  ul
+  {
+    display: inline-flex;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background: $mist;
+
+    li
+    {
+      margin: 0;
+      list-style: none;
+
+      &:not(:last-child)
+      {
+        margin-right: $space-md;
+      }
+
+      .legend-item
+      {
+        display: flex;
+        align-items: center;
+        color: $font-color-primary;
+
+        &:hover
+        {
+          text-decoration: none;
+        }
+      }
+
+      .legend-icon
+      {
+        margin-right: 5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

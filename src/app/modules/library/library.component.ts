@@ -78,6 +78,10 @@ export class LibraryComponent {
             route: './components/buttons-links'
           },
           {
+            text: 'Pie Chart',
+            route: './components/chart/pie'
+          },
+          {
             text: 'Checkbox',
             route: './components/checkbox'
           },
