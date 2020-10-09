@@ -5,11 +5,6 @@ import * as d3 from 'd3';
 import { parseLookupString, generateUniqueId } from '../../helpers';
 import { rescale } from '../../chart-helpers';
 
-interface DataInterface {
-  name: string;
-  amount: number;
-}
-
 @Component({
   selector: 'bp-chart-pie',
   templateUrl: './chart-pie.component.html',
@@ -43,10 +38,11 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
 
   staticArcsGroup;
   focusArcsGroup;
+  focusedArcIndex: number;
 
-  detailsKey = 'Key';
-  detailsPercent = 0;
-  detailsValue = 0;
+  detailsKey: string;
+  detailsPercent: number;
+  detailsValue: number;
 
   resizeListener;
 
@@ -64,6 +60,9 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data?.currentValue && !changes.data?.firstChange) {
       this.arcs = this.pie(changes.data.currentValue);
+      if (this.focusedArcIndex > this.arcs.length - 1) {
+        this.focusArc(this.arcs.length - 1);
+      }
       this.update();
     }
   }
@@ -83,6 +82,8 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
       '#0c0a3e'
     ];
 
+    this.data.sort((a, b) => a[this.value] > b[this.value]);
+
     this.arc = d3
       .arc()
       .innerRadius(this.radius - this.donutholeSize)
@@ -93,7 +94,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
       .domain(this.data.map(d => d[this.key]))
       .range(colors);
 
-    this.pie = d3.pie<DataInterface>().sort(null).value(d => d[this.value]);
+    this.pie = d3.pie().sort(null).value(d => d[this.value]);
     this.arcs = this.pie(this.data);
   }
 
@@ -121,10 +122,15 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
       .attr('class', 'arcs-static');
 
     this.update();
-    setTimeout(() => rescale(this.bpID, this.width), 0);
+    setTimeout(() => {
+      this.focusArc(this.arcs.length - 1);
+      rescale(this.bpID, this.width);
+    }, 0);
   }
 
   update(): void {
+    this.data.sort((a, b) => a[this.value] > b[this.value]);
+
     const focusArcs = this.focusArcsGroup
       .selectAll('path')
       .data(this.arcs);
@@ -169,6 +175,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
 
   // Displays data info in center of pie and styles selected arc
   focusArc(index: number): void {
+    this.focusedArcIndex = index;
     this.detailsKey = this.data[index][this.key];
     this.detailsPercent = this.getPercent(this.data[index][this.value]);
     this.detailsValue = this.data[index][this.value];
