@@ -1,6 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Component, Input, ViewChild, ElementRef, OnInit, OnChanges, SimpleChanges, AfterViewInit, HostListener } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  ElementRef,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+  AfterViewInit,
+  HostListener
+} from '@angular/core';
 import * as d3 from 'd3';
 import { parseLookupString, generateUniqueId } from '../../helpers';
 import { rescale } from '../../chart-helpers';
@@ -60,6 +70,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data?.currentValue && !changes.data?.firstChange) {
       this.arcs = this.pie(changes.data.currentValue);
+      console.log(this.arcs);
       if (this.focusedArcIndex > this.arcs.length - 1) {
         this.focusArc(this.arcs.length - 1);
       }
@@ -82,8 +93,6 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
       '#0c0a3e'
     ];
 
-    this.data.sort((a, b) => a[this.value] > b[this.value]);
-
     this.arc = d3
       .arc()
       .innerRadius(this.radius - this.donutholeSize)
@@ -96,6 +105,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
 
     this.pie = d3.pie().sort(null).value(d => d[this.value]);
     this.arcs = this.pie(this.data);
+    console.log(this.arcs);
   }
 
   ngAfterViewInit(): void {
@@ -129,8 +139,6 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   update(): void {
-    this.data.sort((a, b) => a[this.value] > b[this.value]);
-
     const focusArcs = this.focusArcsGroup
       .selectAll('path')
       .data(this.arcs);
