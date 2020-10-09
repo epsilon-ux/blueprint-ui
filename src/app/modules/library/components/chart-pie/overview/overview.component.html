@@ -5,13 +5,20 @@
         Description coming soon
       </p>
       <h2>Example</h2>
-      <button (click)="addData()">Add Data</button>
+      <div class="row mb-3">
+        <div class="col-auto">
+          <button class="btn btn-outline-primary m" (click)="addData()">Add Data</button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-outline-primary" (click)="removeData()">Remove Data</button>
+        </div>
+      </div>
     </div>
     <div class="col-12">
       <div class="card mb-3">
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
-            <div class="col-12">
+            <div class="col-md-8 col-lg-7 col-xl-5">
               <bp-chart-pie
                 [data]="data"
               ></bp-chart-pie>
@@ -20,11 +27,12 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-8 col-xl-7">
+    <!-- TODO -->
+    <!-- <div class="col-lg-8 col-xl-7">
       <h2>Related Components & Templates</h2>
       <ul>
         <li></li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </section>

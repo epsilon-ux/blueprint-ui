@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Component, Input, ViewChild, ElementRef, OnInit, OnChanges, SimpleChanges, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, OnInit, OnChanges, SimpleChanges, AfterViewInit, HostListener } from '@angular/core';
 import * as d3 from 'd3';
 import { parseLookupString, generateUniqueId } from '../../helpers';
+import { rescale } from '../../chart-helpers';
 
 interface DataInterface {
   name: string;
@@ -47,8 +48,18 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   detailsPercent = 0;
   detailsValue = 0;
 
+  resizeListener;
 
   constructor() { }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(e): void {
+    clearTimeout(this.resizeListener);
+    this.resizeListener = setTimeout(() => {
+      rescale(this.bpID, this.width);
+    }, 250);
+  }
+
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data?.currentValue && !changes.data?.firstChange) {
@@ -103,13 +114,14 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
 
     this.focusArcsGroup = arcsGroup
       .append('g')
-      .attr('class', 'arcs-focus')
+      .attr('class', 'arcs-focus');
 
     this.staticArcsGroup = arcsGroup
       .append('g')
       .attr('class', 'arcs-static');
 
     this.update();
+    setTimeout(() => rescale(this.bpID, this.width), 0);
   }
 
   update(): void {
