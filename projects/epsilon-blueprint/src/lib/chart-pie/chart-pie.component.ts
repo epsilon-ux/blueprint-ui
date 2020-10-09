@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Component, Input, ViewChild, ElementRef, AfterViewInit, OnInit, ViewChildren, OnChanges, SimpleChanges, DoCheck, KeyValueDiffers, IterableDiffers, IterableDiffer, QueryList } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import * as d3 from 'd3';
 
 interface DataInterface {
@@ -54,9 +54,6 @@ export class ChartPieComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    /* this.data.forEach((elt) => {
-      this.objDiffer[elt] = this.differs.find(elt).create(null);
-    }); */
     this.width = 400 - this.margin.left - this.margin.right,
     this.height = 400 - this.margin.top - this.margin.bottom;
     this.radius = Math.min(this.width, this.height) / 2;

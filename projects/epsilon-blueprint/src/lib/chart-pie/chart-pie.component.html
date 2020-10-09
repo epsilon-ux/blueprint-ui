@@ -1,10 +1,6 @@
 <figure #pieChart>
   <svg #svg id="piechart" attr.viewBox="0 0 {{width + margin.left + margin.right}} {{height + margin.top + margin.bottom}}" attr.preserveAspectRatio="xMidYMid meet">
     <g attr.transform="translate({{(width + margin.left + margin.right) / 2}}, {{(height + margin.top + margin.bottom) / 2}})">
-      <!-- <path *ngIf="selectedArcIndex !== null" class="arc-selected" [attr.d]="arc(arcs[selectedArcIndex])" [attr.fill]="color(arcs[selectedArcIndex].data[key])" [attr.transform]="getTransform(arcs[selectedArcIndex])"></path>
-
-      <path *ngFor="let d of arcs; index as i" class="arc" [attr.d]="arc(d)" [attr.fill]="color(d.data[key])" (click)="selectArc(i)"></path> -->
-
       <g class="details">
         <text class="font-size-lg" dominant-baseline="middle" text-anchor="middle" x="0" y="-30">{{ detailsKey }}</text>
         <text class="font-size-xl font-weight-semi-bold" dominant-baseline="middle" text-anchor="middle" x="0" y="0">{{ detailsPercent }}%</text>
