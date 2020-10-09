@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Component, Input, ViewChild, ElementRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, OnInit, OnChanges, SimpleChanges, AfterViewInit } from '@angular/core';
 import * as d3 from 'd3';
+import { parseLookupString, generateUniqueId } from '../../helpers';
 
 interface DataInterface {
   name: string;
@@ -13,7 +14,7 @@ interface DataInterface {
   templateUrl: './chart-pie.component.html',
   styleUrls: ['./chart-pie.component.scss']
 })
-export class ChartPieComponent implements OnInit, OnChanges {
+export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
 
   @ViewChild('svg')
   svgRef: ElementRef;
@@ -21,7 +22,11 @@ export class ChartPieComponent implements OnInit, OnChanges {
   @Input() data;
   @Input() key = 'name';
   @Input() value = 'amount';
-  @Input() id = 'piechart';
+  @Input() bpID ='pieChart' + String(generateUniqueId());
+  @Input() title = 'Pie Chart';
+  @Input() description = '#{percent}% #{key} with #{value}';
+
+  parseLookupString = parseLookupString;
 
   donutholeSize = 50;
   margin = { top: 20, right: 30, bottom: 50, left: 55 };
@@ -46,7 +51,6 @@ export class ChartPieComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
     if (changes.data?.currentValue && !changes.data?.firstChange) {
       this.arcs = this.pie(changes.data.currentValue);
       this.update();
@@ -80,8 +84,10 @@ export class ChartPieComponent implements OnInit, OnChanges {
 
     this.pie = d3.pie<DataInterface>().sort(null).value(d => d[this.value]);
     this.arcs = this.pie(this.data);
+  }
 
-    this.svg = d3.select('#' + this.id);
+  ngAfterViewInit(): void {
+    this.svg = d3.select('#' + this.bpID);
 
     // Create clickable arcs that pop out on selected
     const arcsGroup = this.svg
@@ -156,7 +162,7 @@ export class ChartPieComponent implements OnInit, OnChanges {
     this.detailsValue = this.data[index][this.value];
 
     const that = this;
-    d3.selectAll(`#${this.id} .arc`).each(function(b, i) {
+    d3.selectAll(`#${this.bpID} .arc`).each(function(b, i) {
       if (i !== index) {
         d3.select(this)
           .transition()

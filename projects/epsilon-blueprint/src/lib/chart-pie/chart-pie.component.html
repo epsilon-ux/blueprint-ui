@@ -1,5 +1,6 @@
-<figure #pieChart>
-  <svg #svg id="piechart" attr.viewBox="0 0 {{width + margin.left + margin.right}} {{height + margin.top + margin.bottom}}" attr.preserveAspectRatio="xMidYMid meet">
+<figure>
+  <svg #svg [attr.id]="bpID" attr.viewBox="0 0 {{width + margin.left + margin.right}} {{height + margin.top + margin.bottom}}" attr.preserveAspectRatio="xMidYMid meet">
+    <title>{{ title }}</title>
     <g attr.transform="translate({{(width + margin.left + margin.right) / 2}}, {{(height + margin.top + margin.bottom) / 2}})">
       <g class="details">
         <text class="font-size-lg" dominant-baseline="middle" text-anchor="middle" x="0" y="-30">{{ detailsKey }}</text>
@@ -8,10 +9,11 @@
       </g>
     </g>
   </svg>
+  <p class="sr-only" aria-live="polite" [attr.id]="bpID + 'Description'">{{ parseLookupString(description, {key: detailsKey, value: detailsValue, percent: detailsPercent}) }}</p>
   <figcaption class="legend">
     <ul>
       <li *ngFor="let a of arcs">
-        <button (click)="focusArc(a.index)" class="btn-text legend-item">
+        <button type="button" (click)="focusArc(a.index)" class="btn-text legend-item" [attr.aria-controls]="bpID + 'Description'">
           <div class="legend-icon" [ngStyle]="{'background': color(a.data[key])}"></div>
           {{ a.data[key] }}
         </button>
