@@ -9,3 +9,17 @@ export function rescale(id: string, initWidth: number): void {
   svg.selectAll('.domain').style('stroke-width', scale + 'px');
   svg.selectAll('.dot').attr('r', 5 * scale);
 }
+
+export const qualitativeColors = [
+  '#6453b5',
+  '#ff5c49',
+  '#40d5bb',
+  '#785ef0',
+  '#7b1e7a',
+  '#0095f6',
+  '#0c0a3e',
+  '#909cc2',
+  '#3e04bd',
+  '#8d2211',
+  '#4bb5b2'
+];

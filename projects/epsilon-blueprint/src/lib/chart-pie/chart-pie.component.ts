@@ -13,7 +13,7 @@ import {
 } from '@angular/core';
 import * as d3 from 'd3';
 import { parseLookupString, generateUniqueId } from '../../helpers';
-import { rescale } from '../../chart-helpers';
+import { rescale, qualitativeColors } from '../../chart-helpers';
 
 @Component({
   selector: 'bp-chart-pie',
@@ -49,7 +49,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   arc: any;
   arcs: any;
   pie: any;
-  color: any;
+  color: d3.ScaleOrdinal<string, unknown>;
 
   staticArcsGroup;
   focusArcsGroup;
@@ -87,20 +87,6 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
     this.height = 400 - this.margin.top - this.margin.bottom;
     this.radius = Math.min(this.width, this.height) / 2;
 
-    const colors = [
-      '#6453b5',
-      '#ff5c49',
-      '#40d5bb',
-      '#785ef0',
-      '#7b1e7a',
-      '#0095f6',
-      '#0c0a3e',
-      '#909cc2',
-      '#3e04bd',
-      '#8d2211',
-      '#4bb5b2'
-    ];
-
     this.arc = d3
       .arc()
       .innerRadius(this.radius - this.donutholeSize)
@@ -108,10 +94,10 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
 
     this.color = d3
       .scaleOrdinal()
-      .domain(this.data.map(d => d[this.key]))
-      .range(colors);
+      .domain(this.data.map(d => d[this.key] as string))
+      .range(qualitativeColors);
 
-    this.pie = d3.pie().sort(null).value(d => d[this.value]);
+    this.pie = d3.pie().sort(null).value(d => d[this.value] as number);
     this.arcs = this.pie(this.data);
   }
 
@@ -184,7 +170,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   getPercent(value: number): number {
-    const total = this.data.reduce((acc, current) => acc + current[this.value], 0);
+    const total = this.data.reduce((acc: number, current: number) => acc + Number(current[this.value]), 0);
     return Math.round(value / total * 100);
   }
 
@@ -210,7 +196,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
           .duration(500)
           .ease(d3.easeElasticOut)
           .style('opacity', 0.5)
-          .attr('transform', (d, i) => {
+          .attr('transform', d => {
             const c = that.arc.centroid(d);
             const x = c[0];
             const y = c[1];
