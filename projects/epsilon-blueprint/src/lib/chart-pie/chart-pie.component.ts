@@ -31,6 +31,11 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() bpID ='pieChart' + String(generateUniqueId());
   @Input() title = 'Pie Chart';
   @Input() description = '#{percent}% #{key} with #{value}';
+  @Input() formatters = {
+    key: (key: string): string => key,
+    percent: (percent: number): string => String(percent) + '%',
+    value: (value: number): string => new Intl.NumberFormat().format(value)
+  };
 
   parseLookupString = parseLookupString;
 

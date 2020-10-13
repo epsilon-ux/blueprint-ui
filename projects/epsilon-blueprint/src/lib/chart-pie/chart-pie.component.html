@@ -3,9 +3,9 @@
     <title>{{ title }}</title>
     <g attr.transform="translate({{(width + margin.left + margin.right) / 2}}, {{(height + margin.top + margin.bottom) / 2}})">
       <g class="details">
-        <text class="font-size-lg" dominant-baseline="middle" text-anchor="middle" x="0" y="-30">{{ detailsKey }}</text>
-        <text class="font-size-xl font-weight-semi-bold" dominant-baseline="middle" text-anchor="middle" x="0" y="0">{{ detailsPercent }}%</text>
-        <text class="fill-secondary" dominant-baseline="middle" text-anchor="middle" x="0" y="30">{{ detailsValue }}</text>
+        <text class="font-size-lg" dominant-baseline="middle" text-anchor="middle" x="0" y="-30">{{ formatters.key(detailsKey) }}</text>
+        <text class="font-size-xl font-weight-semi-bold" dominant-baseline="middle" text-anchor="middle" x="0" y="0">{{ formatters.percent(detailsPercent) }}</text>
+        <text class="fill-secondary" dominant-baseline="middle" text-anchor="middle" x="0" y="30">{{ formatters.value(detailsValue) }}</text>
       </g>
     </g>
   </svg>
