@@ -51,7 +51,7 @@ const routes: Routes = [
       { path: 'buttons-links', loadChildren: () => import('./components/action/action.module')
         .then(m => m.ActionLibraryModule) },
 
-      { path: 'chart/pie', loadChildren: () => import('./components/chart-pie/chart-pie.module')
+      { path: 'pie-chart', loadChildren: () => import('./components/chart-pie/chart-pie.module')
         .then(m => m.ChartPieLibraryModule) },
 
       { path: 'checkbox', loadChildren: () => import('./components/checkbox/checkbox.module')
