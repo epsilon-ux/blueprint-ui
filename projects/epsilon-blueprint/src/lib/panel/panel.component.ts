@@ -11,6 +11,7 @@ export class PanelComponent implements OnInit {
   @Input() titleText: string;
   @Input() panelHeaderLink?: boolean;
   @Input() panelFooter?: boolean;
+  @Input() hasPadding = true;
   @Input() bpID: string;
 
   uuid: string;
