@@ -14,40 +14,48 @@ export class OverviewComponent implements OnInit {
   ngOnInit(): void {
     this.allData = [
       {
+        name: 'Sun',
+        value: this.randomInt(0, 10000)
+      },
+      {
         name: 'Mercury',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
       },
       {
         name: 'Venus',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
       },
       {
         name: 'Earth',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
       },
       {
         name: 'Mars',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
       },
       {
         name: 'Jupiter',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
       },
       {
         name: 'Saturn',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
       },
       {
         name: 'Uranus',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
       },
       {
         name: 'Neptune',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
       },
       {
         name: 'Pluto',
-        amount: this.randomInt(0, 10000)
+        value: this.randomInt(0, 10000)
+      },
+      {
+        name: 'Kuiper Belt',
+        value: this.randomInt(0, 10000)
       }
     ];
     this.data = this.allData.slice(0, 3);

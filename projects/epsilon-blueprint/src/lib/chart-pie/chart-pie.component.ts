@@ -26,13 +26,13 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   svgRef: ElementRef;
 
   @Input() data;
-  @Input() key = 'name';
-  @Input() value = 'amount';
+  @Input() name = 'name';
+  @Input() value = 'value';
   @Input() bpID ='pieChart' + String(generateUniqueId());
   @Input() title = 'Pie Chart';
-  @Input() description = '#{percent}% #{key} with #{value}';
+  @Input() description = '#{percent}% #{name} with #{value}';
   @Input() formatters = {
-    key: (key: string): string => key,
+    name: (name: string): string => name,
     percent: (percent: number): string => String(percent) + '%',
     value: (value: number): string => new Intl.NumberFormat().format(value)
   };
@@ -94,7 +94,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
 
     this.color = d3
       .scaleOrdinal()
-      .domain(this.data.map(d => d[this.key] as string))
+      .domain(this.data.map(d => d[this.name] as string))
       .range(qualitativeColors);
 
     this.pie = d3.pie().sort(null).value(d => d[this.value] as number);
@@ -141,7 +141,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
       .append('path')
       .attr('class', 'arc')
       .attr('d', this.arc)
-      .attr('fill', d => this.color(d.data[this.key]));
+      .attr('fill', d => this.color(d.data[this.name]));
 
     focusArcs.attr('d', this.arc);
 
@@ -158,7 +158,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
       .append('path')
       .attr('class', 'arc-static cursor-pointer')
       .attr('d', this.arc)
-      .attr('fill', d => this.color(d.data[this.key]))
+      .attr('fill', d => this.color(d.data[this.name]))
       .on('click', (d, a) => this.focusArc(a.index));
 
     staticArcs.attr('d', this.arc);
@@ -177,7 +177,7 @@ export class ChartPieComponent implements OnInit, AfterViewInit, OnChanges {
   // Displays data info in center of pie and styles selected arc
   focusArc(index: number): void {
     this.focusedArcIndex = index;
-    this.detailsKey = this.data[index][this.key];
+    this.detailsKey = this.data[index][this.name];
     this.detailsPercent = this.getPercent(this.data[index][this.value]);
     this.detailsValue = this.data[index][this.value];
 

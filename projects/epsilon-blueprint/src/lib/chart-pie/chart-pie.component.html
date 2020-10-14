@@ -3,19 +3,19 @@
     <title>{{ title }}</title>
     <g attr.transform="translate({{(width + margin.left + margin.right) / 2}}, {{(height + margin.top + margin.bottom) / 2}})">
       <g class="details">
-        <text class="font-size-lg" dominant-baseline="middle" text-anchor="middle" x="0" y="-30">{{ formatters.key(detailsKey) }}</text>
+        <text class="font-size-lg" dominant-baseline="middle" text-anchor="middle" x="0" y="-30">{{ formatters.name(detailsKey) }}</text>
         <text class="font-size-xl font-weight-semi-bold" dominant-baseline="middle" text-anchor="middle" x="0" y="0">{{ formatters.percent(detailsPercent) }}</text>
         <text class="fill-secondary" dominant-baseline="middle" text-anchor="middle" x="0" y="30">{{ formatters.value(detailsValue) }}</text>
       </g>
     </g>
   </svg>
-  <p class="sr-only" aria-live="polite" [attr.id]="bpID + 'Description'">{{ parseLookupString(description, {key: detailsKey, value: detailsValue, percent: detailsPercent}) }}</p>
+  <p class="sr-only" aria-live="polite" [attr.id]="bpID + 'Description'">{{ parseLookupString(description, {name: detailsKey, value: detailsValue, percent: detailsPercent}) }}</p>
   <figcaption class="legend">
     <ul>
       <li *ngFor="let a of arcs">
         <button type="button" (click)="focusArc(a.index)" class="btn-text legend-item" [attr.aria-controls]="bpID + 'Description'">
-          <div class="legend-icon" [ngStyle]="{'background': color(a.data[key])}"></div>
-          {{ a.data[key] }}
+          <div class="legend-icon" [ngStyle]="{'background': color(a.data[name])}"></div>
+          {{ a.data[name] }}
         </button>
       </li>
     </ul>

@@ -24,16 +24,16 @@
               <td>If the data needs to be updated dynamically, create a copy of the data, make the needed changes, then reassign the new array to the input variable. Otherwise Angular will not pick up on the change detection.</td>
             </tr>
             <tr>
-              <td>key</td>
+              <td>name</td>
               <td>string</td>
               <td>The key from the data to use for the name of each segment.</td>
-              <td>Required.</td>
+              <td>Default is "name".</td>
             </tr>
             <tr>
               <td>value</td>
               <td>string</td>
               <td>The key from the data to use for the value of each segment.</td>
-              <td>Required.</td>
+              <td>Default is "value".</td>
             </tr>
             <tr>
               <td>bpID</td>
@@ -57,7 +57,7 @@
               <td>A string used by screen readers for when a segment is selected.</td>
               <td>
                 <p>
-                  Default is "#&#123;percent&#125;% #&#123;key&#125; with #&#123;value&#125;" where percent, key, and value are the segments corresponding values.
+                  Default is "#&#123;percent&#125;% #&#123;name&#125; with #&#123;value&#125;" where percent, name, and value are the segments corresponding values.
                 </p>
                 <p>Required.</p>
               </td>
@@ -84,10 +84,10 @@
         </thead>
         <tbody>
           <tr>
-            <td>key</td>
+            <td>name</td>
             <td><code>(string) => string</code></td>
-            <td>The formatter function for the key text.</td>
-            <td>Default is <code>(key: string): string => key</code>.</td>
+            <td>The formatter function for the name text.</td>
+            <td>Default is <code>(name: string): string => name</code>.</td>
           </tr>
           <tr>
             <td>percent</td>
