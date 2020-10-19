@@ -20,12 +20,13 @@ export class ToggleComponent implements OnInit {
     isFocused: boolean; // For internal use
   }[];
 
-  @Output() change = new EventEmitter();
+  @Output() change = new EventEmitter(); // Deprecated
+  @Output() valueChange = new EventEmitter();
 
   @Input() checkedToggle: string;
   @Output() checkedToggleChange = new EventEmitter();
 
-  uuid = 'toggle' + generateUniqueId().toString();
+  uuid = 'toggle' + String(generateUniqueId());
 
   constructor() { }
 
@@ -72,6 +73,7 @@ export class ToggleComponent implements OnInit {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     this.setCheckedToggle(e.target.id);
     this.change.emit(e);
+    this.valueChange.emit(e);
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     this.checkedToggle = e.target.id;

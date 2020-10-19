@@ -6,7 +6,7 @@
       [ngClass]="{'toggle': true, 'icon-search': hasSearchToggle}"
       [attr.aria-controls]="uuid"
       [attr.aria-label]="toggleAriaLabel"
-      (click)="togglePanel()"
+      (click)="panelToggle()"
     ></button>
   </div>
   <ng-content select="[panel-content]">

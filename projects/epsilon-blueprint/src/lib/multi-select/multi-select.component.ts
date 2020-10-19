@@ -55,7 +55,8 @@ export class MultiselectComponent implements OnInit, OnChanges {
   @Input() ngModel: Array<any>;
   @Input() bpID: string;
   @Output() ngModelChange = new EventEmitter();
-  @Output() change = new EventEmitter();
+  @Output() change = new EventEmitter(); // Deprecated
+  @Output() valueChange = new EventEmitter();
 
   parseLookupString = parseLookupString;
   uuid: string;
@@ -68,7 +69,7 @@ export class MultiselectComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.validate();
     if (!this.bpID) {
-      this.uuid = 'multiSelect' + generateUniqueId().toString();
+      this.uuid = 'multiSelect' + String(generateUniqueId());
     } else {
       this.uuid = this.bpID;
     }
@@ -105,6 +106,7 @@ export class MultiselectComponent implements OnInit, OnChanges {
 
   emitSelected(): void {
     this.change.emit(this.ngModel);
+    this.valueChange.emit(this.ngModel);
   }
 
 }
