@@ -13,7 +13,8 @@ export class CollapsiblePanelComponent implements OnInit {
   @Input() hasSearchToggle = false;
   @Input() bpID: string;
 
-  @Output() click = new EventEmitter();
+  @Output() click = new EventEmitter(); // Deprecated
+  @Output() togglePanel = new EventEmitter();
 
   uuid: string;
 
@@ -21,15 +22,16 @@ export class CollapsiblePanelComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.bpID) {
-      this.uuid = 'collapsiblePanel' + generateUniqueId().toString();
+      this.uuid = 'collapsiblePanel' + String(generateUniqueId());
     } else {
       this.uuid = this.bpID;
     }
   }
 
-  togglePanel(): void {
+  panelToggle(): void {
     this.isPanelCollapsed = !this.isPanelCollapsed;
     this.click.emit();
+    this.togglePanel.emit();
   }
 
 }
