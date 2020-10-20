@@ -7,7 +7,7 @@
       <ng-content select="[panel-header-link]"></ng-content>
     </ng-container>
   </div>
-  <div class="panel-body">
+  <div [ngClass]="hasPadding ? 'panel-body' : 'panel-body-flush'">
     <ng-content select="[panel-body]"></ng-content>
   </div>
   <div *ngIf="panelFooter" class="panel-footer">

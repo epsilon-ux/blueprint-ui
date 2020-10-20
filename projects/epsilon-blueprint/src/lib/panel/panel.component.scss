@@ -10,10 +10,15 @@
     background: $ice;
   }
 
+  .panel-body,
+  .panel-body-flush
+  {
+    background: $coconut;
+  }
+
   .panel-body
   {
     padding: 20px;
-    background: $coconut;
   }
 
   .panel-footer
