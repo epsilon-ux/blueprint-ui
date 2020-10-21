@@ -1,0 +1,79 @@
+@import "../../styles/global-variables";
+
+.legend
+{
+  text-align: center;
+
+  ul
+  {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background: $mist;
+
+    li
+    {
+      margin: 0;
+      list-style: none;
+
+      &:not(:last-child)
+      {
+        margin-right: $space-md;
+      }
+
+      .legend-item
+      {
+        display: flex;
+        align-items: center;
+        color: $font-color-primary;
+
+        &:hover
+        {
+          text-decoration: none;
+        }
+      }
+
+      .legend-icon
+      {
+        margin-right: 5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.has-axes
+{
+  display: flex;
+  flex-wrap: wrap;
+
+  .chart
+  {
+    flex: 1;
+  }
+
+  .axis
+  {
+    text-align: center;
+  }
+
+  .axis-left
+  {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .axis-bottom
+  {
+    width: 100%;
+  }
+
+  .legend
+  {
+    margin: auto;
+  }
+}

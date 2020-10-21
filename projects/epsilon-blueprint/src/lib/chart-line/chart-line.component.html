@@ -1,0 +1,18 @@
+<figure class="has-axes">
+  <p class="axis axis-left">Left Axis</p>
+  <svg #svg [attr.id]="bpID" class="chart" attr.viewBox="0 0 {{width + margin.left + margin.right}} {{height + margin.top + margin.bottom}}" attr.preserveAspectRatio="xMidYMid meet">
+    <title>{{ title }}</title>
+  </svg>
+  <p class="sr-only" aria-live="polite" [attr.id]="bpID + 'Description'">Description Coming Soon</p>
+  <p class="axis axis-bottom">Bottom Axis</p>
+  <figcaption class="legend">
+    <ul>
+      <li *ngFor="let g of groups">
+        <button type="button" class="btn-text legend-item" [attr.aria-controls]="bpID + 'Description'">
+          <div class="legend-icon" [ngStyle]="{'background': color(g[0])}"></div>
+          {{ g[0] }}
+        </button>
+      </li>
+    </ul>
+  </figcaption>
+</figure>

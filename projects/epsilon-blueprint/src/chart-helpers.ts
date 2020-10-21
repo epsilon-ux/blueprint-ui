@@ -7,7 +7,8 @@ export function rescale(id: string, initWidth: number): void {
   svg.selectAll('text').style('transform', `scale(${0.25 + scale})`);
   svg.selectAll('.line').style('stroke-width', scale + 2 + 'px');
   svg.selectAll('.domain').style('stroke-width', scale + 'px');
-  svg.selectAll('.dot').attr('r', 5 * scale);
+  svg.selectAll('.point').style('stroke-width', scale + 'px');
+  /* svg.selectAll('.point').style('transform', `scale(${scale})`); */
 }
 
 export const qualitativeColors = [
