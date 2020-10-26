@@ -25,7 +25,6 @@ export class OverviewComponent implements OnInit {
       });
     }
     this.data = data;
-    console.log(this.data);
   }
 
   randomInt(min: number, max: number): number {
@@ -33,19 +32,19 @@ export class OverviewComponent implements OnInit {
   }
 
   addData(): void {
-    if (this.data.length < this.allData.length) {
+    /* if (this.data.length < this.allData.length) {
       const newData = [...this.data];
       newData.push(this.allData[newData.length]);
       this.data = [...newData];
-    }
+    } */
   }
 
   removeData(): void {
-    if (this.data.length > 1) {
+    /* if (this.data.length > 1) {
       const data = [...this.data];
       data.pop();
       this.data = [...data];
-    }
+    } */
   }
 
 }

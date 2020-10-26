@@ -20,10 +20,13 @@
           <div class="row justify-content-center align-items-center">
             <div class="col-md-8 col-lg-7 col-xl-5">
               <bp-chart-line
+                *ngIf="data.length > 0"
                 [data]="data"
                 groupBy="type"
                 xValue="xvalue"
                 yValue="yvalue"
+                xAxisLabel="X Axis"
+                yAxisLabel="Y Axis"
               ></bp-chart-line>
             </div>
           </div>

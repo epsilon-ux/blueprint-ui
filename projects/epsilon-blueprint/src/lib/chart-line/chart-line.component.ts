@@ -28,16 +28,17 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Input() data;
   @Input() groupBy;
-  @Input() xValue = 'value';
-  @Input() yValue = 'value';
+  @Input() xValue: string;
+  @Input() yValue: string;
+  @Input() xAxisLabel: string;
+  @Input() yAxisLabel: string;
   @Input() customYDomain: [number, number];
   @Input() bpID ='lineChart' + String(generateUniqueId());
   @Input() title = 'Line Chart';
   @Input() description = '#{percent}% #{name} with #{value}';
   @Input() formatters = {
-    name: (name: string): string => name,
-    percent: (percent: number): string => String(percent) + '%',
-    value: (value: number): string => new Intl.NumberFormat().format(value)
+    xAxis: (value: number): string => String(value),
+    yAxis: (value: number): string => new Intl.NumberFormat().format(value)
   };
 
   parseLookupString = parseLookupString;
@@ -70,13 +71,15 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data?.currentValue && !changes.data?.firstChange) {
-      // When data changes
+      this.prepare();
+      this.update();
     }
   }
 
   ngOnInit(): void {
     this.width = 800 - this.margin.left - this.margin.right,
     this.height = 400 - this.margin.top - this.margin.bottom;
+    this.prepare();
   }
 
   ngAfterViewInit(): void {
@@ -99,20 +102,20 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
     }, 0);
   }
 
-  update(): void {
+  prepare(): void {
     this.groups = d3Array.groups(this.data, d => d[this.groupBy]);
-    console.log(this.groups);
-
-    const xValues = Array.from(this.data, d => d[this.xValue]);
-    const yValues = Array.from(this.data, d => d[this.yValue]);
     const groups = Array.from(this.groups, d => d[0] as string);
-    const yExtent: [number, number] = d3.extent(yValues);
-    const upperPadding = (yExtent[1] - yExtent[0]) * 0.1;
-
     this.color = d3
       .scaleOrdinal()
       .domain(groups)
       .range(qualitativeColors.slice(0, groups.length));
+  }
+
+  update(): void {
+    const xValues = Array.from(this.data, d => d[this.xValue]);
+    const yValues = Array.from(this.data, d => d[this.yValue]);
+    const yExtent: [number, number] = d3.extent(yValues);
+    const upperPadding = (yExtent[1] - yExtent[0]) * 0.1;
 
     this.xScale = d3
       .scaleTime()
@@ -145,7 +148,8 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
     this.yAxis = d3
       .axisLeft(this.yScale)
       .tickSize(0)
-      .tickPadding(10);
+      .tickPadding(10)
+      .tickFormat(this.formatters.yAxis);
 
     this.svg
       .append('g')
