@@ -37,13 +37,13 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() title = 'Line Chart';
   @Input() description = '#{percent}% #{name} with #{value}';
   @Input() formatters = {
-    xAxis: (value: number): string => String(value),
+    xAxis: undefined,
     yAxis: (value: number): string => new Intl.NumberFormat().format(value)
   };
 
   parseLookupString = parseLookupString;
 
-  margin = { top: 20, right: 50, bottom: 50, left: 60 };
+  margin = { top: 20, right: 50, bottom: 50, left: 100 };
   width: number;
   height: number;
 
@@ -143,7 +143,10 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
       .ticks(5)
       .tickSize(0)
       .tickPadding(10);
-    // .tickFormat(this.options.xAxisFormatFunc)
+
+    if (this.formatters.xAxis) {
+      this.xAxis.tickFormat(this.formatters.xAxis);
+    }
 
     this.yAxis = d3
       .axisLeft(this.yScale)

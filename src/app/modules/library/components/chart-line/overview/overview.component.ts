@@ -20,7 +20,7 @@ export class OverviewComponent implements OnInit {
     for (let i = 0; i < length; i++) {
       data.push({
         xvalue: dates[i % (length / types.length)],
-        yvalue: Math.floor(Math.random() * 40),
+        yvalue: Math.floor(Math.random() * 4000),
         type: types[Math.floor(i / (length / types.length))]
       });
     }
