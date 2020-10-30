@@ -127,7 +127,11 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   prepare(): void {
-    this.groups = d3Array.groups(this.data, d => d[this.groupBy]);
+    if (this.groupBy) {
+      this.groups = d3Array.groups(this.data, d => d[this.groupBy]);
+    } else {
+      this.groups = [[null, this.data]];
+    }
     const groups = Array.from(this.groups, d => d[0] as string);
     this.color = d3
       .scaleOrdinal()

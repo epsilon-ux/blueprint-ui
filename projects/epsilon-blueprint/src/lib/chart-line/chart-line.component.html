@@ -5,7 +5,7 @@
   </svg>
   <p class="sr-only" aria-live="polite" [attr.id]="bpID + 'Description'">Description Coming Soon</p>
   <p *ngIf="xAxisLabel" class="axis axis-bottom">{{ xAxisLabel }}</p>
-  <figcaption class="legend">
+  <figcaption *ngIf="groupBy" class="legend">
     <ul>
       <li *ngFor="let g of groups">
         <button type="button" class="btn-text legend-item" [attr.aria-controls]="bpID + 'Description'">

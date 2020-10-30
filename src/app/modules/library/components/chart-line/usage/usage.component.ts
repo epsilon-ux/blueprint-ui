@@ -8,16 +8,20 @@ export class UsageComponent implements OnInit {
 
   data = [
     {
-      name: 'Baisc Tier',
-      value: 1000
+      xValue: new Date(2020, 0, 1),
+      yValue: 1500
     },
     {
-      name: 'Standard Tier',
-      value: 750
+      xValue: new Date(2020, 0, 2),
+      yValue: 1200
     },
     {
-      name: 'Premium Tier',
-      value: 200
+      xValue: new Date(2020, 0, 3),
+      yValue: 1000
+    },
+    {
+      xValue: new Date(2020, 0, 4),
+      yValue: 2000
     }
   ];
 

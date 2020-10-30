@@ -11,7 +11,13 @@
         <div class="card-body component-preview">
           <div class="row justify-content-center align-items-center">
             <div class="col-md-8 col-lg-7 col-xl-5">
-              <bp-chart-line></bp-chart-line>
+              <bp-chart-line
+                [data]="data"
+                xValue="xValue"
+                yValue="yValue"
+                xAxisLabel="X Axis"
+                yAxisLabel="Y Axis"
+              ></bp-chart-line>
             </div>
           </div>
         </div>
