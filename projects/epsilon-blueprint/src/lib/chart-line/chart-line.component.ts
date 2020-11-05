@@ -38,7 +38,10 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() description = '#{percent}% #{name} with #{value}';
   @Input() formatters = {
     xAxis: undefined,
-    yAxis: (value: number): string => new Intl.NumberFormat().format(value)
+    yAxis: (value: number): string => new Intl.NumberFormat().format(value),
+    tooltipHeader: (value: any): string => new Intl.DateTimeFormat().format(value),
+    tooltipLabel: (value: any): string => String(value),
+    tooltipValue: (value: number): string => new Intl.NumberFormat().format(value)
   };
 
   parseLookupString = parseLookupString;
@@ -57,11 +60,17 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
   renderedXAxis;
   renderedYAxis;
 
+  tooltipHeader = '';
+  tooltipData = [];
+
   groups;
 
   resizeListener;
   renderedLines: any;
   line: d3.Line<[number, number]>;
+  isTooltipVisible: boolean;
+  tooltipXPos: number;
+  tooltipYPos: number;
 
   constructor() { }
 
@@ -263,9 +272,19 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
         .attr('x', d => this.xScale(d[this.xValue]) - hoverRegionWidth / 2)
         .attr('width', hoverRegionWidth)
         .attr('height', this.height + this.margin.top)
-        .on('mouseover', (e, d) => {
-          // TODO: Implement Tooltip
-        });
+        .attr('data-index', (d, i) => String(i))
+        .on('mousemove', (e, d) => {
+          this.tooltipHeader = this.formatters.tooltipHeader(d[this.xValue]);
+          this.tooltipData = this.groups.map(g => ({
+            label: this.formatters.tooltipLabel(g[0]),
+            value: this.formatters.tooltipValue(g[1][e.target.dataset.index][this.yValue]),
+            color: this.color(g[0])
+          }));
+          this.isTooltipVisible = true;
+          this.tooltipXPos = e.clientX;
+          this.tooltipYPos = e.clientY;
+        })
+        .on('mouseout', () => this.isTooltipVisible = false);
     });
   }
 
