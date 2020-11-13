@@ -12,7 +12,7 @@
       <!-- Expand Collapse button -->
       <ng-container *ngTemplateOutlet="navItem; context:{$implicit: item, index: index, parentIndex: parentIndex}"></ng-container>
       <!-- Node's children in list -->
-      <ul [ngClass]="{'collapse nested-list': true, 'show': item.isExpanded || areItemsExpanded}" [id]="uuid + 'NestedList' + index">
+      <ul [ngClass]="{'collapse nested-list': true, 'show': item.isExpanded || areItemsExpanded}" [id]="uuid + 'NestedList' + index + 'Parent' + parentIndex">
         <ng-container *ngTemplateOutlet="lists; context:{$implicit: item.children, parentIndex: index}"></ng-container>
       </ul>
     </ng-container>
@@ -50,9 +50,9 @@
     [attr.id]="uuid + 'Action' + i + 'ListIndex' + parentIndex"
     [ngClass]="{'nav-link-parent': true, 'collapsed': !(item.isExpanded || areItemsExpanded)}"
     data-toggle="collapse"
-    [attr.data-target]="'#' + uuid + 'NestedList' + i"
+    [attr.data-target]="'#' + uuid + 'NestedList' + i + 'Parent' + parentIndex"
     attr.aria-expanded="{{ item.isExpanded || areItemsExpanded }}"
-    [attr.aria-controls]="uuid + 'NestedList' + i"
+    [attr.aria-controls]="uuid + 'NestedList' + i + 'Parent' + parentIndex"
   >
     {{ item.text }}
   </button>
