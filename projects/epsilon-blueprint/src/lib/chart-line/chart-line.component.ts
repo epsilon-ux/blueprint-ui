@@ -32,7 +32,6 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() yValue: string;
   @Input() xAxisLabel: string;
   @Input() yAxisLabel: string;
-  @Input() customYDomain: [number, number];
   @Input() bpID ='lineChart' + String(generateUniqueId());
   @Input() title = 'Line Chart';
   @Input() description = '#{percent}% #{name} with #{value}';
