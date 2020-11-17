@@ -75,7 +75,7 @@ button.btn-text
   {
     border-color: transparent;
     background: $accent-color-primary-hover;
-    color: $coconut;
+    color: $accent-color-primary;
   }
 }
 
@@ -100,7 +100,7 @@ button.btn-text
   {
     border-color: transparent;
     background: $feedback-color-warning-hover;
-    color: $coconut;
+    color: $feedback-color-warning;
   }
 
   &:not(:disabled):not(.disabled):focus

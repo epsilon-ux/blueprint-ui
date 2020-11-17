@@ -1,5 +1,5 @@
 // stylelint-disable
-
+@import './core-variables';
 // TODO: figure out which rules specifically we should disable
 
 // color palette
@@ -58,17 +58,17 @@ $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
 
 // font colors
-$font-color-primary: $midnight;
-$font-color-secondary: $storm;
+$font-color-primary: $slate-10;
+$font-color-secondary: $slate-45;
 $font-color-code: $font-color-primary;
 
 // accent colors
-$accent-color-primary: $ultramarine;
-$accent-color-primary-hover: $blueberry;
+$accent-color-primary: $ultramarine-45;
+$accent-color-primary-hover: $ultramarine-97;
 $accent-color-secondary: $apricot;
 
 // link colors
-$link-color-primary: $ultramarine;
+$link-color-primary: $ultramarine-45;
 
 // border colors
 $border-color-primary: $storm;
@@ -77,8 +77,8 @@ $border-color-secondary: $haze;
 // feedback colors
 $feedback-color-success: $shamrock;
 $feedback-color-alert: $clementine;
-$feedback-color-warning: $tomato;
-$feedback-color-warning-hover: $brick;
+$feedback-color-warning: $apple-45;
+$feedback-color-warning-hover: $apple-97;
 
 // Font Awesome icons
 $icon-menu: "\f0c9";
