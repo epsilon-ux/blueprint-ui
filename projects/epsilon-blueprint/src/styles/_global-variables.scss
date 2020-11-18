@@ -65,7 +65,7 @@ $font-color-code: $font-color-primary;
 // accent colors
 $accent-color-primary: $ultramarine-45;
 $accent-color-primary-hover: $ultramarine-97;
-$accent-color-secondary: $apricot;
+$accent-color-secondary: $accent-color-primary;
 
 // link colors
 $link-color-primary: $ultramarine-45;
@@ -75,8 +75,8 @@ $border-color-primary: $storm;
 $border-color-secondary: $haze;
 
 // feedback colors
-$feedback-color-success: $shamrock;
-$feedback-color-alert: $clementine;
+$feedback-color-success: $lime-25;
+$feedback-color-alert: $pineapple-50;
 $feedback-color-warning: $apple-45;
 $feedback-color-warning-hover: $apple-97;
 
@@ -107,9 +107,9 @@ $box-shadow-primary: 0 1px 10px 0 rgba($midnight, 0.3); // used for modals, over
 $box-shadow-secondary: 0 2px 8px 0 $haze; // used for tiles, and tooltips
 $box-shadow-tertiary: 1px 1px 3px 0 rgba($midnight, 0.2); // used for expanded dropdown menus and expanded date/time pickers
 $box-shadow-nav-primary: 0 0 7px 0 rgba($cobalt, 0.2); // used for the primary navigation
-$box-shadow-focus-default: 0 0 0 0.2rem rgba($cornflower, 1);
-$box-shadow-focus-default-inset: inset 0 0 0 0.2rem rgba($cornflower, 1); // used for tabs
-$box-shadow-focus-warning: 0 0 0 0.2rem rgba($feedback-color-warning, 0.25);
+$box-shadow-focus-default: 0 0 0 0.2rem rgba($ultramarine-85, 1);
+$box-shadow-focus-default-inset: inset 0 0 0 0.2rem rgba($ultramarine-85, 1); // used for tabs
+$box-shadow-focus-warning: 0 0 0 0.2rem rgba($apple-75, 0.25);
 $box-shadow-focus-readonly: 0 0 0 0.2rem rgba($storm, 0.3);
 
 // gradients

@@ -170,9 +170,9 @@ button.btn-text
 
   &:hover
   {
-    border-color: $accent-color-primary-hover;
+    border-color: $accent-color-primary;
     background: $accent-color-primary-hover;
-    color: $coconut;
+    color: $accent-color-primary;
   }
 
   &.btn-input-addon-clear
@@ -249,8 +249,8 @@ button[disabled],
 .btn[disabled]
 {
   opacity: 1;
-  border: 1px solid $border-color-secondary;
-  background: $mist;
+  border: 1px solid $slate-90;
+  background: $slate-97;
   color: $font-color-secondary;
   cursor: not-allowed;
 }
