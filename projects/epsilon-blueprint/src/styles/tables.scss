@@ -12,9 +12,8 @@
     th
     {
       border: 0;
-      border-right: 1px solid $border-color-primary;
       padding: 0;
-      background: $haze;
+      background: $slate-97;
 
       &:last-child
       {
@@ -24,8 +23,8 @@
       &.th-not-sortable,
       &.th-sortable button
       {
-        padding: 11px 15px 12px;
-        color: $font-color-primary;
+        padding: 13px 15px 14px;
+        color: $font-color-secondary;
         font-weight: $font-weight-semi-bold;
         font-size: $font-size-md;
         font-family: $font-family-default;
@@ -36,7 +35,6 @@
       {
         position: relative;
         display: flex;
-        justify-content: space-between;
         align-items: flex-end;
         width: 100%;
         height: 100%;
@@ -47,7 +45,6 @@
         &::after
         {
           margin-left: 10px;
-          opacity: 0.5;
           content: $icon-caret-down;
           font-size: $font-size-lg;
           line-height: 1;
@@ -64,9 +61,9 @@
 
       &[aria-sort]
       {
-        &.th-sortable button::after
+        &.th-sortable button
         {
-          opacity: 1;
+          color: $font-color-primary;
         }
       }
 
@@ -104,7 +101,7 @@
 
       &.tr-stripe-odd
       {
-        background: $cloud;
+        background: $slate-97;
       }
 
       &.tr-expandable td > :last-child
@@ -114,8 +111,7 @@
 
       &:hover
       {
-        outline: 1px solid $accent-color-primary;
-        background: $ice;
+        background: $ultramarine-97;
       }
 
       th,
@@ -123,7 +119,7 @@
       {
         vertical-align: middle;
         border: 0;
-        padding: 11px 15px 12px;
+        padding: 13px 15px 14px;
         transition: padding $transition-primary;
 
         &.td-expandable
@@ -237,7 +233,7 @@
           vertical-align: bottom;
           width: 30px;
           border-right: 0;
-          padding: 0 0 12px 15px;
+          padding: 0 0 14px 15px;
         }
 
         th.th-expandable + .th-selectable
