@@ -1,0 +1,64 @@
+.core-skin
+{
+  .panel-collapsible
+  {
+    background: $slate-10;
+
+    .toggle-wrapper .toggle
+    {
+      color: $coconut;
+
+      &:hover
+      {
+        color: $accent-color-primary;
+        background: $accent-color-primary-hover;
+      }
+    }
+
+    &.collapsed
+    {
+      .toggle-wrapper .toggle
+      {
+        border: 0;
+        color: $coconut;
+        background: transparent;
+
+        &:hover
+        {
+          color: $accent-color-primary;
+          background: $accent-color-primary-hover;
+        }
+      }
+
+    }
+  }
+
+  .nav-secondary
+  {
+    .nav-item
+    {
+      .nav-link-parent,
+      .nav-link
+      {
+        color: $coconut !important;
+
+        &.active,
+        &:hover
+        {
+          background: $slate-20 !important;
+        }
+      }
+
+      .nav-link:hover
+      {
+        text-decoration: underline;
+      }
+    }
+
+    .nested-list,
+    .nav-link-parent:not(.collapsed)
+    {
+      background: $slate-20 !important;
+    }
+  }
+}
