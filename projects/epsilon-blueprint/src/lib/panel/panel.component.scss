@@ -3,6 +3,8 @@
 .panel
 {
   box-shadow: $box-shadow-secondary;
+  border-radius: $border-radius-primary;
+  overflow: hidden;
 
   .panel-header
   {

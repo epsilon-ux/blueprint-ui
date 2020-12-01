@@ -25,14 +25,14 @@
 
 .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container
 {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-bottom-right-radius: $border-radius-primary;
+  border-bottom-left-radius: $border-radius-primary;
 }
 
 .ng-select.ng-select-opened.ng-select-top > .ng-select-container
 {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: $border-radius-primary;
+  border-top-right-radius: $border-radius-primary;
 }
 
 .ng-select.ng-select-disabled > .ng-select-container
@@ -58,7 +58,7 @@
 {
   align-items: center;
   min-height: 30px;
-  border-radius: 0;
+  border-radius: $border-radius-primary;
   border: 1px solid $border-color-primary;
   background-color: $coconut;
 }
@@ -133,7 +133,7 @@
 {
   margin-right: 5px;
   margin-bottom: 5px;
-  border-radius: 0;
+  border-radius: $border-radius-primary;
   background-color: $accent-color-primary;
   color: $coconut;
   font-size: 0.9em;
@@ -288,30 +288,30 @@
 {
   top: 100%;
   margin-top: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-bottom-right-radius: $border-radius-primary;
+  border-bottom-left-radius: $border-radius-primary;
   border-top-color: $border-color-primary;
 }
 
 .ng-dropdown-panel.ng-select-bottom .ng-dropdown-panel-items .ng-option:last-child
 {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-bottom-right-radius: $border-radius-primary;
+  border-bottom-left-radius: $border-radius-primary;
 }
 
 .ng-dropdown-panel.ng-select-top
 {
   bottom: 100%;
   margin-bottom: -1px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: $border-radius-primary;
+  border-top-right-radius: $border-radius-primary;
   border-bottom-color: $border-color-primary;
 }
 
 .ng-dropdown-panel.ng-select-top .ng-dropdown-panel-items .ng-option:first-child
 {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: $border-radius-primary;
+  border-top-right-radius: $border-radius-primary;
 }
 
 .ng-dropdown-panel .ng-dropdown-header
@@ -510,6 +510,7 @@
     position: relative;
     height: 16px;
     margin-right: 7px;
+    border-radius: $border-radius-secondary;
     border: 1px solid $border-color-primary;
     background: $coconut;
     flex: 0 0 16px;
