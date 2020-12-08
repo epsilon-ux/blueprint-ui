@@ -25,6 +25,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Input() isDataLoading: boolean;
   @Input() properties: TablePropertiesInterface;
   @Input() bpID: string;
+  @Input() selectedRows: [];
 
   @Output() action = new EventEmitter();
   @Output() onSort = new EventEmitter();
@@ -173,8 +174,17 @@ export class TableComponent implements OnInit, OnChanges {
       if (this.areAllRowsSelected) {
         this.tableData.forEach(d => {
           if (!this.rowSelectionStates.has(d)) {
+            if (!this.rowSelectionStates.get(d)) {
+              this.numRowsSelected++;
+            }
             this.rowSelectionStates.set(d, true);
           }
+        });
+      }
+
+      if (this.selectedRows) {
+        this.selectedRows.forEach(row => {
+          this.rowSelectionStates.set(row, true);
         });
       }
 
