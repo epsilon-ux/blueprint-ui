@@ -34,7 +34,9 @@ export class ChartLineComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() yAxisLabel: string;
   @Input() bpID ='lineChart' + String(generateUniqueId());
   @Input() title = 'Line Chart';
+  /* TODO: figure out a way to implement description
   @Input() description = '#{percent}% #{name} with #{value}';
+  */
   @Input() formatters = {
     xAxis: undefined,
     yAxis: (value: number): string => new Intl.NumberFormat().format(value),

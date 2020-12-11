@@ -3,7 +3,8 @@
   <svg #svg [attr.id]="bpID" class="chart" attr.viewBox="0 0 {{width + margin.left + margin.right}} {{height + margin.top + margin.bottom}}" attr.preserveAspectRatio="xMidYMid meet">
     <title>{{ title }}</title>
   </svg>
-  <p class="sr-only" aria-live="polite" [attr.id]="bpID + 'Description'">Description Coming Soon</p>
+  <!-- TODO: Implement description
+  <p class="sr-only" aria-live="polite" [attr.id]="bpID + 'Description'">Description Coming Soon</p> -->
   <p *ngIf="xAxisLabel" class="axis axis-bottom">{{ xAxisLabel }}</p>
   <figcaption *ngIf="groupBy" class="legend">
     <ul>
