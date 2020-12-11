@@ -1,0 +1,109 @@
+@import "../../styles/global-variables";
+
+.chart-tooltip-container
+ {
+  position: fixed;
+  z-index: 10;
+  opacity: 0;
+  transform: translate(-50%, -110%);
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+
+  &.is-visible
+  {
+    opacity: 1;
+  }
+}
+
+.chart-tooltip
+ {
+  position: relative;
+  min-width: 100px;
+  box-shadow: 0 0 6px rgba($midnight, 0.3);
+  background-color: $coconut;
+  color: $font-color-primary;
+  font-size: $font-size-body;
+  text-align: left;
+  max-width: 300px;
+
+  &::before
+  {
+    position: absolute;
+    bottom: -5px;
+    left: calc(50% - 5px);
+    z-index: -1;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 6px rgba($midnight, 0.3);
+    background: $coconut;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  &::after
+  {
+    position: absolute;
+    bottom: -4px;
+    left: calc(50% - 4px);
+    z-index: 0;
+    width: 8px;
+    height: 8px;
+    background: $coconut;
+    content: "";
+    transform: rotate(45deg);
+  }
+}
+
+.chart-tooltip-body
+ {
+  padding: 10px;
+
+  dl
+  {
+    margin: 0;
+  }
+}
+
+.chart-tooltip-row
+ {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+
+  &:last-child
+ {
+    margin-bottom: 0;
+  }
+}
+
+.chart-tooltip-value
+ {
+  margin-bottom: 3px;
+  color: $font-color-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-lg;
+}
+
+.chart-tooltip-label
+ {
+  margin-bottom: 3px;
+  font-weight: $font-weight-regular;
+}
+
+.chart-tooltip-color
+ {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.chart-tooltip-header
+ {
+  border-bottom: 1px solid $border-color-primary;
+  padding: 5px;
+  font-weight: $font-weight-semi-bold;
+  text-align: center;
+}
