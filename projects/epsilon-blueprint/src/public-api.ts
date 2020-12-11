@@ -15,6 +15,9 @@ export * from './lib/breadcrumbs/breadcrumbs.interface';
 export * from './lib/chart-pie/chart-pie.component';
 export * from './lib/chart-pie/chart-pie.module';
 
+export * from './lib/chart-line/chart-line.component';
+export * from './lib/chart-line/chart-line.module';
+
 export * from './lib/checkbox/checkbox.component';
 export * from './lib/checkbox/checkbox.module';
 

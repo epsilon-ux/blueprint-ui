@@ -1,0 +1,44 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-xl-7">
+      <p class="component-description">
+        Pie charts break a circle into segments sized proportionally to the values in the data.
+      </p>
+      <h2>Example</h2>
+      <div class="row mb-3">
+        <div class="col-auto">
+          <button class="btn btn-outline-primary m" (click)="addData()">Add Data</button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-outline-primary" (click)="removeData()">Remove Data</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="card-body component-preview">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-8 col-lg-7 col-xl-5">
+              <bp-chart-line
+                *ngIf="data.length > 0"
+                [data]="data"
+                groupBy="type"
+                xValue="xvalue"
+                yValue="yvalue"
+                xAxisLabel="X Axis"
+                yAxisLabel="Y Axis"
+              ></bp-chart-line>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TODO -->
+    <!-- <div class="col-lg-8 col-xl-7">
+      <h2>Related Components & Templates</h2>
+      <ul>
+        <li></li>
+      </ul>
+    </div> -->
+  </div>
+</section>

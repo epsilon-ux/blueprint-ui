@@ -46,7 +46,7 @@ export class NavSecondaryComponent implements OnInit {
           .find(link => link.nativeElement.classList.contains('active'))
           .nativeElement.textContent.trim();
         for (const item of this.items) {
-          this.findActive(item, null);
+          this.findActive(item, []);
         }
       }, 0);
     }
@@ -58,15 +58,16 @@ export class NavSecondaryComponent implements OnInit {
     }
   }
 
-  findActive(node: ItemInterface, parent: ItemInterface): ItemInterface {
+  findActive(node: ItemInterface, parent: ItemInterface[]): ItemInterface {
     if (node.text === this.activeItem) {
       if (parent) {
-        parent.isExpanded = true;
+        parent.forEach(p => p.isExpanded = true);
       }
       return node;
     } else if (node.children) {
+      parent.push(node);
       for (const item of node.children) {
-        this.findActive(item, node);
+        this.findActive(item, parent);
       }
     }
   }

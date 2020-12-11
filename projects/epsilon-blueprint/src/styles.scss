@@ -2,24 +2,24 @@
 @import "./styles/_global-variables";
 @import "./styles/typography";
 @import "./styles/u-typography";
-@import "./styles/u-charts";
 @import "./styles/u-colors";
 @import "./styles/u-spacing";
 @import "./styles/u-sizing";
 @import "./styles/focus";
 
 // blueprint components
-@import "./styles/header";
 @import "./styles/badges";
 @import "./styles/buttons-links";
+@import "./styles/charts";
+@import "./styles/checkboxes";
+@import "./styles/collapsible-panel";
 @import "./styles/dropdowns";
 @import "./styles/forms";
-@import "./styles/checkboxes";
+@import "./styles/header";
 @import "./styles/status-indicators";
 @import "./styles/tables";
 @import "./styles/tabs";
 @import "./styles/toggletips";
-@import "./styles/collapsible-panel";
 
 // templates
 @import "./styles/object-page-header";
