@@ -1,4 +1,12 @@
-<div [attr.id]="uuid" class="panel-collapsible{{ isPanelCollapsed ? ' collapsed' : '' }}{{ isPanelRight ? ' right' : '' }}">
+<div
+  [attr.id]="uuid"
+  [ngClass]="{
+    'panel-collapsible': true,
+    'w-auto': isWidthAuto,
+    'collapsed': isPanelCollapsed,
+    'right': isPanelRight
+  }"
+>
   <div class="toggle-wrapper">
     <button
       type="button"
