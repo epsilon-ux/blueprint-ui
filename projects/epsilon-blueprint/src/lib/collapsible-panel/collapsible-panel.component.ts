@@ -11,6 +11,7 @@ export class CollapsiblePanelComponent implements OnInit {
   @Input() toggleAriaLabel = 'Toggle collapsible panel';
   @Input() isPanelRight = false;
   @Input() hasSearchToggle = false;
+  @Input() isWidthAuto = false;
   @Input() bpID: string;
 
   @Output() click = new EventEmitter(); // Deprecated
