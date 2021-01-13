@@ -1,0 +1,26 @@
+<figure [ngClass]="{'has-axes': xAxisLabel || yAxisLabel}">
+  <p *ngIf="yAxisLabel" class="axis axis-left">{{ yAxisLabel }}</p>
+  <svg #svg [attr.id]="bpID" class="chart" attr.viewBox="0 0 {{width + margin.left + margin.right}} {{height + margin.top + margin.bottom}}" attr.preserveAspectRatio="xMidYMid meet">
+    <title>{{ title }}</title>
+  </svg>
+  <!-- TODO: Implement description
+  <p class="sr-only" aria-live="polite" [attr.id]="bpID + 'Description'">Description Coming Soon</p> -->
+  <p *ngIf="xAxisLabel" class="axis axis-bottom">{{ xAxisLabel }}</p>
+  <figcaption *ngIf="groupBy" class="legend">
+    <ul>
+      <li *ngFor="let g of groups">
+        <button type="button" class="btn-text legend-item" [attr.aria-controls]="bpID + 'Description'">
+          <div class="legend-icon" [ngStyle]="{'background': color(g[0])}"></div>
+          {{ g[0] }}
+        </button>
+      </li>
+    </ul>
+  </figcaption>
+</figure>
+<bp-chart-tooltip
+  [header]="tooltipHeader"
+  [data]="tooltipData"
+  [isVisible]="isTooltipVisible"
+  [xPos]="tooltipXPos"
+  [yPos]="tooltipYPos"
+></bp-chart-tooltip>

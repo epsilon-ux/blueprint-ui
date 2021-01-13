@@ -78,8 +78,17 @@ export class LibraryComponent {
             route: './components/buttons-links'
           },
           {
-            text: 'Pie Chart',
-            route: './components/pie-chart'
+            text: 'Charts',
+            children: [
+              {
+                text: 'Pie Chart',
+                route: './components/pie-chart'
+              },
+              {
+                text: 'Line Chart',
+                route: './components/line-chart'
+              }
+            ]
           },
           {
             text: 'Checkbox',

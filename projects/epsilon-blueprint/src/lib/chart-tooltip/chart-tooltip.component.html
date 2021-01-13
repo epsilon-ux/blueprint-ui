@@ -1,0 +1,17 @@
+<div
+  [ngClass]="{'chart-tooltip-container': true, 'is-visible': isVisible}"
+  [ngStyle]="{top: yPos + 'px', left: xPos + 'px'}"
+>
+  <div class="chart-tooltip" >
+    <div class="chart-tooltip-header">{{ header }}</div>
+    <div class="chart-tooltip-body">
+      <div *ngFor="let d of data" class="chart-tooltip-row">
+        <div class="chart-tooltip-color" [ngStyle]="{'background': d.color}"></div>
+        <dl>
+          <dt class="chart-tooltip-label">{{ d.label }}</dt>
+          <dd class="chart-tooltip-value">{{ d.value }}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
