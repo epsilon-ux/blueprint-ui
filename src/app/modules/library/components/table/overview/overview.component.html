@@ -21,6 +21,7 @@
             (onSort)="handleSort($event)"
             (rowSelected)="handleSelectedRows($event)"
             (viewChange)="handleViewChange()"
+            (columnsSelected)="handleSelectedColumn($event)"
           >
             <bp-pagination
               [dataLength]="filteredData.length"
