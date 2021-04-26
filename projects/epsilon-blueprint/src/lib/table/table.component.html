@@ -123,6 +123,7 @@
   [internationalization]="properties.internationalization"
   (viewSelectorEmitter)="emitTableView($event)"
   (displayDensityEmitter)="setDisplayDensity($event)"
+  (columnSelectorEmitter)="emitSelectedColumns($event)"
 >
   <ng-container pagination>
     <ng-content select="bp-pagination"></ng-content>
