@@ -35,6 +35,9 @@ export class TableFooterComponent implements OnInit {
   @Output()
   viewSelectorEmitter = new EventEmitter();
 
+  @Output()
+  columnSelectorEmitter = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -45,6 +48,10 @@ export class TableFooterComponent implements OnInit {
 
   emitTableView(view: string): void {
     this.viewSelectorEmitter.emit(view);
+  }
+
+  emitSelectedColumns(columns: any[]): void {
+    this.columnSelectorEmitter.emit(columns);
   }
 
 }
