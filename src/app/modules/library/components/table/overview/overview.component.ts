@@ -227,4 +227,5 @@ export class OverviewComponent implements OnInit {
     );
   }
 
+  handleSelectedColumn(e) { }
 }

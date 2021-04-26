@@ -13,6 +13,7 @@
   [columnInfo]="columnInfo"
   [defaultSortColumnName]="defaultSortColumnName"
   [internationalization]="internationalization"
+  (columnSelectorEmitter)="emitSelectedColumns($event)"
 ></app-column-selector>
 
 <app-display-density

@@ -31,6 +31,7 @@ export class TableComponent implements OnInit, OnChanges {
   @Output() onSort = new EventEmitter();
   @Output() rowSelected = new EventEmitter();
   @Output() viewChange = new EventEmitter();
+  @Output() columnsSelected = new EventEmitter();
 
   @ViewChild('selectAllRowsRef')
   selectAllRowsRef: ElementRef;
@@ -355,6 +356,12 @@ export class TableComponent implements OnInit, OnChanges {
 
   emitTableView(view: string): void {
     this.viewChange.emit(view);
+  }
+
+  // --------------- Column Selector ---------------
+
+  emitSelectedColumns(columns: any[]): void {
+    this.columnsSelected.emit(columns);
   }
 
   // --------------- Actions ---------------

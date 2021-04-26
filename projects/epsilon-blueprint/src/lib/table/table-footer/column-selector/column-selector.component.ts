@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { parseLookupString } from '../../../../helpers';
 import { TableColumnInterface } from '../../table.interface';
 
@@ -24,6 +24,9 @@ export class ColumnSelectorComponent implements OnInit {
 
   @Input()
   bpID: string;
+
+  @Output()
+  columnSelectorEmitter = new EventEmitter();
 
   selectedColumns = [];
 
@@ -57,6 +60,7 @@ export class ColumnSelectorComponent implements OnInit {
         localStorage.setItem('columns', JSON.stringify(this.columnInfo));
       */
     }
+    this.columnSelectorEmitter.emit(this.columnInfo);
   }
 
 }
