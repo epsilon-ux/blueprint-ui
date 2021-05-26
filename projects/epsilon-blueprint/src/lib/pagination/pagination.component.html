@@ -3,18 +3,20 @@
     <span [id]="uuid + 'Results'" class="pagination-records">
       {{ parseLookupString(internationalization['numResults results'], {numResults: dataLength}) }}
     </span>
-    <label [attr.for]="uuid + 'NumberOfRows'" class="sr-only">{{ internationalization['Number of Rows'] }}</label>
-    <ng-select
-      [labelForId]="uuid + 'NumberOfRows'"
-      name="numberOfRows"
-      [items]="internationalization['Number Of Rows Options']"
-      bindLabel="optionText"
-      bindValue="optionValue"
-      [(ngModel)]="numberOfRows"
-      [searchable]="false"
-      [clearable]="false"
-      (change)="rowChangePage()"
-    ></ng-select>
+    <ng-container *ngIf="hasRowCountSelector">
+      <label [attr.for]="uuid + 'NumberOfRows'" class="sr-only">{{ internationalization['Number of Rows'] }}</label>
+      <ng-select
+        [labelForId]="uuid + 'NumberOfRows'"
+        name="numberOfRows"
+        [items]="internationalization['Number Of Rows Options']"
+        bindLabel="optionText"
+        bindValue="optionValue"
+        [(ngModel)]="numberOfRows"
+        [searchable]="false"
+        [clearable]="false"
+        (change)="rowChangePage()"
+      ></ng-select>
+    </ng-container>
   </div>
   <div class="pagination-buttons">
     <button

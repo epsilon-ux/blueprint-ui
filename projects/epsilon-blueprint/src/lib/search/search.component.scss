@@ -1,4 +1,12 @@
+@import '../../styles/global-variables';
+
 ::-webkit-search-cancel-button
 {
   -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+}
+
+.form-control:focus,
+.btn-icon:focus
+{
+  box-shadow: $box-shadow-focus-default-inset;
 }

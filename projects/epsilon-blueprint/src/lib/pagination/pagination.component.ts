@@ -27,6 +27,9 @@ export class PaginationComponent implements OnInit, OnChanges {
   defaultNumberOfRows: number;
 
   @Input()
+  hasRowCountSelector = true;
+
+  @Input()
   pageBuffer = 1;
 
   @Input()
