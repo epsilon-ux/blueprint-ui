@@ -43,6 +43,7 @@ button.btn-text
   border-radius: $border-radius-primary;
   padding: 5px 10px;
   font-size: $font-size-md;
+  font-weight: $font-weight-semi-bold;
   white-space: nowrap;
 
   &:not(:disabled):not(.disabled):active,

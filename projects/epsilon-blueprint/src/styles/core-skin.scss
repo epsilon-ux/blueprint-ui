@@ -2,7 +2,7 @@
 {
   .panel-collapsible
   {
-    background: $slate-10;
+    background: $slate-17;
 
     .toggle-wrapper .toggle
     {
@@ -45,7 +45,7 @@
         &.active,
         &:hover
         {
-          background: $slate-20 !important;
+          background: $slate-25 !important;
         }
       }
 
@@ -58,7 +58,7 @@
     .nested-list,
     .nav-link-parent:not(.collapsed)
     {
-      background: $slate-20 !important;
+      background: $slate-25 !important;
     }
   }
 }
